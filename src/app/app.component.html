@@ -1,0 +1,20 @@
+<ion-app>
+  <ion-split-pane contentId="main-content" when="xl">
+    <ion-menu contentId="main-content">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Navigation</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-menu-toggle *ngFor="let page of pages" auto-hide="false">
+          <ion-item [routerLink]="page.path">
+            <ion-icon slot="start" [icon]="page.icon"></ion-icon>
+            <ion-label>{{ page.title }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

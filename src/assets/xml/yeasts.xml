@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<YEASTS>
+<YEAST>
+        <NAME>Safale BE-134</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Ale</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Fermentis</LABORATORY>
+        <PRODUCT_ID>BE-134</PRODUCT_ID>
+        <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>28</MAX_TEMPERATURE>
+        <FLOCCULATION>Medium</FLOCCULATION>
+        <ATTENUATION>88</ATTENUATION>
+        <NOTES>Reveals fruity aromas with a spicy character, particularly notes of cloves.</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>Safale K-97</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Ale</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Fermentis</LABORATORY>
+        <PRODUCT_ID>K-97</PRODUCT_ID>
+        <MIN_TEMPERATURE>15</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>20</MAX_TEMPERATURE>
+        <FLOCCULATION>High</FLOCCULATION>
+        <ATTENUATION>81.0000000</ATTENUATION>
+        <NOTES>Suitable for ales with low esters.</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>Safale S-04</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Ale</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Fermentis</LABORATORY>
+        <PRODUCT_ID>S-04</PRODUCT_ID>
+        <MIN_TEMPERATURE>15</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>20</MAX_TEMPERATURE>
+        <FLOCCULATION>High</FLOCCULATION>
+        <ATTENUATION>75.0000000</ATTENUATION>
+        <NOTES>English ale yeast selected for fast fermentation.</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>Safale US-05</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Ale</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Fermentis</LABORATORY>
+        <PRODUCT_ID>US-05</PRODUCT_ID>
+        <MIN_TEMPERATURE>15</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>22</MAX_TEMPERATURE>
+        <FLOCCULATION>Medium</FLOCCULATION>
+        <ATTENUATION>80.00000000</ATTENUATION>
+        <NOTES>Produces well-balanced beers with low diacetyl.</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>Safbrew T-58</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Ale</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Fermentis</LABORATORY>
+        <PRODUCT_ID>T-58</PRODUCT_ID>
+        <MIN_TEMPERATURE>15.0000000</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>24</MAX_TEMPERATURE>
+        <FLOCCULATION>Low</FLOCCULATION>
+        <ATTENUATION>75.00000000</ATTENUATION>
+        <NOTES>Estery and somewhat peppery.</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>Saflager W-34/70</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Lager</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Fermentis</LABORATORY>
+        <PRODUCT_ID>W-34/70</PRODUCT_ID>
+        <MIN_TEMPERATURE>11</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>15.0000000</MAX_TEMPERATURE>
+        <FLOCCULATION>High</FLOCCULATION>
+        <ATTENUATION>83.0000000</ATTENUATION>
+        <NOTES>Good balance of floral and fruity aromas with clean flavor.</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>Saflager S-23</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Lager</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Fermentis</LABORATORY>
+        <PRODUCT_ID>S-23</PRODUCT_ID>
+        <MIN_TEMPERATURE>12.0000000</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>15.0000000</MAX_TEMPERATURE>
+        <FLOCCULATION>High</FLOCCULATION>
+        <ATTENUATION>82.0000000</ATTENUATION>
+        <NOTES>Produces fruity, estery notes.</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>Safbrew S-33</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Ale</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Fermentis</LABORATORY>
+        <PRODUCT_ID>S-33</PRODUCT_ID>
+        <MIN_TEMPERATURE>15.0000000</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>20.0000000</MAX_TEMPERATURE>
+        <FLOCCULATION>Powdery</FLOCCULATION>
+        <ATTENUATION>70.0000000</ATTENUATION>
+        <NOTES>General purpose ale yeast with neutral flavor profiles.</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>Safbrew WB-06</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Ale</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Fermentis</LABORATORY>
+        <PRODUCT_ID>WB-06</PRODUCT_ID>
+        <MIN_TEMPERATURE>18.0000000</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>24.0000000</MAX_TEMPERATURE>
+        <FLOCCULATION>Low</FLOCCULATION>
+        <ATTENUATION>86.0000000</ATTENUATION>
+        <NOTES>Subtle estery and phenol flavors - banana and clover.</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>Safbrew BE-256</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Ale</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Fermentis</LABORATORY>
+        <PRODUCT_ID>BE-256</PRODUCT_ID>
+        <MIN_TEMPERATURE>15.0000000</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>20.0000000</MAX_TEMPERATURE>
+        <FLOCCULATION>High</FLOCCULATION>
+        <ATTENUATION>82.0000000</ATTENUATION>
+        <NOTES>Subtle, well-balanced aromas.  Ferments fast.</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>Saflager S-189</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Lager</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Fermentis</LABORATORY>
+        <PRODUCT_ID>S-189</PRODUCT_ID>
+        <MIN_TEMPERATURE>10.000000</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>14.0000000</MAX_TEMPERATURE>
+        <FLOCCULATION>High</FLOCCULATION>
+        <ATTENUATION>84.0000000</ATTENUATION>
+        <NOTES>Popular with commercial breweries - neutral flavor.</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>Danstar Belle Saison</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Ale</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Danstar</LABORATORY>
+        <PRODUCT_ID>Belle Saison</PRODUCT_ID>
+        <MIN_TEMPERATURE>17</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>27</MAX_TEMPERATURE>
+        <FLOCCULATION>Low</FLOCCULATION>
+        <ATTENUATION>92.0000000</ATTENUATION>
+        <NOTES>Belgian strain chosen for Saison beers.</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>Danstar Nottingham</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Ale</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Danstar</LABORATORY>
+        <PRODUCT_ID>Nottingham</PRODUCT_ID>
+        <MIN_TEMPERATURE>16.0000000</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>20.0000000</MAX_TEMPERATURE>
+        <FLOCCULATION>High</FLOCCULATION>
+        <ATTENUATION>80.0000000</ATTENUATION>
+        <NOTES>Slightly estery, almost neutral.</NOTES>
+        <BEST_FOR>British Ales.</BEST_FOR>
+    </YEAST>
+	<YEAST>
+        <NAME>MJ's Bavarian Lager</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Lager</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
+        <PRODUCT_ID>M76</PRODUCT_ID>
+        <MIN_TEMPERATURE>8.0000000</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>14.0000000</MAX_TEMPERATURE>
+        <FLOCCULATION>Medium</FLOCCULATION>
+        <ATTENUATION>76.0000000</ATTENUATION>
+        <NOTES>Suitable for most lager styles. Full, rounded malt character with well-promoted hop flavours.</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>MJ's Bavarian Wheat Yeast</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Wheat</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
+        <PRODUCT_ID>M20</PRODUCT_ID>
+        <MIN_TEMPERATURE>15.0000000</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>30.0000000</MAX_TEMPERATURE>
+        <FLOCCULATION>Medium</FLOCCULATION>
+        <ATTENUATION>70.0000000</ATTENUATION>
+        <NOTES>Suitable for a range of German Weizens as well as Belgian Witbier. Clean, &#8220;yeasty&#8221; aroma. Ideal for beers that are traditionally served cloudy.</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>MJ's Belgian Abbey</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Ale</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
+        <PRODUCT_ID>M47</PRODUCT_ID>
+        <MIN_TEMPERATURE>18.0000000</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>25.0000000</MAX_TEMPERATURE>
+        <FLOCCULATION>High</FLOCCULATION>
+        <ATTENUATION>76.0000000</ATTENUATION>
+        <NOTES>Exceptionally fruity with hugely complex esters.  Highly flocculant.</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>MJ's Belgian Ale Yeast</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Ale</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
+        <PRODUCT_ID>M27</PRODUCT_ID>
+        <MIN_TEMPERATURE>21.1111111</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>32.2222222</MAX_TEMPERATURE>
+        <FLOCCULATION>Medium</FLOCCULATION>
+        <ATTENUATION>72.5000000</ATTENUATION>
+        <NOTES>Exceptional top-fermenting yeast strain creating distinctive beers with spicy, fruity and peppery notes. Ideal for fermentation of Belgian Saison or farmhouse style beers</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>MJ's Belgian Tripel</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Ale</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
+        <PRODUCT_ID>M31</PRODUCT_ID>
+        <MIN_TEMPERATURE>18.0000000</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>28.0000000</MAX_TEMPERATURE>
+        <FLOCCULATION>Medium</FLOCCULATION>
+        <ATTENUATION>81.5000000</ATTENUATION>
+        <NOTES>Fantastic complex marriage of spice, fruity esters, phenolics and alcohol. Attenuative with a high alcohol tolerance making it perfect for a range of Belgian styles.</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>MJ's Belgian Wit</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Wheat</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
+        <PRODUCT_ID>M21</PRODUCT_ID>
+        <MIN_TEMPERATURE>18.0000000</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>25.0000000</MAX_TEMPERATURE>
+        <FLOCCULATION>Low</FLOCCULATION>
+        <ATTENUATION>76.5000000</ATTENUATION>
+        <NOTES>Good balance between fruity esters and warming spice phenolics. Leaves some sweetness and will drop bright if left long enough.</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>MJ's Bohemian Lager Yeast</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Lager</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
+        <PRODUCT_ID>M84</PRODUCT_ID>
+        <MIN_TEMPERATURE>10.0000000</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>15.0000000</MAX_TEMPERATURE>
+        <FLOCCULATION>Medium</FLOCCULATION>
+        <ATTENUATION>69.0000000</ATTENUATION>
+        <NOTES>Characterized by its dry and clean palate. Emphasizes hop character.</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>MJ's California Lager</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Lager</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
+        <PRODUCT_ID>M54</PRODUCT_ID>
+        <MIN_TEMPERATURE>18.0000000</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>20.0000000</MAX_TEMPERATURE>
+        <FLOCCULATION>High</FLOCCULATION>
+        <ATTENUATION>76.5000000</ATTENUATION>
+        <NOTES>A unique lager strain that has the ability to ferment at ale temperatures without the associated off flavours. Extended lagering periods are also not required.</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>MJ's Empire Ale</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Ale</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
+        <PRODUCT_ID>M15</PRODUCT_ID>
+        <MIN_TEMPERATURE>18.0000000</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>22.0000000</MAX_TEMPERATURE>
+        <FLOCCULATION>Medium</FLOCCULATION>
+        <ATTENUATION>72.50000000</ATTENUATION>
+        <NOTES>Full bodied ales with exceptional depth.  Rich dark fruit flavors.</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>MJ's French Saison</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Ale</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
+        <PRODUCT_ID>M29</PRODUCT_ID>
+        <MIN_TEMPERATURE>26.0000000</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>32.2222222</MAX_TEMPERATURE>
+        <FLOCCULATION>Medium</FLOCCULATION>
+        <ATTENUATION>81.00000000</ATTENUATION>
+        <NOTES>Highly attenuative.  Creates distinctive beers with spicy, fruity, and peppery notes.  Ideal for farmhouse ales.</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>MJ's Liberty Bell</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Ale</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
+        <PRODUCT_ID>M36</PRODUCT_ID>
+        <MIN_TEMPERATURE>18.0000000</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>23.0000000</MAX_TEMPERATURE>
+        <FLOCCULATION>High</FLOCCULATION>
+        <ATTENUATION>76.5000000</ATTENUATION>
+        <NOTES>This strain produces light, delicate fruity esters and helps to develop malt character.</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>MJ's Mead</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Ale</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
+        <PRODUCT_ID>M05</PRODUCT_ID>
+        <MIN_TEMPERATURE>15.0000000</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>30.0000000</MAX_TEMPERATURE>
+        <FLOCCULATION>High</FLOCCULATION>
+        <ATTENUATION>81.5000000</ATTENUATION>
+        <NOTES>High ester-producing strain conferring fresh, floral esters, especially when fermented cool. High alcohol and temperature tolerance.</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>MJ's New World Strong Ale</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Ale</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
+        <PRODUCT_ID>M42</PRODUCT_ID>
+        <MIN_TEMPERATURE>16.0000000</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>22.0000000</MAX_TEMPERATURE>
+        <FLOCCULATION>Very High</FLOCCULATION>
+        <ATTENUATION>76.5000000</ATTENUATION>
+        <NOTES>Neutral yeast aroma to ensure the full character of the malts and hops are prominent in each beer.</NOTES>
+    </YEAST>
+    <YEAST>
+        <NAME>MJ's US West Coast Yeast</NAME>
+        <VERSION>1</VERSION>
+        <TYPE>Ale</TYPE>
+        <FORM>Dry</FORM>
+        <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
+        <PRODUCT_ID>M44</PRODUCT_ID>
+        <MIN_TEMPERATURE>15.0000000</MIN_TEMPERATURE>
+        <MAX_TEMPERATURE>23.3333333</MAX_TEMPERATURE>
+        <FLOCCULATION>Medium</FLOCCULATION>
+        <ATTENUATION>73.0000000</ATTENUATION>
+        <NOTES>Allows tangy citrus hop aromas to punch through, while also enhancing toasted and dark malt characters.</NOTES>
+    </YEAST>
+</YEASTS>

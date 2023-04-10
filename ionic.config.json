@@ -1,0 +1,7 @@
+{
+  "name": "Pliny the Helper",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<HOPS>
+    <HOP>
+        <NAME>Ahtanum</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>4.0</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Primarily used for its aromatic characteristics. Mild bitterness. Aromas of flower, citrus and lemon.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Amarillo</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>8.9</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Versatile hop, used for bittering and for aroma. Intense flower and citrus aromas.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Apollo</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>16.2</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Used for bittering. Insane alpha acid content. Notes of lime, grapefruit and pine.</NOTES>
+        <TYPE>Bittering</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Aramis</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>France</ORIGIN>
+        <ALPHA>5.2</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Grassy, flowery and spicy notes, reminescent of the Strisselspalter.</NOTES>
+        <TYPE>Bittering</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Archer</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>UK</ORIGIN>
+        <ALPHA>4.5</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>New english breed. Can be used for its classic english bitterness or for its delicate peach and citrus aromas.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Ariana</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>Germany</ORIGIN>
+        <ALPHA>12.1</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>New german hop. Fruity, mild aroma of berries and sweet fruits with a hint of resin.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Barbe Rouge</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>France</ORIGIN>
+        <ALPHA>9.4</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>French hop. Woody and minty aroma with notes of flowers and citrus.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Belma</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>12.1</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Versatile hop with aromas of pineapple, melon, grapefruit, orange and strawberry.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Bobek</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>Slovenia</ORIGIN>
+        <ALPHA>6.1</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Also known as Styrian Bobek. Pleasant noble hop aromas of grass and pine, with hints of citrus.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Bramling Cross</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>UK</ORIGIN>
+        <ALPHA>5.7</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Rare english hop. Aromas of lemon, blackcurrant and pear.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Bravo</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>15.8</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Bittering hop with resinous notes of pine.</NOTES>
+        <TYPE>Bittering</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Brewers Gold</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>UK</ORIGIN>
+        <ALPHA>6.0</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>English bittering hop with notes of spice and blackcurrant.</NOTES>
+        <TYPE>Bittering</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Calypso</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>14.6</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Despite its aroma-focused origins, it boasts a high alpha acid percentage. Aromas of pear, apple and peach.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Cascade (CH)</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>Switzerland</ORIGIN>
+        <ALPHA>4.2</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Not as citrussy as its american counterpart. Still floral notes of grapefruit and citrus.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Cascade (USA)</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>8.1</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Classic american pale ale hop. Distinctive aromas of grapefruit and citrus.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Celeia</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>Slovenia</ORIGIN>
+        <ALPHA>2.5</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Slovenian aroma hop with low alpha acids and notes of pine and lemon.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Centennial</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>8.7</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Classic american C-hop. Grassy and resinous notes of citrus.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Challenger</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>UK</ORIGIN>
+        <ALPHA>7.4</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Classic english hop with earthy notes of grass and pine.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Chinook</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>11.3</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Classic american C-hop. Good bittering characteristics and strong grapefruit flavour.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Citra</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>12.3</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Classic american C-hop. Good bittering characteristics and strong lime and grapefruit flavour but also hints of tropical fruits.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Cluster</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>7</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>One of the oldest american hops. Clean, slightly floral aromas.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Columbus</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>13.3</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Very high alpha acid content. Aromas of resin, pepper, grapefruit and citrus.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Comet</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>10.2</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Wild american hop. Strong grapefruit and dank resin flavours.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Crystal</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>3</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>American breed from Cascade, Hallertau, Brewers Gold and Early Green. Spicy and woody notes of cinnamon, pepper and muscat.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Delta</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>6.8</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>American breed from Fuggles and Cascade. Features mild and pleasant english aromas crossed with citrus and apple.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Dr. Rudi</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>New Zealand</ORIGIN>
+        <ALPHA>12.0</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Exotic hop with aromas of pine, lemongrass and grass.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Ekuanot</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>12.8</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>High oil content. Intense aromas of tropical fruits.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>El Dorado</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>12.9</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Versatile hop with all sorts of aromas straight ouf of a fruit basket: tropical fruits, peach, apricot, pear, watermelon and cherry.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Ella</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>Australia</ORIGIN>
+        <ALPHA>14.6</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Australian hop with tropical flavours and grapefruit. Delicate notes of star anise.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Eureka</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>17.6</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Insane alpha acid contents. Flavours of citrus, peach and pine.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>First Gold</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>UK</ORIGIN>
+        <ALPHA>7.6</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Versatile english hop with notes of tangerine, orange, cinnamon and mint.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Fuggles</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>UK</ORIGIN>
+        <ALPHA>5.9</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>One of the classic english hops. Earthy aromas of grass and pine.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Galaxy</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>Australia</ORIGIN>
+        <ALPHA>15.6</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>High oil content. Citrus, peach and passionfruit aromas.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Glacier</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>6.4</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Versatile hop with not too much alpha acids. Notes of peach, apricot and citrus.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>East Kent Goldings</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>UK</ORIGIN>
+        <ALPHA>5.4</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Sometimes called the King of english hops. Typical grassy english aromas.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Green Bullet</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>New Zealand</ORIGIN>
+        <ALPHA>12.7</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>High alpha acids yet smooth taste with notes of raisin and citrus.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Hallertau Blanc</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>Germany</ORIGIN>
+        <ALPHA>10.4</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Complex flavour profile with notes of white-wine and fruit, elderflower, grapefruit and lemongrass</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Hallertau Mittelfrüh</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>Germany</ORIGIN>
+        <ALPHA>4.4</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Classic european noble hop. Mild bitter aromas for Lagers.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Hallertau Tradition</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>Germany</ORIGIN>
+        <ALPHA>6.3</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Classic european noble hop. Earty and grassy aromas.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Herkules</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>Germany</ORIGIN>
+        <ALPHA>17.5</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Strong german bittering hop. Notes of melon, pepper and pine.</NOTES>
+        <TYPE>Bittering</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Hersbrucker</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>Germany</ORIGIN>
+        <ALPHA>3.1</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Classic european noble hop. Spicy, grassy aromas.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Horizon</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>11.5</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Versatile hop, yet primarily used for bittering. Floral and citrussy aromas.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Huell Melon</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>Germany</ORIGIN>
+        <ALPHA>8.1</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>New german aroma hop. Sweet flavours of cantaloupe and strawberry.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Kohatu</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>New Zealand</ORIGIN>
+        <ALPHA>4.9</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Intense aroma of tropical fruit and freshly crushed pine needles, it adds a wonderfully fresh character to beer.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Lemondrop</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>5.4</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Sometimes called Super-Cascade. Intense aromas of grapefruit, blackberry, mint and grass.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Liberty</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>5.4</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Similar to Hallertau Mittelfrüh or other european noble hops. Mild, resinous aromas with hints of citrus.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Loral</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>11.3</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>New american hop with aromas of flowers, peppers, citrus and dark fruits.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Magnum</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>Germany</ORIGIN>
+        <ALPHA>12.5</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Clean bittering hop. Subtle citrus flavours.</NOTES>
+        <TYPE>Bittering</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Mandarina Bavaria</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>Germany</ORIGIN>
+        <ALPHA>7.6</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Sweet and fruity tangerine aromas.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Millenium</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>17.6</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Strong bittering hop with hints of pineapple and resin.</NOTES>
+        <TYPE>Bittering</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Mosaic</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>14.7</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Versatile hop with complex but clean flavour characteristics. Notes of mango, pine, citrus and tropical fruits.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Mount Hood</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>4.7</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>An american hop trying to imitate european noble hops. Grassy and spicy notes with a hint of grapefruit.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Nelson Sauvin</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>New Zealand</ORIGIN>
+        <ALPHA>10.6</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Versatile hop mostly used for its white-wine like aromas. Notes of grapes, gooseberry and grapefruit.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Northdown</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>UK</ORIGIN>
+        <ALPHA>6.0</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>British hop with classic english hop aromas. Earthy notes of pine and cedar.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Northern Brewer</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>UK</ORIGIN>
+        <ALPHA>8.6</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Dual-use hop with great smooth bitterness characteristics and typical minty and resinous aromas.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Nugget</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>Germany</ORIGIN>
+        <ALPHA>12.8</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>German dual-use hop with fruity and spicy aromas.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Opal</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>Germany</ORIGIN>
+        <ALPHA>8.3</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Features a clean aroma and flavor profile of spice and citrus with a hint of sweetness.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Pacific Gem</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>New Zealand</ORIGIN>
+        <ALPHA>13.5</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Despite its high alpha acids its high cohumulone content makes its use as a bittering hop problematic. It can, and is, used as an early addition but is more well known for its aroma of oak and blackberry.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Pacific Jade</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>New Zealand</ORIGIN>
+        <ALPHA>11.1</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Smooth, soft bitterness and interesting flavour profile of citrus and cracked pepper.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Pacifica</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>New Zealand</ORIGIN>
+        <ALPHA>3.7</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Low alpha acid hop from New Zealand. Citrusy, spicy, orange and floral aromas.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Perle</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>Germany</ORIGIN>
+        <ALPHA>7.2</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>German dual-use hop and good substitute for Hallertau Mitelfrüh. Notes of mint and pine.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Pilgrim</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>UK</ORIGIN>
+        <ALPHA>10.3</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Versatile english hop. Spicy notes of cedar and honey.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Polaris</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>Germany</ORIGIN>
+        <ALPHA>19.2</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Hop with insane amounts of alpha acid, yet also interesting flavour profile with notes of mint and menthol.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Saaz</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>Czech Republic</ORIGIN>
+        <ALPHA>3.7</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Classic european noble hop. Hoppy, grassy flavours.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Saphir</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>Germany</ORIGIN>
+        <ALPHA>3.5</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>European noble hop with fruity and floral notes of citrus.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Sorachi Ace</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>Japan</ORIGIN>
+        <ALPHA>12.8</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Japanese hop now cultivated in the US. Strong citrus notes with hints of coconut and pepper.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Simcoe</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>13.3</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>This dual purpose hop has funky pine character, making it synonymous with American IPA.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Sterling</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>7.4</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Spicy, grassy aromas with hints of flowers and citrus.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Styrian Goldings</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>Slovenia</ORIGIN>
+        <ALPHA>3.3</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Classic noble hop, mostly used in belgian ales.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Summit</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>15.2</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>High-alpha american hop with classic american aromas of orange, tangerine and grapefruit.</NOTES>
+        <TYPE>Bittering / Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Target</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>UK</ORIGIN>
+        <ALPHA>11.2</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>English bittering hop with good bittering characteristics.</NOTES>
+        <TYPE>Bittering</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Tettnanger</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>Germany</ORIGIN>
+        <ALPHA>4.5</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Classic european noble hop. Hoppy, grassy flavours.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Vic Secret</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>Australia</ORIGIN>
+        <ALPHA>16.4</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>New Australian hop. Intense aromas of pineapple, passionfruit and pine.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Wai-iti</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>New Zealand</ORIGIN>
+        <ALPHA>2.4</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>New Zealand hop. Aromas of freshly squeezed limes, citrus, apricots and peaches.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+    <HOP>
+        <NAME>Willamette</NAME>
+        <VERSION>1</VERSION>
+        <ORIGIN>USA</ORIGIN>
+        <ALPHA>4.3</ALPHA>
+        <USE>Boil</USE>
+        <NOTES>Americas answer to classic english hops. Spicy and flowery aromas.</NOTES>
+        <TYPE>Aroma</TYPE>
+        <FORM>Pellet</FORM>
+    </HOP>
+</HOPS>

@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Details
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="ion-text-center">
+        {{ style.name }}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-xl="6">
+          <ion-card-header>
+            <ion-card-title>
+              Aroma
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{ aroma() }}
+          </ion-card-content>
+          <ion-card-header>
+            <ion-card-title>
+              Appearance
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{ appearance() }}
+          </ion-card-content>
+          <ion-card-header>
+            <ion-card-title>
+              Flavor
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{ flavor() }}
+          </ion-card-content>
+          <ion-card-header>
+            <ion-card-title>
+              Mouthfeel
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{ mouthfeel() }}
+          </ion-card-content>
+        </ion-col>
+        <ion-col size="12" size-xl="6">
+          <ion-card-header>
+            <ion-card-title>
+              Common Ingredients
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{ style.ingredients }}
+          </ion-card-content>
+          <ion-card-header>
+            <ion-card-title>
+              Examples
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{ style.examples }}
+          </ion-card-content>
+          <ion-card-header>
+            <ion-card-title>
+              Parameters
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Original Gravity: {{ style.minOg + ' - ' + style.maxOg}}<br>
+            Final Gravity: {{ style.minFg + ' - ' + style.maxFg}}<br>
+            ABV: {{ style.minAbv + ' - ' + style.maxAbv + ' %'}}<br>
+            Bitterness (IBU): {{ style.minIbu + ' - ' + style.maxIbu}}<br>
+            Color (SRM): {{ style.minColor + ' - ' + style.maxColor}}<br>
+            Fermentation: {{ style.type }}
+          </ion-card-content>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>
+
+
