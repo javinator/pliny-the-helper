@@ -9,7 +9,62 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
-  Create a new recipe!
+  <ion-card>
+    <ion-card-content>
+      <form (ngSubmit)="submit()" ngNativeValidate>
+        <ion-input
+          [(ngModel)]="model.name"
+          name="name"
+          type="text"
+          label="Name"
+          labelPlacement="fixed"
+          required="true"
+        ></ion-input>
+        <ion-select label="Style" (ionChange)="changeStyle($event)" placeholder="Choose Beer Style">
+          <ion-select-option *ngFor="let name of getStylesOptions()" [value]="name">{{ name }}</ion-select-option>
+        </ion-select>
+        <ion-input
+          [(ngModel)]="model.batchSize"
+          name="batchSize"
+          type="number"
+          label="Batch Size"
+          labelPlacement="fixed"
+          required="true"
+          step="0.1"
+        ></ion-input>
+        <ion-input
+          [(ngModel)]="model.boilTime"
+          name="boilTime"
+          type="number"
+          label="Boil Time"
+          labelPlacement="fixed"
+          required="true"
+          step="1"
+        ></ion-input>
+        <ion-input
+          [(ngModel)]="model.efficiency"
+          name="efficiency"
+          type="number"
+          label="Efficiency"
+          labelPlacement="fixed"
+          required="true"
+          step="1"
+        ></ion-input>
+        <ion-input
+          [(ngModel)]="model.brewDate"
+          name="brewDate"
+          type="date"
+          label="Brew Date"
+          labelPlacement="fixed"
+          required="true"
+        ></ion-input>
+        <div class="ion-text-end">
+          <ion-button (click)="navigateBack()" shape="round">Cancel</ion-button>
+          <ion-button type="submit" shape="round">Save</ion-button>
+        </div>
+      </form>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
 
 

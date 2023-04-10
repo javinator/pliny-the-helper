@@ -21,11 +21,13 @@
 </ion-header>
 <ion-content class="ion-padding">
   <ng-container *ngIf="!recipes || recipes.length === 0">
-    <strong>You don't have a recipe yet!</strong>
-    <p><a [routerLink]="'/new-recipe'">Click here to create a new recipe!</a></p>
+    <div class="ion-text-center">
+      <strong>You don't have a recipe yet!</strong>
+      <p><a [routerLink]="'/new-recipe'">Click here to create a new recipe!</a></p>
+    </div>
   </ng-container>
   <ng-container *ngIf="recipes && recipes.length > 0">
-    <recipe-card *ngFor="let recipe of recipes" [name]="recipe.name" [style]="recipe.style.name"
+    <recipe-card *ngFor="let recipe of recipes" [name]="recipe.name" [style]="recipe.style?.name || 'Other'"
                  [color]="recipe.color" [abv]="recipe.ABV" [ibu]="recipe.IBU"
                  [batchSize]="recipe.batchSize" (click)="showEdit(recipe)"></recipe-card>
   </ng-container>

@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {StorageService} from "../../services/storage.service";
 import {XmlReaderService} from "../../services/xml-reader.service";
+import {v4 as uuidv4} from 'uuid';
 
 @Component({
   selector: 'settings-page',
@@ -49,6 +50,7 @@ export class SettingsPage {
   generate() {
     this.storage.addRecipe(
       {
+        uid: uuidv4() as string,
         ABV: Math.round(Math.random() * 25 + 40) / 10,
         FG: 0,
         IBU: Math.round(Math.random() * 40 + 20),
@@ -56,7 +58,7 @@ export class SettingsPage {
         batchSize: 10,
         boilSize: 0,
         boilTime: 0,
-        brewDate: new Date(),
+        brewDate: new Date().toISOString().slice(0, 10),
         brewer: "",
         color: Math.round(Math.random() * 10 + 2),
         efficiency: 0,
@@ -84,7 +86,6 @@ export class SettingsPage {
         miscs: [],
         waters: [],
         yeasts: [],
-        id: 'aaaa',
         name: 'Test',
         version: 1,
         type: 'All Grain',

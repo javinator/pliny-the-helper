@@ -27,27 +27,27 @@ export class AppComponent implements OnInit {
     {
       title: 'Recipes',
       path: '/recipes',
-      icon: 'beer'
+      icon: 'beer-outline'
     },
     {
       title: 'Styles',
       path: '/styles',
-      icon: 'easel'
+      icon: 'easel-outline'
     },
     {
       title: 'Ingredients',
       path: '/styles',
-      icon: 'flask'
+      icon: 'flask-outline'
     },
     {
       title: 'Calculators',
       path: '/styles',
-      icon: 'calculator'
+      icon: 'calculator-outline'
     },
     {
       title: 'Settings',
       path: '/settings',
-      icon: 'settings'
+      icon: 'settings-outline'
     }
   ]
 }

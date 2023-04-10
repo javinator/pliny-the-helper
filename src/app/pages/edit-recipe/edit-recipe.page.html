@@ -1,7 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-button (click)="navigateBack()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
     </ion-buttons>
     <ion-title>
       Edit Recipe
@@ -10,7 +12,9 @@
 </ion-header>
 <ion-content class="ion-padding">
   <ion-card>
-    
+    <ion-card-content>
+      <ion-input (ionBlur)="changeName($event)" type="text" [value]="recipe.name" label="Name"></ion-input>
+    </ion-card-content>
   </ion-card>
 </ion-content>
 
