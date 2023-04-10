@@ -25,11 +25,6 @@ export class AppComponent implements OnInit {
 
   pages = [
     {
-      title: 'Home',
-      path: '/',
-      icon: 'home'
-    },
-    {
       title: 'Recipes',
       path: '/recipes',
       icon: 'beer'

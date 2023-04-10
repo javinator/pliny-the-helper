@@ -3,30 +3,30 @@ import {Routes} from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () => import('./pages/home/home.page').then((m) => m.HomePage),
+    loadComponent: () => import('./pages/recipes/recipes.page').then((m) => m.RecipesPage)
   },
   {
     path: 'recipes',
-    loadComponent: () => import('./pages/recipes/recipes.page').then((m) => m.RecipesPage),
+    redirectTo: ''
   },
   {
     path: 'new-recipe',
-    loadComponent: () => import('./pages/new-recipe/new-recipe.page').then((m) => m.NewRecipePage),
+    loadComponent: () => import('./pages/new-recipe/new-recipe.page').then((m) => m.NewRecipePage)
   },
   {
     path: 'edit-recipe',
-    loadComponent: () => import('./pages/edit-recipe/edit-recipe.page').then((m) => m.EditRecipePage),
+    loadComponent: () => import('./pages/edit-recipe/edit-recipe.page').then((m) => m.EditRecipePage)
   },
   {
     path: 'styles',
-    loadComponent: () => import('./pages/styles/styles.page').then((m) => m.StylesPage),
+    loadComponent: () => import('./pages/styles/styles.page').then((m) => m.StylesPage)
   },
   {
     path: 'style-details',
-    loadComponent: () => import('./pages/styles/details/details.page').then((m) => m.StyleDetailsPage),
+    loadComponent: () => import('./pages/styles/details/details.page').then((m) => m.StyleDetailsPage)
   },
   {
     path: 'settings',
-    loadComponent: () => import('./pages/settings/settings.page').then((m) => m.SettingsPage),
+    loadComponent: () => import('./pages/settings/settings.page').then((m) => m.SettingsPage)
   }
 ];
