@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Ingredients Editor
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-segment [value]="activeTab" (ionChange)="tabChanged($event)">
+    <ion-segment-button value="fermentables">
+      <ion-label>Fermentables</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="hops">
+      <ion-label>Hops</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="yeasts">
+      <ion-label>Yeasts</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="misc">
+      <ion-label>Misc</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <ng-container [ngSwitch]="activeTab">
+    <ng-container *ngSwitchCase="'fermentables'">
+      <fermentables-card *ngFor="let fermentable of fermentables" [fermentable]="fermentable"></fermentables-card>
+    </ng-container>
+    <ng-container *ngSwitchCase="'hops'">
+      <hops-card *ngFor="let hop of hops" [hop]="hop"></hops-card>
+    </ng-container>
+  </ng-container>
+</ion-content>
+
+
+

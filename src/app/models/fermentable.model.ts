@@ -4,7 +4,7 @@ export interface Fermentable extends Ingredient {
   type: 'Grain' | 'Extract' | 'Adjunct',
   yield: number,
   color: number,
-  addAfterBoil: boolean,
   maxInBatch: number,
-  description: string
+  description: string,
+  origin?: string
 }

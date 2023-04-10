@@ -20,7 +20,7 @@ export class RecipesPage {
   }
 
   ionViewWillEnter() {
-    this.storage.getRecipes()?.then((response) => {
+    this.storage.get('recipes')?.then((response) => {
       this.recipes = response;
     });
   }

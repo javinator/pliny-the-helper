@@ -6,6 +6,6 @@ export interface Hop extends Ingredient {
   type: 'Bittering' | 'Aroma' | 'Both',
   form: 'Pellet' | 'Plug' | 'Whole',
   origin: string,
-  substitutes: Array<string>,
-  description: string
+  description: string,
+  substitutes?: Array<string>
 }

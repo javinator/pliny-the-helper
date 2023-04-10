@@ -21,6 +21,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.xmlReader.initStyles();
+    this.xmlReader.initFermentables();
+    this.xmlReader.initHops();
   }
 
   pages = [
@@ -36,7 +38,7 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'Ingredients',
-      path: '/styles',
+      path: '/ingredients',
       icon: 'flask-outline'
     },
     {

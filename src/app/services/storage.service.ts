@@ -3,6 +3,8 @@ import {Storage} from '@ionic/storage-angular';
 import {Recipe} from "../models/recipe.model";
 import {BeerStyle} from "../models/beer-style.model";
 import {Settings} from "../models/settings.model";
+import {Fermentable} from "../models/fermentable.model";
+import {Hop} from "../models/hop.model";
 
 @Injectable({
   providedIn: 'root'
@@ -27,8 +29,8 @@ export class StorageService {
     this._storage = await this.storage.create();
   }
 
-  public getRecipes() {
-    return this._storage?.get('recipes')
+  public get(key: string) {
+    return this._storage?.get(key)
   }
 
   public addRecipe(recipe: Recipe) {
@@ -63,16 +65,18 @@ export class StorageService {
     this._storage?.set('styles', styles);
   }
 
-  public getStyles() {
-    return this._storage?.get('styles');
+  public setFermentables(fermentables: Fermentable[]) {
+    this._storage?.remove('fermentables');
+    this._storage?.set('fermentables', fermentables);
+  }
+
+  public setHops(hops: Hop[]) {
+    this._storage?.remove('hops');
+    this._storage?.set('hops', hops);
   }
 
   public setSettings(settings: Settings) {
     return this._storage?.set('settings', settings);
-  }
-
-  public getSettings() {
-    return this._storage?.get('settings');
   }
 
   public clearDb() {

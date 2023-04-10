@@ -45,14 +45,14 @@ export class NewRecipePage implements OnInit {
       OG: 0,
       color: 0
     }
-    this.storage.getSettings()?.then((response) => {
+    this.storage.get('settings')?.then((response) => {
       this.settings = response;
       this.model.batchSize = this.settings!.batchSize;
       this.model.boilTime = this.settings!.boilTime;
       this.model.efficiency = this.settings!.efficiency;
       this.model.brewer = this.settings!.brewer;
     });
-    this.storage.getStyles()?.then((response) => {
+    this.storage.get('styles')?.then((response) => {
       this.styles = response;
     });
   }

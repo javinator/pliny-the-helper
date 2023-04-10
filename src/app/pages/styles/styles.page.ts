@@ -20,7 +20,7 @@ export class StylesPage {
   styles?: BeerStyle[];
 
   ionViewWillEnter() {
-    this.storage.getStyles()?.then((response) => {
+    this.storage.get('styles')?.then((response) => {
       this.styles = response;
     });
   }
