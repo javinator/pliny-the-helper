@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Calculators
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-segment [value]="activeTab" (ionChange)="tabChanged($event)">
+    <ion-segment-button value="abv">
+      <ion-label>ABV Calculator</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="hydrometer">
+      <ion-label>Hydrometer Adjustment</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="refractometer">
+      <ion-label>Refractometer Adjustment</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="temperature">
+      <ion-label>Strike Temperature</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <ng-container [ngSwitch]="activeTab">
+    <abv-card *ngSwitchCase="'abv'"></abv-card>
+    <hydrometer-card *ngSwitchCase="'hydrometer'"></hydrometer-card>
+    <refractometer-card *ngSwitchCase="'refractometer'"></refractometer-card>
+    <temperature-card *ngSwitchCase="'temperature'"></temperature-card>
+  </ng-container>
+</ion-content>
+
+
+

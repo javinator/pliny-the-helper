@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'Calculators',
-      path: '/styles',
+      path: '/calculators',
       icon: 'calculator-outline'
     },
     {
