@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Storage} from '@ionic/storage-angular';
-import {Recipe} from "../pages/models/recipe.model";
-import {BeerStyle} from "../pages/models/beer-style.model";
+import {Recipe} from "../models/recipe.model";
+import {BeerStyle} from "../models/beer-style.model";
 
 @Injectable({
   providedIn: 'root'

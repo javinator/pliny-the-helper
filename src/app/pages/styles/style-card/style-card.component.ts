@@ -1,6 +1,6 @@
 import {Component, Input} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
-import {BeerStyle} from "../../models/beer-style.model";
+import {BeerStyle} from "../../../models/beer-style.model";
 
 @Component({
   selector: 'style-card',

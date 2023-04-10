@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
-import {Recipe} from "../models/recipe.model";
+import {Recipe} from "../../models/recipe.model";
 import {Router} from "@angular/router";
 
 @Component({

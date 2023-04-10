@@ -13,7 +13,6 @@ export interface MashProfile {
   notes: string,
   equipAdjust: boolean,
   id: number,
-  ownerId: number,
   mashType: 'Infusion' | 'Temperature' | 'Decoction' | 'BIAB',
   spargeType: 'Batch' | 'Fly' | 'BIAB'
 }

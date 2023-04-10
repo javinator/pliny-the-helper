@@ -3,7 +3,7 @@ import {StorageService} from "./storage.service";
 import {HttpClient} from "@angular/common/http";
 
 import * as xml2js from 'xml2js';
-import {BeerStyle} from "../pages/models/beer-style.model";
+import {BeerStyle} from "../models/beer-style.model";
 
 @Injectable({
   providedIn: 'root',

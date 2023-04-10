@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
-import {Recipe} from "../models/recipe.model";
+import {Recipe} from "../../models/recipe.model";
 import {NgForOf, NgIf} from "@angular/common";
 import {Router, RouterLink} from "@angular/router";
 import {StorageService} from "../../services/storage.service";

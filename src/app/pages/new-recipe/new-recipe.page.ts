@@ -42,7 +42,6 @@ export class NewRecipePage {
           notes: '',
           equipAdjust: false,
           id: 1,
-          ownerId: 1,
           mashType: 'Infusion',
           spargeType: 'Batch'
         },

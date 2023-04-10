@@ -11,7 +11,6 @@ export interface MashStep {
   description: string,
   waterToGrainRatio: number,
   decoctAmount: number,
-  ownerId: number,
   id: number,
   order: number,
   calcInfuseTemp: number,
