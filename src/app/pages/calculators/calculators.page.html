@@ -10,17 +10,21 @@
 </ion-header>
 <ion-content class="ion-padding">
   <ion-segment [value]="activeTab" (ionChange)="tabChanged($event)">
-    <ion-segment-button value="abv">
-      <ion-label>ABV Calculator</ion-label>
+    <ion-segment-button value="abv" layout="icon-start">
+      <ion-icon src="/assets/icon/percent.svg"></ion-icon>
+      <ion-label class="ion-hide-xl-down">ABV Calculator</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="hydrometer">
-      <ion-label>Hydrometer Adjustment</ion-label>
+    <ion-segment-button value="hydrometer" layout="icon-start">
+      <ion-icon name="water"></ion-icon>
+      <ion-label class="ion-hide-xl-down">Hydrometer Adjustment</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="refractometer">
-      <ion-label>Refractometer Adjustment</ion-label>
+    <ion-segment-button value="refractometer" layout="icon-start">
+      <ion-icon name="eyedrop"></ion-icon>
+      <ion-label class="ion-hide-xl-down">Refractometer Adjustment</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="temperature">
-      <ion-label>Strike Temperature</ion-label>
+    <ion-segment-button value="temperature" layout="icon-start">
+      <ion-icon name="thermometer"></ion-icon>
+      <ion-label class="ion-hide-xl-down">Strike Temperature</ion-label>
     </ion-segment-button>
   </ion-segment>
   <ng-container [ngSwitch]="activeTab">

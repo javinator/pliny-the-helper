@@ -10,17 +10,21 @@
 </ion-header>
 <ion-content class="ion-padding">
   <ion-segment [value]="activeTab" (ionChange)="tabChanged($event)">
-    <ion-segment-button value="fermentables">
-      <ion-label>Fermentables</ion-label>
+    <ion-segment-button value="fermentables" layout="icon-start">
+      <ion-icon src="/assets/icon/malt.svg"></ion-icon>
+      <ion-label class="ion-hide-xl-down">Fermentables</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="hops">
-      <ion-label>Hops</ion-label>
+    <ion-segment-button value="hops" layout="icon-start">
+      <ion-icon src="/assets/icon/hops.svg"></ion-icon>
+      <ion-label class="ion-hide-xl-down">Hops</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="yeasts">
-      <ion-label>Yeasts</ion-label>
+    <ion-segment-button value="yeasts" layout="icon-start">
+      <ion-icon src="/assets/icon/yeast.svg"></ion-icon>
+      <ion-label class="ion-hide-xl-down">Yeasts</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="misc">
-      <ion-label>Misc</ion-label>
+    <ion-segment-button value="misc" layout="icon-start">
+      <ion-icon src="/assets/icon/chemistry.svg"></ion-icon>
+      <ion-label class="ion-hide-xl-down">Misc</ion-label>
     </ion-segment-button>
   </ion-segment>
   <ng-container [ngSwitch]="activeTab">
