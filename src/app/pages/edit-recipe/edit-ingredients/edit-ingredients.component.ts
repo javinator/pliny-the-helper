@@ -170,7 +170,7 @@ export class EditIngredientsComponent implements OnInit {
   }
 
   setYeastAttenuation(event: any) {
-    this.newYeast!.attenuation = event.detail.value / 100;
+    this.newYeast!.attenuation = event.detail.value;
   }
 
   addYeast() {

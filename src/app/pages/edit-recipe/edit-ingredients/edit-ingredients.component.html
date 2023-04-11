@@ -93,10 +93,10 @@
       <ion-item *ngFor="let yeast of recipe.yeasts">
         {{ yeast.name }}
         <ion-buttons slot="end">
-          <ion-button>
+          <ion-button (click)="editYeast(yeast)">
             <ion-icon name="pencil" slot="icon-only"></ion-icon>
           </ion-button>
-          <ion-button>
+          <ion-button (click)="removeYeast(yeast)">
             <ion-icon name="trash" slot="icon-only"></ion-icon>
           </ion-button>
         </ion-buttons>
