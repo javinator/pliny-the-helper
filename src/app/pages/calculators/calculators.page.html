@@ -22,16 +22,16 @@
       <ion-icon name="eyedrop"></ion-icon>
       <ion-label class="ion-hide-xl-down">Refractometer Adjustment</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="temperature" layout="icon-start">
-      <ion-icon name="thermometer"></ion-icon>
-      <ion-label class="ion-hide-xl-down">Strike Temperature</ion-label>
+    <ion-segment-button value="conversions" layout="icon-start">
+      <ion-icon name="color-wand"></ion-icon>
+      <ion-label class="ion-hide-xl-down">Conversions</ion-label>
     </ion-segment-button>
   </ion-segment>
   <ng-container [ngSwitch]="activeTab">
     <abv-card *ngSwitchCase="'abv'"></abv-card>
     <hydrometer-card *ngSwitchCase="'hydrometer'"></hydrometer-card>
     <refractometer-card *ngSwitchCase="'refractometer'"></refractometer-card>
-    <temperature-card *ngSwitchCase="'temperature'"></temperature-card>
+    <conversion-card *ngSwitchCase="'conversions'"></conversion-card>
   </ng-container>
 </ion-content>
 

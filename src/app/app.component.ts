@@ -23,6 +23,8 @@ export class AppComponent implements OnInit {
     this.xmlReader.initStyles();
     this.xmlReader.initFermentables();
     this.xmlReader.initHops();
+    this.xmlReader.initYeasts();
+    this.xmlReader.initMiscs();
   }
 
   pages = [

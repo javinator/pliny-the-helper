@@ -22,7 +22,7 @@
       <ion-icon src="/assets/icon/yeast.svg"></ion-icon>
       <ion-label class="ion-hide-xl-down">Yeasts</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="misc" layout="icon-start">
+    <ion-segment-button value="miscs" layout="icon-start">
       <ion-icon src="/assets/icon/chemistry.svg"></ion-icon>
       <ion-label class="ion-hide-xl-down">Misc</ion-label>
     </ion-segment-button>
@@ -33,6 +33,12 @@
     </ng-container>
     <ng-container *ngSwitchCase="'hops'">
       <hops-card *ngFor="let hop of hops" [hop]="hop"></hops-card>
+    </ng-container>
+    <ng-container *ngSwitchCase="'yeasts'">
+      <yeasts-card *ngFor="let yeast of yeasts" [yeast]="yeast"></yeasts-card>
+    </ng-container>
+    <ng-container *ngSwitchCase="'miscs'">
+      <miscs-card *ngFor="let misc of miscs" [misc]="misc"></miscs-card>
     </ng-container>
   </ng-container>
 </ion-content>

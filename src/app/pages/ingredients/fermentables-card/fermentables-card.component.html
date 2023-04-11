@@ -3,6 +3,12 @@
     <ion-card-title>{{ fermentable.name }}</ion-card-title>
   </ion-card-header>
   <ion-card-content>
-    {{ fermentable.description }}
+    <p class="ion-margin-bottom">
+      {{ fermentable.description }}
+    </p>
+    <p class="ion-margin-bottom">&nbsp;</p>
+    <p class="ion-margin-top">
+      Color: {{ fermentable.color }} °L
+    </p>
   </ion-card-content>
 </ion-card>

@@ -6,6 +6,8 @@ import * as xml2js from 'xml2js';
 import {BeerStyle} from "../models/beer-style.model";
 import {Fermentable} from "../models/fermentable.model";
 import {Hop} from "../models/hop.model";
+import {Yeast} from "../models/yeast.model";
+import {Misc} from "../models/misc.model";
 
 @Injectable({
   providedIn: 'root',
@@ -141,6 +143,85 @@ export class XmlReaderService {
             origin: item.ORIGIN?.[0],
             description: item.NOTES[0],
             version: item.VERSION[0]
+          });
+        }
+        resolve(arr);
+      });
+    });
+  }
+
+  initYeasts() {
+    this.http
+      .get("/assets/xml/yeasts.xml", {responseType: 'text'})
+      .subscribe((xml) => {
+        this.parseXMLtoYeasts(xml)
+          .then((data) => {
+            this.storage.setYeasts(data);
+          });
+      });
+  }
+
+  private parseXMLtoYeasts(data: string): Promise<Yeast[]> {
+    return new Promise(resolve => {
+      var k: string | number,
+        arr: Yeast[] = [],
+        parser = new xml2js.Parser(
+          {
+            trim: true,
+            explicitArray: true
+          });
+      parser.parseString(data, function (err, result) {
+        var obj = result.YEASTS;
+        for (k in obj.YEAST) {
+          var item = obj.YEAST[k];
+          arr.push({
+            name: item.NAME[0],
+            version: item.VERSION[0],
+            type: item.TYPE[0],
+            form: item.FORM[0],
+            lab: item.LABORATORY[0],
+            productId: item.PRODUCT_ID[0],
+            description: item.NOTES[0],
+            minTemp: item.MIN_TEMPERATURE[0],
+            maxTemp: item.MAX_TEMPERATURE[0],
+            attenuation: item.ATTENUATION[0]
+          });
+        }
+        resolve(arr);
+      });
+    });
+  }
+
+  initMiscs() {
+    this.http
+      .get("/assets/xml/miscs.xml", {responseType: 'text'})
+      .subscribe((xml) => {
+        this.parseXMLtoMiscs(xml)
+          .then((data) => {
+            this.storage.setMiscs(data);
+          });
+      });
+  }
+
+  private parseXMLtoMiscs(data: string): Promise<Misc[]> {
+    return new Promise(resolve => {
+      var k: string | number,
+        arr: Misc[] = [],
+        parser = new xml2js.Parser(
+          {
+            trim: true,
+            explicitArray: true
+          });
+      parser.parseString(data, function (err, result) {
+        var obj = result.MISCS;
+        for (k in obj.MISC) {
+          var item = obj.MISC[k];
+          arr.push({
+            name: item.NAME[0],
+            version: item.VERSION[0],
+            type: item.TYPE[0],
+            use: item.USE[0],
+            description: item.NOTES[0]
           });
         }
         resolve(arr);

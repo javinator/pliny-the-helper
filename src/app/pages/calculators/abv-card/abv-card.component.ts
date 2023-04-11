@@ -1,6 +1,7 @@
 import {Component} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
 import {DecimalPipe} from "@angular/common";
+import {CalculatorUtil} from "../../../utils/calculator.utils";
 
 @Component({
   selector: 'abv-card',
@@ -22,7 +23,7 @@ export class AbvCardComponent {
 
   abv() {
     if (this.og && this.fg) {
-      return (1.05 / 0.788) * ((this.og - this.fg) / this.fg) * 100
+      return CalculatorUtil.abv(this.og, this.fg);
     } else {
       return 0;
     }

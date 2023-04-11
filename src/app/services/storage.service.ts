@@ -5,6 +5,8 @@ import {BeerStyle} from "../models/beer-style.model";
 import {Settings} from "../models/settings.model";
 import {Fermentable} from "../models/fermentable.model";
 import {Hop} from "../models/hop.model";
+import {Yeast} from "../models/yeast.model";
+import {Misc} from "../models/misc.model";
 
 @Injectable({
   providedIn: 'root'
@@ -73,6 +75,16 @@ export class StorageService {
   public setHops(hops: Hop[]) {
     this._storage?.remove('hops');
     this._storage?.set('hops', hops);
+  }
+
+  public setYeasts(yeasts: Yeast[]) {
+    this._storage?.remove('yeasts');
+    this._storage?.set('yeasts', yeasts);
+  }
+
+  public setMiscs(miscs: Misc[]) {
+    this._storage?.remove('miscs');
+    this._storage?.set('miscs', miscs);
   }
 
   public setSettings(settings: Settings) {

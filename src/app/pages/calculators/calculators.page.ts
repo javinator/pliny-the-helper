@@ -5,14 +5,14 @@ import {NgForOf, NgIf, NgSwitch, NgSwitchCase} from "@angular/common";
 import {HydrometerCardComponent} from "./hydrometer-card/hydrometer-card.component";
 import {StorageService} from "../../services/storage.service";
 import {RefractometerCardComponent} from "./refractometer-card/refractometer-card.component";
-import {TemperatureCardComponent} from "./temperature-card/temperature-card.component";
+import {ConversionCardComponent} from "./conversion-card/conversion-card.component";
 
 @Component({
   selector: 'calculators-page',
   templateUrl: 'calculators.page.html',
   styleUrls: ['../../app.component.scss'],
   standalone: true,
-  imports: [IonicModule, AbvCardComponent, NgIf, NgForOf, NgSwitchCase, NgSwitch, HydrometerCardComponent, RefractometerCardComponent, TemperatureCardComponent]
+  imports: [IonicModule, AbvCardComponent, NgIf, NgForOf, NgSwitchCase, NgSwitch, HydrometerCardComponent, RefractometerCardComponent, ConversionCardComponent]
 })
 export class CalculatorsPage {
   constructor(private storage: StorageService) {

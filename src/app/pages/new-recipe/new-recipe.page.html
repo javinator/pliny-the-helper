@@ -17,10 +17,11 @@
           name="name"
           type="text"
           label="Name"
-          labelPlacement="fixed"
+          labelPlacement="floating"
           required="true"
         ></ion-input>
-        <ion-select label="Style" (ionChange)="changeStyle($event)" placeholder="Choose Beer Style">
+        <ion-select label="Style" label-placement="floating" (ionChange)="changeStyle($event)"
+                    placeholder="Choose Beer Style">
           <ion-select-option *ngFor="let name of getStylesOptions()" [value]="name">{{ name }}</ion-select-option>
         </ion-select>
         <ion-input
@@ -28,7 +29,7 @@
           name="batchSize"
           type="number"
           label="Batch Size"
-          labelPlacement="fixed"
+          labelPlacement="floating"
           required="true"
           step="0.1"
         ></ion-input>
@@ -37,7 +38,7 @@
           name="boilTime"
           type="number"
           label="Boil Time"
-          labelPlacement="fixed"
+          labelPlacement="floating"
           required="true"
           step="1"
         ></ion-input>
@@ -46,7 +47,7 @@
           name="efficiency"
           type="number"
           label="Efficiency"
-          labelPlacement="fixed"
+          labelPlacement="floating"
           required="true"
           step="1"
         ></ion-input>
@@ -55,7 +56,7 @@
           name="brewDate"
           type="date"
           label="Brew Date"
-          labelPlacement="fixed"
+          labelPlacement="floating"
           required="true"
         ></ion-input>
         <div class="ion-text-end">

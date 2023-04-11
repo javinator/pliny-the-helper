@@ -4,6 +4,10 @@ import {Recipe} from "../../models/recipe.model";
 import {Router} from "@angular/router";
 import {StorageService} from "../../services/storage.service";
 import {Location} from "@angular/common";
+import {Fermentable} from "../../models/fermentable.model";
+import {Hop} from "../../models/hop.model";
+import {Yeast} from "../../models/yeast.model";
+import {Misc} from "../../models/misc.model";
 
 @Component({
   selector: 'edit-recipe-page',
@@ -18,6 +22,11 @@ export class EditRecipePage {
   }
 
   recipe!: Recipe;
+
+  fermentables?: Fermentable[];
+  hops?: Hop[];
+  yeasts?: Yeast[];
+  miscs?: Misc[];
 
   navigateBack() {
     this.router.navigate(['recipes']);

@@ -3,15 +3,15 @@
     <ion-card-title>ABV Calculator</ion-card-title>
   </ion-card-header>
   <ion-card-content>
-    <ion-input type="number" step="0.01" (ionInput)="changeOg($event)" label="Original Gravity"
-               placeholder="1.050" label-placement="fixed"></ion-input>
-    <ion-input type="number" step="0.01" (ionInput)="changeFg($event)" label="Final Gravity"
-               placeholder="1.011" label-placement="fixed"></ion-input>
+    <ion-input type="number" step="0.001" (ionInput)="changeOg($event)" label="Original Gravity"
+               placeholder="1.050" label-placement="floating"></ion-input>
+    <ion-input type="number" step="0.001" (ionInput)="changeFg($event)" label="Final Gravity"
+               placeholder="1.011" label-placement="floating"></ion-input>
     <p class="ion-padding-top">
-      <strong>Alcohol by Volume </strong> {{ abv() | number:'1.2-2'}} %
+      <strong>Alcohol by Volume: </strong> {{ abv() | number:'1.2-2'}} %
     </p>
     <p class="ion-padding-top">
-      <strong>Apparent attenuation </strong> {{ attenuation() | number:'2.1-1'}} %
+      <strong>Apparent attenuation: </strong> {{ attenuation() | number:'1.1-1'}} %
     </p>
   </ion-card-content>
 </ion-card>

@@ -6,8 +6,8 @@ export interface Yeast extends Ingredient {
   minTemp: number,
   maxTemp: number,
   attenuation: number,
-  notes: string,
-  bestFor: string,
+  description: string,
   productId: string,
-  lab: string
+  lab: string,
+  bestFor?: string
 }

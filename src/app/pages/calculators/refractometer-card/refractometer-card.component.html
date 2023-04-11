@@ -3,6 +3,20 @@
     <ion-card-title>Refractometer Adjustment</ion-card-title>
   </ion-card-header>
   <ion-card-content>
-    ...
+    <ion-select label="Units" label-placement="floating" [value]="unit" (ionChange)="changeUnit($event)">
+      <ion-select-option value="gravity">Gravity</ion-select-option>
+      <ion-select-option value="brix">Brix</ion-select-option>
+    </ion-select>
+    <ion-input type="number" label="Measured OG" label-placement="floating" (ionChange)="changeOg($event)"></ion-input>
+    <ion-input type="number" label="Measured FG" label-placement="floating" (ionChange)="changeFg($event)"></ion-input>
+    <p class="ion-padding-top">
+      <strong>Corrected FG: </strong> {{ calcGravity() | number:'1.3-3'}}
+    </p>
+    <p class="ion-padding-top">
+      <strong>Calculated ABV: </strong> {{ abv() | number:'1.2-2'}} %
+    </p>
+    <p class="ion-padding-top">
+      <strong>Apparent attenuation: </strong> {{ attenuation() | number:'1.1-1'}} %
+    </p>
   </ion-card-content>
 </ion-card>
