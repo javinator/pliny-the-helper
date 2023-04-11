@@ -62,8 +62,52 @@ export class SettingsPage {
         brewer: "",
         color: Math.round(Math.random() * 10 + 2),
         efficiency: 0,
-        fermentables: [],
-        hops: [],
+        fermentables: [
+          {
+            name: 'Pale Ale',
+            version: 1,
+            type: 'Grain',
+            yield: 80,
+            color: 3,
+            description: 'Base malt for english pale ales. Slight nutty flavour. Up to 100%',
+            amount: 1.5
+          },
+          {
+            name: 'Biscuit Malt',
+            version: 1,
+            type: 'Grain',
+            yield: 79,
+            color: 12,
+            description: 'Very lightly roasted malt, gives bread and cookie flavour. Up to 25%',
+            amount: 0.75
+          }
+        ],
+        hops: [
+          {
+            name: 'Cascade',
+            version: 1,
+            alpha: 7.7,
+            amount: 0.025,
+            time: 60,
+            use: 'Boil',
+            type: 'Bittering',
+            form: 'Pellet',
+            origin: 'USA',
+            description: 'Classic american pale ale hop. Distinctive aromas of grapefruit and citrus.'
+          },
+          {
+            name: 'Cascade',
+            version: 1,
+            alpha: 7.7,
+            amount: 0.025,
+            time: 15,
+            use: 'Boil',
+            type: 'Aroma',
+            form: 'Pellet',
+            origin: 'USA',
+            description: 'Classic american pale ale hop. Distinctive aromas of grapefruit and citrus.'
+          }
+        ],
         mashProfile: {
           name: '',
           version: 0,
@@ -85,7 +129,20 @@ export class SettingsPage {
         measuredVol: 0,
         miscs: [],
         waters: [],
-        yeasts: [],
+        yeasts: [
+          {
+            name: 'MJ\'s West Coast',
+            version: 1,
+            type: 'Ale',
+            form: 'Dry',
+            minTemp: 16,
+            maxTemp: 24,
+            attenuation: 76.5,
+            lab: 'Mangrove Jack\'s',
+            productId: 'M44',
+            description: 'Allows tangy citrus hop aromas to punch through, while also enhancing toasted and dark malt characters.'
+          }
+        ],
         name: 'Test',
         version: 1,
         type: 'All Grain',

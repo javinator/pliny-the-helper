@@ -18,4 +18,12 @@ export class CalculatorUtil {
   static fahrenheitToCelsius(temp: number) {
     return (temp - 32) / 1.8;
   }
+
+  static kilosToPounds(kilo: number) {
+    return kilo * 2.204;
+  }
+
+  static litersToGallons(liter: number) {
+    return liter * 0.264172052
+  }
 }

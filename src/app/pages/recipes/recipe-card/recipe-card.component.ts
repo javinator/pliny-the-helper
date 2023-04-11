@@ -1,11 +1,12 @@
 import {Component, Input} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
+import {DecimalPipe} from "@angular/common";
 
 @Component({
   selector: 'recipe-card',
   templateUrl: 'recipe-card.component.html',
   standalone: true,
-  imports: [IonicModule],
+  imports: [IonicModule, DecimalPipe],
 })
 export class RecipeCardComponent {
   @Input()

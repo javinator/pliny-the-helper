@@ -7,15 +7,15 @@ Ionic based multiplatform brew-helper.
 Pliny the Helper is an app to help a brewmaster organize and create recipes. It is compatible with the open BeerXML
 standard.
 
-### Formulas
+## Formulas
 
-#### ABV
+### ABV
 
 For calculating the ABV I used the following formula:
 
 ABV = (76.08 * (og-fg) / (1.775-og)) * (fg / 0.794)
 
-#### Plato/Brix/SG
+### Plato/Brix/SG
 
 For converting specifig gravity to Plato/Brix I use the following formula:
 
@@ -26,6 +26,14 @@ For converting Brix to specific gravity the following was used:
 SG = (B / (258.6 - ((B / 258.2) * 227.1))) + 1
 
 ***Note:*** *For home brewing purposes Brix and Plato are essentially interchangeable (same out to 3 decimal places).*
+
+### Color
+
+I use the Morey Equation to calculate color:
+
+MCU = (Lovibond * GrainWeight_lbs)/BatchSize_gallons
+
+SRM = 1.4922 * (MCU ^ 0.6859)
 
 ### Links
 

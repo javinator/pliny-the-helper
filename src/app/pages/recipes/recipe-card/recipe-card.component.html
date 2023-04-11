@@ -9,8 +9,8 @@
         <ion-card-subtitle>{{ style }}</ion-card-subtitle>
       </ion-col>
       <ion-col class="ion-text-end">
-        {{ abv + ' %' }}<br>
-        {{ ibu + ' IBU' }}<br>
+        {{ abv | number:'1.0-2'}} %<br>
+        {{ ibu  | number:'1.0-1' }} IBU<br>
         {{ batchSize + ' L'}}
       </ion-col>
     </ion-row>
