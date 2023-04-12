@@ -190,7 +190,7 @@
         label-placement="floating"
         placeholder="g"
         [disabled]="!newHop"
-        [value]="newHop?.amount"
+        [value]="getHopGrams()"
         (ionChange)="setHopAmount($event)">
       </ion-input>
       <ion-input
@@ -247,9 +247,9 @@
         type="number"
         label="Attenuation"
         label-placement="floating"
-        placeholder="g"
+        placeholder="%"
         [disabled]="!newYeast"
-        [value]="newYeast?.attenuation | number:'1.0.1'"
+        [value]="newYeast?.attenuation"
         (ionChange)="setYeastAttenuation($event)">
       </ion-input>
     </ion-content>

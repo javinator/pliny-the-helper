@@ -39,6 +39,8 @@ export class EditIngredientsComponent implements OnInit {
   newMisc?: Misc;
   newYeast?: Yeast;
 
+  isEdit = false;
+
   ngOnInit() {
     this.storage.get('fermentables')?.then((response) => {
       this.fermentables = response;
@@ -156,6 +158,10 @@ export class EditIngredientsComponent implements OnInit {
     return this.hops.find((item) => item.name === this.newHop?.name);
   }
 
+  getHopGrams() {
+    return this.newHop?.amount ? this.newHop.amount * 1000 : undefined;
+  }
+
   openYeast() {
     this.addYeastOpen = true;
   }
@@ -205,5 +211,6 @@ function calculateRecipe(recipe: Recipe): Recipe {
   recipe.FG = RecipeUtil.calculateFg(recipe);
   recipe.ABV = CalculatorUtil.abv(recipe.OG, recipe.FG);
   recipe.color = RecipeUtil.calculateColor(recipe);
+  recipe.IBU = RecipeUtil.calculateBitterness(recipe);
   return recipe;
 }

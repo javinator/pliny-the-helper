@@ -23,6 +23,10 @@ export class CalculatorUtil {
     return kilo * 2.204;
   }
 
+  static kilosToOunces(kilo: number) {
+    return kilo * 35.2739619;
+  }
+
   static litersToGallons(liter: number) {
     return liter * 0.264172052
   }

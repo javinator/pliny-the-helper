@@ -14,7 +14,7 @@ export interface Recipe {
   style?: BeerStyle,
   brewer?: string,
   batchSize: number,
-  boilSize?: number,
+  boilSize: number,
   boilTime: number,
   efficiency: number,
   hops: Array<Hop>,

@@ -30,6 +30,7 @@ export class NewRecipePage implements OnInit {
       name: '',
       batchSize: 0,
       boilTime: 0,
+      boilSize: 0,
       efficiency: 0,
       brewDate: new Date().toISOString().slice(0, 10),
       fermentables: [],
@@ -54,6 +55,7 @@ export class NewRecipePage implements OnInit {
     });
     this.storage.get('styles')?.then((response) => {
       this.styles = response;
+      this.styles?.sort((a, b) => a.name.localeCompare(b.name))
     });
   }
 
@@ -70,6 +72,7 @@ export class NewRecipePage implements OnInit {
   }
 
   submit() {
+    this.model.boilSize = this.model.batchSize * 1.1;
     this.storage.addRecipe(this.model);
     this.router.navigate(['edit-recipe'], {state: {recipe: this.model}});
   }
