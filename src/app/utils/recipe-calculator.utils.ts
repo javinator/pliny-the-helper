@@ -1,6 +1,7 @@
 import {Recipe} from "../models/recipe.model";
 import {CalculatorUtil} from "./calculator.utils";
 import {Hop} from "../models/hop.model";
+import {Fermentable} from "../models/fermentable.model";
 
 export class RecipeUtil {
   static calculateOg(recipe: Recipe): number {
@@ -11,6 +12,12 @@ export class RecipeUtil {
       }
     })
     return 1 + (gu / CalculatorUtil.litersToGallons(recipe.batchSize) * recipe.efficiency) / 1000;
+  }
+
+  static getFermentablePercentage(item: Fermentable, recipe: Recipe) {
+    let total = 0;
+    recipe.fermentables.forEach((item) => total += Number(item.amount));
+    return item.amount! / total * 100;
   }
 
   static calculateFg(recipe: Recipe): number {
@@ -32,10 +39,14 @@ export class RecipeUtil {
   static calculateBitterness(recipe: Recipe): number {
     let ibu = 0;
     recipe.hops.forEach((hop) => {
-      const au = hop.alpha * hopUtilization(recipe, hop) / 100;
-      ibu += useFactor(hop) * (au * CalculatorUtil.kilosToOunces(hop.amount!) * 7490) / CalculatorUtil.litersToGallons(recipe.boilSize);
+      ibu += this.calculatePerHopIbu(hop, recipe);
     });
     return ibu;
+  }
+
+  static calculatePerHopIbu(hop: Hop, recipe: Recipe) {
+    const au = hop.alpha * hopUtilization(recipe, hop) / 100;
+    return useFactor(hop) * (au * CalculatorUtil.kilosToOunces(hop.amount!) * 7490) / CalculatorUtil.litersToGallons(recipe.boilSize);
   }
 }
 

@@ -8,15 +8,19 @@
           </ion-button>
         </ion-buttons>
         <ion-label class="ion-padding-start">
-          Fermentables
+          <h1>Fermentables</h1>
         </ion-label>
       </ion-list-header>
-      <ion-item *ngFor="let fermentable of recipe.fermentables">
-        {{ fermentable.name }}, {{ fermentable.amount | number:'1.0-3'}} kg
+      <ion-item *ngFor="let fermentable of recipe.fermentables" button (click)="editFermentable(fermentable)">
+        <ion-label>
+          {{ fermentable.name }}
+          <p class="ion-padding-top">
+            {{ fermentable.amount | number:'1.0-3'}} kg
+            - {{ RecipeUtil.getFermentablePercentage(fermentable, recipe) | number:'1.0-1' }} %
+            - {{ (recipe.OG - 1) * RecipeUtil.getFermentablePercentage(fermentable, recipe) * 10 | number:'1.0-1' }}GPTs
+          </p>
+        </ion-label>
         <ion-buttons slot="end">
-          <ion-button (click)="editFermentable(fermentable)">
-            <ion-icon name="pencil" slot="icon-only"></ion-icon>
-          </ion-button>
           <ion-button (click)="removeFermentable(fermentable)">
             <ion-icon name="trash" slot="icon-only"></ion-icon>
           </ion-button>
@@ -34,15 +38,21 @@
           </ion-button>
         </ion-buttons>
         <ion-label class="ion-padding-start">
-          Hops
+          <h1>Hops</h1>
         </ion-label>
       </ion-list-header>
-      <ion-item *ngFor="let hop of recipe.hops">
-        {{ hop.name }}, {{ hop.amount ? hop.amount * 1000 : 0 | number:'1.0-1'}} g
+      <ion-item *ngFor="let hop of recipe.hops" button (click)="editHop(hop)">
+        <ion-label>
+          {{ hop.name }}
+          <p class="ion-padding-top">
+            {{ hop.amount ? hop.amount * 1000 : 0 | number:'1.0-1'}} g - {{ hop.use }}
+            {{ hop.time ? (' - ' + hop.time + (hop.use === 'Dry Hop' ? ' days' : ' minutes')) : '' }}
+          </p>
+          <p>
+            {{ hop.alpha }} % AA - {{ RecipeUtil.calculatePerHopIbu(hop, recipe) | number:'1.0-1'}} IBUs
+          </p>
+        </ion-label>
         <ion-buttons slot="end">
-          <ion-button (click)="editHop(hop)">
-            <ion-icon name="pencil" slot="icon-only"></ion-icon>
-          </ion-button>
           <ion-button (click)="removeHop(hop)">
             <ion-icon name="trash" slot="icon-only"></ion-icon>
           </ion-button>
@@ -60,15 +70,15 @@
           </ion-button>
         </ion-buttons>
         <ion-label class="ion-padding-start">
-          Yeast
+          <h1>Yeast</h1>
         </ion-label>
       </ion-list-header>
-      <ion-item *ngFor="let yeast of recipe.yeasts">
-        {{ yeast.name }}
+      <ion-item *ngFor="let yeast of recipe.yeasts" button (click)="editYeast(yeast)">
+        <ion-label>
+          {{ yeast.name }}
+          <p class="ion-padding-top">{{ yeast.attenuation | number:'1.1-1' }} % Attenuation</p>
+        </ion-label>
         <ion-buttons slot="end">
-          <ion-button (click)="editYeast(yeast)">
-            <ion-icon name="pencil" slot="icon-only"></ion-icon>
-          </ion-button>
           <ion-button (click)="removeYeast(yeast)">
             <ion-icon name="trash" slot="icon-only"></ion-icon>
           </ion-button>
@@ -86,16 +96,17 @@
           </ion-button>
         </ion-buttons>
         <ion-label class="ion-padding-start">
-          Miscs
+          <h1>Miscs</h1>
         </ion-label>
       </ion-list-header>
-      <ion-item *ngFor="let misc of recipe.miscs">
-        {{ misc.name }}
-        , {{ misc.amount ? misc.amount * 1000 : 0 | number:'1.0-1'}} {{misc.amountIsWeight ? 'g' : 'ml'}}
+      <ion-item *ngFor="let misc of recipe.miscs" button (click)="editMisc(misc)">
+        <ion-label>
+          {{ misc.name }}
+          <p
+            class="ion-padding-top">{{ misc.amount ? misc.amount * 1000 : 0 | number:'1.0-1'}} {{misc.amountIsWeight ? 'g' : 'ml'}}
+            - {{ misc.type}}</p>
+        </ion-label>
         <ion-buttons slot="end">
-          <ion-button (click)="editMisc(misc)">
-            <ion-icon name="pencil" slot="icon-only"></ion-icon>
-          </ion-button>
           <ion-button (click)="removeMisc(misc)">
             <ion-icon name="trash" slot="icon-only"></ion-icon>
           </ion-button>

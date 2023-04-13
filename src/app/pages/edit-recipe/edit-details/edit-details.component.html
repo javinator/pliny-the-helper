@@ -2,6 +2,15 @@
   <ion-card-content>
     <ion-input (ionBlur)="changeName($event)" type="text" [value]="recipe.name" label="Name"
                label-placement="floating"></ion-input>
+    <br>
+    Style: {{ recipe.style?.name }}<br>
+    Batch Size: {{ recipe.batchSize }} L<br>
+    Efficiency: {{ recipe.efficiency }} %<br>
+    <br>
+    OG: {{ recipe.OG | number:'1.3-3' }}<br>
+    FG: {{ recipe.FG | number:'1.3-3' }}<br>
+    ABV: {{ recipe.ABV | number:'1.1-1' }} %<br>
+    Color: {{ recipe.color }} SRM<br>
   </ion-card-content>
 </ion-card>
 

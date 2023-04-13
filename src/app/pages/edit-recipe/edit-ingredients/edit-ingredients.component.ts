@@ -18,6 +18,8 @@ import {CalculatorUtil} from "../../../utils/calculator.utils";
   imports: [IonicModule, NgIf, NgForOf, DecimalPipe],
 })
 export class EditIngredientsComponent implements OnInit {
+  RecipeUtil = RecipeUtil;
+
   constructor(private storage: StorageService) {
   }
 
