@@ -10,14 +10,12 @@ export class RecipeUtil {
         gu += CalculatorUtil.kilosToPounds(item.amount) * getPPG(item.yield) / 100;
       }
     })
-    console.log('OG: ', 1 + (gu / CalculatorUtil.litersToGallons(recipe.batchSize) * recipe.efficiency) / 1000);
     return 1 + (gu / CalculatorUtil.litersToGallons(recipe.batchSize) * recipe.efficiency) / 1000;
   }
 
   static calculateFg(recipe: Recipe): number {
     const att = Math.max(...recipe.yeasts.map((yeast) => yeast.attenuation)) / 100;
     const og = this.calculateOg(recipe);
-    console.log('FG: ', og - (og - 1) * att);
     return og - (og - 1) * att;
   }
 
@@ -28,7 +26,6 @@ export class RecipeUtil {
         mcu += CalculatorUtil.kilosToPounds(item.amount) * item.color / CalculatorUtil.litersToGallons(recipe.batchSize);
       }
     })
-    console.log('Color: ', Math.round(1.4922 * Math.pow(mcu, 0.6859)));
     return Math.round(1.4922 * Math.pow(mcu, 0.6859));
   }
 
@@ -38,7 +35,6 @@ export class RecipeUtil {
       const au = hop.alpha * hopUtilization(recipe, hop) / 100;
       ibu += useFactor(hop) * (au * CalculatorUtil.kilosToOunces(hop.amount!) * 7490) / CalculatorUtil.litersToGallons(recipe.boilSize);
     });
-    console.log('IBU: ', ibu);
     return ibu;
   }
 }
@@ -54,14 +50,13 @@ function calculateBoilGravity(recipe: Recipe): number {
       gu += CalculatorUtil.kilosToPounds(item.amount) * getPPG(item.yield) / 100;
     }
   })
-  console.log('Boil Gravity: ', 1 + (gu / CalculatorUtil.litersToGallons(recipe.boilSize) * recipe.efficiency) / 1000);
   return 1 + (gu / CalculatorUtil.litersToGallons(recipe.boilSize) * recipe.efficiency) / 1000;
 }
 
 function hopUtilization(recipe: Recipe, hop: Hop): number {
+  const time = hop.time ?? recipe.boilTime;
   const bignessFactor = 1.65 * Math.pow(0.000125, (calculateBoilGravity(recipe) - 1));
-  const timeFactor = (1.0 - Math.exp(-0.04 * hop.time!)) / 4.15
-  console.log('Hop utilization: ', bignessFactor * timeFactor);
+  const timeFactor = (1.0 - Math.exp(-0.04 * time)) / 4.15
   return bignessFactor * timeFactor;
 }
 
@@ -71,6 +66,9 @@ function useFactor(hop: Hop) {
   }
   if (hop.use === 'Aroma') {
     return 0.2;
+  }
+  if (hop.use === 'Dry Hop') {
+    return 0.1;
   }
   return 1;
 }

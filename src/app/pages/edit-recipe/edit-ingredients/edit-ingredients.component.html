@@ -55,33 +55,6 @@
     <ion-list>
       <ion-list-header lines="inset">
         <ion-buttons>
-          <ion-button>
-            <ion-icon slot="icon-only" name="add"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-        <ion-label class="ion-padding-start">
-          Miscs
-        </ion-label>
-      </ion-list-header>
-      <ion-item *ngFor="let misc of recipe.miscs">
-        {{ misc.name }}
-        , {{ misc.amount ? misc.amount * 1000 : 0 | number:'1.0-1'}} {{misc.amountIsWeight ? 'g' : 'ml'}}
-        <ion-buttons slot="end">
-          <ion-button>
-            <ion-icon name="pencil" slot="icon-only"></ion-icon>
-          </ion-button>
-          <ion-button>
-            <ion-icon name="trash" slot="icon-only"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-      </ion-item>
-    </ion-list>
-    <p *ngIf="recipe.miscs.length === 0" class="ion-padding-start">
-      No miscs
-    </p>
-    <ion-list>
-      <ion-list-header lines="inset">
-        <ion-buttons>
           <ion-button (click)="openYeast()">
             <ion-icon slot="icon-only" name="add"></ion-icon>
           </ion-button>
@@ -105,6 +78,33 @@
     <p *ngIf="recipe.yeasts.length === 0" class="ion-padding-start">
       No yeast
     </p>
+    <ion-list>
+      <ion-list-header lines="inset">
+        <ion-buttons>
+          <ion-button (click)="openMisc()">
+            <ion-icon slot="icon-only" name="add"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-label class="ion-padding-start">
+          Miscs
+        </ion-label>
+      </ion-list-header>
+      <ion-item *ngFor="let misc of recipe.miscs">
+        {{ misc.name }}
+        , {{ misc.amount ? misc.amount * 1000 : 0 | number:'1.0-1'}} {{misc.amountIsWeight ? 'g' : 'ml'}}
+        <ion-buttons slot="end">
+          <ion-button (click)="editMisc(misc)">
+            <ion-icon name="pencil" slot="icon-only"></ion-icon>
+          </ion-button>
+          <ion-button (click)="removeMisc(misc)">
+            <ion-icon name="trash" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+    </ion-list>
+    <p *ngIf="recipe.miscs.length === 0" class="ion-padding-start">
+      No miscs
+    </p>
   </ion-card-content>
 </ion-card>
 
@@ -115,11 +115,11 @@
       <ion-toolbar>
         <ion-title>Add Fermentable</ion-title>
         <ion-buttons slot="end">
-          <ion-button (click)="addFermentable()">
+          <ion-button *ngIf="!isEdit" (click)="addFermentable()">
             <ion-label>Add</ion-label>
           </ion-button>
           <ion-button (click)="closeFermentable()">
-            <ion-label>Cancel</ion-label>
+            <ion-label>{{ isEdit ? 'Close' : 'Cancel' }}</ion-label>
           </ion-button>
         </ion-buttons>
       </ion-toolbar>
@@ -154,11 +154,11 @@
       <ion-toolbar>
         <ion-title>Add Hop</ion-title>
         <ion-buttons slot="end">
-          <ion-button (click)="addHop()">
+          <ion-button *ngIf="!isEdit" (click)="addHop()">
             <ion-label>Add</ion-label>
           </ion-button>
           <ion-button (click)="closeHop()">
-            <ion-label>Cancel</ion-label>
+            <ion-label>{{ isEdit ? 'Close' : 'Cancel' }}</ion-label>
           </ion-button>
         </ion-buttons>
       </ion-toolbar>
@@ -223,11 +223,11 @@
       <ion-toolbar>
         <ion-title>Add Yeast</ion-title>
         <ion-buttons slot="end">
-          <ion-button (click)="addYeast()">
+          <ion-button *ngIf="!isEdit" (click)="addYeast()">
             <ion-label>Add</ion-label>
           </ion-button>
           <ion-button (click)="closeYeast()">
-            <ion-label>Cancel</ion-label>
+            <ion-label>{{ isEdit ? 'Close' : 'Cancel' }}</ion-label>
           </ion-button>
         </ion-buttons>
       </ion-toolbar>
@@ -251,6 +251,46 @@
         [disabled]="!newYeast"
         [value]="newYeast?.attenuation"
         (ionChange)="setYeastAttenuation($event)">
+      </ion-input>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+
+<!-- Add Misc -->
+<ion-modal [isOpen]="addMiscOpen" (didDismiss)="closeMisc()">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Add Yeast</ion-title>
+        <ion-buttons slot="end">
+          <ion-button *ngIf="!isEdit" (click)="addMisc()">
+            <ion-label>Add</ion-label>
+          </ion-button>
+          <ion-button (click)="closeMisc()">
+            <ion-label>{{ isEdit ? 'Close' : 'Cancel' }}</ion-label>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-select
+        label="Misc"
+        label-placement="floating"
+        interface="action-sheet"
+        [value]="findMisc()"
+        (ionChange)="chooseMisc($event)">
+        <ion-select-option *ngFor="let misc of miscs" [value]="misc">
+          {{ misc.name }}
+        </ion-select-option>
+      </ion-select>
+      <ion-input
+        type="number"
+        label="Amount"
+        label-placement="floating"
+        [placeholder]="newMisc?.amountIsWeight ? 'g' : 'ml'"
+        [disabled]="!newMisc"
+        [value]="getMiscAmount()"
+        (ionChange)="setMiscAmount($event)">
       </ion-input>
     </ion-content>
   </ng-template>

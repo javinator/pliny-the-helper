@@ -221,7 +221,8 @@ export class XmlReaderService {
             version: item.VERSION[0],
             type: item.TYPE[0],
             use: item.USE[0],
-            description: item.NOTES[0]
+            description: item.NOTES[0],
+            amountIsWeight: item.AMOUNT_IS_WEIGHT[0]
           });
         }
         resolve(arr);

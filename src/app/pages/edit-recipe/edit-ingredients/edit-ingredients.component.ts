@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {AlertController, IonicModule} from '@ionic/angular';
+import {IonicModule} from '@ionic/angular';
 import {Recipe} from "../../../models/recipe.model";
 import {Fermentable} from "../../../models/fermentable.model";
 import {Hop} from "../../../models/hop.model";
@@ -31,13 +31,13 @@ export class EditIngredientsComponent implements OnInit {
 
   addFermentableOpen = false;
   addHopOpen = false;
-  addMiscOpen = false;
   addYeastOpen = false;
+  addMiscOpen = false;
 
   newFermentable?: Fermentable;
   newHop?: Hop;
-  newMisc?: Misc;
   newYeast?: Yeast;
+  newMisc?: Misc;
 
   isEdit = false;
 
@@ -65,6 +65,10 @@ export class EditIngredientsComponent implements OnInit {
   }
 
   closeFermentable() {
+    if (this.isEdit) {
+      this.storage.saveRecipe(calculateRecipe(this.recipe));
+      this.isEdit = false;
+    }
     this.addFermentableOpen = false;
     this.newFermentable = undefined;
   }
@@ -88,6 +92,7 @@ export class EditIngredientsComponent implements OnInit {
   }
 
   editFermentable(item: Fermentable) {
+    this.isEdit = true;
     this.newFermentable = item;
     this.addFermentableOpen = true;
   }
@@ -108,6 +113,10 @@ export class EditIngredientsComponent implements OnInit {
   }
 
   closeHop() {
+    if (this.isEdit) {
+      this.storage.saveRecipe(calculateRecipe(this.recipe));
+      this.isEdit = false;
+    }
     this.addHopOpen = false;
     this.newHop = undefined;
   }
@@ -143,6 +152,7 @@ export class EditIngredientsComponent implements OnInit {
   }
 
   editHop(item: Hop) {
+    this.isEdit = true;
     this.newHop = item;
     this.addHopOpen = true;
   }
@@ -167,6 +177,10 @@ export class EditIngredientsComponent implements OnInit {
   }
 
   closeYeast() {
+    if (this.isEdit) {
+      this.storage.saveRecipe(calculateRecipe(this.recipe));
+      this.isEdit = false;
+    }
     this.addYeastOpen = false;
     this.newYeast = undefined;
   }
@@ -190,6 +204,7 @@ export class EditIngredientsComponent implements OnInit {
   }
 
   editYeast(item: Yeast) {
+    this.isEdit = true;
     this.newYeast = item;
     this.addYeastOpen = true;
   }
@@ -204,13 +219,86 @@ export class EditIngredientsComponent implements OnInit {
   findYeast() {
     return this.yeasts.find((item) => item.name === this.newYeast?.name);
   }
+
+  openMisc() {
+    this.addMiscOpen = true;
+  }
+
+  closeMisc() {
+    if (this.isEdit) {
+      this.storage.saveRecipe(calculateRecipe(this.recipe));
+      this.isEdit = false;
+    }
+    this.addYeastOpen = false;
+    this.newYeast = undefined;
+  }
+
+  chooseMisc(event: any) {
+    this.newMisc = JSON.parse(JSON.stringify(event.detail.value));
+  }
+
+  setMiscAmount(event: any) {
+    this.newMisc!.amount = event.detail.value / 1000;
+  }
+
+  addMisc() {
+    if (this.newMisc) {
+      this.recipe.miscs.push(this.newMisc);
+      this.storage.saveRecipe(calculateRecipe(this.recipe));
+    } else {
+      console.log('Error: Misc not initialized!')
+    }
+    this.closeMisc();
+  }
+
+  editMisc(item: Misc) {
+    this.isEdit = true;
+    this.newMisc = item;
+    this.addMiscOpen = true;
+  }
+
+  removeMisc(item: Misc) {
+    this.recipe.miscs.forEach((element, index) => {
+      if (element == item) this.recipe.miscs.splice(index, 1);
+    })
+    this.storage.saveRecipe(calculateRecipe(this.recipe));
+  }
+
+  findMisc() {
+    return this.miscs.find((item) => item.name === this.newMisc?.name);
+  }
+
+  getMiscAmount() {
+    return this.newMisc?.amount ? this.newMisc.amount * 1000 : undefined;
+  }
 }
 
 function calculateRecipe(recipe: Recipe): Recipe {
+  recipe.fermentables.sort((a, b) => b.amount! - a.amount!);
+  recipe.hops.sort((a, b) => b.amount! - a.amount!);
+  recipe.hops.sort((a, b) => b.time! - a.time!);
+  recipe.hops.sort((a, b) => calculateHopUseValue(b.use) - calculateHopUseValue(a.use));
   recipe.OG = RecipeUtil.calculateOg(recipe);
   recipe.FG = RecipeUtil.calculateFg(recipe);
   recipe.ABV = CalculatorUtil.abv(recipe.OG, recipe.FG);
   recipe.color = RecipeUtil.calculateColor(recipe);
   recipe.IBU = RecipeUtil.calculateBitterness(recipe);
   return recipe;
+}
+
+function calculateHopUseValue(use: string) {
+  switch (use) {
+    case 'Mash':
+      return 5;
+    case 'First Wort':
+      return 4;
+    case 'Boil':
+      return 3;
+    case 'Aroma':
+      return 2;
+    case 'Dry Hop':
+      return 1;
+    default:
+      return 0;
+  }
 }
