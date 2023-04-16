@@ -1,8 +1,6 @@
 <ion-card>
   <ion-card-content>
-    <ion-input (ionBlur)="changeName($event)" type="text" [value]="recipe.name" label="Name"
-               label-placement="floating"></ion-input>
-    <br>
+    Name: {{ recipe.name }}<br>
     Style: {{ recipe.style?.name }}<br>
     Batch Size: {{ recipe.batchSize }} L<br>
     Efficiency: {{ recipe.efficiency }} %<br>

@@ -231,8 +231,8 @@ export class EditIngredientsComponent implements OnInit {
       this.storage.saveRecipe(calculateRecipe(this.recipe));
       this.isEdit = false;
     }
-    this.addYeastOpen = false;
-    this.newYeast = undefined;
+    this.addMiscOpen = false;
+    this.newMisc = undefined;
   }
 
   chooseMisc(event: any) {
@@ -276,7 +276,15 @@ export class EditIngredientsComponent implements OnInit {
 
   checkOveruse(fermentable: Fermentable, recipe: Recipe) {
     if (fermentable.maxInBatch && fermentable.maxInBatch < RecipeUtil.getFermentablePercentage(fermentable, recipe)) {
-      return 'overuse';
+      return 'red';
+    } else {
+      return '';
+    }
+  }
+
+  checkOvertime(hop: Hop, recipe: Recipe) {
+    if (hop.time && hop.time > recipe.boilTime) {
+      return 'red';
     } else {
       return '';
     }

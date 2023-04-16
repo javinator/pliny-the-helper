@@ -50,8 +50,9 @@
         <ion-label>
           {{ hop.name }}
           <p class="ion-padding-top">
-            {{ hop.amount ? hop.amount * 1000 : 0 | number:'1.0-1'}} g - {{ hop.use }}
-            {{ hop.time ? (' - ' + hop.time + (hop.use === 'Dry Hop' ? ' days' : ' minutes')) : '' }}
+            {{ hop.amount ? hop.amount * 1000 : 0 | number:'1.0-1'}} g - {{ hop.use }} -
+            <span
+              [class]="checkOvertime(hop, recipe)">{{ hop.time ? (hop.time + (hop.use === 'Dry Hop' ? ' days' : ' minutes')) : '' }}</span>
           </p>
           <p>
             {{ hop.alpha }} % AA - {{ RecipeUtil.calculatePerHopIbu(hop, recipe) | number:'1.0-1'}} IBUs
