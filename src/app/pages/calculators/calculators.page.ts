@@ -3,7 +3,6 @@ import {IonicModule} from '@ionic/angular';
 import {AbvCardComponent} from "./abv-card/abv-card.component";
 import {NgForOf, NgIf, NgSwitch, NgSwitchCase} from "@angular/common";
 import {HydrometerCardComponent} from "./hydrometer-card/hydrometer-card.component";
-import {StorageService} from "../../services/storage.service";
 import {RefractometerCardComponent} from "./refractometer-card/refractometer-card.component";
 import {ConversionCardComponent} from "./conversion-card/conversion-card.component";
 
@@ -15,9 +14,6 @@ import {ConversionCardComponent} from "./conversion-card/conversion-card.compone
   imports: [IonicModule, AbvCardComponent, NgIf, NgForOf, NgSwitchCase, NgSwitch, HydrometerCardComponent, RefractometerCardComponent, ConversionCardComponent]
 })
 export class CalculatorsPage {
-  constructor(private storage: StorageService) {
-  }
-
   activeTab = 'abv';
 
   tabChanged(event: any) {

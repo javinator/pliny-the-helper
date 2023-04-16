@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {Recipe} from "../../../models/recipe.model";
 import {StorageService} from "../../../services/storage.service";

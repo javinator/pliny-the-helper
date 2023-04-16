@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {Recipe} from "../../models/recipe.model";
 import {NgForOf, NgIf} from "@angular/common";

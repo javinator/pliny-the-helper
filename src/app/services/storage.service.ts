@@ -18,7 +18,7 @@ export class StorageService {
     this.init().then(() =>
       this.setSettings(
         {
-          brewer: 'Brewmaster',
+          brewer: 'Brew Master',
           batchSize: 10,
           boilTime: 60,
           efficiency: 65

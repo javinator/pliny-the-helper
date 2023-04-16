@@ -1,13 +1,9 @@
-import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {Recipe} from "../../models/recipe.model";
 import {Router} from "@angular/router";
 import {StorageService} from "../../services/storage.service";
-import {Location, NgForOf, NgIf, NgSwitch, NgSwitchCase} from "@angular/common";
-import {Fermentable} from "../../models/fermentable.model";
-import {Hop} from "../../models/hop.model";
-import {Yeast} from "../../models/yeast.model";
-import {Misc} from "../../models/misc.model";
+import {NgForOf, NgIf, NgSwitch, NgSwitchCase} from "@angular/common";
 import {EditIngredientsComponent} from "./edit-ingredients/edit-ingredients.component";
 import {EditDetailsComponent} from "./edit-details/edit-details.component";
 

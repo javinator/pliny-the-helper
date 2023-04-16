@@ -30,17 +30,17 @@ export class XmlReaderService {
 
   private parseXMLtoStyles(data: string): Promise<BeerStyle[]> {
     return new Promise(resolve => {
-      var k: string | number,
-        arr: BeerStyle[] = [],
+      let k: string | number;
+      const arr: BeerStyle[] = [],
         parser = new xml2js.Parser(
           {
             trim: true,
             explicitArray: true
           });
       parser.parseString(data, function (err, result) {
-        var obj = result.STYLES;
+        const obj = result.STYLES;
         for (k in obj.STYLE) {
-          var item = obj.STYLE[k];
+          const item = obj.STYLE[k];
           arr.push({
             name: item.NAME[0],
             type: item.TYPE[0],
@@ -83,17 +83,17 @@ export class XmlReaderService {
 
   private parseXMLtoFermentables(data: string): Promise<Fermentable[]> {
     return new Promise(resolve => {
-      var k: string | number,
-        arr: Fermentable[] = [],
+      let k: string | number;
+      const arr: Fermentable[] = [],
         parser = new xml2js.Parser(
           {
             trim: true,
             explicitArray: true
           });
       parser.parseString(data, function (err, result) {
-        var obj = result.FERMENTABLES;
+        const obj = result.FERMENTABLES;
         for (k in obj.FERMENTABLE) {
-          var item = obj.FERMENTABLE[k];
+          const item = obj.FERMENTABLE[k];
           arr.push({
             name: item.NAME[0],
             type: item.TYPE[0],
@@ -123,17 +123,17 @@ export class XmlReaderService {
 
   private parseXMLtoHops(data: string): Promise<Hop[]> {
     return new Promise(resolve => {
-      var k: string | number,
-        arr: Hop[] = [],
+      let k: string | number;
+      const arr: Hop[] = [],
         parser = new xml2js.Parser(
           {
             trim: true,
             explicitArray: true
           });
       parser.parseString(data, function (err, result) {
-        var obj = result.HOPS;
+        const obj = result.HOPS;
         for (k in obj.HOP) {
-          var item = obj.HOP[k];
+          const item = obj.HOP[k];
           arr.push({
             name: item.NAME[0],
             type: item.TYPE[0],
@@ -163,17 +163,17 @@ export class XmlReaderService {
 
   private parseXMLtoYeasts(data: string): Promise<Yeast[]> {
     return new Promise(resolve => {
-      var k: string | number,
-        arr: Yeast[] = [],
+      let k: string | number;
+      const arr: Yeast[] = [],
         parser = new xml2js.Parser(
           {
             trim: true,
             explicitArray: true
           });
       parser.parseString(data, function (err, result) {
-        var obj = result.YEASTS;
+        const obj = result.YEASTS;
         for (k in obj.YEAST) {
-          var item = obj.YEAST[k];
+          const item = obj.YEAST[k];
           arr.push({
             name: item.NAME[0],
             version: item.VERSION[0],
@@ -205,17 +205,17 @@ export class XmlReaderService {
 
   private parseXMLtoMiscs(data: string): Promise<Misc[]> {
     return new Promise(resolve => {
-      var k: string | number,
-        arr: Misc[] = [],
+      let k: string | number;
+      const arr: Misc[] = [],
         parser = new xml2js.Parser(
           {
             trim: true,
             explicitArray: true
           });
       parser.parseString(data, function (err, result) {
-        var obj = result.MISCS;
+        const obj = result.MISCS;
         for (k in obj.MISC) {
-          var item = obj.MISC[k];
+          const item = obj.MISC[k];
           arr.push({
             name: item.NAME[0],
             version: item.VERSION[0],
