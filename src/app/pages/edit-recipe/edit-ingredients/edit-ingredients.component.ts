@@ -273,6 +273,14 @@ export class EditIngredientsComponent implements OnInit {
   getMiscAmount() {
     return this.newMisc?.amount ? this.newMisc.amount * 1000 : undefined;
   }
+
+  checkOveruse(fermentable: Fermentable, recipe: Recipe) {
+    if (fermentable.maxInBatch && fermentable.maxInBatch < RecipeUtil.getFermentablePercentage(fermentable, recipe)) {
+      return 'overuse';
+    } else {
+      return '';
+    }
+  }
 }
 
 function calculateRecipe(recipe: Recipe): Recipe {

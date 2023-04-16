@@ -36,18 +36,38 @@ export class StorageService {
   }
 
   public addRecipe(recipe: Recipe) {
-    this._storage?.get('recipes').then((recipes: Recipe[] | null) => {
+    return this._storage?.get('recipes').then((recipes: Recipe[] | null) => {
       if (recipes) {
         recipes.push(recipe);
       } else {
         recipes = [recipe];
       }
-      this._storage?.set('recipes', recipes);
+      return this._storage?.set('recipes', recipes);
+    })
+  }
+
+  public deleteRecipe(uid: string) {
+    return this._storage?.get('recipes').then((recipes: Recipe[]) => {
+      if (recipes) {
+        recipes.forEach((element, index) => {
+          if (element.uid === uid) recipes.splice(index, 1);
+        })
+        return this._storage?.set('recipes', recipes);
+      } else {
+        return undefined;
+      }
     })
   }
 
   public deleteRecipes() {
     this._storage?.remove('recipes');
+  }
+
+  public getRecipe(uid?: string) {
+    return this._storage!.get('recipes').then((recipes: Recipe[]) => {
+      const idx = recipes.findIndex((rcp) => rcp.uid === uid);
+      return recipes[idx];
+    });
   }
 
   public saveRecipe(recipe: Recipe) {

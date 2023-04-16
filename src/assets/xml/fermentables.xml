@@ -1,397 +1,400 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <FERMENTABLES>
-    <FERMENTABLE>
-        <NAME>Maris Otter Pale Malt</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>78</YIELD>
-        <COLOR>2.5</COLOR>
-        <ORIGIN>UK</ORIGIN>
-        <NOTES>Base malt for english pale ales. Slight nutty flavour. Up to 100%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Pilsner Malt</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>80</YIELD>
-        <COLOR>2</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>Base malt for pale beers. Up to 100%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Vienna Malt</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>75</YIELD>
-        <COLOR>4</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>To bring golden colour into beer and for better body. Up to 100%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Pale Ale Malt</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>80</YIELD>
-        <COLOR>3</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>Base malt for pale ales. Up to 100%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Munich Malt I</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>75</YIELD>
-        <COLOR>7</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>For amber and dark beers. Adds to typical beer character and darker colour. Up to 100%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Munich Malt II</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>75</YIELD>
-        <COLOR>12</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>For amber and dark beers. Adds to typical beer character and darker colour. Up to 100%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Rye Malt</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>64</YIELD>
-        <COLOR>2.5</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>Typical spicy rye character. Up to 50%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Bohemian Pilsner Malt</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>76</YIELD>
-        <COLOR>2</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>Base beer for light beers. Up to 100%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Biscuit Malt</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>74</YIELD>
-        <COLOR>25</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>Very lightly roasted malt, gives bread and cookie flavour. Up to 15%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Cara Hell</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>75</YIELD>
-        <COLOR>12</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>For fuller body and better foam. Up to 30%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Cara Amber</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>74</YIELD>
-        <COLOR>35</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>For red and amber beers, gives fuller body and better foam. Up to 20%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Cara Aroma</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>72</YIELD>
-        <COLOR>160</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>For amber and dark beers, gives fuller body and distinctive malt aroma. Up to 15%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Cara Belge</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>74</YIELD>
-        <COLOR>18</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>For belgian ales, slight caramel flavour. Up to 30%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Cara Bohemian</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>74</YIELD>
-        <COLOR>100</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>For bohemian beers, intensive caramel malt aroma. Up to 15%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Caramunich I</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>74</YIELD>
-        <COLOR>40</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>For fuller body. Adds malt aroma. Up to 10%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Caramunich II</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>74</YIELD>
-        <COLOR>60</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>For fuller body. Adds malt aroma. Up to 10%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Caramunich III</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>73</YIELD>
-        <COLOR>70</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>For fuller body. Adds malt aroma. Up to 10%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Carapils</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>75</YIELD>
-        <COLOR>2.5</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>For fuller body and better foam. Up to 40%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Carared</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>74</YIELD>
-        <COLOR>24</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>For fuller body and better foam. Gives a reddish colour. Up to 25%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Wheat Malt, Light</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>80</YIELD>
-        <COLOR>2</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>Lighter, more crisp body, typical wheat aroma. Up to 100%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Wheat Malt, Amber</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>79</YIELD>
-        <COLOR>8</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>Lighter, more crisp body, typical wheat aroma. Up to 50%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Wheat Malt, Roasted</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>68</YIELD>
-        <COLOR>500</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>Roasted character on top of typical wheat aromas. Up to 5%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Wheat Caramel Malt</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>72</YIELD>
-        <COLOR>60</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>Darker colour, typical wheat aroma. Up to 20%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Carafa I</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>67</YIELD>
-        <COLOR>450</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>Very dark colour, adds roasted flavour. Up to 5%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Carafa II</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>66</YIELD>
-        <COLOR>550</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>Very dark colour, adds roasted flavour. Up to 5%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Carafa III</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>64</YIELD>
-        <COLOR>700</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>Very dark colour, adds roasted flavour. Up to 5%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Rye Malt, Roasted</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>62</YIELD>
-        <COLOR>300</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>Very dark colour, adds roasted flavour. Up to 5%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Roasted Barley</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>55</YIELD>
-        <COLOR>550</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>Very dark colour, adds roasted flavour. Up to 5%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Brown Malt</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>70</YIELD>
-        <COLOR>55</COLOR>
-        <ORIGIN>UK</ORIGIN>
-        <NOTES>For british ales. Adds slight roast flavours and coffee and toffee aromas. Up to 15%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Oat Malt</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>70</YIELD>
-        <COLOR>2</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>Adds body and creaminess. Up to 30%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Abbey Malt</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>74</YIELD>
-        <COLOR>22</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>For abbey ales, intensive malt aroma. Up to 50%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Wheat Malt, Smoked</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>76</YIELD>
-        <COLOR>2</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>Adds smoke flavours to beer. Up to 80%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Smoked Malt</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>73</YIELD>
-        <COLOR>3</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>Adds smoke flavour to beer, typical for Rauchbiers. Up to 100%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Acid Malt</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>62</YIELD>
-        <COLOR>3</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>Used to lower mash PH. Up to 5%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Red X</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>74</YIELD>
-        <COLOR>15</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>Special base malt for red ales and ambers. Red colour. Up to 100%</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Peated Whisky Malt</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>70</YIELD>
-        <COLOR>4</COLOR>
-        <ORIGIN>UK</ORIGIN>
-        <NOTES>Very peaty flavours</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Flaked Corn</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>82</YIELD>
-        <COLOR>2</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>Adds body</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Flaked Barley</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>70</YIELD>
-        <COLOR>2</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>Adds body</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Flaked Wheat</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>77</YIELD>
-        <COLOR>2</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>Adds body</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Flaked Rice</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>82</YIELD>
-        <COLOR>2</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>Adds body</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Flaked Oat</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Grain</TYPE>
-        <YIELD>70</YIELD>
-        <COLOR>2</COLOR>
-        <ORIGIN>Germany</ORIGIN>
-        <NOTES>Adds body</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Brown Sugar</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Sugar</TYPE>
-        <YIELD>90.00</YIELD>
-        <COLOR>40.00</COLOR>
-        <NOTES>Rich, sweet flavor.</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Sugar, Table</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Sugar</TYPE>
-        <YIELD>100.00</YIELD>
-        <COLOR>0.20</COLOR>
-        <NOTES>Dries out beer. Too much adds a cidery flavour.</NOTES>
-    </FERMENTABLE>
-    <FERMENTABLE>
-        <NAME>Honey</NAME>
-        <VERSION>1</VERSION>
-        <TYPE>Sugar</TYPE>
-        <YIELD>80.00</YIELD>
-        <COLOR>1</COLOR>
-        <NOTES>Dries out beer. Can add some flowery flavours.</NOTES>
-    </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Maris Otter Pale Malt</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>78</YIELD>
+    <COLOR>2.5</COLOR>
+    <ORIGIN>UK</ORIGIN>
+    <NOTES>Base malt for english pale ales. Slight nutty flavour. Up to 100%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Pilsner Malt</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>80</YIELD>
+    <COLOR>2</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>Base malt for pale beers. Up to 100%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Vienna Malt</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>75</YIELD>
+    <COLOR>4</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>To bring golden colour into beer and for better body. Up to 100%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Pale Ale Malt</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>80</YIELD>
+    <COLOR>3</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>Base malt for pale ales. Up to 100%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Munich Malt I</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>75</YIELD>
+    <COLOR>7</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>For amber and dark beers. Adds to typical beer character and darker colour. Up to 100%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Munich Malt II</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>75</YIELD>
+    <COLOR>12</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>For amber and dark beers. Adds to typical beer character and darker colour. Up to 100%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Rye Malt</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>64</YIELD>
+    <COLOR>2.5</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>Typical spicy rye character. Up to 50%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Bohemian Pilsner Malt</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>76</YIELD>
+    <COLOR>2</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>Base beer for light beers. Up to 100%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Biscuit Malt</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>74</YIELD>
+    <COLOR>25</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>Very lightly roasted malt, gives bread and cookie flavour. Up to 15%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Cara Hell</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>75</YIELD>
+    <COLOR>12</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>For fuller body and better foam. Up to 30%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Cara Amber</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>74</YIELD>
+    <COLOR>35</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>For red and amber beers, gives fuller body and better foam. Up to 20%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Cara Aroma</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>72</YIELD>
+    <COLOR>160</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>For amber and dark beers, gives fuller body and distinctive malt aroma. Up to 15%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Cara Belge</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>74</YIELD>
+    <COLOR>18</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>For belgian ales, slight caramel flavour. Up to 30%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Cara Bohemian</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>74</YIELD>
+    <COLOR>100</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>For bohemian beers, intensive caramel malt aroma. Up to 15%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Caramunich I</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>74</YIELD>
+    <COLOR>40</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>For fuller body. Adds malt aroma. Up to 10%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Caramunich II</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>74</YIELD>
+    <COLOR>60</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>For fuller body. Adds malt aroma. Up to 10%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Caramunich III</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>73</YIELD>
+    <COLOR>70</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>For fuller body. Adds malt aroma. Up to 10%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Carapils</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>75</YIELD>
+    <COLOR>2.5</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>For fuller body and better foam. Up to 40%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Carared</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>74</YIELD>
+    <COLOR>24</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>For fuller body and better foam. Gives a reddish colour. Up to 25%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Wheat Malt, Light</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>80</YIELD>
+    <COLOR>2</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>Lighter, more crisp body, typical wheat aroma. Up to 100%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Wheat Malt, Amber</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>79</YIELD>
+    <COLOR>8</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>Lighter, more crisp body, typical wheat aroma. Up to 50%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Wheat Malt, Roasted</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>68</YIELD>
+    <COLOR>500</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>Roasted character on top of typical wheat aromas. Up to 5%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Wheat Caramel Malt</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>72</YIELD>
+    <COLOR>60</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>Darker colour, typical wheat aroma. Up to 20%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Carafa I</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>67</YIELD>
+    <COLOR>450</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <MAX_IN_BATCH>5</MAX_IN_BATCH>
+    <NOTES>Very dark colour, adds roasted flavour. Up to 5%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Carafa II</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>66</YIELD>
+    <COLOR>550</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <MAX_IN_BATCH>5</MAX_IN_BATCH>
+    <NOTES>Very dark colour, adds roasted flavour. Up to 5%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Carafa III</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>64</YIELD>
+    <COLOR>700</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <MAX_IN_BATCH>5</MAX_IN_BATCH>
+    <NOTES>Very dark colour, adds roasted flavour. Up to 5%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Rye Malt, Roasted</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>62</YIELD>
+    <COLOR>300</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>Very dark colour, adds roasted flavour. Up to 5%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Roasted Barley</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>55</YIELD>
+    <COLOR>550</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>Very dark colour, adds roasted flavour. Up to 5%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Brown Malt</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>70</YIELD>
+    <COLOR>55</COLOR>
+    <ORIGIN>UK</ORIGIN>
+    <NOTES>For british ales. Adds slight roast flavours and coffee and toffee aromas. Up to 15%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Oat Malt</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>70</YIELD>
+    <COLOR>2</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>Adds body and creaminess. Up to 30%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Abbey Malt</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>74</YIELD>
+    <COLOR>22</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>For abbey ales, intensive malt aroma. Up to 50%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Wheat Malt, Smoked</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>76</YIELD>
+    <COLOR>2</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>Adds smoke flavours to beer. Up to 80%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Smoked Malt</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>73</YIELD>
+    <COLOR>3</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>Adds smoke flavour to beer, typical for Rauchbiers. Up to 100%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Acid Malt</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>62</YIELD>
+    <COLOR>3</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>Used to lower mash PH. Up to 5%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Red X</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>74</YIELD>
+    <COLOR>15</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>Special base malt for red ales and ambers. Red colour. Up to 100%</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Peated Whisky Malt</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>70</YIELD>
+    <COLOR>4</COLOR>
+    <ORIGIN>UK</ORIGIN>
+    <NOTES>Very peaty flavours</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Flaked Corn</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>82</YIELD>
+    <COLOR>2</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>Adds body</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Flaked Barley</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>70</YIELD>
+    <COLOR>2</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>Adds body</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Flaked Wheat</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>77</YIELD>
+    <COLOR>2</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>Adds body</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Flaked Rice</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>82</YIELD>
+    <COLOR>2</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>Adds body</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Flaked Oat</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Grain</TYPE>
+    <YIELD>70</YIELD>
+    <COLOR>2</COLOR>
+    <ORIGIN>Germany</ORIGIN>
+    <NOTES>Adds body</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Brown Sugar</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Sugar</TYPE>
+    <YIELD>90.00</YIELD>
+    <COLOR>40.00</COLOR>
+    <NOTES>Rich, sweet flavor.</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Sugar, Table</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Sugar</TYPE>
+    <YIELD>100.00</YIELD>
+    <COLOR>0.20</COLOR>
+    <NOTES>Dries out beer. Too much adds a cidery flavour.</NOTES>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Honey</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Sugar</TYPE>
+    <YIELD>80.00</YIELD>
+    <COLOR>1</COLOR>
+    <NOTES>Dries out beer. Can add some flowery flavours.</NOTES>
+  </FERMENTABLE>
 
 </FERMENTABLES>

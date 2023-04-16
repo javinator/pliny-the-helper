@@ -26,7 +26,7 @@ export class RecipesPage {
   }
 
   showEdit(recipe: Recipe) {
-    this.router.navigate(['edit-recipe'], {state: {recipe}});
+    this.router.navigate(['edit-recipe'], {state: {recipe: recipe.uid}});
   }
 
   importRecipes() {

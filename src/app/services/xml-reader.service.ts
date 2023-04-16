@@ -102,7 +102,7 @@ export class XmlReaderService {
             origin: item.ORIGIN?.[0],
             description: item.NOTES[0],
             version: item.VERSION[0],
-            maxInBatch: 100
+            maxInBatch: item.MAX_IN_BATCH?.[0]
           });
         }
         resolve(arr);

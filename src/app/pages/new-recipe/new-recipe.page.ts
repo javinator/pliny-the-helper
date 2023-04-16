@@ -73,7 +73,6 @@ export class NewRecipePage implements OnInit {
 
   submit() {
     this.model.boilSize = this.model.batchSize * 1.1;
-    this.storage.addRecipe(this.model);
-    this.router.navigate(['edit-recipe'], {state: {recipe: this.model}});
+    this.storage.addRecipe(this.model)?.then(() => this.router.navigate(['edit-recipe'], {state: {recipe: this.model.uid}}));
   }
 }

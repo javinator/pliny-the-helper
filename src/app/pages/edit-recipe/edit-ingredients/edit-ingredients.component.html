@@ -16,8 +16,13 @@
           {{ fermentable.name }}
           <p class="ion-padding-top">
             {{ fermentable.amount | number:'1.0-3'}} kg
-            - {{ RecipeUtil.getFermentablePercentage(fermentable, recipe) | number:'1.0-1' }} %
-            - {{ (recipe.OG - 1) * RecipeUtil.getFermentablePercentage(fermentable, recipe) * 10 | number:'1.0-1' }}GPTs
+            -
+            <span
+              [class]="checkOveruse(fermentable, recipe)">
+              {{ RecipeUtil.getFermentablePercentage(fermentable, recipe) | number:'1.0-1' }} %
+            </span>
+            - {{ (recipe.OG - 1) * RecipeUtil.getFermentablePercentage(fermentable, recipe) * 10 | number:'1.0-1' }}
+            GPTs
           </p>
         </ion-label>
         <ion-buttons slot="end">

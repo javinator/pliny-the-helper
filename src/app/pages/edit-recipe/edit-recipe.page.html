@@ -6,16 +6,19 @@
       </ion-button>
     </ion-buttons>
     <ion-title>
-      Edit Recipe "{{ recipe.name }}"
+      Edit Recipe {{ recipe ? '"' + recipe.name + '"' : '' }}
     </ion-title>
     <ion-buttons slot="end">
       <ion-button *ngIf="activeTab === 'details'">
         <ion-icon slot="icon-only" name="pencil"></ion-icon>
       </ion-button>
+      <ion-button id="open-delete-alert">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" *ngIf="recipe">
   <ion-segment [value]="activeTab" (ionChange)="tabChanged($event)">
     <ion-segment-button value="ingredients" layout="icon-start">
       <ion-icon name="basket"></ion-icon>
@@ -36,4 +39,9 @@
   </ng-container>
 </ion-content>
 
-
+<ion-alert
+  trigger="open-delete-alert"
+  header="Confirm"
+  [message]="'Delete Recipe \'' + recipe?.name + '\''"
+  [buttons]="deleteButtons"
+></ion-alert>

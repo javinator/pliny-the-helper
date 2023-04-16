@@ -18,14 +18,34 @@ import {EditDetailsComponent} from "./edit-details/edit-details.component";
   standalone: true,
   imports: [IonicModule, EditIngredientsComponent, EditDetailsComponent, NgSwitch, NgSwitchCase, NgForOf, NgIf],
 })
-export class EditRecipePage {
-  constructor(private router: Router, private storage: StorageService) {
-    this.recipe = this.router.getCurrentNavigation()?.extras.state?.['recipe'];
-  }
+export class EditRecipePage implements OnInit {
 
   activeTab = 'ingredients';
 
-  recipe!: Recipe;
+  uid!: string;
+  recipe?: Recipe;
+
+  constructor(private router: Router, private storage: StorageService) {
+    this.uid = this.router.getCurrentNavigation()?.extras.state?.['recipe'];
+  }
+
+  public deleteButtons = [
+    {
+      text: 'Cancel',
+      role: 'cancel'
+    },
+    {
+      text: 'OK',
+      role: 'confirm',
+      handler: () => {
+        this.deleteRecipe();
+      }
+    }
+  ];
+
+  ngOnInit() {
+    this.storage.getRecipe(this.uid).then((recipe) => this.recipe = recipe);
+  }
 
   tabChanged(event: any) {
     this.activeTab = event.detail.value
@@ -33,5 +53,9 @@ export class EditRecipePage {
 
   navigateBack() {
     this.router.navigate(['recipes']);
+  }
+
+  deleteRecipe() {
+    this.storage.deleteRecipe(this.uid)?.then(() => this.navigateBack());
   }
 }
