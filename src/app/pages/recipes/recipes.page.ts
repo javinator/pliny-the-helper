@@ -5,6 +5,7 @@ import {NgForOf, NgIf} from "@angular/common";
 import {Router, RouterLink} from "@angular/router";
 import {StorageService} from "../../services/storage.service";
 import {RecipeCardComponent} from "./recipe-card/recipe-card.component";
+import {XmlWriterService} from "../../services/xml-writer.service";
 
 @Component({
   selector: 'recipes-page',
@@ -16,7 +17,7 @@ import {RecipeCardComponent} from "./recipe-card/recipe-card.component";
 export class RecipesPage {
   recipes?: Recipe[];
 
-  constructor(private storage: StorageService, private router: Router) {
+  constructor(private storage: StorageService, private router: Router, private xmlWriter: XmlWriterService) {
   }
 
   ionViewWillEnter() {
@@ -34,6 +35,6 @@ export class RecipesPage {
   }
 
   exportRecipes() {
-
+    this.xmlWriter.recipesToXml(this.recipes || []);
   }
 }

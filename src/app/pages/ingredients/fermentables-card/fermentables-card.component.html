@@ -10,6 +10,7 @@
     <p class="ion-margin-bottom">&nbsp;</p>
     <p class="ion-margin-top">
       Color: {{ fermentable.color }} °L<br>
+      <span *ngIf="fermentable.maxInBatch">Up to: {{ fermentable.maxInBatch }} %<br></span>
       <span *ngIf="fermentable.supplier">{{ fermentable.supplier }} ({{ fermentable.origin }})</span>
     </p>
   </ion-card-content>

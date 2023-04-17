@@ -1,3 +1,15 @@
+export const CONFIG = {
+  evaporation: 0.2,
+  kettleUtilization: 4.2,
+  firstWortFactor: 1.1,
+  aromaFactor: 0.2,
+  dryHopFactor: 0.1,
+  defaultName: 'Brew Master',
+  defaultBatchSize: 10,
+  defaultBoilTime: 60,
+  defaultEfficiency: 70
+}
+
 export const SRM = [
   "#FFF4D4",
   "#FFE699",

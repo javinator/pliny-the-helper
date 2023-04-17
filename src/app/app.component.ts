@@ -6,6 +6,8 @@ import {Storage} from "@ionic/storage-angular";
 import {StorageService} from "./services/storage.service";
 import {XmlReaderService} from "./services/xml-reader.service";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {CONFIG} from "./constants";
+import {XmlWriterService} from "./services/xml-writer.service";
 
 @Component({
   selector: 'app-root',
@@ -13,10 +15,10 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
   styleUrls: ['app.component.scss'],
   standalone: true,
   imports: [IonicModule, RouterLink, NgForOf, HttpClientModule],
-  providers: [Storage, StorageService, HttpClient, XmlReaderService]
+  providers: [Storage, StorageService, HttpClient, XmlReaderService, XmlWriterService]
 })
 export class AppComponent implements OnInit {
-  constructor(private xmlReader: XmlReaderService) {
+  constructor(private xmlReader: XmlReaderService, private storage: StorageService) {
   }
 
   ngOnInit() {

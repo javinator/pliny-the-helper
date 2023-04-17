@@ -2,6 +2,7 @@ import {Recipe} from "../models/recipe.model";
 import {CalculatorUtil} from "./calculator.utils";
 import {Hop} from "../models/hop.model";
 import {Fermentable} from "../models/fermentable.model";
+import {CONFIG} from "../constants";
 
 export class RecipeUtil {
   static calculateOg(recipe: Recipe): number {
@@ -50,7 +51,7 @@ export class RecipeUtil {
   }
 
   static calculateBoilSize(recipe: Recipe) {
-    return recipe.batchSize * Math.pow(1.2, recipe.boilTime / 60);
+    return recipe.batchSize + recipe.batchSize * CONFIG.evaporation * recipe.boilTime / 60;
   }
 }
 
@@ -71,19 +72,19 @@ function calculateBoilGravity(recipe: Recipe): number {
 function hopUtilization(recipe: Recipe, hop: Hop): number {
   const time = hop.time ?? recipe.boilTime;
   const bignessFactor = 1.65 * Math.pow(0.000125, (calculateBoilGravity(recipe) - 1));
-  const timeFactor = (1.0 - Math.exp(-0.04 * time)) / 4.15
+  const timeFactor = (1.0 - Math.exp(-0.04 * time)) / CONFIG.kettleUtilization
   return bignessFactor * timeFactor;
 }
 
 function useFactor(hop: Hop) {
   if (hop.use === 'First Wort') {
-    return 1.1;
+    return CONFIG.firstWortFactor;
   }
   if (hop.use === 'Aroma') {
-    return 0.2;
+    return CONFIG.aromaFactor;
   }
   if (hop.use === 'Dry Hop') {
-    return 0.1;
+    return CONFIG.dryHopFactor;
   }
   return 1;
 }

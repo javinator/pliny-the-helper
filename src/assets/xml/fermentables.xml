@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <FERMENTABLES>
 
   <!-- Malts -->
@@ -15,6 +15,7 @@
       brewing barley (barley varieties Bojos and Malz), this Pilsner malt is characterized by the typical sententious
       core notes of the original barley varieties. Slight nutty malt aroma.
     </NOTES>
+    <MAX_IN_BATCH>100</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Eraclea Pilsner Malt</NAME>
@@ -28,6 +29,7 @@
       Eraclea, close to Venice. This aromatic malt provides the perfect base for crisp, aromatic and Mediterranean
       beers. The malt is characterized by good processability, good yield as well as excellent foam values.
     </NOTES>
+    <MAX_IN_BATCH>100</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Golden Promise</NAME>
@@ -41,6 +43,7 @@
       become Golden Promise malt. Golden Promise gives beautiful mouthfeel to bring balance to beers with even the
       gutsiest hops and, when you drop the gravity for a session beer, you won't lose out on body.
     </NOTES>
+    <MAX_IN_BATCH>100</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Maris Otter</NAME>
@@ -55,6 +58,7 @@
       has a low nitrogen content and high extract, producing a rich malty, slight nutty flavour with exceptional
       Brewhouse Performance and beer clarity.
     </NOTES>
+    <MAX_IN_BATCH>100</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Munich Malt I</NAME>
@@ -67,6 +71,7 @@
     <NOTES>The rich malt aroma and color of the malt are perfect for
       malt-forward and deeper color beer styles. Pronounced malt aroma with notes of caramel, honey and bread.
     </NOTES>
+    <MAX_IN_BATCH>100</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Munich Malt II</NAME>
@@ -79,6 +84,7 @@
     <NOTES>The rich malt aroma and color of the malt are perfect for
       malt-forward and deeper color beer styles. Pronounced malt aroma with notes of caramel, honey and bread.
     </NOTES>
+    <MAX_IN_BATCH>100</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Pale Ale Malt</NAME>
@@ -92,6 +98,7 @@
       This malt is particularly suitable for an isothermal mashing process. Fine notes of bread, with hints of dried
       fruits and honey.
     </NOTES>
+    <MAX_IN_BATCH>100</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Pilsner Malt</NAME>
@@ -104,6 +111,7 @@
     <NOTES>Made from the finest German quality brewing barley, it provides the perfect base for all beer styles,
       especially for bottom-fermented beers. Malty-sweet with light honey notes.
     </NOTES>
+    <MAX_IN_BATCH>100</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Premium Pilsner Malt</NAME>
@@ -116,6 +124,7 @@
     <NOTES>By selecting suitable raw materials and special malting technologies, particularly light wort and boiling
       colors are being achieved. Malty-sweet with light honey notes.
     </NOTES>
+    <MAX_IN_BATCH>100</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Vienna Malt</NAME>
@@ -128,6 +137,7 @@
     <NOTES>Ideal for brewing gold-colored beers and promoting a
       full-body in the beer. Malty-sweet, light honey and nutty notes.
     </NOTES>
+    <MAX_IN_BATCH>100</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Barke Pilsner Malt</NAME>
@@ -141,6 +151,7 @@
       beers. This results in an excellent body and a pronounced full-bodiedness. Pronounced malt aromas with underlying
       toffee notes: pleasant, soft mouthfeel.
     </NOTES>
+    <MAX_IN_BATCH>100</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Barke Munich Malt</NAME>
@@ -154,6 +165,7 @@
       Suitable for aromatic dark beers of all styles, this malt helps to underline typical beer characteristics by
       amplifying the aroma. Pronounced malt aroma with notes of honey and pastries.
     </NOTES>
+    <MAX_IN_BATCH>100</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Barke Vienna Malt</NAME>
@@ -167,6 +179,7 @@
       beers. This malt brings gold-colored hues to the beer and promotes full-bodiedness. Intense malt-sweet, light
       toffee, honey and nut notes: amused, soft mouthfeel.
     </NOTES>
+    <MAX_IN_BATCH>100</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Floor-Malted Tennen Pilsner Malt</NAME>
@@ -180,6 +193,7 @@
       produced in Bohemia, according to the traditional floor malting process. This artisanal process gives the malt a
       special character and an extraordinary flavor intensity. Intense malt aroma with honey and biscuit notes.
     </NOTES>
+    <MAX_IN_BATCH>100</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Floor-Malted Tennen Dark Malt</NAME>
@@ -194,6 +208,7 @@
       special character and an extraordinary flavor intensity. Intense malt aroma with toffee and dark caramel notes:
       full body, pronounced malt sweetness.
     </NOTES>
+    <MAX_IN_BATCH>100</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Floor-Malted Tennen Wheat Malt</NAME>
@@ -397,6 +412,7 @@
     <NOTES>The strong beech wood smoke gives this malt its unmistakable flavor, hence being the ideal ingredient to
       perfect any aroma-intensive beer style. Pronounced smoke aroma, malty-sweet, with vanilla and honey notes
     </NOTES>
+    <MAX_IN_BATCH>100</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Oak Smoked Wheat Malt</NAME>
@@ -421,7 +437,7 @@
     <ORIGIN>UK</ORIGIN>
     <NOTES>Ingredient for providing the essential peat flavour in whisky production. 5 ppm Phenols.
     </NOTES>
-    <MAX_IN_BATCH>50</MAX_IN_BATCH>
+    <MAX_IN_BATCH>75</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Peated Malt Heavy</NAME>
@@ -433,7 +449,7 @@
     <ORIGIN>UK</ORIGIN>
     <NOTES>Ingredient for providing the essential peat flavour in whisky production. 50 ppm Phenols.
     </NOTES>
-    <MAX_IN_BATCH>50</MAX_IN_BATCH>
+    <MAX_IN_BATCH>75</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Acidulated Malt</NAME>
@@ -486,9 +502,10 @@
     <NOTES>Red X has become synonymous with beers with a reddish color. It can be used 100% of the grain bill and is
       thus ready for use without the addition of further malts. It ensures, with the highest possible process
       reliability and optimum processability, that reproducibly bright beers with intense red colors can be brewed. The
-      malt was designed for a beer with 12° Plato. For stronger beers, due to the higher original wort content, some
+      malt was designed for a beer with 12Â° Plato. For stronger beers, due to the higher original wort content, some
       Pilsner malt should be added proportionally to the bulk to get back into the red range.
     </NOTES>
+    <MAX_IN_BATCH>100</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Spelt Malt</NAME>
@@ -578,7 +595,7 @@
     <COLOR>4</COLOR>
     <SUPPLIER>Castle Malting</SUPPLIER>
     <ORIGIN>UK</ORIGIN>
-    <NOTES>Château Buckwheat malt is used in the production of gluten-free beer. Adds a particular nutty and malty
+    <NOTES>ChÃ¢teau Buckwheat malt is used in the production of gluten-free beer. Adds a particular nutty and malty
       flavor to your beer. It also can be used in specialty beers to render a rich and deep tone.
     </NOTES>
     <MAX_IN_BATCH>40</MAX_IN_BATCH>
@@ -736,11 +753,12 @@
     <TYPE>Grain</TYPE>
     <YIELD>80</YIELD>
     <COLOR>2</COLOR>
-    <SUPPLIER>Schweizer Mälzerei</SUPPLIER>
+    <SUPPLIER>Schweizer MÃ¤lzerei</SUPPLIER>
     <ORIGIN>CH</ORIGIN>
     <NOTES>It provides the perfect base for all beer styles,
       especially for bottom-fermented beers. Malty-sweet with light honey notes.
     </NOTES>
+    <MAX_IN_BATCH>100</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Vienna Malt (CH)</NAME>
@@ -748,11 +766,12 @@
     <TYPE>Grain</TYPE>
     <YIELD>79</YIELD>
     <COLOR>4</COLOR>
-    <SUPPLIER>Schweizer Mälzerei</SUPPLIER>
+    <SUPPLIER>Schweizer MÃ¤lzerei</SUPPLIER>
     <ORIGIN>CH</ORIGIN>
     <NOTES>Ideal for brewing gold-colored beers and promoting a
       full-body in the beer. Malty-sweet, light honey and nutty notes.
     </NOTES>
+    <MAX_IN_BATCH>100</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Pale Ale Malt</NAME>
@@ -760,12 +779,13 @@
     <TYPE>Grain</TYPE>
     <YIELD>79</YIELD>
     <COLOR>3</COLOR>
-    <SUPPLIER>Schweizer Mälzerei</SUPPLIER>
+    <SUPPLIER>Schweizer MÃ¤lzerei</SUPPLIER>
     <ORIGIN>CH</ORIGIN>
     <NOTES>Produces excellent lighter ales or top-fermented beers.
       This malt is particularly suitable for an isothermal mashing process. Fine notes of bread, with hints of dried
       fruits and honey.
     </NOTES>
+    <MAX_IN_BATCH>100</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Caramel Malt (CH)</NAME>
@@ -773,12 +793,13 @@
     <TYPE>Grain</TYPE>
     <YIELD>76</YIELD>
     <COLOR>30</COLOR>
-    <SUPPLIER>Schweizer Mälzerei</SUPPLIER>
+    <SUPPLIER>Schweizer MÃ¤lzerei</SUPPLIER>
     <ORIGIN>CH</ORIGIN>
     <NOTES>The rich malt aroma and color of the malt are perfect for
       malt-forward and deeper color beer styles. Pronounced malt aroma with notes of caramel, honey, bread and a slight
       hint of coffee.
     </NOTES>
+    <MAX_IN_BATCH>50</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Munich Malt (CH)</NAME>
@@ -786,11 +807,12 @@
     <TYPE>Grain</TYPE>
     <YIELD>78</YIELD>
     <COLOR>7</COLOR>
-    <SUPPLIER>Schweizer Mälzerei</SUPPLIER>
+    <SUPPLIER>Schweizer MÃ¤lzerei</SUPPLIER>
     <ORIGIN>CH</ORIGIN>
     <NOTES>The rich malt aroma and color of the malt are perfect for
       malt-forward and deeper color beer styles. Pronounced malt aroma with notes of caramel, honey and bread.
     </NOTES>
+    <MAX_IN_BATCH>100</MAX_IN_BATCH>
   </FERMENTABLE>
 
   <!-- Adjuncts -->
@@ -865,6 +887,7 @@
     <YIELD>99.00</YIELD>
     <COLOR>40.00</COLOR>
     <NOTES>Rich, sweet flavor.</NOTES>
+    <MAX_IN_BATCH>50</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Sugar, Table</NAME>
@@ -873,6 +896,7 @@
     <YIELD>100.00</YIELD>
     <COLOR>0.20</COLOR>
     <NOTES>Dries out beer. Too much adds a cidery flavour.</NOTES>
+    <MAX_IN_BATCH>20</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Honey</NAME>
@@ -881,6 +905,7 @@
     <YIELD>85.00</YIELD>
     <COLOR>1</COLOR>
     <NOTES>Dries out beer. Can add some flowery flavours.</NOTES>
+    <MAX_IN_BATCH>50</MAX_IN_BATCH>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Lactose</NAME>
@@ -889,5 +914,6 @@
     <YIELD>100.00</YIELD>
     <COLOR>1</COLOR>
     <NOTES>Lactose is not fermentable, so adds a sweetness to the finished beer.</NOTES>
+    <MAX_IN_BATCH>25</MAX_IN_BATCH>
   </FERMENTABLE>
 </FERMENTABLES>

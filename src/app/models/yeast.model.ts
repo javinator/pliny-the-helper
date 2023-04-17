@@ -9,5 +9,6 @@ export interface Yeast extends Ingredient {
   description: string,
   productId: string,
   lab: string,
-  bestFor?: string
+  bestFor?: string,
+  maxAbv?: number
 }

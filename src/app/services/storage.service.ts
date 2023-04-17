@@ -7,6 +7,7 @@ import {Fermentable} from "../models/fermentable.model";
 import {Hop} from "../models/hop.model";
 import {Yeast} from "../models/yeast.model";
 import {Misc} from "../models/misc.model";
+import {CONFIG} from "../constants";
 
 @Injectable({
   providedIn: 'root'
@@ -18,10 +19,10 @@ export class StorageService {
     this.init().then(() =>
       this.setSettings(
         {
-          brewer: 'Brew Master',
-          batchSize: 10,
-          boilTime: 60,
-          efficiency: 65
+          brewer: CONFIG.defaultName,
+          batchSize: CONFIG.defaultBatchSize,
+          boilTime: CONFIG.defaultBoilTime,
+          efficiency: CONFIG.defaultEfficiency
         }
       )
     );

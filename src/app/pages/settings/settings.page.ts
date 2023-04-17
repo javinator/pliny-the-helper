@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {StorageService} from "../../services/storage.service";
 import {XmlReaderService} from "../../services/xml-reader.service";
-import {v4 as uuidv4} from 'uuid';
+import {Settings} from "../../models/settings.model";
 
 @Component({
   selector: 'settings-page',
@@ -11,7 +11,9 @@ import {v4 as uuidv4} from 'uuid';
   standalone: true,
   imports: [IonicModule]
 })
-export class SettingsPage {
+export class SettingsPage implements OnInit {
+  settings!: Settings;
+
   constructor(private storage: StorageService, private xmlReader: XmlReaderService) {
   }
 
@@ -42,6 +44,12 @@ export class SettingsPage {
       }
     }
   ];
+
+  ngOnInit() {
+    this.storage.get('settings')?.then((response) => {
+      this.settings = response;
+    });
+  }
 
   init() {
     this.xmlReader.initStyles();
