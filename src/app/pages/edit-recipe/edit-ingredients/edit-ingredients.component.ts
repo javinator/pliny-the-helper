@@ -69,10 +69,12 @@ export class EditIngredientsComponent implements OnInit {
   closeFermentable() {
     if (this.isEdit) {
       this.storage.saveRecipe(calculateRecipe(this.recipe));
-      this.isEdit = false;
     }
     this.addFermentableOpen = false;
-    this.newFermentable = undefined;
+    setTimeout(() => {
+      this.isEdit = false;
+      this.newFermentable = undefined;
+    }, 250)
   }
 
   chooseFermentable(event: any) {
@@ -117,10 +119,12 @@ export class EditIngredientsComponent implements OnInit {
   closeHop() {
     if (this.isEdit) {
       this.storage.saveRecipe(calculateRecipe(this.recipe));
-      this.isEdit = false;
     }
     this.addHopOpen = false;
-    this.newHop = undefined;
+    setTimeout(() => {
+      this.isEdit = false;
+      this.newHop = undefined;
+    }, 250)
   }
 
   chooseHop(event: any) {
@@ -181,10 +185,12 @@ export class EditIngredientsComponent implements OnInit {
   closeYeast() {
     if (this.isEdit) {
       this.storage.saveRecipe(calculateRecipe(this.recipe));
-      this.isEdit = false;
     }
     this.addYeastOpen = false;
-    this.newYeast = undefined;
+    setTimeout(() => {
+      this.isEdit = false;
+      this.newYeast = undefined;
+    }, 250)
   }
 
   chooseYeast(event: any) {
@@ -229,10 +235,12 @@ export class EditIngredientsComponent implements OnInit {
   closeMisc() {
     if (this.isEdit) {
       this.storage.saveRecipe(calculateRecipe(this.recipe));
-      this.isEdit = false;
     }
     this.addMiscOpen = false;
-    this.newMisc = undefined;
+    setTimeout(() => {
+      this.isEdit = false;
+      this.newMisc = undefined;
+    }, 250)
   }
 
   chooseMisc(event: any) {

@@ -100,6 +100,7 @@ export class XmlReaderService {
             yield: item.YIELD[0],
             color: item.COLOR[0],
             origin: item.ORIGIN?.[0],
+            supplier: item.SUPPLIER?.[0],
             description: item.NOTES[0],
             version: item.VERSION[0],
             maxInBatch: item.MAX_IN_BATCH?.[0]

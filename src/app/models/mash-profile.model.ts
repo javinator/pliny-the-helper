@@ -5,14 +5,13 @@ export interface MashProfile {
   version: number,
   grainTemp: number,
   mashSteps: Array<MashStep>,
-  tunTemp: number,
-  spargeTemp: number,
-  pH: number,
-  tunWeight: number,
-  tunSpecificHeat: number,
-  notes: string,
-  equipAdjust: boolean,
-  id: number,
-  mashType: 'Infusion' | 'Temperature' | 'Decoction' | 'BIAB',
-  spargeType: 'Batch' | 'Fly' | 'BIAB'
+  tunTemp?: number,
+  spargeTemp?: number,
+  pH?: number,
+  tunWeight?: number,
+  tunSpecificHeat?: number,
+  notes?: string,
+  equipAdjust?: boolean,
+  mashType?: 'Infusion' | 'Temperature' | 'Decoction' | 'BIAB',
+  spargeType?: 'Batch' | 'Fly' | 'BIAB'
 }

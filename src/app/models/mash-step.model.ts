@@ -6,14 +6,9 @@ export interface MashStep {
   infuseTemp: number,
   stepTemp: number,
   stepTime: number,
-  rampTime: number,
-  endTemp: number,
-  description: string,
-  waterToGrainRatio: number,
-  decoctAmount: number,
-  id: number,
-  order: number,
-  calcInfuseTemp: number,
-  calcInfuseAmount: number,
-  calcDecoctAmount: number
+  rampTime?: number,
+  endTemp?: number,
+  description?: string,
+  waterToGrainRatio?: number,
+  decoctAmount?: number
 }

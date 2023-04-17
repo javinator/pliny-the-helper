@@ -130,7 +130,7 @@
   <ng-template>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Add Fermentable</ion-title>
+        <ion-title>{{ isEdit ? 'Edit Fermentable' : 'Add Fermentable'}}</ion-title>
         <ion-buttons slot="end">
           <ion-button *ngIf="!isEdit" (click)="addFermentable()">
             <ion-label>Add</ion-label>
@@ -143,6 +143,7 @@
     </ion-header>
     <ion-content class="ion-padding">
       <ion-select
+        *ngIf="!isEdit"
         label="Fermentable"
         label-placement="floating"
         interface="action-sheet"
@@ -169,7 +170,7 @@
   <ng-template>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Add Hop</ion-title>
+        <ion-title>{{ isEdit ? 'Edit Hop' : 'Add Hop' }}</ion-title>
         <ion-buttons slot="end">
           <ion-button *ngIf="!isEdit" (click)="addHop()">
             <ion-label>Add</ion-label>
@@ -182,6 +183,7 @@
     </ion-header>
     <ion-content class="ion-padding">
       <ion-select
+        *ngIf="!isEdit"
         label="Hop"
         label-placement="floating"
         interface="action-sheet"
@@ -238,7 +240,7 @@
   <ng-template>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Add Yeast</ion-title>
+        <ion-title>{{ isEdit ? 'Edit Yeast' : 'Add Yeast' }}</ion-title>
         <ion-buttons slot="end">
           <ion-button *ngIf="!isEdit" (click)="addYeast()">
             <ion-label>Add</ion-label>
@@ -251,6 +253,7 @@
     </ion-header>
     <ion-content class="ion-padding">
       <ion-select
+        *ngIf="!isEdit"
         label="Yeast"
         label-placement="floating"
         interface="action-sheet"
@@ -278,7 +281,7 @@
   <ng-template>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Add Yeast</ion-title>
+        <ion-title>{{ isEdit ? 'Edit Misc' : 'Add Misc' }}</ion-title>
         <ion-buttons slot="end">
           <ion-button *ngIf="!isEdit" (click)="addMisc()">
             <ion-label>Add</ion-label>
@@ -291,6 +294,7 @@
     </ion-header>
     <ion-content class="ion-padding">
       <ion-select
+        *ngIf="!isEdit"
         label="Misc"
         label-placement="floating"
         interface="action-sheet"

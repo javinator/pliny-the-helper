@@ -48,6 +48,10 @@ export class RecipeUtil {
     const au = hop.alpha * hopUtilization(recipe, hop) / 100;
     return useFactor(hop) * (au * CalculatorUtil.kilosToOunces(hop.amount!) * 7490) / CalculatorUtil.litersToGallons(recipe.boilSize);
   }
+
+  static calculateBoilSize(recipe: Recipe) {
+    return recipe.batchSize * Math.pow(1.2, recipe.boilTime / 60);
+  }
 }
 
 function getPPG(y: number) {

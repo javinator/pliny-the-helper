@@ -1,5 +1,6 @@
 <ion-card>
   <ion-card-header>
+    <ion-card-subtitle>{{ fermentable.type }}</ion-card-subtitle>
     <ion-card-title>{{ fermentable.name }}</ion-card-title>
   </ion-card-header>
   <ion-card-content>
@@ -8,7 +9,8 @@
     </p>
     <p class="ion-margin-bottom">&nbsp;</p>
     <p class="ion-margin-top">
-      Color: {{ fermentable.color }} °L
+      Color: {{ fermentable.color }} °L<br>
+      <span *ngIf="fermentable.supplier">{{ fermentable.supplier }} ({{ fermentable.origin }})</span>
     </p>
   </ion-card-content>
 </ion-card>

@@ -27,18 +27,19 @@
       <ion-label class="ion-hide-xl-down">Misc</ion-label>
     </ion-segment-button>
   </ion-segment>
+  <ion-searchbar [debounce]="50" (ionInput)="filter($event)"></ion-searchbar>
   <ng-container [ngSwitch]="activeTab">
     <ng-container *ngSwitchCase="'fermentables'">
-      <fermentables-card *ngFor="let fermentable of fermentables" [fermentable]="fermentable"></fermentables-card>
+      <fermentables-card *ngFor="let fermentable of f_fermentables" [fermentable]="fermentable"></fermentables-card>
     </ng-container>
     <ng-container *ngSwitchCase="'hops'">
-      <hops-card *ngFor="let hop of hops" [hop]="hop"></hops-card>
+      <hops-card *ngFor="let hop of f_hops" [hop]="hop"></hops-card>
     </ng-container>
     <ng-container *ngSwitchCase="'yeasts'">
-      <yeasts-card *ngFor="let yeast of yeasts" [yeast]="yeast"></yeasts-card>
+      <yeasts-card *ngFor="let yeast of f_yeasts" [yeast]="yeast"></yeasts-card>
     </ng-container>
     <ng-container *ngSwitchCase="'miscs'">
-      <miscs-card *ngFor="let misc of miscs" [misc]="misc"></miscs-card>
+      <miscs-card *ngFor="let misc of f_miscs" [misc]="misc"></miscs-card>
     </ng-container>
   </ng-container>
 </ion-content>

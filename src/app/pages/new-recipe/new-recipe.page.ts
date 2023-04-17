@@ -8,6 +8,7 @@ import {FormsModule} from "@angular/forms";
 import {Recipe} from "../../models/recipe.model";
 import {v4 as uuidv4} from "uuid";
 import {Router} from "@angular/router";
+import {RecipeUtil} from "../../utils/recipe-calculator.utils";
 
 @Component({
   selector: 'new-recipe-page',
@@ -72,7 +73,8 @@ export class NewRecipePage implements OnInit {
   }
 
   submit() {
-    this.model.boilSize = this.model.batchSize * 1.1;
+    this.model.calculateBoilSize = true;
+    this.model.boilSize = RecipeUtil.calculateBoilSize(this.model);
     this.storage.addRecipe(this.model)?.then(() => this.router.navigate(['edit-recipe'], {state: {recipe: this.model.uid}}));
   }
 }
