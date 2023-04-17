@@ -11,6 +11,30 @@ export class CalculatorUtil {
     return (brix / (258.6 - ((brix / 258.2) * 227.1))) + 1
   }
 
+  static srmToLovibond(srm: number) {
+    return srm / 1.35;
+  }
+
+  static lovibondToSrm(lovibond: number) {
+    return lovibond * 1.35;
+  }
+
+  static srmToEbc(srm: number) {
+    return 1.97 * srm;
+  }
+
+  static ebcToSrm(ebc: number) {
+    return ebc / 1.97;
+  }
+
+  static lovibondToEbc(lovibond: number) {
+    return lovibond * 1.35 * 1.97;
+  }
+
+  static ebcToLovibond(ebc: number) {
+    return ebc / 1.97 / 1.35;
+  }
+
   static celsiusToFahrenheit(temp: number) {
     return temp * 1.8 + 32;
   }
@@ -23,11 +47,23 @@ export class CalculatorUtil {
     return kilo * 2.204;
   }
 
+  static poundsToKilos(pounds: number) {
+    return pounds / 2.204;
+  }
+
   static kilosToOunces(kilo: number) {
     return kilo * 35.2739619;
   }
 
+  static ouncesToGrams(ounces: number) {
+    return ounces / 0.0352739619;
+  }
+
   static litersToGallons(liter: number) {
     return liter * 0.264172052
+  }
+
+  static gallonsToLiters(gallons: number) {
+    return gallons / 0.264172052
   }
 }

@@ -7,6 +7,7 @@ import {CalculatorUtil} from "../../../utils/calculator.utils";
   selector: 'refractometer-card',
   templateUrl: 'refractometer-card.component.html',
   standalone: true,
+  styleUrls: ['../calculators.page.scss'],
   imports: [IonicModule, DecimalPipe],
 })
 export class RefractometerCardComponent {

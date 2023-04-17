@@ -9,7 +9,7 @@ import {ConversionCardComponent} from "./conversion-card/conversion-card.compone
 @Component({
   selector: 'calculators-page',
   templateUrl: 'calculators.page.html',
-  styleUrls: ['../../app.component.scss'],
+  styleUrls: ['../../app.component.scss', 'calculators.page.scss'],
   standalone: true,
   imports: [IonicModule, AbvCardComponent, NgIf, NgForOf, NgSwitchCase, NgSwitch, HydrometerCardComponent, RefractometerCardComponent, ConversionCardComponent]
 })

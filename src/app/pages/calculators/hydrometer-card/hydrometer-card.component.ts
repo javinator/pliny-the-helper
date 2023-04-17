@@ -7,6 +7,7 @@ import {CalculatorUtil} from "../../../utils/calculator.utils";
   selector: 'hydrometer-card',
   templateUrl: 'hydrometer-card.component.html',
   standalone: true,
+  styleUrls: ['../calculators.page.scss'],
   imports: [IonicModule, DecimalPipe],
 })
 export class HydrometerCardComponent {
