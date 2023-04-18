@@ -9,6 +9,7 @@ import {EditDetailsComponent} from "./edit-details/edit-details.component";
 import {FormsModule} from "@angular/forms";
 import {BeerStyle} from "../../models/beer-style.model";
 import {RecipeUtil} from "../../utils/recipe-calculator.utils";
+import {MashProfile} from "../../models/mash-profile.model";
 
 @Component({
   selector: 'edit-recipe-page',
@@ -26,6 +27,7 @@ export class EditRecipePage implements OnInit {
   recipe?: Recipe;
   editRecipe?: Recipe;
   styles!: BeerStyle[];
+  mashProfiles?: MashProfile[];
 
   constructor(private router: Router, private storage: StorageService) {
     this.uid = this.router.getCurrentNavigation()?.extras.state?.['recipe'];
@@ -50,6 +52,9 @@ export class EditRecipePage implements OnInit {
     this.storage.get('styles')?.then((response) => {
       this.styles = response;
       this.styles?.sort((a, b) => a.name.localeCompare(b.name))
+    });
+    this.storage.get('mashProfiles')?.then((response) => {
+      this.mashProfiles = response;
     });
   }
 
@@ -80,6 +85,14 @@ export class EditRecipePage implements OnInit {
 
   changeStyle(event: any) {
     this.editRecipe!.style = this.styles?.find((style) => style.name === event.detail.value);
+  }
+
+  getProfilesOptions() {
+    return this.mashProfiles?.map((profile) => profile.name);
+  }
+
+  changeProfile(event: any) {
+    this.editRecipe!.mashProfile = this.mashProfiles?.find((profile) => profile.name === event.detail.value);
   }
 
   calculateBoilSize(): number {

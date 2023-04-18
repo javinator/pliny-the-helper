@@ -9,6 +9,7 @@ import {Recipe} from "../../models/recipe.model";
 import {v4 as uuidv4} from "uuid";
 import {Router} from "@angular/router";
 import {RecipeUtil} from "../../utils/recipe-calculator.utils";
+import {MashProfile} from "../../models/mash-profile.model";
 
 @Component({
   selector: 'new-recipe-page',
@@ -22,6 +23,7 @@ export class NewRecipePage implements OnInit {
   }
 
   styles?: BeerStyle[];
+  mashProfiles?: MashProfile[];
   settings?: Settings;
   model!: Recipe;
 
@@ -58,6 +60,9 @@ export class NewRecipePage implements OnInit {
       this.styles = response;
       this.styles?.sort((a, b) => a.name.localeCompare(b.name))
     });
+    this.storage.get('mashProfiles')?.then((response) => {
+      this.mashProfiles = response;
+    });
   }
 
   navigateBack() {
@@ -72,9 +77,19 @@ export class NewRecipePage implements OnInit {
     this.model.style = this.styles?.find((style) => style.name === event.detail.value);
   }
 
+  getProfilesOptions() {
+    return this.mashProfiles?.map((profile) => profile.name);
+  }
+
+  changeProfile(event: any) {
+    this.model.mashProfile = this.mashProfiles?.find((profile) => profile.name === event.detail.value);
+  }
+
   submit() {
     this.model.calculateBoilSize = true;
     this.model.boilSize = RecipeUtil.calculateBoilSize(this.model);
     this.storage.addRecipe(this.model)?.then(() => this.router.navigate(['edit-recipe'], {state: {recipe: this.model.uid}}));
   }
+
+
 }

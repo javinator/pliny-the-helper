@@ -59,6 +59,10 @@
           labelPlacement="floating"
           required="true"
         ></ion-input>
+        <ion-select label="Mash Profile" label-placement="floating" (ionChange)="changeProfile($event)"
+                    placeholder="Choose Mash Profile">
+          <ion-select-option *ngFor="let name of getProfilesOptions()" [value]="name">{{ name }}</ion-select-option>
+        </ion-select>
         <div class="ion-text-end">
           <ion-button (click)="navigateBack()" shape="round">Cancel</ion-button>
           <ion-button type="submit" shape="round">Save</ion-button>

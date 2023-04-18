@@ -8,6 +8,7 @@ import {Hop} from "../models/hop.model";
 import {Yeast} from "../models/yeast.model";
 import {Misc} from "../models/misc.model";
 import {CONFIG} from "../constants";
+import {MashProfile} from "../models/mash-profile.model";
 
 @Injectable({
   providedIn: 'root'
@@ -106,6 +107,11 @@ export class StorageService {
   public setMiscs(miscs: Misc[]) {
     this._storage?.remove('miscs');
     this._storage?.set('miscs', miscs);
+  }
+
+  public setMashProfiles(mashProfiles: MashProfile[]) {
+    this._storage?.remove('mashProfiles');
+    this._storage?.set('mashProfiles', mashProfiles);
   }
 
   public setSettings(settings: Settings) {

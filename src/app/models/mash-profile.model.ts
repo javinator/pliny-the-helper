@@ -11,7 +11,5 @@ export interface MashProfile {
   tunWeight?: number,
   tunSpecificHeat?: number,
   notes?: string,
-  equipAdjust?: boolean,
-  mashType?: 'Infusion' | 'Temperature' | 'Decoction' | 'BIAB',
-  spargeType?: 'Batch' | 'Fly' | 'BIAB'
+  equipAdjust?: boolean
 }

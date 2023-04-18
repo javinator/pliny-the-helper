@@ -99,6 +99,10 @@
         label-placement="floating"
         [(ngModel)]="editRecipe!.efficiency"
       ></ion-input>
+      <ion-select label="Mash Profile" label-placement="floating" (ionChange)="changeProfile($event)"
+                  placeholder="Choose Mash Profile" [value]="editRecipe!.mashProfile!.name">
+        <ion-select-option *ngFor="let name of getProfilesOptions()" [value]="name">{{ name }}</ion-select-option>
+      </ion-select>
     </ion-content>
   </ng-template>
 </ion-modal>

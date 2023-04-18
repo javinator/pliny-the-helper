@@ -10,5 +10,6 @@ export interface Yeast extends Ingredient {
   productId: string,
   lab: string,
   bestFor?: string,
-  maxAbv?: number
+  maxAbv?: number,
+  flocculation?: 'Low' | 'Medium' | 'High' | 'Very High'
 }

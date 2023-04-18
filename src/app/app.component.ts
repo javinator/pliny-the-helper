@@ -27,6 +27,7 @@ export class AppComponent implements OnInit {
     this.xmlReader.initHops();
     this.xmlReader.initYeasts();
     this.xmlReader.initMiscs();
+    this.xmlReader.initMashProfiles();
   }
 
   pages = [
