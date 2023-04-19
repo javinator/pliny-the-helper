@@ -2,7 +2,8 @@
   <ion-card-header>
     <ion-row>
       <ion-col size="small">
-        <ion-img [src]="'assets/img/srm/'+color+'.png'" style="width: 48px"></ion-img>
+        <ion-img *ngIf="color <= 40" [src]="'assets/img/srm/'+color+'.png'" style="width: 48px"></ion-img>
+        <ion-img *ngIf="color > 40" [src]="'assets/img/srm/41.png'" style="width: 48px"></ion-img>
       </ion-col>
       <ion-col>
         <ion-card-title>{{ name }}</ion-card-title>

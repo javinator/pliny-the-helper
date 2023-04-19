@@ -9,6 +9,7 @@ import {DecimalPipe, NgForOf, NgIf} from "@angular/common";
 import {StorageService} from "../../../services/storage.service";
 import {RecipeUtil} from "../../../utils/recipe-calculator.utils";
 import {CalculatorUtil} from "../../../utils/calculator.utils";
+import {CONFIG} from "../../../constants";
 
 @Component({
   selector: 'edit-ingredients-card',
@@ -145,6 +146,9 @@ export class EditIngredientsComponent implements OnInit {
 
   setHopUse(event: any) {
     this.newHop!.use = event.detail.value;
+    if (this.newHop!.use === 'Aroma') {
+      this.newHop!.time = CONFIG.aromaTime;
+    }
   }
 
   addHop() {

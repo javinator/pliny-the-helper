@@ -7,7 +7,7 @@ import {DecimalPipe, NgIf} from "@angular/common";
   selector: 'conversion-card',
   templateUrl: 'conversion-card.component.html',
   standalone: true,
-  styleUrls: ['../calculators.page.scss'],
+  styleUrls: ['../../edit-recipe/edit-details/edit-details.component.scss'],
   imports: [IonicModule, NgIf, DecimalPipe],
 })
 export class ConversionCardComponent {

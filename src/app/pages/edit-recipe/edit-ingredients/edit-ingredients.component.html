@@ -50,9 +50,11 @@
         <ion-label>
           {{ hop.name }}
           <p class="ion-padding-top">
-            {{ hop.amount ? hop.amount * 1000 : 0 | number:'1.0-1'}} g - {{ hop.use }} -
-            <span
-              [class]="checkOvertime(hop, recipe)">{{ hop.time ? (hop.time + (hop.use === 'Dry Hop' ? ' days' : ' minutes')) : '' }}</span>
+            {{ hop.amount ? hop.amount * 1000 : 0 | number:'1.0-1'}} g - {{ hop.use }}
+            <ng-container *ngIf="hop.use === 'Boil' || hop.use === 'Dry Hop'"> -
+              <span
+                [class]="checkOvertime(hop, recipe)">{{ hop.time ? (hop.time + (hop.use === 'Dry Hop' ? ' days' : ' minutes')) : '' }}</span>
+            </ng-container>
           </p>
           <p>
             {{ hop.alpha }} % AA - {{ RecipeUtil.calculatePerHopIbu(hop, recipe) | number:'1.0-1'}} IBUs
@@ -198,8 +200,8 @@
         label-placement="floating"
         [value]="newHop?.use"
         (ionChange)="setHopUse($event)" [disabled]="!newHop">
-        <ion-select-option value="Aroma">Aroma</ion-select-option>
         <ion-select-option value="Boil">Boil</ion-select-option>
+        <ion-select-option value="Aroma">Flame Out</ion-select-option>
         <ion-select-option value="Dry Hop">Dry Hop</ion-select-option>
         <ion-select-option value="First Wort">First Wort</ion-select-option>
       </ion-select>
@@ -222,7 +224,7 @@
         (ionChange)="setHopAlpha($event)">
       </ion-input>
       <ion-input
-        *ngIf="newHop?.use === 'Aroma' || newHop?.use === 'Boil' || newHop?.use === 'Dry Hop'"
+        *ngIf="newHop?.use === 'Boil' || newHop?.use === 'Dry Hop'"
         type="number"
         label="Time"
         label-placement="floating"
