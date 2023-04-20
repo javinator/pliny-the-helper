@@ -577,20 +577,26 @@
     <CARB_MIN>1.5</CARB_MIN>
     <CARB_MAX>3.0</CARB_MAX>
     <NOTES>A pale, refreshing grainy, doughy, or bready wheat beer with a clean fermentation profile and a
-	  variable hop character and bitterness. Its lighter body and higher carbonation contribute to its easy-drinking nature.
+      variable hop character and bitterness. Its lighter body and higher carbonation contribute to its easy-drinking
+      nature.
     </NOTES>
-    <PROFILE>Aroma: Low to moderate grainy, bready, or doughy wheat character. A light to moderate malty sweetness is acceptable.
-	  Moderate esters optional, usually a neutral profile. Low to moderate citrusy, spicy, floral, or fruity
-	  hop aroma. Not typically dry-hopped. No clove phenols.
-      Flavor: Light to moderately-strong bready, doughy, or grainy wheat flavor, which can linger into the finish. May have a
-	  moderate malty sweetness or can finish quite dry and crisp. Low to moderate hop bitterness, sometimes lasting into the
-	  finish. Balance is usually even, but may be slightly bitter. Low to moderate citrusy, spicy, floral, or fruity hop flavor.
-	  Moderate esters optional. 
-      Mouthfeel: Medium-light to medium body. Medium-high to high carbonation. Slight creaminess is optional; wheat beers
-	  sometimes have a soft, 'fluffy' impression.
+    <PROFILE>Aroma: Low to moderate grainy, bready, or doughy wheat character. A light to moderate malty sweetness is
+      acceptable.
+      Moderate esters optional, usually a neutral profile. Low to moderate citrusy, spicy, floral, or fruity
+      hop aroma. Not typically dry-hopped. No clove phenols.
+      Flavor: Light to moderately-strong bready, doughy, or grainy wheat flavor, which can linger into the finish. May
+      have a
+      moderate malty sweetness or can finish quite dry and crisp. Low to moderate hop bitterness, sometimes lasting into
+      the
+      finish. Balance is usually even, but may be slightly bitter. Low to moderate citrusy, spicy, floral, or fruity hop
+      flavor.
+      Moderate esters optional.
+      Mouthfeel: Medium-light to medium body. Medium-high to high carbonation. Slight creaminess is optional; wheat
+      beers
+      sometimes have a soft, 'fluffy' impression.
     </PROFILE>
     <INGREDIENTS>Clean American ale yeast. Wheat malt (often 30–50%, lower than is typical in Weissbier). American,
-	  German, or New World hops.
+      German, or New World hops.
     </INGREDIENTS>
     <EXAMPLES>Bell’s Oberon, Three Floyds Gumballhead, WhiteFrontier Pillows, La Nébuleuse Am'Wheat</EXAMPLES>
   </STYLE>
@@ -1268,7 +1274,7 @@
     <CARB_MAX>3.0</CARB_MAX>
     <NOTES>Complex with moderate spiciness ad fruitiness. Some peppery, clove-like phenols, light citrus or banana
       character. Light floral, perfumy hop aroma. Medium body, highly carbonated, dry finish. Often also called
-	  Belgian Golden Strong Ale.
+      Belgian Golden Strong Ale.
     </NOTES>
     <PROFILE>Aroma: Complex bouquet with moderate to significant spiciness, moderate fruity esters and low alcohol and
       hop aromas. Generous spicy, peppery, sometimes clove-like phenols. Esters are often reminiscent of citrus fruits
@@ -1518,10 +1524,10 @@
     <OG_MIN>1.055</OG_MIN>
     <OG_MAX>1.07</OG_MAX>
     <FG_MIN>1.008</FG_MIN>
-    <FG_MAX>1.012</FG_MAX>
+    <FG_MAX>1.013</FG_MAX>
     <IBU_MIN>40</IBU_MIN>
     <IBU_MAX>80</IBU_MAX>
-    <COLOR_MIN>6</COLOR_MIN>
+    <COLOR_MIN>4</COLOR_MIN>
     <COLOR_MAX>12</COLOR_MAX>
     <ABV_MIN>5.5</ABV_MIN>
     <ABV_MAX>7.5</ABV_MAX>
