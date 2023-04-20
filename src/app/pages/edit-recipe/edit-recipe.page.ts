@@ -1,15 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
-import {Recipe} from "../../models/recipe.model";
+import {Recipe, BeerStyle, MashProfile} from "models";
 import {Router} from "@angular/router";
-import {StorageService} from "../../services/storage.service";
+import {StorageService} from "services";
 import {DecimalPipe, NgForOf, NgIf, NgSwitch, NgSwitchCase} from "@angular/common";
 import {EditIngredientsComponent} from "./edit-ingredients/edit-ingredients.component";
 import {EditDetailsComponent} from "./edit-details/edit-details.component";
 import {FormsModule} from "@angular/forms";
-import {BeerStyle} from "../../models/beer-style.model";
-import {RecipeUtil} from "../../utils/recipe-calculator.utils";
-import {MashProfile} from "../../models/mash-profile.model";
+import {RecipeUtil} from "utils";
 
 @Component({
   selector: 'edit-recipe-page',

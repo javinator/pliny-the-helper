@@ -1,15 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
-import {StorageService} from "../../services/storage.service";
-import {BeerStyle} from "../../models/beer-style.model";
+import {StorageService} from "services";
+import {BeerStyle, Settings, Recipe, MashProfile} from "models";
 import {DatePipe, Location, NgForOf} from "@angular/common";
-import {Settings} from "../../models/settings.model";
 import {FormsModule} from "@angular/forms";
-import {Recipe} from "../../models/recipe.model";
 import {v4 as uuidv4} from "uuid";
 import {Router} from "@angular/router";
-import {RecipeUtil} from "../../utils/recipe-calculator.utils";
-import {MashProfile} from "../../models/mash-profile.model";
+import {RecipeUtil} from "utils";
 
 @Component({
   selector: 'new-recipe-page',

@@ -22,6 +22,11 @@
       "es2018",
       "dom"
     ],
+    "paths": {
+      "models": ["./src/models"],
+      "services": ["./src/services"],
+      "utils": ["./src/utils"]
+    },
     "useDefineForClassFields": false
   },
   "angularCompilerOptions": {

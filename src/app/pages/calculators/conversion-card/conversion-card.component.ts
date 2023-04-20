@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
-import {CalculatorUtil} from "../../../utils/calculator.utils";
+import {CalculatorUtil} from "utils";
 import {DecimalPipe, NgIf} from "@angular/common";
 
 @Component({

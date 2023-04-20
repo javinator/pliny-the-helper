@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
-import {StorageService} from "../../services/storage.service";
-import {BeerStyle} from "../../models/beer-style.model";
+import {StorageService} from "services";
+import {BeerStyle} from "models";
 import {StyleCardComponent} from "./style-card/style-card.component";
 import {NgForOf, NgIf} from "@angular/common";
 import {Router} from "@angular/router";

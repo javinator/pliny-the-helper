@@ -3,12 +3,9 @@ import {IonicModule} from '@ionic/angular';
 import {FermentablesCardComponent} from "./fermentables-card/fermentables-card.component";
 import {NgForOf, NgIf, NgSwitch, NgSwitchCase} from "@angular/common";
 import {HopsCardComponent} from "./hops-card/hops-card.component";
-import {Fermentable} from "../../models/fermentable.model";
-import {StorageService} from "../../services/storage.service";
-import {Hop} from "../../models/hop.model";
+import {Fermentable, Hop, Yeast, Misc} from "models";
+import {StorageService} from "services";
 import {YeastsCardComponent} from "./yeasts-card/yeasts-card.component";
-import {Yeast} from "../../models/yeast.model";
-import {Misc} from "../../models/misc.model";
 import {MiscsCardComponent} from "./miscs-card/miscs-card.component";
 
 @Component({

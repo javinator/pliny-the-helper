@@ -1,6 +1,6 @@
 import {Component, Input} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
-import {Yeast} from "../../../models/yeast.model";
+import {Yeast} from "models";
 import {DecimalPipe} from "@angular/common";
 
 @Component({

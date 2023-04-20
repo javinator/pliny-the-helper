@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
-import {StorageService} from "../../services/storage.service";
-import {XmlReaderService} from "../../services/xml-reader.service";
-import {Settings} from "../../models/settings.model";
+import {StorageService, XmlReaderService} from "services";
+import {Settings} from "models";
 
 @Component({
   selector: 'settings-page',

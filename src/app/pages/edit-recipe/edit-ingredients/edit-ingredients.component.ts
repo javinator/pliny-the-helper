@@ -1,13 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
-import {Recipe} from "../../../models/recipe.model";
-import {Fermentable} from "../../../models/fermentable.model";
-import {Hop} from "../../../models/hop.model";
-import {Yeast} from "../../../models/yeast.model";
-import {Misc} from "../../../models/misc.model";
+import {Recipe, Fermentable, Hop, Yeast, Misc} from "models";
 import {DecimalPipe, NgForOf, NgIf} from "@angular/common";
-import {StorageService} from "../../../services/storage.service";
-import {RecipeUtil} from "../../../utils/recipe-calculator.utils";
+import {StorageService} from "services";
+import {RecipeUtil} from "utils";
 import {CONFIG} from "../../../constants";
 
 @Component({

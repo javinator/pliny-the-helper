@@ -1,6 +1,6 @@
 import {Component, Input} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
-import {Misc} from "../../../models/misc.model";
+import {Misc} from "models";
 
 @Component({
   selector: 'miscs-card',

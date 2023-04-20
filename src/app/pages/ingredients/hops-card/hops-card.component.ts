@@ -1,6 +1,6 @@
 import {Component, Input} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
-import {Hop} from "../../../models/hop.model";
+import {Hop} from "models";
 
 @Component({
   selector: 'hops-card',

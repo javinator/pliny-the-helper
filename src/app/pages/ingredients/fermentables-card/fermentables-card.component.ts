@@ -1,6 +1,6 @@
 import {Component, Input} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
-import {Fermentable} from "../../../models/fermentable.model";
+import {Fermentable} from "models";
 import {NgIf} from "@angular/common";
 
 @Component({

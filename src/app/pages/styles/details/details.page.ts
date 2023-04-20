@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {Router} from "@angular/router";
-import {BeerStyle} from "../../../models/beer-style.model";
+import {BeerStyle} from "models";
 
 @Component({
   selector: 'style-details-page',

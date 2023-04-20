@@ -3,11 +3,8 @@ import {IonicModule} from '@ionic/angular';
 import {RouterLink} from "@angular/router";
 import {NgForOf} from "@angular/common";
 import {Storage} from "@ionic/storage-angular";
-import {StorageService} from "./services/storage.service";
-import {XmlReaderService} from "./services/xml-reader.service";
+import {StorageService, XmlReaderService, XmlWriterService} from "services";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-import {CONFIG} from "./constants";
-import {XmlWriterService} from "./services/xml-writer.service";
 
 @Component({
   selector: 'app-root',

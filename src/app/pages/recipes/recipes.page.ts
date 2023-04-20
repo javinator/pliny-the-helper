@@ -1,11 +1,10 @@
 import {Component} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
-import {Recipe} from "../../models/recipe.model";
+import {Recipe} from "models";
 import {NgForOf, NgIf} from "@angular/common";
 import {Router, RouterLink} from "@angular/router";
-import {StorageService} from "../../services/storage.service";
+import {StorageService, XmlWriterService} from "services";
 import {RecipeCardComponent} from "./recipe-card/recipe-card.component";
-import {XmlWriterService} from "../../services/xml-writer.service";
 
 @Component({
   selector: 'recipes-page',

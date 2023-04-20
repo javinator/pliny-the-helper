@@ -1,15 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Storage} from '@ionic/storage-angular';
-import {Recipe} from "../models/recipe.model";
-import {BeerStyle} from "../models/beer-style.model";
-import {Settings} from "../models/settings.model";
-import {Fermentable} from "../models/fermentable.model";
-import {Hop} from "../models/hop.model";
-import {Yeast} from "../models/yeast.model";
-import {Misc} from "../models/misc.model";
-import {CONFIG} from "../constants";
-import {MashProfile} from "../models/mash-profile.model";
-import {RecipeUtil} from "../utils/recipe-calculator.utils";
+import {Recipe, BeerStyle, Fermentable, Hop, Yeast, Misc, MashProfile, Settings} from "models";
+import {CONFIG} from "../app/constants";
+import {RecipeUtil} from "utils";
 
 @Injectable({
   providedIn: 'root'

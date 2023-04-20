@@ -1,7 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
-import {Recipe} from "../../../models/recipe.model";
-import {StorageService} from "../../../services/storage.service";
+import {Recipe} from "models";
 import {DatePipe, DecimalPipe} from "@angular/common";
 
 @Component({

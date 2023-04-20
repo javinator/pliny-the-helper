@@ -1,7 +1,7 @@
 import {Component} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
 import {DecimalPipe} from "@angular/common";
-import {CalculatorUtil} from "../../../utils/calculator.utils";
+import {CalculatorUtil} from "utils";
 
 @Component({
   selector: 'hydrometer-card',

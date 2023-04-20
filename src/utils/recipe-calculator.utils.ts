@@ -2,7 +2,7 @@ import {Recipe} from "../models/recipe.model";
 import {CalculatorUtil} from "./calculator.utils";
 import {Hop} from "../models/hop.model";
 import {Fermentable} from "../models/fermentable.model";
-import {CONFIG} from "../constants";
+import {CONFIG} from "../app/constants";
 
 export class RecipeUtil {
   static calculateOg(recipe: Recipe): number {
