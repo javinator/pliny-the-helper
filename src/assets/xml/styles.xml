@@ -557,6 +557,44 @@
     <EXAMPLES>Hoegaarden Wit, Blue Moon Belgian White Beer, Blanche de Bruxelles</EXAMPLES>
   </STYLE>
   <STYLE>
+    <NAME>American Wheat</NAME>
+    <VERSION>1</VERSION>
+    <CATEGORY>Wheat Beer</CATEGORY>
+    <CATEGORY_NUMBER>6</CATEGORY_NUMBER>
+    <STYLE_LETTER>C</STYLE_LETTER>
+    <STYLE_GUIDE>Bier-Freunde Seeland</STYLE_GUIDE>
+    <TYPE>Ale</TYPE>
+    <OG_MIN>1.040</OG_MIN>
+    <OG_MAX>1.055</OG_MAX>
+    <FG_MIN>1.008</FG_MIN>
+    <FG_MAX>1.013</FG_MAX>
+    <IBU_MIN>15</IBU_MIN>
+    <IBU_MAX>40</IBU_MAX>
+    <COLOR_MIN>3</COLOR_MIN>
+    <COLOR_MAX>6</COLOR_MAX>
+    <ABV_MIN>4.0</ABV_MIN>
+    <ABV_MAX>5.5</ABV_MAX>
+    <CARB_MIN>1.5</CARB_MIN>
+    <CARB_MAX>3.0</CARB_MAX>
+    <NOTES>A pale, refreshing grainy, doughy, or bready wheat beer with a clean fermentation profile and a
+	  variable hop character and bitterness. Its lighter body and higher carbonation contribute to its easy-drinking nature.
+    </NOTES>
+    <PROFILE>Aroma: Low to moderate grainy, bready, or doughy wheat character. A light to moderate malty sweetness is acceptable.
+	  Moderate esters optional, usually a neutral profile. Low to moderate citrusy, spicy, floral, or fruity
+	  hop aroma. Not typically dry-hopped. No clove phenols.
+      Flavor: Light to moderately-strong bready, doughy, or grainy wheat flavor, which can linger into the finish. May have a
+	  moderate malty sweetness or can finish quite dry and crisp. Low to moderate hop bitterness, sometimes lasting into the
+	  finish. Balance is usually even, but may be slightly bitter. Low to moderate citrusy, spicy, floral, or fruity hop flavor.
+	  Moderate esters optional. 
+      Mouthfeel: Medium-light to medium body. Medium-high to high carbonation. Slight creaminess is optional; wheat beers
+	  sometimes have a soft, 'fluffy' impression.
+    </PROFILE>
+    <INGREDIENTS>Clean American ale yeast. Wheat malt (often 30–50%, lower than is typical in Weissbier). American,
+	  German, or New World hops.
+    </INGREDIENTS>
+    <EXAMPLES>Bell’s Oberon, Three Floyds Gumballhead, WhiteFrontier Pillows, La Nébuleuse Am'Wheat</EXAMPLES>
+  </STYLE>
+  <STYLE>
     <NAME>Bitter Ale</NAME>
     <VERSION>1</VERSION>
     <CATEGORY>Pale Ale</CATEGORY>
@@ -568,7 +606,7 @@
     <OG_MAX>1.06</OG_MAX>
     <FG_MIN>1.008</FG_MIN>
     <FG_MAX>1.016</FG_MAX>
-    <IBU_MIN>20</IBU_MIN>
+    <IBU_MIN>25</IBU_MIN>
     <IBU_MAX>50</IBU_MAX>
     <COLOR_MIN>6</COLOR_MIN>
     <COLOR_MAX>18</COLOR_MAX>
@@ -578,7 +616,7 @@
     <CARB_MAX>3.0</CARB_MAX>
     <NOTES>Classic British Session Ales. The transition between the Bitter and the Pale Ale is gradual and both names
       are usually used interchangeably. Bitter Ales usually are a bit darker in colour. Moderate malt aroma. Hop aroma
-      can range from none to medium, typically floral, earthy, resiny character, but can showcase some American hops.
+      can range from low to medium, typically floral, earthy, resiny character, but can showcase some American hops.
       Medium to moderately high bitterness. Bitterness doesn't overwhelm malt flavour.
     </NOTES>
     <PROFILE>Aroma: Hop aroma moderately-high to moderately-low, typically with a floral, earthy, resiny, and/or fruity
@@ -661,15 +699,15 @@
     <STYLE_LETTER>C</STYLE_LETTER>
     <STYLE_GUIDE>Bier-Freunde Seeland</STYLE_GUIDE>
     <TYPE>Ale</TYPE>
-    <OG_MIN>1.030</OG_MIN>
+    <OG_MIN>1.035</OG_MIN>
     <OG_MAX>1.053</OG_MAX>
-    <FG_MIN>1.008</FG_MIN>
-    <FG_MAX>1.016</FG_MAX>
+    <FG_MIN>1.007</FG_MIN>
+    <FG_MAX>1.014</FG_MAX>
     <IBU_MIN>20</IBU_MIN>
-    <IBU_MAX>50</IBU_MAX>
-    <COLOR_MIN>4</COLOR_MIN>
-    <COLOR_MAX>12</COLOR_MAX>
-    <ABV_MIN>3.2</ABV_MIN>
+    <IBU_MAX>45</IBU_MAX>
+    <COLOR_MIN>3</COLOR_MIN>
+    <COLOR_MAX>10</COLOR_MAX>
+    <ABV_MIN>3.6</ABV_MIN>
     <ABV_MAX>5.2</ABV_MAX>
     <CARB_MIN>1.5</CARB_MIN>
     <CARB_MAX>3.0</CARB_MAX>
@@ -1229,7 +1267,8 @@
     <CARB_MIN>1.5</CARB_MIN>
     <CARB_MAX>3.0</CARB_MAX>
     <NOTES>Complex with moderate spiciness ad fruitiness. Some peppery, clove-like phenols, light citrus or banana
-      character. Light floral, perfumy hop aroma. Medium body, highly carbonated, dry finish.
+      character. Light floral, perfumy hop aroma. Medium body, highly carbonated, dry finish. Often also called
+	  Belgian Golden Strong Ale.
     </NOTES>
     <PROFILE>Aroma: Complex bouquet with moderate to significant spiciness, moderate fruity esters and low alcohol and
       hop aromas. Generous spicy, peppery, sometimes clove-like phenols. Esters are often reminiscent of citrus fruits
@@ -1277,7 +1316,7 @@
     <CARB_MIN>1.5</CARB_MIN>
     <CARB_MAX>3.0</CARB_MAX>
     <NOTES>Rich, sweet, bready malty presence, significant esters and alcohol, some caramel. No dark or roast malt
-      aroma. Medium dry finish, high carbonation. Full and creamy body.
+      aroma. Medium dry finish, high carbonation. Full and creamy body. Often also called Belgian Dark Strong Ale.
     </NOTES>
     <PROFILE>Aroma: Complex, with a rich-sweet malty presence, significant esters and alcohol, and an optional light to
       moderate spiciness. The malt is rich and strong, and can have a deep bready-toasty quality often with a deep
@@ -1473,7 +1512,7 @@
     <VERSION>1</VERSION>
     <CATEGORY>India Pale Ale</CATEGORY>
     <CATEGORY_NUMBER>12</CATEGORY_NUMBER>
-    <STYLE_LETTER>B</STYLE_LETTER>
+    <STYLE_LETTER>C</STYLE_LETTER>
     <STYLE_GUIDE>Bier-Freunde Seeland</STYLE_GUIDE>
     <TYPE>Ale</TYPE>
     <OG_MIN>1.055</OG_MIN>
