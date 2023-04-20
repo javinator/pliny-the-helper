@@ -221,7 +221,8 @@ function parseXMLtoYeasts(data: string): Promise<Yeast[]> {
           description: item.NOTES[0],
           minTemp: item.MIN_TEMPERATURE[0],
           maxTemp: item.MAX_TEMPERATURE[0],
-          attenuation: item.ATTENUATION[0]
+          attenuation: item.ATTENUATION[0],
+          maxAbv: item.MAX_ABV?.[0]
         });
       }
       resolve(arr);

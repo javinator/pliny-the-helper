@@ -25,6 +25,8 @@
             GPTs
           </p>
         </ion-label>
+        <div class="description ion-hide-xl-down">{{ fermentable.description }} Up to {{ fermentable.maxInBatch }}%.
+        </div>
         <ion-buttons slot="end">
           <ion-button (click)="removeFermentable(fermentable)">
             <ion-icon name="trash" slot="icon-only"></ion-icon>
@@ -60,6 +62,8 @@
             {{ hop.alpha }} % AA - {{ RecipeUtil.calculatePerHopIbu(hop, recipe) | number:'1.0-1'}} IBUs
           </p>
         </ion-label>
+        <div class="description ion-hide-xl-down">{{ hop.description }}
+        </div>
         <ion-buttons slot="end">
           <ion-button (click)="removeHop(hop)">
             <ion-icon name="trash" slot="icon-only"></ion-icon>
@@ -86,6 +90,8 @@
           {{ yeast.name }}
           <p class="ion-padding-top">{{ yeast.attenuation | number:'1.1-1' }} % Attenuation</p>
         </ion-label>
+        <div class="description ion-hide-xl-down">{{ yeast.description }} Alcohol tolerant up to {{ yeast.maxAbv }} %.
+        </div>
         <ion-buttons slot="end">
           <ion-button (click)="removeYeast(yeast)">
             <ion-icon name="trash" slot="icon-only"></ion-icon>
@@ -114,6 +120,8 @@
             class="ion-padding-top">{{ misc.amount ? misc.amount * 1000 : 0 | number:'1.0-1'}} {{misc.amountIsWeight ? 'g' : 'ml'}}
             - {{ misc.type}}</p>
         </ion-label>
+        <div class="description ion-hide-xl-down">{{ misc.description }}
+        </div>
         <ion-buttons slot="end">
           <ion-button (click)="removeMisc(misc)">
             <ion-icon name="trash" slot="icon-only"></ion-icon>

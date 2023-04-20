@@ -105,7 +105,7 @@ export class EditRecipePage implements OnInit {
         this.editRecipe.boilSize = this.calculateBoilSize();
       }
       this.storage.saveRecipe(this.editRecipe)
-      this.recipe = JSON.parse(JSON.stringify(this.editRecipe));
+      this.recipe = JSON.parse(JSON.stringify(RecipeUtil.calculateRecipe(this.editRecipe)));
     }
     this.isEditOpen = false;
   }

@@ -1,399 +1,763 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <YEASTS>
   <YEAST>
-    <NAME>Safale BE-134</NAME>
+    <NAME>Lallemand CBC-1</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>LalBrew</LABORATORY>
+    <PRODUCT_ID>CBC-1</PRODUCT_ID>
+    <MIN_TEMPERATURE>20</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>30</MAX_TEMPERATURE>
+    <FLOCCULATION>High</FLOCCULATION>
+    <ATTENUATION>76</ATTENUATION>
+    <MAX_ABV>18</MAX_ABV>
+    <NOTES>CBC-1 has been specifically selected for Cask and Bottle Conditioning applications due to its high resistance
+      to alcohol and pressure. It has a neutral flavor profile and does not metabolize maltotriose, therefore the
+      original character of the beer is preserved after refermentation. The yeast will settle and form a tight mat at
+      the bottom of the bottle or cask.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>Lallemand Belgian Wit</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>LalBrew</LABORATORY>
+    <PRODUCT_ID>Wit</PRODUCT_ID>
+    <MIN_TEMPERATURE>17</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>25</MAX_TEMPERATURE>
+    <FLOCCULATION>Low</FLOCCULATION>
+    <ATTENUATION>79</ATTENUATION>
+    <MAX_ABV>12</MAX_ABV>
+    <NOTES>Wit is a relatively neutral wheat beer strain that can be used to produce a wide variety of wheat beer
+      styles. It produces lower levels of esters and phenols compared to traditional hefeweizen strains. It provides a
+      baseline profile of banana and spice aromas, but leaves space for the brewer to showcase other spice additions
+      typical of Belgian-style beers.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>Lallemand Belle Saison</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>LalBrew</LABORATORY>
+    <PRODUCT_ID>Saison</PRODUCT_ID>
+    <MIN_TEMPERATURE>20</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>35</MAX_TEMPERATURE>
+    <FLOCCULATION>Low</FLOCCULATION>
+    <ATTENUATION>90</ATTENUATION>
+    <MAX_ABV>15</MAX_ABV>
+    <NOTES>Belle Saison is a Belgian-style ale yeast selected specially for its ability to create Saison-style beers. It
+      is a diastaticus strain that allows the brewers to achieve the high attenuation characteristic of this classic
+      style. Designed for warm-temperature fermentation true to traditional 'Farmhouse' production methods, beers brewed
+      with Belle Saison are fruity, spicy and refreshing.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>Lallemand American West Coast</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>LalBrew</LABORATORY>
+    <PRODUCT_ID>BRY-97</PRODUCT_ID>
+    <MIN_TEMPERATURE>15</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>22</MAX_TEMPERATURE>
+    <FLOCCULATION>High</FLOCCULATION>
+    <ATTENUATION>81</ATTENUATION>
+    <MAX_ABV>13</MAX_ABV>
+    <NOTES>BRY-97 is an American West Coast-style ale yeast that was selected for its ability to produce clean
+      fermentations for high quality ales. It is a neutral and highly attenuating strain with a high flocculation
+      ability that can be used to make a wide variety of American-style beers.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>Lallemand Lager Yeast</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Lager</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>LalBrew</LABORATORY>
+    <PRODUCT_ID>Diamond</PRODUCT_ID>
+    <MIN_TEMPERATURE>10</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>15</MAX_TEMPERATURE>
+    <FLOCCULATION>High</FLOCCULATION>
+    <ATTENUATION>80</ATTENUATION>
+    <MAX_ABV>13</MAX_ABV>
+    <NOTES>Diamond is a true lager strain. It delivers excellent fermentation performance, and has the ability to
+      produce clean, authentic lagers.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>Lallemand Hybrid Saison-Style</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>LalBrew</LABORATORY>
+    <PRODUCT_ID>Farmhouse</PRODUCT_ID>
+    <MIN_TEMPERATURE>22</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>30</MAX_TEMPERATURE>
+    <FLOCCULATION>Low</FLOCCULATION>
+    <ATTENUATION>82</ATTENUATION>
+    <MAX_ABV>13</MAX_ABV>
+    <NOTES>Farmhouse is a non-diastatic hybrid that has been selected to make saison-style and farmhouse style beers. It
+      was selected using the most advanced breeding techniques. The research team used classical and non-GMO methods to
+      remove the STA1 gene, responsible for the diastatic activity of Saison yeasts. Care was taken to retain normal
+      brewing sugar utilization to produce dry saisons.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>Lallemand Kölsch-Style</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>LalBrew</LABORATORY>
+    <PRODUCT_ID>Köln</PRODUCT_ID>
+    <MIN_TEMPERATURE>15</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>25</MAX_TEMPERATURE>
+    <FLOCCULATION>Medium</FLOCCULATION>
+    <ATTENUATION>81</ATTENUATION>
+    <MAX_ABV>9</MAX_ABV>
+    <NOTES>Köln is ideal for brewing traditional Kölsch-style beers and other neutral ales. The neutral character of
+      this strain accentuates delicate hop aromas while imparting subtle fruity esters. Colder fermentations will be
+      more neutral in character, while warmer fermentations will have more fruit-forward ester profile.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>Lallemand American East Coast</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>LalBrew</LABORATORY>
+    <PRODUCT_ID>New England</PRODUCT_ID>
+    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>25</MAX_TEMPERATURE>
+    <FLOCCULATION>Medium</FLOCCULATION>
+    <ATTENUATION>81</ATTENUATION>
+    <MAX_ABV>9</MAX_ABV>
+    <NOTES>New England is an ale strain selected specifically for its ability to produce a unique fruit forward ester
+      profile desired in East Coast styles of beer. A typical fermentation will produce tropical and fruity esters,
+      notably stone fruits like peach. New England exhibits medium to high attenuation with medium
+      flocculation, making it a perfect choice for East Coast style ales.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>Lallemand English-Style</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>LalBrew</LABORATORY>
+    <PRODUCT_ID>London</PRODUCT_ID>
+    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>22</MAX_TEMPERATURE>
+    <FLOCCULATION>Low</FLOCCULATION>
+    <ATTENUATION>69</ATTENUATION>
+    <MAX_ABV>12</MAX_ABV>
+    <NOTES>London is a true English ale strain selected for its ability to produce authentic, traditional UK beer
+      styles. Fermentation performance is fast and consistent producing moderate esters and lower attenuation due to an
+      inability to metabolize maltotriose. A more subdued yeast character allows the flavors and aromas of malt and hops
+      to shine through. London may also be used in the production of Ciders.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>Lallemand German Wheat</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>LalBrew</LABORATORY>
+    <PRODUCT_ID>Munich Classic</PRODUCT_ID>
+    <MIN_TEMPERATURE>17</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>25</MAX_TEMPERATURE>
+    <FLOCCULATION>Low</FLOCCULATION>
+    <ATTENUATION>80</ATTENUATION>
+    <MAX_ABV>12</MAX_ABV>
+    <NOTES>Munich Classic is a Bavarian wheat beer strain. It imparts the spicy and fruity aroma profile typical of
+      German wheat beer styles. It produces higher levels of esters and phenols. It has robust and consistent
+      performance making it a great choice for a variety of traditional wheat beer styles.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>Lallemand Nottingham</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>LalBrew</LABORATORY>
+    <PRODUCT_ID>Nottingham</PRODUCT_ID>
+    <MIN_TEMPERATURE>10</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>25</MAX_TEMPERATURE>
+    <FLOCCULATION>High</FLOCCULATION>
+    <ATTENUATION>82</ATTENUATION>
+    <MAX_ABV>14</MAX_ABV>
+    <NOTES>Nottingham is an English-style ale yeast selected for its high performance and versatility. Neutral
+      flavor and consistent performance across diverse fermentation conditions make it and ideal house
+      strain for producing a wide variety of beer styles. It is a stress tolerant making it a good choice for high
+      gravity, sours, re-starting stuck fermentations and other challenging fermentation conditions.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>Lallemand Verdant IPA</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>LalBrew</LABORATORY>
+    <PRODUCT_ID>Verdant IPA</PRODUCT_ID>
+    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>25</MAX_TEMPERATURE>
+    <FLOCCULATION>Medium</FLOCCULATION>
+    <ATTENUATION>80</ATTENUATION>
+    <MAX_ABV>12</MAX_ABV>
+    <NOTES>Verdant IPA was specially selected in collaboration with Verdant Brewing Co. (UK) for its ability to produce
+      a variety of hop-forward and malty beers. Prominent notes of apricot and undertones of tropical fruit and citrus
+      merge seamlessly with hop aromas. With medium-high attenuation, it leaves a soft and balanced malt profile with
+      slightly more body than a typical American IPA yeast strain.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>Lallemand Kveik Yeast</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>LalBrew</LABORATORY>
+    <PRODUCT_ID>Voss</PRODUCT_ID>
+    <MIN_TEMPERATURE>25</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>40</MAX_TEMPERATURE>
+    <FLOCCULATION>Very High</FLOCCULATION>
+    <ATTENUATION>80</ATTENUATION>
+    <MAX_ABV>12</MAX_ABV>
+    <NOTES>Kveik is a Norwegian word meaning yeast. In the Norwegian farmhouse tradition, kveik was preserved by drying
+      and passed from generation to generation. Very fast fermentations are achieved within the optimal temperature
+      range with full attenuation typically achieved within 2-3 days. The flavor profile is consistent across the entire
+      temperature range: neutral with subtle fruity notes of orange and citrus.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>Lallemand Windsor</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>LalBrew</LABORATORY>
+    <PRODUCT_ID>Windsor</PRODUCT_ID>
+    <MIN_TEMPERATURE>15</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>25</MAX_TEMPERATURE>
+    <FLOCCULATION>Low</FLOCCULATION>
+    <ATTENUATION>68</ATTENUATION>
+    <MAX_ABV>12</MAX_ABV>
+    <NOTES>Windsor is a true English ale strain that produces a balanced fruity aroma with lower attenuation due to an
+      inability to metabolize maltotriose. Beers created with it are usually described as full-bodied, fruity English
+      ales. Windsor is a consistent and robust strain that produces moderate levels of alcohol and the balanced flavor
+      and aroma characteristics of the best traditional English ales.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>WildBrew Philly Sour</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>LalBrew</LABORATORY>
+    <PRODUCT_ID>Philly Sour</PRODUCT_ID>
+    <MIN_TEMPERATURE>20</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>30</MAX_TEMPERATURE>
+    <FLOCCULATION>High</FLOCCULATION>
+    <ATTENUATION>78</ATTENUATION>
+    <MAX_ABV>9</MAX_ABV>
+    <NOTES>Philly Sour produces moderate amounts of lactic acid in addition to ethanol in one simple fermentation step.
+      This first yeast in the WildBrew series is a great choice for innovative, sessionable sour beers with refreshing
+      acidity and notes of stone fruit.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>SafAle BE-134</NAME>
     <VERSION>1</VERSION>
     <TYPE>Ale</TYPE>
     <FORM>Dry</FORM>
     <LABORATORY>Fermentis</LABORATORY>
     <PRODUCT_ID>BE-134</PRODUCT_ID>
     <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>28</MAX_TEMPERATURE>
-    <FLOCCULATION>Medium</FLOCCULATION>
-    <ATTENUATION>88</ATTENUATION>
-    <NOTES>Reveals fruity aromas with a spicy character, particularly notes of cloves.</NOTES>
+    <MAX_TEMPERATURE>26</MAX_TEMPERATURE>
+    <FLOCCULATION>Low</FLOCCULATION>
+    <ATTENUATION>91</ATTENUATION>
+    <MAX_ABV>11</MAX_ABV>
+    <NOTES>SafAle BE-134 is a very powerful beer yeast with regards to flavor production. It produces several flavor
+      active components, such as as fruity esters and phenolic / spicy components, at high concentrations. It has a very
+      good diacetyl reduction power. Character is dry, ideal for highly refreshing beers like Belgian-Saison style.
+    </NOTES>
   </YEAST>
   <YEAST>
-    <NAME>Safale K-97</NAME>
+    <NAME>SafAle BE-256</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>Fermentis</LABORATORY>
+    <PRODUCT_ID>BE-256</PRODUCT_ID>
+    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>26</MAX_TEMPERATURE>
+    <FLOCCULATION>High</FLOCCULATION>
+    <ATTENUATION>84</ATTENUATION>
+    <MAX_ABV>11</MAX_ABV>
+    <NOTES>Active dry brewer’s yeast recommended to ferment a diversity of Belgian type beers such as abbey style known
+      for its fruitiness and high alcohol content. It ferments very fast and reveals strong fermentation aromas. To
+      maintain the aromatic profile at the end of the fermentation, we do recommend to crop this yeast as soon as
+      possible after fermentation.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>SafBrew HA-18</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>Fermentis</LABORATORY>
+    <PRODUCT_ID>HA-18</PRODUCT_ID>
+    <MIN_TEMPERATURE>25</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>35</MAX_TEMPERATURE>
+    <FLOCCULATION>Medium</FLOCCULATION>
+    <ATTENUATION>100</ATTENUATION>
+    <MAX_ABV>18</MAX_ABV>
+    <NOTES>HA-18 is a powerful solution (consisting of POF+ Active Dry Brewer’s Yeast and enzymes) for the
+      production of high-gravity and particularly high alcoholic beers – such as strong ales, barley wines and barrel
+      aged beers with very high density. It has a very good resistance to osmotic pressure and high fermentation
+      temperatures.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>SafAle K-97</NAME>
     <VERSION>1</VERSION>
     <TYPE>Ale</TYPE>
     <FORM>Dry</FORM>
     <LABORATORY>Fermentis</LABORATORY>
     <PRODUCT_ID>K-97</PRODUCT_ID>
-    <MIN_TEMPERATURE>15</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>20</MAX_TEMPERATURE>
-    <FLOCCULATION>High</FLOCCULATION>
-    <ATTENUATION>81.0</ATTENUATION>
-    <NOTES>Suitable for ales with low esters.</NOTES>
+    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>26</MAX_TEMPERATURE>
+    <FLOCCULATION>Low</FLOCCULATION>
+    <ATTENUATION>82</ATTENUATION>
+    <MAX_ABV>11</MAX_ABV>
+    <NOTES>German ale brewer’s yeast producing subtle fermentation character. Depending on the conditions tend to
+      present floral and balanced fruity character. Ideal for delicate beers such as German Kolsch beers, Belgian Wits
+      and some versions of Session Beers. Suitable for heavily hopped beers and has ability to form a large firm head
+      when fermenting.
+    </NOTES>
   </YEAST>
   <YEAST>
-    <NAME>Safale S-04</NAME>
+    <NAME>SafAle S-04</NAME>
     <VERSION>1</VERSION>
     <TYPE>Ale</TYPE>
     <FORM>Dry</FORM>
     <LABORATORY>Fermentis</LABORATORY>
     <PRODUCT_ID>S-04</PRODUCT_ID>
-    <MIN_TEMPERATURE>15</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>20</MAX_TEMPERATURE>
+    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>26</MAX_TEMPERATURE>
     <FLOCCULATION>High</FLOCCULATION>
-    <ATTENUATION>75.0</ATTENUATION>
-    <NOTES>English ale yeast selected for fast fermentation.</NOTES>
+    <ATTENUATION>77</ATTENUATION>
+    <MAX_ABV>11</MAX_ABV>
+    <NOTES>English ale brewer’s yeast selected for its fast fermentation profile. Produces balanced fruity and floral
+      notes. Due to its flocculation power, tends to produce beers with higher clarity. Ideal for a large range of
+      American and English Ales – including highly hopped beers – and is specially adapted to cask-conditioned and beers
+      fermented in cylindro-conical tanks.
+    </NOTES>
   </YEAST>
   <YEAST>
-    <NAME>Safale US-05</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Ale</TYPE>
-    <FORM>Dry</FORM>
-    <LABORATORY>Fermentis</LABORATORY>
-    <PRODUCT_ID>US-05</PRODUCT_ID>
-    <MIN_TEMPERATURE>15</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>22</MAX_TEMPERATURE>
-    <FLOCCULATION>Medium</FLOCCULATION>
-    <ATTENUATION>80.0</ATTENUATION>
-    <NOTES>Produces well-balanced beers with low diacetyl.</NOTES>
-  </YEAST>
-  <YEAST>
-    <NAME>Safbrew T-58</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Ale</TYPE>
-    <FORM>Dry</FORM>
-    <LABORATORY>Fermentis</LABORATORY>
-    <PRODUCT_ID>T-58</PRODUCT_ID>
-    <MIN_TEMPERATURE>15</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>24</MAX_TEMPERATURE>
-    <FLOCCULATION>Low</FLOCCULATION>
-    <ATTENUATION>75.0</ATTENUATION>
-    <NOTES>Estery and somewhat peppery.</NOTES>
-  </YEAST>
-  <YEAST>
-    <NAME>Saflager W-34/70</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Lager</TYPE>
-    <FORM>Dry</FORM>
-    <LABORATORY>Fermentis</LABORATORY>
-    <PRODUCT_ID>W-34/70</PRODUCT_ID>
-    <MIN_TEMPERATURE>11</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>15</MAX_TEMPERATURE>
-    <FLOCCULATION>High</FLOCCULATION>
-    <ATTENUATION>83.0</ATTENUATION>
-    <NOTES>Good balance of floral and fruity aromas with clean flavor.</NOTES>
-  </YEAST>
-  <YEAST>
-    <NAME>Saflager S-23</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Lager</TYPE>
-    <FORM>Dry</FORM>
-    <LABORATORY>Fermentis</LABORATORY>
-    <PRODUCT_ID>S-23</PRODUCT_ID>
-    <MIN_TEMPERATURE>12</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>15</MAX_TEMPERATURE>
-    <FLOCCULATION>High</FLOCCULATION>
-    <ATTENUATION>82.0</ATTENUATION>
-    <NOTES>Produces fruity, estery notes.</NOTES>
-  </YEAST>
-  <YEAST>
-    <NAME>Safbrew S-33</NAME>
+    <NAME>SafAle S-33</NAME>
     <VERSION>1</VERSION>
     <TYPE>Ale</TYPE>
     <FORM>Dry</FORM>
     <LABORATORY>Fermentis</LABORATORY>
     <PRODUCT_ID>S-33</PRODUCT_ID>
-    <MIN_TEMPERATURE>15</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>20</MAX_TEMPERATURE>
-    <FLOCCULATION>Powdery</FLOCCULATION>
-    <ATTENUATION>70.0</ATTENUATION>
-    <NOTES>General purpose ale yeast with neutral flavor profiles.</NOTES>
+    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>26</MAX_TEMPERATURE>
+    <FLOCCULATION>Medium</FLOCCULATION>
+    <ATTENUATION>70</ATTENUATION>
+    <MAX_ABV>11</MAX_ABV>
+    <NOTES>Fruity driven strain, gives a high mouthfeel and body to the beer. Ideal for Belgian Ales (Blond, Dubbel,
+      Tripel, Quadrupel Styles) and strong English ales (ex. Imperial Stouts). It is also ideal for New England IPAs.
+      Yeast with a medium sedimentation: forms no clumps but a powdery haze when resuspended in the beer.
+    </NOTES>
   </YEAST>
   <YEAST>
-    <NAME>Safbrew WB-06</NAME>
+    <NAME>SafAle T-58</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>Fermentis</LABORATORY>
+    <PRODUCT_ID>T-58</PRODUCT_ID>
+    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>26</MAX_TEMPERATURE>
+    <FLOCCULATION>Medium</FLOCCULATION>
+    <ATTENUATION>75</ATTENUATION>
+    <MAX_ABV>11</MAX_ABV>
+    <NOTES>Specialty brewer’s yeast selected for its strong fermentation character, intense fruity and phenolic flavors
+      – especially banana, clove and peppery notes. Suitable for a great variety of wheat-base beers and fruity-spicy
+      oriented styles. Yeast with a medium sedimentation: forms no clumps but a powdery haze when resuspended in the
+      beer.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>SafAle US-05</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>Fermentis</LABORATORY>
+    <PRODUCT_ID>US-05</PRODUCT_ID>
+    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>26</MAX_TEMPERATURE>
+    <FLOCCULATION>Medium</FLOCCULATION>
+    <ATTENUATION>80</ATTENUATION>
+    <MAX_ABV>11</MAX_ABV>
+    <NOTES>American ale brewer’s yeast producing neutral and well-balanced ales, clean and crispy. Forms a firm foam
+      head and presents a very good ability to stay in suspension during fermentation. Ideal for American beer types and
+      highly hopped beers.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>SafAle WB-06</NAME>
     <VERSION>1</VERSION>
     <TYPE>Ale</TYPE>
     <FORM>Dry</FORM>
     <LABORATORY>Fermentis</LABORATORY>
     <PRODUCT_ID>WB-06</PRODUCT_ID>
     <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>24</MAX_TEMPERATURE>
+    <MAX_TEMPERATURE>26</MAX_TEMPERATURE>
     <FLOCCULATION>Low</FLOCCULATION>
-    <ATTENUATION>86.0</ATTENUATION>
-    <NOTES>Subtle estery and phenol flavors - banana and clover.</NOTES>
+    <ATTENUATION>88</ATTENUATION>
+    <MAX_ABV>11</MAX_ABV>
+    <NOTES>Brewer’s yeast providing fruity and phenolic character, varying with the fermentation conditions. Produces
+      well-attenuated beers and it is ideal for wheat base beers, such as Belgian and German Styles (Ex. Wit Beers and
+      Weizen Beers). Produces typical phenolic notes of wheat beers. Allows to brew beer with a high drinkability
+      profile and presents a very good ability to suspend during fermentation.
+    </NOTES>
   </YEAST>
   <YEAST>
-    <NAME>Safbrew BE-256</NAME>
+    <NAME>SafBrew BR-8</NAME>
     <VERSION>1</VERSION>
     <TYPE>Ale</TYPE>
     <FORM>Dry</FORM>
     <LABORATORY>Fermentis</LABORATORY>
-    <PRODUCT_ID>BE-256</PRODUCT_ID>
+    <PRODUCT_ID>BR-8</PRODUCT_ID>
     <MIN_TEMPERATURE>15</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>20</MAX_TEMPERATURE>
-    <FLOCCULATION>High</FLOCCULATION>
-    <ATTENUATION>82.0</ATTENUATION>
-    <NOTES>Subtle, well-balanced aromas. Ferments fast.</NOTES>
+    <MAX_TEMPERATURE>25</MAX_TEMPERATURE>
+    <FLOCCULATION>Low</FLOCCULATION>
+    <ATTENUATION>88</ATTENUATION>
+    <MAX_ABV>11</MAX_ABV>
+    <NOTES>It offers all the flavor benefits of ‘wild’ Brett yeast, but with more control and reliability, eliminating
+      the risk of over-carbonation and gushing after bottling. Selected specifically for secondary fermentation in
+      bottles or casks, BR-8 produces phenolic compounds that create a distinctive finishing touch which evolves over
+      time as the beer is aged, with funkier notes (barnyard, horse, leather…) nicely balanced by refreshing, fruity
+      notes.
+    </NOTES>
   </YEAST>
   <YEAST>
-    <NAME>Saflager S-189</NAME>
+    <NAME>SafBrew LA-01</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>Fermentis</LABORATORY>
+    <PRODUCT_ID>LA-01</PRODUCT_ID>
+    <MIN_TEMPERATURE>15</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>25</MAX_TEMPERATURE>
+    <FLOCCULATION>Medium</FLOCCULATION>
+    <ATTENUATION>15</ATTENUATION>
+    <MAX_ABV>5</MAX_ABV>
+    <NOTES>LA-01, is a Saccharomyces cerevisiae var. chevalieri that has been specifically selected for the production
+      of low and/or non-alcoholic beverages (0.5ABV). This yeast does not assimilate maltose and maltotriose but
+      assimilates simple sugars (glucose, fructose and sucrose) and is characterized by a subtle aroma profile.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>SafLager S-189</NAME>
     <VERSION>1</VERSION>
     <TYPE>Lager</TYPE>
     <FORM>Dry</FORM>
     <LABORATORY>Fermentis</LABORATORY>
     <PRODUCT_ID>S-189</PRODUCT_ID>
-    <MIN_TEMPERATURE>10</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>14</MAX_TEMPERATURE>
+    <MIN_TEMPERATURE>12</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>18</MAX_TEMPERATURE>
     <FLOCCULATION>High</FLOCCULATION>
-    <ATTENUATION>84.0</ATTENUATION>
-    <NOTES>Popular with commercial breweries - neutral flavor.</NOTES>
-  </YEAST>
-  <YEAST>
-    <NAME>Danstar Belle Saison</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Ale</TYPE>
-    <FORM>Dry</FORM>
-    <LABORATORY>Lallemand</LABORATORY>
-    <PRODUCT_ID>Belle Saison</PRODUCT_ID>
-    <MIN_TEMPERATURE>17</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>27</MAX_TEMPERATURE>
-    <FLOCCULATION>Low</FLOCCULATION>
-    <ATTENUATION>92.0</ATTENUATION>
-    <NOTES>Belgian strain chosen for Saison beers.</NOTES>
-  </YEAST>
-  <YEAST>
-    <NAME>Danstar Nottingham</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Ale</TYPE>
-    <FORM>Dry</FORM>
-    <LABORATORY>Lallemand</LABORATORY>
-    <PRODUCT_ID>Nottingham</PRODUCT_ID>
-    <MIN_TEMPERATURE>16</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>20</MAX_TEMPERATURE>
-    <FLOCCULATION>High</FLOCCULATION>
-    <ATTENUATION>80.0</ATTENUATION>
-    <NOTES>Slightly estery, almost neutral.</NOTES>
-    <BEST_FOR>British Ales.</BEST_FOR>
-  </YEAST>
-  <YEAST>
-    <NAME>Danstar Verdant IPA</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Ale</TYPE>
-    <FORM>Dry</FORM>
-    <LABORATORY>Lallemand</LABORATORY>
-    <PRODUCT_ID>Verdant</PRODUCT_ID>
-    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>25</MAX_TEMPERATURE>
-    <FLOCCULATION>Medium</FLOCCULATION>
-    <ATTENUATION>78.5</ATTENUATION>
-    <NOTES>Prominent notes of apricot and undertones of tropical fruit and citrus merge seamlessly with hop aromas.
+    <ATTENUATION>82</ATTENUATION>
+    <MAX_ABV>10</MAX_ABV>
+    <NOTES>Originating from the Hürlimann brewery in Switzerland. This lager yeast strain’s profile allows to brew
+      fairly neutral flavor beers with a high drinkability. Depending on the conditions, it tends to present noticeable
+      herbal and floral notes to lager beers.
     </NOTES>
-    <BEST_FOR>American IPAs.</BEST_FOR>
   </YEAST>
   <YEAST>
-    <NAME>Danstar Windsor</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Ale</TYPE>
-    <FORM>Dry</FORM>
-    <LABORATORY>Lallemand</LABORATORY>
-    <PRODUCT_ID>Windsor</PRODUCT_ID>
-    <MIN_TEMPERATURE>15</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>25</MAX_TEMPERATURE>
-    <FLOCCULATION>Low</FLOCCULATION>
-    <ATTENUATION>69.0</ATTENUATION>
-    <NOTES>Fruity and estery flavor and aroma, typical of traditional English style ales. Full bodied.</NOTES>
-    <BEST_FOR>Fruity English ales, pale ales, porters.</BEST_FOR>
-  </YEAST>
-  <YEAST>
-    <NAME>MJ's Bavarian Lager</NAME>
+    <NAME>SafLager S-23</NAME>
     <VERSION>1</VERSION>
     <TYPE>Lager</TYPE>
     <FORM>Dry</FORM>
-    <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
-    <PRODUCT_ID>M76</PRODUCT_ID>
-    <MIN_TEMPERATURE>8</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>14</MAX_TEMPERATURE>
-    <FLOCCULATION>Medium</FLOCCULATION>
-    <ATTENUATION>76.0</ATTENUATION>
-    <NOTES>Suitable for most lager styles. Full, rounded malt character with well-promoted hop flavours.</NOTES>
-  </YEAST>
-  <YEAST>
-    <NAME>MJ's Bavarian Wheat Yeast</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Wheat</TYPE>
-    <FORM>Dry</FORM>
-    <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
-    <PRODUCT_ID>M20</PRODUCT_ID>
-    <MIN_TEMPERATURE>15</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>30</MAX_TEMPERATURE>
-    <FLOCCULATION>Medium</FLOCCULATION>
-    <ATTENUATION>70.0</ATTENUATION>
-    <NOTES>Suitable for a range of German Weizens as well as Belgian Witbier. Clean, &#8220;yeasty&#8221; aroma. Ideal
-      for beers that are traditionally served cloudy.
-    </NOTES>
-  </YEAST>
-  <YEAST>
-    <NAME>MJ's Belgian Abbey</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Ale</TYPE>
-    <FORM>Dry</FORM>
-    <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
-    <PRODUCT_ID>M47</PRODUCT_ID>
-    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>25</MAX_TEMPERATURE>
+    <LABORATORY>Fermentis</LABORATORY>
+    <PRODUCT_ID>S-23</PRODUCT_ID>
+    <MIN_TEMPERATURE>12</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>18</MAX_TEMPERATURE>
     <FLOCCULATION>High</FLOCCULATION>
-    <ATTENUATION>76.0</ATTENUATION>
-    <NOTES>Exceptionally fruity with hugely complex esters. Highly flocculant.</NOTES>
-  </YEAST>
-  <YEAST>
-    <NAME>MJ's Belgian Ale Yeast</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Ale</TYPE>
-    <FORM>Dry</FORM>
-    <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
-    <PRODUCT_ID>M27</PRODUCT_ID>
-    <MIN_TEMPERATURE>21</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>32</MAX_TEMPERATURE>
-    <FLOCCULATION>Medium</FLOCCULATION>
-    <ATTENUATION>72.5</ATTENUATION>
-    <NOTES>Exceptional top-fermenting yeast strain creating distinctive beers with spicy, fruity and peppery notes.
-      Ideal for fermentation of Belgian Saison or farmhouse style beers
+    <ATTENUATION>82</ATTENUATION>
+    <MAX_ABV>10</MAX_ABV>
+    <NOTES>Bottom fermenting brewer’s yeast originating from Berlin in Germany. SafLager S-23 recommended for the
+      production of fruitier and more estery lagers. Its profile gives beers with a good length on the palate.
     </NOTES>
   </YEAST>
   <YEAST>
-    <NAME>MJ's Belgian Tripel</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Ale</TYPE>
-    <FORM>Dry</FORM>
-    <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
-    <PRODUCT_ID>M31</PRODUCT_ID>
-    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>28</MAX_TEMPERATURE>
-    <FLOCCULATION>Medium</FLOCCULATION>
-    <ATTENUATION>81.5</ATTENUATION>
-    <NOTES>Fantastic complex marriage of spice, fruity esters, phenolics and alcohol. Attenuative with a high alcohol
-      tolerance making it perfect for a range of Belgian styles.
-    </NOTES>
-  </YEAST>
-  <YEAST>
-    <NAME>MJ's Belgian Wit</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Wheat</TYPE>
-    <FORM>Dry</FORM>
-    <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
-    <PRODUCT_ID>M21</PRODUCT_ID>
-    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>25</MAX_TEMPERATURE>
-    <FLOCCULATION>Low</FLOCCULATION>
-    <ATTENUATION>76.5</ATTENUATION>
-    <NOTES>Good balance between fruity esters and warming spice phenolics. Leaves some sweetness and will drop bright if
-      left long enough.
-    </NOTES>
-  </YEAST>
-  <YEAST>
-    <NAME>MJ's Bohemian Lager Yeast</NAME>
+    <NAME>SafLager W-34/70</NAME>
     <VERSION>1</VERSION>
     <TYPE>Lager</TYPE>
     <FORM>Dry</FORM>
-    <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
-    <PRODUCT_ID>M84</PRODUCT_ID>
-    <MIN_TEMPERATURE>10</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>15</MAX_TEMPERATURE>
-    <FLOCCULATION>Medium</FLOCCULATION>
-    <ATTENUATION>69.0</ATTENUATION>
-    <NOTES>Characterized by its dry and clean palate. Emphasizes hop character.</NOTES>
-  </YEAST>
-  <YEAST>
-    <NAME>MJ's California Lager</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Lager</TYPE>
-    <FORM>Dry</FORM>
-    <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
-    <PRODUCT_ID>M54</PRODUCT_ID>
-    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>20</MAX_TEMPERATURE>
+    <LABORATORY>Fermentis</LABORATORY>
+    <PRODUCT_ID>W-34/70</PRODUCT_ID>
+    <MIN_TEMPERATURE>12</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>18</MAX_TEMPERATURE>
     <FLOCCULATION>High</FLOCCULATION>
-    <ATTENUATION>76.5</ATTENUATION>
-    <NOTES>A unique lager strain that has the ability to ferment at ale temperatures without the associated off
-      flavours. Extended lagering periods are also not required.
+    <ATTENUATION>82</ATTENUATION>
+    <MAX_ABV>10</MAX_ABV>
+    <NOTES>This famous brewer’s yeast strain from Weihenstephan in Germany is used world-wide within the brewing
+      industry. W-34/70 allows the brewing of beers with a good balance of floral and fruity aromas and gives
+      clean flavors and high drinkable beers.
     </NOTES>
   </YEAST>
   <YEAST>
-    <NAME>MJ's Empire Ale</NAME>
+    <NAME>MJ Mead</NAME>
     <VERSION>1</VERSION>
-    <TYPE>Ale</TYPE>
+    <TYPE>Wine</TYPE>
     <FORM>Dry</FORM>
-    <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
-    <PRODUCT_ID>M15</PRODUCT_ID>
-    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>22</MAX_TEMPERATURE>
-    <FLOCCULATION>Medium</FLOCCULATION>
-    <ATTENUATION>72.5</ATTENUATION>
-    <NOTES>Full bodied ales with exceptional depth. Rich dark fruit flavors.</NOTES>
-  </YEAST>
-  <YEAST>
-    <NAME>MJ's French Saison</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Ale</TYPE>
-    <FORM>Dry</FORM>
-    <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
-    <PRODUCT_ID>M29</PRODUCT_ID>
-    <MIN_TEMPERATURE>26</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>32</MAX_TEMPERATURE>
-    <FLOCCULATION>Medium</FLOCCULATION>
-    <ATTENUATION>81.0</ATTENUATION>
-    <NOTES>Highly attenuative. Creates distinctive beers with spicy, fruity, and peppery notes. Ideal for farmhouse
-      ales.
-    </NOTES>
-  </YEAST>
-  <YEAST>
-    <NAME>MJ's Liberty Bell</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Ale</TYPE>
-    <FORM>Dry</FORM>
-    <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
-    <PRODUCT_ID>M36</PRODUCT_ID>
-    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>23</MAX_TEMPERATURE>
-    <FLOCCULATION>High</FLOCCULATION>
-    <ATTENUATION>76.5</ATTENUATION>
-    <NOTES>This strain produces light, delicate fruity esters and helps to develop malt character.</NOTES>
-  </YEAST>
-  <YEAST>
-    <NAME>MJ's Mead</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Ale</TYPE>
-    <FORM>Dry</FORM>
-    <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
+    <LABORATORY>Mangrove Jack's</LABORATORY>
     <PRODUCT_ID>M05</PRODUCT_ID>
     <MIN_TEMPERATURE>15</MIN_TEMPERATURE>
     <MAX_TEMPERATURE>30</MAX_TEMPERATURE>
     <FLOCCULATION>High</FLOCCULATION>
-    <ATTENUATION>81.5</ATTENUATION>
-    <NOTES>High ester-producing strain conferring fresh, floral esters, especially when fermented cool. High alcohol and
-      temperature tolerance.
+    <ATTENUATION>98</ATTENUATION>
+    <MAX_ABV>18</MAX_ABV>
+    <NOTES>A high ester-producing strain conferring fresh, floral esters, especially when
+      fermented cool. This yeast has high alcohol tolerance and ferments well over
+      a wide temperature range. When using honey you will need a yeast nutrient with this yeast for
+      healthy fermentation.
     </NOTES>
   </YEAST>
   <YEAST>
-    <NAME>MJ's New World Strong Ale</NAME>
+    <NAME>MJ Bavarian Lager</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Lager</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>Mangrove Jack's</LABORATORY>
+    <PRODUCT_ID>M76</PRODUCT_ID>
+    <MIN_TEMPERATURE>8</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>14</MAX_TEMPERATURE>
+    <FLOCCULATION>Medium</FLOCCULATION>
+    <ATTENUATION>78</ATTENUATION>
+    <MAX_ABV>8</MAX_ABV>
+    <NOTES>A bottom-fermenting yeast suitable for most lager styles. Promotes less sulphur
+      production than other lager strains, as well as a fuller, more rounded malt character
+      with well-promoted hop flavours.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>MJ Bavarian Wheat</NAME>
     <VERSION>1</VERSION>
     <TYPE>Ale</TYPE>
     <FORM>Dry</FORM>
-    <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
+    <LABORATORY>Mangrove Jack's</LABORATORY>
+    <PRODUCT_ID>M20</PRODUCT_ID>
+    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>30</MAX_TEMPERATURE>
+    <FLOCCULATION>Low</FLOCCULATION>
+    <ATTENUATION>74</ATTENUATION>
+    <MAX_ABV>7.5</MAX_ABV>
+    <NOTES>A top-fermenting wheat beer yeast which imparts banana and clove esters
+      balanced with spiced aromas. This yeast produces a silky mouthfeel and rich body.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>MJ Belgian Abbey</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>Mangrove Jack's</LABORATORY>
+    <PRODUCT_ID>M47</PRODUCT_ID>
+    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>25</MAX_TEMPERATURE>
+    <FLOCCULATION>High</FLOCCULATION>
+    <ATTENUATION>75</ATTENUATION>
+    <MAX_ABV>8</MAX_ABV>
+    <NOTES>Moderately alcohol tolerant with fewer phenols than Belgian Ale, this yeast is
+      exceptionally fruity with hugely complex esters and is highly flocculant.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>MJ Belgian Ale</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>Mangrove Jack's</LABORATORY>
+    <PRODUCT_ID>M41</PRODUCT_ID>
+    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>28</MAX_TEMPERATURE>
+    <FLOCCULATION>Medium</FLOCCULATION>
+    <ATTENUATION>86</ATTENUATION>
+    <MAX_ABV>12</MAX_ABV>
+    <NOTES>Spicy and phenolic, this yeast emulates the intensity and complexity of some of
+      the best monastic breweries in Belgium. High attenuation and alcohol tolerance
+      allows you to brew a huge range of Belgian beers.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>MJ Belgian Tripel</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>Mangrove Jack's</LABORATORY>
+    <PRODUCT_ID>M31</PRODUCT_ID>
+    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>28</MAX_TEMPERATURE>
+    <FLOCCULATION>Medium</FLOCCULATION>
+    <ATTENUATION>86</ATTENUATION>
+    <MAX_ABV>10</MAX_ABV>
+    <NOTES>Provides a fantastic complex marriage of spice, fruity esters, phenolics and alcohol.
+      It is also very attenuative with a high alcohol tolerance making it perfect for a
+      range of Belgian styles.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>MJ Belgian Wit</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>Mangrove Jack's</LABORATORY>
+    <PRODUCT_ID>M21</PRODUCT_ID>
+    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>25</MAX_TEMPERATURE>
+    <FLOCCULATION>Low</FLOCCULATION>
+    <ATTENUATION>73</ATTENUATION>
+    <MAX_ABV>8</MAX_ABV>
+    <NOTES>A traditional, top-fermenting yeast that has a good balance between fruity esters,
+      and warming spice phenolics. The yeast will leave some sweetness, and will drop
+      bright if left long enough.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>MJ Californian Lager</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Lager</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>Mangrove Jack's</LABORATORY>
+    <PRODUCT_ID>M54</PRODUCT_ID>
+    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>20</MAX_TEMPERATURE>
+    <FLOCCULATION>High</FLOCCULATION>
+    <ATTENUATION>80</ATTENUATION>
+    <MAX_ABV>9</MAX_ABV>
+    <NOTES>A unique lager yeast that has the ability to ferment at ale temperatures without the
+      associated off flavours. Extended lagering periods are also not required.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>MJ Empire Ale</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>Mangrove Jack's</LABORATORY>
+    <PRODUCT_ID>M15</PRODUCT_ID>
+    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>22</MAX_TEMPERATURE>
+    <FLOCCULATION>High</FLOCCULATION>
+    <ATTENUATION>73</ATTENUATION>
+    <MAX_ABV>8</MAX_ABV>
+    <NOTES>A top-fermenting ale yeast suitable for a variety of full bodied ales, with
+      exceptional depth. Ferments with full, rich, dark fruit flavours.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>MJ French Saison</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>Mangrove Jack's</LABORATORY>
+    <PRODUCT_ID>M29</PRODUCT_ID>
+    <MIN_TEMPERATURE>26</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>32</MAX_TEMPERATURE>
+    <FLOCCULATION>Medium</FLOCCULATION>
+    <ATTENUATION>90</ATTENUATION>
+    <MAX_ABV>14</MAX_ABV>
+    <NOTES>French Saison yeast is an exceptional, highly attenuative top-fermenting ale
+      yeast, creating distinctive beers with spicy, fruity and peppery notes. Ideal for
+      fermentation of farmhouse style beer.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>MJ Hophead Ale</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>Mangrove Jack's</LABORATORY>
+    <PRODUCT_ID>M66</PRODUCT_ID>
+    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>22</MAX_TEMPERATURE>
+    <FLOCCULATION>High</FLOCCULATION>
+    <ATTENUATION>78</ATTENUATION>
+    <MAX_ABV>10</MAX_ABV>
+    <NOTES>A yeast and enzyme blend that enhances aromatics and esters, perfect for New
+      England, hazy and fruit forward IPAs. Select enzymes improve aroma and flavour
+      from late hop and fruit additions.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>MJ Kveik</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>Mangrove Jack's</LABORATORY>
+    <PRODUCT_ID>M12</PRODUCT_ID>
+    <MIN_TEMPERATURE>20</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>40</MAX_TEMPERATURE>
+    <FLOCCULATION>Very High</FLOCCULATION>
+    <ATTENUATION>79</ATTENUATION>
+    <MAX_ABV>12</MAX_ABV>
+    <NOTES>A top fermenting yeast, Voss Kveik offers fast fermentation at very high temperatures
+      whilst retaining a neutral flavour character with subtle citrus fruit notes.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>MJ Liberty Bell</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>Mangrove Jack's</LABORATORY>
+    <PRODUCT_ID>M36</PRODUCT_ID>
+    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>23</MAX_TEMPERATURE>
+    <FLOCCULATION>High</FLOCCULATION>
+    <ATTENUATION>76</ATTENUATION>
+    <MAX_ABV>9</MAX_ABV>
+    <NOTES>A top-fermenting ale yeast suitable for a wide variety of hoppy and distinctive
+      style beers. This strain produces light, delicate fruity esters and helps develop
+      malt character.
+    </NOTES>
+  </YEAST>
+  <YEAST>
+    <NAME>MJ New World Strong Ale</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>Mangrove Jack's</LABORATORY>
     <PRODUCT_ID>M42</PRODUCT_ID>
     <MIN_TEMPERATURE>16</MIN_TEMPERATURE>
     <MAX_TEMPERATURE>22</MAX_TEMPERATURE>
     <FLOCCULATION>Very High</FLOCCULATION>
-    <ATTENUATION>76.5</ATTENUATION>
-    <NOTES>Neutral yeast aroma to ensure the full character of the malts and hops are prominent in each beer.</NOTES>
+    <ATTENUATION>80</ATTENUATION>
+    <MAX_ABV>12</MAX_ABV>
+    <NOTES>A top-fermenting ale strain suitable for many types of ales of all strengths.
+      Ferments with a neutral yeast aroma to ensure the full character of the malts and
+      hops are prominent in each beer.
+    </NOTES>
   </YEAST>
   <YEAST>
-    <NAME>MJ's US West Coast Yeast</NAME>
+    <NAME>MJ US West Coast</NAME>
     <VERSION>1</VERSION>
     <TYPE>Ale</TYPE>
     <FORM>Dry</FORM>
-    <LABORATORY>Mangrove Jack&#39;s</LABORATORY>
+    <LABORATORY>Mangrove Jack's</LABORATORY>
     <PRODUCT_ID>M44</PRODUCT_ID>
-    <MIN_TEMPERATURE>15</MIN_TEMPERATURE>
+    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
     <MAX_TEMPERATURE>23</MAX_TEMPERATURE>
-    <FLOCCULATION>Medium</FLOCCULATION>
-    <ATTENUATION>73.0</ATTENUATION>
-    <NOTES>Allows tangy citrus hop aromas to punch through, while also enhancing toasted and dark malt characters.
+    <FLOCCULATION>High</FLOCCULATION>
+    <ATTENUATION>81</ATTENUATION>
+    <MAX_ABV>11</MAX_ABV>
+    <NOTES>A top-fermenting ale strain suitable for American style ales. This yeast produces
+      an exceptionally clean flavour, ideal for when you want the hop character to really
+      punch through.
     </NOTES>
   </YEAST>
 </YEASTS>

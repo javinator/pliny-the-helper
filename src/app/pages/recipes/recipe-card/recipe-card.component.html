@@ -9,7 +9,7 @@
         <ion-card-title>{{ name }}</ion-card-title>
         <ion-card-subtitle>{{ style }}</ion-card-subtitle>
       </ion-col>
-      <ion-col class="ion-text-end">
+      <ion-col size="small" class="ion-text-end">
         <span *ngIf="abv > 0">{{ abv | number:'1.0-2'}} %<br></span>
         <span>{{ ibu  | number:'1.0-1' }} IBU<br></span>
         <span>{{ batchSize + ' L'}}</span>

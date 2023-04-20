@@ -24,6 +24,7 @@ export interface Recipe {
   miscs: Array<Misc>,
   waters: Array<Water>,
   mashProfile?: MashProfile,
+  notes?: string,
   OG: number,
   FG: number,
   ABV: number,

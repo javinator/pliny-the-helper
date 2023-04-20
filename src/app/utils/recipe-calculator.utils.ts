@@ -22,7 +22,8 @@ export class RecipeUtil {
   }
 
   static calculateFg(recipe: Recipe): number {
-    const att = Math.max(...recipe.yeasts.map((yeast) => yeast.attenuation)) / 100;
+    let att = Math.max(...recipe.yeasts.map((yeast) => yeast.attenuation)) / 100;
+    att = att > 0 ? att : 0;
     const og = this.calculateOg(recipe);
     return og - (og - 1) * att;
   }
@@ -52,6 +53,19 @@ export class RecipeUtil {
 
   static calculateBoilSize(recipe: Recipe) {
     return recipe.batchSize + recipe.batchSize * CONFIG.evaporation * recipe.boilTime / 60;
+  }
+
+  static calculateRecipe(recipe: Recipe): Recipe {
+    recipe.fermentables.sort((a, b) => b.amount! - a.amount!);
+    recipe.hops.sort((a, b) => b.amount! - a.amount!);
+    recipe.hops.sort((a, b) => b.time! - a.time!);
+    recipe.hops.sort((a, b) => calculateHopUseValue(b.use) - calculateHopUseValue(a.use));
+    recipe.OG = RecipeUtil.calculateOg(recipe);
+    recipe.FG = RecipeUtil.calculateFg(recipe);
+    recipe.ABV = CalculatorUtil.abv(recipe.OG, recipe.FG);
+    recipe.color = RecipeUtil.calculateColor(recipe);
+    recipe.IBU = RecipeUtil.calculateBitterness(recipe);
+    return recipe;
   }
 }
 
@@ -87,4 +101,21 @@ function useFactor(hop: Hop) {
     return CONFIG.dryHopFactor;
   }
   return 1;
+}
+
+function calculateHopUseValue(use: string) {
+  switch (use) {
+    case 'Mash':
+      return 5;
+    case 'First Wort':
+      return 4;
+    case 'Boil':
+      return 3;
+    case 'Aroma':
+      return 2;
+    case 'Dry Hop':
+      return 1;
+    default:
+      return 0;
+  }
 }

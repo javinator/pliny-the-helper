@@ -12,8 +12,6 @@ import {DatePipe, DecimalPipe} from "@angular/common";
   imports: [IonicModule, DecimalPipe, DatePipe],
 })
 export class EditDetailsComponent {
-  constructor(private storage: StorageService) {
-  }
 
   @Input()
   recipe!: Recipe;
@@ -33,7 +31,8 @@ export class EditDetailsComponent {
         (this.recipe.OG >= this.recipe.style.minOg && this.recipe.OG <= this.recipe.style.maxOg)
           ? 'background-color: var(--ion-color-primary);'
           : 'background-color: var(--ion-color-danger);';
-      const position = (this.recipe.OG - 1.02) / 0.125 * 100;
+      let position = (this.recipe.OG - 1.02) / 0.125 * 100;
+      position = position > 100 ? 100 : position;
       return 'left:' + position + '%;' + color;
     }
     return undefined
@@ -54,7 +53,8 @@ export class EditDetailsComponent {
         (this.recipe.FG >= this.recipe.style.minFg && this.recipe.FG <= this.recipe.style.maxFg)
           ? 'background-color: var(--ion-color-primary);'
           : 'background-color: var(--ion-color-danger);';
-      const position = (this.recipe.FG - 0.998) / 0.05 * 100;
+      let position = (this.recipe.FG - 0.998) / 0.05 * 100;
+      position = position > 100 ? 100 : position;
       return 'left:' + position + '%;' + color;
     }
     return undefined
@@ -75,7 +75,8 @@ export class EditDetailsComponent {
         (this.recipe.ABV >= this.recipe.style.minAbv && this.recipe.ABV <= this.recipe.style.maxAbv)
           ? 'background-color: var(--ion-color-primary);'
           : 'background-color: var(--ion-color-danger);';
-      const position = this.recipe.ABV / 15 * 100;
+      let position = this.recipe.ABV / 15 * 100;
+      position = position > 100 ? 100 : position;
       return 'left:' + position + '%;' + color;
     }
     return undefined
@@ -96,7 +97,8 @@ export class EditDetailsComponent {
         (this.recipe.IBU >= this.recipe.style.minIbu && this.recipe.IBU <= this.recipe.style.maxIbu)
           ? 'background-color: var(--ion-color-primary);'
           : 'background-color: var(--ion-color-danger);';
-      const position = this.recipe.IBU / 120 * 100;
+      let position = this.recipe.IBU / 120 * 100;
+      position = position > 100 ? 100 : position;
       return 'left:' + position + '%;' + color;
     }
     return undefined
@@ -104,8 +106,8 @@ export class EditDetailsComponent {
 
   getSrmRangeBar() {
     if (this.recipe.style?.minColor && this.recipe.style?.maxColor) {
-      const start = this.recipe.style.minColor / 50 * 100;
-      const end = this.recipe.style.maxColor / 50 * 100;
+      const start = this.recipe.style.minColor / 41 * 100;
+      const end = this.recipe.style.maxColor / 41 * 100;
       return 'width: ' + (end - start) + '%; left: ' + start + '%;';
     }
     return undefined
@@ -117,7 +119,8 @@ export class EditDetailsComponent {
         (this.recipe.color >= this.recipe.style.minColor && this.recipe.color <= this.recipe.style.maxColor)
           ? 'background-color: var(--ion-color-primary);'
           : 'background-color: var(--ion-color-danger);';
-      const position = this.recipe.color / 50 * 100;
+      let position = this.recipe.color / 42 * 100;
+      position = position > 100 ? 100 : position;
       return 'left:' + position + '%;' + color;
     }
     return undefined

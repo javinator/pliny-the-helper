@@ -10,7 +10,8 @@
     <p class="ion-margin-bottom">&nbsp;</p>
     <p class="ion-margin-top">
       Temperature range: {{ yeast.minTemp | number:'1.0-1' }} - {{ yeast.maxTemp | number:'1.0-1' }} °C<br>
-      Attenuation: {{ yeast.attenuation | number:'1.0-1' }} %
+      Attenuation: {{ yeast.attenuation | number:'1.0-1' }} %<br>
+      Up to: {{ yeast.maxAbv | number:'1.0-1' }} % ABV
     </p>
   </ion-card-content>
 </ion-card>

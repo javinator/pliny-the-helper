@@ -1,6 +1,4 @@
 import {Injectable} from '@angular/core';
-import {StorageService} from "./storage.service";
-import {HttpClient} from "@angular/common/http";
 
 import {saveAs} from 'file-saver';
 import {Recipe} from "../models/recipe.model";
@@ -10,6 +8,7 @@ import {Fermentable} from "../models/fermentable.model";
 import {Yeast} from "../models/yeast.model";
 import {Misc} from "../models/misc.model";
 import {MashProfile} from "../models/mash-profile.model";
+import {MashStep} from "../models/mash-step.model";
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +21,11 @@ export class XmlWriterService {
     })
     content += '</RECIPES>';
     let xml = new Blob([content], {type: "text/xml"});
-    saveAs(xml, "export.xml");
+    const today = new Date();
+    const date = today.getFullYear() + '-'
+      + (today.getMonth() + 1).toString().padStart(2, '0') + '-'
+      + today.getDate().toString().padStart(2, '0');
+    saveAs(xml, "pliny-export-" + date + ".xml");
   }
 }
 
@@ -37,20 +40,38 @@ function recipeToXmlText(recipe: Recipe) {
   content += '<BOIL_SIZE>' + recipe.boilSize + '</BOIL_SIZE>\n';
   content += '<BOIL_TIME>' + recipe.boilTime + '</BOIL_TIME>\n';
   content += '<EFFICIENCY>' + recipe.efficiency + '</EFFICIENCY>\n';
-  content += '<HOPS>';
+  content += '<HOPS>\n';
   recipe.hops.forEach((hop) => content += hopToXmlText(hop));
-  content += '</HOPS>';
-  content += '<FERMENTABLES>';
+  content += '</HOPS>\n';
+  content += '<FERMENTABLES>\n';
   recipe.fermentables.forEach((ferm) => content += fermentableToXmlText(ferm));
-  content += '</FERMENTABLES>';
-  content += '<YEASTS>';
+  content += '</FERMENTABLES>\n';
+  content += '<YEASTS>\n';
   recipe.yeasts.forEach((yeast) => content += yeastToXmlText(yeast));
-  content += '</YEASTS>';
-  content += '<MISCS>';
+  content += '</YEASTS>\n';
+  content += '<MISCS>\n';
   recipe.miscs.forEach((misc) => content += miscToXmlText(misc));
-  content += '</MISCS>';
-  content += '<WATERS></WATERS>'
+  content += '</MISCS>\n';
+  content += '<WATERS></WATERS>\n';
   content += mashToXmlText(recipe.mashProfile);
+  if (recipe.notes) {
+    content += '<NOTES>' + recipe.notes + '</NOTES>\n';
+  }
+  content += '<EST_OG>' + recipe.OG + '</EST_OG>\n';
+  content += '<EST_FG>' + recipe.FG + '</EST_FG>\n';
+  content += '<EST_COLOR>' + recipe.color + '</EST_COLOR>\n';
+  content += '<IBU>' + recipe.IBU + '</IBU>\n';
+  content += '<IBU_METHOD>Tinseth</IBU_METHOD>\n';
+  content += '<EST_ABV>' + recipe.ABV + '</EST_ABV>\n';
+  if (recipe.measuredOG) {
+    content += '<OG>' + recipe.measuredOG + '</OG>\n';
+  }
+  if (recipe.measuredFG) {
+    content += '<FG>' + recipe.measuredFG + '</FG>\n';
+  }
+  if (recipe.measuredVol) {
+    content += '<ACTUAL_SIZE>' + recipe.measuredVol + '</ACTUAL_SIZE>\n';
+  }
   content += '</RECIPE>\n';
   return content;
 }
@@ -164,7 +185,7 @@ function yeastToXmlText(yeast: Yeast) {
 }
 
 function miscToXmlText(misc: Misc) {
-  let content = '<YEAST>\n';
+  let content = '<MISC>\n';
   content += '<NAME>' + misc.name + '</NAME>\n';
   content += '<VERSION>1</VERSION>\n';
   content += '<TYPE>' + misc.type + '</TYPE>\n';
@@ -177,7 +198,7 @@ function miscToXmlText(misc: Misc) {
   if (misc.description) {
     content += '<NOTES>' + misc.description + '</NOTES>\n';
   }
-  content += '</YEAST>\n';
+  content += '</MISC>\n';
   return content;
 }
 
@@ -186,7 +207,34 @@ function mashToXmlText(mash?: MashProfile) {
   if (mash) {
     content += '<NAME>' + mash.name + '</NAME>\n';
     content += '<VERSION>1</VERSION>\n';
+    content += '<GRAIN_TEMP>' + mash.grainTemp + '</GRAIN_TEMP>\n';
+    content += '<MASH_STEPS>\n';
+    mash.mashSteps.forEach((step) => content += mashStepToXmlText(step));
+    content += '</MASH_STEPS>\n';
+    if (mash.notes) {
+      content += '<NOTES>' + mash.notes + '</NOTES>\n';
+    }
   }
   content += '</MASH>\n';
+  return content;
+}
+
+function mashStepToXmlText(step: MashStep) {
+  let content = '<MASH_STEP>\n';
+  content += '<NAME>' + step.name + '</NAME>\n';
+  content += '<VERSION>1</VERSION>\n';
+  content += '<TYPE>' + step.type + '</TYPE>\n';
+  if (step.infuseAmount) {
+    content += '<INFUSE_AMOUNT>' + step.infuseAmount + '</INFUSE_AMOUNT>\n';
+  }
+  content += '<STEP_TEMP>' + step.stepTemp + '</STEP_TEMP>\n';
+  content += '<STEP_TIME>' + step.stepTime + '</STEP_TIME>\n';
+  if (step.rampTime) {
+    content += '<RAMP_TIME>' + step.rampTime + '</RAMP_TIME>\n';
+  }
+  if (step.endTemp) {
+    content += '<END_TEMP>' + step.endTemp + '</END_TEMP>\n';
+  }
+  content += '</MASH_STEP>\n';
   return content;
 }

@@ -9,6 +9,7 @@ import {Yeast} from "../models/yeast.model";
 import {Misc} from "../models/misc.model";
 import {CONFIG} from "../constants";
 import {MashProfile} from "../models/mash-profile.model";
+import {RecipeUtil} from "../utils/recipe-calculator.utils";
 
 @Injectable({
   providedIn: 'root'
@@ -76,7 +77,7 @@ export class StorageService {
     this._storage?.get('recipes').then((recipes: Recipe[]) => {
       const idx = recipes.findIndex((rcp) => rcp.uid === recipe.uid);
       if (idx >= 0) {
-        recipes[idx] = recipe;
+        recipes[idx] = RecipeUtil.calculateRecipe(recipe);
         this._storage?.set('recipes', recipes);
       } else {
         console.log('Error! Recipe UID not found!')
