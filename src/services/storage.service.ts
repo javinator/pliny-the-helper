@@ -32,6 +32,7 @@ export class StorageService {
   }
 
   public addRecipe(recipe: Recipe) {
+    recipe = RecipeUtil.calculateRecipe(recipe);
     return this._storage?.get('recipes').then((recipes: Recipe[] | null) => {
       if (recipes) {
         recipes.push(recipe);

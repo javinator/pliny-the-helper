@@ -15,6 +15,8 @@ import {RecipeCardComponent} from "./recipe-card/recipe-card.component";
 })
 export class RecipesPage {
   recipes?: Recipe[];
+  selectedRecipes: Recipe[] = [];
+  allSelected = false;
 
   constructor(private storage: StorageService, private router: Router, private xmlWriter: XmlWriterService) {
   }
@@ -29,11 +31,31 @@ export class RecipesPage {
     this.router.navigate(['edit-recipe'], {state: {recipe: recipe.uid}});
   }
 
+  toggleAllCheckboxes(event: any) {
+    this.allSelected = event.detail.checked;
+    if (event.detail.checked) {
+      this.selectedRecipes = [];
+      this.selectedRecipes.push(...this.recipes || [])
+    } else {
+      this.selectedRecipes = [];
+    }
+  }
+
+  toggleCheckbox(event: any, recipe: Recipe) {
+    if (event.detail.checked) {
+      this.selectedRecipes.push(recipe);
+    } else {
+      this.selectedRecipes.forEach((element, index) => {
+        if (element == recipe) this.selectedRecipes.splice(index, 1);
+      })
+    }
+  }
+
   importRecipes() {
 
   }
 
-  exportRecipes() {
-    this.xmlWriter.recipesToXml(this.recipes || []);
+  exportRecipes(recipes?: Recipe[]) {
+    this.xmlWriter.recipesToXml(recipes || []);
   }
 }

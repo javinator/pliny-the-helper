@@ -57,12 +57,12 @@ function recipeToXmlText(recipe: Recipe) {
   if (recipe.notes) {
     content += '<NOTES>' + recipe.notes + '</NOTES>\n';
   }
-  content += '<EST_OG>' + recipe.OG + '</EST_OG>\n';
-  content += '<EST_FG>' + recipe.FG + '</EST_FG>\n';
-  content += '<EST_COLOR>' + recipe.color + '</EST_COLOR>\n';
-  content += '<IBU>' + recipe.IBU + '</IBU>\n';
+  content += '<EST_OG>' + recipe.OG.toFixed(3) + '</EST_OG>\n';
+  content += '<EST_FG>' + recipe.FG.toFixed(3) + '</EST_FG>\n';
+  content += '<EST_COLOR>' + recipe.color.toFixed(1) + '</EST_COLOR>\n';
+  content += '<IBU>' + recipe.IBU.toFixed(2) + '</IBU>\n';
   content += '<IBU_METHOD>Tinseth</IBU_METHOD>\n';
-  content += '<EST_ABV>' + recipe.ABV + '</EST_ABV>\n';
+  content += '<EST_ABV>' + recipe.ABV.toFixed(2) + '</EST_ABV>\n';
   if (recipe.measuredOG) {
     content += '<OG>' + recipe.measuredOG + '</OG>\n';
   }

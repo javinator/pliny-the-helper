@@ -31,6 +31,7 @@ export class EditDetailsComponent {
           ? 'background-color: var(--ion-color-primary);'
           : 'background-color: var(--ion-color-danger);';
       let position = (this.recipe.OG - 1.02) / 0.125 * 100;
+      position = position < 0 ? 0 : position;
       position = position > 100 ? 100 : position;
       return 'left:' + position + '%;' + color;
     }

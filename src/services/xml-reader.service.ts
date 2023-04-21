@@ -9,6 +9,7 @@ import {Hop} from "../models/hop.model";
 import {Yeast} from "../models/yeast.model";
 import {Misc} from "../models/misc.model";
 import {MashProfile} from "../models/mash-profile.model";
+import {Recipe} from "models";
 
 interface MashProfileXml {
   NAME: string[];
@@ -93,6 +94,13 @@ export class XmlReaderService {
           .then((data) => {
             this.storage.setMashProfiles(data);
           });
+      });
+  }
+
+  readRecipes(xml: string) {
+    parseXMLtoRecipes(xml)
+      .then((data) => {
+        data.forEach((recipe) => this.storage.addRecipe(recipe));
       });
   }
 }
@@ -288,6 +296,54 @@ function parseXMLtoMashProfiles(data: string): Promise<MashProfile[]> {
             }
           }),
           notes: item.NOTES[0]
+        });
+      }
+      resolve(arr);
+    });
+  });
+}
+
+function parseXMLtoRecipes(data: string): Promise<Recipe[]> {
+  return new Promise(resolve => {
+    let k: string | number;
+    const arr: Recipe[] = [],
+      parser = new xml2js.Parser(
+        {
+          trim: true,
+          explicitArray: true
+        });
+    parser.parseString(data, function (err, result) {
+      const obj = result.MASHS;
+      for (k in obj.MASH) {
+        const item = obj.MASH[k];
+        arr.push({
+          name: item.NAME[0],
+          version: item.VERSION[0],
+          ABV: 0,
+          FG: 0,
+          IBU: 0,
+          OG: 0,
+          batchSize: 0,
+          boilSize: 0,
+          boilTime: 0,
+          brewDate: "",
+          brewer: "",
+          calculateBoilSize: false,
+          color: 0,
+          efficiency: 0,
+          fermentables: [],
+          hops: [],
+          mashProfile: undefined,
+          measuredFG: 0,
+          measuredOG: 0,
+          measuredVol: 0,
+          miscs: [],
+          notes: "",
+          style: undefined,
+          type: "All Grain",
+          uid: "",
+          waters: [],
+          yeasts: []
         });
       }
       resolve(arr);
