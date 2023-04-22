@@ -15,7 +15,7 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
   providers: [Storage, StorageService, HttpClient, XmlReaderService, XmlWriterService]
 })
 export class AppComponent implements OnInit {
-  constructor(private xmlReader: XmlReaderService, private storage: StorageService) {
+  constructor(private xmlReader: XmlReaderService) {
   }
 
   ngOnInit() {

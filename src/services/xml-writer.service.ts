@@ -1,14 +1,7 @@
 import {Injectable} from '@angular/core';
 
 import {saveAs} from 'file-saver';
-import {Recipe} from "../models/recipe.model";
-import {BeerStyle} from "../models/beer-style.model";
-import {Hop} from "../models/hop.model";
-import {Fermentable} from "../models/fermentable.model";
-import {Yeast} from "../models/yeast.model";
-import {Misc} from "../models/misc.model";
-import {MashProfile} from "../models/mash-profile.model";
-import {MashStep} from "../models/mash-step.model";
+import {Recipe, BeerStyle, Hop, Fermentable, Yeast, Misc, MashProfile, MashStep} from "models";
 
 @Injectable({
   providedIn: 'root',

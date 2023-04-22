@@ -3,13 +3,7 @@ import {StorageService} from "./storage.service";
 import {HttpClient} from "@angular/common/http";
 
 import * as xml2js from 'xml2js';
-import {BeerStyle} from "../models/beer-style.model";
-import {Fermentable} from "../models/fermentable.model";
-import {Hop} from "../models/hop.model";
-import {Yeast} from "../models/yeast.model";
-import {Misc} from "../models/misc.model";
-import {MashProfile} from "../models/mash-profile.model";
-import {Recipe} from "models";
+import {BeerStyle, Fermentable, Hop, Yeast, Misc, MashProfile, Recipe} from "models";
 
 interface MashProfileXml {
   NAME: string[];

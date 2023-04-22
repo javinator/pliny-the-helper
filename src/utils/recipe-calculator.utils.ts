@@ -1,7 +1,7 @@
-import {Recipe} from "../models/recipe.model";
+import {Recipe} from "models";
 import {CalculatorUtil} from "./calculator.utils";
-import {Hop} from "../models/hop.model";
-import {Fermentable} from "../models/fermentable.model";
+import {Hop} from "models";
+import {Fermentable} from "models";
 import {CONFIG} from "../app/app.constants";
 
 export class RecipeUtil {

@@ -11,7 +11,7 @@
           <h1>Fermentables</h1>
         </ion-label>
       </ion-list-header>
-      <ion-item *ngFor="let fermentable of recipe.fermentables" button (click)="editFermentable(fermentable)">
+      <ion-item *ngFor="let fermentable of recipe.fermentables" button="true" (click)="editFermentable(fermentable)">
         <ion-label>
           {{ fermentable.name }}
           <p class="ion-padding-top">
@@ -48,7 +48,7 @@
           <h1>Hops</h1>
         </ion-label>
       </ion-list-header>
-      <ion-item *ngFor="let hop of recipe.hops" button (click)="editHop(hop)">
+      <ion-item *ngFor="let hop of recipe.hops" button="true" (click)="editHop(hop)">
         <ion-label>
           {{ hop.name }}
           <p class="ion-padding-top">
@@ -85,7 +85,7 @@
           <h1>Yeast</h1>
         </ion-label>
       </ion-list-header>
-      <ion-item *ngFor="let yeast of recipe.yeasts" button (click)="editYeast(yeast)">
+      <ion-item *ngFor="let yeast of recipe.yeasts" button="true" (click)="editYeast(yeast)">
         <ion-label>
           {{ yeast.name }}
           <p class="ion-padding-top">{{ yeast.attenuation | number:'1.1-1' }} % Attenuation<br>
@@ -118,7 +118,7 @@
           <h1>Miscs</h1>
         </ion-label>
       </ion-list-header>
-      <ion-item *ngFor="let misc of recipe.miscs" button (click)="editMisc(misc)">
+      <ion-item *ngFor="let misc of recipe.miscs" button="true" (click)="editMisc(misc)">
         <ion-label>
           {{ misc.name }}
           <p
