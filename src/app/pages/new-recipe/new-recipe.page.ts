@@ -7,6 +7,7 @@ import {FormsModule} from "@angular/forms";
 import {v4 as uuidv4} from "uuid";
 import {Router} from "@angular/router";
 import {RecipeUtil} from "utils";
+import {CONFIG} from "../../app.constants";
 
 @Component({
   selector: 'new-recipe-page',
@@ -41,17 +42,17 @@ export class NewRecipePage implements OnInit {
       version: 1,
       type: 'All Grain',
       ABV: 0,
-      FG: 0,
+      FG: 1,
       IBU: 0,
-      OG: 0,
+      OG: 1,
       color: 0
     }
     this.storage.get('settings')?.then((response) => {
       this.settings = response;
-      this.model.batchSize = this.settings!.batchSize;
-      this.model.boilTime = this.settings!.boilTime;
-      this.model.efficiency = this.settings!.efficiency;
-      this.model.brewer = this.settings!.brewer;
+      this.model.batchSize = this.settings?.batchSize || CONFIG.defaultBatchSize;
+      this.model.boilTime = this.settings?.boilTime || CONFIG.defaultBoilTime;
+      this.model.efficiency = this.settings?.efficiency || CONFIG.defaultEfficiency;
+      this.model.brewer = this.settings?.brewer || CONFIG.defaultName;
     });
     this.storage.get('styles')?.then((response) => {
       this.styles = response;
@@ -59,6 +60,7 @@ export class NewRecipePage implements OnInit {
     });
     this.storage.get('mashProfiles')?.then((response) => {
       this.mashProfiles = response;
+      this.model.mashProfile = this.mashProfiles?.[0];
     });
   }
 

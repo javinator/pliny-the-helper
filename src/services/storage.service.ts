@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Storage} from '@ionic/storage-angular';
 import {Recipe, BeerStyle, Fermentable, Hop, Yeast, Misc, MashProfile, Settings} from "models";
-import {CONFIG} from "../app/constants";
 import {RecipeUtil} from "utils";
 
 @Injectable({
@@ -11,16 +10,7 @@ export class StorageService {
   private _storage: Storage | null = null;
 
   constructor(private storage: Storage) {
-    this.init().then(() =>
-      this.setSettings(
-        {
-          brewer: CONFIG.defaultName,
-          batchSize: CONFIG.defaultBatchSize,
-          boilTime: CONFIG.defaultBoilTime,
-          efficiency: CONFIG.defaultEfficiency
-        }
-      )
-    );
+    this.init().then();
   }
 
   async init() {
@@ -28,7 +18,11 @@ export class StorageService {
   }
 
   public get(key: string) {
-    return this._storage?.get(key)
+    return this._storage?.get(key);
+  }
+
+  public set(key: string, item: any) {
+    return this._storage?.set(key, item);
   }
 
   public addRecipe(recipe: Recipe) {
@@ -57,7 +51,7 @@ export class StorageService {
   }
 
   public deleteRecipes() {
-    this._storage?.remove('recipes');
+    return this._storage?.remove('recipes');
   }
 
   public getRecipe(uid?: string) {

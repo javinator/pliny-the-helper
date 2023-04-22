@@ -2,15 +2,20 @@ import {Component, Input} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {Recipe} from "models";
 import {DatePipe, DecimalPipe} from "@angular/common";
+import {CalculatorUtil} from "utils";
+import {FormsModule} from "@angular/forms";
+import {StorageService} from "services";
 
 @Component({
   selector: 'edit-details-card',
   templateUrl: 'edit-details.component.html',
   styleUrls: ['../../../app.component.scss', 'edit-details.component.scss'],
   standalone: true,
-  imports: [IonicModule, DecimalPipe, DatePipe],
+  imports: [IonicModule, DecimalPipe, DatePipe, FormsModule],
 })
 export class EditDetailsComponent {
+  constructor(private storage: StorageService) {
+  }
 
   @Input()
   recipe!: Recipe;
@@ -21,21 +26,22 @@ export class EditDetailsComponent {
       const end = (this.recipe.style.maxOg - 1.02) / 0.125 * 100;
       return 'width: ' + (end - start) + '%; left: ' + start + '%;';
     }
-    return undefined
+    return '';
   }
 
-  getOgRangeMarker() {
+  getOgRangeMarker(og?: number) {
+    og = og || 1;
     if (this.recipe.style?.minOg && this.recipe.style?.maxOg) {
       const color =
-        (this.recipe.OG >= this.recipe.style.minOg && this.recipe.OG <= this.recipe.style.maxOg)
+        (og >= this.recipe.style.minOg && og <= this.recipe.style.maxOg)
           ? 'background-color: var(--ion-color-primary);'
           : 'background-color: var(--ion-color-danger);';
-      let position = (this.recipe.OG - 1.02) / 0.125 * 100;
+      let position = (og - 1.02) / 0.125 * 100;
       position = position < 0 ? 0 : position;
       position = position > 100 ? 100 : position;
       return 'left:' + position + '%;' + color;
     }
-    return undefined
+    return '';
   }
 
   getFgRangeBar() {
@@ -44,20 +50,21 @@ export class EditDetailsComponent {
       const end = (this.recipe.style.maxFg - 0.998) / 0.05 * 100;
       return 'width: ' + (end - start) + '%; left: ' + start + '%;';
     }
-    return undefined
+    return '';
   }
 
-  getFgRangeMarker() {
+  getFgRangeMarker(fg?: number) {
+    fg = fg || 0.998;
     if (this.recipe.style?.minFg && this.recipe.style?.maxFg) {
       const color =
-        (this.recipe.FG >= this.recipe.style.minFg && this.recipe.FG <= this.recipe.style.maxFg)
+        (fg >= this.recipe.style.minFg && fg <= this.recipe.style.maxFg)
           ? 'background-color: var(--ion-color-primary);'
           : 'background-color: var(--ion-color-danger);';
-      let position = (this.recipe.FG - 0.998) / 0.05 * 100;
+      let position = (fg - 0.998) / 0.05 * 100;
       position = position > 100 ? 100 : position;
       return 'left:' + position + '%;' + color;
     }
-    return undefined
+    return '';
   }
 
   getAbvRangeBar() {
@@ -66,20 +73,21 @@ export class EditDetailsComponent {
       const end = this.recipe.style.maxAbv / 15 * 100;
       return 'width: ' + (end - start) + '%; left: ' + start + '%;';
     }
-    return undefined
+    return '';
   }
 
-  getAbvRangeMarker() {
+  getAbvRangeMarker(abv?: number) {
+    abv = abv || 0;
     if (this.recipe.style?.minAbv && this.recipe.style?.maxAbv) {
       const color =
-        (this.recipe.ABV >= this.recipe.style.minAbv && this.recipe.ABV <= this.recipe.style.maxAbv)
+        (abv >= this.recipe.style.minAbv && abv <= this.recipe.style.maxAbv)
           ? 'background-color: var(--ion-color-primary);'
           : 'background-color: var(--ion-color-danger);';
-      let position = this.recipe.ABV / 15 * 100;
+      let position = abv / 15 * 100;
       position = position > 100 ? 100 : position;
       return 'left:' + position + '%;' + color;
     }
-    return undefined
+    return '';
   }
 
   getIbuRangeBar() {
@@ -88,7 +96,7 @@ export class EditDetailsComponent {
       const end = this.recipe.style.maxIbu / 120 * 100;
       return 'width: ' + (end - start) + '%; left: ' + start + '%;';
     }
-    return undefined
+    return '';
   }
 
   getIbuRangeMarker() {
@@ -101,7 +109,7 @@ export class EditDetailsComponent {
       position = position > 100 ? 100 : position;
       return 'left:' + position + '%;' + color;
     }
-    return undefined
+    return '';
   }
 
   getSrmRangeBar() {
@@ -110,7 +118,7 @@ export class EditDetailsComponent {
       const end = this.recipe.style.maxColor / 41 * 100;
       return 'width: ' + (end - start) + '%; left: ' + start + '%;';
     }
-    return undefined
+    return '';
   }
 
   getSrmRangeMarker() {
@@ -123,6 +131,33 @@ export class EditDetailsComponent {
       position = position > 100 ? 100 : position;
       return 'left:' + position + '%;' + color;
     }
-    return undefined
+    return '';
+  }
+
+  getMeasuredAbv() {
+    return CalculatorUtil.abv(this.recipe.measuredOG || 1, this.recipe.measuredFG || 1)
+  }
+
+  calculateEfficiency() {
+    const vol = this.recipe.measuredVol || this.recipe.batchSize;
+    const og = this.recipe.measuredOG || 1;
+    this.recipe.calculatedEfficiency = this.recipe.efficiency * (vol / this.recipe.batchSize) * ((og - 1) / (this.recipe.OG - 1))
+  }
+
+  getEfficiencyMarker() {
+    if (this.recipe.calculatedEfficiency) {
+      const color =
+        (this.recipe.calculatedEfficiency >= 60 && this.recipe.calculatedEfficiency <= 85)
+          ? 'background-color: var(--ion-color-primary);'
+          : 'background-color: var(--ion-color-danger);';
+      let position = (this.recipe.calculatedEfficiency - 50) / 40 * 100;
+      position = position > 100 ? 100 : position;
+      return 'left:' + position + '%;' + color;
+    }
+    return 'left: 0%; background-color: var(--ion-color-danger);';
+  }
+
+  saveRecipe() {
+    this.storage.saveRecipe(this.recipe);
   }
 }

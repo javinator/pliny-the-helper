@@ -88,9 +88,14 @@
       <ion-item *ngFor="let yeast of recipe.yeasts" button (click)="editYeast(yeast)">
         <ion-label>
           {{ yeast.name }}
-          <p class="ion-padding-top">{{ yeast.attenuation | number:'1.1-1' }} % Attenuation</p>
+          <p class="ion-padding-top">{{ yeast.attenuation | number:'1.1-1' }} % Attenuation<br>
+            <span [class]="checkOverAbv(yeast, recipe)">{{ recipe.ABV | number:'1.0-1' }} % ABV</span>
+          </p>
         </ion-label>
-        <div class="description ion-hide-xl-down">{{ yeast.description }} Alcohol tolerant up to {{ yeast.maxAbv }} %.
+        <div class="description ion-hide-xl-down">{{ yeast.description }}
+          Optimal temperature between {{ yeast.minTemp | number:'1.0-1' }} °C and {{ yeast.maxTemp | number:'1.0-1' }}
+          °C.
+          Alcohol tolerant up to {{ yeast.maxAbv }} %.
         </div>
         <ion-buttons slot="end">
           <ion-button (click)="removeYeast(yeast)">

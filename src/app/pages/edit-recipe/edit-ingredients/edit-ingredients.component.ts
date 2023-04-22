@@ -4,7 +4,7 @@ import {Recipe, Fermentable, Hop, Yeast, Misc} from "models";
 import {DecimalPipe, NgForOf, NgIf} from "@angular/common";
 import {StorageService} from "services";
 import {RecipeUtil} from "utils";
-import {CONFIG} from "../../../constants";
+import {CONFIG} from "../../../app.constants";
 
 @Component({
   selector: 'edit-ingredients-card',
@@ -291,6 +291,14 @@ export class EditIngredientsComponent implements OnInit {
 
   checkOvertime(hop: Hop, recipe: Recipe) {
     if (hop.time && hop.time > recipe.boilTime) {
+      return 'red';
+    } else {
+      return '';
+    }
+  }
+
+  checkOverAbv(yeast: Yeast, recipe: Recipe) {
+    if (yeast.maxAbv && yeast.maxAbv < recipe.ABV) {
       return 'red';
     } else {
       return '';

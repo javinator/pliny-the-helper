@@ -33,5 +33,6 @@ export interface Recipe {
   measuredOG?: number,
   measuredFG?: number,
   measuredVol?: number,
+  calculatedEfficiency?: number,
   brewDate: string
 }

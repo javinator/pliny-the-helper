@@ -7,29 +7,62 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
-  <ion-button (click)="init()">Init XML Reader</ion-button>
-  <ion-button id="open-delete-alert">Delete Recipes</ion-button>
-  <ion-button id="open-clear-alert">Clear DB</ion-button>
   <ion-card class="ion-padding">
-    <ion-card-title>Parameters</ion-card-title>
     <ion-card-content>
-
+      <ion-list>
+        <ion-item>
+          <ion-input [(ngModel)]="settings.brewer" label-placement="stacked" label="Brewer's Name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input [(ngModel)]="settings.batchSize" label-placement="stacked"
+                     label="Default Batch Size (L)" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input [(ngModel)]="settings.boilTime" label-placement="stacked"
+                     label="Default Boil Time (min)" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input [(ngModel)]="settings.efficiency" label-placement="stacked"
+                     label="Default Efficiency (%)" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox [(ngModel)]="settings.displayCost" label-placement="end" justify="start">Show Cost of Recipes
+          </ion-checkbox>
+        </ion-item>
+      </ion-list>
+      <ion-button class="ion-float-end" (click)="saveSettings()">Save</ion-button>
     </ion-card-content>
+  </ion-card>
+  <ion-card class="ion-padding" *ngIf="isAdmin">
+    <div class="ion-text-center">
+      <ion-button (click)="init()">Init XML Reader</ion-button>
+      <ion-button id="open-delete-alert">Delete Recipes</ion-button>
+      <ion-button (click)="deleteDuplicates()">Delete duplicate Recipes</ion-button>
+      <ion-button id="open-clear-alert">Clear DB</ion-button>
+    </div>
   </ion-card>
 </ion-content>
 
-<ion-alert
-  trigger="open-delete-alert"
-  header="Confirm"
-  message="Delete all Recipes?"
-  [buttons]="deleteButtons"
+<ion-toast
+  [isOpen]="isToastOpen"
+  icon="checkmark"
+  message="Settings have been saved succesfully!"
+  [duration]="5000"
+  (didDismiss)="closeToast()"
+></ion-toast>
+
+<ion-alert *ngIf="isAdmin"
+           trigger="open-delete-alert"
+           header="Confirm"
+           message="Delete all Recipes?"
+           [buttons]="deleteButtons"
 ></ion-alert>
 
-<ion-alert
-  trigger="open-clear-alert"
-  header="Confirm"
-  message="Truncate Database? You'll lose everything!"
-  [buttons]="clearButtons"
+<ion-alert *ngIf="isAdmin"
+           trigger="open-clear-alert"
+           header="Confirm"
+           message="Truncate Database? You'll lose everything!"
+           [buttons]="clearButtons"
 ></ion-alert>
 
 

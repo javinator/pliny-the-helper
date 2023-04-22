@@ -51,11 +51,11 @@ export class RecipesPage {
     }
   }
 
-  importRecipes() {
-
-  }
-
   exportRecipes(recipes?: Recipe[]) {
     this.xmlWriter.recipesToXml(recipes || []);
+  }
+
+  importRecipes() {
+
   }
 }

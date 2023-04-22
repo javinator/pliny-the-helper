@@ -24,7 +24,7 @@ export class EditRecipePage implements OnInit {
   uid!: string;
   recipe?: Recipe;
   editRecipe?: Recipe;
-  styles!: BeerStyle[];
+  styles?: BeerStyle[];
   mashProfiles?: MashProfile[];
 
   constructor(private router: Router, private storage: StorageService) {

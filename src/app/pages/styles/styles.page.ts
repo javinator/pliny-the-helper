@@ -17,15 +17,22 @@ export class StylesPage {
   constructor(private storage: StorageService, private router: Router) {
   }
 
+  allStyles: BeerStyle[] = [];
   styles?: BeerStyle[];
 
   ionViewWillEnter() {
     this.storage.get('styles')?.then((response) => {
       this.styles = response;
+      this.allStyles = response;
     });
   }
 
   showDetails(style: BeerStyle) {
     this.router.navigate(['style-details'], {state: {style}});
+  }
+
+  filter(event: any) {
+    const query = event.target.value.toLowerCase();
+    this.styles = this.allStyles.filter(d => d.name.toLowerCase().indexOf(query) > -1);
   }
 }
