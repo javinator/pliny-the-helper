@@ -14,6 +14,9 @@ import {Router} from "@angular/router";
   imports: [IonicModule, StyleCardComponent, NgIf, NgForOf]
 })
 export class StylesPage {
+
+  showSpinner = false;
+
   constructor(private storage: StorageService, private router: Router) {
   }
 
@@ -21,10 +24,15 @@ export class StylesPage {
   styles?: BeerStyle[];
 
   ionViewWillEnter() {
+    this.showSpinner = true;
     this.storage.get('styles')?.then((response) => {
       this.styles = response;
       this.allStyles = response;
     });
+  }
+
+  ionViewDidEnter() {
+    setTimeout(() => this.showSpinner = false, 500);
   }
 
   showDetails(style: BeerStyle) {

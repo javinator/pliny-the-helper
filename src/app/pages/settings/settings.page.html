@@ -12,7 +12,12 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content class="ion-padding">
+
+<ion-content *ngIf="showSpinner">
+  <ion-spinner class="center" name="lines-sharp"></ion-spinner>
+</ion-content>
+
+<ion-content class="ion-padding" *ngIf="!showSpinner">
   <ion-card class="ion-padding">
     <ion-card-content>
       <ion-list>
@@ -53,7 +58,7 @@
   [isOpen]="isToastOpen"
   icon="checkmark"
   message="Settings have been saved successfully!"
-  [duration]="5000"
+  [duration]="3000"
   (didDismiss)="closeToast()"
 ></ion-toast>
 
@@ -84,8 +89,9 @@
     <ion-content class="ion-padding ion-text-center">
       Version: {{ version }}<br><br><br>
       Pliny the Helper has been developed by Vince Hofer and Bier-Freunde Seeland<br><br><br>
-      <a href="https://www.bier-freunde.ch" target="_blank"><img src="/assets/img/bfs.png"
-                                                                 alt="Bier-Freunde Seeland Logo"></a><br><br><br>
+      <a href="https://www.bier-freunde.ch" target="_blank">
+        <ion-img src="/assets/img/bfs.png" alt="Bier-Freunde Seeland Logo"></ion-img>
+      </a><br><br><br>
       Get in touch: info@bier-freunde.ch
     </ion-content>
   </ng-template>

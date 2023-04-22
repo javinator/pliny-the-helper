@@ -1,10 +1,11 @@
 import {Component} from '@angular/core';
-import {IonicModule} from '@ionic/angular';
+import {IonicModule, Platform} from '@ionic/angular';
 import {Recipe} from "models";
 import {NgForOf, NgIf} from "@angular/common";
 import {Router, RouterLink} from "@angular/router";
-import {StorageService, XmlWriterService} from "services";
+import {StorageService, XmlReaderService, XmlWriterService} from "services";
 import {RecipeCardComponent} from "./recipe-card/recipe-card.component";
+import {FilePicker} from "@capawesome/capacitor-file-picker";
 
 @Component({
   selector: 'recipes-page',
@@ -17,14 +18,27 @@ export class RecipesPage {
   recipes?: Recipe[];
   selectedRecipes: Recipe[] = [];
   allSelected = false;
+  isExportOpen = false;
+  isToastOpen = false;
+  showSpinner = false;
 
-  constructor(private storage: StorageService, private router: Router, private xmlWriter: XmlWriterService) {
+  constructor(
+    private storage: StorageService,
+    private router: Router,
+    private xmlWriter: XmlWriterService,
+    private platform: Platform,
+    private xmlReader: XmlReaderService) {
   }
 
   ionViewWillEnter() {
+    this.showSpinner = true;
     this.storage.get('recipes')?.then((response) => {
       this.recipes = response;
     });
+  }
+
+  ionViewDidEnter() {
+    setTimeout(() => this.showSpinner = false, 500);
   }
 
   showEdit(recipe: Recipe) {
@@ -51,11 +65,44 @@ export class RecipesPage {
     }
   }
 
+  openExport() {
+    this.isExportOpen = true;
+  }
+
+  closeExport() {
+    this.isExportOpen = false;
+  }
+
   exportRecipes(recipes?: Recipe[]) {
     this.xmlWriter.recipesToXml(recipes || []);
+    if (this.platform.is('hybrid')) {
+      this.isToastOpen = true;
+    }
+    this.isExportOpen = false;
   }
 
   importRecipes() {
-
+    FilePicker.pickFiles({
+      types: ['text/xml'],
+      multiple: false,
+      readData: true
+    }).then((result) => {
+      this.xmlReader.readRecipes(b64_to_utf8(result.files[0].data as string));
+      this.showSpinner = true;
+      setTimeout(() => {
+        this.storage.get('recipes')?.then((response) => {
+          this.recipes = response;
+          this.showSpinner = false;
+        });
+      }, 500);
+    });
   }
+
+  closeToast() {
+    this.isToastOpen = false;
+  }
+}
+
+function b64_to_utf8(str: string) {
+  return decodeURIComponent(escape(window.atob(str)));
 }

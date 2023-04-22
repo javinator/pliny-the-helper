@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {StorageService} from "./storage.service";
 import {HttpClient} from "@angular/common/http";
 
+import {v4 as uuidv4} from "uuid";
 import * as xml2js from 'xml2js';
 import {BeerStyle, Fermentable, Hop, Yeast, Misc, MashProfile, Recipe} from "models";
 
@@ -307,35 +308,34 @@ function parseXMLtoRecipes(data: string): Promise<Recipe[]> {
           explicitArray: true
         });
     parser.parseString(data, function (err, result) {
-      const obj = result.MASHS;
-      for (k in obj.MASH) {
-        const item = obj.MASH[k];
+      const obj = result.RECIPES;
+      for (k in obj.RECIPE) {
+        const item = obj.RECIPE[k];
         arr.push({
           name: item.NAME[0],
           version: item.VERSION[0],
-          ABV: 0,
-          FG: 0,
-          IBU: 0,
-          OG: 0,
-          batchSize: 0,
-          boilSize: 0,
-          boilTime: 0,
-          brewDate: "",
-          brewer: "",
-          calculateBoilSize: false,
-          color: 0,
-          efficiency: 0,
+          ABV: item.EST_ABV?.[0],
+          FG: item.EST_FG?.[0],
+          OG: item.EST_OG?.[0],
+          IBU: item.IBU?.[0],
+          batchSize: item.BATCH_SIZE[0],
+          boilSize: item.BOIL_SIZE[0],
+          boilTime: item.BOIL_TIME[0],
+          brewDate: item.DATE[0],
+          brewer: item.BREWER[0],
+          color: item.EST_COLOR[0],
+          efficiency: item.EFFICIENCY[0],
           fermentables: [],
           hops: [],
           mashProfile: undefined,
-          measuredFG: 0,
-          measuredOG: 0,
-          measuredVol: 0,
+          measuredFG: item.FG?.[0],
+          measuredOG: item.OG?.[0],
+          measuredVol: item.FG?.[0],
           miscs: [],
-          notes: "",
+          notes: item.NOTES?.[0],
           style: undefined,
-          type: "All Grain",
-          uid: "",
+          type: item.TYPE[0],
+          uid: uuidv4() as string,
           waters: [],
           yeasts: []
         });

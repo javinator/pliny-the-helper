@@ -1,24 +1,37 @@
 import {Injectable} from '@angular/core';
-
+import {BeerStyle, Fermentable, Hop, MashProfile, MashStep, Misc, Recipe, Yeast} from "models";
+import {Directory, Encoding, Filesystem} from '@capacitor/filesystem';
+import {Platform} from "@ionic/angular";
 import {saveAs} from 'file-saver';
-import {Recipe, BeerStyle, Hop, Fermentable, Yeast, Misc, MashProfile, MashStep} from "models";
 
 @Injectable({
   providedIn: 'root',
 })
 export class XmlWriterService {
+  constructor(public platform: Platform) {
+  }
+
   recipesToXml(recipes: Recipe[]) {
     let content = '<?xml version="1.0" encoding="UTF-8"?>\n<RECIPES>\n';
     recipes.forEach((recipe) => {
       content += recipeToXmlText(recipe);
     })
     content += '</RECIPES>';
-    let xml = new Blob([content], {type: "text/xml"});
     const today = new Date();
     const date = today.getFullYear() + '-'
       + (today.getMonth() + 1).toString().padStart(2, '0') + '-'
       + today.getDate().toString().padStart(2, '0');
-    saveAs(xml, "pliny-export-" + date + ".xml");
+    const filename = "pliny-export-" + date + ".xml"
+    if (this.platform.is('hybrid')) {
+      Filesystem.writeFile({
+        path: filename,
+        data: content,
+        directory: Directory.Documents,
+        encoding: Encoding.UTF8
+      })
+    } else {
+      saveAs(new Blob([content], {type: "text/xml"}), filename);
+    }
   }
 }
 
@@ -29,6 +42,7 @@ function recipeToXmlText(recipe: Recipe) {
   content += '<TYPE>' + recipe.type + '</TYPE>\n';
   content += styleToXmlText(recipe.style);
   content += '<BREWER>' + recipe.brewer + '</BREWER>\n';
+  content += '<DATE>' + recipe.brewDate + '</DATE>\n';
   content += '<BATCH_SIZE>' + recipe.batchSize + '</BATCH_SIZE>\n';
   content += '<BOIL_SIZE>' + recipe.boilSize + '</BOIL_SIZE>\n';
   content += '<BOIL_TIME>' + recipe.boilTime + '</BOIL_TIME>\n';

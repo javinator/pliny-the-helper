@@ -16,6 +16,9 @@ import {MiscsCardComponent} from "./miscs-card/miscs-card.component";
   imports: [IonicModule, FermentablesCardComponent, NgIf, NgForOf, NgSwitchCase, NgSwitch, HopsCardComponent, YeastsCardComponent, MiscsCardComponent]
 })
 export class IngredientsPage implements OnInit {
+
+  showSpinner = false;
+
   constructor(private storage: StorageService) {
   }
 
@@ -29,8 +32,16 @@ export class IngredientsPage implements OnInit {
   f_yeasts!: Yeast[];
   f_miscs!: Misc[];
 
+  ionViewWillEnter() {
+    this.showSpinner = true;
+  }
+
+  ionViewDidEnter() {
+    setTimeout(() => this.showSpinner = false, 500);
+  }
 
   ngOnInit() {
+    this.showSpinner = true;
     this.storage.get('fermentables')?.then((response) => {
       this.fermentables = response;
       this.fermentables.sort((a, b) => a.name.localeCompare(b.name));

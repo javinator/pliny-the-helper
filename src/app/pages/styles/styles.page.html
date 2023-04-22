@@ -8,7 +8,12 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content class="ion-padding">
+
+<ion-content *ngIf="showSpinner">
+  <ion-spinner class="center" name="lines-sharp"></ion-spinner>
+</ion-content>
+
+<ion-content class="ion-padding" *ngIf="!showSpinner">
   <ng-container *ngIf="styles">
     <ion-searchbar [debounce]="50" (ionInput)="filter($event)"></ion-searchbar>
     <style-card *ngFor="let style of styles" [style]="style" (click)="showDetails(style)"></style-card>

@@ -17,7 +17,8 @@ import {NgIf} from "@angular/common";
 export class SettingsPage {
   settings: Settings = {};
   isToastOpen = false;
-  isAdmin = true;
+  isAdmin = false;
+  showSpinner = false;
   version = '0.1.0';
 
   constructor(private storage: StorageService, private xmlReader: XmlReaderService) {
@@ -52,6 +53,7 @@ export class SettingsPage {
   ];
 
   ionViewWillEnter() {
+    this.showSpinner = true;
     this.storage.get('settings')?.then((response: Settings) => {
       this.settings.brewer = response.brewer || CONFIG.defaultName;
       this.settings.batchSize = response.batchSize || CONFIG.defaultBatchSize;
@@ -59,6 +61,10 @@ export class SettingsPage {
       this.settings.efficiency = response.efficiency || CONFIG.defaultEfficiency;
       this.settings.displayCost = response.displayCost || false;
     });
+  }
+
+  ionViewDidEnter() {
+    setTimeout(() => this.showSpinner = false, 500);
   }
 
   init() {

@@ -15,6 +15,15 @@ import {ConversionCardComponent} from "./conversion-card/conversion-card.compone
 })
 export class CalculatorsPage {
   activeTab = 'abv';
+  showSpinner = false;
+
+  ionViewWillEnter() {
+    this.showSpinner = true;
+  }
+
+  ionViewDidEnter() {
+    setTimeout(() => this.showSpinner = false, 250);
+  }
 
   tabChanged(event: any) {
     this.activeTab = event.detail.value

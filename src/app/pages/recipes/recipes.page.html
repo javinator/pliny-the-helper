@@ -13,13 +13,18 @@
       <ion-button (click)="importRecipes()">
         <ion-icon slot="icon-only" name="folder-open"></ion-icon>
       </ion-button>
-      <ion-button id="export-trigger">
+      <ion-button (click)="openExport()">
         <ion-icon slot="icon-only" name="save"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content class="ion-padding">
+
+<ion-content *ngIf="showSpinner">
+  <ion-spinner class="center" name="lines-sharp"></ion-spinner>
+</ion-content>
+
+<ion-content class="ion-padding" *ngIf="!showSpinner">
   <ng-container *ngIf="!recipes || recipes.length === 0">
     <div class="ion-text-center">
       <strong>You don't have a recipe yet!</strong>
@@ -33,7 +38,7 @@
   </ng-container>
 </ion-content>
 
-<ion-modal trigger="export-trigger">
+<ion-modal [isOpen]="isExportOpen" (didDismiss)="closeExport()">
   <ng-template>
     <ion-header>
       <ion-toolbar>
@@ -55,4 +60,11 @@
   </ng-template>
 </ion-modal>
 
+<ion-toast
+  [isOpen]="isToastOpen"
+  icon="checkmark"
+  message="Your recipes have been exported to your documents folder!"
+  [duration]="3000"
+  (didDismiss)="closeToast()"
+></ion-toast>
 
