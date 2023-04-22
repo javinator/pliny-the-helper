@@ -2,6 +2,8 @@
 
 Ionic based multiplatform brew-helper.
 
+![Pliny the Helper](/src/assets/img/pliny_light.png)
+
 ## Description
 
 Pliny the Helper is an app to help a brew master organize and create recipes. It is compatible with the open BeerXML

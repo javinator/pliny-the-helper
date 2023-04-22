@@ -6,6 +6,7 @@ import {FormsModule} from "@angular/forms";
 import {CONFIG} from "../../app.constants";
 import {NgIf} from "@angular/common";
 
+
 @Component({
   selector: 'settings-page',
   templateUrl: 'settings.page.html',
@@ -17,6 +18,7 @@ export class SettingsPage {
   settings: Settings = {};
   isToastOpen = false;
   isAdmin = true;
+  version = '0.1.0';
 
   constructor(private storage: StorageService, private xmlReader: XmlReaderService) {
   }
