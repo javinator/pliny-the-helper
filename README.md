@@ -1,5 +1,4 @@
 # ![Pliny the Helper](/src/assets/img/pliny_light.png)
-___
 
 Ionic based multiplatform brew-helper.
 
