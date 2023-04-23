@@ -1,7 +1,7 @@
 import {CapacitorConfig} from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'com.bierfreunde.pliny',
   appName: 'Pliny the Helper',
   webDir: 'www',
   bundledWebRuntime: false

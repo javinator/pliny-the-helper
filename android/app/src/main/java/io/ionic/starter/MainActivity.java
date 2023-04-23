@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package com.bierfreunde.pliny;
 
 import com.getcapacitor.BridgeActivity;
 
