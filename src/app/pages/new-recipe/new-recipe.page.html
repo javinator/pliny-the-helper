@@ -21,7 +21,7 @@
           required="true"
         ></ion-input>
         <ion-select label="Style" label-placement="floating" (ionChange)="changeStyle($event)"
-                    placeholder="Choose Beer Style">
+                    placeholder="Choose Beer Style" interface="action-sheet">
           <ion-select-option *ngFor="let name of getStylesOptions()" [value]="name">{{ name }}</ion-select-option>
         </ion-select>
         <ion-input

@@ -37,6 +37,19 @@ export class StorageService {
     })
   }
 
+  public addRecipes(rcps: Recipe[]) {
+    let newRecipes: Recipe[] = [];
+    rcps.forEach((recipe) => newRecipes.push(RecipeUtil.calculateRecipe(recipe)))
+    return this._storage?.get('recipes').then((recipes: Recipe[] | null) => {
+      if (recipes) {
+        recipes.push(...newRecipes);
+      } else {
+        recipes = newRecipes;
+      }
+      return this._storage?.set('recipes', recipes);
+    })
+  }
+
   public deleteRecipe(uid: string) {
     return this._storage?.get('recipes').then((recipes: Recipe[]) => {
       if (recipes) {

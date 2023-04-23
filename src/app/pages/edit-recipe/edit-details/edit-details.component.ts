@@ -115,7 +115,8 @@ export class EditDetailsComponent {
   getSrmRangeBar() {
     if (this.recipe.style?.minColor && this.recipe.style?.maxColor) {
       const start = this.recipe.style.minColor / 41 * 100;
-      const end = this.recipe.style.maxColor / 41 * 100;
+      let end = this.recipe.style.maxColor / 41 * 100;
+      end = end > 100 ? 100 : end;
       return 'width: ' + (end - start) + '%; left: ' + start + '%;';
     }
     return '';

@@ -52,14 +52,15 @@
         <ion-label>
           {{ hop.name }}
           <p class="ion-padding-top">
-            {{ hop.amount ? hop.amount * 1000 : 0 | number:'1.0-1'}} g - {{ hop.use }}
+            {{ hop.amount ? (hop.amount * 1000 | number:'1.0-1') : 0}} g - {{ hop.use }}
             <ng-container *ngIf="hop.use === 'Boil' || hop.use === 'Dry Hop'"> -
               <span
-                [class]="checkOvertime(hop, recipe)">{{ hop.time ? (hop.time + (hop.use === 'Dry Hop' ? ' days' : ' minutes')) : '' }}</span>
+                [class]="checkOvertime(hop, recipe)">{{ hop.time ? ((hop.time | number:'1.0-1') + (hop.use === 'Dry Hop' ? ' days' : ' minutes')) : '' }}</span>
             </ng-container>
           </p>
           <p>
-            {{ hop.alpha }} % AA - {{ RecipeUtil.calculatePerHopIbu(hop, recipe) | number:'1.0-1'}} IBUs
+            {{ hop.alpha | number:'1.0-1' }} % AA - {{ RecipeUtil.calculatePerHopIbu(hop, recipe) | number:'1.0-1'}}
+            IBUs
           </p>
         </ion-label>
         <div class="description ion-hide-xl-down">{{ hop.description }}
@@ -122,7 +123,7 @@
         <ion-label>
           {{ misc.name }}
           <p
-            class="ion-padding-top">{{ misc.amount ? misc.amount * 1000 : 0 | number:'1.0-1'}} {{misc.amountIsWeight ? 'g' : 'ml'}}
+            class="ion-padding-top">{{ misc.amount ? (misc.amount * 1000 | number:'1.0-2') : 0 }} {{misc.amountIsWeight ? 'g' : 'ml'}}
             - {{ misc.type}}</p>
         </ion-label>
         <div class="description ion-hide-xl-down">{{ misc.description }}

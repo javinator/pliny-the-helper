@@ -87,6 +87,9 @@ export class NewRecipePage implements OnInit {
   submit() {
     this.model.calculateBoilSize = true;
     this.model.boilSize = RecipeUtil.calculateBoilSize(this.model);
+    if (!this.model.style) {
+      this.model.style = this.styles?.[0];
+    }
     this.storage.addRecipe(this.model)?.then(() => this.router.navigate(['edit-recipe'], {state: {recipe: this.model.uid}}));
   }
 

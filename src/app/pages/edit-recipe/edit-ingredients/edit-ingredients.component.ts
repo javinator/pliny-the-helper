@@ -290,7 +290,7 @@ export class EditIngredientsComponent implements OnInit {
   }
 
   checkOvertime(hop: Hop, recipe: Recipe) {
-    if (hop.time && hop.time > recipe.boilTime) {
+    if (hop.time && Number(hop.time) > recipe.boilTime && hop.use !== 'Dry Hop') {
       return 'red';
     } else {
       return '';

@@ -97,6 +97,8 @@ function styleToXmlText(style?: BeerStyle) {
     content += '<OG_MAX>' + style.maxOg + '</OG_MAX>\n';
     content += '<FG_MIN>' + style.minFg + '</FG_MIN>\n';
     content += '<FG_MAX>' + style.maxFg + '</FG_MAX>\n';
+    content += '<ABV_MIN>' + style.minAbv + '</ABV_MIN>\n';
+    content += '<ABV_MAX>' + style.maxAbv + '</ABV_MAX>\n';
     content += '<IBU_MIN>' + style.minIbu + '</IBU_MIN>\n';
     content += '<IBU_MAX>' + style.maxIbu + '</IBU_MAX>\n';
     content += '<COLOR_MIN>' + style.minColor + '</COLOR_MIN>\n';
@@ -115,7 +117,7 @@ function hopToXmlText(hop: Hop) {
   content += '<ALPHA>' + hop.alpha + '</ALPHA>\n';
   content += '<AMOUNT>' + hop.amount + '</AMOUNT>\n';
   content += '<USE>' + hop.use + '</USE>\n';
-  content += '<TIME>' + hop.time + '</TIME>\n';
+  content += '<TIME>' + hop.use === 'Dry Hop' ? (hop.time || 0) * 24 * 60 : hop.time + '</TIME>\n';
   if (hop.description) {
     content += '<NOTES>' + hop.description + '</NOTES>\n';
   }
@@ -165,7 +167,7 @@ function yeastToXmlText(yeast: Yeast) {
   content += '<VERSION>1</VERSION>\n';
   content += '<TYPE>' + yeast.type + '</TYPE>\n';
   content += '<FORM>' + yeast.form + '</FORM>\n';
-  content += '<AMOUNT>' + yeast.amount + '</AMOUNT>\n';
+  content += '<AMOUNT>' + (yeast.amount || 1) + '</AMOUNT>\n';
   if (yeast.lab) {
     content += '<LABORATORY>' + yeast.lab + '</LABORATORY>\n';
   }
@@ -183,6 +185,9 @@ function yeastToXmlText(yeast: Yeast) {
   }
   if (yeast.attenuation) {
     content += '<ATTENUATION>' + yeast.attenuation + '</ATTENUATION>\n';
+  }
+  if (yeast.maxAbv) {
+    content += '<MAX_ABV>' + yeast.maxAbv + '</MAX_ABV>\n';
   }
   if (yeast.description) {
     content += '<NOTES>' + yeast.description + '</NOTES>\n';

@@ -52,7 +52,7 @@ export class RecipeUtil {
   }
 
   static calculateBoilSize(recipe: Recipe) {
-    return recipe.batchSize + recipe.batchSize * CONFIG.evaporation * recipe.boilTime / 60;
+    return Number(recipe.batchSize) + Number(recipe.batchSize) * CONFIG.evaporation * Number(recipe.boilTime) / 60;
   }
 
   static calculateRecipe(recipe: Recipe): Recipe {
