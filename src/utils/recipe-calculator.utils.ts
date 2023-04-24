@@ -65,6 +65,7 @@ export class RecipeUtil {
     recipe.ABV = CalculatorUtil.abv(recipe.OG, recipe.FG);
     recipe.color = RecipeUtil.calculateColor(recipe);
     recipe.IBU = RecipeUtil.calculateBitterness(recipe);
+    recipe.cost = calculateRecipePrice(recipe);
     return recipe;
   }
 }
@@ -118,4 +119,29 @@ function calculateHopUseValue(use: string) {
     default:
       return 0;
   }
+}
+
+function calculateRecipePrice(recipe: Recipe) {
+  let total = 0;
+  recipe.fermentables.forEach((item) => {
+    if (item.cost && item.amount) {
+      total += item.cost * item.amount;
+    }
+  });
+  recipe.hops.forEach((item) => {
+    if (item.cost && item.amount) {
+      total += item.cost * item.amount * 1000;
+    }
+  });
+  recipe.miscs.forEach((item) => {
+    if (item.cost && item.amount) {
+      total += item.cost * item.amount;
+    }
+  });
+  recipe.yeasts.forEach((item) => {
+    if (item.cost && item.amount) {
+      total += item.cost * item.amount;
+    }
+  });
+  return total;
 }

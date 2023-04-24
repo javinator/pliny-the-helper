@@ -103,6 +103,15 @@ function styleToXmlText(style?: BeerStyle) {
     content += '<IBU_MAX>' + style.maxIbu + '</IBU_MAX>\n';
     content += '<COLOR_MIN>' + style.minColor + '</COLOR_MIN>\n';
     content += '<COLOR_MAX>' + style.maxColor + '</COLOR_MAX>\n';
+    if (style.notes) {
+      content += '<NOTES>' + style.notes + '</NOTES>\n';
+    }
+    if (style.profile) {
+      content += '<NOTES>' + style.profile + '</NOTES>\n';
+    }
+    if (style.ingredients) {
+      content += '<NOTES>' + style.ingredients + '</NOTES>\n';
+    }
   } else {
     content += '<NAME>Other</NAME>\n';
   }
@@ -133,6 +142,9 @@ function hopToXmlText(hop: Hop) {
   if (hop.substitutes) {
     content += '<SUBSTITUTES>' + hop.substitutes.join(',') + '</SUBSTITUTES>\n';
   }
+  if (hop.cost) {
+    content += '<COST>' + hop.cost + '</COST>\n';
+  }
   content += '</HOP>\n';
   return content;
 }
@@ -158,6 +170,9 @@ function fermentableToXmlText(fermentable: Fermentable) {
     content += '<MAX_IN_BATCH>' + fermentable.maxInBatch + '</MAX_IN_BATCH>\n';
   }
   content += '</FERMENTABLE>\n';
+  if (fermentable.cost) {
+    content += '<COST>' + fermentable.cost + '</COST>\n';
+  }
   return content;
 }
 
@@ -192,6 +207,9 @@ function yeastToXmlText(yeast: Yeast) {
   if (yeast.description) {
     content += '<NOTES>' + yeast.description + '</NOTES>\n';
   }
+  if (yeast.cost) {
+    content += '<COST>' + yeast.cost + '</COST>\n';
+  }
   content += '</YEAST>\n';
   return content;
 }
@@ -209,6 +227,9 @@ function miscToXmlText(misc: Misc) {
   }
   if (misc.description) {
     content += '<NOTES>' + misc.description + '</NOTES>\n';
+  }
+  if (misc.cost) {
+    content += '<COST>' + misc.cost + '</COST>\n';
   }
   content += '</MISC>\n';
   return content;

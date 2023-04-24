@@ -17,7 +17,7 @@ import {NgIf} from "@angular/common";
 export class SettingsPage {
   settings: Settings = {};
   isToastOpen = false;
-  isAdmin = false;
+  isAdmin = true;
   showSpinner = false;
   version = '0.1.0';
 

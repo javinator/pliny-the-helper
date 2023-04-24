@@ -288,6 +288,15 @@
         [value]="newYeast?.attenuation"
         (ionChange)="setYeastAttenuation($event)">
       </ion-input>
+      <ion-input
+        type="number"
+        label="Amount"
+        label-placement="floating"
+        placeholder="packs"
+        [disabled]="!newYeast"
+        [value]="newYeast?.amount"
+        (ionChange)="setYeastAmount($event)">
+      </ion-input>
     </ion-content>
   </ng-template>
 </ion-modal>

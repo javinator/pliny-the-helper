@@ -34,6 +34,7 @@ export class RecipesPage {
     this.showSpinner = true;
     this.storage.get('recipes')?.then((response) => {
       this.recipes = response;
+      this.recipes?.sort((a, b) => a.name.localeCompare(b.name));
     });
   }
 

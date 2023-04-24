@@ -200,8 +200,15 @@ export class EditIngredientsComponent implements OnInit {
     this.newYeast!.attenuation = event.detail.value;
   }
 
+  setYeastAmount(event: any) {
+    this.newYeast!.amount = event.detail.value;
+  }
+
   addYeast() {
     if (this.newYeast) {
+      if (!this.newYeast.amount) {
+        this.newYeast.amount = 1;
+      }
       this.recipe.yeasts.push(this.newYeast);
       this.storage.saveRecipe(this.recipe);
     } else {

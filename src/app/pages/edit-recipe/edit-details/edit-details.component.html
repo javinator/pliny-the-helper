@@ -34,6 +34,12 @@
                 {{ recipe.brewDate | date:'dd / MM / yyyy' }}
               </ion-label>
             </ion-item>
+            <ion-item *ngIf="showCost && recipe.cost && recipe.cost > 0">
+              <ion-label>
+                <p>Recipe Cost</p>
+                {{ recipe.cost | number:'1.2-2' }} CHF
+              </ion-label>
+            </ion-item>
           </ion-list>
         </ion-col>
         <ion-col size="12" size-xl="7">

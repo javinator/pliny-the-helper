@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
-import {Recipe, BeerStyle, MashProfile} from "models";
+import {Recipe, BeerStyle, MashProfile, Settings} from "models";
 import {Router} from "@angular/router";
 import {StorageService} from "services";
 import {DecimalPipe, NgForOf, NgIf, NgSwitch, NgSwitchCase} from "@angular/common";
@@ -16,7 +16,7 @@ import {RecipeUtil} from "utils";
   standalone: true,
   imports: [IonicModule, EditIngredientsComponent, EditDetailsComponent, NgSwitch, NgSwitchCase, NgForOf, NgIf, FormsModule, DecimalPipe],
 })
-export class EditRecipePage implements OnInit {
+export class EditRecipePage {
 
   activeTab = 'ingredients';
   isEditOpen = false;
@@ -26,6 +26,7 @@ export class EditRecipePage implements OnInit {
   editRecipe?: Recipe;
   styles?: BeerStyle[];
   mashProfiles?: MashProfile[];
+  settings?: Settings;
 
   constructor(private router: Router, private storage: StorageService) {
     this.uid = this.router.getCurrentNavigation()?.extras.state?.['recipe'];
@@ -45,7 +46,7 @@ export class EditRecipePage implements OnInit {
     }
   ];
 
-  ngOnInit() {
+  ionViewWillEnter() {
     this.storage.getRecipe(this.uid).then((recipe) => this.recipe = recipe);
     this.storage.get('styles')?.then((response) => {
       this.styles = response;
@@ -53,6 +54,9 @@ export class EditRecipePage implements OnInit {
     });
     this.storage.get('mashProfiles')?.then((response) => {
       this.mashProfiles = response;
+    });
+    this.storage.get('settings')?.then((response) => {
+      this.settings = response;
     });
   }
 

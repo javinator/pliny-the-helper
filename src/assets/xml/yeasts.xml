@@ -17,6 +17,7 @@
       original character of the beer is preserved after refermentation. The yeast will settle and form a tight mat at
       the bottom of the bottle or cask.
     </NOTES>
+    <COST>4.20</COST>
   </YEAST>
   <YEAST>
     <NAME>Lallemand Belgian Wit</NAME>
@@ -35,6 +36,7 @@
       baseline profile of banana and spice aromas, but leaves space for the brewer to showcase other spice additions
       typical of Belgian-style beers.
     </NOTES>
+    <COST>4.60</COST>
   </YEAST>
   <YEAST>
     <NAME>Lallemand Belle Saison</NAME>
@@ -53,6 +55,7 @@
       style. Designed for warm-temperature fermentation true to traditional 'Farmhouse' production methods, beers brewed
       with Belle Saison are fruity, spicy and refreshing.
     </NOTES>
+    <COST>4.50</COST>
   </YEAST>
   <YEAST>
     <NAME>Lallemand American West Coast</NAME>
@@ -70,6 +73,7 @@
       fermentations for high quality ales. It is a neutral and highly attenuating strain with a high flocculation
       ability that can be used to make a wide variety of American-style beers.
     </NOTES>
+    <COST>4.50</COST>
   </YEAST>
   <YEAST>
     <NAME>Lallemand Lager Yeast</NAME>
@@ -86,6 +90,7 @@
     <NOTES>Diamond is a true lager strain. It delivers excellent fermentation performance, and has the ability to
       produce clean, authentic lagers.
     </NOTES>
+    <COST>4.20</COST>
   </YEAST>
   <YEAST>
     <NAME>Lallemand Hybrid Saison-Style</NAME>
@@ -104,6 +109,7 @@
       remove the STA1 gene, responsible for the diastatic activity of Saison yeasts. Care was taken to retain normal
       brewing sugar utilization to produce dry saisons.
     </NOTES>
+    <COST>4.70</COST>
   </YEAST>
   <YEAST>
     <NAME>Lallemand Kölsch-Style</NAME>
@@ -121,6 +127,7 @@
       this strain accentuates delicate hop aromas while imparting subtle fruity esters. Colder fermentations will be
       more neutral in character, while warmer fermentations will have more fruit-forward ester profile.
     </NOTES>
+    <COST>4.50</COST>
   </YEAST>
   <YEAST>
     <NAME>Lallemand American East Coast</NAME>
@@ -139,6 +146,7 @@
       notably stone fruits like peach. New England exhibits medium to high attenuation with medium
       flocculation, making it a perfect choice for East Coast style ales.
     </NOTES>
+    <COST>5.20</COST>
   </YEAST>
   <YEAST>
     <NAME>Lallemand English-Style</NAME>
@@ -157,6 +165,7 @@
       inability to metabolize maltotriose. A more subdued yeast character allows the flavors and aromas of malt and hops
       to shine through. London may also be used in the production of Ciders.
     </NOTES>
+    <COST>4.20</COST>
   </YEAST>
   <YEAST>
     <NAME>Lallemand German Wheat</NAME>
@@ -174,6 +183,7 @@
       German wheat beer styles. It produces higher levels of esters and phenols. It has robust and consistent
       performance making it a great choice for a variety of traditional wheat beer styles.
     </NOTES>
+    <COST>4.20</COST>
   </YEAST>
   <YEAST>
     <NAME>Lallemand Nottingham</NAME>
@@ -192,6 +202,7 @@
       strain for producing a wide variety of beer styles. It is a stress tolerant making it a good choice for high
       gravity, sours, re-starting stuck fermentations and other challenging fermentation conditions.
     </NOTES>
+    <COST>4.50</COST>
   </YEAST>
   <YEAST>
     <NAME>Lallemand Verdant IPA</NAME>
@@ -210,6 +221,7 @@
       merge seamlessly with hop aromas. With medium-high attenuation, it leaves a soft and balanced malt profile with
       slightly more body than a typical American IPA yeast strain.
     </NOTES>
+    <COST>4.70</COST>
   </YEAST>
   <YEAST>
     <NAME>Lallemand Kveik Yeast</NAME>
@@ -228,6 +240,7 @@
       range with full attenuation typically achieved within 2-3 days. The flavor profile is consistent across the entire
       temperature range: neutral with subtle fruity notes of orange and citrus.
     </NOTES>
+    <COST>4.95</COST>
   </YEAST>
   <YEAST>
     <NAME>Lallemand Windsor</NAME>
@@ -246,6 +259,7 @@
       ales. Windsor is a consistent and robust strain that produces moderate levels of alcohol and the balanced flavor
       and aroma characteristics of the best traditional English ales.
     </NOTES>
+    <COST>4.50</COST>
   </YEAST>
   <YEAST>
     <NAME>WildBrew Philly Sour</NAME>
@@ -263,6 +277,7 @@
       This first yeast in the WildBrew series is a great choice for innovative, sessionable sour beers with refreshing
       acidity and notes of stone fruit.
     </NOTES>
+    <COST>4.95</COST>
   </YEAST>
   <YEAST>
     <NAME>SafAle BE-134</NAME>
@@ -280,6 +295,7 @@
       active components, such as as fruity esters and phenolic / spicy components, at high concentrations. It has a very
       good diacetyl reduction power. Character is dry, ideal for highly refreshing beers like Belgian-Saison style.
     </NOTES>
+    <COST>3.20</COST>
   </YEAST>
   <YEAST>
     <NAME>SafAle BE-256</NAME>
@@ -298,24 +314,7 @@
       maintain the aromatic profile at the end of the fermentation, we do recommend to crop this yeast as soon as
       possible after fermentation.
     </NOTES>
-  </YEAST>
-  <YEAST>
-    <NAME>SafBrew HA-18</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Ale</TYPE>
-    <FORM>Dry</FORM>
-    <LABORATORY>Fermentis</LABORATORY>
-    <PRODUCT_ID>HA-18</PRODUCT_ID>
-    <MIN_TEMPERATURE>25</MIN_TEMPERATURE>
-    <MAX_TEMPERATURE>35</MAX_TEMPERATURE>
-    <FLOCCULATION>Medium</FLOCCULATION>
-    <ATTENUATION>100</ATTENUATION>
-    <MAX_ABV>18</MAX_ABV>
-    <NOTES>HA-18 is a powerful solution (consisting of POF+ Active Dry Brewer’s Yeast and enzymes) for the
-      production of high-gravity and particularly high alcoholic beers – such as strong ales, barley wines and barrel
-      aged beers with very high density. It has a very good resistance to osmotic pressure and high fermentation
-      temperatures.
-    </NOTES>
+    <COST>3.50</COST>
   </YEAST>
   <YEAST>
     <NAME>SafAle K-97</NAME>
@@ -334,6 +333,7 @@
       and some versions of Session Beers. Suitable for heavily hopped beers and has ability to form a large firm head
       when fermenting.
     </NOTES>
+    <COST>2.80</COST>
   </YEAST>
   <YEAST>
     <NAME>SafAle S-04</NAME>
@@ -352,6 +352,7 @@
       American and English Ales – including highly hopped beers – and is specially adapted to cask-conditioned and beers
       fermented in cylindro-conical tanks.
     </NOTES>
+    <COST>2.70</COST>
   </YEAST>
   <YEAST>
     <NAME>SafAle S-33</NAME>
@@ -369,6 +370,7 @@
       Tripel, Quadrupel Styles) and strong English ales (ex. Imperial Stouts). It is also ideal for New England IPAs.
       Yeast with a medium sedimentation: forms no clumps but a powdery haze when resuspended in the beer.
     </NOTES>
+    <COST>2.20</COST>
   </YEAST>
   <YEAST>
     <NAME>SafAle T-58</NAME>
@@ -387,6 +389,7 @@
       oriented styles. Yeast with a medium sedimentation: forms no clumps but a powdery haze when resuspended in the
       beer.
     </NOTES>
+    <COST>2.20</COST>
   </YEAST>
   <YEAST>
     <NAME>SafAle US-05</NAME>
@@ -404,6 +407,7 @@
       head and presents a very good ability to stay in suspension during fermentation. Ideal for American beer types and
       highly hopped beers.
     </NOTES>
+    <COST>2.85</COST>
   </YEAST>
   <YEAST>
     <NAME>SafAle WB-06</NAME>
@@ -422,6 +426,7 @@
       Weizen Beers). Produces typical phenolic notes of wheat beers. Allows to brew beer with a high drinkability
       profile and presents a very good ability to suspend during fermentation.
     </NOTES>
+    <COST>3.30</COST>
   </YEAST>
   <YEAST>
     <NAME>SafBrew BR-8</NAME>
@@ -441,6 +446,7 @@
       time as the beer is aged, with funkier notes (barnyard, horse, leather…) nicely balanced by refreshing, fruity
       notes.
     </NOTES>
+    <COST>13.50</COST>
   </YEAST>
   <YEAST>
     <NAME>SafBrew LA-01</NAME>
@@ -458,6 +464,7 @@
       of low and/or non-alcoholic beverages (0.5ABV). This yeast does not assimilate maltose and maltotriose but
       assimilates simple sugars (glucose, fructose and sucrose) and is characterized by a subtle aroma profile.
     </NOTES>
+    <COST>4.50</COST>
   </YEAST>
   <YEAST>
     <NAME>SafLager S-189</NAME>
@@ -475,6 +482,7 @@
       fairly neutral flavor beers with a high drinkability. Depending on the conditions, it tends to present noticeable
       herbal and floral notes to lager beers.
     </NOTES>
+    <COST>4.55</COST>
   </YEAST>
   <YEAST>
     <NAME>SafLager S-23</NAME>
@@ -491,6 +499,7 @@
     <NOTES>Bottom fermenting brewer’s yeast originating from Berlin in Germany. SafLager S-23 recommended for the
       production of fruitier and more estery lagers. Its profile gives beers with a good length on the palate.
     </NOTES>
+    <COST>3.80</COST>
   </YEAST>
   <YEAST>
     <NAME>SafLager W-34/70</NAME>
@@ -508,6 +517,7 @@
       industry. W-34/70 allows the brewing of beers with a good balance of floral and fruity aromas and gives
       clean flavors and high drinkable beers.
     </NOTES>
+    <COST>4.10</COST>
   </YEAST>
   <YEAST>
     <NAME>MJ Mead</NAME>
@@ -526,6 +536,7 @@
       a wide temperature range. When using honey you will need a yeast nutrient with this yeast for
       healthy fermentation.
     </NOTES>
+    <COST>2.20</COST>
   </YEAST>
   <YEAST>
     <NAME>MJ Bavarian Lager</NAME>
@@ -543,6 +554,7 @@
       production than other lager strains, as well as a fuller, more rounded malt character
       with well-promoted hop flavours.
     </NOTES>
+    <COST>3.60</COST>
   </YEAST>
   <YEAST>
     <NAME>MJ Bavarian Wheat</NAME>
@@ -559,6 +571,7 @@
     <NOTES>A top-fermenting wheat beer yeast which imparts banana and clove esters
       balanced with spiced aromas. This yeast produces a silky mouthfeel and rich body.
     </NOTES>
+    <COST>2.60</COST>
   </YEAST>
   <YEAST>
     <NAME>MJ Belgian Abbey</NAME>
@@ -575,6 +588,7 @@
     <NOTES>Moderately alcohol tolerant with fewer phenols than Belgian Ale, this yeast is
       exceptionally fruity with hugely complex esters and is highly flocculant.
     </NOTES>
+    <COST>2.60</COST>
   </YEAST>
   <YEAST>
     <NAME>MJ Belgian Ale</NAME>
@@ -592,6 +606,7 @@
       the best monastic breweries in Belgium. High attenuation and alcohol tolerance
       allows you to brew a huge range of Belgian beers.
     </NOTES>
+    <COST>3.80</COST>
   </YEAST>
   <YEAST>
     <NAME>MJ Belgian Tripel</NAME>
@@ -609,6 +624,7 @@
       It is also very attenuative with a high alcohol tolerance making it perfect for a
       range of Belgian styles.
     </NOTES>
+    <COST>4.00</COST>
   </YEAST>
   <YEAST>
     <NAME>MJ Belgian Wit</NAME>
@@ -626,6 +642,7 @@
       and warming spice phenolics. The yeast will leave some sweetness, and will drop
       bright if left long enough.
     </NOTES>
+    <COST>2.50</COST>
   </YEAST>
   <YEAST>
     <NAME>MJ Californian Lager</NAME>
@@ -642,6 +659,7 @@
     <NOTES>A unique lager yeast that has the ability to ferment at ale temperatures without the
       associated off flavours. Extended lagering periods are also not required.
     </NOTES>
+    <COST>4.30</COST>
   </YEAST>
   <YEAST>
     <NAME>MJ Empire Ale</NAME>
@@ -658,6 +676,7 @@
     <NOTES>A top-fermenting ale yeast suitable for a variety of full bodied ales, with
       exceptional depth. Ferments with full, rich, dark fruit flavours.
     </NOTES>
+    <COST>4.30</COST>
   </YEAST>
   <YEAST>
     <NAME>MJ French Saison</NAME>
@@ -675,6 +694,7 @@
       yeast, creating distinctive beers with spicy, fruity and peppery notes. Ideal for
       fermentation of farmhouse style beer.
     </NOTES>
+    <COST>4.00</COST>
   </YEAST>
   <YEAST>
     <NAME>MJ Hophead Ale</NAME>
@@ -692,6 +712,7 @@
       England, hazy and fruit forward IPAs. Select enzymes improve aroma and flavour
       from late hop and fruit additions.
     </NOTES>
+    <COST>4.20</COST>
   </YEAST>
   <YEAST>
     <NAME>MJ Kveik</NAME>
@@ -708,6 +729,7 @@
     <NOTES>A top fermenting yeast, Voss Kveik offers fast fermentation at very high temperatures
       whilst retaining a neutral flavour character with subtle citrus fruit notes.
     </NOTES>
+    <COST>4.10</COST>
   </YEAST>
   <YEAST>
     <NAME>MJ Liberty Bell</NAME>
@@ -725,6 +747,7 @@
       style beers. This strain produces light, delicate fruity esters and helps develop
       malt character.
     </NOTES>
+    <COST>3.30</COST>
   </YEAST>
   <YEAST>
     <NAME>MJ New World Strong Ale</NAME>
@@ -742,6 +765,7 @@
       Ferments with a neutral yeast aroma to ensure the full character of the malts and
       hops are prominent in each beer.
     </NOTES>
+    <COST>3.30</COST>
   </YEAST>
   <YEAST>
     <NAME>MJ US West Coast</NAME>
@@ -759,5 +783,6 @@
       an exceptionally clean flavour, ideal for when you want the hop character to really
       punch through.
     </NOTES>
+    <COST>3.10</COST>
   </YEAST>
 </YEASTS>

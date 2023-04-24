@@ -16,6 +16,7 @@
       core notes of the original barley varieties. Slight nutty malt aroma.
     </NOTES>
     <MAX_IN_BATCH>100</MAX_IN_BATCH>
+    <COST>1.55</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Eraclea Pilsner Malt</NAME>
@@ -30,6 +31,7 @@
       beers. The malt is characterized by good processability, good yield as well as excellent foam values.
     </NOTES>
     <MAX_IN_BATCH>100</MAX_IN_BATCH>
+    <COST>1.70</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Golden Promise</NAME>
@@ -44,6 +46,7 @@
       gutsiest hops and, when you drop the gravity for a session beer, you won't lose out on body.
     </NOTES>
     <MAX_IN_BATCH>100</MAX_IN_BATCH>
+    <COST>2.30</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Maris Otter</NAME>
@@ -59,6 +62,7 @@
       Brewhouse Performance and beer clarity.
     </NOTES>
     <MAX_IN_BATCH>100</MAX_IN_BATCH>
+    <COST>2.30</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Munich Malt I</NAME>
@@ -72,6 +76,7 @@
       malt-forward and deeper color beer styles. Pronounced malt aroma with notes of caramel, honey and bread.
     </NOTES>
     <MAX_IN_BATCH>100</MAX_IN_BATCH>
+    <COST>1.55</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Munich Malt II</NAME>
@@ -85,6 +90,7 @@
       malt-forward and deeper color beer styles. Pronounced malt aroma with notes of caramel, honey and bread.
     </NOTES>
     <MAX_IN_BATCH>100</MAX_IN_BATCH>
+    <COST>1.55</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Pale Ale Malt</NAME>
@@ -99,6 +105,7 @@
       fruits and honey.
     </NOTES>
     <MAX_IN_BATCH>100</MAX_IN_BATCH>
+    <COST>1.55</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Pilsner Malt</NAME>
@@ -112,6 +119,7 @@
       especially for bottom-fermented beers. Malty-sweet with light honey notes.
     </NOTES>
     <MAX_IN_BATCH>100</MAX_IN_BATCH>
+    <COST>1.50</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Premium Pilsner Malt</NAME>
@@ -125,6 +133,7 @@
       colors are being achieved. Malty-sweet with light honey notes.
     </NOTES>
     <MAX_IN_BATCH>100</MAX_IN_BATCH>
+    <COST>1.55</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Vienna Malt</NAME>
@@ -138,6 +147,7 @@
       full-body in the beer. Malty-sweet, light honey and nutty notes.
     </NOTES>
     <MAX_IN_BATCH>100</MAX_IN_BATCH>
+    <COST>1.55</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Barke Pilsner Malt</NAME>
@@ -152,6 +162,7 @@
       toffee notes: pleasant, soft mouthfeel.
     </NOTES>
     <MAX_IN_BATCH>100</MAX_IN_BATCH>
+    <COST>1.60</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Barke Munich Malt</NAME>
@@ -166,6 +177,7 @@
       amplifying the aroma. Pronounced malt aroma with notes of honey and pastries.
     </NOTES>
     <MAX_IN_BATCH>100</MAX_IN_BATCH>
+    <COST>1.65</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Barke Vienna Malt</NAME>
@@ -180,6 +192,7 @@
       toffee, honey and nut notes: amused, soft mouthfeel.
     </NOTES>
     <MAX_IN_BATCH>100</MAX_IN_BATCH>
+    <COST>1.60</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Floor-Malted Tennen Pilsner Malt</NAME>
@@ -194,6 +207,7 @@
       special character and an extraordinary flavor intensity. Intense malt aroma with honey and biscuit notes.
     </NOTES>
     <MAX_IN_BATCH>100</MAX_IN_BATCH>
+    <COST>1.80</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Floor-Malted Tennen Dark Malt</NAME>
@@ -209,6 +223,7 @@
       full body, pronounced malt sweetness.
     </NOTES>
     <MAX_IN_BATCH>100</MAX_IN_BATCH>
+    <COST>1.85</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Floor-Malted Tennen Wheat Malt</NAME>
@@ -224,6 +239,7 @@
       velvety-creamy mouthfeel.
     </NOTES>
     <MAX_IN_BATCH>80</MAX_IN_BATCH>
+    <COST>1.90</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Biscuit Malt</NAME>
@@ -238,6 +254,7 @@
       that special touch.
     </NOTES>
     <MAX_IN_BATCH>25</MAX_IN_BATCH>
+    <COST>2.50</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>CaraHell</NAME>
@@ -251,6 +268,7 @@
       foam and its stability, and helps improve the mouthfeel of any beer.
     </NOTES>
     <MAX_IN_BATCH>25</MAX_IN_BATCH>
+    <COST>1.75</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>CaraAmber</NAME>
@@ -264,6 +282,7 @@
       a dark red shine. Toffee, caramel and bread notes.
     </NOTES>
     <MAX_IN_BATCH>25</MAX_IN_BATCH>
+    <COST>1.75</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>CaraAroma</NAME>
@@ -279,6 +298,7 @@
       and dried fruit.
     </NOTES>
     <MAX_IN_BATCH>25</MAX_IN_BATCH>
+    <COST>1.90</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>CaraBelge</NAME>
@@ -292,6 +312,7 @@
       dried fruits and nuts (almonds)
     </NOTES>
     <MAX_IN_BATCH>25</MAX_IN_BATCH>
+    <COST>1.80</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>CaraBohemian</NAME>
@@ -305,6 +326,7 @@
       achieved in this malt. Bread, caramel and toffee notes.
     </NOTES>
     <MAX_IN_BATCH>15</MAX_IN_BATCH>
+    <COST>1.80</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>CaraMunich I</NAME>
@@ -318,6 +340,7 @@
       aroma with fine pastries.
     </NOTES>
     <MAX_IN_BATCH>10</MAX_IN_BATCH>
+    <COST>1.75</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>CaraMunich II</NAME>
@@ -331,6 +354,7 @@
       aroma with fine pastries.
     </NOTES>
     <MAX_IN_BATCH>10</MAX_IN_BATCH>
+    <COST>1.75</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>CaraMunich III</NAME>
@@ -344,6 +368,7 @@
       aroma with clear pastry notes.
     </NOTES>
     <MAX_IN_BATCH>10</MAX_IN_BATCH>
+    <COST>1.75</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>CaraPils</NAME>
@@ -358,6 +383,7 @@
       be used universally from the brightest to the darkest beer styles.
     </NOTES>
     <MAX_IN_BATCH>25</MAX_IN_BATCH>
+    <COST>1.70</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>CaraRed</NAME>
@@ -372,6 +398,7 @@
       combination of CaraRed with Melanoidin malt. Malty-sweet with notes of caramel, honey and pastry.
     </NOTES>
     <MAX_IN_BATCH>25</MAX_IN_BATCH>
+    <COST>1.75</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Crystal Malt</NAME>
@@ -386,6 +413,7 @@
       toasted or roasted characters.
     </NOTES>
     <MAX_IN_BATCH>25</MAX_IN_BATCH>
+    <COST>2.50</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Abbey Malt</NAME>
@@ -400,6 +428,7 @@
       Complex malt aroma with intense notes of biscuit and honey, nuts and chocolate.
     </NOTES>
     <MAX_IN_BATCH>50</MAX_IN_BATCH>
+    <COST>1.65</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Beech Smoked Barley Malt</NAME>
@@ -413,6 +442,7 @@
       perfect any aroma-intensive beer style. Pronounced smoke aroma, malty-sweet, with vanilla and honey notes
     </NOTES>
     <MAX_IN_BATCH>100</MAX_IN_BATCH>
+    <COST>1.85</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Oak Smoked Wheat Malt</NAME>
@@ -426,6 +456,7 @@
       notes.
     </NOTES>
     <MAX_IN_BATCH>80</MAX_IN_BATCH>
+    <COST>1.95</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Peated Malt Light</NAME>
@@ -438,6 +469,7 @@
     <NOTES>Ingredient for providing the essential peat flavour in whisky production. 5 ppm Phenols.
     </NOTES>
     <MAX_IN_BATCH>75</MAX_IN_BATCH>
+    <COST>2.50</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Peated Malt Heavy</NAME>
@@ -450,6 +482,7 @@
     <NOTES>Ingredient for providing the essential peat flavour in whisky production. 50 ppm Phenols.
     </NOTES>
     <MAX_IN_BATCH>75</MAX_IN_BATCH>
+    <COST>2.50</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Acidulated Malt</NAME>
@@ -464,6 +497,7 @@
       Recommended addition: 1% sour malt addition reduces the mash pH by approx. 0.1.
     </NOTES>
     <MAX_IN_BATCH>10</MAX_IN_BATCH>
+    <COST>2.40</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Melanoidin Malt</NAME>
@@ -477,6 +511,7 @@
       is intensified and receives a dark red shine. Pronounced honey and biscuit notes
     </NOTES>
     <MAX_IN_BATCH>25</MAX_IN_BATCH>
+    <COST>1.70</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Special W</NAME>
@@ -490,6 +525,7 @@
       dark caramel, pronounced aromas of nuts, pastries and bread.
     </NOTES>
     <MAX_IN_BATCH>25</MAX_IN_BATCH>
+    <COST>1.90</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Red X</NAME>
@@ -506,6 +542,7 @@
       Pilsner malt should be added proportionally to the bulk to get back into the red range.
     </NOTES>
     <MAX_IN_BATCH>100</MAX_IN_BATCH>
+    <COST>1.80</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Spelt Malt</NAME>
@@ -518,6 +555,7 @@
     <NOTES>Typical malty-sweet with light nut notes.
     </NOTES>
     <MAX_IN_BATCH>60</MAX_IN_BATCH>
+    <COST>3.35</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Rye Malt</NAME>
@@ -530,6 +568,7 @@
     <NOTES>Typical rye aroma, malty-sweet with notes of bread and honey. Rye malt also creates a velvety-soft mouthfeel.
     </NOTES>
     <MAX_IN_BATCH>50</MAX_IN_BATCH>
+    <COST>1.65</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Rye Caramel Malt</NAME>
@@ -542,6 +581,7 @@
     <NOTES>Intense aroma of bread, coffee, dark chocolate and dried fruit. Creates a velvety-soft mouthfeel.
     </NOTES>
     <MAX_IN_BATCH>15</MAX_IN_BATCH>
+    <COST>2.00</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Rye Chocolate Malt</NAME>
@@ -555,6 +595,7 @@
       chocolate, nut, nougat and bread notes.
     </NOTES>
     <MAX_IN_BATCH>10</MAX_IN_BATCH>
+    <COST>2.00</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Oat Malt</NAME>
@@ -572,6 +613,7 @@
       creamy, velvety smooth mouthfeel.
     </NOTES>
     <MAX_IN_BATCH>25</MAX_IN_BATCH>
+    <COST>2.00</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Golden Naked Oats</NAME>
@@ -586,6 +628,7 @@
       and we're sure you'll be inspired to start creating a new recipe.
     </NOTES>
     <MAX_IN_BATCH>10</MAX_IN_BATCH>
+    <COST>3.20</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Buckwheat Malt</NAME>
@@ -599,6 +642,7 @@
       flavor to your beer. It also can be used in specialty beers to render a rich and deep tone.
     </NOTES>
     <MAX_IN_BATCH>40</MAX_IN_BATCH>
+    <COST>4.80</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Wheat Malt, Pale</NAME>
@@ -612,6 +656,7 @@
       nut, biscuit, toffee and light caramel notes.
     </NOTES>
     <MAX_IN_BATCH>80</MAX_IN_BATCH>
+    <COST>1.55</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Wheat Malt, CaraWheat</NAME>
@@ -625,6 +670,7 @@
       pastry
     </NOTES>
     <MAX_IN_BATCH>15</MAX_IN_BATCH>
+    <COST>1.60</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Wheat Chocolate Malt</NAME>
@@ -638,6 +684,7 @@
       aromatic, coffee and bread notes.
     </NOTES>
     <MAX_IN_BATCH>10</MAX_IN_BATCH>
+    <COST>1.900</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Brown Malt</NAME>
@@ -652,6 +699,7 @@
       forgotten malt.
     </NOTES>
     <MAX_IN_BATCH>25</MAX_IN_BATCH>
+    <COST>2.30</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Carafa I</NAME>
@@ -665,6 +713,7 @@
       Finely roasted aromatic, coffee, cocoa and dark chocolate notes.
     </NOTES>
     <MAX_IN_BATCH>5</MAX_IN_BATCH>
+    <COST>1.90</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Carafa II</NAME>
@@ -678,6 +727,7 @@
       Finely roasted aromatic, coffee, cocoa and dark chocolate notes.
     </NOTES>
     <MAX_IN_BATCH>5</MAX_IN_BATCH>
+    <COST>1.90</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Carafa III</NAME>
@@ -691,6 +741,7 @@
       Finely roasted aromatic, coffee, cocoa and dark chocolate notes.
     </NOTES>
     <MAX_IN_BATCH>5</MAX_IN_BATCH>
+    <COST>1.90</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Carafa Special I</NAME>
@@ -705,6 +756,7 @@
       minimizing the roasted bitterness. Finely roasted aromatic; Coffee, cocoa and dark chocolate notes
     </NOTES>
     <MAX_IN_BATCH>10</MAX_IN_BATCH>
+    <COST>2.00</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Carafa Special II</NAME>
@@ -719,6 +771,7 @@
       minimizing the roasted bitterness. Finely roasted aromatic; Coffee, cocoa and dark chocolate notes
     </NOTES>
     <MAX_IN_BATCH>10</MAX_IN_BATCH>
+    <COST>2.00</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Carafa Special II</NAME>
@@ -733,6 +786,7 @@
       minimizing the roasted bitterness. Finely roasted aromatic; Coffee, cocoa and dark chocolate notes
     </NOTES>
     <MAX_IN_BATCH>10</MAX_IN_BATCH>
+    <COST>2.00</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Roasted Barley</NAME>
@@ -746,6 +800,7 @@
       intense roasting with coffee notes
     </NOTES>
     <MAX_IN_BATCH>10</MAX_IN_BATCH>
+    <COST>1.80</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Pilsner Malt (CH)</NAME>
@@ -759,6 +814,7 @@
       especially for bottom-fermented beers. Malty-sweet with light honey notes.
     </NOTES>
     <MAX_IN_BATCH>100</MAX_IN_BATCH>
+    <COST>2.50</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Vienna Malt (CH)</NAME>
@@ -772,6 +828,7 @@
       full-body in the beer. Malty-sweet, light honey and nutty notes.
     </NOTES>
     <MAX_IN_BATCH>100</MAX_IN_BATCH>
+    <COST>2.50</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Pale Ale Malt (CH)</NAME>
@@ -786,6 +843,7 @@
       fruits and honey.
     </NOTES>
     <MAX_IN_BATCH>100</MAX_IN_BATCH>
+    <COST>2.50</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Caramel Malt (CH)</NAME>
@@ -800,6 +858,7 @@
       hint of coffee.
     </NOTES>
     <MAX_IN_BATCH>50</MAX_IN_BATCH>
+    <COST>2.70</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Munich Malt (CH)</NAME>
@@ -813,6 +872,7 @@
       malt-forward and deeper color beer styles. Pronounced malt aroma with notes of caramel, honey and bread.
     </NOTES>
     <MAX_IN_BATCH>100</MAX_IN_BATCH>
+    <COST>2.50</COST>
   </FERMENTABLE>
 
   <!-- Adjuncts -->
@@ -828,6 +888,7 @@
       surface area and are pre-cooked so they hydrate and disintegrate quickly.
     </NOTES>
     <MAX_IN_BATCH>25</MAX_IN_BATCH>
+    <COST>2.40</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Flaked Oat</NAME>
@@ -840,6 +901,7 @@
       so they hydrate and disintegrate quickly.
     </NOTES>
     <MAX_IN_BATCH>25</MAX_IN_BATCH>
+    <COST>2.50</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Flaked Corn</NAME>
@@ -853,6 +915,7 @@
       mash with the malt without having to mill.
     </NOTES>
     <MAX_IN_BATCH>40</MAX_IN_BATCH>
+    <COST>2.50</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Flaked Wheat</NAME>
@@ -864,6 +927,7 @@
       large surface area and are pre-cooked, so they hydrate and disintegrate quickly.
     </NOTES>
     <MAX_IN_BATCH>40</MAX_IN_BATCH>
+    <COST>2.40</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Flaked Rice</NAME>
@@ -876,6 +940,7 @@
       quickly and offer a light, clean, and crisp character to the finished beer.
     </NOTES>
     <MAX_IN_BATCH>40</MAX_IN_BATCH>
+    <COST>2.75</COST>
   </FERMENTABLE>
 
   <!-- Sugars -->
@@ -885,9 +950,10 @@
     <VERSION>1</VERSION>
     <TYPE>Sugar</TYPE>
     <YIELD>99.00</YIELD>
-    <COLOR>40.00</COLOR>
+    <COLOR>25.00</COLOR>
     <NOTES>Rich, sweet flavor.</NOTES>
     <MAX_IN_BATCH>50</MAX_IN_BATCH>
+    <COST>2.30</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Sugar, Table</NAME>
@@ -897,6 +963,7 @@
     <COLOR>0.20</COLOR>
     <NOTES>Dries out beer. Too much adds a cidery flavour.</NOTES>
     <MAX_IN_BATCH>20</MAX_IN_BATCH>
+    <COST>1.20</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Honey</NAME>
@@ -906,14 +973,55 @@
     <COLOR>1</COLOR>
     <NOTES>Dries out beer. Can add some flowery flavours.</NOTES>
     <MAX_IN_BATCH>50</MAX_IN_BATCH>
+    <COST>15</COST>
   </FERMENTABLE>
   <FERMENTABLE>
     <NAME>Lactose</NAME>
     <VERSION>1</VERSION>
     <TYPE>Sugar</TYPE>
     <YIELD>100.00</YIELD>
-    <COLOR>1</COLOR>
+    <COLOR>0.5</COLOR>
     <NOTES>Lactose is not fermentable, so adds a sweetness to the finished beer.</NOTES>
     <MAX_IN_BATCH>25</MAX_IN_BATCH>
+    <COST>12</COST>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Candi Sugar, White</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Sugar</TYPE>
+    <YIELD>98.00</YIELD>
+    <COLOR>0.5</COLOR>
+    <NOTES>This white Belgian Candi Sugar is a refined form of beet sugar and is completely fermentable. Candi sugar
+      helps maintain the high alcohol content of certain Belgian ales while keeping them dry and crisp, avoiding an
+      overly malty or sweet beer.
+    </NOTES>
+    <MAX_IN_BATCH>25</MAX_IN_BATCH>
+    <COST>4.5</COST>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Candi Sugar, Brown</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Sugar</TYPE>
+    <YIELD>96.00</YIELD>
+    <COLOR>25</COLOR>
+    <NOTES>This dark Belgian Candi Sugar is a refined form of beet sugar and is completely fermentable. Candi sugar
+      helps maintain the high alcohol content of certain Belgian ales while keeping them dry and crisp, avoiding an
+      overly malty or sweet beer.
+    </NOTES>
+    <MAX_IN_BATCH>25</MAX_IN_BATCH>
+    <COST>4.5</COST>
+  </FERMENTABLE>
+  <FERMENTABLE>
+    <NAME>Candi Syrup</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Sugar</TYPE>
+    <YIELD>69.00</YIELD>
+    <COLOR>150</COLOR>
+    <NOTES>Unmistakable flavours of fresh ground coffee, dark stone fruits and toasted bread. The basis for cloning
+      renowned Belgian Strong Dark Ales like Westvleteren 12 and Rochefort 10, as well as many others. Gives exceptional
+      results when the goal is authentic Belgian Dark Ales. Dark colours and superior flavour.
+    </NOTES>
+    <MAX_IN_BATCH>25</MAX_IN_BATCH>
+    <COST>4.2</COST>
   </FERMENTABLE>
 </FERMENTABLES>

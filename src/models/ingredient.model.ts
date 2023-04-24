@@ -4,4 +4,5 @@ export interface Ingredient {
   amount?: number,
   time?: number,
   inventory?: number
+  cost?: number;
 }

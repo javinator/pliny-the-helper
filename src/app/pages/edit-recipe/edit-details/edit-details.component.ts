@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {Recipe} from "models";
-import {DatePipe, DecimalPipe} from "@angular/common";
+import {DatePipe, DecimalPipe, NgIf} from "@angular/common";
 import {CalculatorUtil} from "utils";
 import {FormsModule} from "@angular/forms";
 import {StorageService} from "services";
@@ -11,7 +11,7 @@ import {StorageService} from "services";
   templateUrl: 'edit-details.component.html',
   styleUrls: ['../../../app.component.scss', 'edit-details.component.scss'],
   standalone: true,
-  imports: [IonicModule, DecimalPipe, DatePipe, FormsModule],
+  imports: [IonicModule, DecimalPipe, DatePipe, FormsModule, NgIf],
 })
 export class EditDetailsComponent {
   constructor(private storage: StorageService) {
@@ -19,6 +19,9 @@ export class EditDetailsComponent {
 
   @Input()
   recipe!: Recipe;
+
+  @Input()
+  showCost = false;
 
   getOgRangeBar() {
     if (this.recipe.style?.minOg && this.recipe.style?.maxOg) {
