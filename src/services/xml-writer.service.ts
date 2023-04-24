@@ -126,7 +126,7 @@ function hopToXmlText(hop: Hop) {
   content += '<ALPHA>' + hop.alpha + '</ALPHA>\n';
   content += '<AMOUNT>' + hop.amount + '</AMOUNT>\n';
   content += '<USE>' + hop.use + '</USE>\n';
-  content += '<TIME>' + hop.use === 'Dry Hop' ? (hop.time || 0) * 24 * 60 : hop.time + '</TIME>\n';
+  content += '<TIME>' + (hop.use === 'Dry Hop' ? (hop.time || 0) * 24 * 60 : hop.time) + '</TIME>\n';
   if (hop.description) {
     content += '<NOTES>' + hop.description + '</NOTES>\n';
   }
