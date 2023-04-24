@@ -382,7 +382,7 @@
       ideal for improving foam and its stability as well as adding body to any beer. Due to the light malt color, it can
       be used universally from the brightest to the darkest beer styles.
     </NOTES>
-    <MAX_IN_BATCH>25</MAX_IN_BATCH>
+    <MAX_IN_BATCH>50</MAX_IN_BATCH>
     <COST>1.70</COST>
   </FERMENTABLE>
   <FERMENTABLE>
