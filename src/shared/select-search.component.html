@@ -1,0 +1,31 @@
+<ion-input (click)="setModalOpen(true)" [label]="label" label-placement="floating"
+           [value]="selectedItem || placeholder" readonly="true" class="pointer"></ion-input>
+
+<ion-modal [isOpen]="isModalOpen" (didDismiss)="setModalOpen(false)">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>{{ placeholder }}</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="setModalOpen(false)">
+            <ion-label>Cancel</ion-label>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <ion-icon name="search" class="ion-padding-end"></ion-icon>
+          <ion-input (ionInput)="handleSearch($event)" placeholder="Search">
+          </ion-input>
+        </ion-item>
+        <ion-item *ngFor="let item of filteredItems" [button]="true" (click)="select(item.name)">
+          <ion-label class="ion-text-wrap">{{ item.name + item.additionalInfo }} <p
+            *ngIf="item.description">{{ item.description }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-modal>

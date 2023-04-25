@@ -5,13 +5,14 @@ import {DecimalPipe, NgForOf, NgIf} from "@angular/common";
 import {StorageService} from "services";
 import {RecipeUtil} from "utils";
 import {CONFIG} from "../../../app.constants";
+import {SelectSearchComponent} from "@shared";
 
 @Component({
   selector: 'edit-ingredients-card',
   templateUrl: 'edit-ingredients.component.html',
   styleUrls: ['../../../app.component.scss', 'edit-ingredients.component.scss'],
   standalone: true,
-  imports: [IonicModule, NgIf, NgForOf, DecimalPipe],
+  imports: [IonicModule, NgIf, NgForOf, DecimalPipe, SelectSearchComponent],
 })
 export class EditIngredientsComponent implements OnInit {
   RecipeUtil = RecipeUtil;
@@ -73,8 +74,18 @@ export class EditIngredientsComponent implements OnInit {
     }, 250)
   }
 
+  getFermentables() {
+    return this.fermentables.map((fermentable) => {
+      return {
+        name: fermentable.name,
+        additionalInfo: ' (' + fermentable.color + ' °L)',
+        description: fermentable.description + ' Up to ' + (fermentable.maxInBatch || 100) + '%.'
+      }
+    });
+  }
+
   chooseFermentable(event: any) {
-    this.newFermentable = JSON.parse(JSON.stringify(event.detail.value));
+    this.newFermentable = JSON.parse(JSON.stringify(this.fermentables.find((item) => item.name === event)));
   }
 
   setFermentableAmount(event: any) {
@@ -104,10 +115,6 @@ export class EditIngredientsComponent implements OnInit {
     this.storage.saveRecipe(this.recipe);
   }
 
-  findFermentable() {
-    return this.fermentables.find((item) => item.name === this.newFermentable?.name);
-  }
-
   openHop() {
     this.addHopOpen = true;
   }
@@ -123,8 +130,18 @@ export class EditIngredientsComponent implements OnInit {
     }, 250)
   }
 
+  getHops() {
+    return this.hops.map((hop) => {
+      return {
+        name: hop.name,
+        additionalInfo: ' (' + hop.alpha + ' %)',
+        description: hop.description
+      }
+    });
+  }
+
   chooseHop(event: any) {
-    this.newHop = JSON.parse(JSON.stringify(event.detail.value));
+    this.newHop = JSON.parse(JSON.stringify(this.hops.find((item) => item.name === event)));
   }
 
   setHopAmount(event: any) {
@@ -169,10 +186,6 @@ export class EditIngredientsComponent implements OnInit {
     this.storage.saveRecipe(this.recipe);
   }
 
-  findHop() {
-    return this.hops.find((item) => item.name === this.newHop?.name);
-  }
-
   getHopGrams() {
     return this.newHop?.amount ? this.newHop.amount * 1000 : undefined;
   }
@@ -192,8 +205,18 @@ export class EditIngredientsComponent implements OnInit {
     }, 250)
   }
 
+  getYeasts() {
+    return this.yeasts.map((yeast) => {
+      return {
+        name: yeast.name,
+        additionalInfo: ' (' + yeast.attenuation + ' %)',
+        description: yeast.description + '. Optimal temperature between ' + yeast.minTemp + ' °C and ' + yeast.maxTemp + ' °C. Alcohol tolerant up to ' + yeast.maxAbv + ' %.'
+      }
+    });
+  }
+
   chooseYeast(event: any) {
-    this.newYeast = JSON.parse(JSON.stringify(event.detail.value));
+    this.newYeast = JSON.parse(JSON.stringify(this.yeasts.find((item) => item.name === event)));
   }
 
   setYeastAttenuation(event: any) {

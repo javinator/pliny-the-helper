@@ -158,17 +158,12 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <ion-select
+      <p-select-search
         *ngIf="!isEdit"
         label="Fermentable"
-        label-placement="floating"
-        interface="action-sheet"
-        [value]="findFermentable()"
-        (ionChange)="chooseFermentable($event)">
-        <ion-select-option *ngFor="let fermentable of fermentables" [value]="fermentable">
-          {{ fermentable.name }} - {{ fermentable.color | number:'1.0-1' }} °L
-        </ion-select-option>
-      </ion-select>
+        [items]="getFermentables()"
+        (selectChanged)="chooseFermentable($event)"
+      ></p-select-search>
       <ion-input
         type="number"
         min="0"
@@ -199,17 +194,12 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <ion-select
+      <p-select-search
         *ngIf="!isEdit"
         label="Hop"
-        label-placement="floating"
-        interface="action-sheet"
-        [value]="findHop()"
-        (ionChange)="chooseHop($event)">
-        <ion-select-option *ngFor="let hop of hops" [value]="hop">
-          {{ hop.name }} - {{ hop.alpha | number:'1.0-1' }} % AA
-        </ion-select-option>
-      </ion-select>
+        [items]="getHops()"
+        (selectChanged)="chooseHop($event)"
+      ></p-select-search>
       <ion-select
         label="Usage"
         label-placement="floating"
@@ -272,17 +262,12 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <ion-select
+      <p-select-search
         *ngIf="!isEdit"
         label="Yeast"
-        label-placement="floating"
-        interface="action-sheet"
-        [value]="findYeast()"
-        (ionChange)="chooseYeast($event)">
-        <ion-select-option *ngFor="let yeast of yeasts" [value]="yeast">
-          {{ yeast.name }} - {{ yeast.attenuation | number:'1.0-1' }} %
-        </ion-select-option>
-      </ion-select>
+        [items]="getYeasts()"
+        (selectChanged)="chooseYeast($event)"
+      ></p-select-search>
       <ion-input
         type="number"
         min="0"

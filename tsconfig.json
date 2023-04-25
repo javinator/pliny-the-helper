@@ -23,9 +23,18 @@
       "dom"
     ],
     "paths": {
-      "models": ["./src/models"],
-      "services": ["./src/services"],
-      "utils": ["./src/utils"]
+      "models": [
+        "./src/models"
+      ],
+      "services": [
+        "./src/services"
+      ],
+      "utils": [
+        "./src/utils"
+      ],
+      "@shared": [
+        "./src/shared"
+      ]
     },
     "useDefineForClassFields": false
   },

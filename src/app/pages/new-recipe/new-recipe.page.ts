@@ -8,13 +8,14 @@ import {v4 as uuidv4} from "uuid";
 import {Router} from "@angular/router";
 import {RecipeUtil} from "utils";
 import {CONFIG} from "../../app.constants";
+import {SelectSearchComponent} from "@shared";
 
 @Component({
   selector: 'new-recipe-page',
   templateUrl: 'new-recipe.page.html',
   styleUrls: ['../../app.component.scss'],
   standalone: true,
-  imports: [IonicModule, NgForOf, DatePipe, FormsModule]
+  imports: [IonicModule, NgForOf, DatePipe, FormsModule, SelectSearchComponent]
 })
 export class NewRecipePage implements OnInit {
   constructor(private storage: StorageService, private location: Location, private router: Router) {
@@ -69,19 +70,25 @@ export class NewRecipePage implements OnInit {
   }
 
   getStylesOptions() {
-    return this.styles?.map((style) => style.name);
+    return this.styles?.map((style) => {
+      return {name: style.name}
+    }) || [];
   }
 
-  changeStyle(event: any) {
-    this.model.style = this.styles?.find((style) => style.name === event.detail.value);
+  changeStyle(event: string) {
+    this.model.style = this.styles?.find((style) => style.name === event);
   }
 
   getProfilesOptions() {
-    return this.mashProfiles?.map((profile) => profile.name);
+    return this.mashProfiles?.map((profile) => {
+      return {
+        name: profile.name
+      }
+    }) || [];
   }
 
-  changeProfile(event: any) {
-    this.model.mashProfile = this.mashProfiles?.find((profile) => profile.name === event.detail.value);
+  changeProfile(event: string) {
+    this.model.mashProfile = this.mashProfiles?.find((profile) => profile.name === event);
   }
 
   submit() {

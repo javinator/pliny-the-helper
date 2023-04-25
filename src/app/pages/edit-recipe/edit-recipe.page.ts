@@ -8,13 +8,14 @@ import {EditIngredientsComponent} from "./edit-ingredients/edit-ingredients.comp
 import {EditDetailsComponent} from "./edit-details/edit-details.component";
 import {FormsModule} from "@angular/forms";
 import {RecipeUtil} from "utils";
+import {SelectSearchComponent} from "@shared";
 
 @Component({
   selector: 'edit-recipe-page',
   templateUrl: 'edit-recipe.page.html',
   styleUrls: ['../../app.component.scss'],
   standalone: true,
-  imports: [IonicModule, EditIngredientsComponent, EditDetailsComponent, NgSwitch, NgSwitchCase, NgForOf, NgIf, FormsModule, DecimalPipe],
+  imports: [IonicModule, EditIngredientsComponent, EditDetailsComponent, NgSwitch, NgSwitchCase, NgForOf, NgIf, FormsModule, DecimalPipe, SelectSearchComponent],
 })
 export class EditRecipePage {
 
@@ -82,11 +83,15 @@ export class EditRecipePage {
   }
 
   getStylesOptions() {
-    return this.styles?.map((style) => style.name);
+    return this.styles?.map((style) => {
+      return {
+        name: style.name
+      }
+    }) || [];
   }
 
-  changeStyle(event: any) {
-    this.editRecipe!.style = this.styles?.find((style) => style.name === event.detail.value);
+  changeStyle(event: string) {
+    this.editRecipe!.style = this.styles?.find((style) => style.name === event);
   }
 
   getProfilesOptions() {

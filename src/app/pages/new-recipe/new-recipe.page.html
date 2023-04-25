@@ -20,10 +20,8 @@
           labelPlacement="floating"
           required="true"
         ></ion-input>
-        <ion-select label="Style" label-placement="floating" (ionChange)="changeStyle($event)"
-                    placeholder="Choose Beer Style" interface="action-sheet">
-          <ion-select-option *ngFor="let name of getStylesOptions()" [value]="name">{{ name }}</ion-select-option>
-        </ion-select>
+        <p-select-search [label]="'Style'" [placeholder]="'Choose Beer Style'"
+                         [items]="getStylesOptions()" (selectChanged)="changeStyle($event)"></p-select-search>
         <ion-input
           [(ngModel)]="model.batchSize"
           name="batchSize"
@@ -62,10 +60,8 @@
           labelPlacement="floating"
           required="true"
         ></ion-input>
-        <ion-select label="Mash Profile" label-placement="floating" (ionChange)="changeProfile($event)"
-                    placeholder="Choose Mash Profile">
-          <ion-select-option *ngFor="let name of getProfilesOptions()" [value]="name">{{ name }}</ion-select-option>
-        </ion-select>
+        <p-select-search [label]="'Mash Profile'" [placeholder]="'Choose Mash Profile'"
+                         [items]="getProfilesOptions()"></p-select-search>
         <div class="ion-text-end">
           <ion-button (click)="navigateBack()" shape="round">Cancel</ion-button>
           <ion-button type="submit" shape="round">Save</ion-button>
