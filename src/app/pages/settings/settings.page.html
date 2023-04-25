@@ -47,9 +47,9 @@
   <ion-card class="ion-padding" *ngIf="isAdmin">
     <div class="ion-text-center">
       <ion-button (click)="init()">Init XML Reader</ion-button>
-      <ion-button id="open-delete-alert">Delete Recipes</ion-button>
       <ion-button (click)="deleteDuplicates()">Delete duplicate Recipes</ion-button>
-      <ion-button id="open-clear-alert">Clear DB</ion-button>
+      <ion-button (click)="recalculateCosts()">Recalculate Recipes</ion-button>
+      <ion-button (click)="clearDb()">Clear DB</ion-button>
     </div>
   </ion-card>
 </ion-content>
@@ -61,20 +61,6 @@
   [duration]="3000"
   (didDismiss)="closeToast()"
 ></ion-toast>
-
-<ion-alert *ngIf="isAdmin"
-           trigger="open-delete-alert"
-           header="Confirm"
-           message="Delete all Recipes?"
-           [buttons]="deleteButtons"
-></ion-alert>
-
-<ion-alert *ngIf="isAdmin"
-           trigger="open-clear-alert"
-           header="Confirm"
-           message="Truncate Database? You'll lose everything!"
-           [buttons]="clearButtons"
-></ion-alert>
 
 <!-- Informations -->
 <ion-modal trigger="impressum">

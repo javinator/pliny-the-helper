@@ -315,8 +315,6 @@ function parseXMLtoRecipes(data: string): Promise<Recipe[]> {
       const obj = result.RECIPES;
       for (k in obj.RECIPE) {
         const item = obj.RECIPE[k];
-        console.log(item.MASH[0]);
-        console.log(item.STYLE[0]);
         arr.push({
           name: item.NAME[0],
           version: item.VERSION[0],

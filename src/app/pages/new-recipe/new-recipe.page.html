@@ -11,7 +11,7 @@
 <ion-content class="ion-padding">
   <ion-card>
     <ion-card-content>
-      <form (ngSubmit)="submit()">
+      <form (ngSubmit)="submit()" ngNativeValidate>
         <ion-input
           [(ngModel)]="model.name"
           name="name"
@@ -32,6 +32,7 @@
           labelPlacement="floating"
           required="true"
           step="0.1"
+          min="0"
         ></ion-input>
         <ion-input
           [(ngModel)]="model.boilTime"
@@ -41,6 +42,7 @@
           labelPlacement="floating"
           required="true"
           step="1"
+          min="0"
         ></ion-input>
         <ion-input
           [(ngModel)]="model.efficiency"
@@ -50,6 +52,7 @@
           labelPlacement="floating"
           required="true"
           step="1"
+          min="0"
         ></ion-input>
         <ion-input
           [(ngModel)]="model.brewDate"

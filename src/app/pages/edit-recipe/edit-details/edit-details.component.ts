@@ -142,12 +142,6 @@ export class EditDetailsComponent {
     return CalculatorUtil.abv(this.recipe.measuredOG || 1, this.recipe.measuredFG || 1)
   }
 
-  calculateEfficiency() {
-    const vol = this.recipe.measuredVol || this.recipe.batchSize;
-    const og = this.recipe.measuredOG || 1;
-    this.recipe.calculatedEfficiency = this.recipe.efficiency * (vol / this.recipe.batchSize) * ((og - 1) / (this.recipe.OG - 1))
-  }
-
   getEfficiencyMarker() {
     if (this.recipe.calculatedEfficiency) {
       const color =

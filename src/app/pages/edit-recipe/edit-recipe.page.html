@@ -66,6 +66,7 @@
         label="Name"
         label-placement="floating"
         [(ngModel)]="editRecipe!.name"
+        required="true"
       ></ion-input>
       <ion-input
         label="Brew Date"
@@ -79,12 +80,14 @@
       </ion-select>
       <ion-input
         type="number"
+        min="0"
         label="Batch Size (L)"
         label-placement="floating"
         [(ngModel)]="editRecipe!.batchSize"
       ></ion-input>
       <ion-input
         type="number"
+        min="0"
         label="Boil Time (min)"
         label-placement="floating"
         [(ngModel)]="editRecipe!.boilTime"
@@ -94,6 +97,7 @@
       </ion-checkbox>
       <ion-input
         type="number"
+        min="0"
         label="Boil Size (L)"
         label-placement="floating"
         *ngIf="!editRecipe!.calculateBoilSize"
@@ -101,6 +105,7 @@
       ></ion-input>
       <ion-input
         type="number"
+        min="0"
         label="Efficiency (%)"
         label-placement="floating"
         [(ngModel)]="editRecipe!.efficiency"

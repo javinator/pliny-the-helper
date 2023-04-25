@@ -171,6 +171,7 @@
       </ion-select>
       <ion-input
         type="number"
+        min="0"
         label="Amount"
         label-placement="floating"
         placeholder="kg"
@@ -221,6 +222,7 @@
       </ion-select>
       <ion-input
         type="number"
+        min="0"
         label="Amount"
         label-placement="floating"
         placeholder="g"
@@ -230,6 +232,7 @@
       </ion-input>
       <ion-input
         type="number"
+        min="0"
         label="Alpha Acid"
         label-placement="floating"
         placeholder="%"
@@ -240,6 +243,7 @@
       <ion-input
         *ngIf="newHop?.use === 'Boil' || newHop?.use === 'Dry Hop'"
         type="number"
+        min="0"
         label="Time"
         label-placement="floating"
         [placeholder]="newHop?.use === 'Dry Hop' ? 'days' : 'min'"
@@ -281,6 +285,7 @@
       </ion-select>
       <ion-input
         type="number"
+        min="0"
         label="Attenuation"
         label-placement="floating"
         placeholder="%"
@@ -290,6 +295,7 @@
       </ion-input>
       <ion-input
         type="number"
+        min="0"
         label="Amount"
         label-placement="floating"
         placeholder="packs"
@@ -331,6 +337,7 @@
       </ion-select>
       <ion-input
         type="number"
+        min="0"
         label="Amount"
         label-placement="floating"
         [placeholder]="newMisc?.amountIsWeight ? 'g' : 'ml'"

@@ -65,6 +65,7 @@ export class RecipeUtil {
     recipe.ABV = CalculatorUtil.abv(recipe.OG, recipe.FG);
     recipe.color = RecipeUtil.calculateColor(recipe);
     recipe.IBU = RecipeUtil.calculateBitterness(recipe);
+    recipe.calculatedEfficiency = calculateEfficiency(recipe);
     recipe.cost = calculateRecipePrice(recipe);
     return recipe;
   }
@@ -144,4 +145,10 @@ function calculateRecipePrice(recipe: Recipe) {
     }
   });
   return total;
+}
+
+function calculateEfficiency(recipe: Recipe) {
+  const vol = Number(recipe.measuredVol || recipe.batchSize);
+  const og = Number(recipe.measuredOG || 1);
+  return recipe.efficiency * (vol / recipe.batchSize) * ((og - 1) / (recipe.OG - 1))
 }

@@ -125,7 +125,7 @@
             <ion-item>
               <ion-label>
                 <ion-input inputmode="numeric" label="Measured OG" label-placement="stacked"
-                           [(ngModel)]="recipe.measuredOG" (ionInput)="calculateEfficiency()"
+                           [(ngModel)]="recipe.measuredOG"
                            (ionBlur)="saveRecipe()"></ion-input>
                 <div class="range-bar-container">
                   <div class="range-bar">
@@ -150,8 +150,7 @@
             <ion-item>
               <ion-label>
                 <ion-input inputmode="numeric" label="Measured Batch Size (L)" label-placement="stacked"
-                           [(ngModel)]="recipe.measuredVol" (ionInput)="calculateEfficiency()"
-                           (ionBlur)="saveRecipe()"></ion-input>
+                           [(ngModel)]="recipe.measuredVol" (ionBlur)="saveRecipe()"></ion-input>
               </ion-label>
             </ion-item>
             <ion-item>
