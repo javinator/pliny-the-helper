@@ -163,6 +163,7 @@
         label="Fermentable"
         [items]="getFermentables()"
         (selectChanged)="chooseFermentable($event)"
+        placeholder="Select Fermentable"
       ></p-select-search>
       <ion-input
         type="number"
@@ -199,6 +200,7 @@
         label="Hop"
         [items]="getHops()"
         (selectChanged)="chooseHop($event)"
+        placeholder="Select Hop"
       ></p-select-search>
       <ion-select
         label="Usage"
@@ -267,6 +269,7 @@
         label="Yeast"
         [items]="getYeasts()"
         (selectChanged)="chooseYeast($event)"
+        placeholder="Select Yeast"
       ></p-select-search>
       <ion-input
         type="number"
@@ -309,17 +312,13 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <ion-select
+      <p-select-search
         *ngIf="!isEdit"
         label="Misc"
-        label-placement="floating"
-        interface="action-sheet"
-        [value]="findMisc()"
-        (ionChange)="chooseMisc($event)">
-        <ion-select-option *ngFor="let misc of miscs" [value]="misc">
-          {{ misc.name }}
-        </ion-select-option>
-      </ion-select>
+        [items]="getMiscs()"
+        (selectChanged)="chooseMisc($event)"
+        placeholder="Select Miscellaneous"
+      ></p-select-search>
       <ion-input
         type="number"
         min="0"

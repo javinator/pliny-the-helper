@@ -253,10 +253,6 @@ export class EditIngredientsComponent implements OnInit {
     this.storage.saveRecipe(this.recipe);
   }
 
-  findYeast() {
-    return this.yeasts.find((item) => item.name === this.newYeast?.name);
-  }
-
   openMisc() {
     this.addMiscOpen = true;
   }
@@ -272,8 +268,17 @@ export class EditIngredientsComponent implements OnInit {
     }, 250)
   }
 
+  getMiscs() {
+    return this.miscs.map((misc) => {
+      return {
+        name: misc.name,
+        description: misc.description
+      }
+    });
+  }
+
   chooseMisc(event: any) {
-    this.newMisc = JSON.parse(JSON.stringify(event.detail.value));
+    this.newMisc = JSON.parse(JSON.stringify(this.miscs.find((item) => item.name === event)));
   }
 
   setMiscAmount(event: any) {

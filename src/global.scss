@@ -34,3 +34,17 @@ ion-searchbar {
   max-width: 1440px;
   margin: 16px auto auto;
 }
+
+.vertical-middle {
+  vertical-align: middle;
+}
+
+p-select-search, p-select-search ion-input, p-select-search ion-label, p-select-search input {
+  cursor: pointer !important;
+}
+
+.select-icon {
+  position: absolute;
+  right: 7px;
+  top: 50%;
+}

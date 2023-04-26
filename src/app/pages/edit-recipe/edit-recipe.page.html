@@ -74,7 +74,7 @@
         [(ngModel)]="editRecipe!.brewDate"
         type="date"
       ></ion-input>
-      <p-select-search [label]="'Style'" [placeholder]="'Choose Beer Style'"
+      <p-select-search label="Style" placeholder="Choose Beer Style"
                        [items]="getStylesOptions()" (selectChanged)="changeStyle($event)"
                        [selectedItem]="editRecipe!.style!.name"></p-select-search>
       <ion-input
@@ -109,10 +109,9 @@
         label-placement="floating"
         [(ngModel)]="editRecipe!.efficiency"
       ></ion-input>
-      <ion-select label="Mash Profile" label-placement="floating" (ionChange)="changeProfile($event)"
-                  placeholder="Choose Mash Profile" [value]="editRecipe!.mashProfile!.name">
-        <ion-select-option *ngFor="let name of getProfilesOptions()" [value]="name">{{ name }}</ion-select-option>
-      </ion-select>
+      <p-select-search label="Mash Profile" placeholder="Select Mash Profile"
+                       [items]="getProfilesOptions()" (selectChanged)="changeProfile($event)"
+                       [selectedItem]="editRecipe!.mashProfile!.name"></p-select-search>
     </ion-content>
   </ng-template>
 </ion-modal>

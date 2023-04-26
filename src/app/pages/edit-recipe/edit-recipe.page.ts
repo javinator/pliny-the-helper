@@ -95,7 +95,11 @@ export class EditRecipePage {
   }
 
   getProfilesOptions() {
-    return this.mashProfiles?.map((profile) => profile.name);
+    return this.mashProfiles?.map((profile) => {
+      return {
+        name: profile.name
+      }
+    }) || [];
   }
 
   changeProfile(event: any) {

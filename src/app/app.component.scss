@@ -19,3 +19,7 @@ ion-split-pane {
   top: 50%;
   left: 50%;
 }
+
+.danger-zone ion-button {
+  --background: var(--ion-color-danger)
+}
