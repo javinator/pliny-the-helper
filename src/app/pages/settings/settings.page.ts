@@ -43,6 +43,14 @@ export class SettingsPage {
   clearDb() {
     this.showSpinner = true;
     this.storage.clearDb();
+    setTimeout(() => {
+      this.settings.brewer = CONFIG.defaultName;
+      this.settings.batchSize = CONFIG.defaultBatchSize;
+      this.settings.boilTime = CONFIG.defaultBoilTime;
+      this.settings.efficiency = CONFIG.defaultEfficiency;
+      this.settings.evaporation = CONFIG.evaporation;
+      this.settings.displayCost = false;
+    }, 100);
     this.init();
   }
 
