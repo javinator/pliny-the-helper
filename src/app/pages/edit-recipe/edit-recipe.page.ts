@@ -103,7 +103,7 @@ export class EditRecipePage {
   }
 
   changeProfile(event: any) {
-    this.editRecipe!.mashProfile = this.mashProfiles?.find((profile) => profile.name === event.detail.value);
+    this.editRecipe!.mashProfile = this.mashProfiles?.find((profile) => profile.name === event);
   }
 
   calculateBoilSize(): number {

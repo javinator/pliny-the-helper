@@ -95,7 +95,7 @@
     <USE>Boil</USE>
     <AMOUNT>0.02</AMOUNT>
     <TIME>15.00</TIME>
-    <AMOUNT_IS_WEIGHT>FALSE</AMOUNT_IS_WEIGHT>
+    <AMOUNT_IS_WEIGHT>TRUE</AMOUNT_IS_WEIGHT>
     <USE_FOR>Ginger flavor</USE_FOR>
     <NOTES>Contributes ginger flavor. Add during the boil.</NOTES>
   </MISC>

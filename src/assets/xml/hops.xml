@@ -1524,4 +1524,20 @@
     <FORM>Pellet</FORM>
     <COST>0.055</COST>
   </HOP>
+  <HOP>
+    <NAME>ProvOak</NAME>
+    <VERSION>1</VERSION>
+    <ORIGIN>USA</ORIGIN>
+    <ALPHA>5.0</ALPHA>
+    <USE>Boil</USE>
+    <NOTES>Provoak is a homogenous mixture of hop and wood powder pelletized as a standard pellet type 90. This dual
+      purpose product is specifically designed for Whirlpool (late hopping) and dry hopping
+      applications to provide hop aroma and wood flavor and body at the same time. Provoak offers the possibility to
+      efficiently add hop and wood aroma and flavor to the beer in
+      an oxygen free environment
+    </NOTES>
+    <TYPE>Aroma</TYPE>
+    <FORM>Pellet</FORM>
+    <COST>0.08</COST>
+  </HOP>
 </HOPS>
