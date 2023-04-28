@@ -16,7 +16,7 @@
         </ion-buttons>
       </ion-toolbar>
       <ion-toolbar>
-        <ion-searchbar class="ion-no-margin" (ionInput)="handleSearch($event)"></ion-searchbar>
+        <ion-searchbar #search class="ion-no-margin autofocus" (ionInput)="handleSearch($event)"></ion-searchbar>
       </ion-toolbar>
     </ion-header>
     <ion-content>

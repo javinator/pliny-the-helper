@@ -1,4 +1,4 @@
-import {Recipe} from "models";
+import {Recipe, Settings} from "models";
 import {CalculatorUtil} from "./calculator.utils";
 import {Hop} from "models";
 import {Fermentable} from "models";
@@ -51,8 +51,9 @@ export class RecipeUtil {
     return useFactor(hop) * (au * CalculatorUtil.kilosToOunces(hop.amount!) * 7490) / CalculatorUtil.litersToGallons(recipe.boilSize);
   }
 
-  static calculateBoilSize(recipe: Recipe) {
-    return Number(recipe.batchSize) + Number(recipe.batchSize) * CONFIG.evaporation * Number(recipe.boilTime) / 60;
+  static calculateBoilSize(recipe: Recipe, settings?: Settings) {
+    const evaporation = (settings?.evaporation || CONFIG.evaporation) / 100;
+    return Number(recipe.batchSize) + Number(recipe.batchSize) * evaporation * Number(recipe.boilTime) / 60;
   }
 
   static calculateRecipe(recipe: Recipe): Recipe {

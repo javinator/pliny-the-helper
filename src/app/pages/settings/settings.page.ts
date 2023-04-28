@@ -31,6 +31,7 @@ export class SettingsPage {
       this.settings.batchSize = response?.batchSize || CONFIG.defaultBatchSize;
       this.settings.boilTime = response?.boilTime || CONFIG.defaultBoilTime;
       this.settings.efficiency = response?.efficiency || CONFIG.defaultEfficiency;
+      this.settings.evaporation = response?.evaporation || CONFIG.evaporation;
       this.settings.displayCost = response?.displayCost || false;
     });
   }
@@ -40,15 +41,21 @@ export class SettingsPage {
   }
 
   clearDb() {
+    this.showSpinner = true;
     this.storage.clearDb();
+    this.init();
   }
 
   init() {
+    this.showSpinner = true;
     this.xmlReader.initStyles();
     this.xmlReader.initFermentables();
     this.xmlReader.initHops();
     this.xmlReader.initYeasts();
     this.xmlReader.initMiscs();
+    setTimeout(() => {
+      this.showSpinner = false;
+    }, 250);
   }
 
   saveSettings() {
@@ -61,95 +68,106 @@ export class SettingsPage {
 
   deleteDuplicates() {
     this.storage.get('recipes')?.then((response: Recipe[]) => {
-      let uniqueRecipes: Recipe[] = [];
-      response.forEach((item) => {
-        if (!uniqueRecipes.map((recipe) => recipe.name).includes(item.name)) {
-          uniqueRecipes.push(item);
-        } else {
-          console.log('Recipe \'' + item.name + '\' removed');
-        }
-      });
-      this.storage.set('recipes', uniqueRecipes);
+      if (response) {
+        this.showSpinner = true;
+        let uniqueRecipes: Recipe[] = [];
+        response.forEach((item) => {
+          if (!uniqueRecipes.map((recipe) => recipe.name).includes(item.name)) {
+            uniqueRecipes.push(item);
+          } else {
+            console.log('Recipe \'' + item.name + '\' removed');
+          }
+        });
+        this.storage.set('recipes', uniqueRecipes)?.then(() => {
+          setTimeout(() => this.showSpinner = false, 250);
+        });
+      } else {
+        console.log('No recipes to check for duplicates!')
+      }
     })
   }
 
   recalculateCosts() {
     this.storage.get('recipes')?.then((response: Recipe[]) => {
-      this.showSpinner = true;
-      this.storage.get('fermentables')?.then((fermentables: Fermentable[]) => {
-        setTimeout(() => {
-          let newRecipes: Recipe[] = [];
-          response.forEach((recipe) => {
-            let newFermentables: Fermentable[] = [];
-            recipe.fermentables.forEach((fermentable) => {
-              let nF = JSON.parse(JSON.stringify(fermentables.find((item) => item.name === fermentable.name) || fermentable));
-              nF.amount = fermentable.amount;
-              newFermentables.push(nF);
+      if (response) {
+        this.showSpinner = true;
+        this.storage.get('fermentables')?.then((fermentables: Fermentable[]) => {
+          setTimeout(() => {
+            let newRecipes: Recipe[] = [];
+            response.forEach((recipe) => {
+              let newFermentables: Fermentable[] = [];
+              recipe.fermentables.forEach((fermentable) => {
+                let nF = JSON.parse(JSON.stringify(fermentables.find((item) => item.name === fermentable.name) || fermentable));
+                nF.amount = fermentable.amount;
+                newFermentables.push(nF);
+              })
+              recipe.fermentables = newFermentables;
+              newRecipes.push(recipe);
             })
-            recipe.fermentables = newFermentables;
-            newRecipes.push(recipe);
-          })
-          response = newRecipes;
-        }, 100);
-      })
-      this.storage.get('hops')?.then((hops: Hop[]) => {
-        setTimeout(() => {
-          let newRecipes: Recipe[] = [];
-          response.forEach((recipe) => {
-            let newHops: Hop[] = [];
-            recipe.hops.forEach((hop) => {
-              let nH = JSON.parse(JSON.stringify(hops.find((item) => item.name === hop.name) || hop));
-              nH.amount = hop.amount;
-              nH.time = hop.time;
-              nH.use = hop.use;
-              newHops.push(nH);
-            })
-            recipe.hops = newHops;
-            newRecipes.push(recipe);
-          })
-          response = newRecipes;
-        }, 100);
-      })
-      this.storage.get('yeasts')?.then((yeasts: Yeast[]) => {
-        setTimeout(() => {
-          let newRecipes: Recipe[] = [];
-          response.forEach((recipe) => {
-            let newYeasts: Yeast[] = [];
-            recipe.yeasts.forEach((yeast) => {
-              let nY = JSON.parse(JSON.stringify(yeasts.find((item) => item.name === yeast.name) || yeast));
-              nY.amount = yeast.amount;
-              nY.attenuation = yeast.attenuation;
-              newYeasts.push(nY)
-            })
-            recipe.yeasts = newYeasts;
-            newRecipes.push(recipe);
-          })
-          response = newRecipes;
-        }, 100);
-      })
-      this.storage.get('miscs')?.then((miscs: Misc[]) => {
-        setTimeout(() => {
-          let newRecipes: Recipe[] = [];
-          response.forEach((recipe) => {
-            let newMiscs: Misc[] = [];
-            recipe.miscs.forEach((misc) => {
-              let nM = JSON.parse(JSON.stringify(miscs.find((item) => item.name === misc.name) || misc));
-              nM.amount = misc.amount;
-              newMiscs.push(nM)
-            })
-            recipe.miscs = newMiscs;
-            newRecipes.push(recipe);
-          })
-          response = newRecipes;
-        }, 100);
-      })
-      setTimeout(() => {
-        this.storage.deleteRecipes()?.then(() => {
-          this.storage.addRecipes(response)?.then(() => {
-            this.showSpinner = false;
-          });
+            response = newRecipes;
+          }, 100);
         })
-      }, 1000);
+        this.storage.get('hops')?.then((hops: Hop[]) => {
+          setTimeout(() => {
+            let newRecipes: Recipe[] = [];
+            response.forEach((recipe) => {
+              let newHops: Hop[] = [];
+              recipe.hops.forEach((hop) => {
+                let nH = JSON.parse(JSON.stringify(hops.find((item) => item.name === hop.name) || hop));
+                nH.amount = hop.amount;
+                nH.time = hop.time;
+                nH.use = hop.use;
+                newHops.push(nH);
+              })
+              recipe.hops = newHops;
+              newRecipes.push(recipe);
+            })
+            response = newRecipes;
+          }, 100);
+        })
+        this.storage.get('yeasts')?.then((yeasts: Yeast[]) => {
+          setTimeout(() => {
+            let newRecipes: Recipe[] = [];
+            response.forEach((recipe) => {
+              let newYeasts: Yeast[] = [];
+              recipe.yeasts.forEach((yeast) => {
+                let nY = JSON.parse(JSON.stringify(yeasts.find((item) => item.name === yeast.name) || yeast));
+                nY.amount = yeast.amount;
+                nY.attenuation = yeast.attenuation;
+                newYeasts.push(nY)
+              })
+              recipe.yeasts = newYeasts;
+              newRecipes.push(recipe);
+            })
+            response = newRecipes;
+          }, 100);
+        })
+        this.storage.get('miscs')?.then((miscs: Misc[]) => {
+          setTimeout(() => {
+            let newRecipes: Recipe[] = [];
+            response.forEach((recipe) => {
+              let newMiscs: Misc[] = [];
+              recipe.miscs.forEach((misc) => {
+                let nM = JSON.parse(JSON.stringify(miscs.find((item) => item.name === misc.name) || misc));
+                nM.amount = misc.amount;
+                newMiscs.push(nM)
+              })
+              recipe.miscs = newMiscs;
+              newRecipes.push(recipe);
+            })
+            response = newRecipes;
+          }, 100);
+        })
+        setTimeout(() => {
+          this.storage.deleteRecipes()?.then(() => {
+            this.storage.addRecipes(response)?.then(() => {
+              this.showSpinner = false;
+            });
+          })
+        }, 1000);
+      } else {
+        console.log('No recipes to recalculate!')
+      }
     });
   }
 }

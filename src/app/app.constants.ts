@@ -1,12 +1,12 @@
 export const CONFIG = {
-  evaporation: 0.2,
+  evaporation: 20,
   kettleUtilization: 4.2,
-  firstWortFactor: 1.1,
+  firstWortFactor: 1.15,
   aromaFactor: 0.25,
   aromaTime: 15,
   dryHopFactor: 0.05,
   defaultName: 'Brew Master',
-  defaultBatchSize: 10,
+  defaultBatchSize: 20,
   defaultBoilTime: 60,
   defaultEfficiency: 70
 }

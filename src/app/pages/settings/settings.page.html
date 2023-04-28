@@ -37,6 +37,10 @@
                      label="Default Efficiency (%)" type="number"></ion-input>
         </ion-item>
         <ion-item>
+          <ion-input [(ngModel)]="settings.evaporation" label-placement="stacked"
+                     label="Boil Evaporation (%/hr)" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
           <ion-checkbox [(ngModel)]="settings.displayCost" label-placement="end" justify="start">Show Cost of Recipes
             (CHF)
           </ion-checkbox>

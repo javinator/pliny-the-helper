@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, Output} from "@angular/core";
-import {IonicModule} from "@ionic/angular";
+import {Component, EventEmitter, Input, Output, ViewChild} from "@angular/core";
+import {IonicModule, IonSearchbar} from "@ionic/angular";
 import {FormsModule} from "@angular/forms";
 import {NgForOf, NgIf} from "@angular/common";
 
@@ -25,6 +25,8 @@ export class SelectSearchComponent {
   @Output()
   selectChanged = new EventEmitter<string>();
 
+  @ViewChild('search') searchbar: IonSearchbar | undefined;
+
   isModalOpen = false;
 
 
@@ -38,6 +40,9 @@ export class SelectSearchComponent {
   setModalOpen(val: boolean) {
     this.filteredItems = [...this.items];
     this.isModalOpen = val;
+    setTimeout(() => {
+      this.searchbar?.setFocus();
+    }, 250);
   }
 
   select(value: string) {

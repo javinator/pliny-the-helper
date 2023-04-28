@@ -93,7 +93,7 @@ export class NewRecipePage implements OnInit {
 
   submit() {
     this.model.calculateBoilSize = true;
-    this.model.boilSize = RecipeUtil.calculateBoilSize(this.model);
+    this.model.boilSize = RecipeUtil.calculateBoilSize(this.model, this.settings);
     if (!this.model.style) {
       this.model.style = this.styles?.[0];
     }

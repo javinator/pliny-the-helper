@@ -107,7 +107,7 @@ export class EditRecipePage {
   }
 
   calculateBoilSize(): number {
-    return RecipeUtil.calculateBoilSize(this.editRecipe!);
+    return RecipeUtil.calculateBoilSize(this.editRecipe!, this.settings);
   }
 
   saveEdit() {
