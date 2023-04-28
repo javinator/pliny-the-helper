@@ -370,7 +370,7 @@ function parseXMLtoRecipes(data: string): Promise<Recipe[]> {
                 infuseAmount: step.INFUSE_AMOUNT?.[0],
                 stepTime: step.STEP_TIME[0],
                 stepTemp: step.STEP_TEMP[0],
-                notes: step.DESCRIPTION?.[0],
+                description: step.DESCRIPTION?.[0],
                 rampTime: step.RAMP_TIME?.[0],
                 endTemp: step.END_TEMP?.[0]
               }

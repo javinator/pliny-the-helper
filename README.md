@@ -47,6 +47,16 @@ BignessFactor = 1.65 * 0.000125 ^ (SG - 1)
 
 TimeFactor = (1 - e ^ (-0.04 * Time_min)) / 4.15
 
+### Strike Temperature
+
+To calculate the strike temperature of the water I use the following formula:
+
+Tw = (0.41 / R)(T2 – T1) + T2
+
+R = Ratio of grain to water in the mash
+T1 = Initial Temperature (of the grain)
+T2 = Mash Temperature
+
 ### Links
 
 * [Ionic Documentation](https://ionicframework.com/docs/)

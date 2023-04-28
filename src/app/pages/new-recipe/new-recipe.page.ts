@@ -97,6 +97,12 @@ export class NewRecipePage implements OnInit {
     if (!this.model.style) {
       this.model.style = this.styles?.[0];
     }
+    this.model.mashProfile?.mashSteps.forEach((step) => {
+      if (step.type === 'Infusion') {
+        step.infuseAmount = this.model.batchSize
+      }
+    });
+
     this.storage.addRecipe(this.model)?.then(() => this.router.navigate(['edit-recipe'], {state: {recipe: this.model.uid}}));
   }
 

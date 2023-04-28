@@ -9,13 +9,14 @@ import {EditDetailsComponent} from "./edit-details/edit-details.component";
 import {FormsModule} from "@angular/forms";
 import {RecipeUtil} from "utils";
 import {SelectSearchComponent} from "@shared";
+import {BrewingComponent} from "./brewing/brewing.component";
 
 @Component({
   selector: 'edit-recipe-page',
   templateUrl: 'edit-recipe.page.html',
   styleUrls: ['../../app.component.scss'],
   standalone: true,
-  imports: [IonicModule, EditIngredientsComponent, EditDetailsComponent, NgSwitch, NgSwitchCase, NgForOf, NgIf, FormsModule, DecimalPipe, SelectSearchComponent],
+  imports: [IonicModule, EditIngredientsComponent, EditDetailsComponent, NgSwitch, NgSwitchCase, NgForOf, NgIf, FormsModule, DecimalPipe, SelectSearchComponent, BrewingComponent],
 })
 export class EditRecipePage {
 
@@ -115,6 +116,11 @@ export class EditRecipePage {
       if (this.editRecipe.calculateBoilSize) {
         this.editRecipe.boilSize = this.calculateBoilSize();
       }
+      this.editRecipe.mashProfile?.mashSteps.forEach((step) => {
+        if (step.type === 'Infusion') {
+          step.infuseAmount = this.editRecipe?.batchSize;
+        }
+      });
       this.storage.saveRecipe(this.editRecipe)
       this.recipe = JSON.parse(JSON.stringify(RecipeUtil.calculateRecipe(this.editRecipe)));
     }

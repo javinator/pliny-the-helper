@@ -8,9 +8,7 @@ export class RecipeUtil {
   static calculateOg(recipe: Recipe): number {
     let gu = 0;
     recipe.fermentables.forEach((item) => {
-      if (item.amount) {
-        gu += CalculatorUtil.kilosToPounds(item.amount) * getPPG(item.yield) / 100;
-      }
+      gu += getGu(item);
     })
     return 1 + (gu / CalculatorUtil.litersToGallons(recipe.batchSize) * recipe.efficiency) / 1000;
   }
@@ -19,6 +17,10 @@ export class RecipeUtil {
     let total = 0;
     recipe.fermentables.forEach((item) => total += Number(item.amount));
     return item.amount! / total * 100;
+  }
+
+  static getFermentableGPTPercentage(item: Fermentable, recipe: Recipe) {
+    return (getGu(item) / CalculatorUtil.litersToGallons(recipe.batchSize) * recipe.efficiency)
   }
 
   static calculateFg(recipe: Recipe): number {
@@ -70,10 +72,36 @@ export class RecipeUtil {
     recipe.cost = calculateRecipePrice(recipe);
     return recipe;
   }
+
+  static calculateStrikeTemp(recipe?: Recipe) {
+    if (recipe) {
+      const grainTemp = Number(recipe.mashProfile?.grainTemp || 20);
+      const mashTemp = Number(recipe.mashProfile?.mashSteps.find((step) => step.type === 'Infusion')?.stepTemp || 65);
+      let weight = 0;
+      recipe.fermentables.forEach((f) => {
+        weight += Number(f.amount) || 0
+      })
+      const size = Number(recipe.mashProfile?.mashSteps.find((step) => step.type === 'Infusion')?.infuseAmount || recipe.batchSize);
+      return (0.41 / (size / weight)) * (mashTemp - grainTemp) + mashTemp;
+    } else {
+      return;
+    }
+  }
+
+  static calculateDecoctionVolume(recipe: Recipe, step: number) {
+    const mashVolume = Number(recipe.mashProfile?.mashSteps.find((step) => step.type === 'Infusion')?.infuseAmount || recipe.batchSize);
+    const targetTemp = Number(recipe.mashProfile?.mashSteps[step].stepTemp || 20);
+    const startTemp = Number(recipe.mashProfile?.mashSteps[step - 1].stepTemp || 20);
+    return mashVolume * (targetTemp - startTemp) / (100 - startTemp);
+  }
 }
 
 function getPPG(y: number) {
   return y * 46 / 100;
+}
+
+function getGu(item: Fermentable) {
+  return CalculatorUtil.kilosToPounds(item.amount || 0) * getPPG(item.yield) / 100;
 }
 
 function calculateBoilGravity(recipe: Recipe): number {

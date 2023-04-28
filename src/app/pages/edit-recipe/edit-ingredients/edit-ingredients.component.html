@@ -21,7 +21,7 @@
               [class]="checkOveruse(fermentable, recipe)">
               {{ RecipeUtil.getFermentablePercentage(fermentable, recipe) | number:'1.0-1' }} %
             </span>
-            - {{ (recipe.OG - 1) * RecipeUtil.getFermentablePercentage(fermentable, recipe) * 10 | number:'1.0-1' }}
+            - {{ RecipeUtil.getFermentableGPTPercentage(fermentable, recipe) | number:'1.0-1' }}
             GPTs
           </p>
         </ion-label>
