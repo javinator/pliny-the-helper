@@ -1,7 +1,7 @@
 export interface MashStep {
   name: string,
   version: number,
-  type: 'Infusion' | 'Temperature' | 'Decoction',
+  type: 'Infusion' | 'Temperature' | 'Decoction' | 'Lautering',
   infuseAmount?: number,
   stepTemp: number,
   stepTime: number,
