@@ -50,4 +50,9 @@ export class BrewingComponent {
   dryHops(): Hop[] {
     return this.recipe?.hops.filter((hop) => hop.use === 'Dry Hop') || [];
   }
+
+  carbSugar() {
+    //TODO: calculate carbSugar based on desired carbonation
+    return Math.round((this.recipe?.batchSize || 0) * 5.5);
+  }
 }
