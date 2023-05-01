@@ -5,12 +5,19 @@
   <ion-card-content>
     <ion-select label="Units" label-placement="floating" [value]="unit" (ionChange)="changeUnit($event)">
       <ion-select-option value="gravity">Gravity</ion-select-option>
-      <ion-select-option value="brix">Brix</ion-select-option>
+      <ion-select-option value="brix">WRI</ion-select-option>
     </ion-select>
-    <ion-input type="number" label="Measured OG" label-placement="floating" (ionChange)="changeOg($event)"></ion-input>
-    <ion-input type="number" label="Measured FG" label-placement="floating" (ionChange)="changeFg($event)"></ion-input>
+    <ion-input type="number" label="Wort Correction Factor" label-placement="floating"
+               (ionChange)="changeWCF($event)" [value]="wcf" step="0.001"></ion-input>
+    <ion-input type="number" label="Measured OG" label-placement="floating" (ionChange)="changeOg($event)"
+               step="0.001"></ion-input>
+    <ion-input type="number" label="Measured FG" label-placement="floating" (ionChange)="changeFg($event)"
+               step="0.001"></ion-input>
     <p class="ion-padding-top">
-      <strong>Corrected FG: </strong> {{ calcGravity() | number:'1.3-3'}}
+      <strong>Corrected OG: </strong> {{ calcOG() | number:'1.3-3'}}
+    </p>
+    <p class="ion-padding-top">
+      <strong>Corrected FG: </strong> {{ calcFG() | number:'1.3-3'}}
     </p>
     <p class="ion-padding-top">
       <strong>Calculated ABV: </strong> {{ abv() | number:'1.2-2'}} %

@@ -8,7 +8,8 @@ export const CONFIG = {
   defaultName: 'Brew Master',
   defaultBatchSize: 20,
   defaultBoilTime: 60,
-  defaultEfficiency: 70
+  defaultEfficiency: 70,
+  defaultWFC: 1.01
 }
 
 export const SRM = [

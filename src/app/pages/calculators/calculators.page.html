@@ -35,7 +35,7 @@
   <ng-container [ngSwitch]="activeTab">
     <abv-card *ngSwitchCase="'abv'"></abv-card>
     <hydrometer-card *ngSwitchCase="'hydrometer'"></hydrometer-card>
-    <refractometer-card *ngSwitchCase="'refractometer'"></refractometer-card>
+    <refractometer-card *ngSwitchCase="'refractometer'" [settings]="settings"></refractometer-card>
     <conversion-card *ngSwitchCase="'conversions'"></conversion-card>
   </ng-container>
 </ion-content>

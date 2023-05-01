@@ -5,6 +5,8 @@ import {NgForOf, NgIf, NgSwitch, NgSwitchCase} from "@angular/common";
 import {HydrometerCardComponent} from "./hydrometer-card/hydrometer-card.component";
 import {RefractometerCardComponent} from "./refractometer-card/refractometer-card.component";
 import {ConversionCardComponent} from "./conversion-card/conversion-card.component";
+import {Settings} from "models";
+import {StorageService} from "services";
 
 @Component({
   selector: 'calculators-page',
@@ -14,11 +16,19 @@ import {ConversionCardComponent} from "./conversion-card/conversion-card.compone
   imports: [IonicModule, AbvCardComponent, NgIf, NgForOf, NgSwitchCase, NgSwitch, HydrometerCardComponent, RefractometerCardComponent, ConversionCardComponent]
 })
 export class CalculatorsPage {
+
+  constructor(private storage: StorageService) {
+  }
+
   activeTab = 'abv';
   showSpinner = false;
+  settings?: Settings;
 
   ionViewWillEnter() {
     this.showSpinner = true;
+    this.storage.get('settings')?.then((response) => {
+      this.settings = response;
+    })
   }
 
   ionViewDidEnter() {

@@ -32,6 +32,7 @@ export class SettingsPage {
       this.settings.boilTime = response?.boilTime || CONFIG.defaultBoilTime;
       this.settings.efficiency = response?.efficiency || CONFIG.defaultEfficiency;
       this.settings.evaporation = response?.evaporation || CONFIG.evaporation;
+      this.settings.wortCorrectionFactor = response?.wortCorrectionFactor || CONFIG.defaultWFC;
       this.settings.displayCost = response?.displayCost || false;
     });
   }

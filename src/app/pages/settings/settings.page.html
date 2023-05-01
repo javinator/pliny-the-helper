@@ -41,6 +41,10 @@
                      label="Boil Evaporation (%/hr)" type="number"></ion-input>
         </ion-item>
         <ion-item>
+          <ion-input [(ngModel)]="settings.wortCorrectionFactor" label-placement="stacked"
+                     label="Wort Correction Factor" type="number"></ion-input>
+        </ion-item>
+        <ion-item>
           <ion-checkbox [(ngModel)]="settings.displayCost" label-placement="end" justify="start">Show Cost of Recipes
             (CHF)
           </ion-checkbox>

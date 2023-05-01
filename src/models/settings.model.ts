@@ -5,4 +5,5 @@ export interface Settings {
   evaporation?: number;
   brewer?: string;
   displayCost?: boolean;
+  wortCorrectionFactor?: number;
 }
