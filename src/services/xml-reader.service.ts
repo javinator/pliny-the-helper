@@ -415,6 +415,8 @@ function parseXMLtoRecipes(data: string): Promise<Recipe[]> {
             minFg: item.STYLE[0]?.FG_MIN[0],
             minIbu: item.STYLE[0]?.IBU_MIN[0],
             minOg: item.STYLE[0]?.OG_MIN[0],
+            maxCarb: item.STYLE[0]?.CARB_MAX[0],
+            minCarb: item.STYLE[0]?.CARB_MIN[0],
             notes: item.STYLE[0]?.NOTES?.[0],
             profile: item.STYLE[0]?.PROFILE?.[0],
             styleGuide: item.STYLE[0]?.STYLE_GUIDE?.[0],

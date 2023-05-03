@@ -118,6 +118,12 @@ function styleToXmlText(style?: BeerStyle) {
     if (style.ingredients) {
       content += '<INGREDIENTS>' + style.ingredients + '</INGREDIENTS>\n';
     }
+    if (style.minCarb) {
+      content += '<CARB_MIN>' + style.minCarb + '</CARB_MIN>\n';
+    }
+    if (style.maxCarb) {
+      content += '<CARB_MAX>' + style.maxCarb + '</CARB_MAX>\n';
+    }
   } else {
     content += '<NAME>Other</NAME>\n';
   }
