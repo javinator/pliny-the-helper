@@ -130,6 +130,8 @@ function parseXMLtoStyles(data: string): Promise<BeerStyle[]> {
           minFg: item.FG_MIN[0],
           minIbu: item.IBU_MIN[0],
           minOg: item.OG_MIN[0],
+          minCarb: item.CARB_MIN?.[0],
+          maxCarb: item.CARB_MAX?.[0],
           notes: item.NOTES[0],
           profile: item.PROFILE[0],
           styleGuide: item.STYLE_GUIDE[0],
@@ -328,6 +330,8 @@ function parseXMLtoRecipes(data: string): Promise<Recipe[]> {
           brewDate: item.DATE?.[0],
           brewer: item.BREWER[0],
           color: item.EST_COLOR?.[0],
+          carbonation: item.CARBONATION?.[0],
+          forcedCarbonation: item.FORCED_CARBONATION?.[0] === 'TRUE',
           efficiency: item.EFFICIENCY[0],
           fermentables: item.FERMENTABLES[0]['FERMENTABLE']?.map((fermentable: any) => {
             return {

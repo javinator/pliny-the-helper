@@ -31,10 +31,6 @@ export class BrewingComponent {
     return RecipeUtil.calculateDecoctionVolume(this.recipe!, index);
   }
 
-  logMash() {
-    console.log(this.recipe?.mashProfile);
-  }
-
   firstWortHops(): Hop[] {
     return this.recipe?.hops.filter((hop) => hop.use === 'First Wort') || [];
   }
@@ -52,7 +48,10 @@ export class BrewingComponent {
   }
 
   carbSugar() {
-    //TODO: calculate carbSugar based on desired carbonation
-    return Math.round((this.recipe?.batchSize || 0) * 5.5);
+    if (this.recipe && !this.recipe.forcedCarbonation) {
+      return RecipeUtil.calculatePrimingSugar(this.recipe);
+    } else {
+      return 0;
+    }
   }
 }

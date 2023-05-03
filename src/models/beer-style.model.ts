@@ -19,5 +19,7 @@ export interface BeerStyle {
   minColor: number,
   maxColor: number,
   minAbv: number,
-  maxAbv: number
+  maxAbv: number,
+  minCarb?: number,
+  maxCarb?: number
 }

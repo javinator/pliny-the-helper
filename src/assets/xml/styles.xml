@@ -18,8 +18,8 @@
     <COLOR_MAX>6</COLOR_MAX>
     <ABV_MIN>3.6</ABV_MIN>
     <ABV_MAX>5.8</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.4</CARB_MIN>
+    <CARB_MAX>2.8</CARB_MAX>
     <NOTES>Light to medium grainy-sweet malt character. Medium spicy, floral or herbal hop aroma. Medium bitterness
       dominates the taste. Dry and medium body, high carbonation.
     </NOTES>
@@ -55,8 +55,8 @@
     <COLOR_MAX>10</COLOR_MAX>
     <ABV_MIN>5.2</ABV_MIN>
     <ABV_MAX>6.3</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.4</CARB_MIN>
+    <CARB_MAX>2.8</CARB_MAX>
     <NOTES>Moderate malt intensity, with rich, bready notes. Low spicy, peppery hop aroma, moderate bitterness. Medium
       body and carbonation. Usually hazy.
     </NOTES>
@@ -96,8 +96,8 @@
     <COLOR_MAX>18</COLOR_MAX>
     <ABV_MIN>4.8</ABV_MIN>
     <ABV_MAX>5.5</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.3</CARB_MIN>
+    <CARB_MAX>2.9</CARB_MAX>
     <NOTES>Clean yet robust and complex aroma of grainy-rich malt, with baked bread and nutty-toasty character. Some
       spicy hop aroma with restrained esters. Hop bitterness is present but balanced by a clean and crisp malt
       character. Medium body and carbonation.
@@ -137,8 +137,8 @@
     <COLOR_MAX>18</COLOR_MAX>
     <ABV_MIN>5.4</ABV_MIN>
     <ABV_MAX>6.4</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.4</CARB_MIN>
+    <CARB_MAX>2.7</CARB_MAX>
     <NOTES>Moderate malt aroma, typically rich, bready, somewhat toasty character of german malt. No hop aroma. Initial
       malt flavour suggests sweetness, but finishes dry.
     </NOTES>
@@ -176,8 +176,8 @@
     <COLOR_MAX>30</COLOR_MAX>
     <ABV_MIN>4.5</ABV_MIN>
     <ABV_MAX>5.6</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.2</CARB_MIN>
+    <CARB_MAX>2.7</CARB_MAX>
     <NOTES>Deep malt sweetness, hints of chocolate, nuts or caramel. Low spicy, floral or herbal hop aroma. Clean and
       medium body with medium carbonation.
     </NOTES>
@@ -216,8 +216,8 @@
     <COLOR_MAX>22</COLOR_MAX>
     <ABV_MIN>6.2</ABV_MIN>
     <ABV_MAX>10</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.3</CARB_MIN>
+    <CARB_MAX>2.6</CARB_MAX>
     <NOTES>Medium to high grainy-sweet malt aroma, often with toasted character. Low to no hop aroma. Moderate hop
       bitterness. Full body.
     </NOTES>
@@ -256,8 +256,8 @@
     <COLOR_MAX>14</COLOR_MAX>
     <ABV_MIN>5.2</ABV_MIN>
     <ABV_MAX>7</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.3</CARB_MIN>
+    <CARB_MAX>2.8</CARB_MAX>
     <NOTES>High to intense hop aroma, featuring american hops, with citrusy, floral, resinous and tropical fruit aroma.
       Low malt character and very clean fermentation showcasts hops. Low residual sweetness and lingering bitterness.
     </NOTES>
@@ -298,8 +298,8 @@
     <COLOR_MAX>14</COLOR_MAX>
     <ABV_MIN>4.5</ABV_MIN>
     <ABV_MAX>5.5</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.5</CARB_MIN>
+    <CARB_MAX>2.8</CARB_MAX>
     <NOTES>Medium to high hop aroma, typically showcasing rustic American hops. Low to medium caramel and toasty malt
       aromas. Pronounced hop bitterness. Fairly dry finish.
     </NOTES>
@@ -338,8 +338,8 @@
     <COLOR_MAX>30</COLOR_MAX>
     <ABV_MIN>9</ABV_MIN>
     <ABV_MAX>14</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.1</CARB_MIN>
+    <CARB_MAX>2.6</CARB_MAX>
     <NOTES>Rich, malty aroma with a presence of alcohol. Some dark fruit esters. Hop bitterness balances the rich
       maltiness a bit. Full body and low carbonation.
     </NOTES>
@@ -380,8 +380,8 @@
     <COLOR_MAX>35</COLOR_MAX>
     <ABV_MIN>6.5</ABV_MIN>
     <ABV_MAX>9.5</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.0</CARB_MIN>
+    <CARB_MAX>2.7</CARB_MAX>
     <NOTES>Rich, malty sweetness containing caramel, toffee, nut and toast notes. Some darker malt character like
       chocolate, coffee or molasses. No hops aroma. Full bodied and smooth with medium carbonation.
     </NOTES>
@@ -425,8 +425,8 @@
     <COLOR_MAX>6</COLOR_MAX>
     <ABV_MIN>3.8</ABV_MIN>
     <ABV_MAX>5.5</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.4</CARB_MIN>
+    <CARB_MAX>2.8</CARB_MAX>
     <NOTES>Light malty aromas, possibly with light bready or caramel notes. Low to medium hop aroma. Low to medium
       bitterness. The Kölsch has to be brewed in the region of Cologne in Germany.
     </NOTES>
@@ -472,8 +472,8 @@
     <COLOR_MAX>6</COLOR_MAX>
     <ABV_MIN>4.3</ABV_MIN>
     <ABV_MAX>5.6</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.8</CARB_MIN>
+    <CARB_MAX>4.5</CARB_MAX>
     <NOTES>Strong phenols and fruity esters, typically banana. Light to medium wheat aroma. Can have light vanilla or
       bubblegum character. High to very high carbonation. Also called Weissbier.
     </NOTES>
@@ -522,8 +522,8 @@
     <COLOR_MAX>4</COLOR_MAX>
     <ABV_MIN>4.5</ABV_MIN>
     <ABV_MAX>5.5</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.5</CARB_MIN>
+    <CARB_MAX>4.0</CARB_MAX>
     <NOTES>Grain flavor with zesty, orange-citrusy fruitiness, hints of coriander. Refreshingly crisp with a dry finish.
       Some bready wheat flavour. Medium-light body, high carbonation.
     </NOTES>
@@ -574,7 +574,7 @@
     <COLOR_MAX>6</COLOR_MAX>
     <ABV_MIN>4.0</ABV_MIN>
     <ABV_MAX>5.5</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
+    <CARB_MIN>2.2</CARB_MIN>
     <CARB_MAX>3.0</CARB_MAX>
     <NOTES>A pale, refreshing grainy, doughy, or bready wheat beer with a clean fermentation profile and a
       variable hop character and bitterness. Its lighter body and higher carbonation contribute to its easy-drinking
@@ -618,8 +618,8 @@
     <COLOR_MAX>18</COLOR_MAX>
     <ABV_MIN>3.2</ABV_MIN>
     <ABV_MAX>6.2</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>0.8</CARB_MIN>
+    <CARB_MAX>2.2</CARB_MAX>
     <NOTES>Classic British Session Ales. The transition between the Bitter and the Pale Ale is gradual and both names
       are usually used interchangeably. Bitter Ales usually are a bit darker in colour. Moderate malt aroma. Hop aroma
       can range from low to medium, typically floral, earthy, resiny character, but can showcase some American hops.
@@ -664,8 +664,8 @@
     <COLOR_MAX>10</COLOR_MAX>
     <ABV_MIN>4.5</ABV_MIN>
     <ABV_MAX>6.2</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.3</CARB_MIN>
+    <CARB_MAX>2.8</CARB_MAX>
     <NOTES>Moderate to strong hop aroma. American or New World hop varieties, usually citrusy, floral, pine, spicy,
       tropical fruit or melon flavours. Low to moderate malt character to support the hops. Medium to dry finish.
     </NOTES>
@@ -716,7 +716,7 @@
     <ABV_MIN>3.6</ABV_MIN>
     <ABV_MAX>5.2</ABV_MAX>
     <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MAX>2.4</CARB_MAX>
     <NOTES>Classic British Session Ales. The transition between the Bitter and the Pale Ale is gradual and both names
       are usually used interchangeably. Pale Ales usually are a bit paler in colour. Moderate malt aroma. Hop aroma
       can range from light to medium, typically floral, earthy, resiny character, but can showcase some American hops.
@@ -761,8 +761,8 @@
     <COLOR_MAX>18</COLOR_MAX>
     <ABV_MIN>4.5</ABV_MIN>
     <ABV_MAX>6.5</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.0</CARB_MIN>
+    <CARB_MAX>2.8</CARB_MAX>
     <NOTES>Low to moderate hop aroma with American hops characteristics. Medium maltiness, with some caramel notes. Malt
       and hop bitterness are usually balanced. Medium body. The german Altbier is also an Amber Ale, called Alt, because
       of the older, top-fermenting yeast.
@@ -805,8 +805,8 @@
     <COLOR_MAX>15</COLOR_MAX>
     <ABV_MIN>3.8</ABV_MIN>
     <ABV_MAX>5</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>1.8</CARB_MIN>
+    <CARB_MAX>2.6</CARB_MAX>
     <NOTES>Low to moderate malt aroma, some caramel, toast and toffee character. Subtle earthy or floral hop aroma. Can
       have light taste of toast, roasted grain or biscuit. Medium-dry finish, medium body.
     </NOTES>
@@ -848,7 +848,7 @@
     <ABV_MIN>4.2</ABV_MIN>
     <ABV_MAX>6</ABV_MAX>
     <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MAX>2.6</CARB_MAX>
     <NOTES>Light, sweet malt aroma with toffee, nutty or chocolate notes and some caramel quality. Some light floral or
       earthy hoparoma may be present. Low bitterness, medium body and carbonation.
     </NOTES>
@@ -886,7 +886,7 @@
     <ABV_MIN>5.5</ABV_MIN>
     <ABV_MAX>8.5</ABV_MAX>
     <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MAX>2.4</CARB_MAX>
     <NOTES>Malty-sweet with fruity esters, often with a complex blend of dried-fruit, caramel, nuts, toffee and slight
       roasted malt. Low to moderate hop aroma, most often resinous, grassy or citrusy notes. American variants can have
       distinctive New World hop aroma. Medium dry to sweet finish. Low carbonation with full, creamy body.
@@ -930,8 +930,8 @@
     <COLOR_MAX>22</COLOR_MAX>
     <ABV_MIN>8</ABV_MIN>
     <ABV_MAX>13</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>1.4</CARB_MIN>
+    <CARB_MAX>2.4</CARB_MAX>
     <NOTES>Very rich and strong malt aroma with caramel and toffee notes, moderate fruitiness. Hop aroma present, more
       evidently in American versions. Prevalent alcohol strength, full bodied with low carbonation.
     </NOTES>
@@ -984,8 +984,8 @@
     <COLOR_MAX>40</COLOR_MAX>
     <ABV_MIN>4</ABV_MIN>
     <ABV_MAX>4.5</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>1.2</CARB_MIN>
+    <CARB_MAX>2.7</CARB_MAX>
     <NOTES>Moderate coffee-like aroma. Slight chocolate, cocoa or roasted grain notes. Some bitterness but no hop aroma.
       Dry finish.
     </NOTES>
@@ -1032,8 +1032,8 @@
     <COLOR_MAX>35</COLOR_MAX>
     <ABV_MIN>4</ABV_MIN>
     <ABV_MAX>5.4</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>1.8</CARB_MIN>
+    <CARB_MAX>2.5</CARB_MAX>
     <NOTES>Moderate bread, biscuit and toasty malt aroma. May have some earthy and floral hops note. May have some
       coffee or chocolate flavours.
     </NOTES>
@@ -1077,8 +1077,8 @@
     <COLOR_MAX>40</COLOR_MAX>
     <ABV_MIN>5.5</ABV_MIN>
     <ABV_MAX>8.4</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.0</CARB_MIN>
+    <CARB_MAX>2.6</CARB_MAX>
     <NOTES>Roasted grain aromas, often with coffee, chocolate and light burn notes. Low to medium fruitiness. Moderately
       dry. None to moderate hop flavour.
     </NOTES>
@@ -1119,8 +1119,8 @@
     <COLOR_MAX>40</COLOR_MAX>
     <ABV_MIN>8</ABV_MIN>
     <ABV_MAX>12</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>1.8</CARB_MIN>
+    <CARB_MAX>2.6</CARB_MAX>
     <NOTES>Rich, deep and complex with variable amounts of roasted grains, maltiness, hop bitterness and alcohol. Very
       toasty with strong coffee, cocoa or burnt grain flavor. Malt character can add caramel and bready flavours.
     </NOTES>
@@ -1175,7 +1175,7 @@
     <COLOR_MAX>14</COLOR_MAX>
     <ABV_MIN>4.8</ABV_MIN>
     <ABV_MAX>7.5</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
+    <CARB_MIN>2.2</CARB_MIN>
     <CARB_MAX>3.0</CARB_MAX>
     <NOTES>Moderate malt aroma, combination of toast, biscuit or nut, possibly some caramel and honey. High fruitiness,
       some esters and phenols. Light hop aromas. Usually sweet and smooth, can have a dryish finish.
@@ -1222,8 +1222,8 @@
     <COLOR_MAX>18</COLOR_MAX>
     <ABV_MIN>6</ABV_MIN>
     <ABV_MAX>7.6</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.3</CARB_MIN>
+    <CARB_MAX>2.9</CARB_MAX>
     <NOTES>Complex, rich, sweet malty aromas. Hints of chocolate or caramel. Moderate fruity esters. Hop aroma usually
       absent. Full body.
     </NOTES>
@@ -1270,8 +1270,8 @@
     <COLOR_MAX>8</COLOR_MAX>
     <ABV_MIN>7.5</ABV_MIN>
     <ABV_MAX>9.5</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.4</CARB_MIN>
+    <CARB_MAX>3.4</CARB_MAX>
     <NOTES>Complex with moderate spiciness ad fruitiness. Some peppery, clove-like phenols, light citrus or banana
       character. Light floral, perfumy hop aroma. Medium body, highly carbonated, dry finish. Often also called
       Belgian Golden Strong Ale.
@@ -1319,7 +1319,7 @@
     <COLOR_MAX>26</COLOR_MAX>
     <ABV_MIN>7</ABV_MIN>
     <ABV_MAX>12</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
+    <CARB_MIN>2.0</CARB_MIN>
     <CARB_MAX>3.0</CARB_MAX>
     <NOTES>Rich, sweet, bready malty presence, significant esters and alcohol, some caramel. No dark or roast malt
       aroma. Medium dry finish, high carbonation. Full and creamy body. Often also called Belgian Dark Strong Ale.
@@ -1366,7 +1366,7 @@
     <COLOR_MAX>14</COLOR_MAX>
     <ABV_MIN>5</ABV_MIN>
     <ABV_MAX>7</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
+    <CARB_MIN>2.0</CARB_MIN>
     <CARB_MAX>3.0</CARB_MAX>
     <NOTES>Quite aromatic, with fruity, spicy and hoppy character. Spice notes are typically peppery rather than
       clove-like. Medium fruity and spicy taste. Some sourness can be present. Very dry finish and very high
@@ -1435,7 +1435,7 @@
     <ABV_MIN>5</ABV_MIN>
     <ABV_MAX>7.5</ABV_MAX>
     <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MAX>2.5</CARB_MAX>
     <NOTES>Moderate to high hop aroma of floral, spicy-peppery or citrus-orange aroma. Can have some grassy dry-hop
       aroma. Assertive bitterness with low to medium malt flavour. Dry finish.
     </NOTES>
@@ -1481,8 +1481,8 @@
     <COLOR_MAX>18</COLOR_MAX>
     <ABV_MIN>5.5</ABV_MIN>
     <ABV_MAX>7.0</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.2</CARB_MIN>
+    <CARB_MAX>2.7</CARB_MAX>
     <NOTES>High to intense hop aroma, featuring american hops, with citrusy, floral, resinous and tropical fruit aroma.
       Definite malt backbone. Can have some fruity esters. Some residual sweetness and lingering bitterness.
     </NOTES>
@@ -1531,8 +1531,8 @@
     <COLOR_MAX>12</COLOR_MAX>
     <ABV_MIN>5.5</ABV_MIN>
     <ABV_MAX>7.5</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.2</CARB_MIN>
+    <CARB_MAX>2.8</CARB_MAX>
     <NOTES>High to intense hop aroma, featuring american hops, with citrusy, floral, resinous and tropical fruit aroma.
       Can have some fruity esters. Low residual sweetness and lingering bitterness.
     </NOTES>
@@ -1581,7 +1581,7 @@
     <COLOR_MAX>15</COLOR_MAX>
     <ABV_MIN>5.5</ABV_MIN>
     <ABV_MAX>9.5</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
+    <CARB_MIN>2.3</CARB_MIN>
     <CARB_MAX>3.0</CARB_MAX>
     <NOTES>High hop aroma, often tropical, citrus or pine like, typical of American hops, but also floral and spicy
       European hops. Lots of fruity esters with aromas of bananas and apples, typical of Belgian yeast. Medium body and
@@ -1626,8 +1626,8 @@
     <COLOR_MAX>14</COLOR_MAX>
     <ABV_MIN>7.5</ABV_MIN>
     <ABV_MAX>12</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.2</CARB_MIN>
+    <CARB_MAX>2.8</CARB_MAX>
     <NOTES>More robust version of the American IPA, with more hops and more malt. Sometimes also called Imperial IPA or
       even Triple IPA. High to absurdly high hop bitterness and aroma. Should still finish dry.
     </NOTES>
@@ -1678,8 +1678,8 @@
     <COLOR_MAX>40</COLOR_MAX>
     <ABV_MIN>5.5</ABV_MIN>
     <ABV_MAX>9</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.0</CARB_MIN>
+    <CARB_MAX>2.7</CARB_MAX>
     <NOTES>High hop aroma, often with stone fruit, tropical, citrusy or resinous character. Low dark malt aroma with
       some chocolate, coffee or toast note. Dry finish with lingering bitterness.
     </NOTES>
@@ -1729,8 +1729,8 @@
     <COLOR_MAX>8</COLOR_MAX>
     <ABV_MIN>5.5</ABV_MIN>
     <ABV_MAX>9</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.0</CARB_MIN>
+    <CARB_MAX>2.6</CARB_MAX>
     <NOTES>Intense hop aroma, typically with fruity qualities, most often tropical fruit and citrus. Clean neutral malt
       character. Perceived bitterness should be low to medium, often masked by the body. Medium finish. Full body with
       smooth character. Very hazy.
@@ -1777,8 +1777,8 @@
     <COLOR_MAX>10</COLOR_MAX>
     <ABV_MIN>3.4</ABV_MIN>
     <ABV_MAX>5.2</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.2</CARB_MIN>
+    <CARB_MAX>2.8</CARB_MAX>
     <NOTES>Lighter, more 'sessionable' version of an American IPA.</NOTES>
     <PROFILE>Aroma: A prominent to intense hop aroma featuring one or more characteristics of American or New World
       hops, such as citrus, floral, pine, resinous, spicy, tropical fruit, stone fruit, berry, melon, etc. Many versions
@@ -1816,7 +1816,7 @@
     <COLOR_MAX>22</COLOR_MAX>
     <ABV_MIN>4</ABV_MIN>
     <ABV_MAX>8</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
+    <CARB_MIN>1.0</CARB_MIN>
     <CARB_MAX>3.0</CARB_MAX>
     <NOTES>Complex fruity and sour profile with supporting malt. Low vanilla or chocolate notes. No hop flavour. Low
       carbonation. Somewhat sweet finish.
@@ -1866,8 +1866,8 @@
     <COLOR_MAX>8</COLOR_MAX>
     <ABV_MIN>5</ABV_MIN>
     <ABV_MAX>8</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.4</CARB_MIN>
+    <CARB_MAX>3.1</CARB_MAX>
     <NOTES>Gueuzes have a moderate sour aroma blending with notes of barnyard, leather, earth and hay, while lambics are
       decidedly sour. Balanced sourness with some fruitiness. No hop aroma. Hops used for anti-bacterial property rather
       than bittering. In lambics, fruits are often added, giving a more fruity to definitively fruity flavour.
@@ -1920,8 +1920,8 @@
     <COLOR_MAX>4</COLOR_MAX>
     <ABV_MIN>2.8</ABV_MIN>
     <ABV_MAX>3.8</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.5</CARB_MIN>
+    <CARB_MAX>3.5</CARB_MAX>
     <NOTES>Sharp sour character with moderate fruitiness. No hop aroma. Clean lactic acid sourness, may have some Brett
       funk. Light body and very dry finish. Often served with syrup.
     </NOTES>
@@ -1965,8 +1965,8 @@
     <COLOR_MAX>4</COLOR_MAX>
     <ABV_MIN>4.2</ABV_MIN>
     <ABV_MAX>4.8</ABV_MAX>
-    <CARB_MIN>1.5</CARB_MIN>
-    <CARB_MAX>3.0</CARB_MAX>
+    <CARB_MIN>2.4</CARB_MIN>
+    <CARB_MAX>3.2</CARB_MAX>
     <NOTES>Light fruity aroma, with subtle sourness, slightly sharp. Noticeable coriander. Salt perceived as a clean sea
       breeze or just a general freshness. Yeast and wheat can give a little body, but doesn?t feel heavy. Very high
       carbonation.

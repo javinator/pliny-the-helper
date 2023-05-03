@@ -138,6 +138,29 @@ export class EditDetailsComponent {
     return '';
   }
 
+  getCarbRangeBar() {
+    if (this.recipe.style?.minCarb && this.recipe.style?.maxCarb) {
+      const start = this.recipe.style.minCarb / 5 * 100;
+      let end = this.recipe.style.maxCarb / 5 * 100;
+      end = end > 100 ? 100 : end;
+      return 'width: ' + (end - start) + '%; left: ' + start + '%;';
+    }
+    return '';
+  }
+
+  getCarbRangeMarker() {
+    if (this.recipe.style?.minCarb && this.recipe.style?.maxCarb && this.recipe.carbonation) {
+      const color =
+        (this.recipe.carbonation >= this.recipe.style.minCarb && this.recipe.carbonation <= this.recipe.style.maxCarb)
+          ? 'background-color: var(--ion-color-primary);'
+          : 'background-color: var(--ion-color-danger);';
+      let position = this.recipe.carbonation / 5 * 100;
+      position = position > 100 ? 100 : position;
+      return 'left:' + position + '%;' + color;
+    }
+    return '';
+  }
+
   getMeasuredAbv() {
     return CalculatorUtil.abv(this.recipe.measuredOG || 1, this.recipe.measuredFG || 1)
   }

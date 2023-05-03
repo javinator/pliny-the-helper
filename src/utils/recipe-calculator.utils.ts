@@ -94,6 +94,14 @@ export class RecipeUtil {
     const startTemp = Number(recipe.mashProfile?.mashSteps[step - 1].stepTemp || 20);
     return mashVolume * (targetTemp - startTemp) / (100 - startTemp);
   }
+
+  static calculatePrimingSugar(recipe: Recipe) {
+    if (recipe.carbonation) {
+      return recipe.batchSize * (recipe.carbonation - 0.75) * 3.5;
+    } else {
+      return recipe.batchSize * 5.5;
+    }
+  }
 }
 
 function getPPG(y: number) {

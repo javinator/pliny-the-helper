@@ -55,12 +55,10 @@
           <p>Ferment in a dark area.<span *ngFor="let hop of dryHops()"><br>
             Add {{ hop.amount ? ((hop.amount * 1000) | number: '1.0-0') : 0 }} g of {{ hop.name }} for {{ hop.time }}
             days.</span><br>
-            After 14-21 days, add {{ carbSugar() }}g of Sugar and bottle or keg the beer.
+            After 14-21 days, add {{ carbSugar() | number: '1.0-1' }}g of Sugar and bottle or keg the beer.
           </p>
         </ion-label>
       </ion-item>
     </ion-list>
-
-    <ion-button (click)="logMash()">Log</ion-button>
   </ion-card-content>
 </ion-card>

@@ -81,6 +81,11 @@
         [(ngModel)]="editRecipe!.brewDate"
         type="date"
       ></ion-input>
+      <ion-input
+        label="Brewer"
+        label-placement="floating"
+        [(ngModel)]="editRecipe!.brewer"
+      ></ion-input>
       <p-select-search label="Style" placeholder="Choose Beer Style"
                        [items]="getStylesOptions()" (selectChanged)="changeStyle($event)"
                        [selectedItem]="editRecipe!.style!.name"></p-select-search>
@@ -119,6 +124,14 @@
       <p-select-search label="Mash Profile" placeholder="Select Mash Profile"
                        [items]="getProfilesOptions()" (selectChanged)="changeProfile($event)"
                        [selectedItem]="editRecipe!.mashProfile!.name"></p-select-search>
+      <ion-input
+        type="number"
+        min="0"
+        label="Carbonation (vol.)"
+        label-placement="floating"
+        [(ngModel)]="editRecipe!.carbonation"
+      ></ion-input>
+      <ion-checkbox labelPlacement="end" [(ngModel)]="editRecipe!.forcedCarbonation">Force Carbonation</ion-checkbox>
     </ion-content>
   </ng-template>
 </ion-modal>

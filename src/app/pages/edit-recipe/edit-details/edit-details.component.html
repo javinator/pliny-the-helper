@@ -34,6 +34,12 @@
                 {{ recipe.brewDate | date:'dd / MM / yyyy' }}
               </ion-label>
             </ion-item>
+            <ion-item>
+              <ion-label>
+                <p>Brewer</p>
+                {{ recipe.brewer }}
+              </ion-label>
+            </ion-item>
             <ion-item *ngIf="showCost && recipe.cost && recipe.cost > 0">
               <ion-label>
                 <p>Recipe Cost</p>
@@ -112,6 +118,21 @@
                 </div>
                 <p class="inline ion-hide-lg-down">{{ recipe.style?.minColor | number:'1.0-0' }}
                   - {{ recipe.style?.maxColor | number:'1.0-0' }} SRM</p>
+              </ion-label>
+            </ion-item>
+            <ion-item *ngIf="recipe.carbonation">
+              <ion-label>
+                <p>Carbonation</p>
+                {{ recipe.carbonation }} L of CO<sub>2</sub>
+                <div class="range-bar-container">
+                  <div class="range-bar">
+                    <div class="range-bar-range" [style]="getCarbRangeBar()"></div>
+                  </div>
+                  <div class="range-bar-marker" [style]="getCarbRangeMarker()"></div>
+                </div>
+                <p class="inline ion-hide-lg-down"
+                   *ngIf="recipe.style?.minCarb && recipe.style?.maxCarb">{{ recipe.style?.minCarb | number:'1.1-1' }}
+                  - {{ recipe.style?.maxCarb | number:'1.1-1' }} L of CO<sub>2</sub></p>
               </ion-label>
             </ion-item>
           </ion-list>

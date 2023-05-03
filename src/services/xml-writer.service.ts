@@ -47,6 +47,12 @@ function recipeToXmlText(recipe: Recipe) {
   content += '<BOIL_SIZE>' + recipe.boilSize + '</BOIL_SIZE>\n';
   content += '<BOIL_TIME>' + recipe.boilTime + '</BOIL_TIME>\n';
   content += '<EFFICIENCY>' + recipe.efficiency + '</EFFICIENCY>\n';
+  if (recipe.carbonation) {
+    content += '<CARBONATION>' + recipe.carbonation + '</CARBONATION>\n';
+  }
+  if (recipe.forcedCarbonation) {
+    content += '<FORCED_CARBONATION>' + String(recipe.forcedCarbonation).toUpperCase() + '</FORCED_CARBONATION>\n';
+  }
   content += '<HOPS>\n';
   recipe.hops.forEach((hop) => content += hopToXmlText(hop));
   content += '</HOPS>\n';
@@ -107,10 +113,10 @@ function styleToXmlText(style?: BeerStyle) {
       content += '<NOTES>' + style.notes + '</NOTES>\n';
     }
     if (style.profile) {
-      content += '<NOTES>' + style.profile + '</NOTES>\n';
+      content += '<PROFILE>' + style.profile + '</PROFILE>\n';
     }
     if (style.ingredients) {
-      content += '<NOTES>' + style.ingredients + '</NOTES>\n';
+      content += '<INGREDIENTS>' + style.ingredients + '</INGREDIENTS>\n';
     }
   } else {
     content += '<NAME>Other</NAME>\n';
@@ -223,7 +229,7 @@ function miscToXmlText(misc: Misc) {
   content += '<TIME>' + misc.time + '</TIME>\n';
   content += '<AMOUNT>' + misc.amount + '</AMOUNT>\n';
   if (misc.amountIsWeight) {
-    content += '<AMOUNT_IS_WEIGHT>' + misc.amountIsWeight + '</AMOUNT_IS_WEIGHT>\n';
+    content += '<AMOUNT_IS_WEIGHT>' + String(misc.amountIsWeight).toUpperCase() + '</AMOUNT_IS_WEIGHT>\n';
   }
   if (misc.description) {
     content += '<NOTES>' + misc.description + '</NOTES>\n';

@@ -79,7 +79,8 @@
             ABV: {{ style.minAbv + ' - ' + style.maxAbv + ' %'}}<br>
             Bitterness (IBU): {{ style.minIbu + ' - ' + style.maxIbu}}<br>
             Color (SRM): {{ style.minColor + ' - ' + style.maxColor}}<br>
-            Fermentation: {{ style.type }}
+            Fermentation: {{ style.type }}<br>
+            <span *ngIf="style.minCarb && style.maxCarb">Carbonation: {{ style.minCarb + ' - ' + style.maxCarb }} L of CO<sub>2</sub></span>
           </ion-card-content>
         </ion-col>
       </ion-row>

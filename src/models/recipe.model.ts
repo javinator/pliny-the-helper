@@ -18,6 +18,8 @@ export interface Recipe {
   calculateBoilSize?: boolean,
   boilTime: number,
   efficiency: number,
+  carbonation?: number,
+  forcedCarbonation?: boolean,
   hops: Array<Hop>,
   fermentables: Array<Fermentable>,
   yeasts: Array<Yeast>,

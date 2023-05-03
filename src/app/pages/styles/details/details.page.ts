@@ -2,13 +2,14 @@ import {Component} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {Router} from "@angular/router";
 import {BeerStyle} from "models";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'style-details-page',
   templateUrl: 'details.page.html',
   styleUrls: ['../../../app.component.scss'],
   standalone: true,
-  imports: [IonicModule],
+  imports: [IonicModule, NgIf],
 })
 export class StyleDetailsPage {
   constructor(private router: Router) {
