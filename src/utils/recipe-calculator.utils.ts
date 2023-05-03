@@ -1,4 +1,4 @@
-import {Recipe, Settings} from "models";
+import {BeerStyle, Recipe, Settings} from "models";
 import {CalculatorUtil} from "./calculator.utils";
 import {Hop} from "models";
 import {Fermentable} from "models";
@@ -93,6 +93,14 @@ export class RecipeUtil {
     const targetTemp = Number(recipe.mashProfile?.mashSteps[step].stepTemp || 20);
     const startTemp = Number(recipe.mashProfile?.mashSteps[step - 1].stepTemp || 20);
     return mashVolume * (targetTemp - startTemp) / (100 - startTemp);
+  }
+
+  static calculateCarbonation(style?: BeerStyle) {
+    if (style?.minCarb && style?.maxCarb) {
+      return (style.maxCarb + style.minCarb) / 2;
+    } else {
+      return 2.4;
+    }
   }
 
   static calculatePrimingSugar(recipe: Recipe) {

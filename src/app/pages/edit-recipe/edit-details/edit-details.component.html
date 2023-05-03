@@ -198,6 +198,12 @@
                 </div>
               </ion-label>
             </ion-item>
+            <ion-item>
+              <ion-label>
+                <ion-textarea style="margin-top: 4px;" label="Notes" label-placement="stacked" fill="outline"
+                              [(ngModel)]="recipe.notes" (ionBlur)="saveRecipe()"></ion-textarea>
+              </ion-label>
+            </ion-item>
           </ion-list>
         </ion-col>
       </ion-row>

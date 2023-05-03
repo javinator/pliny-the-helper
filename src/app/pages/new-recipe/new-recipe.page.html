@@ -60,6 +60,13 @@
           labelPlacement="floating"
           required="true"
         ></ion-input>
+        <ion-input
+          [(ngModel)]="model.brewer"
+          name="brewer"
+          label="Brewer"
+          labelPlacement="floating"
+          required="true"
+        ></ion-input>
         <p-select-search [label]="'Mash Profile'" [placeholder]="'Choose Mash Profile'"
                          [items]="getProfilesOptions()"></p-select-search>
         <div class="ion-text-end">
