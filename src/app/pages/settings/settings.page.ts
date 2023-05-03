@@ -6,6 +6,7 @@ import {FormsModule} from "@angular/forms";
 import {CONFIG} from "../../app.constants";
 import {NgIf} from "@angular/common";
 import {ActivatedRoute} from "@angular/router";
+import {RecipeUtil} from "utils";
 
 
 @Component({
@@ -99,6 +100,9 @@ export class SettingsPage {
   recalculateCosts() {
     this.storage.get('recipes')?.then((response: Recipe[]) => {
       if (response) {
+        response.forEach((recipe) => {
+          recipe.carbonation = recipe.carbonation || RecipeUtil.calculateCarbonation(recipe.style);
+        })
         this.showSpinner = true;
         this.storage.get('fermentables')?.then((fermentables: Fermentable[]) => {
           setTimeout(() => {
