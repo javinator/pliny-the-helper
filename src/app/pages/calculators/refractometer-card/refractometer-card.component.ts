@@ -45,16 +45,25 @@ export class RefractometerCardComponent implements OnInit {
   calcOG() {
     if (this.og && this.wcf) {
       const sg = this.unit === 'gravity' ? this.og : CalculatorUtil.brixToSg(this.og);
-      return sg / this.wcf
+      return correctReading(sg, this.wcf);
     } else {
       return 0;
     }
   }
 
   calcFG() {
+    if (this.fg && this.wcf) {
+      const sg = this.unit === 'gravity' ? this.fg : CalculatorUtil.brixToSg(this.fg);
+      return correctReading(sg, this.wcf);
+    } else {
+      return 0;
+    }
+  }
+
+  calcRefractometerFG() {
     if (this.og && this.fg && this.wcf) {
-      const obrix = (this.unit === 'gravity' ? CalculatorUtil.sgToBrix(this.og) : this.og) / this.wcf;
-      const fbrix = (this.unit === 'gravity' ? CalculatorUtil.sgToBrix(this.fg) : this.fg) / this.wcf;
+      const obrix = CalculatorUtil.sgToBrix(this.calcOG());
+      const fbrix = CalculatorUtil.sgToBrix(this.calcFG());
       return 1.000 - (0.004493 * obrix) + (0.011774 * fbrix)
         + (0.00027581 * obrix * obrix) - (0.0012717 * fbrix * fbrix)
         - (0.00000728 * obrix * obrix * obrix) + (0.000063293 * fbrix * fbrix * fbrix);
@@ -65,7 +74,7 @@ export class RefractometerCardComponent implements OnInit {
 
   abv() {
     if (this.og && this.fg) {
-      return CalculatorUtil.abv(this.calcOG(), this.calcFG());
+      return CalculatorUtil.abv(this.calcOG(), this.calcRefractometerFG());
     } else {
       return 0;
     }
@@ -74,10 +83,13 @@ export class RefractometerCardComponent implements OnInit {
   attenuation() {
     if (this.og && this.fg) {
       const og = this.calcOG();
-      return ((og - this.calcFG()) / (og - 1)) * 100
+      return ((og - this.calcRefractometerFG()) / (og - 1)) * 100
     } else {
       return 0;
     }
   }
+}
 
+function correctReading(sg: number, wcf: number) {
+  return (sg - 1) / wcf + 1;
 }
