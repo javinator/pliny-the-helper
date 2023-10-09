@@ -21,6 +21,7 @@ export class RecipesPage {
   isExportOpen = false;
   isToastOpen = false;
   showSpinner = false;
+  recipeToEdit?: string;
 
   constructor(
     private storage: StorageService,
@@ -39,10 +40,18 @@ export class RecipesPage {
   }
 
   ionViewDidEnter() {
-    setTimeout(() => this.showSpinner = false, 500);
+    setTimeout(() => {
+      this.showSpinner = false;
+      setTimeout(() => {
+        if (this.recipeToEdit != undefined) {
+          document.getElementById(this.recipeToEdit)?.scrollIntoView();
+        }
+      }, 100);
+    }, 250);
   }
 
   showEdit(recipe: Recipe) {
+    this.recipeToEdit = recipe.uid;
     this.router.navigate(['edit-recipe'], {state: {recipe: recipe.uid}});
   }
 

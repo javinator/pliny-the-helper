@@ -32,7 +32,8 @@
     </div>
   </ng-container>
   <ng-container *ngIf="recipes && recipes.length > 0">
-    <recipe-card *ngFor="let recipe of recipes" [name]="recipe.name" [style]="recipe.style?.name || 'Other'"
+    <recipe-card *ngFor="let recipe of recipes" [id]="recipe.uid" [name]="recipe.name"
+                 [style]="recipe.style?.name || 'Other'"
                  [color]="recipe.color" [abv]="recipe.ABV" [ibu]="recipe.IBU"
                  [batchSize]="recipe.batchSize" (click)="showEdit(recipe)"></recipe-card>
   </ng-container>

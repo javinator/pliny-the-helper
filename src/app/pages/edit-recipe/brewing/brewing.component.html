@@ -3,7 +3,7 @@
   <ion-card-content>
     <ion-list>
       <ion-item *ngFor="let step of profile.mashSteps; let i = index;">
-        <ion-label>
+        <ion-label class="ion-text-wrap">
           {{ step.name }}
           <p *ngIf="step.type === 'Infusion'">Heat {{ step.infuseAmount | number: '1.0-1'}} L of water
             to {{ strikeTemp() | number: '1.0-1' }} °C. Add the grains and hold for {{ step.stepTime }} minutes
@@ -20,7 +20,7 @@
         </ion-label>
       </ion-item>
       <ion-item>
-        <ion-label>
+        <ion-label class="ion-text-wrap">
           Lautering
           <p>Lauter the wort<span *ngIf="firstWortHops().length > 0">, then add
             <span *ngFor="let hop of firstWortHops()">
@@ -30,7 +30,7 @@
         </ion-label>
       </ion-item>
       <ion-item>
-        <ion-label>
+        <ion-label class="ion-text-wrap">
           Boiling
           <p>Boil for {{ recipe.boilTime | number: '1.0-0' }} minutes.<span *ngFor="let hop of boilHops()"><br>
           With {{ hop.time | number: '1.0-0' }}
@@ -40,7 +40,7 @@
         </ion-label>
       </ion-item>
       <ion-item>
-        <ion-label>
+        <ion-label class="ion-text-wrap">
           Flame Out
           <p>Turn off the heat.<span *ngFor="let hop of aromaHops()"><br>
           Add {{ hop.amount ? ((hop.amount * 1000) | number: '1.0-0') : 0 }} g of {{ hop.name }}.</span><br>
@@ -50,7 +50,7 @@
         </ion-label>
       </ion-item>
       <ion-item>
-        <ion-label>
+        <ion-label class="ion-text-wrap">
           Fermentation
           <p>Ferment in a dark area.<span *ngFor="let hop of dryHops()"><br>
             Add {{ hop.amount ? ((hop.amount * 1000) | number: '1.0-0') : 0 }} g of {{ hop.name }} for {{ hop.time }}
