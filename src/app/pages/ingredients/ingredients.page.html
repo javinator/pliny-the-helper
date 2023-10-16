@@ -14,7 +14,7 @@
 </ion-content>
 
 <ion-content class="ion-padding" *ngIf="!showSpinner">
-  <ion-segment [value]="activeTab" (ionChange)="tabChanged($event)">
+  <ion-segment [value]="activeTab" (ionChange)="tabChanged($event)" id="ingredients">
     <ion-segment-button value="fermentables" layout="icon-start">
       <ion-icon src="/assets/icon/malt.svg"></ion-icon>
       <ion-label class="ion-hide-xl-down">Fermentables</ion-label>

@@ -7,4 +7,5 @@ export interface Settings {
   displayCost?: boolean;
   wortCorrectionFactor?: number;
   minimizeExport?: boolean;
+  developerOptions?: boolean;
 }

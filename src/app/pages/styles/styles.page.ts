@@ -32,7 +32,10 @@ export class StylesPage {
   }
 
   ionViewDidEnter() {
-    setTimeout(() => this.showSpinner = false, 500);
+    setTimeout(() => {
+      this.showSpinner = false;
+      setTimeout(() => document.getElementById('styles')?.scrollIntoView(), 100);
+    }, 500);
   }
 
   showDetails(style: BeerStyle) {

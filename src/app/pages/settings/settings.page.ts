@@ -20,7 +20,8 @@ export class SettingsPage {
   settings: Settings = {};
   isToastOpen = false;
   showSpinner = false;
-  version = '0.2.0';
+  showDeveloperOptions = false;
+  version = '1.2.0';
 
   constructor(private storage: StorageService, private xmlReader: XmlReaderService, private route: ActivatedRoute) {
   }
@@ -36,6 +37,8 @@ export class SettingsPage {
       this.settings.wortCorrectionFactor = response?.wortCorrectionFactor || CONFIG.defaultWFC;
       this.settings.displayCost = response?.displayCost || false;
       this.settings.minimizeExport = response?.minimizeExport || false;
+      this.settings.developerOptions = response?.developerOptions || false;
+      this.showDeveloperOptions = response?.developerOptions || false;
     });
   }
 
@@ -54,6 +57,7 @@ export class SettingsPage {
       this.settings.evaporation = CONFIG.evaporation;
       this.settings.displayCost = false;
       this.settings.minimizeExport = true;
+      this.settings.developerOptions = false;
     }, 100);
     this.init();
   }
@@ -72,6 +76,7 @@ export class SettingsPage {
 
   saveSettings() {
     this.storage.setSettings(this.settings)?.then(() => this.isToastOpen = true);
+    this.showDeveloperOptions = this.settings?.developerOptions || false;
   }
 
   closeToast() {
