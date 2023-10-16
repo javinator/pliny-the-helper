@@ -49,6 +49,10 @@
             (CHF)
           </ion-checkbox>
         </ion-item>
+        <ion-item>
+          <ion-checkbox [(ngModel)]="settings.minimizeExport" label-placement="end" justify="start">Minimize Export XML
+          </ion-checkbox>
+        </ion-item>
       </ion-list>
       <ion-button class="ion-float-end" (click)="saveSettings()">Save</ion-button>
     </ion-card-content>

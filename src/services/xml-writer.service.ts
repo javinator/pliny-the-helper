@@ -11,10 +11,10 @@ export class XmlWriterService {
   constructor(public platform: Platform) {
   }
 
-  recipesToXml(recipes: Recipe[]) {
+  recipesToXml(recipes: Recipe[], minimize: boolean) {
     let content = '<?xml version="1.0" encoding="UTF-8"?>\n<RECIPES>\n';
     recipes.forEach((recipe) => {
-      content += recipeToXmlText(recipe);
+      content += recipeToXmlText(recipe, minimize);
     })
     content += '</RECIPES>';
     const today = new Date();
@@ -35,12 +35,12 @@ export class XmlWriterService {
   }
 }
 
-function recipeToXmlText(recipe: Recipe) {
+function recipeToXmlText(recipe: Recipe, minimize: boolean) {
   let content = '<RECIPE>\n';
   content += '<NAME>' + recipe.name + '</NAME>\n';
   content += '<VERSION>1</VERSION>\n';
   content += '<TYPE>' + recipe.type + '</TYPE>\n';
-  content += styleToXmlText(recipe.style);
+  content += styleToXmlText(recipe.style, minimize);
   content += '<BREWER>' + recipe.brewer + '</BREWER>\n';
   content += '<DATE>' + recipe.brewDate + '</DATE>\n';
   content += '<BATCH_SIZE>' + recipe.batchSize + '</BATCH_SIZE>\n';
@@ -66,7 +66,7 @@ function recipeToXmlText(recipe: Recipe) {
   recipe.miscs.forEach((misc) => content += miscToXmlText(misc));
   content += '</MISCS>\n';
   content += '<WATERS></WATERS>\n';
-  content += mashToXmlText(recipe.mashProfile);
+  content += mashToXmlText(recipe.mashProfile, minimize);
   if (recipe.notes) {
     content += '<NOTES>' + recipe.notes + '</NOTES>\n';
   }
@@ -89,7 +89,7 @@ function recipeToXmlText(recipe: Recipe) {
   return content;
 }
 
-function styleToXmlText(style?: BeerStyle) {
+function styleToXmlText(style: BeerStyle | undefined, minimize: boolean) {
   let content = '<STYLE>\n';
   if (style) {
     content += '<NAME>' + style.name + '</NAME>\n';
@@ -109,20 +109,22 @@ function styleToXmlText(style?: BeerStyle) {
     content += '<IBU_MAX>' + style.maxIbu + '</IBU_MAX>\n';
     content += '<COLOR_MIN>' + style.minColor + '</COLOR_MIN>\n';
     content += '<COLOR_MAX>' + style.maxColor + '</COLOR_MAX>\n';
-    if (style.notes) {
-      content += '<NOTES>' + style.notes + '</NOTES>\n';
-    }
-    if (style.profile) {
-      content += '<PROFILE>' + style.profile + '</PROFILE>\n';
-    }
-    if (style.ingredients) {
-      content += '<INGREDIENTS>' + style.ingredients + '</INGREDIENTS>\n';
-    }
-    if (style.minCarb) {
-      content += '<CARB_MIN>' + style.minCarb + '</CARB_MIN>\n';
-    }
-    if (style.maxCarb) {
-      content += '<CARB_MAX>' + style.maxCarb + '</CARB_MAX>\n';
+    if (!minimize) {
+      if (style.notes) {
+        content += '<NOTES>' + style.notes + '</NOTES>\n';
+      }
+      if (style.profile) {
+        content += '<PROFILE>' + style.profile + '</PROFILE>\n';
+      }
+      if (style.ingredients) {
+        content += '<INGREDIENTS>' + style.ingredients + '</INGREDIENTS>\n';
+      }
+      if (style.minCarb) {
+        content += '<CARB_MIN>' + style.minCarb + '</CARB_MIN>\n';
+      }
+      if (style.maxCarb) {
+        content += '<CARB_MAX>' + style.maxCarb + '</CARB_MAX>\n';
+      }
     }
   } else {
     content += '<NAME>Other</NAME>\n';
@@ -247,7 +249,7 @@ function miscToXmlText(misc: Misc) {
   return content;
 }
 
-function mashToXmlText(mash?: MashProfile) {
+function mashToXmlText(mash: MashProfile | undefined, minimize: boolean) {
   let content = '<MASH>\n';
   if (mash) {
     content += '<NAME>' + mash.name + '</NAME>\n';
@@ -256,7 +258,7 @@ function mashToXmlText(mash?: MashProfile) {
     content += '<MASH_STEPS>\n';
     mash.mashSteps.forEach((step) => content += mashStepToXmlText(step));
     content += '</MASH_STEPS>\n';
-    if (mash.notes) {
+    if (mash.notes && !minimize) {
       content += '<NOTES>' + mash.notes + '</NOTES>\n';
     }
   }

@@ -35,6 +35,7 @@ export class SettingsPage {
       this.settings.evaporation = response?.evaporation || CONFIG.evaporation;
       this.settings.wortCorrectionFactor = response?.wortCorrectionFactor || CONFIG.defaultWFC;
       this.settings.displayCost = response?.displayCost || false;
+      this.settings.minimizeExport = response?.minimizeExport || false;
     });
   }
 
@@ -52,6 +53,7 @@ export class SettingsPage {
       this.settings.efficiency = CONFIG.defaultEfficiency;
       this.settings.evaporation = CONFIG.evaporation;
       this.settings.displayCost = false;
+      this.settings.minimizeExport = true;
     }, 100);
     this.init();
   }

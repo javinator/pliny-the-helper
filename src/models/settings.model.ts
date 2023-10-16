@@ -6,4 +6,5 @@ export interface Settings {
   brewer?: string;
   displayCost?: boolean;
   wortCorrectionFactor?: number;
+  minimizeExport?: boolean;
 }

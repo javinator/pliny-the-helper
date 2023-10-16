@@ -84,7 +84,8 @@ export class RecipesPage {
   }
 
   exportRecipes(recipes?: Recipe[]) {
-    this.xmlWriter.recipesToXml(recipes || []);
+    const minimize = true;
+    this.xmlWriter.recipesToXml(recipes || [], minimize);
     if (this.platform.is('hybrid')) {
       this.isToastOpen = true;
     }
