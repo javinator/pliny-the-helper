@@ -21,7 +21,7 @@ export class SettingsPage {
   isToastOpen = false;
   showSpinner = false;
   showDeveloperOptions = false;
-  version = '1.2.0';
+  version = '1.3.0';
 
   constructor(private storage: StorageService, private xmlReader: XmlReaderService, private route: ActivatedRoute) {
   }

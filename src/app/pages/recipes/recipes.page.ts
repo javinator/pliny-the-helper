@@ -1,11 +1,12 @@
-import {Component} from '@angular/core';
-import {IonicModule, Platform} from '@ionic/angular';
+import {Component, Optional} from '@angular/core';
+import {AlertController, IonicModule, IonRouterOutlet, Platform} from '@ionic/angular';
 import {Recipe} from "models";
 import {NgForOf, NgIf} from "@angular/common";
 import {Router, RouterLink} from "@angular/router";
 import {StorageService, XmlReaderService, XmlWriterService} from "services";
 import {RecipeCardComponent} from "./recipe-card/recipe-card.component";
 import {FilePicker} from "@capawesome/capacitor-file-picker";
+import {App} from "@capacitor/app";
 
 @Component({
   selector: 'recipes-page',
@@ -28,7 +29,14 @@ export class RecipesPage {
     private router: Router,
     private xmlWriter: XmlWriterService,
     private platform: Platform,
-    private xmlReader: XmlReaderService) {
+    private xmlReader: XmlReaderService,
+    public alertController: AlertController,
+    @Optional() private routerOutlet?: IonRouterOutlet) {
+    this.platform.backButton.subscribeWithPriority(-1, () => {
+      if (!this.routerOutlet?.canGoBack()) {
+        this.showExitConfirm()
+      }
+    });
   }
 
   ionViewWillEnter() {
@@ -111,6 +119,29 @@ export class RecipesPage {
 
   closeToast() {
     this.isToastOpen = false;
+  }
+
+  showExitConfirm() {
+    this.alertController.create({
+      header: 'Quit Pliny',
+      message: 'Do you really want to close the app?',
+      backdropDismiss: false,
+      buttons: [{
+        text: 'Cancel',
+        role: 'cancel',
+        handler: () => {
+          console.log('Application exit prevented!');
+        }
+      }, {
+        text: 'Exit',
+        handler: () => {
+          App.exitApp();
+        }
+      }]
+    })
+      .then(alert => {
+        alert.present();
+      });
   }
 }
 
