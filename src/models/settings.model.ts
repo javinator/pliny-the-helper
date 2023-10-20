@@ -8,4 +8,5 @@ export interface Settings {
   wortCorrectionFactor?: number;
   minimizeExport?: boolean;
   developerOptions?: boolean;
+  hideDescription?: boolean;
 }

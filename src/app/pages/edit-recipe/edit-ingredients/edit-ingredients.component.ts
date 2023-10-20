@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
-import {Recipe, Fermentable, Hop, Yeast, Misc} from "models";
+import {Recipe, Fermentable, Hop, Yeast, Misc, Settings} from "models";
 import {DecimalPipe, NgForOf, NgIf} from "@angular/common";
 import {StorageService} from "services";
 import {RecipeUtil} from "utils";
@@ -22,6 +22,9 @@ export class EditIngredientsComponent implements OnInit {
 
   @Input()
   recipe!: Recipe;
+
+  @Input()
+  hideDescription?: boolean = false;
 
   fermentables!: Fermentable[];
   hops!: Hop[];

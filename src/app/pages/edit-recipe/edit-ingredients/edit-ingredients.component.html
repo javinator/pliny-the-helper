@@ -146,7 +146,7 @@
   <ng-template>
     <ion-header>
       <ion-toolbar>
-        <ion-title>{{ isEdit ? 'Edit Fermentable' : 'Add Fermentable'}}</ion-title>
+        <ion-title>{{ isEdit ? 'Edit ' + (newFermentable?.name ?? 'Fermentable') : 'Add Fermentable'}}</ion-title>
         <ion-buttons slot="end">
           <ion-button *ngIf="!isEdit" (click)="addFermentable()">
             <ion-label>Add</ion-label>
@@ -165,6 +165,9 @@
         (selectChanged)="chooseFermentable($event)"
         placeholder="Select Fermentable"
       ></p-select-search>
+      <div class="edit-description" *ngIf="isEdit && !hideDescription">
+        {{newFermentable?.description + ' Up to ' + (newFermentable?.maxInBatch || 100) + '%.'}}
+      </div>
       <ion-input
         type="number"
         min="0"
@@ -183,7 +186,7 @@
   <ng-template>
     <ion-header>
       <ion-toolbar>
-        <ion-title>{{ isEdit ? 'Edit Hop' : 'Add Hop' }}</ion-title>
+        <ion-title>{{ isEdit ? 'Edit ' + (newHop?.name ?? 'Hop') : 'Add Hop' }}</ion-title>
         <ion-buttons slot="end">
           <ion-button *ngIf="!isEdit" (click)="addHop()">
             <ion-label>Add</ion-label>
@@ -202,6 +205,9 @@
         (selectChanged)="chooseHop($event)"
         placeholder="Select Hop"
       ></p-select-search>
+      <div class="edit-description" *ngIf="isEdit && !hideDescription">
+        {{newHop?.description}}
+      </div>
       <ion-select
         label="Usage"
         label-placement="floating"
@@ -252,7 +258,7 @@
   <ng-template>
     <ion-header>
       <ion-toolbar>
-        <ion-title>{{ isEdit ? 'Edit Yeast' : 'Add Yeast' }}</ion-title>
+        <ion-title>{{ isEdit ? 'Edit ' + (newYeast?.name ?? 'Yeast') : 'Add Yeast' }}</ion-title>
         <ion-buttons slot="end">
           <ion-button *ngIf="!isEdit" (click)="addYeast()">
             <ion-label>Add</ion-label>
@@ -271,6 +277,9 @@
         (selectChanged)="chooseYeast($event)"
         placeholder="Select Yeast"
       ></p-select-search>
+      <div class="edit-description" *ngIf="isEdit && !hideDescription">
+        {{newYeast?.description + '. Optimal temperature between ' + newYeast?.minTemp + ' °C and ' + newYeast?.maxTemp + ' °C. Alcohol tolerant up to ' + newYeast?.maxAbv + ' %.'}}
+      </div>
       <ion-input
         type="number"
         min="0"
@@ -300,7 +309,7 @@
   <ng-template>
     <ion-header>
       <ion-toolbar>
-        <ion-title>{{ isEdit ? 'Edit Misc' : 'Add Misc' }}</ion-title>
+        <ion-title>{{ isEdit ? 'Edit ' + (newMisc?.name ?? 'Misc') : 'Add Misc' }}</ion-title>
         <ion-buttons slot="end">
           <ion-button *ngIf="!isEdit" (click)="addMisc()">
             <ion-label>Add</ion-label>
@@ -319,6 +328,9 @@
         (selectChanged)="chooseMisc($event)"
         placeholder="Select Miscellaneous"
       ></p-select-search>
+      <div class="edit-description" *ngIf="isEdit && !hideDescription">
+        {{newMisc?.description}}
+      </div>
       <ion-input
         type="number"
         min="0"

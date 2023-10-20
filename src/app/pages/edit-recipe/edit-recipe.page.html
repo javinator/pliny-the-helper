@@ -35,7 +35,7 @@
   </ion-segment>
   <ng-container [ngSwitch]="activeTab">
     <ng-container *ngSwitchCase="'ingredients'">
-      <edit-ingredients-card [recipe]="recipe"></edit-ingredients-card>
+      <edit-ingredients-card [recipe]="recipe" [hideDescription]="settings?.hideDescription"></edit-ingredients-card>
     </ng-container>
     <ng-container *ngSwitchCase="'details'">
       <edit-details-card [recipe]="recipe" [showCost]="settings?.displayCost === true"></edit-details-card>

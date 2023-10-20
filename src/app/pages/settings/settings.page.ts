@@ -21,7 +21,7 @@ export class SettingsPage {
   isToastOpen = false;
   showSpinner = false;
   showDeveloperOptions = false;
-  version = '1.3.0';
+  version = '1.4.0';
 
   constructor(private storage: StorageService, private xmlReader: XmlReaderService, private route: ActivatedRoute) {
   }
@@ -39,6 +39,7 @@ export class SettingsPage {
       this.settings.minimizeExport = response?.minimizeExport || false;
       this.settings.developerOptions = response?.developerOptions || false;
       this.showDeveloperOptions = response?.developerOptions || false;
+      this.settings.hideDescription = response?.hideDescription || false;
     });
   }
 
@@ -58,6 +59,7 @@ export class SettingsPage {
       this.settings.displayCost = false;
       this.settings.minimizeExport = true;
       this.settings.developerOptions = false;
+      this.settings.hideDescription = false;
     }, 100);
     this.init();
   }
