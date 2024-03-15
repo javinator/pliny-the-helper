@@ -945,6 +945,21 @@
     <COST>0.04</COST>
   </HOP>
   <HOP>
+    <NAME>Nectaron</NAME>
+    <VERSION>1</VERSION>
+    <ORIGIN>New Zealand</ORIGIN>
+    <ALPHA>12.0</ALPHA>
+    <USE>Boil</USE>
+    <NOTES>Nectaron provides an intense mix of distinctive pineapple stone fruit citrus that lends itself perfectly
+      to a range of beer styles including NEIPA, IPA, Pale Ales and Lagers. Nectaron is best used late or when dry
+      hopping and has proven itself as an award winning hop, delivering a consistent dose of high quality tropical
+      hop character every time.
+    </NOTES>
+    <TYPE>Aroma</TYPE>
+    <FORM>Pellet</FORM>
+    <COST>0.08</COST>
+  </HOP>
+  <HOP>
     <NAME>Nelson Sauvin</NAME>
     <VERSION>1</VERSION>
     <ORIGIN>New Zealand</ORIGIN>
@@ -1077,7 +1092,7 @@
     <NAME>Perle (CH)</NAME>
     <VERSION>1</VERSION>
     <ORIGIN>Switzerland</ORIGIN>
-    <ALPHA>4.3</ALPHA>
+    <ALPHA>6.3</ALPHA>
     <USE>Boil</USE>
     <NOTES>Perle is said to have a pleasant aroma, elements of mint and pine with a hint of spice.</NOTES>
     <TYPE>Bittering / Aroma</TYPE>
@@ -1510,6 +1525,21 @@
     <TYPE>Aroma</TYPE>
     <FORM>Pellet</FORM>
     <COST>0.05</COST>
+  </HOP>
+  <HOP>
+    <NAME>Zamba</NAME>
+    <VERSION>1</VERSION>
+    <ORIGIN>USA</ORIGIN>
+    <ALPHA>9.1</ALPHA>
+    <USE>Boil</USE>
+    <NOTES>Zamba is an aroma hop that is typically used in only late boil additions, including dry hopping.
+      Complex aroma characterized by juicy tropical fruits (pineapple, mango), stone fruits, candy, and orange
+      tangerine.
+      This hop is named for the overwhelming tropical dance explosion its aroma evokes.
+    </NOTES>
+    <TYPE>Aroma</TYPE>
+    <FORM>Pellet</FORM>
+    <COST>0.065</COST>
   </HOP>
   <HOP>
     <NAME>Zappa</NAME>
