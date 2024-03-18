@@ -22,6 +22,7 @@ export class RecipesPage {
   isExportOpen = false;
   isToastOpen = false;
   showSpinner = false;
+  exitOpen = false;
   recipeToEdit?: string;
 
   constructor(
@@ -33,7 +34,7 @@ export class RecipesPage {
     public alertController: AlertController,
     @Optional() private routerOutlet?: IonRouterOutlet) {
     this.platform.backButton.subscribeWithPriority(-1, () => {
-      if (!this.routerOutlet?.canGoBack()) {
+      if (!this.routerOutlet?.canGoBack() && !this.exitOpen) {
         this.showExitConfirm()
       }
     });
@@ -122,6 +123,7 @@ export class RecipesPage {
   }
 
   showExitConfirm() {
+    this.exitOpen = true;
     this.alertController.create({
       header: 'Quit Pliny',
       message: 'Do you really want to close the app?',
@@ -130,7 +132,8 @@ export class RecipesPage {
         text: 'Cancel',
         role: 'cancel',
         handler: () => {
-          console.log('Application exit prevented!');
+          this.exitOpen = false;
+          console.log('Application exit cancelled!');
         }
       }, {
         text: 'Exit',
