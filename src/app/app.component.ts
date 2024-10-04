@@ -4,15 +4,14 @@ import {RouterLink} from "@angular/router";
 import {NgForOf} from "@angular/common";
 import {Storage} from "@ionic/storage-angular";
 import {StorageService, XmlReaderService, XmlWriterService} from "services";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
   standalone: true,
-  imports: [IonicModule, RouterLink, NgForOf, HttpClientModule],
-  providers: [Storage, StorageService, HttpClient, XmlReaderService, XmlWriterService]
+  imports: [IonicModule, RouterLink, NgForOf],
+  providers: [Storage, StorageService, XmlReaderService, XmlWriterService]
 })
 export class AppComponent implements OnInit {
   constructor(private xmlReader: XmlReaderService) {
