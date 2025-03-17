@@ -62,7 +62,9 @@ U = BignessFactor * TimeFactor
 
 BignessFactor = 1.65 * 0.000125 ^ (SG - 1)
 
-TimeFactor = (1 - e ^ (-0.04 * Time_min)) / 4.15
+TimeFactor = (1 - e ^ (-0.04 * Time_min)) / KettleUtil
+
+The Kettle Utilization defined by Glenn Tinseth is 4.15 for his system. Default value I used is 4.20 (higher value = slightly lower utilization), as it better represents my system. Can be adjusted in the app constants ([app.constants.ts](src/app/app.constants.ts))
 
 #### Strike Temperature
 
