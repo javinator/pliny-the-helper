@@ -16,6 +16,22 @@
     <COST>0.05</COST>
   </HOP>
   <HOP>
+    <NAME>Alora</NAME>
+    <VERSION>1</VERSION>
+    <ORIGIN>USA</ORIGIN>
+    <ALPHA>8.3</ALPHA>
+    <USE>Boil</USE>
+    <NOTES>Alora is best known for her unique oil composition. Unlike most hop varietals that contain what we in the
+      industry call the “big 8” oil groups (Pinene, Myrcene, Limonene, Linalool, Caryophyllene, Farnesene, Humulene,
+      and Geraniol), Alora contains over 50% of unidentified total oil uncommon in hop chemistry. Alora boasts a
+      tantalizing blend of peach, apricot, sweet melon and yuzu fruit. It’s perfect for a wide range of beer styles,
+      from IPAs to light lagers.
+    </NOTES>
+    <TYPE>Aroma</TYPE>
+    <FORM>Pellet</FORM>
+    <COST>0.075</COST>
+  </HOP>
+  <HOP>
     <NAME>Amarillo</NAME>
     <VERSION>1</VERSION>
     <ORIGIN>USA</ORIGIN>
@@ -559,6 +575,19 @@
     <COST>0.026</COST>
   </HOP>
   <HOP>
+    <NAME>Godiva</NAME>
+    <VERSION>1</VERSION>
+    <ORIGIN>UK</ORIGIN>
+    <ALPHA>7.5</ALPHA>
+    <USE>Boil</USE>
+    <NOTES>Godiva is the daughter of Jester. It is an aroma hop that is typically used in only late boil additions,
+      including dry hopping and has tangerine, white grape and spice aromas. Sweet and smooth bittering characteristics.
+    </NOTES>
+    <TYPE>Aroma</TYPE>
+    <FORM>Pellet</FORM>
+    <COST>0.038</COST>
+  </HOP>
+  <HOP>
     <NAME>Green Bullet</NAME>
     <VERSION>1</VERSION>
     <ORIGIN>New Zealand</ORIGIN>
@@ -610,6 +639,20 @@
     <TYPE>Aroma</TYPE>
     <FORM>Pellet</FORM>
     <COST>0.018</COST>
+  </HOP>
+  <HOP>
+    <NAME>Harlequin</NAME>
+    <VERSION>1</VERSION>
+    <ORIGIN>UK</ORIGIN>
+    <ALPHA>11.4</ALPHA>
+    <USE>Boil</USE>
+    <NOTES>Harlequin is an intense hop that boasts big fruit flavors such as passion fruit, peach, and pineapple. The
+      breeder considers Harlequin to be a dual-purpose hop, but it seems to excel especially in late hop additions,
+      whirlpooling, and dry hopping.
+    </NOTES>
+    <TYPE>Bittering / Aroma</TYPE>
+    <FORM>Pellet</FORM>
+    <COST>0.068</COST>
   </HOP>
   <HOP>
     <NAME>Herkules</NAME>
@@ -1376,6 +1419,20 @@
     <TYPE>Bittering</TYPE>
     <FORM>Pellet</FORM>
     <COST>0.038</COST>
+  </HOP>
+  <HOP>
+    <NAME>Superdelic</NAME>
+    <VERSION>1</VERSION>
+    <ORIGIN>New Zealand</ORIGIN>
+    <ALPHA>10.1</ALPHA>
+    <USE>Boil</USE>
+    <NOTES>Superdelic is a triploid variety (cultivar) that was crossed in 2012 and released in 2023. Complex aromas of
+      sweet berry fruit, stone fruit and spice on the rub. Dry hopping, especially in early fermentation to aid
+      bio-transformation, imparts intense ripe tropical fruit aromas.
+    </NOTES>
+    <TYPE>Aroma</TYPE>
+    <FORM>Pellet</FORM>
+    <COST>0.056</COST>
   </HOP>
   <HOP>
     <NAME>Target</NAME>

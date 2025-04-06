@@ -104,7 +104,7 @@ export class RecipesPage {
   importRecipes() {
     FilePicker.pickFiles({
       types: ['text/xml'],
-      multiple: false,
+      limit: 1,
       readData: true
     }).then((result) => {
       this.xmlReader.readRecipes(b64_to_utf8(result.files[0].data as string));
