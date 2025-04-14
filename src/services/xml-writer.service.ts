@@ -54,13 +54,13 @@ function recipeToXmlText(recipe: Recipe, minimize: boolean) {
     content += '<FORCED_CARBONATION>' + String(recipe.forcedCarbonation).toUpperCase() + '</FORCED_CARBONATION>\n';
   }
   content += '<HOPS>\n';
-  recipe.hops.forEach((hop) => content += hopToXmlText(hop));
+  recipe.hops.forEach((hop) => content += hopToXmlText(hop, minimize));
   content += '</HOPS>\n';
   content += '<FERMENTABLES>\n';
-  recipe.fermentables.forEach((ferm) => content += fermentableToXmlText(ferm));
+  recipe.fermentables.forEach((ferm) => content += fermentableToXmlText(ferm, minimize));
   content += '</FERMENTABLES>\n';
   content += '<YEASTS>\n';
-  recipe.yeasts.forEach((yeast) => content += yeastToXmlText(yeast));
+  recipe.yeasts.forEach((yeast) => content += yeastToXmlText(yeast, minimize));
   content += '</YEASTS>\n';
   content += '<MISCS>\n';
   recipe.miscs.forEach((misc) => content += miscToXmlText(misc));
@@ -109,6 +109,12 @@ function styleToXmlText(style: BeerStyle | undefined, minimize: boolean) {
     content += '<IBU_MAX>' + style.maxIbu + '</IBU_MAX>\n';
     content += '<COLOR_MIN>' + style.minColor + '</COLOR_MIN>\n';
     content += '<COLOR_MAX>' + style.maxColor + '</COLOR_MAX>\n';
+    if (style.minCarb) {
+      content += '<CARB_MIN>' + style.minCarb + '</CARB_MIN>\n';
+    }
+    if (style.maxCarb) {
+      content += '<CARB_MAX>' + style.maxCarb + '</CARB_MAX>\n';
+    }
     if (!minimize) {
       if (style.notes) {
         content += '<NOTES>' + style.notes + '</NOTES>\n';
@@ -119,12 +125,6 @@ function styleToXmlText(style: BeerStyle | undefined, minimize: boolean) {
       if (style.ingredients) {
         content += '<INGREDIENTS>' + style.ingredients + '</INGREDIENTS>\n';
       }
-      if (style.minCarb) {
-        content += '<CARB_MIN>' + style.minCarb + '</CARB_MIN>\n';
-      }
-      if (style.maxCarb) {
-        content += '<CARB_MAX>' + style.maxCarb + '</CARB_MAX>\n';
-      }
     }
   } else {
     content += '<NAME>Other</NAME>\n';
@@ -133,7 +133,7 @@ function styleToXmlText(style: BeerStyle | undefined, minimize: boolean) {
   return content;
 }
 
-function hopToXmlText(hop: Hop) {
+function hopToXmlText(hop: Hop, minimize: boolean) {
   let content = '<HOP>\n';
   content += '<NAME>' + hop.name + '</NAME>\n';
   content += '<VERSION>1</VERSION>\n';
@@ -141,7 +141,7 @@ function hopToXmlText(hop: Hop) {
   content += '<AMOUNT>' + hop.amount + '</AMOUNT>\n';
   content += '<USE>' + hop.use + '</USE>\n';
   content += '<TIME>' + (hop.use === 'Dry Hop' ? (hop.time || 0) * 24 * 60 : hop.time) + '</TIME>\n';
-  if (hop.description) {
+  if (hop.description && !minimize) {
     content += '<NOTES>' + hop.description + '</NOTES>\n';
   }
   if (hop.type) {
@@ -150,10 +150,10 @@ function hopToXmlText(hop: Hop) {
   if (hop.form) {
     content += '<FORM>' + hop.form + '</FORM>\n';
   }
-  if (hop.origin) {
+  if (hop.origin && !minimize) {
     content += '<ORIGIN>' + hop.origin + '</ORIGIN>\n';
   }
-  if (hop.substitutes) {
+  if (hop.substitutes && !minimize) {
     content += '<SUBSTITUTES>' + hop.substitutes.join(',') + '</SUBSTITUTES>\n';
   }
   if (hop.cost) {
@@ -163,7 +163,7 @@ function hopToXmlText(hop: Hop) {
   return content;
 }
 
-function fermentableToXmlText(fermentable: Fermentable) {
+function fermentableToXmlText(fermentable: Fermentable, minimize: boolean) {
   let content = '<FERMENTABLE>\n';
   content += '<NAME>' + fermentable.name + '</NAME>\n';
   content += '<VERSION>1</VERSION>\n';
@@ -171,16 +171,16 @@ function fermentableToXmlText(fermentable: Fermentable) {
   content += '<AMOUNT>' + fermentable.amount + '</AMOUNT>\n';
   content += '<YIELD>' + fermentable.yield + '</YIELD>\n';
   content += '<COLOR>' + fermentable.color + '</COLOR>\n';
-  if (fermentable.origin) {
+  if (fermentable.origin && !minimize) {
     content += '<ORIGIN>' + fermentable.origin + '</ORIGIN>\n';
   }
-  if (fermentable.supplier) {
+  if (fermentable.supplier && !minimize) {
     content += '<SUPPLIER>' + fermentable.supplier + '</SUPPLIER>\n';
   }
-  if (fermentable.description) {
+  if (fermentable.description && !minimize) {
     content += '<NOTES>' + fermentable.description + '</NOTES>\n';
   }
-  if (fermentable.maxInBatch) {
+  if (fermentable.maxInBatch && !minimize) {
     content += '<MAX_IN_BATCH>' + fermentable.maxInBatch + '</MAX_IN_BATCH>\n';
   }
   content += '</FERMENTABLE>\n';
@@ -190,7 +190,7 @@ function fermentableToXmlText(fermentable: Fermentable) {
   return content;
 }
 
-function yeastToXmlText(yeast: Yeast) {
+function yeastToXmlText(yeast: Yeast, minimize: boolean) {
   let content = '<YEAST>\n';
   content += '<NAME>' + yeast.name + '</NAME>\n';
   content += '<VERSION>1</VERSION>\n';
@@ -200,7 +200,7 @@ function yeastToXmlText(yeast: Yeast) {
   if (yeast.lab) {
     content += '<LABORATORY>' + yeast.lab + '</LABORATORY>\n';
   }
-  if (yeast.productId) {
+  if (yeast.productId && !minimize) {
     content += '<PRODUCT_ID>' + yeast.productId + '</PRODUCT_ID>\n';
   }
   if (yeast.minTemp) {
@@ -218,7 +218,7 @@ function yeastToXmlText(yeast: Yeast) {
   if (yeast.maxAbv) {
     content += '<MAX_ABV>' + yeast.maxAbv + '</MAX_ABV>\n';
   }
-  if (yeast.description) {
+  if (yeast.description && !minimize) {
     content += '<NOTES>' + yeast.description + '</NOTES>\n';
   }
   if (yeast.cost) {

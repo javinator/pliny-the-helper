@@ -93,12 +93,13 @@ export class RecipesPage {
   }
 
   exportRecipes(recipes?: Recipe[]) {
-    const minimize = true;
-    this.xmlWriter.recipesToXml(recipes || [], minimize);
-    if (this.platform.is('hybrid')) {
-      this.isToastOpen = true;
-    }
-    this.isExportOpen = false;
+    this.storage.get('settings')?.then(settings => {
+      this.xmlWriter.recipesToXml(recipes || [], settings.minimizeExport);
+      if (this.platform.is('hybrid')) {
+        this.isToastOpen = true;
+      }
+      this.isExportOpen = false;
+    })
   }
 
   importRecipes() {
