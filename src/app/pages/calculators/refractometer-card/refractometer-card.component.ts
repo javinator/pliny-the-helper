@@ -18,12 +18,14 @@ export class RefractometerCardComponent implements OnInit {
   og?: number;
   fg?: number;
   wcf!: number;
+  formula!: String;
 
   @Input()
   settings?: Settings;
 
   ngOnInit() {
     this.wcf = this.settings?.wortCorrectionFactor || CONFIG.defaultWFC;
+    this.formula = 'Terrill';
   }
 
   changeUnit(event: any) {
@@ -40,6 +42,10 @@ export class RefractometerCardComponent implements OnInit {
 
   changeFg(event: any) {
     this.fg = event.detail.value;
+  }
+
+  changeFormula(event: any) {
+    this.formula = event.detail.value;
   }
 
   calcOG() {
@@ -64,9 +70,14 @@ export class RefractometerCardComponent implements OnInit {
     if (this.og && this.fg && this.wcf) {
       const obrix = CalculatorUtil.sgToBrix(this.calcOG());
       const fbrix = CalculatorUtil.sgToBrix(this.calcFG());
-      return 1.000 - (0.004493 * obrix) + (0.011774 * fbrix)
-        + (0.00027581 * obrix * obrix) - (0.0012717 * fbrix * fbrix)
-        - (0.00000728 * obrix * obrix * obrix) + (0.000063293 * fbrix * fbrix * fbrix);
+      if (this.formula === 'Novotny') {
+        return (0.00001335 * obrix * obrix) - (0.00003239 * obrix * fbrix) + (0.00002916 * fbrix * fbrix)
+          - (0.002421 * obrix) + (0.006219 * fbrix) + 1;
+      } else {
+        return 1.000 - (0.0044993 * obrix) + (0.011774 * fbrix)
+          + (0.00027581 * obrix * obrix) - (0.0012717 * fbrix * fbrix)
+          - (0.00000728 * obrix * obrix * obrix) + (0.000063293 * fbrix * fbrix * fbrix);
+      }
     } else {
       return 0;
     }

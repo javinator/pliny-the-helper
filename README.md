@@ -76,6 +76,21 @@ R = Ratio of grain to water in the mash
 T1 = Initial Temperature (of the grain)
 T2 = Mash Temperature
 
+#### Refractometer
+
+I implemented both widely regarded formulas to determine the final gravity of a beer, namely P. Novotny's quadratic and S. Terrill's cubic formulas.
+
+##### Novotny
+
+FG = 1 + 0.00001335 * Ri ^ 2 - 0.00003239 * Ri * Rf + 0.00002916 * Rf ^ 2 - 0.002421 * Ri + 0.006219 * Rf;
+
+##### Terrill
+
+FG = 1 - 0.0044993 * Ri + 0.011774 * Rf + 0.00027581 * Ri ^ 2 - 0.0012717 * Rf ^ 2 - 0.00000728 * Ri ^ 3 + 0.000063293 * Rf ^ 3;
+
+Ri = initial Brix reading
+Rf = final Brix reading
+
 ### Links
 
 * [Ionic Documentation](https://ionicframework.com/docs/)
