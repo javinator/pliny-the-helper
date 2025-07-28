@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import {Storage} from '@ionic/storage-angular';
 import {Recipe, BeerStyle, Fermentable, Hop, Yeast, Misc, MashProfile, Settings} from "models";
 import {RecipeUtil} from "utils";
@@ -7,9 +7,11 @@ import {RecipeUtil} from "utils";
   providedIn: 'root'
 })
 export class StorageService {
+  private storage = inject(Storage);
+
   private _storage: Storage | null = null;
 
-  constructor(private storage: Storage) {
+  constructor() {
     this.init().then();
   }
 

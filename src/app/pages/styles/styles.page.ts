@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {StorageService} from "services";
 import {BeerStyle} from "models";
@@ -14,11 +14,11 @@ import {Router} from "@angular/router";
   imports: [IonicModule, StyleCardComponent, NgIf, NgForOf]
 })
 export class StylesPage {
+  private storage = inject(StorageService);
+  private router = inject(Router);
+
 
   showSpinner = false;
-
-  constructor(private storage: StorageService, private router: Router) {
-  }
 
   allStyles: BeerStyle[] = [];
   styles?: BeerStyle[];

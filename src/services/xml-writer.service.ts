@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import {BeerStyle, Fermentable, Hop, MashProfile, MashStep, Misc, Recipe, Yeast} from "models";
 import {Directory, Encoding, Filesystem} from '@capacitor/filesystem';
 import {Platform} from "@ionic/angular";
@@ -8,8 +8,8 @@ import {saveAs} from 'file-saver';
   providedIn: 'root',
 })
 export class XmlWriterService {
-  constructor(public platform: Platform) {
-  }
+  platform = inject(Platform);
+
 
   recipesToXml(recipes: Recipe[], minimize: boolean) {
     let content = '<?xml version="1.0" encoding="UTF-8"?>\n<RECIPES>\n';

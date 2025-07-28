@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, inject} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
-import {Recipe, Fermentable, Hop, Yeast, Misc, Settings} from "models";
+import {Recipe, Fermentable, Hop, Yeast, Misc} from "models";
 import {DecimalPipe, NgForOf, NgIf} from "@angular/common";
 import {StorageService} from "services";
 import {RecipeUtil} from "utils";
@@ -15,10 +15,9 @@ import {SelectSearchComponent} from "@shared";
   imports: [IonicModule, NgIf, NgForOf, DecimalPipe, SelectSearchComponent],
 })
 export class EditIngredientsComponent implements OnInit {
-  RecipeUtil = RecipeUtil;
+  private storage = inject(StorageService);
 
-  constructor(private storage: StorageService) {
-  }
+  RecipeUtil = RecipeUtil;
 
   @Input()
   recipe!: Recipe;

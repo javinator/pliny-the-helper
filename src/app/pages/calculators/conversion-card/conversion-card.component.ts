@@ -1,14 +1,14 @@
 import {Component} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
 import {CalculatorUtil} from "utils";
-import {DecimalPipe, NgIf} from "@angular/common";
+import {DecimalPipe} from "@angular/common";
 
 @Component({
   selector: 'conversion-card',
   templateUrl: 'conversion-card.component.html',
   standalone: true,
   styleUrls: ['../../edit-recipe/edit-details/edit-details.component.scss'],
-  imports: [IonicModule, NgIf, DecimalPipe],
+  imports: [IonicModule, DecimalPipe],
 })
 export class ConversionCardComponent {
 

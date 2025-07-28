@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {StorageService, XmlReaderService} from "services";
 import {Fermentable, Hop, Misc, Recipe, Settings, Yeast} from "models";
@@ -17,14 +17,14 @@ import {RecipeUtil} from "utils";
   imports: [IonicModule, FormsModule, NgIf]
 })
 export class SettingsPage {
+  private storage = inject(StorageService);
+  private xmlReader = inject(XmlReaderService);
+
   settings: Settings = {};
   isToastOpen = false;
   showSpinner = false;
   showDeveloperOptions = false;
-  version = '1.6.3';
-
-  constructor(private storage: StorageService, private xmlReader: XmlReaderService, private route: ActivatedRoute) {
-  }
+  version = '1.7.0';
 
   ionViewWillEnter() {
     this.showSpinner = true;

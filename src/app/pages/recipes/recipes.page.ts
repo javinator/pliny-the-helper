@@ -1,4 +1,4 @@
-import {Component, Optional} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {AlertController, IonicModule, IonRouterOutlet, Platform} from '@ionic/angular';
 import {Recipe} from "models";
 import {NgForOf, NgIf} from "@angular/common";
@@ -16,6 +16,14 @@ import {App} from "@capacitor/app";
   imports: [IonicModule, NgIf, RouterLink, RecipeCardComponent, NgForOf]
 })
 export class RecipesPage {
+  private storage = inject(StorageService);
+  private router = inject(Router);
+  private xmlWriter = inject(XmlWriterService);
+  private platform = inject(Platform);
+  private xmlReader = inject(XmlReaderService);
+  alertController = inject(AlertController);
+  private routerOutlet = inject(IonRouterOutlet, { optional: true });
+
   recipes?: Recipe[];
   selectedRecipes: Recipe[] = [];
   allSelected = false;
@@ -25,14 +33,7 @@ export class RecipesPage {
   exitOpen = false;
   recipeToEdit?: string;
 
-  constructor(
-    private storage: StorageService,
-    private router: Router,
-    private xmlWriter: XmlWriterService,
-    private platform: Platform,
-    private xmlReader: XmlReaderService,
-    public alertController: AlertController,
-    @Optional() private routerOutlet?: IonRouterOutlet) {
+  constructor() {
     this.platform.backButton.subscribeWithPriority(-1, () => {
       if (!this.routerOutlet?.canGoBack() && !this.exitOpen) {
         this.showExitConfirm()

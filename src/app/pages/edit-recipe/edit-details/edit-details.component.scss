@@ -38,3 +38,10 @@ p.inline {
   position: absolute;
   right: 0;
 }
+
+p.inline-end {
+  display: inline;
+  position: absolute;
+  right: 0;
+  top: 50%;
+}

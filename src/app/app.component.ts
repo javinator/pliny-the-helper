@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {RouterLink} from "@angular/router";
 import {NgForOf} from "@angular/common";
@@ -14,8 +14,8 @@ import {StorageService, XmlReaderService, XmlWriterService} from "services";
   providers: [Storage, StorageService, XmlReaderService, XmlWriterService]
 })
 export class AppComponent implements OnInit {
-  constructor(private xmlReader: XmlReaderService) {
-  }
+  private xmlReader = inject(XmlReaderService);
+
 
   ngOnInit() {
     this.xmlReader.initStyles();

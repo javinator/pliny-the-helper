@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {FermentablesCardComponent} from "./fermentables-card/fermentables-card.component";
 import {NgForOf, NgIf, NgSwitch, NgSwitchCase} from "@angular/common";
@@ -16,11 +16,10 @@ import {MiscsCardComponent} from "./miscs-card/miscs-card.component";
   imports: [IonicModule, FermentablesCardComponent, NgIf, NgForOf, NgSwitchCase, NgSwitch, HopsCardComponent, YeastsCardComponent, MiscsCardComponent]
 })
 export class IngredientsPage implements OnInit {
+  private storage = inject(StorageService);
+
 
   showSpinner = false;
-
-  constructor(private storage: StorageService) {
-  }
 
   activeTab = 'fermentables';
   fermentables!: Fermentable[];

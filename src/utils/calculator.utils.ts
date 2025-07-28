@@ -3,6 +3,11 @@ export class CalculatorUtil {
     return (76.08 * (og - fg) / (1.775 - og)) * (fg / 0.794)
   }
 
+  static attenuation(og: number, fg: number) {
+    return (og - fg) / (og - 1)
+  }
+
+
   static sgToBrix(sg: number) {
     return (((182.4601 * sg - 775.6821) * sg + 1262.7794) * sg - 669.5622)
   }

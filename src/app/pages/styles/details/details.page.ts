@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {Router} from "@angular/router";
 import {BeerStyle} from "models";
@@ -12,7 +12,9 @@ import {NgIf} from "@angular/common";
   imports: [IonicModule, NgIf],
 })
 export class StyleDetailsPage {
-  constructor(private router: Router) {
+  private router = inject(Router);
+
+  constructor() {
     this.style = this.router.getCurrentNavigation()?.extras.state?.['style'];
   }
 

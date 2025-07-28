@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import {StorageService} from "./storage.service";
 import {HttpClient} from "@angular/common/http";
 
@@ -22,9 +22,9 @@ interface MashProfileXml {
   providedIn: 'root',
 })
 export class XmlReaderService {
+  private http = inject(HttpClient);
+  private storage = inject(StorageService);
 
-  constructor(private http: HttpClient, private storage: StorageService) {
-  }
 
   initStyles() {
     this.http

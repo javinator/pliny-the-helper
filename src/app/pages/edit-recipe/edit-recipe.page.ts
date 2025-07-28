@@ -1,9 +1,9 @@
-import {Component} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {Recipe, BeerStyle, MashProfile, Settings} from "models";
 import {Router} from "@angular/router";
 import {StorageService} from "services";
-import {DecimalPipe, NgForOf, NgIf, NgSwitch, NgSwitchCase} from "@angular/common";
+import {DecimalPipe, NgIf, NgSwitch, NgSwitchCase} from "@angular/common";
 import {EditIngredientsComponent} from "./edit-ingredients/edit-ingredients.component";
 import {EditDetailsComponent} from "./edit-details/edit-details.component";
 import {FormsModule} from "@angular/forms";
@@ -16,9 +16,12 @@ import {BrewingComponent} from "./brewing/brewing.component";
   templateUrl: 'edit-recipe.page.html',
   styleUrls: ['../../app.component.scss'],
   standalone: true,
-  imports: [IonicModule, EditIngredientsComponent, EditDetailsComponent, NgSwitch, NgSwitchCase, NgForOf, NgIf, FormsModule, DecimalPipe, SelectSearchComponent, BrewingComponent],
+  imports: [IonicModule, EditIngredientsComponent, EditDetailsComponent, NgSwitch, NgSwitchCase, NgIf, FormsModule, DecimalPipe, SelectSearchComponent, BrewingComponent],
 })
 export class EditRecipePage {
+  private router = inject(Router);
+  private storage = inject(StorageService);
+
 
   activeTab = 'ingredients';
   isEditOpen = false;
@@ -30,7 +33,7 @@ export class EditRecipePage {
   mashProfiles?: MashProfile[];
   settings?: Settings;
 
-  constructor(private router: Router, private storage: StorageService) {
+  constructor() {
     this.uid = this.router.getCurrentNavigation()?.extras.state?.['recipe'];
   }
 

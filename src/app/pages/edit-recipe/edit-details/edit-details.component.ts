@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, inject} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {Recipe} from "models";
 import {DatePipe, DecimalPipe, NgIf} from "@angular/common";
@@ -14,8 +14,8 @@ import {StorageService} from "services";
   imports: [IonicModule, DecimalPipe, DatePipe, FormsModule, NgIf],
 })
 export class EditDetailsComponent {
-  constructor(private storage: StorageService) {
-  }
+  private storage = inject(StorageService);
+
 
   @Input()
   recipe!: Recipe;
@@ -165,6 +165,38 @@ export class EditDetailsComponent {
     return CalculatorUtil.abv(this.recipe.measuredOG || 1, this.recipe.measuredFG || 1)
   }
 
+  getAverageAttenuation() {
+    if (this.recipe.yeasts.length > 0) {
+      return this.recipe.yeasts.reduce((total, next) => total + next.attenuation, 0) / this.recipe.yeasts.length
+    }
+    return 0;
+  }
+
+  getMeasuredAttenuation() {
+    return CalculatorUtil.attenuation(this.recipe.measuredOG || 1, this.recipe.measuredFG || 1) * 100 || 0
+  }
+
+  getAttenuationBar() {
+    if (this.getAverageAttenuation() > 0) {
+      let start = (this.getAverageAttenuation() - 5);
+      let end = (this.getAverageAttenuation() + 5);
+      start = start < 0 ? 0 : start;
+      end = end > 100 ? 100 : end;
+      return 'width: ' + (end - start) + '%; left: ' + start + '%;';
+    }
+    return '';
+  }
+
+  getAttenuationMarker() {
+    const color =
+      (this.getMeasuredAttenuation() >= this.getAverageAttenuation() - 5 && this.getMeasuredAttenuation() <= this.getAverageAttenuation() + 5)
+        ? 'background-color: var(--ion-color-primary);'
+        : 'background-color: var(--ion-color-danger);';
+    let position = this.getMeasuredAttenuation();
+    position = position > 100 ? 100 : position;
+    return 'left:' + position + '%;' + color;
+  }
+
   getEfficiencyMarker() {
     if (this.recipe.calculatedEfficiency) {
       const color =
@@ -172,7 +204,7 @@ export class EditDetailsComponent {
           ? 'background-color: var(--ion-color-primary);'
           : 'background-color: var(--ion-color-danger);';
       let position = (this.recipe.calculatedEfficiency - 50) / 40 * 100;
-      position = position > 100 ? 100 : position;
+      position = position > 100 ? 100 : position < 0 ? 0 : position;
       return 'left:' + position + '%;' + color;
     }
     return 'left: 0%; background-color: var(--ion-color-danger);';

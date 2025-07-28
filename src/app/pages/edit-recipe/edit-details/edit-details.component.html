@@ -154,6 +154,8 @@
                   </div>
                   <div class="range-bar-marker" [style]="getOgRangeMarker(recipe.measuredOG)"></div>
                 </div>
+                <p class="inline-end ion-hide-lg-down">{{ recipe.style?.minOg | number:'1.3-3' }}
+                  - {{ recipe.style?.maxOg | number:'1.3-3' }}</p>
               </ion-label>
             </ion-item>
             <ion-item>
@@ -166,6 +168,8 @@
                   </div>
                   <div class="range-bar-marker" [style]="getFgRangeMarker(recipe.measuredFG)"></div>
                 </div>
+                <p class="inline-end ion-hide-lg-down">{{ recipe.style?.minFg | number:'1.3-3' }}
+                  - {{ recipe.style?.maxFg | number:'1.3-3' }}</p>
               </ion-label>
             </ion-item>
             <ion-item>
@@ -184,18 +188,37 @@
                   </div>
                   <div class="range-bar-marker" [style]="getAbvRangeMarker(getMeasuredAbv())"></div>
                 </div>
+                <p class="inline-end ion-hide-lg-down">{{ recipe.style?.minAbv | number:'1.1-1' }}
+                  - {{ recipe.style?.maxAbv | number:'1.1-1' }} %</p>
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>
+                <p>Attenuation</p>
+                {{ getMeasuredAttenuation() | number:'1.1-1' }} %
+                <div class="range-bar-container">
+                  <div class="range-bar">
+                    <div class="range-bar-range" [style]="getAttenuationBar()"></div>
+                  </div>
+                  <div class="range-bar-marker" [style]="getAttenuationMarker()"></div>
+                </div>
+                <p class="inline-end ion-hide-lg-down"
+                   *ngIf="getAverageAttenuation() > 0">{{ getAverageAttenuation() - 5 | number:'1.1-1' }}
+                  - {{ getAverageAttenuation() + 5 | number:'1.1-1' }} %</p>
+                <p class="inline-end ion-hide-lg-down" *ngIf="getAverageAttenuation() === 0">0 %</p>
               </ion-label>
             </ion-item>
             <ion-item>
               <ion-label>
                 <p>Efficiency</p>
-                {{ recipe.calculatedEfficiency | number:'1.0-1' }} %
+                {{ recipe.calculatedEfficiency || 0 | number:'1.0-1' }} %
                 <div class="range-bar-container">
                   <div class="range-bar">
                     <div class="range-bar-range" style="width: 62.5%; left: 25%;'"></div>
                   </div>
                   <div class="range-bar-marker" [style]="getEfficiencyMarker()"></div>
                 </div>
+                <p class="inline-end ion-hide-lg-down">60 - 85 %</p>
               </ion-label>
             </ion-item>
             <ion-item>

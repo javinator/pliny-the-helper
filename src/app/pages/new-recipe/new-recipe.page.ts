@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, inject} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {StorageService} from "services";
 import {BeerStyle, Settings, Recipe, MashProfile} from "models";
-import {DatePipe, Location, NgForOf} from "@angular/common";
+import {Location} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {v4 as uuidv4} from "uuid";
 import {Router} from "@angular/router";
@@ -15,11 +15,13 @@ import {SelectSearchComponent} from "@shared";
   templateUrl: 'new-recipe.page.html',
   styleUrls: ['../../app.component.scss'],
   standalone: true,
-  imports: [IonicModule, NgForOf, DatePipe, FormsModule, SelectSearchComponent]
+  imports: [IonicModule, FormsModule, SelectSearchComponent]
 })
 export class NewRecipePage implements OnInit {
-  constructor(private storage: StorageService, private location: Location, private router: Router) {
-  }
+  private storage = inject(StorageService);
+  private location = inject(Location);
+  private router = inject(Router);
+
 
   styles?: BeerStyle[];
   mashProfiles?: MashProfile[];

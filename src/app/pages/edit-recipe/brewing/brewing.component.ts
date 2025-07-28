@@ -1,24 +1,18 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, inject} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
-import {Recipe, Fermentable, Hop, Yeast, Misc} from "models";
+import {Recipe, Hop} from "models";
 import {DecimalPipe, NgForOf, NgIf} from "@angular/common";
 import {StorageService} from "services";
 import {RecipeUtil} from "utils";
-import {CONFIG} from "../../../app.constants";
-import {SelectSearchComponent} from "@shared";
 
 @Component({
   selector: 'brewing-card',
   templateUrl: 'brewing.component.html',
   styleUrls: ['../../../app.component.scss', 'brewing.component.scss'],
   standalone: true,
-  imports: [IonicModule, NgIf, NgForOf, DecimalPipe, SelectSearchComponent],
+  imports: [IonicModule, NgIf, NgForOf, DecimalPipe],
 })
 export class BrewingComponent {
-  RecipeUtil = RecipeUtil;
-
-  constructor(private storage: StorageService) {
-  }
 
   @Input()
   recipe?: Recipe;
