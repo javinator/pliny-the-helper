@@ -12,5 +12,3 @@ Chrome >=107
 ChromeAndroid >=107
 Firefox >=104
 Edge >=107
-Safari >=16
-iOS >=16

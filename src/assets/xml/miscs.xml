@@ -292,7 +292,7 @@
     <TYPE>Flavor</TYPE>
     <USE>Secondary</USE>
     <AMOUNT>0.010</AMOUNT>
-    <AMOUNT_IS_WEIGHT>true</AMOUNT_IS_WEIGHT>
+    <AMOUNT_IS_WEIGHT>TRUE</AMOUNT_IS_WEIGHT>
     <TIME>5</TIME>
     <USE_FOR>Vanilla flavor</USE_FOR>
     <NOTES>Adds vanilla flavor. Use whole or split beans.</NOTES>

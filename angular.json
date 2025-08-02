@@ -40,7 +40,12 @@
               "src/theme/variables.scss",
               "src/global.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "localforage",
+              "xml2js",
+              "file-saver"
+            ]
           },
           "configurations": {
             "production": {
