@@ -36,7 +36,9 @@
         "./src/shared"
       ]
     },
-    "useDefineForClassFields": false
+    "useDefineForClassFields": false,
+    "skipLibCheck": true
+    //TODO: remove when ionic fixed
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

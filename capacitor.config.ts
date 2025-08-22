@@ -4,7 +4,14 @@ const config: CapacitorConfig = {
   appId: 'com.bierfreunde.pliny',
   appName: 'Pliny the Helper',
   webDir: 'www',
-  bundledWebRuntime: false
+  server: {
+    androidScheme: 'https'
+  },
+  "plugins": {
+    EdgeToEdge: {
+      backgroundColor: "#112871"
+    }
+  }
 };
 
 export default config;
