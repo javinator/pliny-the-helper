@@ -24,7 +24,7 @@ export class SettingsPage {
   isToastOpen = false;
   showSpinner = false;
   showDeveloperOptions = false;
-  version = '1.7.2';
+  version = '1.7.3';
 
   ionViewWillEnter() {
     this.showSpinner = true;

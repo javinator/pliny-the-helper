@@ -4,12 +4,12 @@
   padding: 0;
   position: absolute;
   left: 20%;
-  top: 50%;
+  top: 30px;
 }
 
 @media(max-width: 991px) {
   .range-bar-container {
-    left: 35%;
+    left: 33%;
   }
 }
 
@@ -42,6 +42,6 @@ p.inline {
 p.inline-end {
   display: inline;
   position: absolute;
-  right: 0;
-  top: 50%;
+  right: 32px;
+  top: 26px;
 }

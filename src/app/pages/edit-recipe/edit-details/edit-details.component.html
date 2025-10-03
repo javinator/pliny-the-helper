@@ -145,36 +145,37 @@
           <ion-list>
             <ion-item>
               <ion-label>
-                <ion-input inputmode="numeric" label="Measured OG" label-placement="stacked"
+                <ion-input inputmode="numeric" label="Measured OG" label-placement="stacked" fill="outline"
                            [(ngModel)]="recipe.measuredOG"
                            (ionBlur)="saveRecipe()"></ion-input>
-                <div class="range-bar-container">
-                  <div class="range-bar">
-                    <div class="range-bar-range" [style]="getOgRangeBar()"></div>
-                  </div>
-                  <div class="range-bar-marker" [style]="getOgRangeMarker(recipe.measuredOG)"></div>
-                </div>
-                <p class="inline-end ion-hide-lg-down">{{ recipe.style?.minOg | number:'1.3-3' }}
-                  - {{ recipe.style?.maxOg | number:'1.3-3' }}</p>
               </ion-label>
+              <div class="range-bar-container">
+                <div class="range-bar">
+                  <div class="range-bar-range" [style]="getOgRangeBar()"></div>
+                </div>
+                <div class="range-bar-marker" [style]="getOgRangeMarker(recipe.measuredOG)"></div>
+              </div>
+              <p class="inline-end ion-hide-lg-down">{{ recipe.style?.minOg | number:'1.3-3' }}
+                - {{ recipe.style?.maxOg | number:'1.3-3' }}</p>
             </ion-item>
             <ion-item>
               <ion-label>
-                <ion-input inputmode="numeric" label="Measured FG" label-placement="stacked"
+                <ion-input inputmode="numeric" label="Measured FG" label-placement="stacked" fill="outline"
                            [(ngModel)]="recipe.measuredFG" (ionBlur)="saveRecipe()"></ion-input>
-                <div class="range-bar-container">
-                  <div class="range-bar">
-                    <div class="range-bar-range" [style]="getFgRangeBar()"></div>
-                  </div>
-                  <div class="range-bar-marker" [style]="getFgRangeMarker(recipe.measuredFG)"></div>
-                </div>
-                <p class="inline-end ion-hide-lg-down">{{ recipe.style?.minFg | number:'1.3-3' }}
-                  - {{ recipe.style?.maxFg | number:'1.3-3' }}</p>
+
               </ion-label>
+              <div class="range-bar-container">
+                <div class="range-bar">
+                  <div class="range-bar-range" [style]="getFgRangeBar()"></div>
+                </div>
+                <div class="range-bar-marker" [style]="getFgRangeMarker(recipe.measuredFG)"></div>
+              </div>
+              <p class="inline-end ion-hide-lg-down">{{ recipe.style?.minFg | number:'1.3-3' }}
+                - {{ recipe.style?.maxFg | number:'1.3-3' }}</p>
             </ion-item>
             <ion-item>
               <ion-label>
-                <ion-input inputmode="numeric" label="Measured Batch Size (L)" label-placement="stacked"
+                <ion-input inputmode="numeric" label="Measured Batch Size (L)" label-placement="stacked" fill="outline"
                            [(ngModel)]="recipe.measuredVol" (ionBlur)="saveRecipe()"></ion-input>
               </ion-label>
             </ion-item>
