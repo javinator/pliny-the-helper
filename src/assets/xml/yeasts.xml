@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <YEASTS>
+  <!-- Lallemand -->
+
   <YEAST>
     <NAME>Lallemand CBC-1</NAME>
     <VERSION>1</VERSION>
@@ -262,6 +264,28 @@
     <COST>4.50</COST>
   </YEAST>
   <YEAST>
+    <NAME>Lallemand NovaLager</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>LalBrew</LABORATORY>
+    <PRODUCT_ID>NovaLager</PRODUCT_ID>
+    <MIN_TEMPERATURE>10</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>20</MAX_TEMPERATURE>
+    <FLOCCULATION>Medium</FLOCCULATION>
+    <ATTENUATION>81</ATTENUATION>
+    <MAX_ABV>13</MAX_ABV>
+    <NOTES>LalBrew NovaLager is a true bottom-fermenting Saccharomyces pastorianus hybrid from the novel Group III
+      lineage that has been selected to produce clean lager beers with distinct flavor characteristics and superior
+      fermentation performance. LalBrew NovaLager is a robust lager strain with ideal characteristics for lager beer
+      production including fast fermentations and high attenuation. The distinct flavor profile is very clean, slight
+      esters over a wide temperature range. This strain is a low diacetyl producer and utilizes patented technology
+      that inhibits the production of hydrogen sulfide off-flavors, therefore reducing the maturation time associated
+      with lager beer production.
+    </NOTES>
+    <COST>6.20</COST>
+  </YEAST>
+  <YEAST>
     <NAME>WildBrew Philly Sour</NAME>
     <VERSION>1</VERSION>
     <TYPE>Ale</TYPE>
@@ -279,6 +303,9 @@
     </NOTES>
     <COST>4.95</COST>
   </YEAST>
+
+  <!-- Fermentis -->
+
   <YEAST>
     <NAME>SafAle BE-134</NAME>
     <VERSION>1</VERSION>
@@ -519,6 +546,28 @@
     </NOTES>
     <COST>4.10</COST>
   </YEAST>
+  <YEAST>
+    <NAME>SafAle BW-20</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>Fermentis</LABORATORY>
+    <PRODUCT_ID>BW-20</PRODUCT_ID>
+    <MIN_TEMPERATURE>18</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>26</MAX_TEMPERATURE>
+    <FLOCCULATION>Medium</FLOCCULATION>
+    <ATTENUATION>80</ATTENUATION>
+    <MAX_ABV>10</MAX_ABV>
+    <NOTES>Selected in Flanders, the northern part of Belgium, Fermentis SafAle BW-20 is a medium attenuative yeast that
+      has been specifically selected for the production of Belgian Wheat beers, also called Witbiers. While producing
+      esters (banana notes) and phenols (4-VG) which are important components for Witbiers, SafAle BW-20 is less
+      aromatic than other Fermentis wheat yeasts on this aspect.
+    </NOTES>
+    <COST>4.10</COST>
+  </YEAST>
+
+  <!-- Mangrove Jack's -->
+
   <YEAST>
     <NAME>MJ Mead</NAME>
     <VERSION>1</VERSION>
@@ -784,5 +833,23 @@
       punch through.
     </NOTES>
     <COST>3.10</COST>
+  </YEAST>
+  <YEAST>
+    <NAME>MJ Versa Lager</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Ale</TYPE>
+    <FORM>Dry</FORM>
+    <LABORATORY>Mangrove Jack's</LABORATORY>
+    <PRODUCT_ID>M24</PRODUCT_ID>
+    <MIN_TEMPERATURE>10</MIN_TEMPERATURE>
+    <MAX_TEMPERATURE>20</MAX_TEMPERATURE>
+    <FLOCCULATION>Medium</FLOCCULATION>
+    <ATTENUATION>81</ATTENUATION>
+    <MAX_ABV>13</MAX_ABV>
+    <NOTES>This rebranded LalBrew NovaLager is a bottom-fermenting yeast capable of fermenting under either cold or warm
+      conditions. Produces clean lagers with low sulfur and low diacetyl, allowing for fast fermentation and reduced
+      maturation times.
+    </NOTES>
+    <COST>4.95</COST>
   </YEAST>
 </YEASTS>
