@@ -10,6 +10,7 @@ import {RecipeUtil} from "utils";
 @Component({
   selector: 'settings-page',
   templateUrl: 'settings.page.html',
+  styleUrls: ['settings.page.scss'],
   standalone: true,
   imports: [IonicModule, FormsModule]
 })
@@ -21,7 +22,7 @@ export class SettingsPage {
   isToastOpen = false;
   showSpinner = false;
   showDeveloperOptions = false;
-  version = '1.7.4';
+  version = '1.7.5';
 
   ionViewWillEnter() {
     this.showSpinner = true;

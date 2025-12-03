@@ -14,6 +14,7 @@ import {BrewingComponent} from "./brewing/brewing.component";
 @Component({
   selector: 'edit-recipe-page',
   templateUrl: 'edit-recipe.page.html',
+  styleUrls: ['../../app.component.scss'],
   standalone: true,
   imports: [
     IonicModule,

@@ -33,13 +33,13 @@ recipe-card, style-card {
 
 ion-card {
   max-width: 1440px;
-  margin: 16px auto auto;
+  margin: auto auto 16px;
   border-radius: 8px;
 }
 
 ion-searchbar {
   max-width: 1440px;
-  margin: 16px auto auto;
+  margin: 8px auto;
 }
 
 ion-checkbox {
@@ -59,4 +59,10 @@ select-search, select-search ion-input, select-search ion-label, select-search i
   position: absolute;
   right: 7px;
   top: 50%;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }

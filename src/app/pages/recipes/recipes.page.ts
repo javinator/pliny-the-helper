@@ -10,7 +10,6 @@ import {App} from "@capacitor/app";
 @Component({
   selector: 'recipes-page',
   templateUrl: 'recipes.page.html',
-  styleUrls: ['../../app.component.scss'],
   standalone: true,
   imports: [IonicModule, RouterLink, RecipeCardComponent]
 })
