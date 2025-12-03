@@ -3,7 +3,7 @@ import {IonicModule} from '@ionic/angular';
 import {Recipe, BeerStyle, MashProfile, Settings} from "models";
 import {Router} from "@angular/router";
 import {StorageService} from "services";
-import {DecimalPipe, NgIf, NgSwitch, NgSwitchCase} from "@angular/common";
+import {DecimalPipe} from "@angular/common";
 import {EditIngredientsComponent} from "./edit-ingredients/edit-ingredients.component";
 import {EditDetailsComponent} from "./edit-details/edit-details.component";
 import {FormsModule} from "@angular/forms";
@@ -14,9 +14,16 @@ import {BrewingComponent} from "./brewing/brewing.component";
 @Component({
   selector: 'edit-recipe-page',
   templateUrl: 'edit-recipe.page.html',
-  styleUrls: ['../../app.component.scss'],
   standalone: true,
-  imports: [IonicModule, EditIngredientsComponent, EditDetailsComponent, NgSwitch, NgSwitchCase, NgIf, FormsModule, DecimalPipe, SelectSearchComponent, BrewingComponent],
+  imports: [
+    IonicModule,
+    EditIngredientsComponent,
+    EditDetailsComponent,
+    FormsModule,
+    DecimalPipe,
+    SelectSearchComponent,
+    BrewingComponent
+  ],
 })
 export class EditRecipePage {
   private router = inject(Router);
@@ -34,7 +41,7 @@ export class EditRecipePage {
   settings?: Settings;
 
   constructor() {
-    this.uid = this.router.getCurrentNavigation()?.extras.state?.['recipe'];
+    this.uid = this.router.currentNavigation()?.extras.state?.['recipe'];
   }
 
   public deleteButtons = [

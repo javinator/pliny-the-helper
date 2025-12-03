@@ -40,12 +40,14 @@
                 {{ recipe.brewer }}
               </ion-label>
             </ion-item>
-            <ion-item *ngIf="showCost && recipe.cost && recipe.cost > 0">
-              <ion-label>
-                <p>Recipe Cost</p>
-                {{ recipe.cost | number:'1.2-2' }} CHF
-              </ion-label>
-            </ion-item>
+            @if (showCost && recipe.cost) {
+              <ion-item>
+                <ion-label>
+                  <p>Recipe Cost</p>
+                  {{ recipe.cost | number:'1.2-2' }} CHF
+                </ion-label>
+              </ion-item>
+            }
           </ion-list>
         </ion-col>
         <ion-col size="12" size-xl="7">
@@ -120,21 +122,25 @@
                   - {{ recipe.style?.maxColor | number:'1.0-0' }} SRM</p>
               </ion-label>
             </ion-item>
-            <ion-item *ngIf="recipe.carbonation">
-              <ion-label>
-                <p>Carbonation</p>
-                {{ recipe.carbonation }} L of CO<sub>2</sub>
-                <div class="range-bar-container">
-                  <div class="range-bar">
-                    <div class="range-bar-range" [style]="getCarbRangeBar()"></div>
+            @if (recipe.carbonation) {
+              <ion-item>
+                <ion-label>
+                  <p>Carbonation</p>
+                  {{ recipe.carbonation }} L of CO<sub>2</sub>
+                  <div class="range-bar-container">
+                    <div class="range-bar">
+                      <div class="range-bar-range" [style]="getCarbRangeBar()"></div>
+                    </div>
+                    <div class="range-bar-marker" [style]="getCarbRangeMarker()"></div>
                   </div>
-                  <div class="range-bar-marker" [style]="getCarbRangeMarker()"></div>
-                </div>
-                <p class="inline ion-hide-lg-down"
-                   *ngIf="recipe.style?.minCarb && recipe.style?.maxCarb">{{ recipe.style?.minCarb | number:'1.1-1' }}
-                  - {{ recipe.style?.maxCarb | number:'1.1-1' }} L</p>
-              </ion-label>
-            </ion-item>
+                  @if (recipe.style?.minCarb && recipe.style?.maxCarb) {
+                    <p class="inline ion-hide-lg-down">
+                      {{ recipe.style?.minCarb | number:'1.1-1' }} - {{ recipe.style?.maxCarb | number:'1.1-1' }} L
+                    </p>
+                  }
+                </ion-label>
+              </ion-item>
+            }
           </ion-list>
         </ion-col>
       </ion-row>
@@ -203,10 +209,14 @@
                   </div>
                   <div class="range-bar-marker" [style]="getAttenuationMarker()"></div>
                 </div>
-                <p class="inline-end ion-hide-lg-down"
-                   *ngIf="getAverageAttenuation() > 0">{{ getAverageAttenuation() - 5 | number:'1.1-1' }}
-                  - {{ getAverageAttenuation() + 5 | number:'1.1-1' }} %</p>
-                <p class="inline-end ion-hide-lg-down" *ngIf="getAverageAttenuation() === 0">0 %</p>
+                @if (getAverageAttenuation() > 0) {
+                  <p class="inline-end ion-hide-lg-down">
+                    {{ getAverageAttenuation() - 5 | number:'1.1-1' }}
+                    - {{ getAverageAttenuation() + 5 | number:'1.1-1' }} %
+                  </p>
+                } @else {
+                  <p class="inline-end ion-hide-lg-down">0 %</p>
+                }
               </ion-label>
             </ion-item>
             <ion-item>

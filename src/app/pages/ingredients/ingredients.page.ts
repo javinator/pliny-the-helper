@@ -1,7 +1,6 @@
-import { Component, OnInit, inject } from '@angular/core';
+import {Component, OnInit, inject} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {FermentablesCardComponent} from "./fermentables-card/fermentables-card.component";
-import {NgForOf, NgIf, NgSwitch, NgSwitchCase} from "@angular/common";
 import {HopsCardComponent} from "./hops-card/hops-card.component";
 import {Fermentable, Hop, Yeast, Misc} from "models";
 import {StorageService} from "services";
@@ -11,9 +10,8 @@ import {MiscsCardComponent} from "./miscs-card/miscs-card.component";
 @Component({
   selector: 'ingredients-page',
   templateUrl: 'ingredients.page.html',
-  styleUrls: ['../../app.component.scss'],
   standalone: true,
-  imports: [IonicModule, FermentablesCardComponent, NgIf, NgForOf, NgSwitchCase, NgSwitch, HopsCardComponent, YeastsCardComponent, MiscsCardComponent]
+  imports: [IonicModule, FermentablesCardComponent, HopsCardComponent, YeastsCardComponent, MiscsCardComponent]
 })
 export class IngredientsPage implements OnInit {
   private storage = inject(StorageService);

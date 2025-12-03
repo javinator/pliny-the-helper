@@ -1,7 +1,7 @@
 import {Component, Input, inject} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {Recipe} from "models";
-import {DatePipe, DecimalPipe, NgIf} from "@angular/common";
+import {DatePipe, DecimalPipe} from "@angular/common";
 import {CalculatorUtil} from "utils";
 import {FormsModule} from "@angular/forms";
 import {StorageService} from "services";
@@ -9,9 +9,9 @@ import {StorageService} from "services";
 @Component({
   selector: 'edit-details-card',
   templateUrl: 'edit-details.component.html',
-  styleUrls: ['../../../app.component.scss', 'edit-details.component.scss'],
+  styleUrls: ['edit-details.component.scss'],
   standalone: true,
-  imports: [IonicModule, DecimalPipe, DatePipe, FormsModule, NgIf],
+  imports: [IonicModule, DecimalPipe, DatePipe, FormsModule],
 })
 export class EditDetailsComponent {
   private storage = inject(StorageService);

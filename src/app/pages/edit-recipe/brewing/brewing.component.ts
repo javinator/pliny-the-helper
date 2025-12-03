@@ -1,16 +1,15 @@
-import {Component, Input, inject} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {Recipe, Hop} from "models";
-import {DecimalPipe, NgForOf, NgIf} from "@angular/common";
-import {StorageService} from "services";
+import {DecimalPipe} from "@angular/common";
 import {RecipeUtil} from "utils";
 
 @Component({
   selector: 'brewing-card',
   templateUrl: 'brewing.component.html',
-  styleUrls: ['../../../app.component.scss', 'brewing.component.scss'],
+  styleUrls: ['brewing.component.scss'],
   standalone: true,
-  imports: [IonicModule, NgIf, NgForOf, DecimalPipe],
+  imports: [IonicModule, DecimalPipe],
 })
 export class BrewingComponent {
 

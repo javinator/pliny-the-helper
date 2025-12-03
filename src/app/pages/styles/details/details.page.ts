@@ -1,21 +1,19 @@
-import { Component, inject } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {Router} from "@angular/router";
 import {BeerStyle} from "models";
-import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'style-details-page',
   templateUrl: 'details.page.html',
-  styleUrls: ['../../../app.component.scss'],
   standalone: true,
-  imports: [IonicModule, NgIf],
+  imports: [IonicModule],
 })
 export class StyleDetailsPage {
   private router = inject(Router);
 
   constructor() {
-    this.style = this.router.getCurrentNavigation()?.extras.state?.['style'];
+    this.style = this.router.currentNavigation()?.extras.state?.['style'];
   }
 
   style!: BeerStyle;

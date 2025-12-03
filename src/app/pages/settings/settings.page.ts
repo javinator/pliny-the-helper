@@ -4,17 +4,14 @@ import {StorageService, XmlReaderService} from "services";
 import {Fermentable, Hop, Misc, Recipe, Settings, Yeast} from "models";
 import {FormsModule} from "@angular/forms";
 import {CONFIG} from "../../app.constants";
-import {NgIf} from "@angular/common";
-import {ActivatedRoute} from "@angular/router";
 import {RecipeUtil} from "utils";
 
 
 @Component({
   selector: 'settings-page',
   templateUrl: 'settings.page.html',
-  styleUrls: ['../../app.component.scss'],
   standalone: true,
-  imports: [IonicModule, FormsModule, NgIf]
+  imports: [IonicModule, FormsModule]
 })
 export class SettingsPage {
   private storage = inject(StorageService);

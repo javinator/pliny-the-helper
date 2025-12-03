@@ -9,45 +9,55 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="showSpinner">
-  <ion-spinner class="center" name="lines-sharp"></ion-spinner>
-</ion-content>
-
-<ion-content class="ion-padding" *ngIf="!showSpinner">
-  <ion-segment [value]="activeTab" (ionChange)="tabChanged($event)" id="ingredients">
-    <ion-segment-button value="fermentables" layout="icon-start">
-      <ion-icon src="/assets/icon/malt.svg"></ion-icon>
-      <ion-label class="ion-hide-xl-down">Fermentables</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="hops" layout="icon-start">
-      <ion-icon src="/assets/icon/hops.svg"></ion-icon>
-      <ion-label class="ion-hide-xl-down">Hops</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="yeasts" layout="icon-start">
-      <ion-icon src="/assets/icon/yeast.svg"></ion-icon>
-      <ion-label class="ion-hide-xl-down">Yeasts</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="miscs" layout="icon-start">
-      <ion-icon src="/assets/icon/chemistry.svg"></ion-icon>
-      <ion-label class="ion-hide-xl-down">Misc</ion-label>
-    </ion-segment-button>
-  </ion-segment>
-  <ion-searchbar [debounce]="50" (ionInput)="filter($event)"></ion-searchbar>
-  <ng-container [ngSwitch]="activeTab">
-    <ng-container *ngSwitchCase="'fermentables'">
-      <fermentables-card *ngFor="let fermentable of f_fermentables" [fermentable]="fermentable"></fermentables-card>
-    </ng-container>
-    <ng-container *ngSwitchCase="'hops'">
-      <hops-card *ngFor="let hop of f_hops" [hop]="hop"></hops-card>
-    </ng-container>
-    <ng-container *ngSwitchCase="'yeasts'">
-      <yeasts-card *ngFor="let yeast of f_yeasts" [yeast]="yeast"></yeasts-card>
-    </ng-container>
-    <ng-container *ngSwitchCase="'miscs'">
-      <miscs-card *ngFor="let misc of f_miscs" [misc]="misc"></miscs-card>
-    </ng-container>
-  </ng-container>
-</ion-content>
+@if (showSpinner) {
+  <ion-content>
+    <ion-spinner class="center" name="lines-sharp"></ion-spinner>
+  </ion-content>
+} @else {
+  <ion-content class="ion-padding">
+    <ion-segment [value]="activeTab" (ionChange)="tabChanged($event)" id="ingredients">
+      <ion-segment-button value="fermentables" layout="icon-start">
+        <ion-icon src="/assets/icon/malt.svg"></ion-icon>
+        <ion-label class="ion-hide-xl-down">Fermentables</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="hops" layout="icon-start">
+        <ion-icon src="/assets/icon/hops.svg"></ion-icon>
+        <ion-label class="ion-hide-xl-down">Hops</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="yeasts" layout="icon-start">
+        <ion-icon src="/assets/icon/yeast.svg"></ion-icon>
+        <ion-label class="ion-hide-xl-down">Yeasts</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="miscs" layout="icon-start">
+        <ion-icon src="/assets/icon/chemistry.svg"></ion-icon>
+        <ion-label class="ion-hide-xl-down">Misc</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    <ion-searchbar [debounce]="50" (ionInput)="filter($event)"></ion-searchbar>
+    @switch (activeTab) {
+      @case ('fermentables') {
+        @for (fermentable of f_fermentables; track fermentable) {
+          <fermentables-card [fermentable]="fermentable"></fermentables-card>
+        }
+      }
+      @case ('hops') {
+        @for (hop of f_hops; track hop) {
+          <hops-card [hop]="hop"></hops-card>
+        }
+      }
+      @case ('yeasts') {
+        @for (yeast of f_yeasts; track yeast) {
+          <yeasts-card [yeast]="yeast"></yeasts-card>
+        }
+      }
+      @case ('miscs') {
+        @for (misc of f_miscs; track misc) {
+          <miscs-card [misc]="misc"></miscs-card>
+        }
+      }
+    }
+  </ion-content>
+}
 
 
 

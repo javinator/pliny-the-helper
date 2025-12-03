@@ -1,13 +1,12 @@
 import {Component, EventEmitter, Input, Output, ViewChild} from "@angular/core";
 import {IonicModule, IonSearchbar} from "@ionic/angular";
 import {FormsModule} from "@angular/forms";
-import {NgForOf, NgIf} from "@angular/common";
 
 @Component({
-  selector: 'p-select-search',
+  selector: 'select-search',
   templateUrl: 'select-search.component.html',
   standalone: true,
-  imports: [IonicModule, FormsModule, NgIf, NgForOf]
+  imports: [IonicModule, FormsModule]
 })
 export class SelectSearchComponent {
   @Input()
@@ -28,7 +27,6 @@ export class SelectSearchComponent {
   @ViewChild('search') searchbar: IonSearchbar | undefined;
 
   isModalOpen = false;
-
 
   filteredItems?: { name: string, additionalInfo?: string, description?: string }[];
 

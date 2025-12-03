@@ -1,7 +1,6 @@
-import { Component, OnInit, inject } from '@angular/core';
+import {Component, OnInit, inject} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {RouterLink} from "@angular/router";
-import {NgForOf} from "@angular/common";
 import {Storage} from "@ionic/storage-angular";
 import {StorageService, XmlReaderService, XmlWriterService} from "services";
 
@@ -10,7 +9,7 @@ import {StorageService, XmlReaderService, XmlWriterService} from "services";
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
   standalone: true,
-  imports: [IonicModule, RouterLink, NgForOf],
+  imports: [IonicModule, RouterLink],
   providers: [Storage, StorageService, XmlReaderService, XmlWriterService]
 })
 export class AppComponent implements OnInit {

@@ -11,32 +11,37 @@
           <h1>Fermentables</h1>
         </ion-label>
       </ion-list-header>
-      <ion-item *ngFor="let fermentable of recipe.fermentables" button="true" (click)="editFermentable(fermentable)">
-        <ion-label>
-          {{ fermentable.name }}
-          <p class="ion-padding-top">
-            {{ fermentable.amount | number:'1.0-3'}} kg
-            -
-            <span
-              [class]="checkOveruse(fermentable, recipe)">
+      @for (fermentable of recipe.fermentables; track fermentable.name) {
+        <ion-item [button]="true" (click)="editFermentable(fermentable)">
+          <ion-label>
+            {{ fermentable.name }}
+            <p class="ion-padding-top">
+              {{ fermentable.amount | number:'1.0-3' }} kg
+              -
+              <span
+                [class]="checkOveruse(fermentable, recipe)">
               {{ RecipeUtil.getFermentablePercentage(fermentable, recipe) | number:'1.0-1' }} %
             </span>
-            - {{ RecipeUtil.getFermentableGPTPercentage(fermentable, recipe) | number:'1.0-1' }}
-            GPTs
-          </p>
-        </ion-label>
-        <div class="description ion-hide-xl-down">{{ fermentable.description }} Up to {{ fermentable.maxInBatch }}%.
-        </div>
-        <ion-buttons slot="end">
-          <ion-button (click)="removeFermentable(fermentable)">
-            <ion-icon name="trash" slot="icon-only"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-      </ion-item>
+              - {{ RecipeUtil.getFermentableGPTPercentage(fermentable, recipe) | number:'1.0-1' }}
+              GPTs
+            </p>
+          </ion-label>
+          <div class="description ion-hide-xl-down">{{ fermentable.description }} Up to {{ fermentable.maxInBatch }}%.
+          </div>
+          <ion-buttons slot="end">
+            <ion-button (click)="removeFermentable(fermentable)">
+              <ion-icon name="trash" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+      }
     </ion-list>
-    <p *ngIf="recipe.fermentables.length === 0" class="ion-padding-start">
-      No fermentables
-    </p>
+    @if (recipe.fermentables.length === 0) {
+      <p class="ion-padding-start">
+        No fermentables
+      </p>
+    }
+
     <ion-list>
       <ion-list-header lines="inset">
         <ion-buttons>
@@ -48,33 +53,38 @@
           <h1>Hops</h1>
         </ion-label>
       </ion-list-header>
-      <ion-item *ngFor="let hop of recipe.hops" button="true" (click)="editHop(hop)">
-        <ion-label>
-          {{ hop.name }}
-          <p class="ion-padding-top">
-            {{ hop.amount ? (hop.amount * 1000 | number:'1.0-1') : 0}} g - {{ hop.use }}
-            <ng-container *ngIf="hop.use === 'Boil' || hop.use === 'Dry Hop'"> -
-              <span
-                [class]="checkOvertime(hop, recipe)">{{ hop.time ? ((hop.time | number:'1.0-1') + (hop.use === 'Dry Hop' ? ' days' : ' minutes')) : '' }}</span>
-            </ng-container>
-          </p>
-          <p>
-            {{ hop.alpha | number:'1.0-1' }} % AA - {{ RecipeUtil.calculatePerHopIbu(hop, recipe) | number:'1.0-1'}}
-            IBUs
-          </p>
-        </ion-label>
-        <div class="description ion-hide-xl-down">{{ hop.description }}
-        </div>
-        <ion-buttons slot="end">
-          <ion-button (click)="removeHop(hop)">
-            <ion-icon name="trash" slot="icon-only"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-      </ion-item>
+      @for (hop of recipe.hops; track hop.name) {
+        <ion-item [button]="true" (click)="editHop(hop)">
+          <ion-label>
+            {{ hop.name }}
+            <p class="ion-padding-top">
+              {{ hop.amount ? (hop.amount * 1000 | number:'1.0-1') : 0 }} g - {{ hop.use }}
+              @if (hop.use === 'Boil' || hop.use === 'Dry Hop') {
+                -
+                <span
+                  [class]="checkOvertime(hop, recipe)">{{ hop.time ? ((hop.time | number:'1.0-1') + (hop.use === 'Dry Hop' ? ' days' : ' minutes')) : '' }}</span>
+              }
+            </p>
+            <p>
+              {{ hop.alpha | number:'1.0-1' }} % AA - {{ RecipeUtil.calculatePerHopIbu(hop, recipe) | number:'1.0-1' }}
+              IBUs
+            </p>
+          </ion-label>
+          <div class="description ion-hide-xl-down">{{ hop.description }}
+          </div>
+          <ion-buttons slot="end">
+            <ion-button (click)="removeHop(hop)">
+              <ion-icon name="trash" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+      }
     </ion-list>
-    <p *ngIf="recipe.hops.length === 0" class="ion-padding-start">
-      No hops
-    </p>
+    @if (recipe.hops.length === 0) {
+      <p class="ion-padding-start">
+        No hops
+      </p>
+    }
     <ion-list>
       <ion-list-header lines="inset">
         <ion-buttons>
@@ -86,28 +96,33 @@
           <h1>Yeast</h1>
         </ion-label>
       </ion-list-header>
-      <ion-item *ngFor="let yeast of recipe.yeasts" button="true" (click)="editYeast(yeast)">
-        <ion-label>
-          {{ yeast.name }}
-          <p class="ion-padding-top">{{ yeast.attenuation | number:'1.1-1' }} % Attenuation<br>
-            <span [class]="checkOverAbv(yeast, recipe)">{{ recipe.ABV | number:'1.0-1' }} % ABV</span>
-          </p>
-        </ion-label>
-        <div class="description ion-hide-xl-down">{{ yeast.description }}
-          Optimal temperature between {{ yeast.minTemp | number:'1.0-1' }} °C and {{ yeast.maxTemp | number:'1.0-1' }}
-          °C.
-          Alcohol tolerant up to {{ yeast.maxAbv }} %.
-        </div>
-        <ion-buttons slot="end">
-          <ion-button (click)="removeYeast(yeast)">
-            <ion-icon name="trash" slot="icon-only"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-      </ion-item>
+      @for (yeast of recipe.yeasts; track yeast.name) {
+        <ion-item [button]="true" (click)="editYeast(yeast)">
+          <ion-label>
+            {{ yeast.name }}
+            <p class="ion-padding-top">{{ yeast.attenuation | number:'1.1-1' }} % Attenuation<br>
+              <span [class]="checkOverAbv(yeast, recipe)">{{ recipe.ABV | number:'1.0-1' }} % ABV</span>
+            </p>
+          </ion-label>
+          <div class="description ion-hide-xl-down">{{ yeast.description }}
+            Optimal temperature between {{ yeast.minTemp | number:'1.0-1' }} °C and {{ yeast.maxTemp | number:'1.0-1' }}
+            °C.
+            Alcohol tolerant up to {{ yeast.maxAbv }} %.
+          </div>
+          <ion-buttons slot="end">
+            <ion-button (click)="removeYeast(yeast)">
+              <ion-icon name="trash" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+      }
     </ion-list>
-    <p *ngIf="recipe.yeasts.length === 0" class="ion-padding-start">
-      No yeast
-    </p>
+    @if (recipe.yeasts.length === 0) {
+      <p class="ion-padding-start">
+        No yeast
+      </p>
+    }
+
     <ion-list>
       <ion-list-header lines="inset">
         <ion-buttons>
@@ -119,25 +134,29 @@
           <h1>Miscs</h1>
         </ion-label>
       </ion-list-header>
-      <ion-item *ngFor="let misc of recipe.miscs" button="true" (click)="editMisc(misc)">
-        <ion-label>
-          {{ misc.name }}
-          <p
-            class="ion-padding-top">{{ misc.amount ? (misc.amount * 1000 | number:'1.0-2') : 0 }} {{misc.amountIsWeight ? 'g' : 'ml'}}
-            - {{ misc.type}}</p>
-        </ion-label>
-        <div class="description ion-hide-xl-down">{{ misc.description }}
-        </div>
-        <ion-buttons slot="end">
-          <ion-button (click)="removeMisc(misc)">
-            <ion-icon name="trash" slot="icon-only"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-      </ion-item>
+      @for (misc of recipe.miscs; track misc.name) {
+        <ion-item [button]="true" (click)="editMisc(misc)">
+          <ion-label>
+            {{ misc.name }}
+            <p
+              class="ion-padding-top">{{ misc.amount ? (misc.amount * 1000 | number:'1.0-2') : 0 }} {{ misc.amountIsWeight ? 'g' : 'ml' }}
+              - {{ misc.type }}</p>
+          </ion-label>
+          <div class="description ion-hide-xl-down">{{ misc.description }}
+          </div>
+          <ion-buttons slot="end">
+            <ion-button (click)="removeMisc(misc)">
+              <ion-icon name="trash" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+      }
     </ion-list>
-    <p *ngIf="recipe.miscs.length === 0" class="ion-padding-start">
-      No miscs
-    </p>
+    @if (recipe.miscs.length === 0) {
+      <p class="ion-padding-start">
+        No miscs
+      </p>
+    }
   </ion-card-content>
 </ion-card>
 
@@ -146,11 +165,13 @@
   <ng-template>
     <ion-header>
       <ion-toolbar>
-        <ion-title>{{ isEdit ? 'Edit ' + (newFermentable?.name ?? 'Fermentable') : 'Add Fermentable'}}</ion-title>
+        <ion-title>{{ isEdit ? 'Edit ' + (newFermentable?.name ?? 'Fermentable') : 'Add Fermentable' }}</ion-title>
         <ion-buttons slot="end">
-          <ion-button *ngIf="!isEdit" (click)="addFermentable()">
-            <ion-label>Add</ion-label>
-          </ion-button>
+          @if (!isEdit) {
+            <ion-button (click)="addFermentable()">
+              <ion-label>Add</ion-label>
+            </ion-button>
+          }
           <ion-button (click)="closeFermentable()">
             <ion-label>{{ isEdit ? 'Close' : 'Cancel' }}</ion-label>
           </ion-button>
@@ -158,16 +179,18 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <p-select-search
-        *ngIf="!isEdit"
-        label="Fermentable"
-        [items]="getFermentables()"
-        (selectChanged)="chooseFermentable($event)"
-        placeholder="Select Fermentable"
-      ></p-select-search>
-      <div class="edit-description" *ngIf="isEdit && !hideDescription">
-        {{newFermentable?.description + ' Up to ' + (newFermentable?.maxInBatch || 100) + '%.'}}
-      </div>
+      @if (!isEdit) {
+        <select-search
+          label="Fermentable"
+          [items]="getFermentables()"
+          (selectChanged)="chooseFermentable($event)"
+          placeholder="Select Fermentable"
+        ></select-search>
+      } @else if (!hideDescription) {
+        <div class="edit-description">
+          {{ newFermentable?.description + ' Up to ' + (newFermentable?.maxInBatch || 100) + '%.' }}
+        </div>
+      }
       <ion-input
         type="number"
         min="0"
@@ -188,9 +211,11 @@
       <ion-toolbar>
         <ion-title>{{ isEdit ? 'Edit ' + (newHop?.name ?? 'Hop') : 'Add Hop' }}</ion-title>
         <ion-buttons slot="end">
-          <ion-button *ngIf="!isEdit" (click)="addHop()">
-            <ion-label>Add</ion-label>
-          </ion-button>
+          @if (!isEdit) {
+            <ion-button (click)="addHop()">
+              <ion-label>Add</ion-label>
+            </ion-button>
+          }
           <ion-button (click)="closeHop()">
             <ion-label>{{ isEdit ? 'Close' : 'Cancel' }}</ion-label>
           </ion-button>
@@ -198,16 +223,18 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <p-select-search
-        *ngIf="!isEdit"
-        label="Hop"
-        [items]="getHops()"
-        (selectChanged)="chooseHop($event)"
-        placeholder="Select Hop"
-      ></p-select-search>
-      <div class="edit-description" *ngIf="isEdit && !hideDescription">
-        {{newHop?.description}}
-      </div>
+      @if (!isEdit) {
+        <select-search
+          label="Hop"
+          [items]="getHops()"
+          (selectChanged)="chooseHop($event)"
+          placeholder="Select Hop"
+        ></select-search>
+      } @else if (!hideDescription) {
+        <div class="edit-description">
+          {{ newHop?.description }}
+        </div>
+      }
       <ion-select
         label="Usage"
         label-placement="floating"
@@ -238,17 +265,18 @@
         [value]="newHop?.alpha"
         (ionChange)="setHopAlpha($event)">
       </ion-input>
-      <ion-input
-        *ngIf="newHop?.use === 'Boil' || newHop?.use === 'Dry Hop'"
-        type="number"
-        min="0"
-        label="Time"
-        label-placement="floating"
-        [placeholder]="newHop?.use === 'Dry Hop' ? 'days' : 'min'"
-        [disabled]="!newHop"
-        [value]="newHop?.time"
-        (ionChange)="setHopTime($event)">
-      </ion-input>
+      @if (newHop?.use === 'Boil' || newHop?.use === 'Dry Hop') {
+        <ion-input
+          type="number"
+          min="0"
+          label="Time"
+          label-placement="floating"
+          [placeholder]="newHop?.use === 'Dry Hop' ? 'days' : 'min'"
+          [disabled]="!newHop"
+          [value]="newHop?.time"
+          (ionChange)="setHopTime($event)">
+        </ion-input>
+      }
     </ion-content>
   </ng-template>
 </ion-modal>
@@ -260,9 +288,11 @@
       <ion-toolbar>
         <ion-title>{{ isEdit ? 'Edit ' + (newYeast?.name ?? 'Yeast') : 'Add Yeast' }}</ion-title>
         <ion-buttons slot="end">
-          <ion-button *ngIf="!isEdit" (click)="addYeast()">
-            <ion-label>Add</ion-label>
-          </ion-button>
+          @if (!isEdit) {
+            <ion-button (click)="addYeast()">
+              <ion-label>Add</ion-label>
+            </ion-button>
+          }
           <ion-button (click)="closeYeast()">
             <ion-label>{{ isEdit ? 'Close' : 'Cancel' }}</ion-label>
           </ion-button>
@@ -270,16 +300,18 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <p-select-search
-        *ngIf="!isEdit"
-        label="Yeast"
-        [items]="getYeasts()"
-        (selectChanged)="chooseYeast($event)"
-        placeholder="Select Yeast"
-      ></p-select-search>
-      <div class="edit-description" *ngIf="isEdit && !hideDescription">
-        {{newYeast?.description + '. Optimal temperature between ' + newYeast?.minTemp + ' °C and ' + newYeast?.maxTemp + ' °C. Alcohol tolerant up to ' + newYeast?.maxAbv + ' %.'}}
-      </div>
+      @if (!isEdit) {
+        <select-search
+          label="Yeast"
+          [items]="getYeasts()"
+          (selectChanged)="chooseYeast($event)"
+          placeholder="Select Yeast"
+        ></select-search>
+      } @else if (!hideDescription) {
+        <div class="edit-description">
+          {{ newYeast?.description + '. Optimal temperature between ' + newYeast?.minTemp + ' °C and ' + newYeast?.maxTemp + ' °C. Alcohol tolerant up to ' + newYeast?.maxAbv + ' %.' }}
+        </div>
+      }
       <ion-input
         type="number"
         min="0"
@@ -311,9 +343,11 @@
       <ion-toolbar>
         <ion-title>{{ isEdit ? 'Edit ' + (newMisc?.name ?? 'Misc') : 'Add Misc' }}</ion-title>
         <ion-buttons slot="end">
-          <ion-button *ngIf="!isEdit" (click)="addMisc()">
-            <ion-label>Add</ion-label>
-          </ion-button>
+          @if (!isEdit) {
+            <ion-button (click)="addMisc()">
+              <ion-label>Add</ion-label>
+            </ion-button>
+          }
           <ion-button (click)="closeMisc()">
             <ion-label>{{ isEdit ? 'Close' : 'Cancel' }}</ion-label>
           </ion-button>
@@ -321,16 +355,18 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <p-select-search
-        *ngIf="!isEdit"
-        label="Misc"
-        [items]="getMiscs()"
-        (selectChanged)="chooseMisc($event)"
-        placeholder="Select Miscellaneous"
-      ></p-select-search>
-      <div class="edit-description" *ngIf="isEdit && !hideDescription">
-        {{newMisc?.description}}
-      </div>
+      @if (!isEdit) {
+        <select-search
+          label="Misc"
+          [items]="getMiscs()"
+          (selectChanged)="chooseMisc($event)"
+          placeholder="Select Miscellaneous"
+        ></select-search>
+      } @else if (!hideDescription) {
+        <div class="edit-description">
+          {{ newMisc?.description }}
+        </div>
+      }
       <ion-input
         type="number"
         min="0"

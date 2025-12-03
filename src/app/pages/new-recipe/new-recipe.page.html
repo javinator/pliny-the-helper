@@ -18,17 +18,17 @@
           type="text"
           label="Name"
           labelPlacement="floating"
-          required="true"
+          [required]="true"
         ></ion-input>
-        <p-select-search [label]="'Style'" [placeholder]="'Choose Beer Style'"
-                         [items]="getStylesOptions()" (selectChanged)="changeStyle($event)"></p-select-search>
+        <select-search [label]="'Style'" [placeholder]="'Choose Beer Style'"
+                       [items]="getStylesOptions()" (selectChanged)="changeStyle($event)"></select-search>
         <ion-input
           [(ngModel)]="model.batchSize"
           name="batchSize"
           type="number"
           label="Batch Size (L)"
           labelPlacement="floating"
-          required="true"
+          [required]="true"
           step="0.1"
           min="0"
         ></ion-input>
@@ -38,7 +38,7 @@
           type="number"
           label="Boil Time (min)"
           labelPlacement="floating"
-          required="true"
+          [required]="true"
           step="1"
           min="0"
         ></ion-input>
@@ -48,7 +48,7 @@
           type="number"
           label="Efficiency (%)"
           labelPlacement="floating"
-          required="true"
+          [required]="true"
           step="1"
           min="0"
         ></ion-input>
@@ -58,17 +58,17 @@
           type="date"
           label="Brew Date"
           labelPlacement="floating"
-          required="true"
+          [required]="true"
         ></ion-input>
         <ion-input
           [(ngModel)]="model.brewer"
           name="brewer"
           label="Brewer"
           labelPlacement="floating"
-          required="true"
+          [required]="true"
         ></ion-input>
-        <p-select-search [label]="'Mash Profile'" [placeholder]="'Choose Mash Profile'"
-                         [items]="getProfilesOptions()"></p-select-search>
+        <select-search [label]="'Mash Profile'" [placeholder]="'Choose Mash Profile'"
+                       [items]="getProfilesOptions()"></select-search>
         <div class="ion-text-end">
           <ion-button (click)="navigateBack()" shape="round">Cancel</ion-button>
           <ion-button type="submit" shape="round">Save</ion-button>

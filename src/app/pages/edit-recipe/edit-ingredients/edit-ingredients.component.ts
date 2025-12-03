@@ -1,7 +1,7 @@
 import {Component, Input, OnInit, inject} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {Recipe, Fermentable, Hop, Yeast, Misc} from "models";
-import {DecimalPipe, NgForOf, NgIf} from "@angular/common";
+import {DecimalPipe} from "@angular/common";
 import {StorageService} from "services";
 import {RecipeUtil} from "utils";
 import {CONFIG} from "../../../app.constants";
@@ -10,9 +10,9 @@ import {SelectSearchComponent} from "@shared";
 @Component({
   selector: 'edit-ingredients-card',
   templateUrl: 'edit-ingredients.component.html',
-  styleUrls: ['../../../app.component.scss', 'edit-ingredients.component.scss'],
+  styleUrls: ['edit-ingredients.component.scss'],
   standalone: true,
-  imports: [IonicModule, NgIf, NgForOf, DecimalPipe, SelectSearchComponent],
+  imports: [IonicModule, DecimalPipe, SelectSearchComponent],
 })
 export class EditIngredientsComponent implements OnInit {
   private storage = inject(StorageService);

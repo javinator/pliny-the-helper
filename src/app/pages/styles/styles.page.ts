@@ -1,17 +1,15 @@
-import { Component, inject } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {StorageService} from "services";
 import {BeerStyle} from "models";
 import {StyleCardComponent} from "./style-card/style-card.component";
-import {NgForOf, NgIf} from "@angular/common";
 import {Router} from "@angular/router";
 
 @Component({
   selector: 'styles-page',
   templateUrl: 'styles.page.html',
-  styleUrls: ['../../app.component.scss'],
   standalone: true,
-  imports: [IonicModule, StyleCardComponent, NgIf, NgForOf]
+  imports: [IonicModule, StyleCardComponent]
 })
 export class StylesPage {
   private storage = inject(StorageService);

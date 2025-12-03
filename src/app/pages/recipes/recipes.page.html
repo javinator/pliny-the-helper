@@ -20,24 +20,34 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="showSpinner">
-  <ion-spinner class="center" name="lines-sharp"></ion-spinner>
-</ion-content>
-
-<ion-content class="ion-padding" *ngIf="!showSpinner">
-  <ng-container *ngIf="!recipes || recipes.length === 0">
-    <div class="ion-text-center">
-      <strong>You don't have a recipe yet!</strong>
-      <p><a [routerLink]="'/new-recipe'">Click here to create a new recipe!</a></p>
-    </div>
-  </ng-container>
-  <ng-container *ngIf="recipes && recipes.length > 0">
-    <recipe-card *ngFor="let recipe of recipes" [id]="recipe.uid" [name]="recipe.name"
-                 [style]="recipe.style?.name || 'Other'"
-                 [color]="recipe.color" [abv]="recipe.ABV" [ibu]="recipe.IBU"
-                 [batchSize]="recipe.batchSize" (click)="showEdit(recipe)"></recipe-card>
-  </ng-container>
-</ion-content>
+@if (showSpinner) {
+  <ion-content>
+    <ion-spinner class="center" name="lines-sharp"></ion-spinner>
+  </ion-content>
+} @else {
+  <ion-content class="ion-padding">
+    @if (!recipes || recipes.length === 0) {
+      <div class="ion-text-center">
+        <strong>You don't have a recipe yet!</strong>
+        <p><a [routerLink]="'/new-recipe'">Click here to create a new recipe!</a></p>
+      </div>
+    }
+    @if (recipes && recipes.length > 0) {
+      @for (recipe of recipes; track recipe.uid) {
+        <recipe-card
+          [id]="recipe.uid"
+          [name]="recipe.name"
+          [style]="recipe.style?.name || 'Other'"
+          [color]="recipe.color"
+          [abv]="recipe.ABV"
+          [ibu]="recipe.IBU"
+          [batchSize]="recipe.batchSize"
+          (click)="showEdit(recipe)"
+        ></recipe-card>
+      }
+    }
+  </ion-content>
+}
 
 <ion-modal [isOpen]="isExportOpen" (didDismiss)="closeExport()">
   <ng-template>
@@ -48,15 +58,18 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <ion-checkbox *ngIf="recipes && recipes.length > 0" label-placement="end"
-                    (ionChange)="toggleAllCheckboxes($event)">Select All
-      </ion-checkbox>
-      <br>
-      <p *ngFor="let recipe of recipes">
-        <ion-checkbox label-placement="end" [checked]="allSelected"
-                      (ionChange)="toggleCheckbox($event, recipe)">{{ recipe.name }}</ion-checkbox>
+      @if (recipes && recipes.length > 0) {
+        <ion-checkbox label-placement="end" (ionChange)="toggleAllCheckboxes($event)">Select All</ion-checkbox>
         <br>
-      </p>
+      }
+      @for (recipe of recipes; track recipe.uid) {
+        <p>
+          <ion-checkbox label-placement="end" [checked]="allSelected"
+                        (ionChange)="toggleCheckbox($event, recipe)">{{ recipe.name }}
+          </ion-checkbox>
+          <br>
+        </p>
+      }
     </ion-content>
   </ng-template>
 </ion-modal>

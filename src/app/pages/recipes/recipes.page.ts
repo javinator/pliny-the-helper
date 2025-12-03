@@ -1,7 +1,6 @@
-import { Component, inject } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {AlertController, IonicModule, IonRouterOutlet, Platform} from '@ionic/angular';
 import {Recipe} from "models";
-import {NgForOf, NgIf} from "@angular/common";
 import {Router, RouterLink} from "@angular/router";
 import {StorageService, XmlReaderService, XmlWriterService} from "services";
 import {RecipeCardComponent} from "./recipe-card/recipe-card.component";
@@ -13,7 +12,7 @@ import {App} from "@capacitor/app";
   templateUrl: 'recipes.page.html',
   styleUrls: ['../../app.component.scss'],
   standalone: true,
-  imports: [IonicModule, NgIf, RouterLink, RecipeCardComponent, NgForOf]
+  imports: [IonicModule, RouterLink, RecipeCardComponent]
 })
 export class RecipesPage {
   private storage = inject(StorageService);
@@ -22,7 +21,7 @@ export class RecipesPage {
   private platform = inject(Platform);
   private xmlReader = inject(XmlReaderService);
   alertController = inject(AlertController);
-  private routerOutlet = inject(IonRouterOutlet, { optional: true });
+  private routerOutlet = inject(IonRouterOutlet, {optional: true});
 
   recipes?: Recipe[];
   selectedRecipes: Recipe[] = [];

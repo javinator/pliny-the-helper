@@ -12,7 +12,7 @@
   <ion-card>
     <ion-card-header>
       <ion-card-title class="ion-text-center">
-        {{ style.name }}
+        <h1>{{ style.name }}</h1>
       </ion-card-title>
     </ion-card-header>
     <ion-grid>
@@ -74,13 +74,15 @@
             </ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            Original Gravity: {{ style.minOg + ' - ' + style.maxOg}}<br>
-            Final Gravity: {{ style.minFg + ' - ' + style.maxFg}}<br>
-            ABV: {{ style.minAbv + ' - ' + style.maxAbv + ' %'}}<br>
-            Bitterness (IBU): {{ style.minIbu + ' - ' + style.maxIbu}}<br>
-            Color (SRM): {{ style.minColor + ' - ' + style.maxColor}}<br>
+            Original Gravity: {{ style.minOg + ' - ' + style.maxOg }}<br>
+            Final Gravity: {{ style.minFg + ' - ' + style.maxFg }}<br>
+            ABV: {{ style.minAbv + ' - ' + style.maxAbv + ' %' }}<br>
+            Bitterness (IBU): {{ style.minIbu + ' - ' + style.maxIbu }}<br>
+            Color (SRM): {{ style.minColor + ' - ' + style.maxColor }}<br>
             Fermentation: {{ style.type }}<br>
-            <span *ngIf="style.minCarb && style.maxCarb">Carbonation: {{ style.minCarb + ' - ' + style.maxCarb }} L of CO<sub>2</sub></span>
+            @if (style.minCarb && style.maxCarb) {
+              <span>Carbonation: {{ style.minCarb + ' - ' + style.maxCarb }} L of CO<sub>2</sub></span>
+            }
           </ion-card-content>
         </ion-col>
       </ion-row>

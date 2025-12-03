@@ -18,33 +18,35 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content class="ion-padding" *ngIf="recipe">
-  <ion-segment [value]="activeTab" (ionChange)="tabChanged($event)">
-    <ion-segment-button value="ingredients" layout="icon-start">
-      <ion-icon name="basket"></ion-icon>
-      <ion-label class="ion-hide-xl-down">Ingredients</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="details" layout="icon-start">
-      <ion-icon name="information"></ion-icon>
-      <ion-label class="ion-hide-xl-down">Details</ion-label>
-    </ion-segment-button>
-    <ion-segment-button value="brewing" layout="icon-start">
-      <ion-icon name="hammer"></ion-icon>
-      <ion-label class="ion-hide-xl-down">Brewing</ion-label>
-    </ion-segment-button>
-  </ion-segment>
-  <ng-container [ngSwitch]="activeTab">
-    <ng-container *ngSwitchCase="'ingredients'">
-      <edit-ingredients-card [recipe]="recipe" [hideDescription]="settings?.hideDescription"></edit-ingredients-card>
-    </ng-container>
-    <ng-container *ngSwitchCase="'details'">
-      <edit-details-card [recipe]="recipe" [showCost]="settings?.displayCost === true"></edit-details-card>
-    </ng-container>
-    <ng-container *ngSwitchCase="'brewing'">
-      <brewing-card [recipe]="recipe"></brewing-card>
-    </ng-container>
-  </ng-container>
-</ion-content>
+@if (recipe) {
+  <ion-content class="ion-padding">
+    <ion-segment [value]="activeTab" (ionChange)="tabChanged($event)">
+      <ion-segment-button value="ingredients" layout="icon-start">
+        <ion-icon name="basket"></ion-icon>
+        <ion-label class="ion-hide-xl-down">Ingredients</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="details" layout="icon-start">
+        <ion-icon name="information"></ion-icon>
+        <ion-label class="ion-hide-xl-down">Details</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="brewing" layout="icon-start">
+        <ion-icon name="hammer"></ion-icon>
+        <ion-label class="ion-hide-xl-down">Brewing</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    @switch (activeTab) {
+      @case ('ingredients') {
+        <edit-ingredients-card [recipe]="recipe" [hideDescription]="settings?.hideDescription"></edit-ingredients-card>
+      }
+      @case ('details') {
+        <edit-details-card [recipe]="recipe" [showCost]="settings?.displayCost === true"></edit-details-card>
+      }
+      @case ('brewing') {
+        <brewing-card [recipe]="recipe"></brewing-card>
+      }
+    }
+  </ion-content>
+}
 
 <ion-alert
   trigger="open-delete-alert"
@@ -73,7 +75,7 @@
         label="Name"
         label-placement="floating"
         [(ngModel)]="editRecipe!.name"
-        required="true"
+        [required]="true"
       ></ion-input>
       <ion-input
         label="Brew Date"
@@ -86,9 +88,13 @@
         label-placement="floating"
         [(ngModel)]="editRecipe!.brewer"
       ></ion-input>
-      <p-select-search label="Style" placeholder="Choose Beer Style"
-                       [items]="getStylesOptions()" (selectChanged)="changeStyle($event)"
-                       [selectedItem]="editRecipe!.style!.name"></p-select-search>
+      <select-search
+        label="Style"
+        placeholder="Choose Beer Style"
+        [items]="getStylesOptions()"
+        (selectChanged)="changeStyle($event)"
+        [selectedItem]="editRecipe!.style!.name"
+      ></select-search>
       <ion-input
         type="number"
         min="0"
@@ -103,17 +109,21 @@
         label-placement="floating"
         [(ngModel)]="editRecipe!.boilTime"
       ></ion-input>
-      <ion-checkbox labelPlacement="end" [(ngModel)]="editRecipe!.calculateBoilSize">Automatically calculate boil size
-        <span class="info" *ngIf="editRecipe!.calculateBoilSize">({{calculateBoilSize() | number:'1.0-2'}} L)</span>
+      <ion-checkbox labelPlacement="end" [(ngModel)]="editRecipe!.calculateBoilSize">
+        Automatically calculate boil size
+        @if (editRecipe!.calculateBoilSize) {
+          <span class="info">({{ calculateBoilSize() | number:'1.0-2' }} L)</span>
+        }
       </ion-checkbox>
-      <ion-input
-        type="number"
-        min="0"
-        label="Boil Size (L)"
-        label-placement="floating"
-        *ngIf="!editRecipe!.calculateBoilSize"
-        [(ngModel)]="editRecipe!.boilSize"
-      ></ion-input>
+      @if (!editRecipe!.calculateBoilSize) {
+        <ion-input
+          type="number"
+          min="0"
+          label="Boil Size (L)"
+          label-placement="floating"
+          [(ngModel)]="editRecipe!.boilSize"
+        ></ion-input>
+      }
       <ion-input
         type="number"
         min="0"
@@ -121,9 +131,9 @@
         label-placement="floating"
         [(ngModel)]="editRecipe!.efficiency"
       ></ion-input>
-      <p-select-search label="Mash Profile" placeholder="Select Mash Profile"
-                       [items]="getProfilesOptions()" (selectChanged)="changeProfile($event)"
-                       [selectedItem]="editRecipe!.mashProfile!.name"></p-select-search>
+      <select-search label="Mash Profile" placeholder="Select Mash Profile"
+                     [items]="getProfilesOptions()" (selectChanged)="changeProfile($event)"
+                     [selectedItem]="editRecipe!.mashProfile!.name"></select-search>
       <ion-input
         type="number"
         min="0"
