@@ -1,7 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {AbvCardComponent} from "./abv-card/abv-card.component";
-import {NgIf, NgSwitch, NgSwitchCase} from "@angular/common";
 import {HydrometerCardComponent} from "./hydrometer-card/hydrometer-card.component";
 import {RefractometerCardComponent} from "./refractometer-card/refractometer-card.component";
 import {ConversionCardComponent} from "./conversion-card/conversion-card.component";
@@ -13,7 +12,7 @@ import {StorageService} from "services";
   templateUrl: 'calculators.page.html',
   styleUrls: ['../../app.component.scss'],
   standalone: true,
-  imports: [IonicModule, AbvCardComponent, NgIf, NgSwitchCase, NgSwitch, HydrometerCardComponent, RefractometerCardComponent, ConversionCardComponent]
+  imports: [IonicModule, AbvCardComponent, HydrometerCardComponent, RefractometerCardComponent, ConversionCardComponent]
 })
 export class CalculatorsPage {
   private storage = inject(StorageService);

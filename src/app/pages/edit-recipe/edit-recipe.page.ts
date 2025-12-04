@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
-import {Recipe, BeerStyle, MashProfile, Settings} from "models";
+import {BeerStyle, MashProfile, Recipe, Settings} from "models";
 import {Router} from "@angular/router";
 import {StorageService} from "services";
 import {DecimalPipe} from "@angular/common";

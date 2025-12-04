@@ -1,7 +1,7 @@
-import {Component, OnInit, inject} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {StorageService} from "services";
-import {BeerStyle, Settings, Recipe, MashProfile} from "models";
+import {BeerStyle, MashProfile, Recipe, Settings} from "models";
 import {Location} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {v4 as uuidv4} from "uuid";

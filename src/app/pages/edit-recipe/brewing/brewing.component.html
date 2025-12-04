@@ -33,70 +33,74 @@
             </ion-label>
           </ion-item>
         }
-        @if (recipe.hops.length > 0) {
-          <ion-item>
-            <ion-label class="ion-text-wrap">
-              Lautering
-              <p>Lauter the wort
-                @if (firstWortHops().length > 0) {
-                  <span>, then add
-                    @for (hop of firstWortHops(); track hop) {
-                      <span>{{ hop.amount ? (hop.amount * 1000) : 0 }}g of {{ hop.name }},</span>
-                    }
-                </span> and bring to a boil.
+        <ion-item>
+          <ion-label class="ion-text-wrap">
+            Lautering
+            <p>Lauter the wort@if (firstWortHops().length > 0) {
+              <span>, then add
+                @for (hop of firstWortHops(); track hop) {
+                  <span>{{ hop.amount ? (hop.amount * 1000) : 0 }}g of {{ hop.name }},</span>
                 }
-              </p>
-            </ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label class="ion-text-wrap">
-              Boiling
-              <p>
-                Boil for {{ recipe.boilTime | number: '1.0-0' }} minutes.
-                @for (hop of boilHops(); track hop) {
-                  <span><br>
+              </span>
+            }
+              and bring to a boil.
+            </p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label class="ion-text-wrap">
+            Boiling
+            <p>
+              Boil for {{ recipe.boilTime | number: '1.0-0' }} minutes.
+              @for (hop of boilHops(); track hop) {
+                <span><br>
                   With {{ hop.time | number: '1.0-0' }}
-                    minutes remaining, add {{ hop.amount ? ((hop.amount * 1000) | number: '1.0-0') : 0 }}
-                    g of {{ hop.name }}.</span>
-                }
-              </p>
-            </ion-label>
-          </ion-item>
-          @if (recipe.yeasts.length > 0) {
-            <ion-item>
-              <ion-label class="ion-text-wrap">
-                Flame Out
-                <p>
-                  Turn off the heat.
-                  @for (hop of aromaHops(); track hop) {
-                    <span><br>
+                  minutes remaining, add {{ hop.amount ? ((hop.amount * 1000) | number: '1.0-0') : 0 }}
+                  g of {{ hop.name }}.</span>
+              }
+            </p>
+          </ion-label>
+        </ion-item>
+        @if (recipe.yeasts.length > 0) {
+          <ion-item>
+            <ion-label class="ion-text-wrap">
+              Flame Out
+              <p>
+                Turn off the heat.
+                @for (hop of aromaHops(); track hop) {
+                  <span><br>
                   Add {{ hop.amount ? ((hop.amount * 1000) | number: '1.0-0') : 0 }} g of {{ hop.name }}.
                 </span>
-                  }
-                  <br>
-                  Cool the wort down to {{ recipe.yeasts[0].minTemp | number: '1.0-1' }}
-                  to {{ recipe.yeasts[0].maxTemp | number: '1.0-1' }} °C and add {{ recipe.yeasts[0].name }} yeast.
-                </p>
-              </ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-label class="ion-text-wrap">
-                Fermentation
-                <p>
-                  Ferment in a dark area.
-                  @for (hop of dryHops(); track hop) {
-                    <span><br>
+                }
+                <br>
+                Cool the wort down to {{ recipe.yeasts[0].minTemp | number: '1.0-1' }}
+                to {{ recipe.yeasts[0].maxTemp | number: '1.0-1' }} °C and add {{ recipe.yeasts[0].name }} yeast.
+              </p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label class="ion-text-wrap">
+              Fermentation
+              <p>
+                Ferment in a dark area.
+                @for (hop of dryHops(); track hop) {
+                  <span><br>
                   Add {{ hop.amount ? ((hop.amount * 1000) | number: '1.0-0') : 0 }} g of {{ hop.name }}
-                      for {{ hop.time }}
-                      days.
+                    for {{ hop.time }}
+                    days.
                 </span>
-                  }
-                  <br>
-                  After 14-21 days, add {{ carbSugar() | number: '1.0-1' }}g of Sugar and bottle or keg the beer.
-                </p>
-              </ion-label>
-            </ion-item>
-          }
+                }
+                <br>
+                After 14-21 days, add {{ carbSugar() | number: '1.0-1' }}g of Sugar and bottle or keg the beer.
+              </p>
+            </ion-label>
+          </ion-item>
+        } @else {
+          <ion-item>
+            <ion-label class="ion-text-wrap">
+              <p>Add yeast to recipe to show final brewing steps!</p>
+            </ion-label>
+          </ion-item>
         }
       </ion-list>
     </ion-card-content>

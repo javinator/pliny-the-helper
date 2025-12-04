@@ -1,4 +1,4 @@
-import {Component, Input, inject} from '@angular/core';
+import {Component, inject, Input} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {Recipe} from "models";
 import {DatePipe, DecimalPipe} from "@angular/common";

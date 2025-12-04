@@ -1,4 +1,4 @@
-import {Component, OnInit, inject} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {RouterLink} from "@angular/router";
 import {Storage} from "@ionic/storage-angular";

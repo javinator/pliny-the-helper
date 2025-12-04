@@ -1,8 +1,8 @@
 {
   "name": "pliny-the-helper",
-  "version": "1.7.4",
-  "author": "Vince Hofer",
-  "homepage": "https://ionicframework.com/",
+  "version": "1.7.5",
+  "author": "Bier-Freunde Seeland",
+  "homepage": "https://bier-freunde.ch/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -39,7 +39,7 @@
     "tslib": "^2.8.1",
     "uuid": "^13.0.0",
     "xml2js": "^0.6.2",
-    "zone.js": "~0.15.1"
+    "zone.js": "^0.15.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^20.3.12",

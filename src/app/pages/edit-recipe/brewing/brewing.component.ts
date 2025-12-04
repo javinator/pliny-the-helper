@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
-import {Recipe, Hop} from "models";
+import {Hop, Recipe} from "models";
 import {DecimalPipe} from "@angular/common";
 import {RecipeUtil} from "utils";
 

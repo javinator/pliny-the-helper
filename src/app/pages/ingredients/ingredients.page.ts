@@ -1,8 +1,8 @@
-import {Component, OnInit, inject} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {FermentablesCardComponent} from "./fermentables-card/fermentables-card.component";
 import {HopsCardComponent} from "./hops-card/hops-card.component";
-import {Fermentable, Hop, Yeast, Misc} from "models";
+import {Fermentable, Hop, Misc, Yeast} from "models";
 import {StorageService} from "services";
 import {YeastsCardComponent} from "./yeasts-card/yeasts-card.component";
 import {MiscsCardComponent} from "./miscs-card/miscs-card.component";

@@ -1,6 +1,6 @@
-import {Component, Input, OnInit, inject} from '@angular/core';
+import {Component, inject, Input, OnInit} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
-import {Recipe, Fermentable, Hop, Yeast, Misc} from "models";
+import {Fermentable, Hop, Misc, Recipe, Yeast} from "models";
 import {DecimalPipe} from "@angular/common";
 import {StorageService} from "services";
 import {RecipeUtil} from "utils";
