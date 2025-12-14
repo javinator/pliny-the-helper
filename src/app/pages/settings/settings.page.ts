@@ -59,6 +59,7 @@ export class SettingsPage {
       this.settings.minimizeExport = true;
       this.settings.developerOptions = false;
       this.settings.hideDescription = false;
+      this.showDeveloperOptions = false;
     }, 100);
     this.init();
   }
@@ -138,6 +139,9 @@ export class SettingsPage {
                 nH.amount = hop.amount;
                 nH.time = hop.time;
                 nH.use = hop.use;
+                if (hop.alpha) {
+                  nH.alpha = hop.alpha;
+                }
                 newHops.push(nH);
               })
               recipe.hops = newHops;
