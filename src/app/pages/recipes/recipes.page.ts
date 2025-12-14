@@ -93,7 +93,7 @@ export class RecipesPage {
 
   exportRecipes(recipes?: Recipe[]) {
     this.storage.get('settings')?.then(settings => {
-      this.xmlWriter.recipesToXml(recipes || [], settings.minimizeExport);
+      this.xmlWriter.recipesToXml(recipes || [], settings?.minimizeExport || false);
       if (this.platform.is('hybrid')) {
         this.isToastOpen = true;
       }
