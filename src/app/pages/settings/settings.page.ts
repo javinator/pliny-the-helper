@@ -5,6 +5,7 @@ import {Fermentable, Hop, Misc, Recipe, Settings, Yeast} from "models";
 import {FormsModule} from "@angular/forms";
 import {CONFIG} from "../../app.constants";
 import {RecipeUtil} from "utils";
+import packageJson from 'packageJson';
 
 
 @Component({
@@ -22,7 +23,7 @@ export class SettingsPage {
   isToastOpen = false;
   showSpinner = false;
   showDeveloperOptions = false;
-  version = '1.7.5';
+  version = packageJson.version;
 
   ionViewWillEnter() {
     this.showSpinner = true;

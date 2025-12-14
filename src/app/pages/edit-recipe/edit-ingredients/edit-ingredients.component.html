@@ -53,7 +53,7 @@
           <h1>Hops</h1>
         </ion-label>
       </ion-list-header>
-      @for (hop of recipe.hops; track hop.name) {
+      @for (hop of recipe.hops; track $index) {
         <ion-item [button]="true" (click)="editHop(hop)">
           <ion-label>
             {{ hop.name }}

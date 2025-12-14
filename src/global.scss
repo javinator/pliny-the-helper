@@ -25,6 +25,8 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
+@import '@ionic/angular/css/palettes/dark.always.css';
+
 recipe-card, style-card {
   max-width: 1440px;
   display: block;
