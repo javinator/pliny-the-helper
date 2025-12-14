@@ -37,6 +37,15 @@ ion-card {
   max-width: 1440px;
   margin: auto auto 16px;
   border-radius: 8px;
+  transition: 0.1s;
+
+  &.clickable:hover {
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 0 2px #124;
+    }
+  }
 }
 
 ion-searchbar {
