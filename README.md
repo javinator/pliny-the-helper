@@ -25,17 +25,17 @@ And of course you can tweak your settings to accommodate your brewing equipment.
 
 If you want to get started with some recipes, you'll find my 40 first recipes [here](src/assets/xml/40-recipes.xml).
 
-### Formulas
+## Formulas
 
 Here I list some of the used formulas I used, for better understanding.
 
-#### ABV
+### ABV
 
 For calculating the ABV I used the following formula:
 
 ABV = (76.08 * (og-fg) / (1.775-og)) * (fg / 0.794)
 
-#### Plato/Brix/SG
+### Plato/Brix/SG
 
 For converting specific gravity to Plato/Brix I use the following formula:
 
@@ -47,7 +47,7 @@ SG = (B / (258.6 - ((B / 258.2) * 227.1))) + 1
 
 ***Note:*** *For home brewing purposes Brix and Plato are essentially interchangeable (same out to 3 decimal places).*
 
-#### Color
+### Color
 
 I use the Morey Equation to calculate color:
 
@@ -55,7 +55,7 @@ MCU = (Lovibond * GrainWeight_lbs)/BatchSize_gal
 
 SRM = 1.4922 * (MCU ^ 0.6859)
 
-#### Bitterness
+### Bitterness
 
 To estimate bitterness I used Glenn Tinseth's formula:
 
@@ -69,7 +69,7 @@ TimeFactor = (1 - e ^ (-0.04 * Time_min)) / KettleUtil
 
 The Kettle Utilization defined by Glenn Tinseth is 4.15 for his system. Default value I used is 4.20 (higher value = slightly lower utilization), as it better represents my system. Can be adjusted in the app constants ([app.constants.ts](src/app/app.constants.ts))
 
-#### Strike Temperature
+### Strike Temperature
 
 To calculate the strike temperature of the water I use the following formula:
 
@@ -79,30 +79,28 @@ R = Ratio of grain to water in the mash
 T1 = Initial Temperature (of the grain)
 T2 = Mash Temperature
 
-#### Refractometer
+### Refractometer
 
 I implemented both widely regarded formulas to determine the final gravity of a beer, namely P. Novotny's quadratic and S. Terrill's cubic formulas.
 
-##### Novotny
+#### Novotny
 
 FG = 1 + 0.00001335 * Ri ^ 2 - 0.00003239 * Ri * Rf + 0.00002916 * Rf ^ 2 - 0.002421 * Ri + 0.006219 * Rf;
 
-##### Terrill
+#### Terrill
 
 FG = 1 - 0.0044993 * Ri + 0.011774 * Rf + 0.00027581 * Ri ^ 2 - 0.0012717 * Rf ^ 2 - 0.00000728 * Ri ^ 3 + 0.000063293 * Rf ^ 3;
 
 Ri = initial Brix reading
 Rf = final Brix reading
 
-----
-
-### Links
+## Links
 
 * [Ionic Documentation](https://ionicframework.com/docs/)
 * [Ionic Components](https://ionicframework.com/docs/components)
 * [BeerXML](http://www.beerxml.com/)
 
-### License
+## License
 
 Pliny the Helper is licensed as beerware.[*](https://fedoraproject.org/wiki/Licensing/Beerware)
 
