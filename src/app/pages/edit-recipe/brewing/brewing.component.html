@@ -36,13 +36,14 @@
         <ion-item>
           <ion-label class="ion-text-wrap">
             Lautering
-            <p>Lauter the wort@if (firstWortHops().length > 0) {
-              <span>, then add
-                @for (hop of firstWortHops(); track hop) {
-                  <span>{{ hop.amount ? (hop.amount * 1000) : 0 }}g of {{ hop.name }},</span>
-                }
+            <p>Lauter the wort,
+              sparge to a volume of {{ recipe.boilSize | number: '1.0-1' }} L@if (firstWortHops().length > 0) {
+                <span>, then add
+                  @for (hop of firstWortHops(); track hop) {
+                    <span>{{ hop.amount ? (hop.amount * 1000) : 0 }}g of {{ hop.name }},</span>
+                  }
               </span>
-            }
+              }
               and bring to a boil.
             </p>
           </ion-label>

@@ -20,7 +20,7 @@
 </ion-header>
 @if (recipe) {
   <ion-content class="ion-padding">
-    <ion-segment [value]="activeTab" (ionChange)="tabChanged($event)">
+    <ion-segment [value]="activeTab" (ionChange)="tabChanged($event)" class="ion-margin-bottom">
       <ion-segment-button value="ingredients" layout="icon-start">
         <ion-icon name="basket"></ion-icon>
         <ion-label class="ion-hide-xl-down">Ingredients</ion-label>

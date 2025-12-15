@@ -1,11 +1,12 @@
 import {Component, inject} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
-import {StorageService, XmlReaderService} from "services";
+import {StorageService, XmlReaderService, CloudStorageService} from "services";
 import {Fermentable, Hop, Misc, Recipe, Settings, Yeast} from "models";
 import {FormsModule} from "@angular/forms";
 import {CONFIG} from "../../app.constants";
 import {RecipeUtil} from "utils";
 import packageJson from 'packageJson';
+import {catchError, of} from "rxjs";
 
 
 @Component({
@@ -18,11 +19,15 @@ import packageJson from 'packageJson';
 export class SettingsPage {
   private storage = inject(StorageService);
   private xmlReader = inject(XmlReaderService);
+  private cloudService = inject(CloudStorageService);
 
   settings: Settings = {};
   isToastOpen = false;
+  isErrorToastOpen = false;
   showSpinner = false;
   showDeveloperOptions = false;
+  showCloudSpinner = false;
+  hasCloudError = false;
   version = packageJson.version;
 
   ionViewWillEnter() {
@@ -39,6 +44,8 @@ export class SettingsPage {
       this.settings.developerOptions = response?.developerOptions || false;
       this.showDeveloperOptions = response?.developerOptions || false;
       this.settings.hideDescription = response?.hideDescription || false;
+      this.settings.cloudEmail = response?.cloudEmail;
+      this.settings.cloudPassword = response?.cloudPassword;
     });
   }
 
@@ -56,10 +63,12 @@ export class SettingsPage {
       this.settings.efficiency = CONFIG.defaultEfficiency;
       this.settings.evaporation = CONFIG.evaporation;
       this.settings.displayCost = false;
-      this.settings.minimizeExport = true;
+      this.settings.minimizeExport = false;
       this.settings.developerOptions = false;
       this.settings.hideDescription = false;
       this.showDeveloperOptions = false;
+      this.settings.cloudEmail = undefined;
+      this.settings.cloudPassword = undefined;
     }, 100);
     this.init();
   }
@@ -71,6 +80,7 @@ export class SettingsPage {
     this.xmlReader.initHops();
     this.xmlReader.initYeasts();
     this.xmlReader.initMiscs();
+    this.xmlReader.initMashProfiles()
     setTimeout(() => {
       this.showSpinner = false;
     }, 250);
@@ -83,6 +93,10 @@ export class SettingsPage {
 
   closeToast() {
     this.isToastOpen = false;
+  }
+
+  closeErrorToast() {
+    this.isErrorToastOpen = false;
   }
 
   deleteDuplicates() {
@@ -194,5 +208,35 @@ export class SettingsPage {
         console.log('No recipes to recalculate!')
       }
     });
+  }
+
+  saveCloudSettings() {
+    this.showCloudSpinner = true;
+    if (!this.settings.cloudEmail && !this.settings.cloudPassword) {
+      setTimeout(() => {
+        this.saveSettings();
+        this.hasCloudError = false;
+        this.showCloudSpinner = false;
+      }, 100);
+      return;
+    }
+    this.cloudService.getRecipes(this.settings.cloudEmail || '', this.settings.cloudPassword || '').pipe(
+      catchError(err => {
+          console.warn(err);
+          this.isErrorToastOpen = true;
+          this.hasCloudError = true;
+          this.showCloudSpinner = false;
+          return of();
+        }
+      )
+    ).subscribe(() => {
+      setTimeout(() => {
+        this.saveSettings();
+        this.hasCloudError = false;
+        this.showCloudSpinner = false;
+      }, 100);
+    })
+
+
   }
 }

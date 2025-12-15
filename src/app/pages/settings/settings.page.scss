@@ -1,3 +1,20 @@
 .danger-zone ion-button {
   --background: var(--ion-color-danger)
 }
+
+.small-disclaimer {
+  font-size: 9pt;
+  font-style: italic;
+}
+
+.cloud-error {
+  --border-color: var(--ion-color-danger) !important;
+}
+
+.cloud-padding {
+  padding: 4px 0 4px 8px;
+}
+
+.btn-fix-width {
+  width: 96px;
+}

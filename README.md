@@ -18,9 +18,12 @@ ever wondered where the hop you're using comes from, or what some typical
 qualities of the malt you are using are.
 
 Additionally, there are some handy calculators to help you convert metric to imperial
-or to adjust your hydrometer reading to the actual temperature.
+or to adjust your hydrometer reading to the actual temperature or for using your
+refractometer post fermentation.
 
 And of course you can tweak your settings to accommodate your brewing equipment.
+
+If you want to get started with some recipes, you'll find my 40 first recipes [here](src/assets/xml/40-recipes.xml).
 
 ### Formulas
 
@@ -91,8 +94,20 @@ FG = 1 - 0.0044993 * Ri + 0.011774 * Rf + 0.00027581 * Ri ^ 2 - 0.0012717 * Rf ^
 Ri = initial Brix reading
 Rf = final Brix reading
 
+----
+
 ### Links
 
 * [Ionic Documentation](https://ionicframework.com/docs/)
 * [Ionic Components](https://ionicframework.com/docs/components)
 * [BeerXML](http://www.beerxml.com/)
+
+### License
+
+Pliny the Helper is licensed as beerware.[*](https://fedoraproject.org/wiki/Licensing/Beerware)
+
+"THE BEER-WARE LICENSE" (Revision 42):
+
+<mail@vincehofer.ch> wrote this file. As long as you retain this notice you
+can do whatever you want with this stuff. If we meet some day, and you think
+this stuff is worth it, you can buy me a beer in return

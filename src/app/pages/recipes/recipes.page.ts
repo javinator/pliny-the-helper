@@ -1,11 +1,12 @@
 import {Component, inject} from '@angular/core';
 import {AlertController, IonicModule, IonRouterOutlet, Platform} from '@ionic/angular';
-import {Recipe} from "models";
+import {Recipe, Settings} from "models";
 import {Router, RouterLink} from "@angular/router";
-import {StorageService, XmlReaderService, XmlWriterService} from "services";
+import {StorageService, XmlReaderService, XmlWriterService, CloudStorageService} from "services";
 import {RecipeCardComponent} from "./recipe-card/recipe-card.component";
 import {FilePicker} from "@capawesome/capacitor-file-picker";
 import {App} from "@capacitor/app";
+import {catchError, of} from "rxjs";
 
 @Component({
   selector: 'recipes-page',
@@ -21,12 +22,15 @@ export class RecipesPage {
   private xmlReader = inject(XmlReaderService);
   alertController = inject(AlertController);
   private routerOutlet = inject(IonRouterOutlet, {optional: true});
+  private cloudService = inject(CloudStorageService);
 
   recipes?: Recipe[];
+  settings?: Settings;
   selectedRecipes: Recipe[] = [];
   allSelected = false;
   isExportOpen = false;
   isToastOpen = false;
+  isCloudOpen = false;
   showSpinner = false;
   exitOpen = false;
   recipeToEdit?: string;
@@ -44,6 +48,9 @@ export class RecipesPage {
     this.storage.get('recipes')?.then((response) => {
       this.recipes = response;
       this.recipes?.sort((a, b) => a.name.localeCompare(b.name));
+    });
+    this.storage.get('settings')?.then((response) => {
+      this.settings = response;
     });
   }
 
@@ -145,6 +152,59 @@ export class RecipesPage {
       .then(alert => {
         alert.present();
       });
+  }
+
+  hasCloudSettings() {
+    return !!(this.settings?.cloudEmail && this.settings.cloudPassword);
+  }
+
+  openCloud() {
+    this.isCloudOpen = true;
+  }
+
+  closeCloud() {
+    this.isCloudOpen = false;
+  }
+
+  importRecipesFromCloud() {
+    this.showSpinner = true;
+    this.closeCloud();
+    this.cloudService.getRecipes(this.settings?.cloudEmail || '', this.settings?.cloudPassword || '')
+      .pipe(catchError(err => {
+        console.log(err);
+        setTimeout(() => {
+          this.showSpinner = false;
+        }, 100);
+        return of();
+      })).subscribe(res => {
+      this.recipes = res;
+      this.storage.deleteRecipes()?.then(() =>
+        this.storage.addRecipes(res)?.then(() => {
+          setTimeout(() => {
+            this.showSpinner = false;
+          }, 100);
+        })
+      )
+    })
+
+  }
+
+  exportRecipesToCloud() {
+    this.showSpinner = true;
+    this.closeCloud();
+    this.cloudService.saveRecipes(this.settings?.cloudEmail || '', this.settings?.cloudPassword || '', this.recipes || [])
+      .pipe(catchError(err => {
+        console.log(err);
+        setTimeout(() => {
+          this.showSpinner = false;
+        }, 100);
+        return of();
+      })).subscribe(res => {
+      console.log(res)
+      setTimeout(() => {
+        this.showSpinner = false;
+      }, 100);
+    })
   }
 }
 

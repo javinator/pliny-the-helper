@@ -9,4 +9,6 @@ export interface Settings {
   minimizeExport?: boolean;
   developerOptions?: boolean;
   hideDescription?: boolean;
+  cloudEmail?: string;
+  cloudPassword?: string;
 }
