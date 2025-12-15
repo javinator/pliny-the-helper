@@ -84,6 +84,11 @@
     <ion-header>
       <ion-toolbar>
         <ion-title>Cloud Save</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="closeCloud()">
+            <ion-label>Close</ion-label>
+          </ion-button>
+        </ion-buttons>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
@@ -93,13 +98,13 @@
       <ion-grid>
         <ion-row>
           <ion-col>
-            <ion-button (click)="importRecipesFromCloud()" expand="full">
+            <ion-button (click)="importRecipesFromCloud()" expand="full" size="large">
               <ion-icon slot="start" name="cloud-download-outline"></ion-icon>
               Import
             </ion-button>
           </ion-col>
           <ion-col>
-            <ion-button (click)="exportRecipesToCloud()" expand="full">
+            <ion-button (click)="exportRecipesToCloud()" expand="full" size="large">
               <ion-icon slot="start" name="cloud-upload-outline"></ion-icon>
               Export
             </ion-button>

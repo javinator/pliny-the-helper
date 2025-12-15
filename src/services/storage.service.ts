@@ -1,4 +1,4 @@
-import { Injectable, inject } from '@angular/core';
+import {Injectable, inject} from '@angular/core';
 import {Storage} from '@ionic/storage-angular';
 import {Recipe, BeerStyle, Fermentable, Hop, Yeast, Misc, MashProfile, Settings} from "models";
 import {RecipeUtil} from "utils";
@@ -41,14 +41,59 @@ export class StorageService {
 
   public addRecipes(rcps: Recipe[]) {
     let newRecipes: Recipe[] = [];
-    rcps.forEach((recipe) => newRecipes.push(RecipeUtil.calculateRecipe(recipe)))
+    rcps.forEach((recipe) => {
+      this.storage.get('fermentables')?.then((fermentables: Fermentable[]) => {
+        setTimeout(() => {
+          let newFermentables: Fermentable[] = [];
+          recipe.fermentables.forEach((fermentable) => {
+            let nF = JSON.parse(JSON.stringify(fermentables.find((item) => item.name === fermentable.name) || fermentable));
+            nF.amount = fermentable.amount;
+            newFermentables.push(nF);
+          })
+          recipe.fermentables = newFermentables;
+        }, 100);
+      })
+      this.storage.get('hops')?.then((hops: Hop[]) => {
+        setTimeout(() => {
+          let newHops: Hop[] = [];
+          recipe.hops.forEach((hop) => {
+            let nH = JSON.parse(JSON.stringify(hops.find((item) => item.name === hop.name) || hop));
+            nH.amount = hop.amount;
+            nH.time = hop.time;
+            nH.use = hop.use;
+            if (hop.alpha) {
+              nH.alpha = hop.alpha;
+            }
+            newHops.push(nH);
+          })
+          recipe.hops = newHops;
+        }, 100);
+      })
+      this.storage.get('yeasts')?.then((yeasts: Yeast[]) => {
+        setTimeout(() => {
+          let newYeasts: Yeast[] = [];
+          recipe.yeasts.forEach((yeast) => {
+            let nY = JSON.parse(JSON.stringify(yeasts.find((item) => item.name === yeast.name) || yeast));
+            nY.amount = yeast.amount;
+            nY.attenuation = yeast.attenuation;
+            newYeasts.push(nY)
+          })
+          recipe.yeasts = newYeasts;
+        }, 100);
+      })
+      newRecipes.push(RecipeUtil.calculateRecipe(recipe));
+    })
     return this._storage?.get('recipes').then((recipes: Recipe[] | null) => {
-      if (recipes) {
-        recipes.push(...newRecipes);
-      } else {
-        recipes = newRecipes;
-      }
-      return this._storage?.set('recipes', recipes);
+      setTimeout(() => {
+        if (recipes) {
+          recipes.push(...newRecipes);
+        } else {
+          recipes = newRecipes;
+        }
+      }, 100);
+      setTimeout(() => {
+        return this._storage?.set('recipes', recipes);
+      }, 100);
     })
   }
 

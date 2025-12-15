@@ -1,4 +1,4 @@
-import { Injectable, inject } from '@angular/core';
+import {Injectable, inject} from '@angular/core';
 import {StorageService} from "./storage.service";
 import {HttpClient} from "@angular/common/http";
 
@@ -435,9 +435,9 @@ function parseXMLtoRecipes(data: string): Promise<Recipe[]> {
               amount: yeast.AMOUNT?.[0],
               lab: yeast.LABORATORY?.[0],
               productId: yeast.PRODUCT_ID?.[0],
-              minTemp: yeast.MIN_TEMPERATURE[0],
-              maxTemp: yeast.MAX_TEMPERATURE[0],
-              attenuation: yeast.ATTENUATION[0],
+              minTemp: yeast.MIN_TEMPERATURE?.[0],
+              maxTemp: yeast.MAX_TEMPERATURE?.[0],
+              attenuation: yeast.ATTENUATION?.[0],
               maxAbv: yeast.MAX_ABV?.[0],
               description: yeast.NOTES?.[0],
               cost: item.COST?.[0]

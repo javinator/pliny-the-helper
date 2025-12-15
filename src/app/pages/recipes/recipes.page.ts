@@ -121,7 +121,7 @@ export class RecipesPage {
           this.recipes = response;
           this.showSpinner = false;
         });
-      }, 500);
+      }, 1000);
     });
   }
 
