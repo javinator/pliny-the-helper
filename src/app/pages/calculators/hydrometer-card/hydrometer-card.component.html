@@ -3,14 +3,38 @@
     <ion-card-title>Hydrometer Adjustment</ion-card-title>
   </ion-card-header>
   <ion-card-content>
-    <ion-input type="number" step="0.001" (ionInput)="changeGravity($event)" label="Original Gravity"
-               placeholder="1.050" label-placement="floating"></ion-input>
-    <ion-input type="number" step="0.5" (ionInput)="changeWortTemp($event)" label="Wort Temperature"
-               placeholder="27" label-placement="floating"></ion-input>
-    <ion-input type="number" step="0.5" (ionInput)="changeCalTemp($event)" label="Calibration Temperature"
-               [value]="calTemp" label-placement="floating"></ion-input>
+    <ion-input
+      type="number"
+      step="0.001"
+      (ionInput)="changeGravity($event)"
+      label="Original Gravity"
+      placeholder="1.050"
+      class="calculator-input"
+      label-placement="floating"
+      fill="outline"
+    ></ion-input>
+    <ion-input
+      type="number"
+      step="0.5"
+      (ionInput)="changeWortTemp($event)"
+      label="Wort Temperature"
+      placeholder="27"
+      class="calculator-input"
+      label-placement="floating"
+      fill="outline"
+    ></ion-input>
+    <ion-input
+      type="number"
+      step="0.5"
+      (ionInput)="changeCalTemp($event)"
+      label="Calibration Temperature"
+      [value]="calTemp"
+      class="calculator-input"
+      label-placement="floating"
+      fill="outline"
+    ></ion-input>
     <p class="ion-padding-top">
-      <strong>Gravity at {{calTemp}}°C: </strong> {{ calcGravity() | number:'1.3-3'}}
+      <strong>Gravity at {{ calTemp }}°C: </strong> {{ calcGravity() | number:'1.3-3' }}
     </p>
   </ion-card-content>
 </ion-card>

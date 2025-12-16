@@ -9,16 +9,24 @@
           Gravity
           <p>
             <ion-row class="ion-align-items-center">
-              <ion-col size="4">
-                <ion-input (ionInput)="calculateBrix($event)" [value]="sg | number:'1.3-3'"
-                           aria-label="SG"></ion-input>
+              <ion-col size="9" sizeSm="4">
+                <ion-input
+                  (ionInput)="calculateBrix($event)"
+                  [value]="sg | number:'1.3-3'"
+                  aria-label="SG"
+                  fill="outline"
+                ></ion-input>
               </ion-col>
-              <ion-col size="2">SG</ion-col>
-              <ion-col size="4">
-                <ion-input (ionInput)="calculateSg($event)" [value]="brix | number:'1.0-1'"
-                           aria-label="Brix"></ion-input>
+              <ion-col size="3" sizeSm="2">SG</ion-col>
+              <ion-col size="9" sizeSm="4">
+                <ion-input
+                  (ionInput)="calculateSg($event)"
+                  [value]="brix | number:'1.0-1'"
+                  aria-label="Brix"
+                  fill="outline"
+                ></ion-input>
               </ion-col>
-              <ion-col size="2">Brix</ion-col>
+              <ion-col size="3" sizeSm="2">Brix</ion-col>
             </ion-row>
           </p>
         </ion-label>
@@ -28,21 +36,33 @@
           Color
           <p>
             <ion-row class="ion-align-items-center">
-              <ion-col size="2">
-                <ion-input (ionInput)="calculateFromSRM($event)" [value]="srm | number:'1.0-1'"
-                           aria-label="SRM"></ion-input>
+              <ion-col sizeSm="2" size="9">
+                <ion-input
+                  (ionInput)="calculateFromSRM($event)"
+                  [value]="srm | number:'1.0-1'"
+                  aria-label="SRM"
+                  fill="outline"
+                ></ion-input>
               </ion-col>
-              <ion-col size="2">SRM</ion-col>
-              <ion-col size="2">
-                <ion-input (ionInput)="calculateFromEBC($event)" [value]="ebc | number:'1.0-1'"
-                           aria-label="EBC"></ion-input>
+              <ion-col sizeSm="2" size="3">SRM</ion-col>
+              <ion-col sizeSm="2" size="9">
+                <ion-input
+                  (ionInput)="calculateFromEBC($event)"
+                  [value]="ebc | number:'1.0-1'"
+                  aria-label="EBC"
+                  fill="outline"
+                ></ion-input>
               </ion-col>
-              <ion-col size="2">EBC</ion-col>
-              <ion-col size="2">
-                <ion-input (ionInput)="calculateFromLovibond($event)" [value]="lovibond | number:'1.0-1'"
-                           aria-label="Lovibond"></ion-input>
+              <ion-col sizeSm="2" size="3">EBC</ion-col>
+              <ion-col sizeSm="2" size="9">
+                <ion-input
+                  (ionInput)="calculateFromLovibond($event)"
+                  [value]="lovibond | number:'1.0-1'"
+                  aria-label="Lovibond"
+                  fill="outline"
+                ></ion-input>
               </ion-col>
-              <ion-col size="2">°L</ion-col>
+              <ion-col sizeSm="2" size="3">°L</ion-col>
             </ion-row>
           </p>
         </ion-label>
@@ -52,16 +72,24 @@
           Temperature
           <p>
             <ion-row class="ion-align-items-center">
-              <ion-col size="4">
-                <ion-input (ionInput)="calculateFahrenheit($event)" [value]="celsius | number:'1.0-1' "
-                           aria-label="Celsius"></ion-input>
+              <ion-col size="9" sizeSm="4">
+                <ion-input
+                  (ionInput)="calculateFahrenheit($event)"
+                  [value]="celsius | number:'1.0-1' "
+                  aria-label="Celsius"
+                  fill="outline"
+                ></ion-input>
               </ion-col>
-              <ion-col size="2">°C</ion-col>
-              <ion-col size="4">
-                <ion-input (ionInput)="calculateCelsius($event)" [value]="fahrenheit | number:'1.0-1'"
-                           aria-label="Fahrenheit"></ion-input>
+              <ion-col size="3" sizeSm="2">°C</ion-col>
+              <ion-col size="9" sizeSm="4">
+                <ion-input
+                  (ionInput)="calculateCelsius($event)"
+                  [value]="fahrenheit | number:'1.0-1'"
+                  aria-label="Fahrenheit"
+                  fill="outline"
+                ></ion-input>
               </ion-col>
-              <ion-col size="2">°F</ion-col>
+              <ion-col size="3" sizeSm="2">°F</ion-col>
             </ion-row>
           </p>
         </ion-label>
@@ -71,34 +99,47 @@
           Weight
           <p>
             <ion-row class="ion-align-items-center">
-              <ion-col size="4">
-                <ion-input (ionInput)="calculatePounds($event)" [value]="kilos | number:'1.0-2' "
-                           aria-label="Kilos"></ion-input>
+              <ion-col size="9" sizeSm="4">
+                <ion-input
+                  (ionInput)="calculatePounds($event)"
+                  [value]="kilos | number:'1.0-2' "
+                  aria-label="Kilos"
+                  fill="outline"
+                ></ion-input>
               </ion-col>
-              <ion-col size="2">kg</ion-col>
-              <ion-col size="4">
-                <ion-input (ionInput)="calculateKilos($event)" [value]="pounds | number:'1.0-2'"
-                           aria-label="Pounds"></ion-input>
+              <ion-col size="3" sizeSm="2">kg</ion-col>
+              <ion-col size="9" sizeSm="4">
+                <ion-input
+                  (ionInput)="calculateKilos($event)"
+                  [value]="pounds | number:'1.0-2'"
+                  aria-label="Pounds"
+                  fill="outline"
+                ></ion-input>
               </ion-col>
-              <ion-col size="2">lbs</ion-col>
+              <ion-col size="3" sizeSm="2">lbs</ion-col>
             </ion-row>
           </p>
-        </ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>
+
           <p>
             <ion-row class="ion-align-items-center">
-              <ion-col size="4">
-                <ion-input (ionInput)="calculateOunces($event)" [value]="grams | number:'1.0-3' "
-                           aria-label="Ounces"></ion-input>
+              <ion-col size="9" sizeSm="4">
+                <ion-input
+                  (ionInput)="calculateOunces($event)"
+                  [value]="grams | number:'1.0-3' "
+                  aria-label="Ounces"
+                  fill="outline"
+                ></ion-input>
               </ion-col>
-              <ion-col size="2">g</ion-col>
-              <ion-col size="4">
-                <ion-input (ionInput)="calculateGrams($event)" [value]="ounces | number:'1.0-2'"
-                           aria-label="Grams"></ion-input>
+              <ion-col size="3" sizeSm="2">g</ion-col>
+              <ion-col size="9" sizeSm="4">
+                <ion-input
+                  (ionInput)="calculateGrams($event)"
+                  [value]="ounces | number:'1.0-2'"
+                  aria-label="Grams"
+                  fill="outline"
+                ></ion-input>
               </ion-col>
-              <ion-col size="2">oz</ion-col>
+              <ion-col size="3" sizeSm="2">oz</ion-col>
             </ion-row>
           </p>
         </ion-label>
@@ -108,16 +149,51 @@
           Volume
           <p>
             <ion-row class="ion-align-items-center">
-              <ion-col size="4">
-                <ion-input (ionInput)="calculateGallons($event)" [value]="liters | number:'1.0-2' "
-                           aria-label="Liters"></ion-input>
+              <ion-col size="9" sizeSm="4">
+                <ion-input
+                  (ionInput)="calculateGallons($event)"
+                  [value]="liters | number:'1.0-2' "
+                  aria-label="Liters"
+                  fill="outline"
+                ></ion-input>
               </ion-col>
-              <ion-col size="2">L</ion-col>
-              <ion-col size="4">
-                <ion-input (ionInput)="calculateLiters($event)" [value]="gallons | number:'1.0-2'"
-                           aria-label="Gallons"></ion-input>
+              <ion-col size="3" sizeSm="2">L</ion-col>
+              <ion-col size="9" sizeSm="4">
+                <ion-input
+                  (ionInput)="calculateLiters($event)"
+                  [value]="gallons | number:'1.0-2'"
+                  aria-label="Gallons"
+                  fill="outline"
+                ></ion-input>
               </ion-col>
-              <ion-col size="2">gal</ion-col>
+              <ion-col size="3" sizeSm="2">gal</ion-col>
+            </ion-row>
+          </p>
+        </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          Alcohol
+          <p>
+            <ion-row class="ion-align-items-center">
+              <ion-col size="9" sizeSm="4">
+                <ion-input
+                  (ionInput)="calculateABW($event)"
+                  [value]="abv | number:'1.0-2' "
+                  aria-label="Liters"
+                  fill="outline"
+                ></ion-input>
+              </ion-col>
+              <ion-col size="3" sizeSm="2">% ABV</ion-col>
+              <ion-col size="9" sizeSm="4">
+                <ion-input
+                  (ionInput)="calculateABV($event)"
+                  [value]="abw | number:'1.0-2'"
+                  aria-label="Gallons"
+                  fill="outline"
+                ></ion-input>
+              </ion-col>
+              <ion-col size="3" sizeSm="2">% ABW</ion-col>
             </ion-row>
           </p>
         </ion-label>

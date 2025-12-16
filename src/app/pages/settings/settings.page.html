@@ -46,18 +46,18 @@
                        label="Wort Correction Factor" type="number"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-checkbox [(ngModel)]="settings.displayCost" label-placement="end" justify="start">Show cost of recipes
-              (CHF)
+            <ion-checkbox [(ngModel)]="settings.displayCost" label-placement="end" justify="start">
+              Show cost of recipes (CHF)
             </ion-checkbox>
           </ion-item>
           <ion-item>
-            <ion-checkbox [(ngModel)]="settings.minimizeExport" label-placement="end" justify="start">Minimize export
-              XML
+            <ion-checkbox [(ngModel)]="settings.minimizeExport" label-placement="end" justify="start">
+              Minimize export XML
             </ion-checkbox>
           </ion-item>
           <ion-item>
-            <ion-checkbox [(ngModel)]="settings.hideDescription" label-placement="end" justify="start">Hide ingredients
-              description in edit view
+            <ion-checkbox [(ngModel)]="settings.hideDescription" label-placement="end" justify="start">
+              Hide ingredients description in edit view
             </ion-checkbox>
           </ion-item>
           <ion-item>
@@ -75,11 +75,15 @@
           <h2>Actions</h2>
           <div class="ion-padding">
             <ion-button (click)="recalculateCosts()">Recalculate Recipes</ion-button>
+            <ion-button (click)="init()">Init XML Reader</ion-button>
           </div>
           <h2>Danger Zone</h2>
           <div class="ion-padding danger-zone">
             <ion-button (click)="deleteDuplicates()">Delete duplicate Recipes</ion-button>
-            <ion-button (click)="clearDb()">Clear DB</ion-button>
+            <ion-button (click)="clearDb()">
+              Clear DB
+              <ion-icon name="warning" class="ion-padding-start"></ion-icon>
+            </ion-button>
           </div>
           <h2>Experimental Cloud Storage</h2>
           <p class="small-disclaimer">

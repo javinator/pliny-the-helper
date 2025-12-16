@@ -7,7 +7,7 @@ import {DecimalPipe} from "@angular/common";
   selector: 'conversion-card',
   templateUrl: 'conversion-card.component.html',
   standalone: true,
-  styleUrls: ['../../edit-recipe/edit-details/edit-details.component.scss'],
+  styleUrls: ['../calculators.component.scss'],
   imports: [IonicModule, DecimalPipe],
 })
 export class ConversionCardComponent {
@@ -24,12 +24,14 @@ export class ConversionCardComponent {
 
   pounds?: number;
   kilos?: number;
-
   ounces?: number;
   grams?: number;
 
   gallons?: number;
   liters?: number;
+
+  abv?: number;
+  abw?: number;
 
   calculateBrix(event: any) {
     this.brix = CalculatorUtil.sgToBrix(event.detail.value);
@@ -64,18 +66,27 @@ export class ConversionCardComponent {
 
   calculatePounds(event: any) {
     this.pounds = CalculatorUtil.kilosToPounds(event.detail.value);
+    this.grams = event.detail.value * 1000;
+    this.ounces = CalculatorUtil.kilosToOunces(event.detail.value);
   }
 
   calculateKilos(event: any) {
     this.kilos = CalculatorUtil.poundsToKilos(event.detail.value);
+    this.grams = this.kilos * 1000;
+    this.ounces = CalculatorUtil.kilosToOunces(this.kilos);
   }
 
   calculateOunces(event: any) {
-    this.ounces = CalculatorUtil.kilosToOunces(event.detail.value / 1000);
+    this.kilos = event.detail.value / 1000;
+    this.ounces = CalculatorUtil.kilosToOunces(this.kilos);
+    this.pounds = CalculatorUtil.kilosToPounds(this.kilos);
+
   }
 
   calculateGrams(event: any) {
     this.grams = CalculatorUtil.ouncesToGrams(event.detail.value);
+    this.kilos = this.grams / 1000;
+    this.pounds = this.pounds = CalculatorUtil.kilosToPounds(this.kilos);
   }
 
   calculateGallons(event: any) {
@@ -84,6 +95,14 @@ export class ConversionCardComponent {
 
   calculateLiters(event: any) {
     this.liters = CalculatorUtil.gallonsToLiters(event.detail.value);
+  }
+
+  calculateABV(event: any) {
+    this.abv = event.detail.value * 1.25;
+  }
+
+  calculateABW(event: any) {
+    this.abw = event.detail.value * 0.8;
   }
 
 }

@@ -40,7 +40,7 @@ export class SettingsPage {
       this.settings.evaporation = response?.evaporation || CONFIG.evaporation;
       this.settings.wortCorrectionFactor = response?.wortCorrectionFactor || CONFIG.defaultWFC;
       this.settings.displayCost = response?.displayCost || false;
-      this.settings.minimizeExport = response?.minimizeExport || false;
+      this.settings.minimizeExport = response?.minimizeExport || true;
       this.settings.developerOptions = response?.developerOptions || false;
       this.showDeveloperOptions = response?.developerOptions || false;
       this.settings.hideDescription = response?.hideDescription || false;
@@ -63,7 +63,7 @@ export class SettingsPage {
       this.settings.efficiency = CONFIG.defaultEfficiency;
       this.settings.evaporation = CONFIG.evaporation;
       this.settings.displayCost = false;
-      this.settings.minimizeExport = false;
+      this.settings.minimizeExport = true;
       this.settings.developerOptions = false;
       this.settings.hideDescription = false;
       this.showDeveloperOptions = false;
@@ -223,6 +223,7 @@ export class SettingsPage {
     this.cloudService.getRecipes(this.settings.cloudEmail || '', this.settings.cloudPassword || '').pipe(
       catchError(err => {
           console.warn(err);
+          this.settings.cloudPassword = undefined;
           this.isErrorToastOpen = true;
           this.hasCloudError = true;
           this.showCloudSpinner = false;
@@ -236,7 +237,5 @@ export class SettingsPage {
         this.showCloudSpinner = false;
       }, 100);
     })
-
-
   }
 }

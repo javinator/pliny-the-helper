@@ -85,3 +85,8 @@ select-search, select-search ion-input, select-search ion-label, select-search i
 .info {
   color: #919191;
 }
+
+.label-text.sc-ion-input-md,
+.sc-ion-input-md-s > [slot=label] {
+  overflow: visible !important;
+}

@@ -9,7 +9,7 @@ export const CONFIG = {
   defaultBatchSize: 20,
   defaultBoilTime: 60,
   defaultEfficiency: 70,
-  defaultWFC: 1.005
+  defaultWFC: 1.000
 }
 
 export const SRM = [

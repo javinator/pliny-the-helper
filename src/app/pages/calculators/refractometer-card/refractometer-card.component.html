@@ -3,20 +3,56 @@
     <ion-card-title>Refractometer Adjustment</ion-card-title>
   </ion-card-header>
   <ion-card-content>
-    <ion-select label="Units" label-placement="floating" [value]="unit" (ionChange)="changeUnit($event)">
+    <ion-select
+      label="Units"
+      label-placement="floating"
+      [value]="unit"
+      (ionChange)="changeUnit($event)"
+      class="calculator-input"
+      fill="outline"
+    >
       <ion-select-option value="gravity">Gravity</ion-select-option>
       <ion-select-option value="brix">WRI</ion-select-option>
     </ion-select>
-    <ion-select label="Formula" label-placement="floating" [value]="formula" (ionChange)="changeFormula($event)">
+    <ion-select
+      label="Formula"
+      label-placement="floating"
+      [value]="formula"
+      (ionChange)="changeFormula($event)"
+      class="calculator-input"
+      fill="outline"
+    >
       <ion-select-option value="Terrill">Terrill</ion-select-option>
       <ion-select-option value="Novotny">Novotny</ion-select-option>
     </ion-select>
-    <ion-input type="number" label="Wort Correction Factor" label-placement="floating"
-               (ionChange)="changeWCF($event)" [value]="wcf" step="0.001"></ion-input>
-    <ion-input type="number" label="Measured OG" label-placement="floating" (ionChange)="changeOg($event)"
-               step="0.001"></ion-input>
-    <ion-input type="number" label="Measured FG" label-placement="floating" (ionChange)="changeFg($event)"
-               step="0.001"></ion-input>
+    <ion-input
+      type="number"
+      label="Wort Correction Factor"
+      label-placement="floating"
+      (ionChange)="changeWCF($event)"
+      [value]="wcf | number:'1.3-3' "
+      step="0.001"
+      class="calculator-input"
+      fill="outline"
+    ></ion-input>
+    <ion-input
+      type="number"
+      label="Measured OG"
+      label-placement="floating"
+      (ionChange)="changeOg($event)"
+      step="0.001"
+      class="calculator-input"
+      fill="outline"
+    ></ion-input>
+    <ion-input
+      type="number"
+      label="Measured FG"
+      label-placement="floating"
+      (ionChange)="changeFg($event)"
+      step="0.001"
+      class="calculator-input"
+      fill="outline"
+    ></ion-input>
     <p class="ion-padding-top">
       <strong>Corrected OG: </strong> {{ calcOG() | number:'1.3-3' }}
     </p>

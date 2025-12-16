@@ -9,7 +9,7 @@ import {CONFIG} from "../../../app.constants";
   selector: 'refractometer-card',
   templateUrl: 'refractometer-card.component.html',
   standalone: true,
-  styleUrls: ['../../edit-recipe/edit-details/edit-details.component.scss'],
+  styleUrls: ['../calculators.component.scss'],
   imports: [IonicModule, DecimalPipe],
 })
 export class RefractometerCardComponent implements OnInit {
