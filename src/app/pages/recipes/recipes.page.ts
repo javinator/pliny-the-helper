@@ -124,8 +124,9 @@ export class RecipesPage {
       this.xmlReader.readRecipes(b64_to_utf8(result.files[0].data as string));
       this.showSpinner = true;
       setTimeout(() => {
-        this.storage.get('recipes')?.then((response) => {
-          this.recipes = response;
+        this.storage.get('recipes')?.then((response: Recipe[] | undefined) => {
+          this.recipes = response?.sort((a, b) => a.name.localeCompare(b.name));
+          this.f_recipes = this.recipes
           this.showSpinner = false;
         });
       }, 1000);
@@ -183,7 +184,8 @@ export class RecipesPage {
         }, 100);
         return of();
       })).subscribe(res => {
-      this.recipes = res;
+      this.recipes = res.sort((a, b) => a.name.localeCompare(b.name));
+      this.f_recipes = this.recipes;
       this.storage.deleteRecipes()?.then(() =>
         this.storage.addRecipes(res)?.then(() => {
           setTimeout(() => {
@@ -205,7 +207,7 @@ export class RecipesPage {
           this.showSpinner = false;
         }, 100);
         return of();
-      })).subscribe(res => {
+      })).subscribe(() => {
       setTimeout(() => {
         this.showSpinner = false;
       }, 100);
@@ -213,6 +215,7 @@ export class RecipesPage {
   }
 }
 
-function b64_to_utf8(str: string) {
-  return decodeURIComponent(escape(window.atob(str)));
+function b64_to_utf8(str: string): string {
+  const bytes = Uint8Array.from(atob(str), c => c.charCodeAt(0));
+  return new TextDecoder("utf-8").decode(bytes);
 }

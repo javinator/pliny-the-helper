@@ -85,21 +85,21 @@ export class SettingsPage {
 
   init() {
     this.showSpinner = true;
+    this.xmlReader.initWaters();
     this.xmlReader.initStyles();
     this.xmlReader.initFermentables();
     this.xmlReader.initHops();
     this.xmlReader.initYeasts();
     this.xmlReader.initMiscs();
     this.xmlReader.initMashProfiles()
-    this.xmlReader.initWaters();
     setTimeout(() => {
       this.storage.get('waters')?.then((response: Water[]) => {
         this.waterProfileOptions = response.map(water => water.name).sort()
       })
-    }, 250);
+    }, 1000);
     setTimeout(() => {
       this.showSpinner = false;
-    }, 250);
+    }, 500);
   }
 
   saveSettings() {
