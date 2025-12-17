@@ -7,9 +7,9 @@ import {addIcons} from "ionicons";
 import {
   basketOutline,
   beerOutline,
+  calculatorOutline,
   easelOutline,
   flaskOutline,
-  calculatorOutline,
   settingsOutline
 } from 'ionicons/icons';
 import {Subscription} from "rxjs";
@@ -77,7 +77,6 @@ export class AppComponent implements OnInit {
     this.xmlReader.initWaters();
     setTimeout(() => {
       this.storage.get('settings')?.then((settings: Settings) => {
-        console.log(settings);
         this.showWaters.set(settings?.useWaterChemistry || false);
       })
     }, 0);

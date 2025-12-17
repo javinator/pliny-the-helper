@@ -38,7 +38,8 @@
       </div>
     }
     @if (recipes && recipes.length > 0) {
-      @for (recipe of recipes; track recipe.uid) {
+      <ion-searchbar [debounce]="50" (ionInput)="filter($event)"></ion-searchbar>
+      @for (recipe of f_recipes; track recipe.uid) {
         <recipe-card
           [id]="recipe.uid"
           [name]="recipe.name"

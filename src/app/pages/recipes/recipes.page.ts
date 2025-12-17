@@ -2,7 +2,7 @@ import {Component, inject} from '@angular/core';
 import {AlertController, IonicModule, IonRouterOutlet, Platform} from '@ionic/angular';
 import {Recipe, Settings} from "models";
 import {Router, RouterLink} from "@angular/router";
-import {StorageService, XmlReaderService, XmlWriterService, CloudStorageService} from "services";
+import {CloudStorageService, StorageService, XmlReaderService, XmlWriterService} from "services";
 import {RecipeCardComponent} from "./recipe-card/recipe-card.component";
 import {FilePicker} from "@capawesome/capacitor-file-picker";
 import {App} from "@capacitor/app";
@@ -25,6 +25,7 @@ export class RecipesPage {
   private cloudService = inject(CloudStorageService);
 
   recipes?: Recipe[];
+  f_recipes?: Recipe[];
   settings?: Settings;
   selectedRecipes: Recipe[] = [];
   allSelected = false;
@@ -48,6 +49,7 @@ export class RecipesPage {
     this.storage.get('recipes')?.then((response) => {
       this.recipes = response;
       this.recipes?.sort((a, b) => a.name.localeCompare(b.name));
+      this.f_recipes = this.recipes;
     });
     this.storage.get('settings')?.then((response) => {
       this.settings = response;
@@ -59,10 +61,15 @@ export class RecipesPage {
       this.showSpinner = false;
       setTimeout(() => {
         if (this.recipeToEdit != undefined) {
-          document.getElementById(this.recipeToEdit)?.scrollIntoView();
+          document.getElementById(this.recipeToEdit)?.scrollIntoView({behavior: 'smooth', block: 'start'});
         }
       }, 100);
     }, 250);
+  }
+
+  filter(event: any) {
+    const query = event.target.value.toLowerCase();
+    this.f_recipes = this.recipes?.filter(d => d.name.toLowerCase().indexOf(query) > -1);
   }
 
   showEdit(recipe: Recipe) {
@@ -140,7 +147,6 @@ export class RecipesPage {
         role: 'cancel',
         handler: () => {
           this.exitOpen = false;
-          console.log('Application exit cancelled!');
         }
       }, {
         text: 'Exit',
@@ -171,7 +177,7 @@ export class RecipesPage {
     this.closeCloud();
     this.cloudService.getRecipes(this.settings?.cloudEmail || '', this.settings?.cloudPassword || '')
       .pipe(catchError(err => {
-        console.log(err);
+        console.warn(err);
         setTimeout(() => {
           this.showSpinner = false;
         }, 100);
@@ -194,13 +200,12 @@ export class RecipesPage {
     this.closeCloud();
     this.cloudService.saveRecipes(this.settings?.cloudEmail || '', this.settings?.cloudPassword || '', this.recipes || [])
       .pipe(catchError(err => {
-        console.log(err);
+        console.warn(err);
         setTimeout(() => {
           this.showSpinner = false;
         }, 100);
         return of();
       })).subscribe(res => {
-      console.log(res)
       setTimeout(() => {
         this.showSpinner = false;
       }, 100);

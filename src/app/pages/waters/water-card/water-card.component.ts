@@ -1,4 +1,4 @@
-import {Component, Input} from "@angular/core";
+import {Component, EventEmitter, input, Output} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
 import {Water} from "models";
 import {DecimalPipe} from "@angular/common";
@@ -10,7 +10,7 @@ import {DecimalPipe} from "@angular/common";
   imports: [IonicModule, DecimalPipe],
 })
 export class WaterCardComponent {
-  @Input()
-  water!: Water;
+  @Output() deleteWater = new EventEmitter<void>();
+  water = input.required<Water>();
 
 }

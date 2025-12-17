@@ -99,7 +99,7 @@ export class EditIngredientsComponent implements OnInit {
       this.recipe.fermentables.push(this.newFermentable);
       this.storage.saveRecipe(this.recipe);
     } else {
-      console.log('Error: Fermentable not initialized!')
+      console.error('Error: Fermentable not initialized!')
     }
     this.closeFermentable();
   }
@@ -170,7 +170,7 @@ export class EditIngredientsComponent implements OnInit {
       this.recipe.hops.push(this.newHop);
       this.storage.saveRecipe(this.recipe);
     } else {
-      console.log('Error: Hop not initialized!')
+      console.error('Error: Hop not initialized!')
     }
     this.closeHop();
   }
@@ -237,7 +237,7 @@ export class EditIngredientsComponent implements OnInit {
       this.recipe.yeasts.push(this.newYeast);
       this.storage.saveRecipe(this.recipe);
     } else {
-      console.log('Error: Yeast not initialized!')
+      console.error('Error: Yeast not initialized!')
     }
     this.closeYeast();
   }
@@ -292,7 +292,7 @@ export class EditIngredientsComponent implements OnInit {
       this.recipe.miscs.push(this.newMisc);
       this.storage.saveRecipe(this.recipe);
     } else {
-      console.log('Error: Misc not initialized!')
+      console.error('Error: Misc not initialized!')
     }
     this.closeMisc();
   }

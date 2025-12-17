@@ -36,7 +36,6 @@ export class IngredientsPage implements OnInit {
   ionViewDidEnter() {
     setTimeout(() => {
       this.showSpinner = false;
-      setTimeout(() => document.getElementById('ingredients')?.scrollIntoView(), 100);
     }, 500);
   }
 

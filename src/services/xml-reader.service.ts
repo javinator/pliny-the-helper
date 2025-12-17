@@ -1,10 +1,10 @@
-import {Injectable, inject} from '@angular/core';
+import {inject, Injectable} from '@angular/core';
 import {StorageService} from "./storage.service";
 import {HttpClient} from "@angular/common/http";
 
 import {v4 as uuidv4} from "uuid";
 import * as xml2js from 'xml2js';
-import {BeerStyle, Fermentable, Hop, Yeast, Misc, MashProfile, Recipe, Water} from "models";
+import {BeerStyle, Fermentable, Hop, MashProfile, Misc, Recipe, Water, Yeast} from "models";
 
 interface MashProfileXml {
   NAME: string[];
@@ -329,6 +329,7 @@ function parseXMLtoWaters(data: string): Promise<Water[]> {
       for (k in obj.WATER) {
         const item = obj.WATER[k];
         arr.push({
+          uid: uuidv4() as string,
           name: item.NAME[0],
           version: item.VERSION[0],
           amount: item.AMOUNT[0],

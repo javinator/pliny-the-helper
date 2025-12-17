@@ -6,6 +6,11 @@
     <ion-title>
       Water Profiles
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openModal()">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -16,11 +21,101 @@
 } @else {
   <ion-content class="ion-padding">
     @if (waters) {
-      <ion-searchbar id="waters" [debounce]="50" (ionInput)="filter($event)"></ion-searchbar>
+      <ion-searchbar [debounce]="50" (ionInput)="filter($event)"></ion-searchbar>
       @for (water of waters; track water) {
-        <water-card [water]="water"></water-card>
+        <water-card [water]="water" (deleteWater)="deleteWater(water.uid)"></water-card>
       }
     }
   </ion-content>
 }
+
+<ion-modal [isOpen]="isModalOpen" (didDismiss)="closeModal()">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>
+          Create Water Profile
+        </ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <form #waterForm="ngForm" (ngSubmit)="saveWater(waterForm.value)" ngNativeValidate>
+        <ion-input
+          name="name"
+          type="text"
+          label="Name"
+          labelPlacement="floating"
+          required
+          ngModel
+        ></ion-input>
+        <ion-input
+          name="bicarbonate"
+          type="number"
+          step="1"
+          label="Bicarbonate"
+          labelPlacement="floating"
+          required
+          ngModel
+        ></ion-input>
+        <ion-input
+          name="calcium"
+          type="number"
+          step="1"
+          label="Calcium"
+          labelPlacement="floating"
+          required
+          ngModel
+        ></ion-input>
+        <ion-input
+          name="magnesium"
+          type="number"
+          step="1"
+          label="Magnesium"
+          labelPlacement="floating"
+          required
+          ngModel
+        ></ion-input>
+        <ion-input
+          name="sodium"
+          type="number"
+          step="1"
+          label="Sodium"
+          labelPlacement="floating"
+          required
+          ngModel
+        ></ion-input>
+        <ion-input
+          name="chloride"
+          type="number"
+          step="1"
+          label="Chloride"
+          labelPlacement="floating"
+          required
+          ngModel
+        ></ion-input>
+        <ion-input
+          name="sulfate"
+          type="number"
+          step="1"
+          label="Sulfate"
+          labelPlacement="floating"
+          required
+          ngModel
+        ></ion-input>
+        <ion-input
+          name="ph"
+          type="number"
+          step="0.1"
+          label="pH"
+          labelPlacement="floating"
+          ngModel
+        ></ion-input>
+        <div class="ion-text-end">
+          <ion-button (click)="closeModal()" color="light" class="ion-padding-end">Cancel</ion-button>
+          <ion-button type="submit" class="ion-padding-end">Save</ion-button>
+        </div>
+      </form>
+    </ion-content>
+  </ng-template>
+</ion-modal>
 

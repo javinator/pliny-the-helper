@@ -1,7 +1,7 @@
 import {Component, EventEmitter, inject, Output} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {StorageService, XmlReaderService, CloudStorageService} from "services";
-import {Fermentable, Hop, Misc, Recipe, Settings, Yeast} from "models";
+import {Fermentable, Hop, Misc, Recipe, Settings, Water, Yeast} from "models";
 import {FormsModule} from "@angular/forms";
 import {CONFIG} from "../../app.constants";
 import {RecipeUtil} from "utils";
@@ -30,6 +30,7 @@ export class SettingsPage {
   showCloudSpinner = false;
   hasCloudError = false;
   version = packageJson.version;
+  waterProfileOptions: string[] = [];
 
   ionViewWillEnter() {
     this.showSpinner = true;
@@ -48,7 +49,11 @@ export class SettingsPage {
       this.settings.cloudEmail = response?.cloudEmail;
       this.settings.cloudPassword = response?.cloudPassword;
       this.settings.useWaterChemistry = response?.useWaterChemistry || false;
+      this.settings.defaultWaterProfile = response?.defaultWaterProfile || 'Distilled Water';
     });
+    this.storage.get('waters')?.then((response: Water[]) => {
+      this.waterProfileOptions = response.map(water => water.name).sort()
+    })
   }
 
   ionViewDidEnter() {
@@ -72,6 +77,7 @@ export class SettingsPage {
       this.settings.cloudEmail = undefined;
       this.settings.cloudPassword = undefined;
       this.settings.useWaterChemistry = false;
+      this.settings.defaultWaterProfile = 'Distilled Water';
     }, 100);
     this.updateNavigation.emit();
     this.init();
@@ -86,6 +92,11 @@ export class SettingsPage {
     this.xmlReader.initMiscs();
     this.xmlReader.initMashProfiles()
     this.xmlReader.initWaters();
+    setTimeout(() => {
+      this.storage.get('waters')?.then((response: Water[]) => {
+        this.waterProfileOptions = response.map(water => water.name).sort()
+      })
+    }, 250);
     setTimeout(() => {
       this.showSpinner = false;
     }, 250);

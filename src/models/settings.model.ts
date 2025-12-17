@@ -12,4 +12,5 @@ export interface Settings {
   cloudEmail?: string;
   cloudPassword?: string;
   useWaterChemistry?: boolean;
+  defaultWaterProfile?: string;
 }

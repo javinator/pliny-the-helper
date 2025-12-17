@@ -1,6 +1,6 @@
-import {Injectable, inject} from '@angular/core';
+import {inject, Injectable} from '@angular/core';
 import {Storage} from '@ionic/storage-angular';
-import {Recipe, BeerStyle, Fermentable, Hop, Yeast, Misc, MashProfile, Settings, Water} from "models";
+import {BeerStyle, Fermentable, Hop, MashProfile, Misc, Recipe, Settings, Water, Yeast} from "models";
 import {RecipeUtil} from "utils";
 
 @Injectable({
@@ -129,7 +129,7 @@ export class StorageService {
         recipes[idx] = RecipeUtil.calculateRecipe(recipe);
         this._storage?.set('recipes', recipes);
       } else {
-        console.log('Error! Recipe UID not found!')
+        console.error('Error! Recipe UID not found!')
       }
     });
   }
@@ -165,8 +165,40 @@ export class StorageService {
   }
 
   public setWaters(waters: Water[]) {
-    this._storage?.remove('waters');
-    this._storage?.set('waters', waters);
+    this._storage?.get('waters').then((storageWaters: Water[]) => {
+      if (storageWaters) {
+        waters.push(...storageWaters.filter(sw => sw.isCustom));
+      }
+    })
+    setTimeout(() => {
+      this._storage?.remove('waters');
+      this._storage?.set('waters', waters);
+    }, 100);
+  }
+
+  public saveWater(water: Water) {
+    this._storage?.get('waters').then((waters: Water[]) => {
+      const idx = waters.findIndex((wtr) => wtr.uid === water.uid);
+      if (idx >= 0) {
+        waters[idx] = water;
+      } else {
+        waters.push(water);
+      }
+      this._storage?.set('waters', waters);
+    });
+  }
+
+  public deleteWater(uid: string) {
+    return this._storage?.get('waters').then((waters: Water[]) => {
+      if (waters) {
+        waters.forEach((element, index) => {
+          if (element.uid === uid) waters.splice(index, 1);
+        })
+        return this._storage?.set('waters', waters);
+      } else {
+        return undefined;
+      }
+    })
   }
 
   public setSettings(settings: Settings) {

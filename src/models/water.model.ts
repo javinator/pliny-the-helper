@@ -1,6 +1,7 @@
 import {Ingredient} from "./ingredient.model";
 
 export interface Water extends Ingredient {
+  uid: string;
   calcium: number;
   bicarbonate: number;
   sulfate: number;

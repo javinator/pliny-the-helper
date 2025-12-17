@@ -16,7 +16,7 @@
 } @else {
   <ion-content class="ion-padding">
     @if (styles) {
-      <ion-searchbar id="styles" [debounce]="50" (ionInput)="filter($event)"></ion-searchbar>
+      <ion-searchbar [debounce]="50" (ionInput)="filter($event)"></ion-searchbar>
       @for (style of styles; track style) {
         <style-card [style]="style" (click)="showDetails(style)"></style-card>
       }

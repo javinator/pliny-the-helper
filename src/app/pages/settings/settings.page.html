@@ -65,6 +65,16 @@
               Use Water Chemistry
             </ion-checkbox>
           </ion-item>
+          @if (settings.useWaterChemistry) {
+            <ion-item>
+              <ion-select [(ngModel)]="settings.defaultWaterProfile" label-placement="stacked"
+                          label="Default Water Profile">
+                @for (profile of waterProfileOptions; track profile) {
+                  <ion-select-option>{{ profile }}</ion-select-option>
+                }
+              </ion-select>
+            </ion-item>
+          }
           <ion-item>
             <ion-checkbox [(ngModel)]="settings.developerOptions" label-placement="end" justify="start">
               Show developer options
