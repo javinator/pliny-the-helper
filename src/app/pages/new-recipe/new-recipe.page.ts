@@ -13,7 +13,6 @@ import {SelectSearchComponent} from "@shared";
 @Component({
   selector: 'new-recipe-page',
   templateUrl: 'new-recipe.page.html',
-  styleUrls: ['../../app.component.scss'],
   standalone: true,
   imports: [IonicModule, FormsModule, SelectSearchComponent]
 })

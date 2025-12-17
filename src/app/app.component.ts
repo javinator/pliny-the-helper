@@ -1,8 +1,19 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, inject, OnInit, signal} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {RouterLink} from "@angular/router";
 import {Storage} from "@ionic/storage-angular";
 import {StorageService, XmlReaderService, XmlWriterService} from "services";
+import {addIcons} from "ionicons";
+import {
+  basketOutline,
+  beerOutline,
+  easelOutline,
+  flaskOutline,
+  calculatorOutline,
+  settingsOutline
+} from 'ionicons/icons';
+import {Subscription} from "rxjs";
+import {Settings} from "models";
 
 @Component({
   selector: 'app-root',
@@ -14,15 +25,11 @@ import {StorageService, XmlReaderService, XmlWriterService} from "services";
 })
 export class AppComponent implements OnInit {
   private xmlReader = inject(XmlReaderService);
+  private storage = inject(StorageService);
+  private sub?: Subscription;
 
-
-  ngOnInit() {
-    this.xmlReader.initStyles();
-    this.xmlReader.initFermentables();
-    this.xmlReader.initHops();
-    this.xmlReader.initYeasts();
-    this.xmlReader.initMiscs();
-    this.xmlReader.initMashProfiles();
+  constructor() {
+    addIcons({basketOutline, beerOutline, easelOutline, flaskOutline, calculatorOutline, settingsOutline});
   }
 
   pages = [
@@ -39,6 +46,11 @@ export class AppComponent implements OnInit {
     {
       title: 'Ingredients',
       path: '/ingredients',
+      icon: 'basket-outline'
+    },
+    {
+      title: 'Water Profiles',
+      path: '/waters',
       icon: 'flask-outline'
     },
     {
@@ -51,5 +63,39 @@ export class AppComponent implements OnInit {
       path: '/settings',
       icon: 'settings-outline'
     }
-  ]
+  ];
+
+  showWaters = signal(false);
+
+  ngOnInit() {
+    this.xmlReader.initStyles();
+    this.xmlReader.initFermentables();
+    this.xmlReader.initHops();
+    this.xmlReader.initYeasts();
+    this.xmlReader.initMiscs();
+    this.xmlReader.initMashProfiles();
+    this.xmlReader.initWaters();
+    setTimeout(() => {
+      this.storage.get('settings')?.then((settings: Settings) => {
+        console.log(settings);
+        this.showWaters.set(settings?.useWaterChemistry || false);
+      })
+    }, 0);
+  }
+
+  subscribeToUpdateEmitter(componentRef: any) {
+    if (componentRef.updateNavigation != null) {
+      this.sub = componentRef.updateNavigation.subscribe(() => {
+        this.storage.get('settings')?.then((settings: Settings) => {
+          setTimeout(() => this.showWaters.set(settings?.useWaterChemistry || false), 0);
+        })
+      });
+    }
+  }
+
+  unsubscribeFromUpdateEmitter(componentRef: any) {
+    if (componentRef.updateNavigation != null) {
+      this.sub?.unsubscribe()
+    }
+  }
 }

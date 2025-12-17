@@ -14,7 +14,8 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideZoneChangeDetection(),{provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
+    provideZoneChangeDetection(),
+    {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
     importProvidersFrom(IonicModule.forRoot({})),
     provideRouter(routes),
     provideHttpClient(),

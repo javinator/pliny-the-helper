@@ -1,5 +1,5 @@
-import { Injectable, inject } from '@angular/core';
-import {BeerStyle, Fermentable, Hop, MashProfile, MashStep, Misc, Recipe, Yeast} from "models";
+import {Injectable, inject} from '@angular/core';
+import {BeerStyle, Fermentable, Hop, MashProfile, MashStep, Misc, Recipe, Water, Yeast} from "models";
 import {Directory, Encoding, Filesystem} from '@capacitor/filesystem';
 import {Platform} from "@ionic/angular";
 import {saveAs} from 'file-saver';
@@ -65,7 +65,9 @@ function recipeToXmlText(recipe: Recipe, minimize: boolean) {
   content += '<MISCS>\n';
   recipe.miscs.forEach((misc) => content += miscToXmlText(misc));
   content += '</MISCS>\n';
-  content += '<WATERS></WATERS>\n';
+  content += '<WATERS>\n';
+  recipe.waters.forEach((water) => content += waterToXmlText(water));
+  content += '</WATERS>\n';
   content += mashToXmlText(recipe.mashProfile, minimize);
   if (recipe.notes) {
     content += '<NOTES>' + recipe.notes + '</NOTES>\n';
@@ -283,5 +285,24 @@ function mashStepToXmlText(step: MashStep) {
     content += '<END_TEMP>' + step.endTemp + '</END_TEMP>\n';
   }
   content += '</MASH_STEP>\n';
+  return content;
+}
+
+function waterToXmlText(water: Water) {
+  let content = '<WATER>\n';
+  content += '<NAME>' + water.name + '</NAME>\n';
+  content += '<VERSION>1</VERSION>\n';
+  content += '<AMOUNT>' + water.amount + '</AMOUNT>\n';
+  content += '<CALCIUM>' + water.calcium + '</CALCIUM>\n';
+  content += '<BICARBONATE>' + water.bicarbonate + '</BICARBONATE>\n';
+  content += '<SULFATE>' + water.sulfate + '</SULFATE>\n';
+  content += '<CHLORIDE>' + water.chloride + '</CHLORIDE>\n';
+  content += '<SODIUM>' + water.sodium + '</SODIUM>\n';
+  content += '<MAGNESIUM>' + water.magnesium + '</MAGNESIUM>\n';
+  content += '<PH>' + water.ph + '</PH>\n';
+  if (water.description) {
+    content += '<NOTES>' + water.description + '</NOTES>\n';
+  }
+  content += '</WATER>\n';
   return content;
 }

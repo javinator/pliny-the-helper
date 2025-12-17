@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, EventEmitter, inject, Output} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {StorageService, XmlReaderService, CloudStorageService} from "services";
 import {Fermentable, Hop, Misc, Recipe, Settings, Yeast} from "models";
@@ -20,6 +20,7 @@ export class SettingsPage {
   private storage = inject(StorageService);
   private xmlReader = inject(XmlReaderService);
   private cloudService = inject(CloudStorageService);
+  @Output() updateNavigation = new EventEmitter<void>();
 
   settings: Settings = {};
   isToastOpen = false;
@@ -46,6 +47,7 @@ export class SettingsPage {
       this.settings.hideDescription = response?.hideDescription || false;
       this.settings.cloudEmail = response?.cloudEmail;
       this.settings.cloudPassword = response?.cloudPassword;
+      this.settings.useWaterChemistry = response?.useWaterChemistry || false;
     });
   }
 
@@ -69,7 +71,9 @@ export class SettingsPage {
       this.showDeveloperOptions = false;
       this.settings.cloudEmail = undefined;
       this.settings.cloudPassword = undefined;
+      this.settings.useWaterChemistry = false;
     }, 100);
+    this.updateNavigation.emit();
     this.init();
   }
 
@@ -81,13 +85,17 @@ export class SettingsPage {
     this.xmlReader.initYeasts();
     this.xmlReader.initMiscs();
     this.xmlReader.initMashProfiles()
+    this.xmlReader.initWaters();
     setTimeout(() => {
       this.showSpinner = false;
     }, 250);
   }
 
   saveSettings() {
-    this.storage.setSettings(this.settings)?.then(() => this.isToastOpen = true);
+    this.storage.setSettings(this.settings)?.then(() => {
+      this.isToastOpen = true;
+      this.updateNavigation.emit();
+    });
     this.showDeveloperOptions = this.settings?.developerOptions || false;
   }
 

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Water Profiles
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+@if (showSpinner) {
+  <ion-content>
+    <ion-spinner class="center" name="lines-sharp"></ion-spinner>
+  </ion-content>
+} @else {
+  <ion-content class="ion-padding">
+    @if (waters) {
+      <ion-searchbar id="waters" [debounce]="50" (ionInput)="filter($event)"></ion-searchbar>
+      @for (water of waters; track water) {
+        <water-card [water]="water"></water-card>
+      }
+    }
+  </ion-content>
+}
+

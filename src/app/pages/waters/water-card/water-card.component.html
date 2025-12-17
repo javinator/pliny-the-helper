@@ -1,0 +1,72 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>{{ water.name }}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <p class="ion-margin-bottom">
+      {{ water.description }}
+    </p>
+    <p class="ion-margin-top">
+      <ion-grid class="ion-margin-top">
+        @if (water.ph) {
+          <ion-row>
+            <ion-col sizeMd="3">
+              pH
+            </ion-col>
+            <ion-col>
+              {{ water.ph | number:'1.1-1' }}<br>
+            </ion-col>
+          </ion-row>
+        }
+        <ion-row>
+          <ion-col sizeMd="3">
+            Bicarbonate (HCO<sub>3</sub><sup>-</sup>)
+          </ion-col>
+          <ion-col>
+            {{ water.bicarbonate | number:'1.0-0' }} ppm<br>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col sizeMd="3">
+            Calcium (Ca<sup>2+</sup>)
+          </ion-col>
+          <ion-col>
+            {{ water.calcium | number:'1.0-0' }} ppm<br>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col sizeMd="3">
+            Magnesium (Mg<sup>2+</sup>)
+          </ion-col>
+          <ion-col>
+            {{ water.magnesium | number:'1.0-0' }} ppm<br>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col sizeMd="3">
+            Sodium (Na<sup>+</sup>)
+          </ion-col>
+          <ion-col>
+            {{ water.sodium | number:'1.0-0' }} ppm<br>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col sizeMd="3">
+            Chloride (Cl<sup>-</sup>)
+          </ion-col>
+          <ion-col>
+            {{ water.chloride | number:'1.0-0' }} ppm<br>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col sizeMd="3">
+            Sulfate (SO<sub>4</sub><sup>2-</sup>)
+          </ion-col>
+          <ion-col>
+            {{ water.sulfate | number:'1.0-0' }} ppm<br>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </p>
+  </ion-card-content>
+</ion-card>

@@ -11,4 +11,5 @@ export interface Settings {
   hideDescription?: boolean;
   cloudEmail?: string;
   cloudPassword?: string;
+  useWaterChemistry?: boolean;
 }

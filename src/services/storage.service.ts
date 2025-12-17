@@ -1,6 +1,6 @@
 import {Injectable, inject} from '@angular/core';
 import {Storage} from '@ionic/storage-angular';
-import {Recipe, BeerStyle, Fermentable, Hop, Yeast, Misc, MashProfile, Settings} from "models";
+import {Recipe, BeerStyle, Fermentable, Hop, Yeast, Misc, MashProfile, Settings, Water} from "models";
 import {RecipeUtil} from "utils";
 
 @Injectable({
@@ -162,6 +162,11 @@ export class StorageService {
   public setMashProfiles(mashProfiles: MashProfile[]) {
     this._storage?.remove('mashProfiles');
     this._storage?.set('mashProfiles', mashProfiles);
+  }
+
+  public setWaters(waters: Water[]) {
+    this._storage?.remove('waters');
+    this._storage?.set('waters', waters);
   }
 
   public setSettings(settings: Settings) {

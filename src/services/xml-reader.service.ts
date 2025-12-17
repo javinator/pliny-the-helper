@@ -4,7 +4,7 @@ import {HttpClient} from "@angular/common/http";
 
 import {v4 as uuidv4} from "uuid";
 import * as xml2js from 'xml2js';
-import {BeerStyle, Fermentable, Hop, Yeast, Misc, MashProfile, Recipe} from "models";
+import {BeerStyle, Fermentable, Hop, Yeast, Misc, MashProfile, Recipe, Water} from "models";
 
 interface MashProfileXml {
   NAME: string[];
@@ -88,6 +88,17 @@ export class XmlReaderService {
         parseXMLtoMashProfiles(xml)
           .then((data) => {
             this.storage.setMashProfiles(data);
+          });
+      });
+  }
+
+  initWaters() {
+    this.http
+      .get("/assets/xml/waters.xml", {responseType: 'text'})
+      .subscribe((xml) => {
+        parseXMLtoWaters(xml)
+          .then((data) => {
+            this.storage.setWaters(data);
           });
       });
   }
@@ -297,6 +308,38 @@ function parseXMLtoMashProfiles(data: string): Promise<MashProfile[]> {
             }
           }),
           notes: item.NOTES[0]
+        });
+      }
+      resolve(arr);
+    });
+  });
+}
+
+function parseXMLtoWaters(data: string): Promise<Water[]> {
+  return new Promise(resolve => {
+    let k: string | number;
+    const arr: Water[] = [],
+      parser = new xml2js.Parser(
+        {
+          trim: true,
+          explicitArray: true
+        });
+    parser.parseString(data, function (err, result) {
+      const obj = result.WATERS;
+      for (k in obj.WATER) {
+        const item = obj.WATER[k];
+        arr.push({
+          name: item.NAME[0],
+          version: item.VERSION[0],
+          amount: item.AMOUNT[0],
+          description: item.NOTES?.[0],
+          calcium: item.CALCIUM[0],
+          bicarbonate: item.BICARBONATE[0],
+          chloride: item.CHLORIDE[0],
+          magnesium: item.MAGNESIUM[0],
+          sodium: item.SODIUM[0],
+          sulfate: item.SULFATE[0],
+          ph: item.PH[0],
         });
       }
       resolve(arr);

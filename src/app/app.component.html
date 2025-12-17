@@ -8,15 +8,18 @@
       </ion-header>
       <ion-content>
         @for (page of pages; track page) {
-          <ion-menu-toggle auto-hide="false">
-            <ion-item [routerLink]="page.path">
-              <ion-icon slot="start" [icon]="page.icon"></ion-icon>
-              <ion-label>{{ page.title }}</ion-label>
-            </ion-item>
-          </ion-menu-toggle>
+          @if (page.path != '/waters' || (page.path === '/waters' && showWaters())) {
+            <ion-menu-toggle auto-hide="false">
+              <ion-item [routerLink]="page.path">
+                <ion-icon slot="start" [name]="page.icon"></ion-icon>
+                <ion-label>{{ page.title }}</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          }
         }
       </ion-content>
     </ion-menu>
-    <ion-router-outlet id="main-content"></ion-router-outlet>
+    <ion-router-outlet id="main-content" (activate)="subscribeToUpdateEmitter($event)"
+                       (deactivate)="unsubscribeFromUpdateEmitter($event)"></ion-router-outlet>
   </ion-split-pane>
 </ion-app>

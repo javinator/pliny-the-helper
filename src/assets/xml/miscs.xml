@@ -12,17 +12,6 @@
     <NOTES>Adds a strong black licorice flavor.</NOTES>
   </MISC>
   <MISC>
-    <NAME>Baking Soda (NaHCO3)</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Water Agent</TYPE>
-    <USE>Mash</USE>
-    <AMOUNT>0.001</AMOUNT>
-    <TIME>60</TIME>
-    <AMOUNT_IS_WEIGHT>TRUE</AMOUNT_IS_WEIGHT>
-    <USE_FOR>Increase mash pH</USE_FOR>
-    <NOTES>Use to increase mash pH. Too much may cause harsh salty flavor.</NOTES>
-  </MISC>
-  <MISC>
     <NAME>Black Pepper</NAME>
     <VERSION>1</VERSION>
     <TYPE>Spice</TYPE>
@@ -43,39 +32,6 @@
     <AMOUNT_IS_WEIGHT>TRUE</AMOUNT_IS_WEIGHT>
     <USE_FOR>Tea flavor</USE_FOR>
     <NOTES>Contributes tea flavor. Add at the end of the boil.</NOTES>
-  </MISC>
-  <MISC>
-    <NAME>Burton Water Salts</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Water Agent</TYPE>
-    <USE>Mash</USE>
-    <AMOUNT>0.01</AMOUNT>
-    <TIME>60</TIME>
-    <AMOUNT_IS_WEIGHT>TRUE</AMOUNT_IS_WEIGHT>
-    <USE_FOR>Hardens water</USE_FOR>
-    <NOTES>Mixture of salts used to harden water.</NOTES>
-  </MISC>
-  <MISC>
-    <NAME>Calcium Chloride</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Water Agent</TYPE>
-    <USE>Mash</USE>
-    <AMOUNT>0.005</AMOUNT>
-    <TIME>60</TIME>
-    <AMOUNT_IS_WEIGHT>TRUE</AMOUNT_IS_WEIGHT>
-    <USE_FOR>Decrease mash pH</USE_FOR>
-    <NOTES>Lowers mash pH.</NOTES>
-  </MISC>
-  <MISC>
-    <NAME>Chalk (CaCO3)</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Water Agent</TYPE>
-    <USE>Mash</USE>
-    <AMOUNT>0.001</AMOUNT>
-    <TIME>60</TIME>
-    <AMOUNT_IS_WEIGHT>TRUE</AMOUNT_IS_WEIGHT>
-    <USE_FOR>Harden water</USE_FOR>
-    <NOTES>Hardens water when used in mash.</NOTES>
   </MISC>
   <MISC>
     <NAME>Chili Peppers (Dried)</NAME>
@@ -155,17 +111,6 @@
     <NOTES>Elegant, floral twist</NOTES>
   </MISC>
   <MISC>
-    <NAME>Epsom Salt (MgSO4)</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Water Agent</TYPE>
-    <USE>Mash</USE>
-    <AMOUNT>0.005</AMOUNT>
-    <TIME>60</TIME>
-    <AMOUNT_IS_WEIGHT>TRUE</AMOUNT_IS_WEIGHT>
-    <USE_FOR>Decrease mash pH</USE_FOR>
-    <NOTES>Causes a slight decrease in mash pH.</NOTES>
-  </MISC>
-  <MISC>
     <NAME>Ginger Root</NAME>
     <VERSION>1</VERSION>
     <TYPE>Herb</TYPE>
@@ -177,17 +122,6 @@
     <NOTES>Contributes ginger flavor. Add during the boil.</NOTES>
   </MISC>
   <MISC>
-    <NAME>Gypsum (Calcium Sulfate)</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Water Agent</TYPE>
-    <USE>Mash</USE>
-    <AMOUNT>0.01</AMOUNT>
-    <TIME>60</TIME>
-    <AMOUNT_IS_WEIGHT>TRUE</AMOUNT_IS_WEIGHT>
-    <USE_FOR>Decrease mash pH</USE_FOR>
-    <NOTES>Decreases mash pH and hardens soft water.</NOTES>
-  </MISC>
-  <MISC>
     <NAME>Irish Moss</NAME>
     <VERSION>1</VERSION>
     <TYPE>Fining</TYPE>
@@ -197,17 +131,6 @@
     <AMOUNT_IS_WEIGHT>TRUE</AMOUNT_IS_WEIGHT>
     <USE_FOR>Clarifies</USE_FOR>
     <NOTES>Improves clarity of beer by reducing protein haze.</NOTES>
-  </MISC>
-  <MISC>
-    <NAME>Lactic Acid</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Water Agent</TYPE>
-    <USE>Mash</USE>
-    <AMOUNT>0.001</AMOUNT>
-    <TIME>60</TIME>
-    <AMOUNT_IS_WEIGHT>FALSE</AMOUNT_IS_WEIGHT>
-    <USE_FOR>Decrease mash pH</USE_FOR>
-    <NOTES>Lowers mash pH without affecting mineral content.</NOTES>
   </MISC>
   <MISC>
     <NAME>Lavender</NAME>
@@ -318,5 +241,95 @@
     <AMOUNT_IS_WEIGHT>TRUE</AMOUNT_IS_WEIGHT>
     <USE_FOR>Yeast health</USE_FOR>
     <NOTES>Promotes healthy yeast and a strong ferment.</NOTES>
+  </MISC>
+
+  <!-- Water Agents -->
+  <MISC>
+    <NAME>Baking Soda (NaHCO3)</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Water Agent</TYPE>
+    <USE>Mash</USE>
+    <AMOUNT>0.001</AMOUNT>
+    <TIME>60</TIME>
+    <AMOUNT_IS_WEIGHT>TRUE</AMOUNT_IS_WEIGHT>
+    <USE_FOR>Increase mash pH</USE_FOR>
+    <NOTES>Use to increase mash pH. Too much may cause harsh salty flavor.</NOTES>
+  </MISC>
+  <MISC>
+    <NAME>Lactic Acid</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Water Agent</TYPE>
+    <USE>Mash</USE>
+    <AMOUNT>0.001</AMOUNT>
+    <TIME>60</TIME>
+    <AMOUNT_IS_WEIGHT>FALSE</AMOUNT_IS_WEIGHT>
+    <USE_FOR>Decrease mash pH</USE_FOR>
+    <NOTES>Lowers mash pH without affecting mineral content.</NOTES>
+  </MISC>
+  <MISC>
+    <NAME>Gypsum (CaSO4)</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Water Agent</TYPE>
+    <USE>Mash</USE>
+    <AMOUNT>0.01</AMOUNT>
+    <TIME>60</TIME>
+    <AMOUNT_IS_WEIGHT>TRUE</AMOUNT_IS_WEIGHT>
+    <USE_FOR>Decrease mash pH</USE_FOR>
+    <NOTES>Decreases mash pH and hardens soft water.</NOTES>
+  </MISC>
+  <MISC>
+    <NAME>Burton Water Salts</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Water Agent</TYPE>
+    <USE>Mash</USE>
+    <AMOUNT>0.01</AMOUNT>
+    <TIME>60</TIME>
+    <AMOUNT_IS_WEIGHT>TRUE</AMOUNT_IS_WEIGHT>
+    <USE_FOR>Hardens water</USE_FOR>
+    <NOTES>Mixture of salts used to harden water.</NOTES>
+  </MISC>
+  <MISC>
+    <NAME>Calcium Chloride (CaCl2)</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Water Agent</TYPE>
+    <USE>Mash</USE>
+    <AMOUNT>0.005</AMOUNT>
+    <TIME>60</TIME>
+    <AMOUNT_IS_WEIGHT>TRUE</AMOUNT_IS_WEIGHT>
+    <USE_FOR>Decrease mash pH</USE_FOR>
+    <NOTES>Lowers mash pH.</NOTES>
+  </MISC>
+  <MISC>
+    <NAME>Chalk (CaCO3)</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Water Agent</TYPE>
+    <USE>Mash</USE>
+    <AMOUNT>0.001</AMOUNT>
+    <TIME>60</TIME>
+    <AMOUNT_IS_WEIGHT>TRUE</AMOUNT_IS_WEIGHT>
+    <USE_FOR>Harden water</USE_FOR>
+    <NOTES>Hardens water when used in mash.</NOTES>
+  </MISC>
+  <MISC>
+    <NAME>Epsom Salt (MgSO4)</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Water Agent</TYPE>
+    <USE>Mash</USE>
+    <AMOUNT>0.005</AMOUNT>
+    <TIME>60</TIME>
+    <AMOUNT_IS_WEIGHT>TRUE</AMOUNT_IS_WEIGHT>
+    <USE_FOR>Decrease mash pH</USE_FOR>
+    <NOTES>Causes a slight decrease in mash pH.</NOTES>
+  </MISC>
+  <MISC>
+    <NAME>Table Salt (NaCl)</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Water Agent</TYPE>
+    <USE>Mash</USE>
+    <AMOUNT>0.005</AMOUNT>
+    <TIME>60</TIME>
+    <AMOUNT_IS_WEIGHT>TRUE</AMOUNT_IS_WEIGHT>
+    <USE_FOR>Mineral ratio</USE_FOR>
+    <NOTES>Adds sodium and chloride to mineral ratio.</NOTES>
   </MISC>
 </MISCS>

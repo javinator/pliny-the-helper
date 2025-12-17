@@ -36,5 +36,9 @@ export const routes: Routes = [
   {
     path: 'settings',
     loadComponent: () => import('./pages/settings/settings.page').then((m) => m.SettingsPage)
+  },
+  {
+    path: 'waters',
+    loadComponent: () => import('./pages/waters/waters.page').then((m) => m.WatersPage)
   }
 ];

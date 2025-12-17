@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WATERS>
+  <WATER>
+    <NAME>Distilled Water</NAME>
+    <VERSION>1</VERSION>
+    <AMOUNT>20</AMOUNT>
+    <CALCIUM>0.0</CALCIUM>
+    <BICARBONATE>0.0</BICARBONATE>
+    <SULFATE>0.0</SULFATE>
+    <CHLORIDE>0.0</CHLORIDE>
+    <SODIUM>0.0</SODIUM>
+    <MAGNESIUM>0.0</MAGNESIUM>
+    <PH>7.0</PH>
+    <NOTES>
+      Neutral water. May be used as a base for creating desired water profile.
+    </NOTES>
+  </WATER>
+  <WATER>
+    <NAME>Burton Upon Trent, England</NAME>
+    <VERSION>1</VERSION>
+    <AMOUNT>20</AMOUNT>
+    <CALCIUM>270.0</CALCIUM>
+    <BICARBONATE>285.0</BICARBONATE>
+    <SULFATE>720.0</SULFATE>
+    <CHLORIDE>85.0</CHLORIDE>
+    <SODIUM>113.0</SODIUM>
+    <MAGNESIUM>41.0</MAGNESIUM>
+    <PH>8.0</PH>
+    <NOTES>
+      Burton upon Trent is known for water with very high sulfate content.
+      The very hard water accentuates the hops flavor.
+      It is known for distinctive, strongly hopped pale ales.
+    </NOTES>
+  </WATER>
+  <WATER>
+    <NAME>Edinburgh, Scotland</NAME>
+    <VERSION>1</VERSION>
+    <AMOUNT>20</AMOUNT>
+    <CALCIUM>120.0</CALCIUM>
+    <BICARBONATE>225.0</BICARBONATE>
+    <SULFATE>140.0</SULFATE>
+    <CHLORIDE>20.0</CHLORIDE>
+    <SODIUM>55.0</SODIUM>
+    <MAGNESIUM>25.0</MAGNESIUM>
+    <PH>8.0</PH>
+    <NOTES>
+      Because of its geology scottish brewers have access to many different waters depending on where and how deep
+      a well is drilled. This particular profile is well suited for darker scottish ales.
+    </NOTES>
+  </WATER>
+  <WATER>
+    <NAME>London, England</NAME>
+    <VERSION>1</VERSION>
+    <AMOUNT>20</AMOUNT>
+    <CALCIUM>100.0</CALCIUM>
+    <BICARBONATE>265.0</BICARBONATE>
+    <SULFATE>50.0</SULFATE>
+    <CHLORIDE>60.0</CHLORIDE>
+    <SODIUM>35.0</SODIUM>
+    <MAGNESIUM>5.0</MAGNESIUM>
+    <PH>7.5</PH>
+    <NOTES>
+      With its high temporary hardness the London water profile is well suited for dark beers like Porter.
+      This profile has been taken from an average London water report and also matches the historic London profile
+      found in various literature sources.
+    </NOTES>
+  </WATER>
+
+  <WATER>
+    <NAME>Milwaukee (WI), USA</NAME>
+    <VERSION>1</VERSION>
+    <AMOUNT>20</AMOUNT>
+    <CALCIUM>96.0</CALCIUM>
+    <BICARBONATE>107.0</BICARBONATE>
+    <SULFATE>26.0</SULFATE>
+    <CHLORIDE>16.0</CHLORIDE>
+    <SODIUM>7.0</SODIUM>
+    <MAGNESIUM>47.0</MAGNESIUM>
+    <PH>7.5</PH>
+    <NOTES>Famous for Pilsners and Lagers.</NOTES>
+  </WATER>
+  <WATER>
+    <NAME>Pilsen, Czech Republic</NAME>
+    <VERSION>1</VERSION>
+    <AMOUNT>20</AMOUNT>
+    <CALCIUM>7.0</CALCIUM>
+    <BICARBONATE>15.0</BICARBONATE>
+    <SULFATE>5.0</SULFATE>
+    <CHLORIDE>5.0</CHLORIDE>
+    <SODIUM>2.0</SODIUM>
+    <MAGNESIUM>2.0</MAGNESIUM>
+    <PH>8.0</PH>
+    <NOTES>
+      This very low mineral water is the traditional water for Bohemian pilsner beers. Despite its low calcium content,
+      great pilsner and Helles style beers can be brewed with it.
+    </NOTES>
+  </WATER>
+</WATERS>
