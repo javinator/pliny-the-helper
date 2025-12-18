@@ -20,8 +20,12 @@
           labelPlacement="floating"
           [required]="true"
         ></ion-input>
-        <select-search [label]="'Style'" [placeholder]="'Choose Beer Style'"
-                       [items]="getStylesOptions()" (selectChanged)="changeStyle($event)"></select-search>
+        <select-search
+          [label]="'Style'"
+          [placeholder]="'Choose Beer Style'"
+          [items]="getStylesOptions()"
+          (selectChanged)="changeStyle($event)"
+        ></select-search>
         <ion-input
           [(ngModel)]="model.batchSize"
           name="batchSize"
@@ -67,8 +71,20 @@
           labelPlacement="floating"
           [required]="true"
         ></ion-input>
-        <select-search [label]="'Mash Profile'" [placeholder]="'Choose Mash Profile'"
-                       [items]="getProfilesOptions()"></select-search>
+        <select-search
+          [label]="'Mash Profile'"
+          [placeholder]="'Choose Mash Profile'"
+          [items]="getProfilesOptions()"
+          (selectChanged)="changeProfile($event)"
+        ></select-search>
+        @if (settings?.useWaterChemistry) {
+          <select-search
+            [label]="'Water Profile'"
+            [selectedItem]="settings?.defaultWaterProfile || 'Distilled Water'"
+            [items]="getWaterOptions()"
+            (selectChanged)="changeWater($event)"
+          ></select-search>
+        }
         <div class="ion-text-end">
           <ion-button (click)="navigateBack()" shape="round">Cancel</ion-button>
           <ion-button type="submit" shape="round">Save</ion-button>

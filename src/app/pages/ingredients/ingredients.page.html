@@ -33,7 +33,7 @@
         <ion-label class="ion-hide-xl-down">Misc</ion-label>
       </ion-segment-button>
     </ion-segment>
-    <ion-searchbar [debounce]="50" (ionInput)="filter($event)"></ion-searchbar>
+    <ion-searchbar [debounce]="50" (ionInput)="filter($event)" class="ion-padding-top"></ion-searchbar>
     @switch (activeTab) {
       @case ('fermentables') {
         @for (fermentable of f_fermentables; track fermentable) {

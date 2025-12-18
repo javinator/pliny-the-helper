@@ -1,0 +1,134 @@
+<ion-card>
+  <ion-card-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-xl="4">
+          <ion-list>
+            <ion-item>
+              <ion-label>
+                <p>Water Profile</p>
+                <div>{{ water().name }}</div>
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>
+                <p>pH</p>
+                <div>{{ water().ph | number:'1.1-1' }}</div>
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>
+                <p>Bicarbonate (HCO<sub>3</sub><sup>-</sup>)</p>
+                <div>{{ water().bicarbonate | number:'1.0-1' }} ppm</div>
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>
+                <p>Calcium (Ca<sup>2+</sup>)</p>
+                <div>{{ water().calcium | number:'1.0-1' }} ppm</div>
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>
+                <p>Magnesium (Mg<sup>2+</sup>)</p>
+                <div>{{ water().magnesium | number:'1.0-1' }} ppm</div>
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>
+                <p>Sodium (Na<sup>+</sup>)</p>
+                <div>{{ water().sodium | number:'1.0-1' }} ppm</div>
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>
+                <p>Chloride (Cl<sup>-</sup>)</p>
+                <div>{{ water().chloride | number:'1.0-1' }} ppm</div>
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>
+                <p>Sulfate (SO<sub>4</sub><sup>2-</sup>)</p>
+                <div>{{ water().sulfate | number:'1.0-1' }} ppm</div>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+        <ion-col size="12" size-xl="8">
+          <ion-list>
+            <ion-item>
+              <ion-label>
+                <p>Mash Values</p>
+                <div>Adjusted Values</div>
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>
+                <p>Estimated Mash pH</p>
+                todo... <!-- TODO {{ getMashPh() | number: '1.2-2' }} -->
+                <div class="range-bar-container">
+                  <div class="range-bar">
+                    <div class="range-bar-range" [style]="getPhRangeBar()"></div>
+                  </div>
+                  <div class="range-bar-marker" [style]="getPhRangeMarker()"></div>
+                </div>
+                <p class="inline ion-hide-lg-down">{{ MIN_MASH_PH }} - {{ MAX_MASH_PH }}</p>
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>
+                <p>Residual Alkalinity (°dH)</p>
+                todo... <!-- TODO {{ getAlkalinity() | number: '1.1-1' }} -->
+                <div class="range-bar-container">
+                  <div class="range-bar">
+                    <div class="range-bar-range" [style]="getAlkalinityRangeBar()"></div>
+                  </div>
+                  <div class="range-bar-marker" [style]="getAlkalinityRangeMarker()"></div>
+                </div>
+                <p class="inline ion-hide-lg-down">{{ getAlkalinityRange().min }} - {{ getAlkalinityRange().max }}</p>
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>
+                <p>Adjusted Calcium</p>
+                <div>todo...</div>
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>
+                <p>Adjusted Magnesium</p>
+                <div>todo...</div>
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>
+                <p>Adjusted Sodium</p>
+                <div>todo...</div>
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>
+                <p>Adjusted Chloride</p>
+                <div>todo...</div>
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>
+                <p>Adjusted Sulfate</p>
+                <div>todo...</div>
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>
+                <p>Sulfate/Chloride ratio</p>
+                <div>todo...</div>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>
+
+

@@ -1,7 +1,7 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {StorageService} from "services";
-import {BeerStyle, MashProfile, Recipe, Settings} from "models";
+import {BeerStyle, MashProfile, Recipe, Settings, Water} from "models";
 import {Location} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {v4 as uuidv4} from "uuid";
@@ -25,6 +25,7 @@ export class NewRecipePage implements OnInit {
   styles?: BeerStyle[];
   mashProfiles?: MashProfile[];
   settings?: Settings;
+  waters?: Water[];
   model!: Recipe;
 
   ngOnInit() {
@@ -64,6 +65,12 @@ export class NewRecipePage implements OnInit {
       this.mashProfiles = response;
       this.model.mashProfile = this.mashProfiles?.[0];
     });
+    this.storage.get('waters')?.then((response) => {
+      this.waters = response;
+      this.waters?.sort((a, b) => a.name.localeCompare(b.name))
+      const defaultWater = this.waters?.find(water => water.name === this.settings?.defaultWaterProfile);
+      this.model.waters = defaultWater ? [defaultWater] : [];
+    });
   }
 
   navigateBack() {
@@ -71,17 +78,17 @@ export class NewRecipePage implements OnInit {
   }
 
   getStylesOptions() {
-    return this.styles?.map((style) => {
+    return this.styles?.map(style => {
       return {name: style.name}
     }) || [];
   }
 
   changeStyle(event: string) {
-    this.model.style = this.styles?.find((style) => style.name === event);
+    this.model.style = this.styles?.find(style => style.name === event);
   }
 
   getProfilesOptions() {
-    return this.mashProfiles?.map((profile) => {
+    return this.mashProfiles?.map(profile => {
       return {
         name: profile.name
       }
@@ -90,6 +97,23 @@ export class NewRecipePage implements OnInit {
 
   changeProfile(event: string) {
     this.model.mashProfile = this.mashProfiles?.find((profile) => profile.name === event);
+  }
+
+  getWaterOptions() {
+    return this.waters?.map(water => {
+      return {name: water.name}
+    }) || [];
+  }
+
+  changeWater(event: string) {
+    if (this.waters) {
+      const selected = this.waters.find((water) => water.name === event);
+      if (selected) {
+        this.model.waters = [selected];
+      } else {
+        console.error('Water profile not found!')
+      }
+    }
   }
 
   submit() {
@@ -105,6 +129,8 @@ export class NewRecipePage implements OnInit {
       }
     });
 
-    this.storage.addRecipe(this.model)?.then(() => this.router.navigate(['edit-recipe'], {state: {recipe: this.model.uid}}));
+    this.storage.addRecipe(this.model)?.then(() => {
+      this.router.navigate(['edit-recipe', this.model.uid])
+    });
   }
 }

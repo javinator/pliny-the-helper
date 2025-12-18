@@ -1,9 +1,10 @@
 import {Routes} from '@angular/router';
+import {RecipesPage} from "./pages/recipes/recipes.page";
 
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () => import('./pages/recipes/recipes.page').then((m) => m.RecipesPage)
+    component: RecipesPage
   },
   {
     path: 'recipes',
@@ -14,7 +15,7 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/new-recipe/new-recipe.page').then((m) => m.NewRecipePage)
   },
   {
-    path: 'edit-recipe',
+    path: 'edit-recipe/:uid',
     loadComponent: () => import('./pages/edit-recipe/edit-recipe.page').then((m) => m.EditRecipePage)
   },
   {

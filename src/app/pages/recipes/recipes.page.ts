@@ -74,7 +74,7 @@ export class RecipesPage {
 
   showEdit(recipe: Recipe) {
     this.recipeToEdit = recipe.uid;
-    this.router.navigate(['edit-recipe'], {state: {recipe: recipe.uid}});
+    this.router.navigate(['edit-recipe', recipe.uid]);
   }
 
   toggleAllCheckboxes(event: any) {

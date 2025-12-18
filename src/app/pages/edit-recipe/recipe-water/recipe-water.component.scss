@@ -1,0 +1,47 @@
+.range-bar-container {
+  width: 60%;
+  height: 20px;
+  padding: 0;
+  position: absolute;
+  left: 20%;
+  top: 30px;
+}
+
+@media(max-width: 991px) {
+  .range-bar-container {
+    left: 33%;
+  }
+}
+
+.range-bar {
+  height: 4px;
+  width: 100%;
+  background-color: #919191;
+  position: absolute;
+  top: 8px;
+}
+
+.range-bar-range {
+  height: 100%;
+  background-color: darkgreen;
+  position: absolute;
+}
+
+.range-bar-marker {
+  height: 100%;
+  width: 4px;
+  position: absolute;
+}
+
+p.inline {
+  display: inline;
+  position: absolute;
+  right: 0;
+}
+
+p.inline-end {
+  display: inline;
+  position: absolute;
+  right: 32px;
+  top: 26px;
+}

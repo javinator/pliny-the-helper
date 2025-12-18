@@ -15,7 +15,7 @@
   </ion-content>
 } @else {
   <ion-content class="ion-padding">
-    <ion-segment [value]="activeTab" (ionChange)="tabChanged($event)" class="ion-margin-bottom">
+    <ion-segment [value]="activeTab" (ionChange)="tabChanged($event)">
       <ion-segment-button value="abv" layout="icon-start">
         <ion-icon src="/assets/icon/percent.svg"></ion-icon>
         <ion-label class="ion-hide-xl-down">ABV Calculator</ion-label>
@@ -33,6 +33,7 @@
         <ion-label class="ion-hide-xl-down">Conversions</ion-label>
       </ion-segment-button>
     </ion-segment>
+    <span class="ion-margin-bottom">&nbsp;</span>
     @switch (activeTab) {
       @case ('abv') {
         <abv-card></abv-card>

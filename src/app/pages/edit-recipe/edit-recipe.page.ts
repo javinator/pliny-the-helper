@@ -1,7 +1,7 @@
 import {Component, inject} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
-import {BeerStyle, MashProfile, Recipe, Settings} from "models";
-import {Router} from "@angular/router";
+import {BeerStyle, MashProfile, Recipe, Settings, Water} from "models";
+import {ActivatedRoute, Router} from "@angular/router";
 import {StorageService} from "services";
 import {DecimalPipe} from "@angular/common";
 import {EditIngredientsComponent} from "./edit-ingredients/edit-ingredients.component";
@@ -10,6 +10,7 @@ import {FormsModule} from "@angular/forms";
 import {RecipeUtil} from "utils";
 import {SelectSearchComponent} from "@shared";
 import {BrewingComponent} from "./brewing/brewing.component";
+import {RecipeWaterComponent} from "./recipe-water/recipe-water.component";
 
 @Component({
   selector: 'edit-recipe-page',
@@ -23,26 +24,30 @@ import {BrewingComponent} from "./brewing/brewing.component";
     FormsModule,
     DecimalPipe,
     SelectSearchComponent,
-    BrewingComponent
+    BrewingComponent,
+    RecipeWaterComponent
   ],
 })
 export class EditRecipePage {
   private router = inject(Router);
+  private route = inject(ActivatedRoute);
   private storage = inject(StorageService);
 
 
   activeTab = 'ingredients';
   isEditOpen = false;
+  showWaterProfile = false;
 
   uid!: string;
   recipe?: Recipe;
   editRecipe?: Recipe;
   styles?: BeerStyle[];
   mashProfiles?: MashProfile[];
+  waters?: Water[];
   settings?: Settings;
 
   constructor() {
-    this.uid = this.router.currentNavigation()?.extras.state?.['recipe'];
+    this.uid = this.route.snapshot.paramMap.get('uid')!;
   }
 
   public deleteButtons = [
@@ -68,6 +73,9 @@ export class EditRecipePage {
     this.storage.get('mashProfiles')?.then((response) => {
       this.mashProfiles = response;
     });
+    this.storage.get('waters')?.then((response) => {
+      this.waters = response;
+    });
     this.storage.get('settings')?.then((response) => {
       this.settings = response;
     });
@@ -87,6 +95,12 @@ export class EditRecipePage {
 
   openEdit() {
     this.editRecipe = JSON.parse(JSON.stringify(this.recipe));
+    if (this.editRecipe?.waters.length === 1) {
+      this.showWaterProfile = true;
+      this.changeWaterProfile(this.editRecipe.waters[0].name)
+    } else {
+      this.changeWaterProfile(this.settings?.defaultWaterProfile || 'Distilled Water');
+    }
     this.isEditOpen = true;
   }
 
@@ -118,12 +132,32 @@ export class EditRecipePage {
     this.editRecipe!.mashProfile = this.mashProfiles?.find((profile) => profile.name === event);
   }
 
+  getWaterOptions() {
+    return this.waters?.map(water => {
+      return {name: water.name}
+    }).sort((a, b) => a.name.localeCompare(b.name)) || [];
+  }
+
+  changeWaterProfile(event: string) {
+    if (this.waters) {
+      const selected = this.waters.find((water) => water.name === event);
+      if (selected) {
+        this.editRecipe!.waters = [selected];
+      } else {
+        console.error('Water profile not found!')
+      }
+    }
+  }
+
   calculateBoilSize(): number {
     return RecipeUtil.calculateBoilSize(this.editRecipe!, this.settings);
   }
 
   saveEdit() {
     if (this.editRecipe) {
+      if (!this.showWaterProfile) {
+        this.editRecipe.waters = [];
+      }
       if (this.editRecipe.calculateBoilSize) {
         this.editRecipe.boilSize = this.calculateBoilSize();
       }
