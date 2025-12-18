@@ -166,6 +166,9 @@ export class EditRecipePage {
           step.infuseAmount = this.editRecipe?.batchSize;
         }
       });
+      if (this.editRecipe.waters.length === 1) {
+        this.editRecipe.waters[0].amount = this.editRecipe.batchSize;
+      }
       this.storage.saveRecipe(this.editRecipe)
       this.recipe = JSON.parse(JSON.stringify(RecipeUtil.calculateRecipe(this.editRecipe)));
     }

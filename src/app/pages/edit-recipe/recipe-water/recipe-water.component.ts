@@ -1,12 +1,9 @@
-import {Component, computed, inject, input, Input} from '@angular/core';
+import {Component, computed, input} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {Recipe} from "models";
-import {DatePipe, DecimalPipe} from "@angular/common";
-import {CalculatorUtil} from "utils";
+import {DecimalPipe} from "@angular/common";
+import {WaterUtil} from "utils";
 import {FormsModule} from "@angular/forms";
-import {StorageService} from "services";
-import {WaterUtil} from "../../../../utils/water-calculator.utils";
-
 
 @Component({
   selector: 'recipe-water-card',
@@ -16,16 +13,12 @@ import {WaterUtil} from "../../../../utils/water-calculator.utils";
   imports: [IonicModule, FormsModule, DecimalPipe],
 })
 export class RecipeWaterComponent {
-  private storage = inject(StorageService);
   readonly MIN_MASH_PH = 5.2;
   readonly MAX_MASH_PH = 5.6;
 
   recipe = input.required<Recipe>();
   water = computed(() => this.recipe().waters[0]);
-
-  getMashPh() {
-    return WaterUtil.calculateMashPh(this.recipe());
-  }
+  mashWater = computed(() => WaterUtil.calculateMashWater(this.recipe()))
 
   getPhRangeBar() {
     const start = (this.MIN_MASH_PH - 4) / 3 * 100;
@@ -34,7 +27,7 @@ export class RecipeWaterComponent {
   }
 
   getPhRangeMarker() {
-    const ph = this.getMashPh();
+    const ph = this.mashWater().ph!;
     const color =
       (ph >= this.MIN_MASH_PH && ph <= this.MAX_MASH_PH)
         ? 'background-color: var(--ion-color-primary);'
@@ -43,10 +36,6 @@ export class RecipeWaterComponent {
     position = position < 0 ? 0 : position;
     position = position > 100 ? 100 : position;
     return 'left:' + position + '%;' + color;
-  }
-
-  getAlkalinity() {
-    return WaterUtil.calculateAlkalinity(this.recipe());
   }
 
   getAlkalinityRange() {
@@ -61,13 +50,157 @@ export class RecipeWaterComponent {
   }
 
   getAlkalinityRangeMarker() {
-    const value = this.getAlkalinity();
+    const value = this.mashWater().alkalinity!;
     const alkalinity = this.getAlkalinityRange();
     const color =
       (value >= alkalinity.min && value <= alkalinity.max)
         ? 'background-color: var(--ion-color-primary);'
         : 'background-color: var(--ion-color-danger);';
     let position = (value + 5) / 20 * 100;
+    position = position < 0 ? 0 : position;
+    position = position > 100 ? 100 : position;
+    return 'left:' + position + '%;' + color;
+  }
+
+  getCalciumRange() {
+    return WaterUtil.getOptimalCalciumRange(this.recipe());
+  }
+
+  getCalciumRangeBar() {
+    const range = this.getCalciumRange();
+    const start = range.min / 2;
+    const end = range.max / 2;
+    return 'width: ' + (end - start) + '%; left: ' + start + '%;';
+  }
+
+  getCalciumRangeMarker() {
+    const value = this.mashWater().calcium!;
+    const range = this.getCalciumRange();
+    const color =
+      (value >= range.min && value <= range.max)
+        ? 'background-color: var(--ion-color-primary);'
+        : 'background-color: var(--ion-color-danger);';
+    let position = value / 2;
+    position = position < 0 ? 0 : position;
+    position = position > 100 ? 100 : position;
+    return 'left:' + position + '%;' + color;
+  }
+
+  getMagnesiumRange() {
+    return WaterUtil.getOptimalMagnesiumRange(this.recipe());
+  }
+
+  getMagnesiumRangeBar() {
+    const range = this.getMagnesiumRange();
+    const start = range.min * 2;
+    const end = range.max * 2;
+    return 'width: ' + (end - start) + '%; left: ' + start + '%;';
+  }
+
+  getMagnesiumRangeMarker() {
+    const value = this.mashWater().magnesium!;
+    const range = this.getMagnesiumRange();
+    const color =
+      (value >= range.min && value <= range.max)
+        ? 'background-color: var(--ion-color-primary);'
+        : 'background-color: var(--ion-color-danger);';
+    let position = value * 2;
+    position = position < 0 ? 0 : position;
+    position = position > 100 ? 100 : position;
+    return 'left:' + position + '%;' + color;
+  }
+
+  getSodiumRange() {
+    return WaterUtil.getOptimalSodiumRange(this.recipe());
+  }
+
+  getSodiumRangeBar() {
+    const range = this.getSodiumRange();
+    const start = range.min / 2.5;
+    const end = range.max / 2.5;
+    return 'width: ' + (end - start) + '%; left: ' + start + '%;';
+  }
+
+  getSodiumRangeMarker() {
+    const value = this.mashWater().sodium!;
+    const range = this.getSodiumRange();
+    const color =
+      (value >= range.min && value <= range.max)
+        ? 'background-color: var(--ion-color-primary);'
+        : 'background-color: var(--ion-color-danger);';
+    let position = value / 2.5;
+    position = position < 0 ? 0 : position;
+    position = position > 100 ? 100 : position;
+    return 'left:' + position + '%;' + color;
+  }
+
+  getChlorideRange() {
+    return WaterUtil.getOptimalChlorideRange(this.recipe());
+  }
+
+  getChlorideRangeBar() {
+    const range = this.getChlorideRange();
+    const start = range.min / 4;
+    const end = range.max / 4;
+    return 'width: ' + (end - start) + '%; left: ' + start + '%;';
+  }
+
+  getChlorideRangeMarker() {
+    const value = this.mashWater().chloride!;
+    const range = this.getChlorideRange();
+    const color =
+      (value >= range.min && value <= range.max)
+        ? 'background-color: var(--ion-color-primary);'
+        : 'background-color: var(--ion-color-danger);';
+    let position = value / 4;
+    position = position < 0 ? 0 : position;
+    position = position > 100 ? 100 : position;
+    return 'left:' + position + '%;' + color;
+  }
+
+  getSulfateRange() {
+    return WaterUtil.getOptimalSulfateRange(this.recipe());
+  }
+
+  getSulfateRangeBar() {
+    const range = this.getSulfateRange();
+    const start = range.min / 4;
+    const end = range.max / 4;
+    return 'width: ' + (end - start) + '%; left: ' + start + '%;';
+  }
+
+  getSulfateRangeMarker() {
+    const value = this.mashWater().sulfate!;
+    const range = this.getSulfateRange();
+    const color =
+      (value >= range.min && value <= range.max)
+        ? 'background-color: var(--ion-color-primary);'
+        : 'background-color: var(--ion-color-danger);';
+    let position = value / 4;
+    position = position < 0 ? 0 : position;
+    position = position > 100 ? 100 : position;
+    return 'left:' + position + '%;' + color;
+  }
+
+  getRatioRange() {
+    return WaterUtil.getOptimalRatioRange(this.recipe());
+  }
+
+  getRatioRangeBar() {
+    const range = this.getRatioRange();
+    const start = range.min * 10;
+    const end = range.max * 10;
+    return 'width: ' + (end - start) + '%; left: ' + start + '%;';
+  }
+
+  getRatioRangeMarker() {
+    const value = this.mashWater().sulfate! / this.mashWater().chloride!;
+    const range = this.getRatioRange();
+    const color =
+      (value >= range.min && value <= range.max)
+        ? 'background-color: var(--ion-color-primary);'
+        : 'background-color: var(--ion-color-danger);';
+    let position = value * 10;
     position = position < 0 ? 0 : position;
     position = position > 100 ? 100 : position;
     return 'left:' + position + '%;' + color;

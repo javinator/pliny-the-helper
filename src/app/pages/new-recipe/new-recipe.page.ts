@@ -125,9 +125,12 @@ export class NewRecipePage implements OnInit {
     this.model.carbonation = RecipeUtil.calculateCarbonation(this.model.style);
     this.model.mashProfile?.mashSteps.forEach((step) => {
       if (step.type === 'Infusion') {
-        step.infuseAmount = this.model.batchSize
+        step.infuseAmount = this.model.batchSize;
       }
     });
+    if (this.model.waters.length === 1) {
+      this.model.waters[0].amount = this.model.batchSize;
+    }
 
     this.storage.addRecipe(this.model)?.then(() => {
       this.router.navigate(['edit-recipe', this.model.uid])

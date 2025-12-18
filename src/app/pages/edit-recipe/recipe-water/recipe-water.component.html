@@ -65,7 +65,7 @@
             <ion-item>
               <ion-label>
                 <p>Estimated Mash pH</p>
-                todo... <!-- TODO {{ getMashPh() | number: '1.2-2' }} -->
+                {{ mashWater().ph | number: '1.2-2' }}
                 <div class="range-bar-container">
                   <div class="range-bar">
                     <div class="range-bar-range" [style]="getPhRangeBar()"></div>
@@ -77,51 +77,94 @@
             </ion-item>
             <ion-item>
               <ion-label>
-                <p>Residual Alkalinity (°dH)</p>
-                todo... <!-- TODO {{ getAlkalinity() | number: '1.1-1' }} -->
+                <p>Residual Alkalinity</p>
+                {{ mashWater().alkalinity | number: '1.1-1' }} °dH
                 <div class="range-bar-container">
                   <div class="range-bar">
                     <div class="range-bar-range" [style]="getAlkalinityRangeBar()"></div>
                   </div>
                   <div class="range-bar-marker" [style]="getAlkalinityRangeMarker()"></div>
                 </div>
-                <p class="inline ion-hide-lg-down">{{ getAlkalinityRange().min }} - {{ getAlkalinityRange().max }}</p>
+                <p class="inline ion-hide-lg-down">{{ getAlkalinityRange().min }} - {{ getAlkalinityRange().max }}
+                  °dH</p>
               </ion-label>
             </ion-item>
             <ion-item>
               <ion-label>
                 <p>Adjusted Calcium</p>
-                <div>todo...</div>
+                {{ mashWater().calcium | number: '1.0-1' }} ppm
+                <div class="range-bar-container">
+                  <div class="range-bar">
+                    <div class="range-bar-range" [style]="getCalciumRangeBar()"></div>
+                  </div>
+                  <div class="range-bar-marker" [style]="getCalciumRangeMarker()"></div>
+                </div>
+                <p class="inline ion-hide-lg-down">{{ getCalciumRange().min }} - {{ getCalciumRange().max }} ppm</p>
               </ion-label>
             </ion-item>
             <ion-item>
               <ion-label>
                 <p>Adjusted Magnesium</p>
-                <div>todo...</div>
+                {{ mashWater().magnesium | number: '1.0-1' }} ppm
+                <div class="range-bar-container">
+                  <div class="range-bar">
+                    <div class="range-bar-range" [style]="getMagnesiumRangeBar()"></div>
+                  </div>
+                  <div class="range-bar-marker" [style]="getMagnesiumRangeMarker()"></div>
+                </div>
+                <p class="inline ion-hide-lg-down">{{ getMagnesiumRange().min }} - {{ getMagnesiumRange().max }} ppm</p>
               </ion-label>
             </ion-item>
             <ion-item>
               <ion-label>
                 <p>Adjusted Sodium</p>
-                <div>todo...</div>
+                {{ mashWater().sodium | number: '1.0-1' }} ppm
+                <div class="range-bar-container">
+                  <div class="range-bar">
+                    <div class="range-bar-range" [style]="getSodiumRangeBar()"></div>
+                  </div>
+                  <div class="range-bar-marker" [style]="getSodiumRangeMarker()"></div>
+                </div>
+                <p class="inline ion-hide-lg-down">{{ getSodiumRange().min }} - {{ getSodiumRange().max }} ppm</p>
               </ion-label>
             </ion-item>
             <ion-item>
               <ion-label>
                 <p>Adjusted Chloride</p>
-                <div>todo...</div>
+                {{ mashWater().chloride | number: '1.0-1' }} ppm
+                <div class="range-bar-container">
+                  <div class="range-bar">
+                    <div class="range-bar-range" [style]="getChlorideRangeBar()"></div>
+                  </div>
+                  <div class="range-bar-marker" [style]="getChlorideRangeMarker()"></div>
+                </div>
+                <p class="inline ion-hide-lg-down">{{ getChlorideRange().min }} - {{ getChlorideRange().max }} ppm</p>
               </ion-label>
             </ion-item>
             <ion-item>
               <ion-label>
                 <p>Adjusted Sulfate</p>
-                <div>todo...</div>
+                {{ mashWater().sulfate | number: '1.0-1' }} ppm
+                <div class="range-bar-container">
+                  <div class="range-bar">
+                    <div class="range-bar-range" [style]="getSulfateRangeBar()"></div>
+                  </div>
+                  <div class="range-bar-marker" [style]="getSulfateRangeMarker()"></div>
+                </div>
+                <p class="inline ion-hide-lg-down">{{ getSulfateRange().min }} - {{ getSulfateRange().max }} ppm</p>
               </ion-label>
             </ion-item>
             <ion-item>
               <ion-label>
                 <p>Sulfate/Chloride ratio</p>
-                <div>todo...</div>
+                {{ (mashWater().sulfate / mashWater().chloride) | number: '1.0-1' }} ppm
+                <div class="range-bar-container">
+                  <div class="range-bar">
+                    <div class="range-bar-range" [style]="getRatioRangeBar()"></div>
+                  </div>
+                  <div class="range-bar-marker" [style]="getRatioRangeMarker()"></div>
+                </div>
+                <p class="inline ion-hide-lg-down">{{ getRatioRange().min }} - {{ getRatioRange().max }} ppm</p>
               </ion-label>
             </ion-item>
           </ion-list>

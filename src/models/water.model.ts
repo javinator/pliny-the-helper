@@ -9,6 +9,7 @@ export interface Water extends Ingredient {
   sodium: number;
   magnesium: number;
   ph?: number;
+  alkalinity?: number;
   description?: string;
   isCustom?: boolean;
 }
