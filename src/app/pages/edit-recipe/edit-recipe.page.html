@@ -153,15 +153,17 @@
         label-placement="floating"
         [(ngModel)]="editRecipe!.carbonation"
       ></ion-input>
-      <ion-checkbox labelPlacement="end" [(ngModel)]="showWaterProfile">Use Water Profile</ion-checkbox>
-      <br>
-      @if (showWaterProfile) {
-        <select-search
-          [label]="'Water Profile'"
-          [selectedItem]="editRecipe?.waters?.[0]?.name"
-          [items]="getWaterOptions()"
-          (selectChanged)="changeWaterProfile($event)"
-        ></select-search>
+      @if (settings?.useWaterChemistry) {
+        <ion-checkbox labelPlacement="end" [(ngModel)]="showWaterProfile">Use Water Profile</ion-checkbox>
+        <br>
+        @if (showWaterProfile) {
+          <select-search
+            [label]="'Water Profile'"
+            [selectedItem]="editRecipe?.waters?.[0]?.name"
+            [items]="getWaterOptions()"
+            (selectChanged)="changeWaterProfile($event)"
+          ></select-search>
+        }
       }
     </ion-content>
   </ng-template>

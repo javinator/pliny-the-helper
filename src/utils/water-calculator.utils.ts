@@ -47,8 +47,6 @@ export class WaterUtil {
       case ('Blonde Ale'):
         return {min: -3, max: 0};
       case ('Belgian Ale'):
-      case ('Hoppy Lager'):
-      case ('India Pale Ale'):
       case ('Pale Ale'):
         return {min: 0, max: 5};
       case ('Amber Ale'):
@@ -165,9 +163,6 @@ function calculatePh(water: Water, recipe: Recipe) {
       }
     }
   })
-  console.log('grain ph: ' + weightedGrainPh / grainWeight);
-  console.log('mash thickness: ' + recipe.batchSize / grainWeight);
-  console.log('residual alkalinity: ' + water.alkalinity!);
   return weightedGrainPh / grainWeight + (0.013 * (recipe.batchSize / grainWeight) + 0.013) * water.alkalinity! / 3;
 }
 

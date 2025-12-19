@@ -1,5 +1,9 @@
 import {Routes} from '@angular/router';
 import {RecipesPage} from "./pages/recipes/recipes.page";
+import {SettingsPage} from "./pages/settings/settings.page";
+import {CalculatorsPage} from "./pages/calculators/calculators.page";
+import {IngredientsPage} from "./pages/ingredients/ingredients.page";
+import {StylesPage} from "./pages/styles/styles.page";
 
 export const routes: Routes = [
   {
@@ -20,7 +24,7 @@ export const routes: Routes = [
   },
   {
     path: 'styles',
-    loadComponent: () => import('./pages/styles/styles.page').then((m) => m.StylesPage)
+    component: StylesPage
   },
   {
     path: 'style-details',
@@ -28,15 +32,15 @@ export const routes: Routes = [
   },
   {
     path: 'ingredients',
-    loadComponent: () => import('./pages/ingredients/ingredients.page').then((m) => m.IngredientsPage)
+    component: IngredientsPage
   },
   {
     path: 'calculators',
-    loadComponent: () => import('./pages/calculators/calculators.page').then((m) => m.CalculatorsPage)
+    component: CalculatorsPage
   },
   {
     path: 'settings',
-    loadComponent: () => import('./pages/settings/settings.page').then((m) => m.SettingsPage)
+    component: SettingsPage
   },
   {
     path: 'waters',
