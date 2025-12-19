@@ -1,5 +1,4 @@
-import {Recipe, Water} from "models";
-import {CalculatorUtil} from "./calculator.utils";
+import {Misc, Recipe, Water} from "models";
 
 interface Range {
   min: number,
@@ -13,9 +12,15 @@ export class WaterUtil {
       const waterProfile = recipe.waters[0];
       const waterAgents = recipe.miscs.filter(misc => misc.type === 'Water Agent');
       const acidMalt = recipe.fermentables.filter(malt => malt.name === 'Acidulated Malt');
+      const acidMaltAmount = acidMalt.length > 0 ? acidMalt.map(malt => malt.amount).reduce((prev, next) => (prev || 0) + (next || 0)) : 0;
       let water = JSON.parse(JSON.stringify(waterProfile));
-      water.ph = 5.55;
-      water.alkalinity = 1;
+      water.calcium = calculateCalcium(waterProfile, waterAgents);
+      water.magnesium = calculateMagnesium(waterProfile, waterAgents);
+      water.sodium = calculateSodium(waterProfile, waterAgents);
+      water.chloride = calculateChloride(waterProfile, waterAgents);
+      water.sulfate = calculateSulfate(waterProfile, waterAgents);
+      water.alkalinity = calculateResidualAlkalinity(water, waterAgents, acidMaltAmount || 0);
+      water.ph = calculatePh(water, waterAgents, recipe);
       return water;
     }
     return {
@@ -37,24 +42,24 @@ export class WaterUtil {
   static getOptimalAlkalinityRange(recipe: Recipe): Range {
     switch (recipe.style?.category) {
       case ('Pale Lager'):
-        return {min: -5, max: 0};
+        return {min: -100, max: 0};
       case ('Wheat Beer'):
       case ('Blonde Ale'):
-        return {min: -3, max: 0};
+        return {min: -65, max: 0};
       case ('Belgian Ale'):
       case ('Hoppy Lager'):
       case ('India Pale Ale'):
       case ('Pale Ale'):
-        return {min: 0, max: 5};
+        return {min: 0, max: 100};
       case ('Amber Ale'):
       case ('Amber Lager'):
       case ('Barleywine'):
       case ('Strong Lager'):
-        return {min: 3, max: 6};
+        return {min: 65, max: 130};
       case ('Dark Ale'):
-        return {min: 5, max: 10};
+        return {min: 100, max: 200};
       default:
-        return {min: -3, max: 5};
+        return {min: -65, max: 100};
     }
   }
 
@@ -132,4 +137,51 @@ export class WaterUtil {
         return {min: 0.5, max: 2};
     }
   }
+}
+
+function calculateResidualAlkalinity(water: Water, agents: Misc[], acidMalt: number) {
+  const bakingSoda = agents.find(misc => misc.name === 'Baking Soda (NaHCO3)')?.amount || 0;
+  const chalk = agents.find(misc => misc.name === 'Chalk (CaCO3)')?.amount || 0;
+  const lactic = agents.find(misc => misc.name === 'Lactic Acid (80%)')?.amount || 0;
+  const effAlk = (water.bicarbonate * 0.8197) + ((chalk * 492.1 * 1000 + bakingSoda * 594.3 * 1000 - lactic * 1066577.1 - acidMalt * 787.4) / water.amount!);
+  return effAlk - (water.calcium / 1.4) - (water.magnesium / 1.7);
+}
+
+function calculatePh(water: Water, agents: Misc[], recipe: Recipe) {
+  //TODO
+  return 5.5;
+}
+
+function calculateCalcium(water: Water, agents: Misc[]) {
+  const waterAmount = water.amount!;
+  const gypsum = agents.find(misc => misc.name === 'Gypsum (CaSO4)')?.amount || 0;
+  const calciumChloride = agents.find(misc => misc.name === 'Calcium Chloride (CaCl2)')?.amount || 0;
+  return +water.calcium + (232.78 * 1000 * (gypsum / waterAmount)) + (272.6 * 1000 * (calciumChloride / waterAmount));
+}
+
+function calculateMagnesium(water: Water, agents: Misc[]) {
+  const waterAmount = water.amount!;
+  const salt = agents.find(misc => misc.name === 'Epsom Salt (MgSO4)')?.amount || 0;
+  return +water.magnesium + (98.59 * 1000 * (salt / waterAmount));
+}
+
+function calculateSodium(water: Water, agents: Misc[]) {
+  const waterAmount = water.amount!;
+  const salt = agents.find(misc => misc.name === 'Table Salt (NaCl)')?.amount || 0;
+  const bakingSoda = agents.find(misc => misc.name === 'Baking Soda (NaHCO3)')?.amount || 0;
+  return +water.sodium + (393.39 * 1000 * (salt / waterAmount)) + (273.66 * 1000 * (bakingSoda / waterAmount));
+}
+
+function calculateChloride(water: Water, agents: Misc[]) {
+  const waterAmount = water.amount!;
+  const salt = agents.find(misc => misc.name === 'Table Salt (NaCl)')?.amount || 0;
+  const calciumChloride = agents.find(misc => misc.name === 'Calcium Chloride (CaCl2)')?.amount || 0;
+  return +water.chloride + (606.66 * 1000 * (salt / waterAmount)) + (482.28 * 1000 * (calciumChloride / waterAmount));
+}
+
+function calculateSulfate(water: Water, agents: Misc[]) {
+  const waterAmount = water.amount!;
+  const gypsum = agents.find(misc => misc.name === 'Gypsum (CaSO4)')?.amount || 0;
+  const salt = agents.find(misc => misc.name === 'Epsom Salt (MgSO4)')?.amount || 0;
+  return +water.sulfate + (557.93 * 1000 * (gypsum / waterAmount)) + (389.73 * 1000 * (salt / waterAmount));
 }

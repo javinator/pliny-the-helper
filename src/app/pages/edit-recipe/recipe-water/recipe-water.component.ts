@@ -44,8 +44,8 @@ export class RecipeWaterComponent {
 
   getAlkalinityRangeBar() {
     const alkalinity = this.getAlkalinityRange();
-    const start = (alkalinity.min + 5) / 20 * 100;
-    const end = (alkalinity.max + 5) / 20 * 100;
+    const start = (alkalinity.min + 100) / 3;
+    const end = (alkalinity.max + 100) / 3;
     return 'width: ' + (end - start) + '%; left: ' + start + '%;';
   }
 
@@ -56,7 +56,7 @@ export class RecipeWaterComponent {
       (value >= alkalinity.min && value <= alkalinity.max)
         ? 'background-color: var(--ion-color-primary);'
         : 'background-color: var(--ion-color-danger);';
-    let position = (value + 5) / 20 * 100;
+    let position = (value + 100) / 3;
     position = position < 0 ? 0 : position;
     position = position > 100 ? 100 : position;
     return 'left:' + position + '%;' + color;

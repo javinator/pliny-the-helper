@@ -256,7 +256,7 @@
     <NOTES>Use to increase mash pH. Too much may cause harsh salty flavor.</NOTES>
   </MISC>
   <MISC>
-    <NAME>Lactic Acid</NAME>
+    <NAME>Lactic Acid (80%)</NAME>
     <VERSION>1</VERSION>
     <TYPE>Water Agent</TYPE>
     <USE>Mash</USE>
@@ -276,17 +276,6 @@
     <AMOUNT_IS_WEIGHT>TRUE</AMOUNT_IS_WEIGHT>
     <USE_FOR>Decrease mash pH</USE_FOR>
     <NOTES>Decreases mash pH and hardens soft water.</NOTES>
-  </MISC>
-  <MISC>
-    <NAME>Burton Water Salts</NAME>
-    <VERSION>1</VERSION>
-    <TYPE>Water Agent</TYPE>
-    <USE>Mash</USE>
-    <AMOUNT>0.01</AMOUNT>
-    <TIME>60</TIME>
-    <AMOUNT_IS_WEIGHT>TRUE</AMOUNT_IS_WEIGHT>
-    <USE_FOR>Hardens water</USE_FOR>
-    <NOTES>Mixture of salts used to harden water.</NOTES>
   </MISC>
   <MISC>
     <NAME>Calcium Chloride (CaCl2)</NAME>

@@ -10,7 +10,20 @@ import {
   calculatorOutline,
   easelOutline,
   flaskOutline,
-  settingsOutline
+  settingsOutline,
+  add,
+  folderOpen,
+  save,
+  cloud,
+  trash,
+  water,
+  eyedrop,
+  pencil,
+  colorWand,
+  arrowBack,
+  checkmark,
+  hammer,
+  warning
 } from 'ionicons/icons';
 import {Subscription} from "rxjs";
 import {Settings} from "models";
@@ -29,7 +42,27 @@ export class AppComponent implements OnInit {
   private sub?: Subscription;
 
   constructor() {
-    addIcons({basketOutline, beerOutline, easelOutline, flaskOutline, calculatorOutline, settingsOutline});
+    addIcons({
+      basketOutline,
+      beerOutline,
+      calculatorOutline,
+      easelOutline,
+      flaskOutline,
+      settingsOutline,
+      add,
+      folderOpen,
+      save,
+      cloud,
+      trash,
+      water,
+      eyedrop,
+      pencil,
+      colorWand,
+      arrowBack,
+      checkmark,
+      hammer,
+      warning
+    });
   }
 
   pages = [

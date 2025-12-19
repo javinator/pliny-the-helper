@@ -65,7 +65,7 @@
             <ion-item>
               <ion-label>
                 <p>Estimated Mash pH</p>
-                {{ mashWater().ph | number: '1.2-2' }}
+                {{ mashWater().ph | number: '1.1-2' }} *
                 <div class="range-bar-container">
                   <div class="range-bar">
                     <div class="range-bar-range" [style]="getPhRangeBar()"></div>
@@ -78,15 +78,16 @@
             <ion-item>
               <ion-label>
                 <p>Residual Alkalinity</p>
-                {{ mashWater().alkalinity | number: '1.1-1' }} °dH
+                {{ mashWater().alkalinity | number: '1.0-1' }} ppm
                 <div class="range-bar-container">
                   <div class="range-bar">
                     <div class="range-bar-range" [style]="getAlkalinityRangeBar()"></div>
                   </div>
                   <div class="range-bar-marker" [style]="getAlkalinityRangeMarker()"></div>
                 </div>
-                <p class="inline ion-hide-lg-down">{{ getAlkalinityRange().min }} - {{ getAlkalinityRange().max }}
-                  °dH</p>
+                <p class="inline ion-hide-lg-down">
+                  {{ getAlkalinityRange().min }} - {{ getAlkalinityRange().max }} ppm
+                </p>
               </ion-label>
             </ion-item>
             <ion-item>
@@ -157,7 +158,7 @@
             <ion-item>
               <ion-label>
                 <p>Sulfate/Chloride ratio</p>
-                {{ (mashWater().sulfate / mashWater().chloride) | number: '1.0-1' }} ppm
+                {{ (mashWater().sulfate / mashWater().chloride) || 0 | number: '1.0-1' }}
                 <div class="range-bar-container">
                   <div class="range-bar">
                     <div class="range-bar-range" [style]="getRatioRangeBar()"></div>
