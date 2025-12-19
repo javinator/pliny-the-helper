@@ -20,7 +20,7 @@ export class WaterUtil {
       water.chloride = calculateChloride(waterProfile, waterAgents);
       water.sulfate = calculateSulfate(waterProfile, waterAgents);
       water.alkalinity = calculateResidualAlkalinity(water, waterAgents, acidMaltAmount || 0);
-      water.ph = calculatePh(water, waterAgents, recipe);
+      water.ph = calculatePh(water, recipe);
       return water;
     }
     return {
@@ -42,24 +42,24 @@ export class WaterUtil {
   static getOptimalAlkalinityRange(recipe: Recipe): Range {
     switch (recipe.style?.category) {
       case ('Pale Lager'):
-        return {min: -100, max: 0};
+        return {min: -5, max: 0};
       case ('Wheat Beer'):
       case ('Blonde Ale'):
-        return {min: -65, max: 0};
+        return {min: -3, max: 0};
       case ('Belgian Ale'):
       case ('Hoppy Lager'):
       case ('India Pale Ale'):
       case ('Pale Ale'):
-        return {min: 0, max: 100};
+        return {min: 0, max: 5};
       case ('Amber Ale'):
       case ('Amber Lager'):
       case ('Barleywine'):
       case ('Strong Lager'):
-        return {min: 65, max: 130};
+        return {min: 3, max: 6};
       case ('Dark Ale'):
-        return {min: 100, max: 200};
+        return {min: 5, max: 10};
       default:
-        return {min: -65, max: 100};
+        return {min: -3, max: 5};
     }
   }
 
@@ -144,12 +144,31 @@ function calculateResidualAlkalinity(water: Water, agents: Misc[], acidMalt: num
   const chalk = agents.find(misc => misc.name === 'Chalk (CaCO3)')?.amount || 0;
   const lactic = agents.find(misc => misc.name === 'Lactic Acid (80%)')?.amount || 0;
   const effAlk = (water.bicarbonate * 0.8197) + ((chalk * 492.1 * 1000 + bakingSoda * 594.3 * 1000 - lactic * 1066577.1 - acidMalt * 787.4) / water.amount!);
-  return effAlk - (water.calcium / 1.4) - (water.magnesium / 1.7);
+  const resAlk = effAlk - (water.calcium / 1.4) - (water.magnesium / 1.7);
+  console.log('Effective Alkalinity: ' + effAlk + ' ppm, Residual Alkalinity: ' + resAlk + ' ppm.');
+  return resAlk * 0.0562;
 }
 
-function calculatePh(water: Water, agents: Misc[], recipe: Recipe) {
-  //TODO
-  return 5.5;
+function calculatePh(water: Water, recipe: Recipe) {
+  const grainWeight = recipe.fermentables.map(ferm => ferm.amount ? +ferm.amount : 0).reduce((prev, next) => prev + next);
+  let weightedGrainPh = 0;
+  recipe.fermentables.forEach(fermentable => {
+    if (fermentable.type === 'Grain' && fermentable.name !== 'Acidulated Malt') {
+      if (+fermentable.color < 4) {
+        weightedGrainPh += 5.8 * (fermentable.amount ? +fermentable.amount : 0)
+      } else if (+fermentable.color < 18) {
+        weightedGrainPh += 5.4 * (fermentable.amount ? +fermentable.amount : 0)
+      } else if (+fermentable.color < 100) {
+        weightedGrainPh += 4.9 * (fermentable.amount ? +fermentable.amount : 0)
+      } else {
+        weightedGrainPh += 4.4 * (fermentable.amount ? +fermentable.amount : 0)
+      }
+    }
+  })
+  console.log('grain ph: ' + weightedGrainPh / grainWeight);
+  console.log('mash thickness: ' + recipe.batchSize / grainWeight);
+  console.log('residual alkalinity: ' + water.alkalinity!);
+  return weightedGrainPh / grainWeight + (0.013 * (recipe.batchSize / grainWeight) + 0.013) * water.alkalinity! / 3;
 }
 
 function calculateCalcium(water: Water, agents: Misc[]) {
