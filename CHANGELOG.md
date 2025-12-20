@@ -14,6 +14,7 @@ Initial release with basic functionality
 ### v1.3.x (Oct 18, 2023)
 
 - Better app exit handling
+- Added developer options
 - Framework updates
 
 ### v1.4.x (Oct 20, 2023)
@@ -29,5 +30,8 @@ Initial release with basic functionality
 ### v1.8.x (Dec 15, 2025)
 
 - Added cloud storage for better data synchronization
-- Framework updates
 
+### v1.9.x (Dec 19, 2025)
+
+- Added water profiles
+- Water chemistry calculation for recipes
