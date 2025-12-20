@@ -165,11 +165,13 @@ export class StorageService {
   }
 
   public setWaters(waters: Water[]) {
-    this._storage?.get('waters').then((storageWaters: Water[]) => {
-      if (storageWaters) {
-        waters.push(...storageWaters.filter(sw => sw.isCustom));
-      }
-    })
+    setTimeout(() => {
+      this._storage?.get('waters').then((storageWaters: Water[]) => {
+        if (storageWaters) {
+          waters.push(...storageWaters.filter(sw => sw.isCustom));
+        }
+      })
+    }, 200);
     setTimeout(() => {
       this._storage?.remove('waters');
       this._storage?.set('waters', waters);
