@@ -107,7 +107,7 @@ export class AppComponent implements OnInit {
     this.xmlReader.initYeasts();
     this.xmlReader.initMiscs();
     this.xmlReader.initMashProfiles();
-    this.xmlReader.initWaters();
+    setTimeout(() => this.xmlReader.initWaters(), 100);
     setTimeout(() => {
       this.storage.get('settings')?.then((settings: Settings) => {
         this.showWaters.set(settings?.useWaterChemistry || false);

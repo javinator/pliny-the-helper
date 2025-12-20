@@ -171,11 +171,11 @@ export class StorageService {
           waters.push(...storageWaters.filter(sw => sw.isCustom));
         }
       })
-    }, 200);
+    }, 100);
     setTimeout(() => {
       this._storage?.remove('waters');
       this._storage?.set('waters', waters);
-    }, 100);
+    }, 500);
   }
 
   public saveWater(water: Water) {
