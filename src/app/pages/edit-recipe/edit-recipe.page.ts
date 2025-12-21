@@ -174,4 +174,8 @@ export class EditRecipePage {
     }
     this.isEditOpen = false;
   }
+
+  saveRecipe(recipe: Recipe) {
+    this.storage.saveRecipe(recipe);
+  }
 }

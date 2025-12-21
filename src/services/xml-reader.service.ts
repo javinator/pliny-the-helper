@@ -178,7 +178,7 @@ function parseXMLtoFermentables(data: string): Promise<Fermentable[]> {
           description: item.NOTES?.[0],
           version: item.VERSION[0],
           maxInBatch: item.MAX_IN_BATCH?.[0],
-          cost: item.COST?.[0]
+          cost: parseFloat(item.COST?.[0])
         });
       }
       resolve(arr);
@@ -208,7 +208,7 @@ function parseXMLtoHops(data: string): Promise<Hop[]> {
           origin: item.ORIGIN?.[0],
           description: item.NOTES?.[0],
           version: item.VERSION[0],
-          cost: item.COST?.[0]
+          cost: parseFloat(item.COST?.[0])
         });
       }
       resolve(arr);
@@ -241,7 +241,7 @@ function parseXMLtoYeasts(data: string): Promise<Yeast[]> {
           maxTemp: item.MAX_TEMPERATURE[0],
           attenuation: item.ATTENUATION[0],
           maxAbv: item.MAX_ABV?.[0],
-          cost: item.COST?.[0]
+          cost: parseFloat(item.COST?.[0])
         });
       }
       resolve(arr);
@@ -269,7 +269,7 @@ function parseXMLtoMiscs(data: string): Promise<Misc[]> {
           use: item.USE[0],
           description: item.NOTES?.[0],
           amountIsWeight: item.AMOUNT_IS_WEIGHT[0] === 'TRUE',
-          cost: item.COST?.[0]
+          cost: parseFloat(item.COST?.[0])
         });
       }
       resolve(arr);
@@ -389,7 +389,7 @@ function parseXMLtoRecipes(data: string): Promise<Recipe[]> {
               supplier: fermentable.SUPPLIER?.[0],
               description: fermentable.NOTES?.[0],
               maxInBatch: fermentable.MAX_IN_BATCH?.[0],
-              cost: item.COST?.[0]
+              cost: fermentable.COST?.[0]
             } as Fermentable;
           }) || [],
           hops: item.HOPS[0]['HOP']?.map((hop: any) => {
@@ -403,7 +403,7 @@ function parseXMLtoRecipes(data: string): Promise<Recipe[]> {
               type: hop.TYPE?.[0],
               form: hop.FORM?.[0],
               description: hop.NOTES?.[0],
-              cost: item.COST?.[0]
+              cost: hop.COST?.[0]
             } as Hop;
           }) || [],
           mashProfile: {
@@ -438,7 +438,7 @@ function parseXMLtoRecipes(data: string): Promise<Recipe[]> {
               type: misc.TYPE[0],
               description: misc.NOTES?.[0],
               amountIsWeight: misc.AMOUNT_IS_WEIGHT?.[0],
-              cost: item.COST?.[0]
+              cost: misc.COST?.[0]
             } as Misc;
           }) || [],
           notes: item.NOTES?.[0],
@@ -484,7 +484,7 @@ function parseXMLtoRecipes(data: string): Promise<Recipe[]> {
               attenuation: yeast.ATTENUATION?.[0],
               maxAbv: yeast.MAX_ABV?.[0],
               description: yeast.NOTES?.[0],
-              cost: item.COST?.[0]
+              cost: yeast.COST?.[0]
             } as Yeast;
           }) || [],
         });

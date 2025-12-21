@@ -7,44 +7,44 @@
             <ion-item>
               <ion-label>
                 <p>Name</p>
-                {{ recipe.name }}
+                {{ recipe().name }}
               </ion-label>
             </ion-item>
             <ion-item>
               <ion-label>
                 <p>Style</p>
-                {{ recipe.style?.name }}
+                {{ recipe().style?.name }}
               </ion-label>
             </ion-item>
             <ion-item>
               <ion-label>
                 <p>Batch Size</p>
-                {{ recipe.batchSize | number:'1.0-2' }} L
+                {{ recipe().batchSize | number:'1.0-2' }} L
               </ion-label>
             </ion-item>
             <ion-item>
               <ion-label>
                 <p>Efficiency</p>
-                {{ recipe.efficiency }} %
+                {{ recipe().efficiency }} %
               </ion-label>
             </ion-item>
             <ion-item>
               <ion-label>
                 <p>Brew Date</p>
-                {{ recipe.brewDate | date:'dd / MM / yyyy' }}
+                {{ recipe().brewDate | date:'dd / MM / yyyy' }}
               </ion-label>
             </ion-item>
             <ion-item>
               <ion-label>
                 <p>Brewer</p>
-                {{ recipe.brewer }}
+                {{ recipe().brewer }}
               </ion-label>
             </ion-item>
-            @if (showCost && recipe.cost) {
+            @if (showCost() && recipe().cost) {
               <ion-item>
                 <ion-label>
                   <p>Recipe Cost</p>
-                  {{ recipe.cost | number:'1.2-2' }} CHF
+                  {{ convertCost() | number:'1.2-2' }} {{ costCurrency() }}
                 </ion-label>
               </ion-item>
             }
@@ -55,87 +55,87 @@
             <ion-item>
               <ion-label>
                 <p>OG</p>
-                {{ recipe.OG | number:'1.3-3' }}
+                {{ recipe().OG | number:'1.3-3' }}
                 <div class="range-bar-container">
                   <div class="range-bar">
                     <div class="range-bar-range" [style]="getOgRangeBar()"></div>
                   </div>
-                  <div class="range-bar-marker" [style]="getOgRangeMarker(recipe.OG)"></div>
+                  <div class="range-bar-marker" [style]="getOgRangeMarker(recipe().OG)"></div>
                 </div>
-                <p class="inline ion-hide-lg-down">{{ recipe.style?.minOg | number:'1.3-3' }}
-                  - {{ recipe.style?.maxOg | number:'1.3-3' }}</p>
+                <p class="inline ion-hide-lg-down">{{ recipe().style?.minOg | number:'1.3-3' }}
+                  - {{ recipe().style?.maxOg | number:'1.3-3' }}</p>
               </ion-label>
             </ion-item>
             <ion-item>
               <ion-label>
                 <p>FG</p>
-                {{ recipe.FG | number:'1.3-3' }}
+                {{ recipe().FG | number:'1.3-3' }}
                 <div class="range-bar-container">
                   <div class="range-bar">
                     <div class="range-bar-range" [style]="getFgRangeBar()"></div>
                   </div>
-                  <div class="range-bar-marker" [style]="getFgRangeMarker(recipe.FG)"></div>
+                  <div class="range-bar-marker" [style]="getFgRangeMarker(recipe().FG)"></div>
                 </div>
-                <p class="inline ion-hide-lg-down">{{ recipe.style?.minFg | number:'1.3-3' }}
-                  - {{ recipe.style?.maxFg | number:'1.3-3' }}</p>
+                <p class="inline ion-hide-lg-down">{{ recipe().style?.minFg | number:'1.3-3' }}
+                  - {{ recipe().style?.maxFg | number:'1.3-3' }}</p>
               </ion-label>
             </ion-item>
             <ion-item>
               <ion-label>
                 <p>ABV</p>
-                {{ recipe.ABV | number:'1.1-1' }} %
+                {{ recipe().ABV | number:'1.1-1' }} %
                 <div class="range-bar-container">
                   <div class="range-bar">
                     <div class="range-bar-range" [style]="getAbvRangeBar()"></div>
                   </div>
-                  <div class="range-bar-marker" [style]="getAbvRangeMarker(recipe.ABV)"></div>
+                  <div class="range-bar-marker" [style]="getAbvRangeMarker(recipe().ABV)"></div>
                 </div>
-                <p class="inline ion-hide-lg-down">{{ recipe.style?.minAbv | number:'1.1-1' }}
-                  - {{ recipe.style?.maxAbv | number:'1.1-1' }} %</p>
+                <p class="inline ion-hide-lg-down">{{ recipe().style?.minAbv | number:'1.1-1' }}
+                  - {{ recipe().style?.maxAbv | number:'1.1-1' }} %</p>
               </ion-label>
             </ion-item>
             <ion-item>
               <ion-label>
                 <p>Bitterness</p>
-                {{ recipe.IBU | number:'1.0-1' }} IBUs
+                {{ recipe().IBU | number:'1.0-1' }} IBUs
                 <div class="range-bar-container">
                   <div class="range-bar">
                     <div class="range-bar-range" [style]="getIbuRangeBar()"></div>
                   </div>
                   <div class="range-bar-marker" [style]="getIbuRangeMarker()"></div>
                 </div>
-                <p class="inline ion-hide-lg-down">{{ recipe.style?.minIbu | number:'1.0-0' }}
-                  - {{ recipe.style?.maxIbu | number:'1.0-0' }} IBUs</p>
+                <p class="inline ion-hide-lg-down">{{ recipe().style?.minIbu | number:'1.0-0' }}
+                  - {{ recipe().style?.maxIbu | number:'1.0-0' }} IBUs</p>
               </ion-label>
             </ion-item>
             <ion-item>
               <ion-label>
                 <p>Color</p>
-                {{ recipe.color }} SRM
+                {{ recipe().color }} SRM
                 <div class="range-bar-container">
                   <div class="range-bar">
                     <div class="range-bar-range" [style]="getSrmRangeBar()"></div>
                   </div>
                   <div class="range-bar-marker" [style]="getSrmRangeMarker()"></div>
                 </div>
-                <p class="inline ion-hide-lg-down">{{ recipe.style?.minColor | number:'1.0-0' }}
-                  - {{ recipe.style?.maxColor | number:'1.0-0' }} SRM</p>
+                <p class="inline ion-hide-lg-down">{{ recipe().style?.minColor | number:'1.0-0' }}
+                  - {{ recipe().style?.maxColor | number:'1.0-0' }} SRM</p>
               </ion-label>
             </ion-item>
-            @if (recipe.carbonation) {
+            @if (recipe().carbonation) {
               <ion-item>
                 <ion-label>
                   <p>Carbonation</p>
-                  {{ recipe.carbonation }} L of CO<sub>2</sub>
+                  {{ recipe().carbonation }} L of CO<sub>2</sub>
                   <div class="range-bar-container">
                     <div class="range-bar">
                       <div class="range-bar-range" [style]="getCarbRangeBar()"></div>
                     </div>
                     <div class="range-bar-marker" [style]="getCarbRangeMarker()"></div>
                   </div>
-                  @if (recipe.style?.minCarb && recipe.style?.maxCarb) {
+                  @if (recipe().style?.minCarb && recipe().style?.maxCarb) {
                     <p class="inline ion-hide-lg-down">
-                      {{ recipe.style?.minCarb | number:'1.1-1' }} - {{ recipe.style?.maxCarb | number:'1.1-1' }} L
+                      {{ recipe().style?.minCarb | number:'1.1-1' }} - {{ recipe().style?.maxCarb | number:'1.1-1' }} L
                     </p>
                   }
                 </ion-label>
@@ -152,37 +152,37 @@
             <ion-item>
               <ion-label>
                 <ion-input inputmode="numeric" label="Measured OG" label-placement="stacked" fill="outline"
-                           [(ngModel)]="recipe.measuredOG"
+                           [(ngModel)]="recipe().measuredOG"
                            (ionBlur)="saveRecipe()"></ion-input>
               </ion-label>
               <div class="range-bar-container">
                 <div class="range-bar">
                   <div class="range-bar-range" [style]="getOgRangeBar()"></div>
                 </div>
-                <div class="range-bar-marker" [style]="getOgRangeMarker(recipe.measuredOG)"></div>
+                <div class="range-bar-marker" [style]="getOgRangeMarker(recipe().measuredOG)"></div>
               </div>
-              <p class="inline-end ion-hide-lg-down">{{ recipe.style?.minOg | number:'1.3-3' }}
-                - {{ recipe.style?.maxOg | number:'1.3-3' }}</p>
+              <p class="inline-end ion-hide-lg-down">{{ recipe().style?.minOg | number:'1.3-3' }}
+                - {{ recipe().style?.maxOg | number:'1.3-3' }}</p>
             </ion-item>
             <ion-item>
               <ion-label>
                 <ion-input inputmode="numeric" label="Measured FG" label-placement="stacked" fill="outline"
-                           [(ngModel)]="recipe.measuredFG" (ionBlur)="saveRecipe()"></ion-input>
+                           [(ngModel)]="recipe().measuredFG" (ionBlur)="saveRecipe()"></ion-input>
 
               </ion-label>
               <div class="range-bar-container">
                 <div class="range-bar">
                   <div class="range-bar-range" [style]="getFgRangeBar()"></div>
                 </div>
-                <div class="range-bar-marker" [style]="getFgRangeMarker(recipe.measuredFG)"></div>
+                <div class="range-bar-marker" [style]="getFgRangeMarker(recipe().measuredFG)"></div>
               </div>
-              <p class="inline-end ion-hide-lg-down">{{ recipe.style?.minFg | number:'1.3-3' }}
-                - {{ recipe.style?.maxFg | number:'1.3-3' }}</p>
+              <p class="inline-end ion-hide-lg-down">{{ recipe().style?.minFg | number:'1.3-3' }}
+                - {{ recipe().style?.maxFg | number:'1.3-3' }}</p>
             </ion-item>
             <ion-item>
               <ion-label>
                 <ion-input inputmode="numeric" label="Measured Batch Size (L)" label-placement="stacked" fill="outline"
-                           [(ngModel)]="recipe.measuredVol" (ionBlur)="saveRecipe()"></ion-input>
+                           [(ngModel)]="recipe().measuredVol" (ionBlur)="saveRecipe()"></ion-input>
               </ion-label>
             </ion-item>
             <ion-item>
@@ -195,8 +195,8 @@
                   </div>
                   <div class="range-bar-marker" [style]="getAbvRangeMarker(getMeasuredAbv())"></div>
                 </div>
-                <p class="inline-end ion-hide-lg-down">{{ recipe.style?.minAbv | number:'1.1-1' }}
-                  - {{ recipe.style?.maxAbv | number:'1.1-1' }} %</p>
+                <p class="inline-end ion-hide-lg-down">{{ recipe().style?.minAbv | number:'1.1-1' }}
+                  - {{ recipe().style?.maxAbv | number:'1.1-1' }} %</p>
               </ion-label>
             </ion-item>
             <ion-item>
@@ -222,7 +222,7 @@
             <ion-item>
               <ion-label>
                 <p>Efficiency</p>
-                {{ recipe.calculatedEfficiency || 0 | number:'1.0-1' }} %
+                {{ recipe().calculatedEfficiency || 0 | number:'1.0-1' }} %
                 <div class="range-bar-container">
                   <div class="range-bar">
                     <div class="range-bar-range" style="width: 62.5%; left: 25%;'"></div>
@@ -235,7 +235,7 @@
             <ion-item>
               <ion-label>
                 <ion-textarea style="margin-top: 4px;" label="Notes" label-placement="stacked" fill="outline"
-                              [(ngModel)]="recipe.notes" (ionBlur)="saveRecipe()"></ion-textarea>
+                              [(ngModel)]="recipe().notes" (ionBlur)="saveRecipe()"></ion-textarea>
               </ion-label>
             </ion-item>
           </ion-list>

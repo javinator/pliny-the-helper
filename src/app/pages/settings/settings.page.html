@@ -47,9 +47,19 @@
           </ion-item>
           <ion-item>
             <ion-checkbox [(ngModel)]="settings.displayCost" label-placement="end" justify="start">
-              Show cost of recipes (CHF)
+              Show cost of recipes
             </ion-checkbox>
           </ion-item>
+          @if (settings.displayCost) {
+            <ion-item>
+              <ion-select [(ngModel)]="settings.costCurrency" label-placement="stacked"
+                          label="Cost display currency">
+                @for (currency of costCurrency; track currency) {
+                  <ion-select-option>{{ currency }}</ion-select-option>
+                }
+              </ion-select>
+            </ion-item>
+          }
           <ion-item>
             <ion-checkbox [(ngModel)]="settings.minimizeExport" label-placement="end" justify="start">
               Minimize export XML
@@ -95,6 +105,10 @@
           <h2>Danger Zone</h2>
           <div class="ion-padding danger-zone">
             <ion-button (click)="deleteDuplicates()">Delete duplicate Recipes</ion-button>
+            <ion-button (click)="deleteAllRecipes()">
+              Delete all Recipes
+              <ion-icon name="warning" class="ion-padding-start"></ion-icon>
+            </ion-button>
             <ion-button (click)="clearDb()">
               Clear DB
               <ion-icon name="warning" class="ion-padding-start"></ion-icon>

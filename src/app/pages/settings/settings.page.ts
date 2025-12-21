@@ -31,6 +31,7 @@ export class SettingsPage {
   hasCloudError = false;
   version = packageJson.version;
   waterProfileOptions: string[] = [];
+  costCurrency: string[] = ['CHF', 'EUR', 'GBP', 'USD'];
 
   ionViewWillEnter() {
     this.showSpinner = true;
@@ -50,6 +51,7 @@ export class SettingsPage {
       this.settings.cloudPassword = response?.cloudPassword;
       this.settings.useWaterChemistry = response?.useWaterChemistry || false;
       this.settings.defaultWaterProfile = response?.defaultWaterProfile || 'Distilled Water';
+      this.settings.costCurrency = response?.costCurrency || 'CHF';
     });
     this.storage.get('waters')?.then((response: Water[]) => {
       this.waterProfileOptions = response.map(water => water.name).sort()
@@ -78,6 +80,7 @@ export class SettingsPage {
       this.settings.cloudPassword = undefined;
       this.settings.useWaterChemistry = false;
       this.settings.defaultWaterProfile = 'Distilled Water';
+      this.settings.costCurrency = 'CHF';
     }, 100);
     this.updateNavigation.emit();
     this.init();
@@ -137,6 +140,13 @@ export class SettingsPage {
         console.log('No recipes to check for duplicates!')
       }
     })
+  }
+
+  deleteAllRecipes() {
+    this.showSpinner = true;
+    this.storage.set('recipes', [])?.then(() => {
+      setTimeout(() => this.showSpinner = false, 100);
+    });
   }
 
   recalculateCosts() {

@@ -159,7 +159,7 @@ function hopToXmlText(hop: Hop, minimize: boolean) {
     content += '<SUBSTITUTES>' + hop.substitutes.join(',') + '</SUBSTITUTES>\n';
   }
   if (hop.cost) {
-    content += '<COST>' + hop.cost + '</COST>\n';
+    content += '<COST>' + hop.cost.toFixed(3) + '</COST>\n';
   }
   content += '</HOP>\n';
   return content;
@@ -185,10 +185,10 @@ function fermentableToXmlText(fermentable: Fermentable, minimize: boolean) {
   if (fermentable.maxInBatch && !minimize) {
     content += '<MAX_IN_BATCH>' + fermentable.maxInBatch + '</MAX_IN_BATCH>\n';
   }
-  content += '</FERMENTABLE>\n';
   if (fermentable.cost) {
-    content += '<COST>' + fermentable.cost + '</COST>\n';
+    content += '<COST>' + fermentable.cost.toFixed(2) + '</COST>\n';
   }
+  content += '</FERMENTABLE>\n';
   return content;
 }
 
@@ -224,7 +224,7 @@ function yeastToXmlText(yeast: Yeast, minimize: boolean) {
     content += '<NOTES>' + yeast.description + '</NOTES>\n';
   }
   if (yeast.cost) {
-    content += '<COST>' + yeast.cost + '</COST>\n';
+    content += '<COST>' + yeast.cost.toFixed(2) + '</COST>\n';
   }
   content += '</YEAST>\n';
   return content;
@@ -245,7 +245,7 @@ function miscToXmlText(misc: Misc) {
     content += '<NOTES>' + misc.description + '</NOTES>\n';
   }
   if (misc.cost) {
-    content += '<COST>' + misc.cost + '</COST>\n';
+    content += '<COST>' + misc.cost.toFixed(2) + '</COST>\n';
   }
   content += '</MISC>\n';
   return content;

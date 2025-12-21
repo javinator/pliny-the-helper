@@ -46,7 +46,8 @@
         <edit-ingredients-card [recipe]="recipe" [hideDescription]="settings?.hideDescription"></edit-ingredients-card>
       }
       @case ('details') {
-        <edit-details-card [recipe]="recipe" [showCost]="settings?.displayCost === true"></edit-details-card>
+        <edit-details-card [recipe]="recipe" [showCost]="settings?.displayCost === true"
+                           (saveEditRecipe)="saveRecipe($event)"></edit-details-card>
       }
       @case ('brewing') {
         <brewing-card [recipe]="recipe"></brewing-card>

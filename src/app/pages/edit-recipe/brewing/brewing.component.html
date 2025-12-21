@@ -1,9 +1,9 @@
-@if (recipe && recipe.mashProfile) {
+@if (recipe().mashProfile) {
   <ion-card class="ion-padding">
-    <ion-card-title class="ion-padding">{{ recipe.mashProfile.name }}</ion-card-title>
+    <ion-card-title class="ion-padding">{{ recipe().mashProfile?.name }}</ion-card-title>
     <ion-card-content>
       <ion-list>
-        @for (step of recipe.mashProfile.mashSteps; track step; let i = $index) {
+        @for (step of recipe().mashProfile?.mashSteps; track step; let i = $index) {
           <ion-item>
             <ion-label class="ion-text-wrap">
               {{ step.name }}
@@ -37,7 +37,7 @@
           <ion-label class="ion-text-wrap">
             Lautering
             <p>Lauter the wort,
-              sparge to a volume of {{ recipe.boilSize | number: '1.0-1' }} L@if (firstWortHops().length > 0) {
+              sparge to a volume of {{ recipe().boilSize | number: '1.0-1' }} L@if (firstWortHops().length > 0) {
                 <span>, then add
                   @for (hop of firstWortHops(); track hop) {
                     <span>{{ hop.amount ? (hop.amount * 1000) : 0 }}g of {{ hop.name }},</span>
@@ -52,17 +52,17 @@
           <ion-label class="ion-text-wrap">
             Boiling
             <p>
-              Boil for {{ recipe.boilTime | number: '1.0-0' }} minutes.
+              Boil for {{ recipe().boilTime | number: '1.0-0' }} minutes.
               @for (hop of boilHops(); track hop) {
                 <span><br>
                   With {{ hop.time | number: '1.0-0' }}
-                  minutes remaining, add {{ hop.amount ? ((hop.amount * 1000) | number: '1.0-0') : 0 }}
+                  minutes remaining, add {{ hop.amount ? ((hop.amount * 1000) | number: '1.0-1') : 0 }}
                   g of {{ hop.name }}.</span>
               }
             </p>
           </ion-label>
         </ion-item>
-        @if (recipe.yeasts.length > 0) {
+        @if (recipe().yeasts.length > 0) {
           <ion-item>
             <ion-label class="ion-text-wrap">
               Flame Out
@@ -70,12 +70,12 @@
                 Turn off the heat.
                 @for (hop of aromaHops(); track hop) {
                   <span><br>
-                  Add {{ hop.amount ? ((hop.amount * 1000) | number: '1.0-0') : 0 }} g of {{ hop.name }}.
+                  Add {{ hop.amount ? ((hop.amount * 1000) | number: '1.0-1') : 0 }} g of {{ hop.name }}.
                 </span>
                 }
                 <br>
-                Cool the wort down to {{ recipe.yeasts[0].minTemp | number: '1.0-1' }}
-                to {{ recipe.yeasts[0].maxTemp | number: '1.0-1' }} °C and add {{ recipe.yeasts[0].name }} yeast.
+                Cool the wort down to {{ recipe().yeasts[0].minTemp | number: '1.0-1' }}
+                to {{ recipe().yeasts[0].maxTemp | number: '1.0-1' }} °C and add {{ recipe().yeasts[0].name }} yeast.
               </p>
             </ion-label>
           </ion-item>
@@ -86,7 +86,7 @@
                 Ferment in a dark area.
                 @for (hop of dryHops(); track hop) {
                   <span><br>
-                  Add {{ hop.amount ? ((hop.amount * 1000) | number: '1.0-0') : 0 }} g of {{ hop.name }}
+                  Add {{ hop.amount ? ((hop.amount * 1000) | number: '1.0-1') : 0 }} g of {{ hop.name }}
                     for {{ hop.time }}
                     days.
                 </span>
