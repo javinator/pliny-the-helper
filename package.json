@@ -1,6 +1,6 @@
 {
   "name": "pliny-the-helper",
-  "version": "1.9.4",
+  "version": "1.9.6",
   "author": "Bier-Freunde Seeland",
   "homepage": "https://bier-freunde.ch/",
   "scripts": {
@@ -24,8 +24,6 @@
     "@capacitor/filesystem": "^8.0.0",
     "@capacitor/haptics": "^8.0.0",
     "@capacitor/keyboard": "^8.0.0",
-    "@capacitor/status-bar": "^8.0.0",
-    "@capawesome/capacitor-android-edge-to-edge-support": "^8.0.0",
     "@capawesome/capacitor-file-picker": "^8.0.0",
     "@ionic/angular": "^8.7.13",
     "@ionic/storage-angular": "^4.0.0",

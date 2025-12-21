@@ -6,11 +6,6 @@ const config: CapacitorConfig = {
   webDir: 'www/browser',
   server: {
     androidScheme: 'https'
-  },
-  "plugins": {
-    EdgeToEdge: {
-      backgroundColor: "#1f1f1f"
-    }
   }
 };
 

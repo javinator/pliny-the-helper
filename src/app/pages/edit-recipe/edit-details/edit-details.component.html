@@ -126,7 +126,7 @@
               <ion-item>
                 <ion-label>
                   <p>Carbonation</p>
-                  {{ recipe().carbonation }} L of CO<sub>2</sub>
+                  {{ recipe().carbonation | number:'1.1-1' }} L of CO<sub>2</sub>
                   <div class="range-bar-container">
                     <div class="range-bar">
                       <div class="range-bar-range" [style]="getCarbRangeBar()"></div>
