@@ -26,7 +26,11 @@
               GPTs
             </p>
           </ion-label>
-          <div class="description ion-hide-xl-down">{{ fermentable.description }} Up to {{ fermentable.maxInBatch }}%.
+          <div class="description ion-hide-xl-down">
+            {{ fermentable.description }}
+            @if (fermentable.maxInBatch) {
+              Up to {{ fermentable.maxInBatch }}%.
+            }
           </div>
           <ion-buttons slot="end">
             <ion-button (click)="removeFermentable(fermentable)">
@@ -70,7 +74,8 @@
               IBUs
             </p>
           </ion-label>
-          <div class="description ion-hide-xl-down">{{ hop.description }}
+          <div class="description ion-hide-xl-down">
+            {{ hop.description }}
           </div>
           <ion-buttons slot="end">
             <ion-button (click)="removeHop(hop)">
@@ -104,10 +109,13 @@
               <span [class]="checkOverAbv(yeast, recipe)">{{ recipe.ABV | number:'1.0-1' }} % ABV</span>
             </p>
           </ion-label>
-          <div class="description ion-hide-xl-down">{{ yeast.description }}
-            Optimal temperature between {{ yeast.minTemp | number:'1.0-1' }} °C and {{ yeast.maxTemp | number:'1.0-1' }}
-            °C.
-            Alcohol tolerant up to {{ yeast.maxAbv }} %.
+          <div class="description ion-hide-xl-down">
+            {{ yeast.description }}
+            @if (yeast.minTemp && yeast.maxTemp) {
+              Optimal temperature between {{ yeast.minTemp | number:'1.0-1' }} °C and {{ yeast.maxTemp | number:'1.0-1' }}
+              °C.
+                Alcohol tolerant up to {{ yeast.maxAbv }} %.
+            }
           </div>
           <ion-buttons slot="end">
             <ion-button (click)="removeYeast(yeast)">

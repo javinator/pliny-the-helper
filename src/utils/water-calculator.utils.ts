@@ -42,10 +42,9 @@ export class WaterUtil {
   static getOptimalAlkalinityRange(recipe: Recipe): Range {
     switch (recipe.style?.category) {
       case ('Pale Lager'):
-        return {min: -5, max: 0};
       case ('Wheat Beer'):
       case ('Blonde Ale'):
-        return {min: -3, max: 0};
+        return {min: -5, max: 0};
       case ('Belgian Ale'):
       case ('Pale Ale'):
         return {min: 0, max: 5};
@@ -143,7 +142,7 @@ function calculateResidualAlkalinity(water: Water, agents: Misc[], acidMalt: num
   const lactic = agents.find(misc => misc.name === 'Lactic Acid (80%)')?.amount || 0;
   const effAlk = (water.bicarbonate * 0.8197) + ((chalk * 492.1 * 1000 + bakingSoda * 594.3 * 1000 - lactic * 1066577.1 - acidMalt * 787.4) / water.amount!);
   const resAlk = effAlk - (water.calcium / 1.4) - (water.magnesium / 1.7);
-  console.log('Effective Alkalinity: ' + effAlk + ' ppm, Residual Alkalinity: ' + resAlk + ' ppm.');
+  console.log('Effective Alkalinity: ' + effAlk + ' ppm (CaCo3), Residual Alkalinity: ' + resAlk + ' ppm (CaCo3).');
   return resAlk * 0.0562;
 }
 

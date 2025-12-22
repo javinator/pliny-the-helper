@@ -95,7 +95,7 @@ export class EditRecipePage {
 
   openEdit() {
     this.editRecipe = JSON.parse(JSON.stringify(this.recipe));
-    if (this.editRecipe?.waters.length === 1) {
+    if (this.editRecipe?.waters?.length === 1) {
       this.showWaterProfile = true;
       this.changeWaterProfile(this.editRecipe.waters[0].name)
     } else {

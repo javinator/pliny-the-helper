@@ -29,7 +29,7 @@
         <ion-icon name="information"></ion-icon>
         <ion-label class="ion-hide-xl-down">Details</ion-label>
       </ion-segment-button>
-      @if (settings?.useWaterChemistry && recipe.waters.length === 1) {
+      @if (settings?.useWaterChemistry && recipe.waters?.length === 1) {
         <ion-segment-button value="water" layout="icon-start">
           <ion-icon name="water"></ion-icon>
           <ion-label class="ion-hide-xl-down">Water Profile</ion-label>
@@ -144,7 +144,7 @@
       ></ion-input>
       <select-search label="Mash Profile" placeholder="Select Mash Profile"
                      [items]="getProfilesOptions()" (selectChanged)="changeProfile($event)"
-                     [selectedItem]="editRecipe!.mashProfile!.name"></select-search>
+                     [selectedItem]="editRecipe?.mashProfile?.name"></select-search>
       <ion-checkbox labelPlacement="end" [(ngModel)]="editRecipe!.forcedCarbonation">Force Carbonation</ion-checkbox>
       <br>
       <ion-input

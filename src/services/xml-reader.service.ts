@@ -5,6 +5,7 @@ import {HttpClient} from "@angular/common/http";
 import {v4 as uuidv4} from "uuid";
 import * as xml2js from 'xml2js';
 import {BeerStyle, Fermentable, Hop, MashProfile, Misc, Recipe, Water, Yeast} from "models";
+import {RecipeUtil} from "utils";
 
 interface MashProfileXml {
   NAME: string[];
@@ -365,8 +366,8 @@ function parseXMLtoRecipes(data: string): Promise<Recipe[]> {
           name: item.NAME[0],
           version: item.VERSION[0],
           ABV: item.EST_ABV?.[0],
-          FG: item.EST_FG?.[0],
-          OG: item.EST_OG?.[0],
+          FG: item.EST_FG?.[0] || item.FG?.[0],
+          OG: item.EST_OG?.[0] || item.OG?.[0],
           IBU: item.IBU?.[0],
           batchSize: item.BATCH_SIZE[0],
           boilSize: item.BOIL_SIZE[0],
@@ -377,6 +378,12 @@ function parseXMLtoRecipes(data: string): Promise<Recipe[]> {
           carbonation: item.CARBONATION?.[0],
           forcedCarbonation: item.FORCED_CARBONATION?.[0] === 'TRUE',
           efficiency: item.EFFICIENCY[0],
+          measuredFG: item.FG?.[0] ? Math.round(item.FG[0] * 1000) / 1000 : undefined,
+          measuredOG: item.OG?.[0] ? Math.round(item.OG[0] * 1000) / 1000 : undefined,
+          measuredVol: item.ACTUAL_SIZE?.[0],
+          notes: item.NOTES?.[0],
+          type: item.TYPE[0],
+          uid: uuidv4() as string,
           fermentables: item.FERMENTABLES[0]['FERMENTABLE']?.map((fermentable: any) => {
             return {
               name: fermentable.NAME[0],
@@ -406,7 +413,7 @@ function parseXMLtoRecipes(data: string): Promise<Recipe[]> {
               cost: hop.COST?.[0]
             } as Hop;
           }) || [],
-          mashProfile: {
+          mashProfile: item.MASH?.[0] ? {
             name: item.MASH[0].NAME[0],
             version: item.MASH[0].VERSION[0],
             grainTemp: item.MASH[0].GRAIN_TEMP[0],
@@ -424,10 +431,7 @@ function parseXMLtoRecipes(data: string): Promise<Recipe[]> {
               }
             }),
             notes: item.MASH[0].NOTES?.[0]
-          } as MashProfile,
-          measuredFG: item.FG?.[0] ? Math.round(item.FG[0] * 1000) / 1000 : undefined,
-          measuredOG: item.OG?.[0] ? Math.round(item.OG[0] * 1000) / 1000 : undefined,
-          measuredVol: item.ACTUAL_SIZE?.[0],
+          } as MashProfile : undefined,
           miscs: item.MISCS[0]['MISC']?.map((misc: any) => {
             return {
               name: misc.NAME[0],
@@ -441,7 +445,6 @@ function parseXMLtoRecipes(data: string): Promise<Recipe[]> {
               cost: misc.COST?.[0]
             } as Misc;
           }) || [],
-          notes: item.NOTES?.[0],
           style: {
             name: item.STYLE[0]?.NAME[0],
             type: item.STYLE[0]?.TYPE[0],
@@ -467,9 +470,21 @@ function parseXMLtoRecipes(data: string): Promise<Recipe[]> {
             styleLetter: item.STYLE[0]?.STYLE_LETTER?.[0],
             version: item.STYLE[0]?.VERSION[0]
           },
-          type: item.TYPE[0],
-          uid: uuidv4() as string,
-          waters: [],
+          waters: item.WATERS?.[0]?.['WATER']?.map((water: any) => {
+            return {
+              name: water.NAME[0],
+              version: water.VERSION[0],
+              amount: water.AMOUNT?.[0],
+              description: water.NOTES?.[0],
+              calcium: water.CALCIUM[0],
+              bicarbonate: water.BICARBONATE[0],
+              chloride: water.CHLORIDE[0],
+              magnesium: water.MAGNESIUM[0],
+              sodium: water.SODIUM[0],
+              sulfate: water.SULFATE[0],
+              ph: water.PH?.[0],
+            }
+          }),
           yeasts: item.YEASTS[0]['YEAST']?.map((yeast: any) => {
             return {
               name: yeast.NAME[0],
@@ -481,7 +496,7 @@ function parseXMLtoRecipes(data: string): Promise<Recipe[]> {
               productId: yeast.PRODUCT_ID?.[0],
               minTemp: yeast.MIN_TEMPERATURE?.[0],
               maxTemp: yeast.MAX_TEMPERATURE?.[0],
-              attenuation: yeast.ATTENUATION?.[0],
+              attenuation: yeast.ATTENUATION?.[0] || RecipeUtil.calculateAttenuation(item.OG[0], item.FG[0]),
               maxAbv: yeast.MAX_ABV?.[0],
               description: yeast.NOTES?.[0],
               cost: yeast.COST?.[0]

@@ -110,6 +110,10 @@ export class RecipeUtil {
       return recipe.batchSize * 5.5;
     }
   }
+
+  static calculateAttenuation(og: number, fg: number) {
+    return (og - fg) / (og - 1) * 100;
+  }
 }
 
 function getPPG(y: number) {

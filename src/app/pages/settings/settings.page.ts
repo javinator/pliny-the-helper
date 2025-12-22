@@ -201,7 +201,7 @@ export class SettingsPage {
               recipe.yeasts.forEach((yeast) => {
                 let nY = JSON.parse(JSON.stringify(yeasts.find((item) => item.name === yeast.name) || yeast));
                 nY.amount = yeast.amount;
-                nY.attenuation = yeast.attenuation;
+                nY.attenuation = yeast.attenuation || RecipeUtil.calculateAttenuation(recipe.OG, recipe.FG);
                 newYeasts.push(nY)
               })
               recipe.yeasts = newYeasts;
