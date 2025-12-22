@@ -484,7 +484,7 @@ function parseXMLtoRecipes(data: string): Promise<Recipe[]> {
               sulfate: water.SULFATE[0],
               ph: water.PH?.[0],
             }
-          }),
+          }) || [],
           yeasts: item.YEASTS[0]['YEAST']?.map((yeast: any) => {
             return {
               name: yeast.NAME[0],
