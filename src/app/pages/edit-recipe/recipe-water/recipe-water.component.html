@@ -52,6 +52,12 @@
                 <div>{{ water().sulfate | number:'1.0-1' }} ppm</div>
               </ion-label>
             </ion-item>
+            <ion-item>
+              <ion-label>
+                <p>Mash thickness</p>
+                <div>{{ getMashThickness() | number:'1.0-2' }} L/kg</div>
+              </ion-label>
+            </ion-item>
           </ion-list>
         </ion-col>
         <ion-col size="12" size-xl="8">

@@ -164,6 +164,15 @@
             [items]="getWaterOptions()"
             (selectChanged)="changeWaterProfile($event)"
           ></select-search>
+          <ion-input
+            type="number"
+            min="0"
+            label="Mash water amount (L)"
+            label-placement="floating"
+            required
+            [value]="editRecipe?.waters?.[0]?.amount"
+            (ionChange)="changeWaterAmount($event)"
+          ></ion-input>
         }
       }
     </ion-content>

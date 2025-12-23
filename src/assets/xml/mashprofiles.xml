@@ -12,7 +12,7 @@
         <NAME>Saccharification</NAME>
         <VERSION>1</VERSION>
         <TYPE>Infusion</TYPE>
-        <INFUSE_AMOUNT>10</INFUSE_AMOUNT>
+        <INFUSE_AMOUNT/>
         <STEP_TIME>60</STEP_TIME>
         <STEP_TEMP>66</STEP_TEMP>
       </MASH_STEP>
@@ -38,7 +38,7 @@
         <NAME>Saccharification</NAME>
         <VERSION>1</VERSION>
         <TYPE>Infusion</TYPE>
-        <INFUSE_AMOUNT>10</INFUSE_AMOUNT>
+        <INFUSE_AMOUNT/>
         <STEP_TIME>60</STEP_TIME>
         <STEP_TEMP>64</STEP_TEMP>
       </MASH_STEP>
@@ -64,7 +64,7 @@
         <NAME>Saccharification</NAME>
         <VERSION>1</VERSION>
         <TYPE>Infusion</TYPE>
-        <INFUSE_AMOUNT>10</INFUSE_AMOUNT>
+        <INFUSE_AMOUNT/>
         <STEP_TIME>60</STEP_TIME>
         <STEP_TEMP>68</STEP_TEMP>
       </MASH_STEP>
@@ -94,7 +94,7 @@
         <NAME>Acid Rest</NAME>
         <VERSION>1</VERSION>
         <TYPE>Infusion</TYPE>
-        <INFUSE_AMOUNT>18</INFUSE_AMOUNT>
+        <INFUSE_AMOUNT/>
         <STEP_TIME>45</STEP_TIME>
         <STEP_TEMP>35</STEP_TEMP>
       </MASH_STEP>
@@ -140,7 +140,7 @@
         <NAME>Saccharification</NAME>
         <VERSION>1</VERSION>
         <TYPE>Infusion</TYPE>
-        <INFUSE_AMOUNT>10</INFUSE_AMOUNT>
+        <INFUSE_AMOUNT/>
         <STEP_TIME>45</STEP_TIME>
         <STEP_TEMP>64</STEP_TEMP>
       </MASH_STEP>
@@ -173,7 +173,7 @@
         <NAME>Saccharification</NAME>
         <VERSION>1</VERSION>
         <TYPE>Infusion</TYPE>
-        <INFUSE_AMOUNT>10</INFUSE_AMOUNT>
+        <INFUSE_AMOUNT/>
         <STEP_TIME>60</STEP_TIME>
         <STEP_TEMP>65</STEP_TEMP>
       </MASH_STEP>
@@ -188,7 +188,7 @@
         <NAME>Saccharification</NAME>
         <VERSION>1</VERSION>
         <TYPE>Temperature</TYPE>
-        <INFUSE_AMOUNT>10</INFUSE_AMOUNT>
+        <INFUSE_AMOUNT/>
         <STEP_TIME>60</STEP_TIME>
         <STEP_TEMP>66</STEP_TEMP>
       </MASH_STEP>

@@ -20,6 +20,10 @@ export class RecipeWaterComponent {
   water = computed(() => this.recipe().waters[0]);
   mashWater = computed(() => WaterUtil.calculateMashWater(this.recipe()))
 
+  getMashThickness() {
+    return WaterUtil.calculateMashThickness(this.recipe());
+  }
+
   getPhRangeBar() {
     const start = (this.MIN_MASH_PH - 4) / 3 * 100;
     const end = (this.MAX_MASH_PH - 4) / 3 * 100;

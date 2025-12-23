@@ -117,7 +117,7 @@ export class StorageService {
   public getRecipe(uid?: string) {
     return this._storage!.get('recipes').then((recipes: Recipe[]) => {
       const idx = recipes.findIndex((rcp) => rcp.uid === uid);
-      console.log(recipes[idx]);
+      console.debug(recipes[idx]);
       return recipes[idx];
     });
   }

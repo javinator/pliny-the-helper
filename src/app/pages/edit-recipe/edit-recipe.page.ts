@@ -149,6 +149,10 @@ export class EditRecipePage {
     }
   }
 
+  changeWaterAmount(event: CustomEvent) {
+    this.editRecipe!.waters[0].amount = event.detail.value;
+  }
+
   calculateBoilSize(): number {
     return RecipeUtil.calculateBoilSize(this.editRecipe!, this.settings);
   }
@@ -163,12 +167,9 @@ export class EditRecipePage {
       }
       this.editRecipe.mashProfile?.mashSteps.forEach((step) => {
         if (step.type === 'Infusion') {
-          step.infuseAmount = this.editRecipe?.batchSize;
+          step.infuseAmount = this.editRecipe?.waters?.[0]?.amount || this.editRecipe?.batchSize;
         }
       });
-      if (this.editRecipe.waters.length === 1) {
-        this.editRecipe.waters[0].amount = this.editRecipe.batchSize;
-      }
       this.storage.saveRecipe(this.editRecipe)
       this.recipe = JSON.parse(JSON.stringify(RecipeUtil.calculateRecipe(this.editRecipe)));
     }
