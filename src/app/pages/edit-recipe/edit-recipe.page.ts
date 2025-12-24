@@ -141,7 +141,7 @@ export class EditRecipePage {
   changeWaterProfile(event: string) {
     if (this.waters) {
       const selected = this.waters.find((water) => water.name === event);
-      if (selected && this.editRecipe?.waters) {
+      if (selected && this.editRecipe?.waters?.[0]) {
         selected.amount = this.editRecipe.waters[0].amount;
         this.editRecipe.waters = [selected];
       } else {
