@@ -169,8 +169,7 @@
             min="0"
             label="Mash water amount (L)"
             label-placement="floating"
-            required
-            [value]="editRecipe?.waters?.[0]?.amount"
+            [value]="editRecipe?.waters?.[0]?.amount || editRecipe?.batchSize"
             (ionChange)="changeWaterAmount($event)"
           ></ion-input>
         }

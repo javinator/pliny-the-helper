@@ -153,33 +153,36 @@ function calculateResidualAlkalinity(water: Water, agents: Misc[], acidMalt: num
   const lactic = agents.find(misc => misc.name === 'Lactic Acid (80%)')?.amount || 0;
   const effAlk = (water.bicarbonate * 0.8197) + ((chalk * 492.1 * 1000 + bakingSoda * 594.3 * 1000 - lactic * 1066577.1 - acidMalt * 787.4) / water.amount!);
   const resAlk = effAlk - (water.calcium / 1.4) - (water.magnesium / 1.7);
-  console.log('Effective Alkalinity: ' + effAlk + ' ppm (CaCo3), Residual Alkalinity: ' + resAlk + ' ppm (CaCo3).');
+  console.log('Effective Alkalinity: ' + effAlk.toFixed(2) + ' ppm (CaCo3), Residual Alkalinity: ' + resAlk.toFixed(2) + ' ppm (CaCo3).');
   return resAlk * 0.0562;
 }
 
 function calculatePh(water: Water, recipe: Recipe) {
   if (recipe.fermentables.length > 0) {
     const grainWeight = recipe.fermentables
-      .filter(ferm => ferm.type === 'Grain')
+      .filter(ferm => ['Grain', 'Adjunct'].includes(ferm.type))
       .map(ferm => ferm.amount ? +ferm.amount : 0)
       .reduce((prev, next) => prev + next);
     let weightedGrainPh = 0;
     recipe.fermentables.forEach(fermentable => {
       if (fermentable.type === 'Grain') {
         if (+fermentable.color < 4) {
-          weightedGrainPh += 5.7 * (fermentable.amount ? +fermentable.amount : 0)
+          weightedGrainPh += 5.75 * (fermentable.amount ? +fermentable.amount : 0)
         } else if (+fermentable.color < 12) {
-          weightedGrainPh += 5.5 * (fermentable.amount ? +fermentable.amount : 0)
+          weightedGrainPh += 5.55 * (fermentable.amount ? +fermentable.amount : 0)
         } else if (+fermentable.color < 24) {
-          weightedGrainPh += 5.2 * (fermentable.amount ? +fermentable.amount : 0)
+          weightedGrainPh += 5.4 * (fermentable.amount ? +fermentable.amount : 0)
         } else if (+fermentable.color < 100) {
-          weightedGrainPh += 4.8 * (fermentable.amount ? +fermentable.amount : 0)
+          weightedGrainPh += 4.85 * (fermentable.amount ? +fermentable.amount : 0)
         } else {
-          weightedGrainPh += 4.3 * (fermentable.amount ? +fermentable.amount : 0)
+          weightedGrainPh += 4.55 * (fermentable.amount ? +fermentable.amount : 0)
         }
       }
+      if (fermentable.type === 'Adjunct') {
+        weightedGrainPh += 6 * (fermentable.amount ? +fermentable.amount : 0)
+      }
     })
-    return weightedGrainPh / grainWeight + (0.013 * ((water.amount || recipe.batchSize) / grainWeight) + 0.013) * water.alkalinity! / 3.75;
+    return weightedGrainPh / grainWeight + (0.013 * ((water.amount || recipe.batchSize) / grainWeight) + 0.013) * water.alkalinity! / 3.785;
   }
   return water.ph
 }
