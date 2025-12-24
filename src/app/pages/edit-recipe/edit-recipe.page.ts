@@ -141,9 +141,9 @@ export class EditRecipePage {
   changeWaterProfile(event: string) {
     if (this.waters) {
       const selected = this.waters.find((water) => water.name === event);
-      if (selected && this.editRecipe?.waters?.[0]) {
-        selected.amount = this.editRecipe.waters[0].amount;
-        this.editRecipe.waters = [selected];
+      if (selected) {
+        selected.amount = this.editRecipe!.waters[0]?.amount || this.editRecipe!.batchSize;
+        this.editRecipe!.waters = [selected];
       } else {
         console.error('Water profile not found!')
       }
