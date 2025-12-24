@@ -4,7 +4,7 @@ import {StorageService, XmlReaderService, CloudStorageService} from "services";
 import {Fermentable, Hop, Misc, Recipe, Settings, Water, Yeast} from "models";
 import {FormsModule} from "@angular/forms";
 import {CONFIG} from "../../app.constants";
-import {RecipeUtil} from "utils";
+import {deepClone, RecipeUtil} from "utils";
 import packageJson from 'packageJson';
 import {catchError, of} from "rxjs";
 
@@ -162,7 +162,7 @@ export class SettingsPage {
             response.forEach((recipe) => {
               let newFermentables: Fermentable[] = [];
               recipe.fermentables.forEach((fermentable) => {
-                let nF = JSON.parse(JSON.stringify(fermentables.find((item) => item.name === fermentable.name) || fermentable));
+                let nF = deepClone(fermentables.find((item) => item.name === fermentable.name) || fermentable);
                 nF.amount = fermentable.amount;
                 newFermentables.push(nF);
               })
@@ -178,7 +178,7 @@ export class SettingsPage {
             response.forEach((recipe) => {
               let newHops: Hop[] = [];
               recipe.hops.forEach((hop) => {
-                let nH = JSON.parse(JSON.stringify(hops.find((item) => item.name === hop.name) || hop));
+                let nH = deepClone(hops.find((item) => item.name === hop.name) || hop);
                 nH.amount = hop.amount;
                 nH.time = hop.time;
                 nH.use = hop.use;
@@ -199,7 +199,7 @@ export class SettingsPage {
             response.forEach((recipe) => {
               let newYeasts: Yeast[] = [];
               recipe.yeasts.forEach((yeast) => {
-                let nY = JSON.parse(JSON.stringify(yeasts.find((item) => item.name === yeast.name) || yeast));
+                let nY = deepClone(yeasts.find((item) => item.name === yeast.name) || yeast);
                 nY.amount = yeast.amount;
                 nY.attenuation = yeast.attenuation || RecipeUtil.calculateAttenuation(recipe.OG, recipe.FG);
                 newYeasts.push(nY)
@@ -216,7 +216,7 @@ export class SettingsPage {
             response.forEach((recipe) => {
               let newMiscs: Misc[] = [];
               recipe.miscs.forEach((misc) => {
-                let nM = JSON.parse(JSON.stringify(miscs.find((item) => item.name === misc.name) || misc));
+                let nM = deepClone(miscs.find((item) => item.name === misc.name) || misc);
                 nM.amount = misc.amount;
                 newMiscs.push(nM)
               })

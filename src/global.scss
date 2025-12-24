@@ -42,10 +42,7 @@ ion-card {
 
   &.clickable:hover {
     cursor: pointer;
-
-    &:hover {
-      box-shadow: 0 0 2px #124;
-    }
+    box-shadow: 0 0 2px #124;
   }
 }
 

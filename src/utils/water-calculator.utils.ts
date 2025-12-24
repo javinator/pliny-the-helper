@@ -1,4 +1,5 @@
 import {Misc, Recipe, Water} from "models";
+import {deepClone} from "utils";
 
 interface Range {
   min: number,
@@ -24,7 +25,7 @@ export class WaterUtil {
       const waterAgents = recipe.miscs.filter(misc => misc.type === 'Water Agent');
       const acidMalt = recipe.fermentables.filter(malt => malt.name === 'Acidulated Malt');
       const acidMaltAmount = acidMalt.length > 0 ? acidMalt.map(malt => malt.amount).reduce((prev, next) => (prev || 0) + (next || 0)) : 0;
-      let water = JSON.parse(JSON.stringify(waterProfile));
+      let water = deepClone(waterProfile);
       water.calcium = calculateCalcium(waterProfile, waterAgents);
       water.magnesium = calculateMagnesium(waterProfile, waterAgents);
       water.sodium = calculateSodium(waterProfile, waterAgents);

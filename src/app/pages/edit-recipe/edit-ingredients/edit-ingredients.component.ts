@@ -3,7 +3,7 @@ import {IonicModule} from '@ionic/angular';
 import {Fermentable, Hop, Misc, Recipe, Yeast} from "models";
 import {DecimalPipe} from "@angular/common";
 import {StorageService} from "services";
-import {RecipeUtil} from "utils";
+import {deepClone, RecipeUtil} from "utils";
 import {CONFIG} from "../../../app.constants";
 import {SelectSearchComponent} from "@shared";
 
@@ -87,7 +87,7 @@ export class EditIngredientsComponent implements OnInit {
   }
 
   chooseFermentable(event: any) {
-    this.newFermentable = JSON.parse(JSON.stringify(this.fermentables.find((item) => item.name === event)));
+    this.newFermentable = deepClone(this.fermentables.find((item) => item.name === event));
   }
 
   setFermentableAmount(event: any) {
@@ -143,7 +143,7 @@ export class EditIngredientsComponent implements OnInit {
   }
 
   chooseHop(event: any) {
-    this.newHop = JSON.parse(JSON.stringify(this.hops.find((item) => item.name === event)));
+    this.newHop = deepClone(this.hops.find((item) => item.name === event));
   }
 
   setHopAmount(event: any) {
@@ -218,7 +218,7 @@ export class EditIngredientsComponent implements OnInit {
   }
 
   chooseYeast(event: any) {
-    this.newYeast = JSON.parse(JSON.stringify(this.yeasts.find((item) => item.name === event)));
+    this.newYeast = deepClone(this.yeasts.find((item) => item.name === event));
   }
 
   setYeastAttenuation(event: any) {
@@ -280,7 +280,7 @@ export class EditIngredientsComponent implements OnInit {
   }
 
   chooseMisc(event: any) {
-    this.newMisc = JSON.parse(JSON.stringify(this.miscs.find((item) => item.name === event)));
+    this.newMisc = deepClone(this.miscs.find((item) => item.name === event));
   }
 
   setMiscAmount(event: any) {

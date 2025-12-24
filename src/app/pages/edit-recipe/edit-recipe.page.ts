@@ -7,7 +7,7 @@ import {DecimalPipe} from "@angular/common";
 import {EditIngredientsComponent} from "./edit-ingredients/edit-ingredients.component";
 import {EditDetailsComponent} from "./edit-details/edit-details.component";
 import {FormsModule} from "@angular/forms";
-import {RecipeUtil} from "utils";
+import {deepClone, RecipeUtil} from "utils";
 import {SelectSearchComponent} from "@shared";
 import {BrewingComponent} from "./brewing/brewing.component";
 import {RecipeWaterComponent} from "./recipe-water/recipe-water.component";
@@ -94,7 +94,7 @@ export class EditRecipePage {
   }
 
   openEdit() {
-    this.editRecipe = JSON.parse(JSON.stringify(this.recipe));
+    this.editRecipe = deepClone(this.recipe);
     if (this.editRecipe?.waters?.length === 1) {
       this.showWaterProfile = true;
       this.changeWaterProfile(this.editRecipe.waters[0].name)
@@ -142,8 +142,11 @@ export class EditRecipePage {
     if (this.waters) {
       const selected = this.waters.find((water) => water.name === event);
       if (selected) {
-        selected.amount = this.editRecipe!.waters[0]?.amount || this.editRecipe!.batchSize;
-        this.editRecipe!.waters = [selected];
+        const selectedCopy = deepClone(selected);
+        selectedCopy.amount = +(this.editRecipe!.waters[0]?.amount || this.editRecipe!.batchSize);
+        selectedCopy.uid = undefined;
+        selectedCopy.description = undefined;
+        this.editRecipe!.waters = [selectedCopy];
       } else {
         console.error('Water profile not found!')
       }
@@ -172,7 +175,7 @@ export class EditRecipePage {
         }
       });
       this.storage.saveRecipe(this.editRecipe)
-      this.recipe = JSON.parse(JSON.stringify(RecipeUtil.calculateRecipe(this.editRecipe)));
+      this.recipe = deepClone(RecipeUtil.calculateRecipe(this.editRecipe));
     }
     this.isEditOpen = false;
   }
