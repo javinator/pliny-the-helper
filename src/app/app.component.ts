@@ -5,6 +5,7 @@ import {Storage} from "@ionic/storage-angular";
 import {StorageService, XmlReaderService, XmlWriterService} from "services";
 import {addIcons} from "ionicons";
 import {
+  basket,
   basketOutline,
   beerOutline,
   calculatorOutline,
@@ -23,7 +24,10 @@ import {
   arrowBack,
   checkmark,
   hammer,
-  warning
+  warning,
+  information,
+  informationCircle,
+  alert
 } from 'ionicons/icons';
 import {Subscription} from "rxjs";
 import {Settings} from "models";
@@ -43,6 +47,7 @@ export class AppComponent implements OnInit {
 
   constructor() {
     addIcons({
+      basket,
       basketOutline,
       beerOutline,
       calculatorOutline,
@@ -61,7 +66,10 @@ export class AppComponent implements OnInit {
       arrowBack,
       checkmark,
       hammer,
-      warning
+      warning,
+      information,
+      informationCircle,
+      alert
     });
   }
 

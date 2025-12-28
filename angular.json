@@ -32,39 +32,22 @@
                 "glob": "**/*",
                 "input": "src/assets",
                 "output": "assets"
-              },
-              {
-                "glob": "**/*.svg",
-                "input": "node_modules/ionicons/dist/ionicons/svg",
-                "output": "./svg"
               }
             ],
             "styles": [
               "src/theme/variables.scss",
               "src/global.scss"
             ],
-            "scripts": [],
             "allowedCommonJsDependencies": [
               "localforage",
               "xml2js",
               "file-saver"
             ],
-            "browser": "src/main.ts"
+            "browser": "src/main.ts",
+            "sourceMap": false
           },
           "configurations": {
             "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
-              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -78,12 +61,9 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
-            },
-            "ci": {
-              "progress": false
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "development"
         },
         "serve": {
           "builder": "@angular/build:dev-server",
