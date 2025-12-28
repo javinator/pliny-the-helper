@@ -92,9 +92,11 @@
                 </span>
                 }
                 <br>
-                After 14-21 days@if (!recipe().forcedCarbonation) {
-                <span>, add {{ carbSugar() | number: '1.0-1' }}g of Sugar and bottle or</span>
-              } keg the beer.
+                After 14-21 days,
+                @if (!recipe().forcedCarbonation) {
+                  add {{ carbSugar() | number: '1.0-1' }}g of Sugar and bottle or
+                }
+                keg the beer.
               </p>
             </ion-label>
           </ion-item>
