@@ -10,7 +10,7 @@ import {BeerStyle} from "models";
   imports: [IonicModule],
 })
 export class StyleDetailsPage {
-  private router = inject(Router);
+  private readonly router = inject(Router);
 
   constructor() {
     this.style = this.router.currentNavigation()?.extras.state?.['style'];

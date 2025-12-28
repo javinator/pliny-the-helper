@@ -12,8 +12,8 @@ import {Router} from "@angular/router";
   imports: [IonicModule, StyleCardComponent]
 })
 export class StylesPage {
-  private storage = inject(StorageService);
-  private router = inject(Router);
+  private readonly storage = inject(StorageService);
+  private readonly router = inject(Router);
 
 
   showSpinner = false;

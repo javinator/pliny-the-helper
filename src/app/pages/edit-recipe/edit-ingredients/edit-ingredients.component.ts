@@ -15,7 +15,7 @@ import {SelectSearchComponent} from "@shared";
   imports: [IonicModule, DecimalPipe, SelectSearchComponent],
 })
 export class EditIngredientsComponent implements OnInit {
-  private storage = inject(StorageService);
+  private readonly storage = inject(StorageService);
 
   RecipeUtil = RecipeUtil;
 

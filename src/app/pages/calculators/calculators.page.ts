@@ -15,7 +15,7 @@ import {StorageService} from "services";
   imports: [IonicModule, AbvCardComponent, HydrometerCardComponent, RefractometerCardComponent, ConversionCardComponent]
 })
 export class CalculatorsPage {
-  private storage = inject(StorageService);
+  private readonly storage = inject(StorageService);
 
 
   activeTab = 'abv';

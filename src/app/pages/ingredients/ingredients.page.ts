@@ -14,7 +14,7 @@ import {MiscsCardComponent} from "./miscs-card/miscs-card.component";
   imports: [IonicModule, FermentablesCardComponent, HopsCardComponent, YeastsCardComponent, MiscsCardComponent]
 })
 export class IngredientsPage implements OnInit {
-  private storage = inject(StorageService);
+  private readonly storage = inject(StorageService);
 
 
   showSpinner = false;

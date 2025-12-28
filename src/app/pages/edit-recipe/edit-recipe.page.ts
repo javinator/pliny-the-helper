@@ -29,9 +29,9 @@ import {RecipeWaterComponent} from "./recipe-water/recipe-water.component";
   ],
 })
 export class EditRecipePage {
-  private router = inject(Router);
-  private route = inject(ActivatedRoute);
-  private storage = inject(StorageService);
+  private readonly router = inject(Router);
+  private readonly route = inject(ActivatedRoute);
+  private readonly storage = inject(StorageService);
 
 
   activeTab = 'ingredients';

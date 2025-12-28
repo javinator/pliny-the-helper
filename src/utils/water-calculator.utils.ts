@@ -13,7 +13,7 @@ export class WaterUtil {
       const grainWeight = recipe.fermentables
         .filter(ferm => ferm.type === 'Grain')
         .map(ferm => ferm.amount ? +ferm.amount : 0)
-        .reduce((prev, next) => prev + next);
+        .reduce((prev, next) => prev + next, 0);
       return (recipe.waters[0].amount || recipe.batchSize) / grainWeight;
     }
     return 0;
@@ -24,7 +24,7 @@ export class WaterUtil {
       const waterProfile = recipe.waters[0];
       const waterAgents = recipe.miscs.filter(misc => misc.type === 'Water Agent');
       const acidMalt = recipe.fermentables.filter(malt => malt.name === 'Acidulated Malt');
-      const acidMaltAmount = acidMalt.length > 0 ? acidMalt.map(malt => malt.amount).reduce((prev, next) => (prev || 0) + (next || 0)) : 0;
+      const acidMaltAmount = acidMalt.length > 0 ? acidMalt.map(malt => malt.amount).reduce((prev, next) => (prev || 0) + (next || 0), 0) : 0;
       let water = deepClone(waterProfile);
       water.calcium = calculateCalcium(waterProfile, waterAgents);
       water.magnesium = calculateMagnesium(waterProfile, waterAgents);
@@ -163,7 +163,7 @@ function calculatePh(water: Water, recipe: Recipe) {
     const grainWeight = recipe.fermentables
       .filter(ferm => ['Grain', 'Adjunct'].includes(ferm.type))
       .map(ferm => ferm.amount ? +ferm.amount : 0)
-      .reduce((prev, next) => prev + next);
+      .reduce((prev, next) => prev + next, 0);
     let weightedGrainPh = 0;
     recipe.fermentables.forEach(fermentable => {
       if (fermentable.type === 'Grain') {

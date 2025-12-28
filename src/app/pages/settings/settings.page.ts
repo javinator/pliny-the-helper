@@ -17,9 +17,9 @@ import {catchError, of} from "rxjs";
   imports: [IonicModule, FormsModule]
 })
 export class SettingsPage {
-  private storage = inject(StorageService);
-  private xmlReader = inject(XmlReaderService);
-  private cloudService = inject(CloudStorageService);
+  private readonly storage = inject(StorageService);
+  private readonly xmlReader = inject(XmlReaderService);
+  private readonly cloudService = inject(CloudStorageService);
   @Output() updateNavigation = new EventEmitter<void>();
 
   settings: Settings = {};
@@ -54,7 +54,7 @@ export class SettingsPage {
       this.settings.costCurrency = response?.costCurrency || 'CHF';
     });
     this.storage.get('waters')?.then((response: Water[]) => {
-      this.waterProfileOptions = response.map(water => water.name).sort()
+      this.waterProfileOptions = response.map(water => water.name).sort((a, b) => a.localeCompare(b));
     })
   }
 
@@ -97,7 +97,7 @@ export class SettingsPage {
     this.xmlReader.initWaters();
     setTimeout(() => {
       this.storage.get('waters')?.then((response: Water[]) => {
-        this.waterProfileOptions = response.map(water => water.name).sort()
+        this.waterProfileOptions = response.map(water => water.name).sort((a, b) => a.localeCompare(b));
       })
     }, 1000);
     setTimeout(() => {

@@ -37,8 +37,8 @@ import {Settings} from "models";
   providers: [Storage, StorageService, XmlReaderService, XmlWriterService]
 })
 export class AppComponent implements OnInit {
-  private xmlReader = inject(XmlReaderService);
-  private storage = inject(StorageService);
+  private readonly xmlReader = inject(XmlReaderService);
+  private readonly storage = inject(StorageService);
   private sub?: Subscription;
 
   constructor() {

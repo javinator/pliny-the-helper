@@ -12,7 +12,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
   imports: [IonicModule, WaterCardComponent, FormsModule, ReactiveFormsModule]
 })
 export class WatersPage {
-  private storage = inject(StorageService);
+  private readonly storage = inject(StorageService);
 
   showSpinner = false;
   isModalOpen = false;
@@ -33,8 +33,8 @@ export class WatersPage {
 
   init() {
     this.storage.get('waters')?.then((response: Water[]) => {
-      this.waters = response.sort((a, b) => a.name.localeCompare(b.name));
-      this.allWaters = response.sort((a, b) => a.name.localeCompare(b.name));
+      this.waters = [...response].sort((a, b) => a.name.localeCompare(b.name));
+      this.allWaters = this.waters;
     });
   }
 

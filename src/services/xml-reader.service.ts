@@ -23,8 +23,8 @@ interface MashProfileXml {
   providedIn: 'root',
 })
 export class XmlReaderService {
-  private http = inject(HttpClient);
-  private storage = inject(StorageService);
+  private readonly http = inject(HttpClient);
+  private readonly storage = inject(StorageService);
 
 
   initStyles() {
@@ -132,18 +132,18 @@ function parseXMLtoStyles(data: string): Promise<BeerStyle[]> {
           categoryNumber: item.CATEGORY_NUMBER[0],
           examples: item.EXAMPLES[0],
           ingredients: item.INGREDIENTS[0],
-          maxAbv: parseFloat(item.ABV_MAX[0]),
-          maxColor: parseFloat(item.COLOR_MAX[0]),
-          maxFg: parseFloat(item.FG_MAX[0]),
-          maxIbu: parseFloat(item.IBU_MAX[0]),
-          maxOg: parseFloat(item.OG_MAX[0]),
-          minAbv: parseFloat(item.ABV_MIN[0]),
-          minColor: parseFloat(item.COLOR_MIN[0]),
-          minFg: parseFloat(item.FG_MIN[0]),
-          minIbu: parseFloat(item.IBU_MIN[0]),
-          minOg: parseFloat(item.OG_MIN[0]),
-          minCarb: parseFloat(item.CARB_MIN?.[0]),
-          maxCarb: parseFloat(item.CARB_MAX?.[0]),
+          maxAbv: Number.parseFloat(item.ABV_MAX[0]),
+          maxColor: Number.parseFloat(item.COLOR_MAX[0]),
+          maxFg: Number.parseFloat(item.FG_MAX[0]),
+          maxIbu: Number.parseFloat(item.IBU_MAX[0]),
+          maxOg: Number.parseFloat(item.OG_MAX[0]),
+          minAbv: Number.parseFloat(item.ABV_MIN[0]),
+          minColor: Number.parseFloat(item.COLOR_MIN[0]),
+          minFg: Number.parseFloat(item.FG_MIN[0]),
+          minIbu: Number.parseFloat(item.IBU_MIN[0]),
+          minOg: Number.parseFloat(item.OG_MIN[0]),
+          minCarb: Number.parseFloat(item.CARB_MIN?.[0]),
+          maxCarb: Number.parseFloat(item.CARB_MAX?.[0]),
           notes: item.NOTES[0],
           profile: item.PROFILE[0],
           styleGuide: item.STYLE_GUIDE[0],
@@ -179,7 +179,7 @@ function parseXMLtoFermentables(data: string): Promise<Fermentable[]> {
           description: item.NOTES?.[0],
           version: item.VERSION[0],
           maxInBatch: item.MAX_IN_BATCH?.[0],
-          cost: parseFloat(item.COST?.[0])
+          cost: Number.parseFloat(item.COST?.[0])
         });
       }
       resolve(arr);
@@ -209,7 +209,7 @@ function parseXMLtoHops(data: string): Promise<Hop[]> {
           origin: item.ORIGIN?.[0],
           description: item.NOTES?.[0],
           version: item.VERSION[0],
-          cost: parseFloat(item.COST?.[0])
+          cost: Number.parseFloat(item.COST?.[0])
         });
       }
       resolve(arr);
@@ -242,7 +242,7 @@ function parseXMLtoYeasts(data: string): Promise<Yeast[]> {
           maxTemp: item.MAX_TEMPERATURE[0],
           attenuation: item.ATTENUATION[0],
           maxAbv: item.MAX_ABV?.[0],
-          cost: parseFloat(item.COST?.[0])
+          cost: Number.parseFloat(item.COST?.[0])
         });
       }
       resolve(arr);
@@ -270,7 +270,7 @@ function parseXMLtoMiscs(data: string): Promise<Misc[]> {
           use: item.USE[0],
           description: item.NOTES?.[0],
           amountIsWeight: item.AMOUNT_IS_WEIGHT[0] === 'TRUE',
-          cost: parseFloat(item.COST?.[0])
+          cost: Number.parseFloat(item.COST?.[0])
         });
       }
       resolve(arr);

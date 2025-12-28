@@ -7,7 +7,7 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class CloudStorageService {
-  private http = inject(HttpClient);
+  private readonly http = inject(HttpClient);
 
   public getRecipes(email: string, password: string): Observable<Recipe[]> {
     return this.http.get<Recipe[]>('https://pliny.bier-freunde.ch/rest/api.php', {

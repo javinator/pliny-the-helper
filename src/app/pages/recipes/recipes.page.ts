@@ -15,14 +15,14 @@ import {catchError, of} from "rxjs";
   imports: [IonicModule, RouterLink, RecipeCardComponent]
 })
 export class RecipesPage {
-  private storage = inject(StorageService);
-  private router = inject(Router);
-  private xmlWriter = inject(XmlWriterService);
-  private platform = inject(Platform);
-  private xmlReader = inject(XmlReaderService);
+  private readonly storage = inject(StorageService);
+  private readonly router = inject(Router);
+  private readonly xmlWriter = inject(XmlWriterService);
+  private readonly platform = inject(Platform);
+  private readonly xmlReader = inject(XmlReaderService);
+  private readonly routerOutlet = inject(IonRouterOutlet, {optional: true});
+  private readonly cloudService = inject(CloudStorageService);
   alertController = inject(AlertController);
-  private routerOutlet = inject(IonRouterOutlet, {optional: true});
-  private cloudService = inject(CloudStorageService);
 
   recipes?: Recipe[];
   f_recipes?: Recipe[];
@@ -184,7 +184,7 @@ export class RecipesPage {
         }, 100);
         return of();
       })).subscribe(res => {
-      this.recipes = res.sort((a, b) => a.name.localeCompare(b.name));
+      this.recipes = [...res].sort((a, b) => a.name.localeCompare(b.name));
       this.f_recipes = this.recipes;
       this.storage.deleteRecipes()?.then(() =>
         this.storage.addRecipes(res)?.then(() => {

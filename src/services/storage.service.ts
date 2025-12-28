@@ -7,11 +7,12 @@ import {deepClone, RecipeUtil} from "utils";
   providedIn: 'root'
 })
 export class StorageService {
-  private storage = inject(Storage);
+  private readonly storage = inject(Storage);
 
   private _storage: Storage | null = null;
 
   constructor() {
+    //NOSONAR
     this.init().then();
   }
 

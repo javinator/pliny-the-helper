@@ -17,9 +17,9 @@ import {SelectSearchComponent} from "@shared";
   imports: [IonicModule, FormsModule, SelectSearchComponent]
 })
 export class NewRecipePage implements OnInit {
-  private storage = inject(StorageService);
-  private location = inject(Location);
-  private router = inject(Router);
+  private readonly storage = inject(StorageService);
+  private readonly location = inject(Location);
+  private readonly router = inject(Router);
 
 
   styles?: BeerStyle[];

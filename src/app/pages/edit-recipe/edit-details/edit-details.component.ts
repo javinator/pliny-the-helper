@@ -27,8 +27,7 @@ export class EditDetailsComponent {
     return '';
   }
 
-  getOgRangeMarker(og?: number) {
-    og = og || 1;
+  getOgRangeMarker(og: number = 1) {
     if (this.recipe().style?.minOg && this.recipe().style?.maxOg) {
       const color =
         (og >= this.recipe().style!.minOg && og <= this.recipe().style!.maxOg)
@@ -51,8 +50,7 @@ export class EditDetailsComponent {
     return '';
   }
 
-  getFgRangeMarker(fg?: number) {
-    fg = fg || 0.998;
+  getFgRangeMarker(fg: number = 0.998) {
     if (this.recipe().style?.minFg && this.recipe().style?.maxFg) {
       const color =
         (fg >= this.recipe().style!.minFg && fg <= this.recipe().style!.maxFg)
@@ -74,8 +72,7 @@ export class EditDetailsComponent {
     return '';
   }
 
-  getAbvRangeMarker(abv?: number) {
-    abv = abv || 0;
+  getAbvRangeMarker(abv: number = 0) {
     if (this.recipe().style?.minAbv && this.recipe().style?.maxAbv) {
       const color =
         (abv >= this.recipe().style!.minAbv && abv <= this.recipe().style!.maxAbv)
