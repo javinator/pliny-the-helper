@@ -5,29 +5,31 @@ import {Storage} from "@ionic/storage-angular";
 import {StorageService, XmlReaderService, XmlWriterService} from "services";
 import {addIcons} from "ionicons";
 import {
+  add,
+  alert,
+  arrowBack,
   basket,
   basketOutline,
   beerOutline,
   calculatorOutline,
-  easelOutline,
-  flaskOutline,
-  settingsOutline,
-  add,
-  folderOpen,
-  save,
-  cloud,
-  trash,
-  water,
-  eyedrop,
-  pencil,
-  colorWand,
-  arrowBack,
   checkmark,
+  cloud,
+  cloudDownloadOutline,
+  cloudUploadOutline,
+  colorWand,
+  easelOutline,
+  eyedrop,
+  flaskOutline,
+  folderOpen,
   hammer,
-  warning,
   information,
   informationCircle,
-  alert
+  pencil,
+  save,
+  settingsOutline,
+  trash,
+  warning,
+  water
 } from 'ionicons/icons';
 import {Subscription} from "rxjs";
 import {Settings} from "models";
@@ -47,29 +49,31 @@ export class AppComponent implements OnInit {
 
   constructor() {
     addIcons({
+      add,
+      alert,
+      arrowBack,
       basket,
       basketOutline,
       beerOutline,
       calculatorOutline,
-      easelOutline,
-      flaskOutline,
-      settingsOutline,
-      add,
-      folderOpen,
-      save,
-      cloud,
-      trash,
-      water,
-      eyedrop,
-      pencil,
-      colorWand,
-      arrowBack,
       checkmark,
+      cloud,
+      cloudDownloadOutline,
+      cloudUploadOutline,
+      colorWand,
+      easelOutline,
+      eyedrop,
+      flaskOutline,
+      folderOpen,
       hammer,
-      warning,
       information,
       informationCircle,
-      alert
+      pencil,
+      save,
+      settingsOutline,
+      trash,
+      warning,
+      water
     });
   }
 

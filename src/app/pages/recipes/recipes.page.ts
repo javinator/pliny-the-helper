@@ -130,6 +130,7 @@ export class RecipesPage {
           this.showSpinner = false;
         });
       }, 1000);
+    }).catch(_ => {
     });
   }
 
