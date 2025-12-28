@@ -18,7 +18,7 @@ export class RefractometerCardComponent implements OnInit {
   og?: number;
   fg?: number;
   wcf!: number;
-  formula!: String;
+  formula!: string;
 
   @Input()
   settings?: Settings;
@@ -74,7 +74,7 @@ export class RefractometerCardComponent implements OnInit {
         return (0.00001335 * obrix * obrix) - (0.00003239 * obrix * fbrix) + (0.00002916 * fbrix * fbrix)
           - (0.002421 * obrix) + (0.006219 * fbrix) + 1;
       } else {
-        return 1.000 - (0.0044993 * obrix) + (0.011774 * fbrix)
+        return 1 - (0.0044993 * obrix) + (0.011774 * fbrix)
           + (0.00027581 * obrix * obrix) - (0.0012717 * fbrix * fbrix)
           - (0.00000728 * obrix * obrix * obrix) + (0.000063293 * fbrix * fbrix * fbrix);
       }

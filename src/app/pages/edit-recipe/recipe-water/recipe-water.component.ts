@@ -37,8 +37,8 @@ export class RecipeWaterComponent {
         ? 'background-color: var(--ion-color-primary);'
         : 'background-color: var(--ion-color-danger);';
     let position = (ph - 4) / 3 * 100;
-    position = position < 0 ? 0 : position;
-    position = position > 100 ? 100 : position;
+    position = Math.max(0, position);
+    position = Math.min(100, position);
     return 'left:' + position + '%;' + color;
   }
 
@@ -61,8 +61,8 @@ export class RecipeWaterComponent {
         ? 'background-color: var(--ion-color-primary);'
         : 'background-color: var(--ion-color-danger);';
     let position = (value + 5.75) * 6;
-    position = position < 0 ? 0 : position;
-    position = position > 100 ? 100 : position;
+    position = Math.max(0, position);
+    position = Math.min(100, position);
     return 'left:' + position + '%;' + color;
   }
 
@@ -78,15 +78,14 @@ export class RecipeWaterComponent {
   }
 
   getCalciumRangeMarker() {
-    const value = this.mashWater().calcium!;
+    const value = this.mashWater().calcium;
     const range = this.getCalciumRange();
     const color =
       (value >= range.min && value <= range.max)
         ? 'background-color: var(--ion-color-primary);'
         : 'background-color: var(--ion-color-danger);';
     let position = value / 2;
-    position = position < 0 ? 0 : position;
-    position = position > 100 ? 100 : position;
+    position = Math.min(100, position);
     return 'left:' + position + '%;' + color;
   }
 
@@ -102,15 +101,14 @@ export class RecipeWaterComponent {
   }
 
   getMagnesiumRangeMarker() {
-    const value = this.mashWater().magnesium!;
+    const value = this.mashWater().magnesium;
     const range = this.getMagnesiumRange();
     const color =
       (value >= range.min && value <= range.max)
         ? 'background-color: var(--ion-color-primary);'
         : 'background-color: var(--ion-color-danger);';
     let position = value * 2;
-    position = position < 0 ? 0 : position;
-    position = position > 100 ? 100 : position;
+    position = Math.min(100, position);
     return 'left:' + position + '%;' + color;
   }
 
@@ -126,15 +124,14 @@ export class RecipeWaterComponent {
   }
 
   getSodiumRangeMarker() {
-    const value = this.mashWater().sodium!;
+    const value = this.mashWater().sodium;
     const range = this.getSodiumRange();
     const color =
       (value >= range.min && value <= range.max)
         ? 'background-color: var(--ion-color-primary);'
         : 'background-color: var(--ion-color-danger);';
     let position = value / 2.5;
-    position = position < 0 ? 0 : position;
-    position = position > 100 ? 100 : position;
+    position = Math.min(100, position);
     return 'left:' + position + '%;' + color;
   }
 
@@ -150,15 +147,14 @@ export class RecipeWaterComponent {
   }
 
   getChlorideRangeMarker() {
-    const value = this.mashWater().chloride!;
+    const value = this.mashWater().chloride;
     const range = this.getChlorideRange();
     const color =
       (value >= range.min && value <= range.max)
         ? 'background-color: var(--ion-color-primary);'
         : 'background-color: var(--ion-color-danger);';
     let position = value / 4;
-    position = position < 0 ? 0 : position;
-    position = position > 100 ? 100 : position;
+    position = Math.min(100, position);
     return 'left:' + position + '%;' + color;
   }
 
@@ -174,15 +170,14 @@ export class RecipeWaterComponent {
   }
 
   getSulfateRangeMarker() {
-    const value = this.mashWater().sulfate!;
+    const value = this.mashWater().sulfate;
     const range = this.getSulfateRange();
     const color =
       (value >= range.min && value <= range.max)
         ? 'background-color: var(--ion-color-primary);'
         : 'background-color: var(--ion-color-danger);';
     let position = value / 4;
-    position = position < 0 ? 0 : position;
-    position = position > 100 ? 100 : position;
+    position = Math.min(100, position);
     return 'left:' + position + '%;' + color;
   }
 
@@ -198,15 +193,14 @@ export class RecipeWaterComponent {
   }
 
   getRatioRangeMarker() {
-    const value = this.mashWater().sulfate! / this.mashWater().chloride!;
+    const value = this.mashWater().sulfate / this.mashWater().chloride;
     const range = this.getRatioRange();
     const color =
       (value >= range.min && value <= range.max)
         ? 'background-color: var(--ion-color-primary);'
         : 'background-color: var(--ion-color-danger);';
     let position = value * 10;
-    position = position < 0 ? 0 : position;
-    position = position > 100 ? 100 : position;
+    position = Math.min(100, position);
     return 'left:' + position + '%;' + color;
   }
 }

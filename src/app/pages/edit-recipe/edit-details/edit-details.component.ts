@@ -34,8 +34,8 @@ export class EditDetailsComponent {
           ? 'background-color: var(--ion-color-primary);'
           : 'background-color: var(--ion-color-danger);';
       let position = (og - 1.02) / 0.125 * 100;
-      position = position < 0 ? 0 : position;
-      position = position > 100 ? 100 : position;
+      position = Math.max(0, position);
+      position = Math.min(100, position);
       return 'left:' + position + '%;' + color;
     }
     return '';
@@ -57,7 +57,7 @@ export class EditDetailsComponent {
           ? 'background-color: var(--ion-color-primary);'
           : 'background-color: var(--ion-color-danger);';
       let position = (fg - 0.998) / 0.05 * 100;
-      position = position > 100 ? 100 : position;
+      position = Math.min(100, position);
       return 'left:' + position + '%;' + color;
     }
     return '';
@@ -79,7 +79,7 @@ export class EditDetailsComponent {
           ? 'background-color: var(--ion-color-primary);'
           : 'background-color: var(--ion-color-danger);';
       let position = abv / 15 * 100;
-      position = position > 100 ? 100 : position;
+      position = Math.min(100, position);
       return 'left:' + position + '%;' + color;
     }
     return '';
@@ -101,7 +101,7 @@ export class EditDetailsComponent {
           ? 'background-color: var(--ion-color-primary);'
           : 'background-color: var(--ion-color-danger);';
       let position = this.recipe().IBU / 120 * 100;
-      position = position > 100 ? 100 : position;
+      position = Math.min(100, position);
       return 'left:' + position + '%;' + color;
     }
     return '';
@@ -111,7 +111,7 @@ export class EditDetailsComponent {
     if (this.recipe().style?.minColor && this.recipe().style?.maxColor) {
       const start = this.recipe().style!.minColor / 41 * 100;
       let end = this.recipe().style!.maxColor / 41 * 100;
-      end = end > 100 ? 100 : end;
+      end = Math.min(100, end);
       return 'width: ' + (end - start) + '%; left: ' + start + '%;';
     }
     return '';
@@ -124,7 +124,7 @@ export class EditDetailsComponent {
           ? 'background-color: var(--ion-color-primary);'
           : 'background-color: var(--ion-color-danger);';
       let position = this.recipe().color / 42 * 100;
-      position = position > 100 ? 100 : position;
+      position = Math.min(100, position);
       return 'left:' + position + '%;' + color;
     }
     return '';
@@ -134,7 +134,7 @@ export class EditDetailsComponent {
     if (this.recipe().style?.minCarb && this.recipe().style?.maxCarb) {
       const start = this.recipe().style!.minCarb! / 5 * 100;
       let end = this.recipe().style!.maxCarb! / 5 * 100;
-      end = end > 100 ? 100 : end;
+      end = Math.min(100, end);
       return 'width: ' + (end - start) + '%; left: ' + start + '%;';
     }
     return '';
@@ -147,7 +147,7 @@ export class EditDetailsComponent {
           ? 'background-color: var(--ion-color-primary);'
           : 'background-color: var(--ion-color-danger);';
       let position = this.recipe().carbonation! / 5 * 100;
-      position = position > 100 ? 100 : position;
+      position = Math.min(100, position);
       return 'left:' + position + '%;' + color;
     }
     return '';
@@ -172,8 +172,8 @@ export class EditDetailsComponent {
     if (this.getAverageAttenuation() > 0) {
       let start = (this.getAverageAttenuation() - 5);
       let end = (this.getAverageAttenuation() + 5);
-      start = start < 0 ? 0 : start;
-      end = end > 100 ? 100 : end;
+      start = Math.max(0, start);
+      end = Math.min(100, end);
       return 'width: ' + (end - start) + '%; left: ' + start + '%;';
     }
     return '';
@@ -185,7 +185,7 @@ export class EditDetailsComponent {
         ? 'background-color: var(--ion-color-primary);'
         : 'background-color: var(--ion-color-danger);';
     let position = this.getMeasuredAttenuation();
-    position = position > 100 ? 100 : position;
+    position = Math.min(100, position);
     return 'left:' + position + '%;' + color;
   }
 
@@ -196,7 +196,8 @@ export class EditDetailsComponent {
           ? 'background-color: var(--ion-color-primary);'
           : 'background-color: var(--ion-color-danger);';
       let position = (this.recipe().calculatedEfficiency! - 50) / 40 * 100;
-      position = position > 100 ? 100 : position < 0 ? 0 : position;
+      position = Math.max(0, position);
+      position = Math.min(100, position);
       return 'left:' + position + '%;' + color;
     }
     return 'left: 0%; background-color: var(--ion-color-danger);';
@@ -219,6 +220,6 @@ export class EditDetailsComponent {
           return this.recipe().cost;
       }
     }
-    return;
+    return 0;
   }
 }

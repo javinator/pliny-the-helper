@@ -12,7 +12,6 @@ export class StorageService {
   private _storage: Storage | null = null;
 
   constructor() {
-    //NOSONAR
     this.init().then();
   }
 

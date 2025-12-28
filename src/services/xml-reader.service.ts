@@ -330,7 +330,7 @@ function parseXMLtoWaters(data: string): Promise<Water[]> {
       for (k in obj.WATER) {
         const item = obj.WATER[k];
         arr.push({
-          uid: uuidv4() as string,
+          uid: uuidv4(),
           name: item.NAME[0],
           version: item.VERSION[0],
           amount: item.AMOUNT[0],
@@ -383,7 +383,7 @@ function parseXMLtoRecipes(data: string): Promise<Recipe[]> {
           measuredVol: item.ACTUAL_SIZE?.[0],
           notes: item.NOTES?.[0],
           type: item.TYPE[0],
-          uid: uuidv4() as string,
+          uid: uuidv4(),
           fermentables: item.FERMENTABLES[0]['FERMENTABLE']?.map((fermentable: any) => {
             return {
               name: fermentable.NAME[0],

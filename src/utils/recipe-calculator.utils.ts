@@ -1,7 +1,5 @@
-import {BeerStyle, Recipe, Settings} from "models";
+import {BeerStyle, Recipe, Settings, Hop, Fermentable} from "models";
 import {CalculatorUtil} from "./calculator.utils";
-import {Hop} from "models";
-import {Fermentable} from "models";
 import {CONFIG} from "../app/app.constants";
 
 export class RecipeUtil {
@@ -25,7 +23,7 @@ export class RecipeUtil {
 
   static calculateFg(recipe: Recipe): number {
     let att = Math.max(...recipe.yeasts.map((yeast) => yeast.attenuation)) / 100;
-    att = att > 0 ? att : 0;
+    att = Math.max(att, 0);
     const og = this.calculateOg(recipe);
     return og - (og - 1) * att;
   }
@@ -137,7 +135,7 @@ function calculateBoilGravity(recipe: Recipe): number {
 function hopUtilization(recipe: Recipe, hop: Hop): number {
   const time = hop.time ?? recipe.boilTime;
   const bignessFactor = 1.65 * Math.pow(0.000125, (calculateBoilGravity(recipe) - 1));
-  const timeFactor = (1.0 - Math.exp(-0.04 * time)) / CONFIG.kettleUtilization
+  const timeFactor = (1 - Math.exp(-0.04 * time)) / CONFIG.kettleUtilization
   return bignessFactor * timeFactor;
 }
 

@@ -69,9 +69,9 @@ export class IngredientsPage implements OnInit {
 
   filter(event: any) {
     const query = event.target.value.toLowerCase();
-    this.f_fermentables = this.fermentables.filter(d => d.name.toLowerCase().indexOf(query) > -1);
-    this.f_hops = this.hops.filter(d => d.name.toLowerCase().indexOf(query) > -1);
-    this.f_yeasts = this.yeasts.filter(d => d.name.toLowerCase().indexOf(query) > -1);
-    this.f_miscs = this.miscs.filter(d => d.name.toLowerCase().indexOf(query) > -1);
+    this.f_fermentables = this.fermentables.filter(d => d.name.toLowerCase().includes(query));
+    this.f_hops = this.hops.filter(d => d.name.toLowerCase().includes(query));
+    this.f_yeasts = this.yeasts.filter(d => d.name.toLowerCase().includes(query));
+    this.f_miscs = this.miscs.filter(d => d.name.toLowerCase().includes(query));
   }
 }

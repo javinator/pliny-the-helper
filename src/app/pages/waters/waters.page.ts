@@ -40,7 +40,7 @@ export class WatersPage {
 
   filter(event: any) {
     const query = event.target.value.toLowerCase();
-    this.waters = this.allWaters.filter(d => d.name.toLowerCase().indexOf(query) > -1);
+    this.waters = this.allWaters.filter(d => d.name.toLowerCase().includes(query));
   }
 
   openModal() {

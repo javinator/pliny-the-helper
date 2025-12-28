@@ -69,7 +69,7 @@ export class RecipesPage {
 
   filter(event: any) {
     const query = event.target.value.toLowerCase();
-    this.f_recipes = this.recipes?.filter(d => d.name.toLowerCase().indexOf(query) > -1);
+    this.f_recipes = this.recipes?.filter(d => d.name.toLowerCase().includes(query));
   }
 
   showEdit(recipe: Recipe) {

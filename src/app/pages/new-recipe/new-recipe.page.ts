@@ -30,7 +30,7 @@ export class NewRecipePage implements OnInit {
 
   ngOnInit() {
     this.model = {
-      uid: uuidv4() as string,
+      uid: uuidv4(),
       name: '',
       batchSize: 0,
       boilTime: 0,
@@ -119,9 +119,7 @@ export class NewRecipePage implements OnInit {
   submit() {
     this.model.calculateBoilSize = true;
     this.model.boilSize = RecipeUtil.calculateBoilSize(this.model, this.settings);
-    if (!this.model.style) {
-      this.model.style = this.styles?.[0];
-    }
+    this.model.style ??= this.styles?.[0];
     this.model.carbonation = RecipeUtil.calculateCarbonation(this.model.style);
     this.model.mashProfile?.mashSteps.forEach((step) => {
       if (step.type === 'Infusion') {

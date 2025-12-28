@@ -32,7 +32,7 @@ export class SelectSearchComponent {
 
   handleSearch(event: any) {
     const query = event.target.value.toLowerCase();
-    this.filteredItems = this.items.filter(d => d.name.toLowerCase().indexOf(query) > -1);
+    this.filteredItems = this.items.filter(d => d.name.toLowerCase().includes(query));
   }
 
   setModalOpen(val: boolean) {
