@@ -1,7 +1,7 @@
 import {inject, Injectable} from '@angular/core';
 import {Storage} from '@ionic/storage-angular';
 import {BeerStyle, Fermentable, Hop, MashProfile, Misc, Recipe, Settings, Water, Yeast} from "models";
-import {deepClone, RecipeUtil} from "utils";
+import {findFermentables, findHops, findMiscs, findYeasts, RecipeUtil} from "utils";
 
 @Injectable({
   providedIn: 'root'
@@ -195,50 +195,4 @@ export class StorageService {
     })
     this._storage?.clear();
   }
-}
-
-export function findFermentables(recipe: Recipe, fermentables: Fermentable[]) {
-  let newFermentables: Fermentable[] = [];
-  recipe.fermentables.forEach((fermentable) => {
-    let nF = deepClone(fermentables.find((item) => item.name === fermentable.name) || fermentable);
-    nF.amount = fermentable.amount;
-    newFermentables.push(nF);
-  })
-  recipe.fermentables = newFermentables;
-}
-
-export function findHops(recipe: Recipe, hops: Hop[]) {
-  let newHops: Hop[] = [];
-  recipe.hops.forEach((hop) => {
-    let nH = deepClone(hops.find((item) => item.name === hop.name) || hop);
-    nH.amount = hop.amount;
-    nH.time = hop.time;
-    nH.use = hop.use;
-    if (hop.alpha) {
-      nH.alpha = hop.alpha;
-    }
-    newHops.push(nH);
-  })
-  recipe.hops = newHops;
-}
-
-export function findYeasts(recipe: Recipe, yeasts: Yeast[]) {
-  let newYeasts: Yeast[] = [];
-  recipe.yeasts.forEach((yeast) => {
-    let nY = deepClone(yeasts.find((item) => item.name === yeast.name) || yeast);
-    nY.amount = yeast.amount;
-    nY.attenuation = yeast.attenuation;
-    newYeasts.push(nY)
-  })
-  recipe.yeasts = newYeasts;
-}
-
-export function findMiscs(recipe: Recipe, miscs: Misc[]) {
-  let newMiscs: Misc[] = [];
-  recipe.miscs.forEach((misc) => {
-    let nM = deepClone(miscs.find((item) => item.name === misc.name) || misc);
-    nM.amount = misc.amount;
-    newMiscs.push(nM)
-  })
-  recipe.miscs = newMiscs;
 }

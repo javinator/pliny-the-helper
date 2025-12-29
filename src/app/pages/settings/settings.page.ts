@@ -3,16 +3,18 @@ import {IonicModule} from '@ionic/angular';
 import {
   StorageService,
   XmlReaderService,
-  CloudStorageService,
-  findFermentables,
-  findHops,
-  findYeasts,
-  findMiscs
+  CloudStorageService
 } from "services";
 import {Fermentable, Hop, Misc, Recipe, Settings, Water, Yeast} from "models";
 import {FormsModule} from "@angular/forms";
 import {CONFIG} from "@constants";
-import {RecipeUtil} from "utils";
+import {
+  RecipeUtil,
+  findFermentables,
+  findHops,
+  findYeasts,
+  findMiscs
+} from "utils";
 import packageJson from 'packageJson';
 import {catchError, of} from "rxjs";
 

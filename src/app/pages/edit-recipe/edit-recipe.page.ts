@@ -115,7 +115,7 @@ export class EditRecipePage {
   getStylesOptions(): SelectSearchItem[] {
     return this.styles?.map((style) => {
       return {
-        name: style.name, description: style.notes
+        name: style.name, description: this.settings?.hideDescription ? undefined : style.notes
       }
     }) || [];
   }
@@ -127,7 +127,7 @@ export class EditRecipePage {
   getProfilesOptions(): SelectSearchItem[] {
     return this.mashProfiles?.map((profile) => {
       return {
-        name: profile.name, description: profile.notes
+        name: profile.name, description: this.settings?.hideDescription ? undefined : profile.notes
       }
     }) || [];
   }

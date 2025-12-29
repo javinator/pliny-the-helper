@@ -16,7 +16,7 @@ export const routes: Routes = [
   },
   {
     path: 'new-recipe',
-    loadComponent: () => import('./pages/new-recipe/new-recipe.page').then((m) => m.NewRecipePage)
+    loadComponent: () => import('./pages/recipes/new-recipe.page').then((m) => m.NewRecipePage)
   },
   {
     path: 'edit-recipe/:uid',
