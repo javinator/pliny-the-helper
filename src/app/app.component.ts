@@ -34,6 +34,7 @@ import {
 } from 'ionicons/icons';
 import {Subscription} from "rxjs";
 import {Settings} from "models";
+import {environment} from "../environments/environment";
 
 @Component({
   selector: 'app-root',
@@ -47,6 +48,7 @@ export class AppComponent implements OnInit {
   private readonly xmlReader = inject(XmlReaderService);
   private readonly storage = inject(StorageService);
   private sub?: Subscription;
+  isDev = !environment.production;
 
   constructor() {
     addIcons({

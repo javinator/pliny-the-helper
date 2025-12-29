@@ -1,3 +1,15 @@
 ion-split-pane {
   --side-width: 270px;
 }
+
+.dev-banner {
+  font-size: 10pt;
+  position: absolute;
+  top: 5px;
+  left: -42px;
+  padding: 2px 48px;
+  background-color: #027;
+  z-index: 99;
+  rotate: 330deg;
+  box-shadow: 1px 1px 4px #111;
+}

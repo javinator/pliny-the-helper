@@ -5,6 +5,9 @@
         <ion-toolbar>
           <ion-title>Navigation</ion-title>
         </ion-toolbar>
+        @if (isDev) {
+          <div class="dev-banner">DEV</div>
+        }
       </ion-header>
       <ion-content>
         @for (page of pages; track page) {
