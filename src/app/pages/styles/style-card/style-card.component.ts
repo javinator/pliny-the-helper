@@ -1,4 +1,4 @@
-import {Component, Input} from "@angular/core";
+import {Component, input} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
 import {BeerStyle} from "models";
 
@@ -9,10 +9,9 @@ import {BeerStyle} from "models";
   imports: [IonicModule],
 })
 export class StyleCardComponent {
-  @Input()
-  style!: BeerStyle;
+  style = input.required<BeerStyle>();
 
   color() {
-    return Math.floor((Number(this.style.maxColor) + Number(this.style.minColor)) / 2);
+    return Math.floor((Number(this.style().maxColor) + Number(this.style().minColor)) / 2);
   }
 }

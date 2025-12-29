@@ -27,8 +27,8 @@ export const routes: Routes = [
     component: StylesPage
   },
   {
-    path: 'style-details',
-    loadComponent: () => import('./pages/styles/details/details.page').then((m) => m.StyleDetailsPage)
+    path: 'styles/details',
+    loadComponent: () => import('./pages/styles/style-details.page').then((m) => m.StyleDetailsPage)
   },
   {
     path: 'ingredients',

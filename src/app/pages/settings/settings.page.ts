@@ -1,10 +1,18 @@
 import {Component, EventEmitter, inject, Output} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
-import {StorageService, XmlReaderService, CloudStorageService} from "services";
+import {
+  StorageService,
+  XmlReaderService,
+  CloudStorageService,
+  findFermentables,
+  findHops,
+  findYeasts,
+  findMiscs
+} from "services";
 import {Fermentable, Hop, Misc, Recipe, Settings, Water, Yeast} from "models";
 import {FormsModule} from "@angular/forms";
-import {CONFIG} from "../../app.constants";
-import {deepClone, RecipeUtil} from "utils";
+import {CONFIG} from "@constants";
+import {RecipeUtil} from "utils";
 import packageJson from 'packageJson';
 import {catchError, of} from "rxjs";
 
@@ -127,10 +135,10 @@ export class SettingsPage {
         this.showSpinner = true;
         let uniqueRecipes: Recipe[] = [];
         response.forEach((item) => {
-          if (!uniqueRecipes.map((recipe) => recipe.name).includes(item.name)) {
-            uniqueRecipes.push(item);
-          } else {
+          if (uniqueRecipes.map((recipe) => recipe.name).includes(item.name)) {
             console.log('Recipe \'' + item.name + '\' removed');
+          } else {
+            uniqueRecipes.push(item);
           }
         });
         this.storage.set('recipes', uniqueRecipes)?.then(() => {
@@ -160,13 +168,7 @@ export class SettingsPage {
           setTimeout(() => {
             let newRecipes: Recipe[] = [];
             response.forEach((recipe) => {
-              let newFermentables: Fermentable[] = [];
-              recipe.fermentables.forEach((fermentable) => {
-                let nF = deepClone(fermentables.find((item) => item.name === fermentable.name) || fermentable);
-                nF.amount = fermentable.amount;
-                newFermentables.push(nF);
-              })
-              recipe.fermentables = newFermentables;
+              findFermentables(recipe, fermentables);
               newRecipes.push(recipe);
             })
             response = newRecipes;
@@ -176,18 +178,7 @@ export class SettingsPage {
           setTimeout(() => {
             let newRecipes: Recipe[] = [];
             response.forEach((recipe) => {
-              let newHops: Hop[] = [];
-              recipe.hops.forEach((hop) => {
-                let nH = deepClone(hops.find((item) => item.name === hop.name) || hop);
-                nH.amount = hop.amount;
-                nH.time = hop.time;
-                nH.use = hop.use;
-                if (hop.alpha) {
-                  nH.alpha = hop.alpha;
-                }
-                newHops.push(nH);
-              })
-              recipe.hops = newHops;
+              findHops(recipe, hops);
               newRecipes.push(recipe);
             })
             response = newRecipes;
@@ -197,14 +188,7 @@ export class SettingsPage {
           setTimeout(() => {
             let newRecipes: Recipe[] = [];
             response.forEach((recipe) => {
-              let newYeasts: Yeast[] = [];
-              recipe.yeasts.forEach((yeast) => {
-                let nY = deepClone(yeasts.find((item) => item.name === yeast.name) || yeast);
-                nY.amount = yeast.amount;
-                nY.attenuation = yeast.attenuation || RecipeUtil.calculateAttenuation(recipe.OG, recipe.FG);
-                newYeasts.push(nY)
-              })
-              recipe.yeasts = newYeasts;
+              findYeasts(recipe, yeasts);
               newRecipes.push(recipe);
             })
             response = newRecipes;
@@ -214,13 +198,7 @@ export class SettingsPage {
           setTimeout(() => {
             let newRecipes: Recipe[] = [];
             response.forEach((recipe) => {
-              let newMiscs: Misc[] = [];
-              recipe.miscs.forEach((misc) => {
-                let nM = deepClone(miscs.find((item) => item.name === misc.name) || misc);
-                nM.amount = misc.amount;
-                newMiscs.push(nM)
-              })
-              recipe.miscs = newMiscs;
+              findMiscs(recipe, miscs);
               newRecipes.push(recipe);
             })
             response = newRecipes;

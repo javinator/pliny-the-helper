@@ -1,16 +1,18 @@
 import {Component, inject} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {Router} from "@angular/router";
+import {Location} from '@angular/common'
 import {BeerStyle} from "models";
 
 @Component({
   selector: 'style-details-page',
-  templateUrl: 'details.page.html',
+  templateUrl: 'style-details.page.html',
   standalone: true,
   imports: [IonicModule],
 })
 export class StyleDetailsPage {
   private readonly router = inject(Router);
+  private readonly location = inject(Location);
 
   constructor() {
     this.style = this.router.currentNavigation()?.extras.state?.['style'];
@@ -32,5 +34,9 @@ export class StyleDetailsPage {
 
   mouthfeel() {
     return this.style.profile.slice(this.style.profile.indexOf('Mouthfeel:') + 10);
+  }
+
+  navigateBack() {
+    this.location.back();
   }
 }

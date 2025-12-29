@@ -1,5 +1,5 @@
 import {Component, inject} from '@angular/core';
-import {IonicModule} from '@ionic/angular';
+import {IonicModule, Platform} from '@ionic/angular';
 import {BeerStyle, MashProfile, Recipe, Settings, Water} from "models";
 import {ActivatedRoute, Router} from "@angular/router";
 import {StorageService} from "services";
@@ -8,7 +8,7 @@ import {EditIngredientsComponent} from "./edit-ingredients/edit-ingredients.comp
 import {EditDetailsComponent} from "./edit-details/edit-details.component";
 import {FormsModule} from "@angular/forms";
 import {deepClone, RecipeUtil} from "utils";
-import {SelectSearchComponent} from "@shared";
+import {SelectSearchComponent, SelectSearchItem} from "@shared";
 import {BrewingComponent} from "./brewing/brewing.component";
 import {RecipeWaterComponent} from "./recipe-water/recipe-water.component";
 
@@ -32,6 +32,7 @@ export class EditRecipePage {
   private readonly router = inject(Router);
   private readonly route = inject(ActivatedRoute);
   private readonly storage = inject(StorageService);
+  private readonly platform = inject(Platform);
 
 
   activeTab = 'ingredients';
@@ -48,6 +49,9 @@ export class EditRecipePage {
 
   constructor() {
     this.uid = this.route.snapshot.paramMap.get('uid')!;
+    this.platform.backButton.subscribeWithPriority(1, () => {
+      this.navigateBack();
+    });
   }
 
   public deleteButtons = [
@@ -108,10 +112,10 @@ export class EditRecipePage {
     this.isEditOpen = false;
   }
 
-  getStylesOptions() {
+  getStylesOptions(): SelectSearchItem[] {
     return this.styles?.map((style) => {
       return {
-        name: style.name
+        name: style.name, description: style.notes
       }
     }) || [];
   }
@@ -120,10 +124,10 @@ export class EditRecipePage {
     this.editRecipe!.style = this.styles?.find((style) => style.name === event);
   }
 
-  getProfilesOptions() {
+  getProfilesOptions(): SelectSearchItem[] {
     return this.mashProfiles?.map((profile) => {
       return {
-        name: profile.name
+        name: profile.name, description: profile.notes
       }
     }) || [];
   }

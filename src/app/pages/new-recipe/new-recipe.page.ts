@@ -7,8 +7,8 @@ import {FormsModule} from "@angular/forms";
 import {v4 as uuidv4} from "uuid";
 import {Router} from "@angular/router";
 import {RecipeUtil} from "utils";
-import {CONFIG} from "../../app.constants";
-import {SelectSearchComponent} from "@shared";
+import {CONFIG} from "@constants";
+import {SelectSearchComponent, SelectSearchItem} from "@shared";
 
 @Component({
   selector: 'new-recipe-page',
@@ -20,7 +20,6 @@ export class NewRecipePage implements OnInit {
   private readonly storage = inject(StorageService);
   private readonly location = inject(Location);
   private readonly router = inject(Router);
-
 
   styles?: BeerStyle[];
   mashProfiles?: MashProfile[];
@@ -77,9 +76,9 @@ export class NewRecipePage implements OnInit {
     this.location.back();
   }
 
-  getStylesOptions() {
+  getStylesOptions(): SelectSearchItem[] {
     return this.styles?.map(style => {
-      return {name: style.name}
+      return {name: style.name, description: style.notes}
     }) || [];
   }
 
@@ -87,10 +86,10 @@ export class NewRecipePage implements OnInit {
     this.model.style = this.styles?.find(style => style.name === event);
   }
 
-  getProfilesOptions() {
+  getProfilesOptions(): SelectSearchItem[] {
     return this.mashProfiles?.map(profile => {
       return {
-        name: profile.name
+        name: profile.name, description: profile.notes
       }
     }) || [];
   }

@@ -7,7 +7,6 @@ import {RecipeUtil} from "utils";
 @Component({
   selector: 'brewing-card',
   templateUrl: 'brewing.component.html',
-  styleUrls: ['brewing.component.scss'],
   standalone: true,
   imports: [IonicModule, DecimalPipe],
 })

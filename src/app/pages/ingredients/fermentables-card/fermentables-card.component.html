@@ -1,20 +1,20 @@
 <ion-card>
   <ion-card-header>
-    <ion-card-subtitle>{{ fermentable.type }}</ion-card-subtitle>
-    <ion-card-title>{{ fermentable.name }}</ion-card-title>
+    <ion-card-subtitle>{{ fermentable().type }}</ion-card-subtitle>
+    <ion-card-title>{{ fermentable().name }}</ion-card-title>
   </ion-card-header>
   <ion-card-content>
     <p class="ion-margin-bottom">
-      {{ fermentable.description }}
+      {{ fermentable().description }}
     </p>
     <p class="ion-margin-bottom">&nbsp;</p>
     <p class="ion-margin-top">
-      Color: {{ fermentable.color }} °L<br>
-      @if (fermentable.maxInBatch) {
-        <span>Up to: {{ fermentable.maxInBatch }} %<br></span>
+      Color: {{ fermentable().color }} °L<br>
+      @if (fermentable().maxInBatch) {
+        <span>Up to: {{ fermentable().maxInBatch }} %<br></span>
       }
-      @if (fermentable.supplier) {
-        <span>{{ fermentable.supplier }} ({{ fermentable.origin }})</span>
+      @if (fermentable().supplier) {
+        <span>{{ fermentable().supplier }} ({{ fermentable().origin }})</span>
       }
     </p>
   </ion-card-content>

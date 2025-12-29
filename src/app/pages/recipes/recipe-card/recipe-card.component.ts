@@ -1,4 +1,4 @@
-import {Component, Input} from "@angular/core";
+import {Component, input} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
 import {DecimalPipe} from "@angular/common";
 
@@ -9,21 +9,10 @@ import {DecimalPipe} from "@angular/common";
   imports: [IonicModule, DecimalPipe],
 })
 export class RecipeCardComponent {
-  @Input()
-  name!: string;
-
-  @Input()
-  style!: string;
-
-  @Input()
-  color: number = 2;
-
-  @Input()
-  abv!: number;
-
-  @Input()
-  ibu!: number;
-
-  @Input()
-  batchSize!: number;
+  name = input.required<string>()
+  style = input.required<string>()
+  abv = input.required<number>()
+  ibu = input.required<number>()
+  batchSize = input.required<number>()
+  color = input(1)
 }

@@ -1,4 +1,4 @@
-import {Component, Input} from "@angular/core";
+import {Component, input} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
 import {Hop} from "models";
 
@@ -9,7 +9,5 @@ import {Hop} from "models";
   imports: [IonicModule],
 })
 export class HopsCardComponent {
-  @Input()
-  hop!: Hop;
-
+  hop = input.required<Hop>()
 }

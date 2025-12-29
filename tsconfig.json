@@ -32,6 +32,9 @@
       "@shared": [
         "./src/shared"
       ],
+      "@constants": [
+        "./src/app/app.constants"
+      ],
       "packageJson": [
         "./package.json"
       ]

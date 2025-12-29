@@ -16,7 +16,6 @@ import {MiscsCardComponent} from "./miscs-card/miscs-card.component";
 export class IngredientsPage implements OnInit {
   private readonly storage = inject(StorageService);
 
-
   showSpinner = false;
 
   activeTab = 'fermentables';

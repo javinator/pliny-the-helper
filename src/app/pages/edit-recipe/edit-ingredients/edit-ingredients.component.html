@@ -11,7 +11,7 @@
           <h1>Fermentables</h1>
         </ion-label>
       </ion-list-header>
-      @for (fermentable of recipe.fermentables; track fermentable.name) {
+      @for (fermentable of recipe().fermentables; track fermentable.name) {
         <ion-item [button]="true" (click)="editFermentable(fermentable)">
           <ion-label>
             {{ fermentable.name }}
@@ -19,10 +19,10 @@
               {{ fermentable.amount | number:'1.0-3' }} kg
               -
               <span
-                [class]="checkOveruse(fermentable, recipe)">
-              {{ RecipeUtil.getFermentablePercentage(fermentable, recipe) | number:'1.0-1' }} %
+                [class]="checkOveruse(fermentable, recipe())">
+              {{ RecipeUtil.getFermentablePercentage(fermentable, recipe()) | number:'1.0-1' }} %
             </span>
-              - {{ RecipeUtil.getFermentableGPTPercentage(fermentable, recipe) | number:'1.0-1' }}
+              - {{ RecipeUtil.getFermentableGPTPercentage(fermentable, recipe()) | number:'1.0-1' }}
               GPTs
             </p>
           </ion-label>
@@ -40,7 +40,7 @@
         </ion-item>
       }
     </ion-list>
-    @if (recipe.fermentables.length === 0) {
+    @if (recipe().fermentables.length === 0) {
       <p class="ion-padding-start">
         No fermentables
       </p>
@@ -57,7 +57,7 @@
           <h1>Hops</h1>
         </ion-label>
       </ion-list-header>
-      @for (hop of recipe.hops; track $index) {
+      @for (hop of recipe().hops; track $index) {
         <ion-item [button]="true" (click)="editHop(hop)">
           <ion-label>
             {{ hop.name }}
@@ -66,11 +66,12 @@
               @if (hop.use === 'Boil' || hop.use === 'Dry Hop') {
                 -
                 <span
-                  [class]="checkOvertime(hop, recipe)">{{ hop.time ? ((hop.time | number:'1.0-1') + (hop.use === 'Dry Hop' ? ' days' : ' minutes')) : '' }}</span>
+                  [class]="checkOvertime(hop, recipe())">{{ hop.time ? ((hop.time | number:'1.0-1') + (hop.use === 'Dry Hop' ? ' days' : ' minutes')) : '' }}</span>
               }
             </p>
             <p>
-              {{ hop.alpha | number:'1.0-1' }} % AA - {{ RecipeUtil.calculatePerHopIbu(hop, recipe) | number:'1.0-1' }}
+              {{ hop.alpha | number:'1.0-1' }} % AA
+              - {{ RecipeUtil.calculatePerHopIbu(hop, recipe()) | number:'1.0-1' }}
               IBUs
             </p>
           </ion-label>
@@ -85,7 +86,7 @@
         </ion-item>
       }
     </ion-list>
-    @if (recipe.hops.length === 0) {
+    @if (recipe().hops.length === 0) {
       <p class="ion-padding-start">
         No hops
       </p>
@@ -101,12 +102,12 @@
           <h1>Yeast</h1>
         </ion-label>
       </ion-list-header>
-      @for (yeast of recipe.yeasts; track yeast.name) {
+      @for (yeast of recipe().yeasts; track yeast.name) {
         <ion-item [button]="true" (click)="editYeast(yeast)">
           <ion-label>
             {{ yeast.name }}
             <p class="ion-padding-top">{{ yeast.attenuation | number:'1.1-1' }} % Attenuation<br>
-              <span [class]="checkOverAbv(yeast, recipe)">{{ recipe.ABV | number:'1.0-1' }} % ABV</span>
+              <span [class]="checkOverAbv(yeast, recipe())">{{ recipe().ABV | number:'1.0-1' }} % ABV</span>
             </p>
           </ion-label>
           <div class="description ion-hide-xl-down">
@@ -125,7 +126,7 @@
         </ion-item>
       }
     </ion-list>
-    @if (recipe.yeasts.length === 0) {
+    @if (recipe().yeasts.length === 0) {
       <p class="ion-padding-start">
         No yeast
       </p>
@@ -142,7 +143,7 @@
           <h1>Miscs</h1>
         </ion-label>
       </ion-list-header>
-      @for (misc of recipe.miscs; track misc.name) {
+      @for (misc of recipe().miscs; track misc.name) {
         <ion-item [button]="true" (click)="editMisc(misc)">
           <ion-label>
             {{ misc.name }}
@@ -160,7 +161,7 @@
         </ion-item>
       }
     </ion-list>
-    @if (recipe.miscs.length === 0) {
+    @if (recipe().miscs.length === 0) {
       <p class="ion-padding-start">
         No miscs
       </p>
@@ -194,7 +195,7 @@
           (selectChanged)="chooseFermentable($event)"
           placeholder="Select Fermentable"
         ></select-search>
-      } @else if (!hideDescription) {
+      } @else if (!hideDescription()) {
         <div class="edit-description">
           {{ newFermentable?.description + ' Up to ' + (newFermentable?.maxInBatch || 100) + '%.' }}
         </div>
@@ -238,7 +239,7 @@
           (selectChanged)="chooseHop($event)"
           placeholder="Select Hop"
         ></select-search>
-      } @else if (!hideDescription) {
+      } @else if (!hideDescription()) {
         <div class="edit-description">
           {{ newHop?.description }}
         </div>
@@ -315,7 +316,7 @@
           (selectChanged)="chooseYeast($event)"
           placeholder="Select Yeast"
         ></select-search>
-      } @else if (!hideDescription) {
+      } @else if (!hideDescription()) {
         <div class="edit-description">
           {{ newYeast?.description + '. Optimal temperature between ' + newYeast?.minTemp + ' °C and ' + newYeast?.maxTemp + ' °C. Alcohol tolerant up to ' + newYeast?.maxAbv + ' %.' }}
         </div>
@@ -370,7 +371,7 @@
           (selectChanged)="chooseMisc($event)"
           placeholder="Select Miscellaneous"
         ></select-search>
-      } @else if (!hideDescription) {
+      } @else if (!hideDescription()) {
         <div class="edit-description">
           {{ newMisc?.description }}
         </div>

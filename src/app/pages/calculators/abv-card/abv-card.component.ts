@@ -7,7 +7,7 @@ import {CalculatorUtil} from "utils";
   selector: 'abv-card',
   templateUrl: 'abv-card.component.html',
   standalone: true,
-  styleUrls: ['../calculators.component.scss'],
+  styleUrls: ['../calculators.page.scss'],
   imports: [IonicModule, DecimalPipe],
 })
 export class AbvCardComponent {

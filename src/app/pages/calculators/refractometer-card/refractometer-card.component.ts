@@ -1,15 +1,15 @@
-import {Component, Input, OnInit} from "@angular/core";
+import {Component, input, OnInit} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
 import {DecimalPipe} from "@angular/common";
 import {CalculatorUtil} from "utils";
 import {Settings} from "models";
-import {CONFIG} from "../../../app.constants";
+import {CONFIG} from "@constants";
 
 @Component({
   selector: 'refractometer-card',
   templateUrl: 'refractometer-card.component.html',
   standalone: true,
-  styleUrls: ['../calculators.component.scss'],
+  styleUrls: ['../calculators.page.scss'],
   imports: [IonicModule, DecimalPipe],
 })
 export class RefractometerCardComponent implements OnInit {
@@ -20,11 +20,10 @@ export class RefractometerCardComponent implements OnInit {
   wcf!: number;
   formula!: string;
 
-  @Input()
-  settings?: Settings;
+  settings = input<Settings>();
 
   ngOnInit() {
-    this.wcf = this.settings?.wortCorrectionFactor || CONFIG.defaultWFC;
+    this.wcf = this.settings()?.wortCorrectionFactor || CONFIG.defaultWFC;
     this.formula = 'Terrill';
   }
 

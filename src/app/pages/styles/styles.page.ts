@@ -36,11 +36,11 @@ export class StylesPage {
   }
 
   showDetails(style: BeerStyle) {
-    this.router.navigate(['style-details'], {state: {style}});
+    this.router.navigate(['styles', 'details'], {state: {style}});
   }
 
   filter(event: any) {
     const query = event.target.value.toLowerCase();
-    this.styles = this.allStyles.filter(d => d.name.toLowerCase().indexOf(query) > -1);
+    this.styles = this.allStyles.filter(d => d.name.toLowerCase().includes(query));
   }
 }

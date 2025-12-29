@@ -1,10 +1,10 @@
-import {Component, inject, Input, OnInit} from '@angular/core';
+import {Component, inject, input, OnInit} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {Fermentable, Hop, Misc, Recipe, Yeast} from "models";
 import {DecimalPipe} from "@angular/common";
 import {StorageService} from "services";
 import {deepClone, RecipeUtil} from "utils";
-import {CONFIG} from "../../../app.constants";
+import {CONFIG} from "@constants";
 import {SelectSearchComponent} from "@shared";
 
 @Component({
@@ -19,11 +19,8 @@ export class EditIngredientsComponent implements OnInit {
 
   RecipeUtil = RecipeUtil;
 
-  @Input()
-  recipe!: Recipe;
-
-  @Input()
-  hideDescription?: boolean = false;
+  recipe = input.required<Recipe>();
+  hideDescription = input(false);
 
   fermentables!: Fermentable[];
   hops!: Hop[];
@@ -67,7 +64,7 @@ export class EditIngredientsComponent implements OnInit {
 
   closeFermentable() {
     if (this.isEdit) {
-      this.storage.saveRecipe(this.recipe);
+      this.storage.saveRecipe(this.recipe());
     }
     this.addFermentableOpen = false;
     setTimeout(() => {
@@ -96,8 +93,8 @@ export class EditIngredientsComponent implements OnInit {
 
   addFermentable() {
     if (this.newFermentable) {
-      this.recipe.fermentables.push(this.newFermentable);
-      this.storage.saveRecipe(this.recipe);
+      this.recipe().fermentables.push(this.newFermentable);
+      this.storage.saveRecipe(this.recipe());
     } else {
       console.error('Error: Fermentable not initialized!')
     }
@@ -111,10 +108,10 @@ export class EditIngredientsComponent implements OnInit {
   }
 
   removeFermentable(item: Fermentable) {
-    this.recipe.fermentables.forEach((element, index) => {
-      if (element == item) this.recipe.fermentables.splice(index, 1);
+    this.recipe().fermentables.forEach((element, index) => {
+      if (element == item) this.recipe().fermentables.splice(index, 1);
     })
-    this.storage.saveRecipe(this.recipe);
+    this.storage.saveRecipe(this.recipe());
   }
 
   openHop() {
@@ -123,7 +120,7 @@ export class EditIngredientsComponent implements OnInit {
 
   closeHop() {
     if (this.isEdit) {
-      this.storage.saveRecipe(this.recipe);
+      this.storage.saveRecipe(this.recipe());
     }
     this.addHopOpen = false;
     setTimeout(() => {
@@ -136,7 +133,7 @@ export class EditIngredientsComponent implements OnInit {
     return this.hops.map((hop) => {
       return {
         name: hop.name,
-        additionalInfo: ' (' + hop.alpha + ' %)',
+        additionalInfo: ' (' + hop.alpha + ' % AA)',
         description: hop.description
       }
     });
@@ -167,8 +164,8 @@ export class EditIngredientsComponent implements OnInit {
 
   addHop() {
     if (this.newHop) {
-      this.recipe.hops.push(this.newHop);
-      this.storage.saveRecipe(this.recipe);
+      this.recipe().hops.push(this.newHop);
+      this.storage.saveRecipe(this.recipe());
     } else {
       console.error('Error: Hop not initialized!')
     }
@@ -182,10 +179,10 @@ export class EditIngredientsComponent implements OnInit {
   }
 
   removeHop(item: Hop) {
-    this.recipe.hops.forEach((element, index) => {
-      if (element == item) this.recipe.hops.splice(index, 1);
+    this.recipe().hops.forEach((element, index) => {
+      if (element == item) this.recipe().hops.splice(index, 1);
     })
-    this.storage.saveRecipe(this.recipe);
+    this.storage.saveRecipe(this.recipe());
   }
 
   getHopGrams() {
@@ -198,7 +195,7 @@ export class EditIngredientsComponent implements OnInit {
 
   closeYeast() {
     if (this.isEdit) {
-      this.storage.saveRecipe(this.recipe);
+      this.storage.saveRecipe(this.recipe());
     }
     this.addYeastOpen = false;
     setTimeout(() => {
@@ -234,8 +231,8 @@ export class EditIngredientsComponent implements OnInit {
       if (!this.newYeast.amount) {
         this.newYeast.amount = 1;
       }
-      this.recipe.yeasts.push(this.newYeast);
-      this.storage.saveRecipe(this.recipe);
+      this.recipe().yeasts.push(this.newYeast);
+      this.storage.saveRecipe(this.recipe());
     } else {
       console.error('Error: Yeast not initialized!')
     }
@@ -249,10 +246,10 @@ export class EditIngredientsComponent implements OnInit {
   }
 
   removeYeast(item: Yeast) {
-    this.recipe.yeasts.forEach((element, index) => {
-      if (element == item) this.recipe.yeasts.splice(index, 1);
+    this.recipe().yeasts.forEach((element, index) => {
+      if (element == item) this.recipe().yeasts.splice(index, 1);
     })
-    this.storage.saveRecipe(this.recipe);
+    this.storage.saveRecipe(this.recipe());
   }
 
   openMisc() {
@@ -261,7 +258,7 @@ export class EditIngredientsComponent implements OnInit {
 
   closeMisc() {
     if (this.isEdit) {
-      this.storage.saveRecipe(this.recipe);
+      this.storage.saveRecipe(this.recipe());
     }
     this.addMiscOpen = false;
     setTimeout(() => {
@@ -289,8 +286,8 @@ export class EditIngredientsComponent implements OnInit {
 
   addMisc() {
     if (this.newMisc) {
-      this.recipe.miscs.push(this.newMisc);
-      this.storage.saveRecipe(this.recipe);
+      this.recipe().miscs.push(this.newMisc);
+      this.storage.saveRecipe(this.recipe());
     } else {
       console.error('Error: Misc not initialized!')
     }
@@ -304,10 +301,10 @@ export class EditIngredientsComponent implements OnInit {
   }
 
   removeMisc(item: Misc) {
-    this.recipe.miscs.forEach((element, index) => {
-      if (element == item) this.recipe.miscs.splice(index, 1);
+    this.recipe().miscs.forEach((element, index) => {
+      if (element == item) this.recipe().miscs.splice(index, 1);
     })
-    this.storage.saveRecipe(this.recipe);
+    this.storage.saveRecipe(this.recipe());
   }
 
   findMisc() {

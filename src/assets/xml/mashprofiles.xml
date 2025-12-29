@@ -4,7 +4,7 @@
     <NAME>Single Infusion, Default</NAME>
     <VERSION>1</VERSION>
     <GRAIN_TEMP>20</GRAIN_TEMP>
-    <NOTES>Temperature mash for use when mashing in a brew pot over a heat source such as the stove. Use heat to
+    <NOTES>Default temperature mash for use when mashing in a brew pot over a heat source such as the stove. Use heat to
       maintain desired temperature during the mash.
     </NOTES>
     <MASH_STEPS>
@@ -30,8 +30,9 @@
     <NAME>Single Infusion, Light Body</NAME>
     <VERSION>1</VERSION>
     <GRAIN_TEMP>20</GRAIN_TEMP>
-    <NOTES>Temperature mash for use when mashing in a brew pot over a heat source such as the stove. Use heat to
-      maintain desired temperature during the mash.
+    <NOTES>Temperature mash for use when mashing in a brew pot over a heat source such as the stove. Lower temperatures
+      than a default mash result in more fermentable sugars, reducing the residual sugars and the body of the finished
+      beer.
     </NOTES>
     <MASH_STEPS>
       <MASH_STEP>
@@ -56,8 +57,9 @@
     <NAME>Single Infusion, Full Body</NAME>
     <VERSION>1</VERSION>
     <GRAIN_TEMP>20</GRAIN_TEMP>
-    <NOTES>Temperature mash for use when mashing in a brew pot over a heat source such as the stove. Use heat to
-      maintain desired temperature during the mash.
+    <NOTES>Temperature mash for use when mashing in a brew pot over a heat source such as the stove. Higher temperatures
+      than a default mash result in less fermentable sugars, increasing the residual sugars and the body of the finished
+      beer.
     </NOTES>
     <MASH_STEPS>
       <MASH_STEP>
@@ -132,8 +134,8 @@
     <NAME>Single Infusion, Strong Beer</NAME>
     <VERSION>1</VERSION>
     <GRAIN_TEMP>20</GRAIN_TEMP>
-    <NOTES>Temperature mash for use when mashing in a brew pot over a heat source such as the stove. Use heat to
-      maintain desired temperature during the mash.
+    <NOTES>Temperature mash for use when mashing in a brew pot over a heat source such as the stove. The increased
+      total time and two step mash increases the extract yield.
     </NOTES>
     <MASH_STEPS>
       <MASH_STEP>
@@ -165,8 +167,8 @@
     <NAME>Double Mash, Very Strong Beer</NAME>
     <VERSION>1</VERSION>
     <GRAIN_TEMP>20</GRAIN_TEMP>
-    <NOTES>Temperature mash for use when mashing in a brew pot over a heat source such as the stove. Use heat to
-      maintain desired temperature during the mash. Lauter after the first Saccharification and infuse in this wort.
+    <NOTES>Temperature mash for use when mashing in a brew pot over a heat source such as the stove and when the total
+      grain bill doesn't fit in a single mash step. Lauter after the first Saccharification and infuse in this wort.
     </NOTES>
     <MASH_STEPS>
       <MASH_STEP>

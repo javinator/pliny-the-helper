@@ -1,4 +1,4 @@
-import {Component, Input} from "@angular/core";
+import {Component, input} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
 import {Fermentable} from "models";
 
@@ -9,7 +9,5 @@ import {Fermentable} from "models";
   imports: [IonicModule],
 })
 export class FermentablesCardComponent {
-  @Input()
-  fermentable!: Fermentable;
-
+  fermentable = input.required<Fermentable>();
 }

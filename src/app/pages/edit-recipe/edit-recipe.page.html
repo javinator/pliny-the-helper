@@ -43,17 +43,27 @@
     <span class="ion-margin-bottom">&nbsp;</span>
     @switch (activeTab) {
       @case ('ingredients') {
-        <edit-ingredients-card [recipe]="recipe" [hideDescription]="settings?.hideDescription"></edit-ingredients-card>
+        <edit-ingredients-card
+          [recipe]="recipe"
+          [hideDescription]="settings?.hideDescription || false"
+        />
       }
       @case ('details') {
-        <edit-details-card [recipe]="recipe" [showCost]="settings?.displayCost === true"
-                           (saveEditRecipe)="saveRecipe($event)"></edit-details-card>
+        <edit-details-card
+          [recipe]="recipe"
+          [showCost]="settings?.displayCost === true"
+          (saveEditRecipe)="saveRecipe($event)"
+        />
       }
       @case ('brewing') {
-        <brewing-card [recipe]="recipe"></brewing-card>
+        <brewing-card
+          [recipe]="recipe"
+        />
       }
       @case ('water') {
-        <recipe-water-card [recipe]="recipe"></recipe-water-card>
+        <recipe-water-card
+          [recipe]="recipe"
+        />
       }
     }
   </ion-content>

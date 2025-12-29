@@ -1,6 +1,13 @@
-import {Component, EventEmitter, Input, Output, ViewChild} from "@angular/core";
+import {Component, input, model, output, ViewChild} from "@angular/core";
 import {IonicModule, IonSearchbar} from "@ionic/angular";
 import {FormsModule} from "@angular/forms";
+import {deepClone} from "utils";
+
+export interface SelectSearchItem {
+  name: string,
+  additionalInfo?: string,
+  description?: string
+}
 
 @Component({
   selector: 'select-search',
@@ -9,34 +16,27 @@ import {FormsModule} from "@angular/forms";
   imports: [IonicModule, FormsModule]
 })
 export class SelectSearchComponent {
-  @Input()
-  items: { name: string, additionalInfo?: string, description?: string }[] = [];
-
-  @Input()
-  label!: string;
-
-  @Input()
-  placeholder = 'Select';
-
-  @Input()
-  selectedItem?: string;
-
-  @Output()
-  selectChanged = new EventEmitter<string>();
+  items = input<SelectSearchItem[]>([]);
+  label = input.required<string>();
+  placeholder = input<string>('Select');
+  selectedItem = model<string>();
+  selectChanged = output<string>();
 
   @ViewChild('search') searchbar: IonSearchbar | undefined;
 
   isModalOpen = false;
-
-  filteredItems?: { name: string, additionalInfo?: string, description?: string }[];
+  allItems?: SelectSearchItem[];
+  filteredItems?: SelectSearchItem[];
 
   handleSearch(event: any) {
+    console.log('change: ' + event.target.value);
     const query = event.target.value.toLowerCase();
-    this.filteredItems = this.items.filter(d => d.name.toLowerCase().includes(query));
+    this.filteredItems = this.allItems?.filter(d => d.name.toLowerCase().includes(query));
   }
 
   setModalOpen(val: boolean) {
-    this.filteredItems = [...this.items];
+    this.allItems = deepClone(this.items());
+    this.filteredItems = deepClone(this.items());
     this.isModalOpen = val;
     setTimeout(() => {
       this.searchbar?.setFocus();
@@ -44,7 +44,7 @@ export class SelectSearchComponent {
   }
 
   select(value: string) {
-    this.selectedItem = value;
+    this.selectedItem.set(value);
     this.selectChanged.emit(value);
     this.isModalOpen = false;
   }

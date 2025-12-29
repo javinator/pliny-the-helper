@@ -1,17 +1,17 @@
 <ion-card>
   <ion-card-header>
-    <ion-card-subtitle>{{ yeast.lab + ' ' + yeast.productId }}</ion-card-subtitle>
-    <ion-card-title>{{ yeast.name }}</ion-card-title>
+    <ion-card-subtitle>{{ yeast().lab + ' ' + yeast().productId }}</ion-card-subtitle>
+    <ion-card-title>{{ yeast().name }}</ion-card-title>
   </ion-card-header>
   <ion-card-content>
     <p class="ion-margin-bottom">
-      {{ yeast.description }}
+      {{ yeast().description }}
     </p>
     <p class="ion-margin-bottom">&nbsp;</p>
     <p class="ion-margin-top">
-      Temperature range: {{ yeast.minTemp | number:'1.0-1' }} - {{ yeast.maxTemp | number:'1.0-1' }} °C<br>
-      Attenuation: {{ yeast.attenuation | number:'1.0-1' }} %<br>
-      Up to: {{ yeast.maxAbv | number:'1.0-1' }} % ABV
+      Temperature range: {{ yeast().minTemp | number:'1.0-1' }} - {{ yeast().maxTemp | number:'1.0-1' }} °C<br>
+      Attenuation: {{ yeast().attenuation | number:'1.0-1' }} %<br>
+      Up to: {{ yeast().maxAbv | number:'1.0-1' }} % ABV
     </p>
   </ion-card-content>
 </ion-card>

@@ -1,20 +1,19 @@
 <ion-input
   (click)="setModalOpen(true)"
-  [label]="label"
+  [label]="label()"
   label-placement="floating"
-  [value]="selectedItem || placeholder"
+  [value]="selectedItem() || placeholder()"
   [readonly]="true"
   class="pointer"
 >
-  <ion-icon class="select-icon" name="caret-down-circle"></ion-icon>
+  <ion-icon class="select-icon" name="caret-down"></ion-icon>
 </ion-input>
-
 
 <ion-modal [isOpen]="isModalOpen" (didDismiss)="setModalOpen(false)">
   <ng-template>
     <ion-header>
       <ion-toolbar>
-        <ion-title>{{ placeholder }}</ion-title>
+        <ion-title>{{ placeholder() }}</ion-title>
         <ion-buttons slot="end">
           <ion-button (click)="setModalOpen(false)">
             <ion-label>Cancel</ion-label>
@@ -22,21 +21,29 @@
         </ion-buttons>
       </ion-toolbar>
       <ion-toolbar>
-        <ion-searchbar #search class="ion-no-margin autofocus" (ionInput)="handleSearch($event)"></ion-searchbar>
+        <ion-searchbar
+          #search
+          class="ion-no-margin autofocus"
+          (ionInput)="handleSearch($event)"
+          debounce="100"
+        ></ion-searchbar>
       </ion-toolbar>
     </ion-header>
     <ion-content>
-      @for (item of filteredItems; track item) {
+      @for (item of filteredItems; track $index) {
         <ion-item [button]="true" (click)="select(item.name)">
           <ion-label class="ion-text-wrap">
             {{ item.name }}
             @if (item.additionalInfo) {
               <span>{{ item.additionalInfo }}</span>
             }
-            @if (item.additionalInfo) {
+            @if (item.description) {
               <p>{{ item.description }}</p>
             }
           </ion-label>
+          @if (item.name === selectedItem()) {
+            <ion-icon name="checkmark" slot="end"></ion-icon>
+          }
         </ion-item>
       }
     </ion-content>

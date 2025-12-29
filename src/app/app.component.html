@@ -8,7 +8,7 @@
       </ion-header>
       <ion-content>
         @for (page of pages; track page) {
-          @if (page.path != '/waters' || (page.path === '/waters' && showWaters())) {
+          @if (page.path !== '/waters' || (page.path === '/waters' && showWaters())) {
             <ion-menu-toggle auto-hide="false">
               <ion-item [routerLink]="page.path">
                 <ion-icon slot="start" [name]="page.icon"></ion-icon>

@@ -1,4 +1,4 @@
-import {Component, Input} from "@angular/core";
+import {Component, input} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
 import {Yeast} from "models";
 import {DecimalPipe} from "@angular/common";
@@ -10,7 +10,5 @@ import {DecimalPipe} from "@angular/common";
   imports: [IonicModule, DecimalPipe],
 })
 export class YeastsCardComponent {
-  @Input()
-  yeast!: Yeast;
-
+  yeast = input.required<Yeast>();
 }

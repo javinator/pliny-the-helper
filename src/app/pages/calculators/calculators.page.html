@@ -42,7 +42,7 @@
         <hydrometer-card></hydrometer-card>
       }
       @case ('refractometer') {
-        <refractometer-card></refractometer-card>
+        <refractometer-card [settings]="settings"></refractometer-card>
       }
       @case ('conversions') {
         <conversion-card></conversion-card>

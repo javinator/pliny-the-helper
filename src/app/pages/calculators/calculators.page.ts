@@ -10,7 +10,7 @@ import {StorageService} from "services";
 @Component({
   selector: 'calculators-page',
   templateUrl: 'calculators.page.html',
-  styleUrls: ['calculators.component.scss'],
+  styleUrls: ['calculators.page.scss'],
   standalone: true,
   imports: [IonicModule, AbvCardComponent, HydrometerCardComponent, RefractometerCardComponent, ConversionCardComponent]
 })

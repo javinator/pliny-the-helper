@@ -1,4 +1,4 @@
-import {Component, Input} from "@angular/core";
+import {Component, input} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
 import {Misc} from "models";
 
@@ -9,7 +9,5 @@ import {Misc} from "models";
   imports: [IonicModule],
 })
 export class MiscsCardComponent {
-  @Input()
-  misc!: Misc;
-
+  misc = input.required<Misc>();
 }

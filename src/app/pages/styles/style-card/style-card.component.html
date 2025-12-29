@@ -2,16 +2,16 @@
   <ion-card-header>
     <ion-row>
       <ion-col>
-        <ion-card-subtitle>{{ style.categoryNumber + '-' + style.styleLetter + ' / ' + style.category }}</ion-card-subtitle>
+        <ion-card-subtitle>{{ style().categoryNumber + '-' + style().styleLetter + ' / ' + style().category }}</ion-card-subtitle>
         <br>
-        <ion-card-title>{{ style.name }}</ion-card-title>
+        <ion-card-title>{{ style().name }}</ion-card-title>
       </ion-col>
       <ion-col size="small">
-        <ion-img [src]="'assets/img/srm/'+ color() +'.png'" style="width: 48px"></ion-img>
+        <ion-img [src]="'assets/img/srm/'+ color() +'.png'" class="srm"></ion-img>
       </ion-col>
     </ion-row>
   </ion-card-header>
   <ion-card-content>
-    {{ style.notes }}
+    {{ style().notes }}
   </ion-card-content>
 </ion-card>

@@ -1,16 +1,16 @@
 <ion-card>
   <ion-card-header>
-    <ion-card-title>{{ hop.name }}</ion-card-title>
+    <ion-card-title>{{ hop().name }}</ion-card-title>
   </ion-card-header>
   <ion-card-content>
     <p class="ion-margin-bottom">
-      {{ hop.description }}
+      {{ hop().description }}
     </p>
     <p class="ion-margin-bottom">&nbsp;</p>
     <p class="ion-margin-top">
-      Type: {{ hop.type }}<br>
-      Alpha-Acid: {{ hop.alpha }} %<br>
-      Origin: {{ hop.origin }}
+      Type: {{ hop().type }}<br>
+      Alpha-Acid: {{ hop().alpha }} %<br>
+      Origin: {{ hop().origin }}
     </p>
   </ion-card-content>
 </ion-card>
