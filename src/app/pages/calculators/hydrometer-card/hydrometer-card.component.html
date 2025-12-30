@@ -1,4 +1,4 @@
-<ion-card>
+<ion-card class="ion-padding">
   <ion-card-header>
     <ion-card-title>Hydrometer Adjustment</ion-card-title>
   </ion-card-header>
@@ -33,7 +33,7 @@
       label-placement="floating"
       fill="outline"
     ></ion-input>
-    <p class="ion-padding-top">
+    <p id="adjustment-calculation" class="ion-padding-top">
       <strong>Gravity at {{ calTemp }}°C: </strong> {{ calcGravity() | number:'1.3-3' }}
     </p>
   </ion-card-content>

@@ -11,6 +11,7 @@ import {catchError, of} from "rxjs";
 @Component({
   selector: 'recipes-page',
   templateUrl: 'recipes.page.html',
+  styleUrl: 'recipes.page.scss',
   standalone: true,
   imports: [IonicModule, RouterLink, RecipeCardComponent]
 })

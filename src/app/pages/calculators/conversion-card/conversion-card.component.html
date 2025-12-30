@@ -1,4 +1,4 @@
-<ion-card>
+<ion-card class="ion-padding">
   <ion-card-header>
     <ion-card-title>Conversions</ion-card-title>
   </ion-card-header>
@@ -102,7 +102,7 @@
               <ion-col size="9" sizeSm="4">
                 <ion-input
                   (ionInput)="calculatePounds($event)"
-                  [value]="kilos | number:'1.0-2' "
+                  [value]="kilos | number:'1.0-2':'de-CH'"
                   aria-label="Kilos"
                   fill="outline"
                 ></ion-input>
@@ -111,7 +111,7 @@
               <ion-col size="9" sizeSm="4">
                 <ion-input
                   (ionInput)="calculateKilos($event)"
-                  [value]="pounds | number:'1.0-2'"
+                  [value]="pounds | number:'1.0-2':'de-CH'"
                   aria-label="Pounds"
                   fill="outline"
                 ></ion-input>
@@ -125,8 +125,8 @@
               <ion-col size="9" sizeSm="4">
                 <ion-input
                   (ionInput)="calculateOunces($event)"
-                  [value]="grams | number:'1.0-3' "
-                  aria-label="Ounces"
+                  [value]="grams | number:'1.0-3':'de-CH'"
+                  aria-label="Grams"
                   fill="outline"
                 ></ion-input>
               </ion-col>
@@ -134,8 +134,8 @@
               <ion-col size="9" sizeSm="4">
                 <ion-input
                   (ionInput)="calculateGrams($event)"
-                  [value]="ounces | number:'1.0-2'"
-                  aria-label="Grams"
+                  [value]="ounces | number:'1.0-2':'de-CH'"
+                  aria-label="Ounces"
                   fill="outline"
                 ></ion-input>
               </ion-col>
@@ -180,7 +180,7 @@
                 <ion-input
                   (ionInput)="calculateABW($event)"
                   [value]="abv | number:'1.0-2' "
-                  aria-label="Liters"
+                  aria-label="% ABV"
                   fill="outline"
                 ></ion-input>
               </ion-col>
@@ -189,7 +189,7 @@
                 <ion-input
                   (ionInput)="calculateABV($event)"
                   [value]="abw | number:'1.0-2'"
-                  aria-label="Gallons"
+                  aria-label="% ABW"
                   fill="outline"
                 ></ion-input>
               </ion-col>

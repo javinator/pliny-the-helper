@@ -35,6 +35,8 @@ import {
 import {Subscription} from "rxjs";
 import {Settings} from "models";
 import {environment} from "../environments/environment";
+import {registerLocaleData} from "@angular/common";
+import localeCH from '@angular/common/locales/de-CH';
 
 @Component({
   selector: 'app-root',
@@ -51,6 +53,7 @@ export class AppComponent implements OnInit {
   isDev = !environment.production;
 
   constructor() {
+    registerLocaleData(localeCH);
     addIcons({
       add,
       alert,

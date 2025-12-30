@@ -95,7 +95,7 @@
       </ion-card-content>
     </ion-card>
     @if (showDeveloperOptions) {
-      <ion-card class="ion-padding">
+      <ion-card id="devOptions" class="ion-padding">
         <ion-card-content>
           <h2>Actions</h2>
           <div class="ion-padding">
@@ -178,7 +178,7 @@
 ></ion-toast>
 
 <!-- Informations -->
-<ion-modal trigger="impressum">
+<ion-modal trigger="impressum" id="information-modal">
   <ng-template>
     <ion-header>
       <ion-toolbar>

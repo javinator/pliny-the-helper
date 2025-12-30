@@ -1,4 +1,4 @@
-<ion-card>
+<ion-card class="ion-padding">
   <ion-card-header>
     <ion-card-title>ABV Calculator</ion-card-title>
   </ion-card-header>
@@ -12,6 +12,7 @@
       class="calculator-input"
       label-placement="floating"
       fill="outline"
+      name="abv-og"
     ></ion-input>
     <ion-input
       type="number"
@@ -22,11 +23,12 @@
       class="calculator-input"
       label-placement="floating"
       fill="outline"
+      name="abv-fg"
     ></ion-input>
-    <p class="ion-padding-top">
+    <p id="abv-calculation" class="ion-padding-top">
       <strong>Alcohol by Volume: </strong> {{ abv() | number:'1.2-2' }} %
     </p>
-    <p class="ion-padding-top">
+    <p id="attenuation-calculation" class="ion-padding-top">
       <strong>Apparent attenuation: </strong> {{ attenuation() | number:'1.1-1' }} %
     </p>
   </ion-card-content>
