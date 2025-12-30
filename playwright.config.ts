@@ -7,7 +7,7 @@ export default defineConfig({
   testDir: './e2e',
   workers: 1,
   retries: 0,
-  reporter: 'html',
+  reporter: 'list',
   use: {
     baseURL: 'http://localhost:4200',
     trace: 'on-first-retry',
