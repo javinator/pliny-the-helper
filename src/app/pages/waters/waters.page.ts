@@ -4,6 +4,7 @@ import {StorageService} from "services";
 import {Water} from "models";
 import {WaterCardComponent} from "./water-card/water-card.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {v4 as uuidv4} from "uuid";
 
 @Component({
   selector: 'waters-page',
@@ -52,8 +53,9 @@ export class WatersPage {
   }
 
   saveWater(values: Water) {
-    values.isCustom = true;
     this.showSpinner = true;
+    values.isCustom = true;
+    values.uid = uuidv4();
     this.storage.saveWater(values);
     this.closeModal();
     setTimeout(() => this.init(), 100);
