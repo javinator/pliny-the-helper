@@ -1,6 +1,6 @@
 import {Component, inject, OnInit, signal} from '@angular/core';
-import {IonicModule} from '@ionic/angular';
-import {RouterLink} from "@angular/router";
+import {AlertController, IonicModule, IonRouterOutlet, Platform} from '@ionic/angular';
+import {Router, RouterLink} from "@angular/router";
 import {Storage} from "@ionic/storage-angular";
 import {StorageService, XmlReaderService, XmlWriterService} from "services";
 import {addIcons} from "ionicons";
@@ -35,8 +35,9 @@ import {
 import {Subscription} from "rxjs";
 import {Settings} from "models";
 import {environment} from "../environments/environment";
-import {registerLocaleData} from "@angular/common";
+import {Location, registerLocaleData} from "@angular/common";
 import localeCH from '@angular/common/locales/de-CH';
+import {App} from "@capacitor/app";
 
 @Component({
   selector: 'app-root',
@@ -49,7 +50,13 @@ import localeCH from '@angular/common/locales/de-CH';
 export class AppComponent implements OnInit {
   private readonly xmlReader = inject(XmlReaderService);
   private readonly storage = inject(StorageService);
+  private readonly platform = inject(Platform);
+  private readonly router = inject(Router);
+  private readonly routerOutlet = inject(IonRouterOutlet, {optional: true});
+  private readonly location = inject(Location);
   private sub?: Subscription;
+  alertController = inject(AlertController);
+  exitOpen = false;
   isDev = !environment.production;
 
   constructor() {
@@ -81,6 +88,17 @@ export class AppComponent implements OnInit {
       trash,
       warning,
       water
+    });
+    this.platform.backButton.subscribeWithPriority(1, () => {
+      if (this.router.url.includes('edit-recipe')) {
+        this.router.navigate(['recipes']);
+      } else if (!this.routerOutlet?.canGoBack() && !this.exitOpen) {
+        this.showExitConfirm()
+      } else if (this.exitOpen) {
+        this.closeAlert();
+      } else {
+        this.location.back();
+      }
     });
   }
 
@@ -148,5 +166,34 @@ export class AppComponent implements OnInit {
     if (componentRef.updateNavigation != null) {
       this.sub?.unsubscribe()
     }
+  }
+
+  showExitConfirm() {
+    this.exitOpen = true;
+    this.alertController.create({
+      header: 'Quit Pliny',
+      message: 'Do you really want to close the app?',
+      backdropDismiss: false,
+      buttons: [{
+        text: 'Cancel',
+        role: 'cancel',
+        handler: () => {
+          this.exitOpen = false;
+        }
+      }, {
+        text: 'Exit',
+        handler: () => {
+          App.exitApp();
+        }
+      }]
+    })
+      .then(alert => {
+        alert.present();
+      });
+  }
+
+  closeAlert() {
+    this.alertController.dismiss();
+    this.exitOpen = false;
   }
 }

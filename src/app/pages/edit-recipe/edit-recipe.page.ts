@@ -1,5 +1,5 @@
 import {Component, inject} from '@angular/core';
-import {IonicModule, Platform} from '@ionic/angular';
+import {IonicModule} from '@ionic/angular';
 import {BeerStyle, MashProfile, Recipe, Settings, Water} from "models";
 import {ActivatedRoute, Router} from "@angular/router";
 import {StorageService} from "services";
@@ -32,7 +32,6 @@ export class EditRecipePage {
   private readonly router = inject(Router);
   private readonly route = inject(ActivatedRoute);
   private readonly storage = inject(StorageService);
-  private readonly platform = inject(Platform);
 
 
   activeTab = 'ingredients';
@@ -49,9 +48,6 @@ export class EditRecipePage {
 
   constructor() {
     this.uid = this.route.snapshot.paramMap.get('uid')!;
-    this.platform.backButton.subscribeWithPriority(1, () => {
-      this.navigateBack();
-    });
   }
 
   public deleteButtons = [

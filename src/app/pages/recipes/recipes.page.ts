@@ -1,11 +1,10 @@
 import {Component, inject} from '@angular/core';
-import {AlertController, IonicModule, IonRouterOutlet, Platform} from '@ionic/angular';
+import {IonicModule, Platform} from '@ionic/angular';
 import {Recipe, Settings} from "models";
 import {Router, RouterLink} from "@angular/router";
 import {CloudStorageService, StorageService, XmlReaderService, XmlWriterService} from "services";
 import {RecipeCardComponent} from "./recipe-card/recipe-card.component";
 import {FilePicker} from "@capawesome/capacitor-file-picker";
-import {App} from "@capacitor/app";
 import {catchError, of} from "rxjs";
 
 @Component({
@@ -21,9 +20,8 @@ export class RecipesPage {
   private readonly xmlWriter = inject(XmlWriterService);
   private readonly platform = inject(Platform);
   private readonly xmlReader = inject(XmlReaderService);
-  private readonly routerOutlet = inject(IonRouterOutlet, {optional: true});
   private readonly cloudService = inject(CloudStorageService);
-  alertController = inject(AlertController);
+
 
   recipes?: Recipe[];
   f_recipes?: Recipe[];
@@ -34,16 +32,7 @@ export class RecipesPage {
   isToastOpen = false;
   isCloudOpen = false;
   showSpinner = false;
-  exitOpen = false;
   recipeToEdit?: string;
-
-  constructor() {
-    this.platform.backButton.subscribeWithPriority(-1, () => {
-      if (!this.routerOutlet?.canGoBack() && !this.exitOpen) {
-        this.showExitConfirm()
-      }
-    });
-  }
 
   ionViewWillEnter() {
     this.showSpinner = true;
@@ -139,29 +128,6 @@ export class RecipesPage {
     this.isToastOpen = false;
   }
 
-  showExitConfirm() {
-    this.exitOpen = true;
-    this.alertController.create({
-      header: 'Quit Pliny',
-      message: 'Do you really want to close the app?',
-      backdropDismiss: false,
-      buttons: [{
-        text: 'Cancel',
-        role: 'cancel',
-        handler: () => {
-          this.exitOpen = false;
-        }
-      }, {
-        text: 'Exit',
-        handler: () => {
-          App.exitApp();
-        }
-      }]
-    })
-      .then(alert => {
-        alert.present();
-      });
-  }
 
   hasCloudSettings() {
     return !!(this.settings?.cloudEmail && this.settings.cloudPassword);
