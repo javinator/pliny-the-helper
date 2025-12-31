@@ -29,7 +29,6 @@ export class SelectSearchComponent {
   filteredItems?: SelectSearchItem[];
 
   handleSearch(event: any) {
-    console.log('change: ' + event.target.value);
     const query = event.target.value.toLowerCase();
     this.filteredItems = this.allItems?.filter(d => d.name.toLowerCase().includes(query));
   }
