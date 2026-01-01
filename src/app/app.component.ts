@@ -1,5 +1,5 @@
 import {Component, inject, OnInit, signal} from '@angular/core';
-import {AlertController, IonicModule, IonRouterOutlet, Platform} from '@ionic/angular';
+import {AlertController, IonicModule, Platform} from '@ionic/angular';
 import {Router, RouterLink} from "@angular/router";
 import {Storage} from "@ionic/storage-angular";
 import {StorageService, XmlReaderService, XmlWriterService} from "services";
@@ -52,7 +52,6 @@ export class AppComponent implements OnInit {
   private readonly storage = inject(StorageService);
   private readonly platform = inject(Platform);
   private readonly router = inject(Router);
-  private readonly routerOutlet = inject(IonRouterOutlet, {optional: true});
   private readonly location = inject(Location);
   private sub?: Subscription;
   alertController = inject(AlertController);
@@ -92,7 +91,7 @@ export class AppComponent implements OnInit {
     this.platform.backButton.subscribeWithPriority(1, () => {
       if (this.router.url.includes('edit-recipe')) {
         this.router.navigate(['recipes']);
-      } else if (!this.routerOutlet?.canGoBack() && !this.exitOpen) {
+      } else if (this.router.url === '/' && !this.exitOpen) {
         this.showExitConfirm()
       } else if (this.exitOpen) {
         this.closeAlert();
