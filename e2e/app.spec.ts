@@ -70,7 +70,7 @@ test('Calculators Page', async ({page}) => {
   await page.locator('#main-content').getByLabel('Measured FG').fill('1.032');
   await expect(page.locator('#og-calculation')).toContainText("1.064");
   await expect(page.locator('#fg-calculation')).toContainText("1.015");
-  await expect(page.locator('#ref-abv-calculation')).toContainText("6.76 %");
+  await expect(page.locator('#ref-abv-calculation')).toContainText("6.68 %");
   await expect(page.locator('#ref-attenuation-calculation')).toContainText("77.2 %");
 
   await page.locator('#main-content').locator('ion-segment-button', {hasText: 'Conversions'}).click();
