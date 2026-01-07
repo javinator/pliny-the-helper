@@ -1,6 +1,6 @@
 export class CalculatorUtil {
   static abv(og: number, fg: number) {
-    return (76.08 * (og - fg) / (1.775 - og)) * (fg / 0.794)
+    return (76 * (og - fg) / (1.777 - og)) * (fg / 0.8)
   }
 
   static attenuation(og: number, fg: number) {

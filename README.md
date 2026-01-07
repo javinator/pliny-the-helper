@@ -33,7 +33,10 @@ Here I list some of the used formulas I used, for better understanding.
 
 For calculating the ABV I used the following formula:
 
-ABV = $(76.08 * (og-fg) / (1.775-og)) * (fg / 0.794)$
+ABV = $(76 * (og-fg) / (1.777-og)) * (fg / 0.8)$
+
+It is based on the Alternate Formula, proposed by Michael L. Hall's article Brew by the Numbers, with some minor tweaked parameters to better
+reflect my empirical findings with labor analysis.
 
 ### Plato/Brix/SG
 
