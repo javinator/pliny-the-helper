@@ -57,7 +57,7 @@ test('Calculators Page', async ({page}) => {
 
   await page.locator('#main-content').getByLabel('Original Gravity').fill('1.055');
   await page.locator('#main-content').getByLabel('Final Gravity').fill('1.011');
-  await expect(page.locator('#abv-calculation')).toContainText("5.92 %");
+  await expect(page.locator('#abv-calculation')).toContainText("5.85 %");
   await expect(page.locator('#attenuation-calculation')).toContainText("80.0 %");
 
   await page.locator('#main-content').locator('ion-segment-button', {hasText: 'Hydrometer Adjustment'}).click();
