@@ -25,6 +25,10 @@ And of course you can tweak your settings to accommodate your brewing equipment.
 
 If you want to get started with some recipes, you'll find my 40 first recipes [here](src/assets/xml/40-recipes.xml).
 
+The ingredients currently displayed are most of the ingredients in my local homebrew shop
+([Brau- und Rauchshop](https://www.brauundrauchshop.ch/)). The yeast is currently limited
+to dry yeast only, liquid yeasts will be added later.
+
 ## Formulas
 
 Here I list some of the used formulas I used, for better understanding.
