@@ -110,6 +110,17 @@ export class XmlReaderService {
         this.storage.addRecipes(data);
       });
   }
+
+  readDefaultRecipes() {
+    this.http
+      .get("/assets/xml/recipes.xml", {responseType: 'text'})
+      .subscribe((xml) => {
+        parseXMLtoRecipes(xml)
+          .then((data) => {
+            this.storage.addRecipes(data);
+          });
+      });
+  }
 }
 
 function parseXMLtoStyles(data: string): Promise<BeerStyle[]> {

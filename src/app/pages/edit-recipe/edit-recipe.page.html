@@ -99,7 +99,7 @@
         [required]="true"
       ></ion-input>
       <ion-input
-        label="Brew Date"
+        label="Brew date"
         label-placement="floating"
         [(ngModel)]="editRecipe!.brewDate"
         type="date"
@@ -111,7 +111,7 @@
       ></ion-input>
       <select-search
         label="Style"
-        placeholder="Choose Beer Style"
+        placeholder="Choose beer style"
         [items]="getStylesOptions()"
         (selectChanged)="changeStyle($event)"
         [selectedItem]="editRecipe!.style!.name"
@@ -119,14 +119,14 @@
       <ion-input
         type="number"
         min="0"
-        label="Batch Size (L)"
+        label="Batch size (L)"
         label-placement="floating"
         [(ngModel)]="editRecipe!.batchSize"
       ></ion-input>
       <ion-input
         type="number"
         min="0"
-        label="Boil Time (min)"
+        label="Boil time (min)"
         label-placement="floating"
         [(ngModel)]="editRecipe!.boilTime"
       ></ion-input>
@@ -140,7 +140,7 @@
         <ion-input
           type="number"
           min="0"
-          label="Boil Size (L)"
+          label="Boil size (L)"
           label-placement="floating"
           [(ngModel)]="editRecipe!.boilSize"
         ></ion-input>
@@ -152,7 +152,7 @@
         label-placement="floating"
         [(ngModel)]="editRecipe!.efficiency"
       ></ion-input>
-      <select-search label="Mash Profile" placeholder="Select Mash Profile"
+      <select-search label="Mash profile" placeholder="Select mash profile"
                      [items]="getProfilesOptions()" (selectChanged)="changeProfile($event)"
                      [selectedItem]="editRecipe?.mashProfile?.name"></select-search>
       <ion-checkbox labelPlacement="end" [(ngModel)]="editRecipe!.forcedCarbonation">Force Carbonation</ion-checkbox>
@@ -169,7 +169,7 @@
         <br>
         @if (showWaterProfile) {
           <select-search
-            [label]="'Water Profile'"
+            [label]="'Water profile'"
             [selectedItem]="editRecipe?.waters?.[0]?.name"
             [items]="getWaterOptions()"
             (selectChanged)="changeWaterProfile($event)"

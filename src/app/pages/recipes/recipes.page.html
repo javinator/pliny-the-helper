@@ -35,6 +35,8 @@
       <div class="ion-text-center">
         <p class="no-recipes">You don't have a recipe yet!</p>
         <p><a [routerLink]="'/new-recipe'">Click here to create a new recipe!</a></p>
+        or
+        <p><a href="#" (click)="importDefaultRecipes()">Click here to import sample recipes!</a></p>
       </div>
     }
     @if (recipes && recipes.length > 0) {

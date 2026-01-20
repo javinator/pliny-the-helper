@@ -181,6 +181,18 @@ export class RecipesPage {
       }, 100);
     })
   }
+
+  importDefaultRecipes() {
+    this.showSpinner = true;
+    this.xmlReader.readDefaultRecipes();
+    setTimeout(() => {
+      this.storage.get('recipes')?.then((response: Recipe[] | undefined) => {
+        this.recipes = response?.sort((a, b) => a.name.localeCompare(b.name));
+        this.f_recipes = this.recipes
+        this.showSpinner = false;
+      });
+    }, 800);
+  }
 }
 
 function b64_to_utf8(str: string): string {

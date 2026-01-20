@@ -27,6 +27,8 @@ export class NewRecipePage implements OnInit {
   waters?: Water[];
   model!: Recipe;
 
+  useWaterProfile = false;
+
   ngOnInit() {
     this.model = {
       uid: uuidv4(),
@@ -127,10 +129,13 @@ export class NewRecipePage implements OnInit {
         step.infuseAmount = this.model.batchSize;
       }
     });
-    if (this.model.waters.length === 1) {
-      this.model.waters[0].amount = this.model.batchSize;
+    if (this.useWaterProfile) {
+      if (this.model.waters.length === 1) {
+        this.model.waters[0].amount = this.model.batchSize;
+      }
+    } else {
+      this.model.waters = [];
     }
-
     this.storage.addRecipe(this.model)?.then(() => {
       this.router.navigate(['edit-recipe', this.model.uid])
     });
