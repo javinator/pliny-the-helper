@@ -35,3 +35,7 @@ Initial release with basic functionality
 
 - Added water profiles
 - Water chemistry calculation for recipes
+
+### v1.10.x (Jan 20, 2026)
+
+- Added sample recipes for new users

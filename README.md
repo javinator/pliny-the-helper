@@ -23,7 +23,7 @@ refractometer post fermentation.
 
 And of course you can tweak your settings to accommodate your brewing equipment.
 
-If you want to get started with some recipes, you'll find my 40 first recipes [here](src/assets/xml/40-recipes.xml).
+If you want to get started with some recipes, you'll find some sample recipes [here](src/assets/xml/recipes.xml).
 
 The ingredients currently displayed are most of the ingredients in my local homebrew shop
 ([Brau- und Rauchshop](https://www.brauundrauchshop.ch/)). The yeast is currently limited
@@ -123,6 +123,10 @@ R = Mash thickness (l/kg)
 * [Ionic Documentation](https://ionicframework.com/docs/)
 * [Ionic Components](https://ionicframework.com/docs/components)
 * [BeerXML](http://www.beerxml.com/)
+
+### Quality Gate
+
+[![Quality Gate Status](https://sonar.vincehofer.ch/api/project_badges/measure?project=pliny&metric=alert_status&token=sqb_b0d3d56eb4d6c48421168a64a630a1c5f50ffa94)](https://sonar.vincehofer.ch/dashboard?id=pliny)
 
 ## License
 
