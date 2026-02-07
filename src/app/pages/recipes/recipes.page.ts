@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, signal} from '@angular/core';
 import {IonicModule, Platform} from '@ionic/angular';
 import {Recipe, Settings} from "models";
 import {Router, RouterLink} from "@angular/router";
@@ -6,13 +6,14 @@ import {CloudStorageService, StorageService, XmlReaderService, XmlWriterService}
 import {RecipeCardComponent} from "./recipe-card/recipe-card.component";
 import {FilePicker} from "@capawesome/capacitor-file-picker";
 import {catchError, of} from "rxjs";
+import {DatePipe} from "@angular/common";
 
 @Component({
   selector: 'recipes-page',
   templateUrl: 'recipes.page.html',
   styleUrl: 'recipes.page.scss',
   standalone: true,
-  imports: [IonicModule, RouterLink, RecipeCardComponent]
+  imports: [IonicModule, RouterLink, RecipeCardComponent, DatePipe]
 })
 export class RecipesPage {
   private readonly storage = inject(StorageService);
@@ -33,6 +34,8 @@ export class RecipesPage {
   isCloudOpen = false;
   showSpinner = false;
   recipeToEdit?: string;
+  localRecipeTimestamp = signal<Date | undefined>(undefined);
+  cloudRecipeTimestamp = signal<Date | undefined>(undefined);
 
   ionViewWillEnter() {
     this.showSpinner = true;
@@ -134,6 +137,22 @@ export class RecipesPage {
   }
 
   openCloud() {
+    this.showSpinner = true;
+    this.cloudService.getTimestamp(this.settings?.cloudEmail || '', this.settings?.cloudPassword || '')
+      .pipe(catchError(err => {
+        console.warn(err);
+        setTimeout(() => {
+          this.showSpinner = false;
+        }, 100);
+        return of();
+      }))
+      .subscribe(res => {
+        this.storage.get('recipeTimestamp')?.then(date => {
+          this.localRecipeTimestamp.set(date);
+        })
+        this.cloudRecipeTimestamp.set(res);
+        this.showSpinner = false;
+      });
     this.isCloudOpen = true;
   }
 
@@ -152,10 +171,11 @@ export class RecipesPage {
         }, 100);
         return of();
       })).subscribe(res => {
-      this.recipes = [...res].sort((a, b) => a.name.localeCompare(b.name));
+      this.recipes = [...res.recipes].sort((a, b) => a.name.localeCompare(b.name));
       this.f_recipes = this.recipes;
+      this.storage.set('recipeTimestamp', res.timestamp);
       this.storage.deleteRecipes()?.then(() =>
-        this.storage.addRecipes(res)?.then(() => {
+        this.storage.addRecipes(res.recipes)?.then(() => {
           setTimeout(() => {
             this.showSpinner = false;
           }, 100);

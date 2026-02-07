@@ -1,6 +1,6 @@
 {
   "name": "pliny-the-helper",
-  "version": "1.10.1",
+  "version": "1.10.2",
   "author": "Bier-Freunde Seeland",
   "homepage": "https://bier-freunde.ch/",
   "scripts": {
@@ -53,8 +53,8 @@
     "@angular/language-service": "^21.0.5",
     "@capacitor/cli": "^8.0.0",
     "@ionic/angular-toolkit": "^12.3.0",
-    "@playwright/test": "1.57.0",
-    "@types/jasmine": "~5.1.9",
+    "@playwright/test": "^1.58.0",
+    "@types/jasmine": "^6.0.0",
     "@types/node": "^25.0.9",
     "@types/xml2js": "^0.4.14",
     "@typescript-eslint/eslint-plugin": "^8.0.0",

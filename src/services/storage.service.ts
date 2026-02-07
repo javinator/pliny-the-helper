@@ -109,6 +109,7 @@ export class StorageService {
       if (idx >= 0) {
         recipes[idx] = RecipeUtil.calculateRecipe(recipe);
         this._storage?.set('recipes', recipes);
+        this._storage?.set('recipeTimestamp', new Date());
       } else {
         console.error('Error! Recipe UID not found!')
       }

@@ -99,7 +99,7 @@
         <i>Please use a local backup of your recipes. Every import/export will overwrite all your data.</i>
       </p>
       <ion-grid>
-        <ion-row>
+        <ion-row class="ion-margin-vertical">
           <ion-col>
             <ion-button (click)="importRecipesFromCloud()" expand="full" size="large">
               <ion-icon slot="start" name="cloud-download-outline"></ion-icon>
@@ -111,6 +111,12 @@
               <ion-icon slot="start" name="cloud-upload-outline"></ion-icon>
               Export
             </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="ion-margin-top ion-text-center">
+            <p>Local: {{ localRecipeTimestamp() | date:'dd.LL.yyyy, HH:mm' }}</p>
+            <p>Cloud: {{ cloudRecipeTimestamp() | date:'dd.LL.yyyy, HH:mm' }}</p>
           </ion-col>
         </ion-row>
       </ion-grid>
