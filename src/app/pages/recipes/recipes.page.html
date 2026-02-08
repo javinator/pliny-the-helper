@@ -115,20 +115,24 @@
         </ion-row>
         <ion-row>
           <ion-col class="ion-margin-top ion-text-center">
-            <p>Local: {{ localRecipeTimestamp() | date:'dd.LL.yyyy, HH:mm' }}</p>
-            <p>Cloud: {{ cloudRecipeTimestamp() | date:'dd.LL.yyyy, HH:mm' }}</p>
+            <p>Local:
+              @if (localRecipeTimestamp()) {
+                {{ localRecipeTimestamp() | date:'dd.LL.yyyy, HH:mm' }}
+              } @else {
+                <i>loading...</i>
+              }
+            </p>
+            <p>Cloud:
+              @if (cloudRecipeTimestamp()) {
+                {{ cloudRecipeTimestamp() | date:'dd.LL.yyyy, HH:mm' }}
+              } @else {
+                <i>loading...</i>
+              }
+            </p>
           </ion-col>
         </ion-row>
       </ion-grid>
     </ion-content>
   </ng-template>
 </ion-modal>
-
-<ion-toast
-  [isOpen]="isToastOpen"
-  icon="checkmark"
-  message="Your recipes have been exported to your documents folder!"
-  [duration]="3000"
-  (didDismiss)="closeToast()"
-></ion-toast>
 

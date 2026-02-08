@@ -159,7 +159,7 @@
     <EXAMPLES>Altes Tramdepot Märzen, Augustiner Oktoberfest, Weihenstephaner Festbier</EXAMPLES>
   </STYLE>
   <STYLE>
-    <NAME>Dunkles Lager</NAME>
+    <NAME>Dunkles Lager / Schwarzbier</NAME>
     <VERSION>1</VERSION>
     <CATEGORY>Amber Lager</CATEGORY>
     <CATEGORY_NUMBER>2</CATEGORY_NUMBER>
@@ -463,9 +463,9 @@
     <STYLE_GUIDE>Bier-Freunde Seeland</STYLE_GUIDE>
     <TYPE>Ale</TYPE>
     <OG_MIN>1.044</OG_MIN>
-    <OG_MAX>1.052</OG_MAX>
+    <OG_MAX>1.056</OG_MAX>
     <FG_MIN>1.01</FG_MIN>
-    <FG_MAX>1.014</FG_MAX>
+    <FG_MAX>1.015</FG_MAX>
     <IBU_MIN>8</IBU_MIN>
     <IBU_MAX>15</IBU_MAX>
     <COLOR_MIN>2</COLOR_MIN>
@@ -1358,7 +1358,7 @@
     <TYPE>Mixed</TYPE>
     <OG_MIN>1.04</OG_MIN>
     <OG_MAX>1.065</OG_MAX>
-    <FG_MIN>1.002</FG_MIN>
+    <FG_MIN>1.000</FG_MIN>
     <FG_MAX>1.008</FG_MAX>
     <IBU_MIN>20</IBU_MIN>
     <IBU_MAX>35</IBU_MAX>
@@ -1810,7 +1810,7 @@
     <OG_MAX>1.074</OG_MAX>
     <FG_MIN>1.002</FG_MIN>
     <FG_MAX>1.012</FG_MAX>
-    <IBU_MIN>10</IBU_MIN>
+    <IBU_MIN>5</IBU_MIN>
     <IBU_MAX>25</IBU_MAX>
     <COLOR_MIN>10</COLOR_MIN>
     <COLOR_MAX>22</COLOR_MAX>

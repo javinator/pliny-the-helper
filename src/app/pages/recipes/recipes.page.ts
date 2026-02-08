@@ -1,5 +1,5 @@
 import {Component, inject, signal} from '@angular/core';
-import {IonicModule, Platform} from '@ionic/angular';
+import {IonicModule, Platform, ToastController} from '@ionic/angular';
 import {Recipe, Settings} from "models";
 import {Router, RouterLink} from "@angular/router";
 import {CloudStorageService, StorageService, XmlReaderService, XmlWriterService} from "services";
@@ -22,6 +22,7 @@ export class RecipesPage {
   private readonly platform = inject(Platform);
   private readonly xmlReader = inject(XmlReaderService);
   private readonly cloudService = inject(CloudStorageService);
+  private readonly toastController = inject(ToastController);
 
 
   recipes?: Recipe[];
@@ -102,7 +103,12 @@ export class RecipesPage {
     this.storage.get('settings')?.then(settings => {
       this.xmlWriter.recipesToXml(recipes || [], settings?.minimizeExport || false);
       if (this.platform.is('hybrid')) {
-        this.isToastOpen = true;
+        this.toastController.create({
+          message: 'Your recipes have been exported to your documents folder!',
+          icon: 'checkmark',
+          duration: 3000,
+          position: 'bottom',
+        }).then(toast => toast.present());
       }
       this.isExportOpen = false;
     })
@@ -126,11 +132,6 @@ export class RecipesPage {
     }).catch(_ => {
     });
   }
-
-  closeToast() {
-    this.isToastOpen = false;
-  }
-
 
   hasCloudSettings() {
     return !!(this.settings?.cloudEmail && this.settings.cloudPassword);
@@ -158,6 +159,7 @@ export class RecipesPage {
 
   closeCloud() {
     this.isCloudOpen = false;
+    setTimeout(() => this.cloudRecipeTimestamp.set(undefined), 200);
   }
 
   importRecipesFromCloud() {
@@ -167,6 +169,12 @@ export class RecipesPage {
       .pipe(catchError(err => {
         console.warn(err);
         setTimeout(() => {
+          this.toastController.create({
+            message: 'Error while contacting cloud!',
+            icon: 'alert',
+            duration: 3000,
+            position: 'bottom',
+          }).then(toast => toast.present());
           this.showSpinner = false;
         }, 100);
         return of();
@@ -177,6 +185,12 @@ export class RecipesPage {
       this.storage.deleteRecipes()?.then(() =>
         this.storage.addRecipes(res.recipes)?.then(() => {
           setTimeout(() => {
+            this.toastController.create({
+              message: 'Recipes successfully imported from cloud storage!',
+              icon: 'checkmark',
+              duration: 3000,
+              position: 'bottom',
+            }).then(toast => toast.present());
             this.showSpinner = false;
           }, 100);
         })
@@ -192,11 +206,23 @@ export class RecipesPage {
       .pipe(catchError(err => {
         console.warn(err);
         setTimeout(() => {
+          this.toastController.create({
+            message: 'Error while saving to cloud!',
+            icon: 'alert',
+            duration: 3000,
+            position: 'bottom',
+          }).then(toast => toast.present());
           this.showSpinner = false;
         }, 100);
         return of();
       })).subscribe(() => {
       setTimeout(() => {
+        this.toastController.create({
+          message: 'Recipes successfully exported to cloud storage!',
+          icon: 'checkmark',
+          duration: 3000,
+          position: 'bottom',
+        }).then(toast => toast.present());
         this.showSpinner = false;
       }, 100);
     })
