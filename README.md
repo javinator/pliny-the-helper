@@ -5,7 +5,7 @@ Ionic based multiplatform brew-helper using BeerXML.
 ## Description
 
 Pliny the Helper is an app to help a brew master organize and create recipes.
-It is compatible with the open BeerXML standard.
+It is compatible with the open BeerXML standard and per default, all your data is only stored locally, but can be exported to or imported from BeerXML.
 
 While creating a new recipe, Pliny will help you adhere to a given beer style
 with tons of different ingredients (malts, hops, yeasts and miscellaneous) to
