@@ -44,7 +44,7 @@ test('Ingredients Page', async ({page}) => {
 
   await page.locator('#main-content').locator('ion-segment-button', {hasText: 'Misc'}).click();
   await expect(page.locator('#main-content').locator('yeasts-card')).toHaveCount(0);
-  await expect(page.locator('#main-content').locator('miscs-card')).toHaveCount(29);
+  await expect(page.locator('#main-content').locator('miscs-card')).toHaveCount(30);
 });
 
 test('Calculators Page', async ({page}) => {
