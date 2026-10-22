@@ -1,4 +1,4 @@
-import {Component, computed, input} from '@angular/core';
+import {Component, computed, input, ChangeDetectionStrategy} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {Recipe} from "models";
 import {DecimalPipe} from "@angular/common";
@@ -10,6 +10,7 @@ import {FormsModule} from "@angular/forms";
   templateUrl: 'recipe-water.component.html',
   styleUrls: ['recipe-water.component.scss'],
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [IonicModule, FormsModule, DecimalPipe],
 })
 export class RecipeWaterComponent {

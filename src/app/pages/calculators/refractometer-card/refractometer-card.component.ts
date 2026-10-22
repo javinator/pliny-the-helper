@@ -1,4 +1,4 @@
-import {Component, input, OnInit} from "@angular/core";
+import {Component, input, OnInit, ChangeDetectionStrategy} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
 import {DecimalPipe} from "@angular/common";
 import {CalculatorUtil} from "utils";
@@ -10,6 +10,7 @@ import {CONFIG} from "@constants";
   templateUrl: 'refractometer-card.component.html',
   standalone: true,
   styleUrls: ['../calculators.page.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [IonicModule, DecimalPipe],
 })
 export class RefractometerCardComponent implements OnInit {

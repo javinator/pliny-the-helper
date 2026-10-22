@@ -1,4 +1,4 @@
-import {Component, input} from "@angular/core";
+import {Component, input, ChangeDetectionStrategy} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
 import {Yeast} from "models";
 import {DecimalPipe} from "@angular/common";
@@ -7,6 +7,7 @@ import {DecimalPipe} from "@angular/common";
   selector: 'yeasts-card',
   templateUrl: 'yeasts-card.component.html',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [IonicModule, DecimalPipe],
 })
 export class YeastsCardComponent {

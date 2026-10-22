@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, ChangeDetectionStrategy} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
 import {CalculatorUtil} from "utils";
 import {DecimalPipe} from "@angular/common";
@@ -8,6 +8,7 @@ import {DecimalPipe} from "@angular/common";
   templateUrl: 'conversion-card.component.html',
   standalone: true,
   styleUrls: ['../calculators.page.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [IonicModule, DecimalPipe],
 })
 export class ConversionCardComponent {

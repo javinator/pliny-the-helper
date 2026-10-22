@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, ChangeDetectionStrategy} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {AbvCardComponent} from "./abv-card/abv-card.component";
 import {HydrometerCardComponent} from "./hydrometer-card/hydrometer-card.component";
@@ -12,6 +12,7 @@ import {StorageService} from "services";
   templateUrl: 'calculators.page.html',
   styleUrls: ['calculators.page.scss'],
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [IonicModule, AbvCardComponent, HydrometerCardComponent, RefractometerCardComponent, ConversionCardComponent]
 })
 export class CalculatorsPage {

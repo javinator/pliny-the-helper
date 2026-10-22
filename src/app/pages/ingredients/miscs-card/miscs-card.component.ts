@@ -1,4 +1,4 @@
-import {Component, input} from "@angular/core";
+import {Component, input, ChangeDetectionStrategy} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
 import {Misc} from "models";
 
@@ -6,6 +6,7 @@ import {Misc} from "models";
   selector: 'miscs-card',
   templateUrl: 'miscs-card.component.html',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [IonicModule],
 })
 export class MiscsCardComponent {

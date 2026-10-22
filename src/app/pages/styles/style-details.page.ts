@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, ChangeDetectionStrategy} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {Router} from "@angular/router";
 import {Location} from '@angular/common'
@@ -8,6 +8,7 @@ import {BeerStyle} from "models";
   selector: 'style-details-page',
   templateUrl: 'style-details.page.html',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [IonicModule],
 })
 export class StyleDetailsPage {

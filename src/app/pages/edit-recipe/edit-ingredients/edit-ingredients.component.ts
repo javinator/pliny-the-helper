@@ -1,4 +1,4 @@
-import {Component, inject, input, OnInit} from '@angular/core';
+import {Component, inject, input, OnInit, ChangeDetectionStrategy} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {Fermentable, Hop, Misc, Recipe, Yeast} from "models";
 import {DecimalPipe} from "@angular/common";
@@ -12,6 +12,7 @@ import {SelectSearchComponent} from "@shared";
   templateUrl: 'edit-ingredients.component.html',
   styleUrls: ['edit-ingredients.component.scss'],
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [IonicModule, DecimalPipe, SelectSearchComponent],
 })
 export class EditIngredientsComponent implements OnInit {

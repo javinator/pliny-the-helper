@@ -1,4 +1,4 @@
-import {Component, EventEmitter, input, Output} from "@angular/core";
+import {Component, EventEmitter, input, Output, ChangeDetectionStrategy} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
 import {Water} from "models";
 import {DecimalPipe} from "@angular/common";
@@ -7,6 +7,7 @@ import {DecimalPipe} from "@angular/common";
   selector: 'water-card',
   templateUrl: 'water-card.component.html',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [IonicModule, DecimalPipe],
 })
 export class WaterCardComponent {

@@ -1,4 +1,4 @@
-import {Component, inject, OnInit, signal} from '@angular/core';
+import {Component, inject, OnInit, signal, ChangeDetectionStrategy} from '@angular/core';
 import {AlertController, IonicModule, Platform} from '@ionic/angular';
 import {Router, RouterLink} from "@angular/router";
 import {Storage} from "@ionic/storage-angular";
@@ -45,6 +45,7 @@ import {App} from "@capacitor/app";
   styleUrls: ['app.component.scss'],
   standalone: true,
   imports: [IonicModule, RouterLink],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [Storage, StorageService, XmlReaderService, XmlWriterService]
 })
 export class AppComponent implements OnInit {

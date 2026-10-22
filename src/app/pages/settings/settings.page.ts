@@ -1,4 +1,4 @@
-import {Component, EventEmitter, inject, Output} from '@angular/core';
+import {Component, EventEmitter, inject, Output, ChangeDetectionStrategy} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {
   StorageService,
@@ -24,6 +24,7 @@ import {catchError, of} from "rxjs";
   templateUrl: 'settings.page.html',
   styleUrls: ['settings.page.scss'],
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [IonicModule, FormsModule]
 })
 export class SettingsPage {

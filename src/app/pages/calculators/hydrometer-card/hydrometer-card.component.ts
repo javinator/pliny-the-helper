@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, ChangeDetectionStrategy} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
 import {DecimalPipe} from "@angular/common";
 import {CalculatorUtil} from "utils";
@@ -8,6 +8,7 @@ import {CalculatorUtil} from "utils";
   templateUrl: 'hydrometer-card.component.html',
   standalone: true,
   styleUrls: ['../calculators.page.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [IonicModule, DecimalPipe],
 })
 export class HydrometerCardComponent {

@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, ChangeDetectionStrategy} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {StorageService} from "services";
 import {BeerStyle} from "models";
@@ -9,6 +9,7 @@ import {Router} from "@angular/router";
   selector: 'styles-page',
   templateUrl: 'styles.page.html',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [IonicModule, StyleCardComponent]
 })
 export class StylesPage {

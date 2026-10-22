@@ -1,4 +1,4 @@
-import {Component, input} from "@angular/core";
+import {Component, input, ChangeDetectionStrategy} from "@angular/core";
 import {IonicModule} from "@ionic/angular";
 import {Hop} from "models";
 
@@ -6,6 +6,7 @@ import {Hop} from "models";
   selector: 'hops-card',
   templateUrl: 'hops-card.component.html',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [IonicModule],
 })
 export class HopsCardComponent {

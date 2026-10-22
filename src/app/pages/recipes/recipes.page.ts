@@ -1,4 +1,4 @@
-import {Component, inject, signal} from '@angular/core';
+import {Component, inject, signal, ChangeDetectionStrategy} from '@angular/core';
 import {IonicModule, Platform, ToastController} from '@ionic/angular';
 import {Recipe, Settings} from "models";
 import {Router, RouterLink} from "@angular/router";
@@ -13,6 +13,7 @@ import {DatePipe} from "@angular/common";
   templateUrl: 'recipes.page.html',
   styleUrl: 'recipes.page.scss',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [IonicModule, RouterLink, RecipeCardComponent, DatePipe]
 })
 export class RecipesPage {

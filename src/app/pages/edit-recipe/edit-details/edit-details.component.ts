@@ -1,4 +1,4 @@
-import {Component, input, output} from '@angular/core';
+import {Component, input, output, ChangeDetectionStrategy} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {Recipe} from "models";
 import {DatePipe, DecimalPipe} from "@angular/common";
@@ -10,6 +10,7 @@ import {FormsModule} from "@angular/forms";
   templateUrl: 'edit-details.component.html',
   styleUrls: ['edit-details.component.scss'],
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [IonicModule, DecimalPipe, DatePipe, FormsModule],
 })
 export class EditDetailsComponent {

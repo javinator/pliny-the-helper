@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, ChangeDetectionStrategy} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {StorageService} from "services";
 import {Water} from "models";
@@ -10,6 +10,7 @@ import {v4 as uuidv4} from "uuid";
   selector: 'waters-page',
   templateUrl: 'waters.page.html',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [IonicModule, WaterCardComponent, FormsModule, ReactiveFormsModule]
 })
 export class WatersPage {

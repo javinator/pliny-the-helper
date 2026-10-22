@@ -1,4 +1,4 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, inject, OnInit, ChangeDetectionStrategy} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {FermentablesCardComponent} from "./fermentables-card/fermentables-card.component";
 import {HopsCardComponent} from "./hops-card/hops-card.component";
@@ -11,6 +11,7 @@ import {MiscsCardComponent} from "./miscs-card/miscs-card.component";
   selector: 'ingredients-page',
   templateUrl: 'ingredients.page.html',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [IonicModule, FermentablesCardComponent, HopsCardComponent, YeastsCardComponent, MiscsCardComponent]
 })
 export class IngredientsPage implements OnInit {

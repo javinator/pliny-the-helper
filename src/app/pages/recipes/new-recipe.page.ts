@@ -1,4 +1,4 @@
-import {Component, inject, OnInit} from '@angular/core';
+import {Component, inject, OnInit, ChangeDetectionStrategy} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {StorageService} from "services";
 import {BeerStyle, MashProfile, Recipe, Settings, Water} from "models";
@@ -14,6 +14,7 @@ import {SelectSearchComponent, SelectSearchItem} from "@shared";
   selector: 'new-recipe-page',
   templateUrl: 'new-recipe.page.html',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [IonicModule, FormsModule, SelectSearchComponent]
 })
 export class NewRecipePage implements OnInit {

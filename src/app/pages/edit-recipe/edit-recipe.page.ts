@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, ChangeDetectionStrategy} from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import {BeerStyle, MashProfile, Recipe, Settings, Water} from "models";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -17,6 +17,7 @@ import {RecipeWaterComponent} from "./recipe-water/recipe-water.component";
   templateUrl: 'edit-recipe.page.html',
   styleUrls: ['../../app.component.scss'],
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     IonicModule,
     EditIngredientsComponent,
