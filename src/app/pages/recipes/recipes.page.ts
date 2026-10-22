@@ -1,5 +1,14 @@
 import {Component, inject, signal, ChangeDetectionStrategy} from '@angular/core';
-import {IonicModule, Platform, ToastController} from '@ionic/angular';
+import {
+  IonButton,
+  IonButtons, IonCheckbox, IonCol, IonContent, IonGrid,
+  IonHeader, IonIcon, IonLabel,
+  IonMenuButton, IonModal, IonRow, IonSearchbar, IonSpinner,
+  IonTitle,
+  IonToolbar,
+  Platform,
+  ToastController
+} from '@ionic/angular';
 import {Recipe, Settings} from "models";
 import {Router, RouterLink} from "@angular/router";
 import {CloudStorageService, StorageService, XmlReaderService, XmlWriterService} from "services";
@@ -14,7 +23,7 @@ import {DatePipe} from "@angular/common";
   styleUrl: 'recipes.page.scss',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.Eager,
-  imports: [IonicModule, RouterLink, RecipeCardComponent, DatePipe]
+  imports: [RouterLink, RecipeCardComponent, DatePipe, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonButton, IonIcon, IonContent, IonSpinner, IonSearchbar, IonModal, IonCheckbox, IonLabel, IonGrid, IonRow, IonCol]
 })
 export class RecipesPage {
   private readonly storage = inject(StorageService);

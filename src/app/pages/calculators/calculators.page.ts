@@ -1,11 +1,20 @@
 import {Component, inject, ChangeDetectionStrategy} from '@angular/core';
-import {IonicModule} from '@ionic/angular';
 import {AbvCardComponent} from "./abv-card/abv-card.component";
 import {HydrometerCardComponent} from "./hydrometer-card/hydrometer-card.component";
 import {RefractometerCardComponent} from "./refractometer-card/refractometer-card.component";
 import {ConversionCardComponent} from "./conversion-card/conversion-card.component";
 import {Settings} from "models";
 import {StorageService} from "services";
+import {
+  IonButtons,
+  IonContent,
+  IonHeader, IonIcon, IonLabel,
+  IonMenuButton,
+  IonSegment, IonSegmentButton,
+  IonSpinner,
+  IonTitle,
+  IonToolbar
+} from "@ionic/angular";
 
 @Component({
   selector: 'calculators-page',
@@ -13,7 +22,7 @@ import {StorageService} from "services";
   styleUrls: ['calculators.page.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.Eager,
-  imports: [IonicModule, AbvCardComponent, HydrometerCardComponent, RefractometerCardComponent, ConversionCardComponent]
+  imports: [AbvCardComponent, HydrometerCardComponent, RefractometerCardComponent, ConversionCardComponent, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent, IonSpinner, IonSegment, IonSegmentButton, IonIcon, IonLabel]
 })
 export class CalculatorsPage {
   private readonly storage = inject(StorageService);

@@ -1,16 +1,25 @@
 import {Component, inject, ChangeDetectionStrategy} from '@angular/core';
-import {IonicModule} from '@ionic/angular';
 import {StorageService} from "services";
 import {BeerStyle} from "models";
 import {StyleCardComponent} from "./style-card/style-card.component";
 import {Router} from "@angular/router";
+import {
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonMenuButton,
+  IonSearchbar,
+  IonSpinner,
+  IonTitle,
+  IonToolbar
+} from "@ionic/angular";
 
 @Component({
   selector: 'styles-page',
   templateUrl: 'styles.page.html',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.Eager,
-  imports: [IonicModule, StyleCardComponent]
+  imports: [StyleCardComponent, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent, IonSpinner, IonSearchbar]
 })
 export class StylesPage {
   private readonly storage = inject(StorageService);

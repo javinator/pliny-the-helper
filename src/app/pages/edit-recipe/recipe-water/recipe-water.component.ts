@@ -1,9 +1,9 @@
 import {Component, computed, input, ChangeDetectionStrategy} from '@angular/core';
-import {IonicModule} from '@ionic/angular';
 import {Recipe} from "models";
 import {DecimalPipe} from "@angular/common";
 import {WaterUtil} from "utils";
 import {FormsModule} from "@angular/forms";
+import {IonCard, IonCardContent, IonCol, IonGrid, IonItem, IonLabel, IonList, IonRow} from "@ionic/angular";
 
 @Component({
   selector: 'recipe-water-card',
@@ -11,7 +11,7 @@ import {FormsModule} from "@angular/forms";
   styleUrls: ['recipe-water.component.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.Eager,
-  imports: [IonicModule, FormsModule, DecimalPipe],
+  imports: [FormsModule, DecimalPipe, IonCard, IonCardContent, IonGrid, IonRow, IonCol, IonList, IonItem, IonLabel],
 })
 export class RecipeWaterComponent {
   readonly MIN_MASH_PH = 5.2;

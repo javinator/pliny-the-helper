@@ -1,5 +1,15 @@
 import {Component, input, model, output, ViewChild, ChangeDetectionStrategy} from "@angular/core";
-import {IonicModule, IonSearchbar} from "@ionic/angular";
+import {
+  IonButton,
+  IonButtons, IonContent,
+  IonHeader,
+  IonIcon,
+  IonInput, IonItem, IonLabel,
+  IonModal,
+  IonSearchbar,
+  IonTitle,
+  IonToolbar
+} from "@ionic/angular";
 import {FormsModule} from "@angular/forms";
 import {deepClone} from "utils";
 
@@ -14,7 +24,7 @@ export interface SelectSearchItem {
   templateUrl: 'select-search.component.html',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.Eager,
-  imports: [IonicModule, FormsModule]
+  imports: [FormsModule, IonInput, IonIcon, IonModal, IonHeader, IonToolbar, IonTitle, IonButtons, IonButton, IonLabel, IonSearchbar, IonContent, IonItem]
 })
 export class SelectSearchComponent {
   items = input<SelectSearchItem[]>([]);

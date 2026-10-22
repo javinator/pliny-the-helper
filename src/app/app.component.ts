@@ -1,5 +1,14 @@
 import {Component, inject, OnInit, signal, ChangeDetectionStrategy} from '@angular/core';
-import {AlertController, IonicModule, Platform} from '@ionic/angular';
+import {
+  AlertController,
+  IonApp, IonContent,
+  IonHeader, IonIcon, IonItem, IonLabel,
+  IonMenu, IonMenuToggle, IonRouterOutlet,
+  IonSplitPane,
+  IonTitle,
+  IonToolbar,
+  Platform
+} from '@ionic/angular';
 import {Router, RouterLink} from "@angular/router";
 import {Storage} from "@ionic/storage-angular";
 import {StorageService, XmlReaderService, XmlWriterService} from "services";
@@ -44,7 +53,7 @@ import {App} from "@capacitor/app";
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
   standalone: true,
-  imports: [IonicModule, RouterLink],
+  imports: [RouterLink, IonApp, IonSplitPane, IonMenu, IonHeader, IonToolbar, IonTitle, IonContent, IonMenuToggle, IonItem, IonIcon, IonLabel, IonRouterOutlet],
   changeDetection: ChangeDetectionStrategy.Eager,
   providers: [Storage, StorageService, XmlReaderService, XmlWriterService]
 })

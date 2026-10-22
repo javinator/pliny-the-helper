@@ -1,18 +1,27 @@
 import {Component, inject, OnInit, ChangeDetectionStrategy} from '@angular/core';
-import {IonicModule} from '@ionic/angular';
 import {FermentablesCardComponent} from "./fermentables-card/fermentables-card.component";
 import {HopsCardComponent} from "./hops-card/hops-card.component";
 import {Fermentable, Hop, Misc, Yeast} from "models";
 import {StorageService} from "services";
 import {YeastsCardComponent} from "./yeasts-card/yeasts-card.component";
 import {MiscsCardComponent} from "./miscs-card/miscs-card.component";
+import {
+  IonButtons,
+  IonContent,
+  IonHeader, IonIcon, IonLabel,
+  IonMenuButton, IonSearchbar,
+  IonSegment, IonSegmentButton,
+  IonSpinner,
+  IonTitle,
+  IonToolbar
+} from "@ionic/angular";
 
 @Component({
   selector: 'ingredients-page',
   templateUrl: 'ingredients.page.html',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.Eager,
-  imports: [IonicModule, FermentablesCardComponent, HopsCardComponent, YeastsCardComponent, MiscsCardComponent]
+  imports: [FermentablesCardComponent, HopsCardComponent, YeastsCardComponent, MiscsCardComponent, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent, IonSpinner, IonSegment, IonSegmentButton, IonIcon, IonLabel, IonSearchbar]
 })
 export class IngredientsPage implements OnInit {
   private readonly storage = inject(StorageService);

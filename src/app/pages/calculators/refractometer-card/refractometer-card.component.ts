@@ -1,9 +1,17 @@
 import {Component, input, OnInit, ChangeDetectionStrategy} from "@angular/core";
-import {IonicModule} from "@ionic/angular";
 import {DecimalPipe} from "@angular/common";
 import {CalculatorUtil} from "utils";
 import {Settings} from "models";
 import {CONFIG} from "@constants";
+import {
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
+  IonCardTitle,
+  IonInput,
+  IonSelect,
+  IonSelectOption
+} from "@ionic/angular";
 
 @Component({
   selector: 'refractometer-card',
@@ -11,7 +19,7 @@ import {CONFIG} from "@constants";
   standalone: true,
   styleUrls: ['../calculators.page.scss'],
   changeDetection: ChangeDetectionStrategy.Eager,
-  imports: [IonicModule, DecimalPipe],
+  imports: [DecimalPipe, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonSelect, IonSelectOption, IonInput],
 })
 export class RefractometerCardComponent implements OnInit {
   unit = 'gravity';

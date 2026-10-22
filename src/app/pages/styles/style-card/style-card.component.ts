@@ -1,13 +1,31 @@
 import {Component, input, ChangeDetectionStrategy} from "@angular/core";
-import {IonicModule} from "@ionic/angular";
 import {BeerStyle} from "models";
+import {
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
+  IonCardSubtitle,
+  IonCardTitle,
+  IonCol,
+  IonImg,
+  IonRow
+} from "@ionic/angular";
 
 @Component({
   selector: 'style-card',
   templateUrl: 'style-card.component.html',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.Eager,
-  imports: [IonicModule],
+  imports: [
+    IonCard,
+    IonCardHeader,
+    IonRow,
+    IonCol,
+    IonCardSubtitle,
+    IonCardTitle,
+    IonImg,
+    IonCardContent
+  ]
 })
 export class StyleCardComponent {
   style = input.required<BeerStyle>();

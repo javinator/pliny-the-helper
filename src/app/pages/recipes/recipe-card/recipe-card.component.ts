@@ -1,13 +1,13 @@
 import {Component, input, ChangeDetectionStrategy} from "@angular/core";
-import {IonicModule} from "@ionic/angular";
 import {DecimalPipe} from "@angular/common";
+import {IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonImg, IonRow} from "@ionic/angular";
 
 @Component({
   selector: 'recipe-card',
   templateUrl: 'recipe-card.component.html',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.Eager,
-  imports: [IonicModule, DecimalPipe],
+  imports: [DecimalPipe, IonCard, IonCardHeader, IonRow, IonCol, IonImg, IonCardTitle, IonCardSubtitle],
 })
 export class RecipeCardComponent {
   name = input.required<string>()

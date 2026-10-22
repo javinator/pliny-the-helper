@@ -1,9 +1,20 @@
 import {Component, input, output, ChangeDetectionStrategy} from '@angular/core';
-import {IonicModule} from '@ionic/angular';
 import {Recipe} from "models";
 import {DatePipe, DecimalPipe} from "@angular/common";
 import {CalculatorUtil} from "utils";
 import {FormsModule} from "@angular/forms";
+import {
+  IonCard,
+  IonCardContent,
+  IonCol,
+  IonGrid,
+  IonInput,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonRow,
+  IonTextarea
+} from "@ionic/angular";
 
 @Component({
   selector: 'edit-details-card',
@@ -11,7 +22,7 @@ import {FormsModule} from "@angular/forms";
   styleUrls: ['edit-details.component.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.Eager,
-  imports: [IonicModule, DecimalPipe, DatePipe, FormsModule],
+  imports: [DecimalPipe, DatePipe, FormsModule, IonCard, IonCardContent, IonGrid, IonRow, IonCol, IonList, IonItem, IonLabel, IonInput, IonTextarea],
 })
 export class EditDetailsComponent {
   recipe = input.required<Recipe>();

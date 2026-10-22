@@ -1,15 +1,40 @@
 import {Component, inject, ChangeDetectionStrategy} from '@angular/core';
-import {IonicModule} from '@ionic/angular';
 import {Router} from "@angular/router";
 import {Location} from '@angular/common'
 import {BeerStyle} from "models";
+import {
+  IonButton,
+  IonButtons,
+  IonCard, IonCardContent,
+  IonCardHeader, IonCardTitle, IonCol,
+  IonContent, IonGrid,
+  IonHeader,
+  IonIcon, IonRow,
+  IonTitle,
+  IonToolbar
+} from "@ionic/angular";
 
 @Component({
   selector: 'style-details-page',
   templateUrl: 'style-details.page.html',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.Eager,
-  imports: [IonicModule],
+  imports: [
+    IonHeader,
+    IonToolbar,
+    IonButtons,
+    IonButton,
+    IonIcon,
+    IonTitle,
+    IonContent,
+    IonCard,
+    IonCardHeader,
+    IonCardTitle,
+    IonGrid,
+    IonRow,
+    IonCol,
+    IonCardContent
+  ]
 })
 export class StyleDetailsPage {
   private readonly router = inject(Router);

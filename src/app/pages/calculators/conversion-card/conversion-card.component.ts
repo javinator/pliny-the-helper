@@ -1,7 +1,17 @@
 import {Component, ChangeDetectionStrategy} from "@angular/core";
-import {IonicModule} from "@ionic/angular";
 import {CalculatorUtil} from "utils";
 import {DecimalPipe} from "@angular/common";
+import {
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
+  IonCardTitle,
+  IonCol, IonInput,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonRow
+} from "@ionic/angular";
 
 @Component({
   selector: 'conversion-card',
@@ -9,7 +19,7 @@ import {DecimalPipe} from "@angular/common";
   standalone: true,
   styleUrls: ['../calculators.page.scss'],
   changeDetection: ChangeDetectionStrategy.Eager,
-  imports: [IonicModule, DecimalPipe],
+  imports: [DecimalPipe, IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonList, IonItem, IonLabel, IonRow, IonCol, IonInput],
 })
 export class ConversionCardComponent {
 

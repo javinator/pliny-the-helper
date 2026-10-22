@@ -1,5 +1,4 @@
 import {Component, inject, OnInit, ChangeDetectionStrategy} from '@angular/core';
-import {IonicModule} from '@ionic/angular';
 import {StorageService} from "services";
 import {BeerStyle, MashProfile, Recipe, Settings, Water} from "models";
 import {Location} from "@angular/common";
@@ -9,13 +8,23 @@ import {Router} from "@angular/router";
 import {RecipeUtil} from "utils";
 import {CONFIG} from "@constants";
 import {SelectSearchComponent, SelectSearchItem} from "@shared";
+import {
+  IonBackButton, IonButton,
+  IonButtons,
+  IonCard,
+  IonCardContent, IonCheckbox,
+  IonContent,
+  IonHeader, IonInput,
+  IonTitle,
+  IonToolbar
+} from "@ionic/angular";
 
 @Component({
   selector: 'new-recipe-page',
   templateUrl: 'new-recipe.page.html',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.Eager,
-  imports: [IonicModule, FormsModule, SelectSearchComponent]
+  imports: [FormsModule, SelectSearchComponent, IonHeader, IonToolbar, IonButtons, IonBackButton, IonTitle, IonContent, IonCard, IonCardContent, IonInput, IonCheckbox, IonButton]
 })
 export class NewRecipePage implements OnInit {
   private readonly storage = inject(StorageService);

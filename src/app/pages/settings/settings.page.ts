@@ -1,5 +1,4 @@
 import {Component, EventEmitter, inject, Output, ChangeDetectionStrategy} from '@angular/core';
-import {IonicModule} from '@ionic/angular';
 import {
   StorageService,
   XmlReaderService,
@@ -17,6 +16,16 @@ import {
 } from "utils";
 import packageJson from 'packageJson';
 import {catchError, of} from "rxjs";
+import {
+  IonButton,
+  IonButtons, IonCard, IonCardContent, IonCheckbox, IonCol,
+  IonContent, IonGrid,
+  IonHeader,
+  IonIcon, IonImg, IonInput, IonInputPasswordToggle, IonItem, IonList,
+  IonMenuButton, IonModal, IonRow, IonSelect, IonSelectOption, IonSpinner,
+  IonTitle, IonToast,
+  IonToolbar
+} from "@ionic/angular";
 
 
 @Component({
@@ -25,7 +34,7 @@ import {catchError, of} from "rxjs";
   styleUrls: ['settings.page.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.Eager,
-  imports: [IonicModule, FormsModule]
+  imports: [FormsModule, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonButton, IonIcon, IonContent, IonSpinner, IonCard, IonCardContent, IonList, IonItem, IonInput, IonCheckbox, IonSelect, IonSelectOption, IonGrid, IonRow, IonCol, IonInputPasswordToggle, IonToast, IonModal, IonImg]
 })
 export class SettingsPage {
   private readonly storage = inject(StorageService);

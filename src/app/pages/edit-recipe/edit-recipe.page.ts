@@ -1,5 +1,4 @@
 import {Component, inject, ChangeDetectionStrategy} from '@angular/core';
-import {IonicModule} from '@ionic/angular';
 import {BeerStyle, MashProfile, Recipe, Settings, Water} from "models";
 import {ActivatedRoute, Router} from "@angular/router";
 import {StorageService} from "services";
@@ -11,6 +10,18 @@ import {deepClone, RecipeUtil} from "utils";
 import {SelectSearchComponent, SelectSearchItem} from "@shared";
 import {BrewingComponent} from "./brewing/brewing.component";
 import {RecipeWaterComponent} from "./recipe-water/recipe-water.component";
+import {
+  IonAlert,
+  IonButton,
+  IonButtons, IonCheckbox,
+  IonContent,
+  IonHeader,
+  IonIcon, IonInput, IonLabel, IonModal,
+  IonSegment,
+  IonSegmentButton,
+  IonTitle,
+  IonToolbar
+} from "@ionic/angular";
 
 @Component({
   selector: 'edit-recipe-page',
@@ -19,14 +30,27 @@ import {RecipeWaterComponent} from "./recipe-water/recipe-water.component";
   standalone: true,
   changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
-    IonicModule,
     EditIngredientsComponent,
     EditDetailsComponent,
     FormsModule,
     DecimalPipe,
     SelectSearchComponent,
     BrewingComponent,
-    RecipeWaterComponent
+    RecipeWaterComponent,
+    IonHeader,
+    IonToolbar,
+    IonButtons,
+    IonButton,
+    IonIcon,
+    IonTitle,
+    IonContent,
+    IonSegment,
+    IonSegmentButton,
+    IonLabel,
+    IonAlert,
+    IonModal,
+    IonInput,
+    IonCheckbox
   ],
 })
 export class EditRecipePage {

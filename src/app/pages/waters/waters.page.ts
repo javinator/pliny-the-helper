@@ -1,17 +1,26 @@
 import {Component, inject, ChangeDetectionStrategy} from '@angular/core';
-import {IonicModule} from '@ionic/angular';
 import {StorageService} from "services";
 import {Water} from "models";
 import {WaterCardComponent} from "./water-card/water-card.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {v4 as uuidv4} from "uuid";
+import {
+  IonButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonIcon, IonInput,
+  IonMenuButton, IonModal, IonSearchbar, IonSpinner,
+  IonTitle,
+  IonToolbar
+} from "@ionic/angular";
 
 @Component({
   selector: 'waters-page',
   templateUrl: 'waters.page.html',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.Eager,
-  imports: [IonicModule, WaterCardComponent, FormsModule, ReactiveFormsModule]
+  imports: [WaterCardComponent, FormsModule, ReactiveFormsModule, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonButton, IonIcon, IonContent, IonSpinner, IonSearchbar, IonModal, IonInput]
 })
 export class WatersPage {
   private readonly storage = inject(StorageService);

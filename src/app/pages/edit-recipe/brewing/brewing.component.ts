@@ -1,15 +1,15 @@
 import {Component, input, ChangeDetectionStrategy} from '@angular/core';
-import {IonicModule} from '@ionic/angular';
 import {Hop, Recipe} from "models";
 import {DecimalPipe} from "@angular/common";
 import {RecipeUtil} from "utils";
+import {IonCard, IonCardContent, IonCardTitle, IonItem, IonLabel, IonList} from "@ionic/angular";
 
 @Component({
   selector: 'brewing-card',
   templateUrl: 'brewing.component.html',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.Eager,
-  imports: [IonicModule, DecimalPipe],
+  imports: [DecimalPipe, IonCard, IonCardTitle, IonCardContent, IonList, IonItem, IonLabel],
 })
 export class BrewingComponent {
 

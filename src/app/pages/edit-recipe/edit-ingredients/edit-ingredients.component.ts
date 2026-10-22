@@ -1,11 +1,20 @@
 import {Component, inject, input, OnInit, ChangeDetectionStrategy} from '@angular/core';
-import {IonicModule} from '@ionic/angular';
 import {Fermentable, Hop, Misc, Recipe, Yeast} from "models";
 import {DecimalPipe} from "@angular/common";
 import {StorageService} from "services";
 import {deepClone, RecipeUtil} from "utils";
 import {CONFIG} from "@constants";
 import {SelectSearchComponent} from "@shared";
+import {
+  IonButton,
+  IonButtons,
+  IonCard,
+  IonCardContent, IonContent, IonHeader,
+  IonIcon, IonInput, IonItem,
+  IonLabel,
+  IonList,
+  IonListHeader, IonModal, IonSelect, IonSelectOption, IonTitle, IonToolbar
+} from "@ionic/angular";
 
 @Component({
   selector: 'edit-ingredients-card',
@@ -13,7 +22,7 @@ import {SelectSearchComponent} from "@shared";
   styleUrls: ['edit-ingredients.component.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.Eager,
-  imports: [IonicModule, DecimalPipe, SelectSearchComponent],
+  imports: [DecimalPipe, SelectSearchComponent, IonCard, IonCardContent, IonList, IonListHeader, IonButtons, IonButton, IonIcon, IonLabel, IonItem, IonModal, IonHeader, IonToolbar, IonTitle, IonContent, IonInput, IonSelect, IonSelectOption],
 })
 export class EditIngredientsComponent implements OnInit {
   private readonly storage = inject(StorageService);
