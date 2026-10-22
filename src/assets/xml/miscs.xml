@@ -105,7 +105,7 @@
     <TYPE>Spice</TYPE>
     <USE>Boil</USE>
     <AMOUNT>0.005</AMOUNT>
-    <AMOUNT_IS_WEIGHT>true</AMOUNT_IS_WEIGHT>
+    <AMOUNT_IS_WEIGHT>TRUE</AMOUNT_IS_WEIGHT>
     <TIME>5</TIME>
     <USE_FOR>Bergamot citrus aroma</USE_FOR>
     <NOTES>Elegant, floral twist</NOTES>
@@ -116,7 +116,7 @@
     <TYPE>Spice</TYPE>
     <USE>Boil</USE>
     <AMOUNT>0.005</AMOUNT>
-    <AMOUNT_IS_WEIGHT>true</AMOUNT_IS_WEIGHT>
+    <AMOUNT_IS_WEIGHT>TRUE</AMOUNT_IS_WEIGHT>
     <TIME>5</TIME>
     <USE_FOR>Strong and fresh aroma of eucalyptus</USE_FOR>
     <NOTES>Contributes a strong woody, and minty-licorice aroma</NOTES>
@@ -149,7 +149,7 @@
     <TYPE>Spice</TYPE>
     <USE>Boil</USE>
     <AMOUNT>0.005</AMOUNT>
-    <AMOUNT_IS_WEIGHT>true</AMOUNT_IS_WEIGHT>
+    <AMOUNT_IS_WEIGHT>TRUE</AMOUNT_IS_WEIGHT>
     <TIME>5</TIME>
     <USE_FOR>Floral character</USE_FOR>
     <NOTES>Contributes floral character. Use sparingly, can overpower</NOTES>
