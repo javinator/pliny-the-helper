@@ -111,6 +111,17 @@
     <NOTES>Elegant, floral twist</NOTES>
   </MISC>
   <MISC>
+    <NAME>Eucalyptus Leaves</NAME>
+    <VERSION>1</VERSION>
+    <TYPE>Spice</TYPE>
+    <USE>Boil</USE>
+    <AMOUNT>0.005</AMOUNT>
+    <AMOUNT_IS_WEIGHT>true</AMOUNT_IS_WEIGHT>
+    <TIME>5</TIME>
+    <USE_FOR>Strong and fresh aroma of eucalyptus</USE_FOR>
+    <NOTES>Contributes a strong woody, and minty-licorice aroma</NOTES>
+  </MISC>
+  <MISC>
     <NAME>Ginger Root</NAME>
     <VERSION>1</VERSION>
     <TYPE>Herb</TYPE>

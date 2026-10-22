@@ -209,7 +209,7 @@ export class EditIngredientsComponent implements OnInit {
       return {
         name: yeast.name,
         additionalInfo: ' (' + yeast.attenuation + ' %)',
-        description: yeast.description + '. Optimal temperature between ' + yeast.minTemp + ' °C and ' + yeast.maxTemp + ' °C. Alcohol tolerant up to ' + yeast.maxAbv + ' %.'
+        description: yeast.description + ' Optimal temperature between ' + yeast.minTemp + ' °C and ' + yeast.maxTemp + ' °C. Alcohol tolerant up to ' + yeast.maxAbv + ' %.'
       }
     });
   }
