@@ -39,3 +39,9 @@ Initial release with basic functionality
 ### v1.10.x (Jan 20, 2026)
 
 - Added sample recipes for new users
+
+### v1.11.x (Oct 23, 2026)
+
+- Fixed some typos
+- Added some new miscellaneous ingredients
+- Framework updates
