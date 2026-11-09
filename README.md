@@ -31,6 +31,14 @@ The ingredients currently displayed are most of the ingredients in my local home
 ([Brau- und Rauchshop](https://www.brauundrauchshop.ch/)). The yeast is currently limited
 to dry yeast only, liquid yeasts will be added later.
 
+## Building
+
+Run Pliny locally with ``npm run start``
+
+Run tests with ``npm run e2e``
+
+Build app with ``ionic capacitor build android`` and then build your android apk with Android Studio.
+
 ## Formulas
 
 Here I list some of the used formulas I used, for better understanding.
@@ -128,7 +136,7 @@ R = Mash thickness (l/kg)
 
 ### Quality Gate
 
-[![Quality Gate Status](https://sonar.vincehofer.ch/api/project_badges/measure?project=pliny&metric=alert_status&token=sqb_b0d3d56eb4d6c48421168a64a630a1c5f50ffa94)](https://sonar.vincehofer.ch/dashboard?id=pliny)
+[![Quality gate status](https://sonar.vincehofer.ch/api/project_badges/measure?project=pliny&metric=alert_status&token=sqb_41c4fdf036aa443c0c4eb8b13000c0addbb23ef8)](https://sonar.vincehofer.ch/dashboard?id=pliny)
 
 ## License
 
