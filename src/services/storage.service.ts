@@ -1,7 +1,9 @@
 import {inject, Injectable} from '@angular/core';
 import {Storage} from '@ionic/storage-angular';
-import {BeerStyle, Fermentable, Hop, MashProfile, Misc, Recipe, Settings, Water, Yeast} from "models";
-import {findFermentables, findHops, findMiscs, findYeasts, RecipeUtil} from "utils";
+
+import {BeerStyle, Fermentable, Hop, MashProfile, Misc, Recipe, Settings, Water, Yeast} from 'models';
+
+import {findFermentables, findHops, findMiscs, findYeasts, RecipeUtil} from 'utils';
 
 @Injectable({
   providedIn: 'root'
@@ -10,190 +12,198 @@ export class StorageService {
   private readonly storage = inject(Storage);
 
   private _storage: Storage | null = null;
+  private initPromise?: Promise<Storage>;
 
-  constructor() {
-    void this.init().then();
+  async init(): Promise<void> {
+    await this.getStorage();
   }
 
-  async init() {
-    this._storage = await this.storage.create();
+  public async get(key: string): Promise<any> {
+    const storage = await this.getStorage();
+    return storage.get(key);
   }
 
-  public get(key: string) {
-    return this._storage?.get(key);
+  public async set(key: string, item: any): Promise<void> {
+    const storage = await this.getStorage();
+    await storage.set(key, item);
   }
 
-  public set(key: string, item: any) {
-    return this._storage?.set(key, item);
+  public async addRecipe(recipe: Recipe): Promise<void> {
+    const storage = await this.getStorage();
+    const recipes: Recipe[] = (await storage.get('recipes')) ?? [];
+    const calculatedRecipe = RecipeUtil.calculateRecipe(recipe);
+    recipes.push(calculatedRecipe);
+    await storage.set('recipes', recipes);
   }
 
-  public addRecipe(recipe: Recipe) {
-    recipe = RecipeUtil.calculateRecipe(recipe);
-    return this._storage?.get('recipes').then((recipes: Recipe[] | null) => {
-      if (recipes) {
-        recipes.push(recipe);
-      } else {
-        recipes = [recipe];
-      }
-      return this._storage?.set('recipes', recipes);
-    })
+  public async addRecipes(rcps: Recipe[]): Promise<void> {
+    const storage = await this.getStorage();
+
+    const [
+      recipes,
+      fermentables,
+      hops,
+      yeasts,
+      miscs
+    ] = await Promise.all([
+      storage.get('recipes'),
+      storage.get('fermentables'),
+      storage.get('hops'),
+      storage.get('yeasts'),
+      storage.get('miscs')
+    ]);
+
+    const newRecipes: Recipe[] = rcps.map(recipe => {
+
+      findFermentables(recipe, fermentables ?? []);
+      findHops(recipe, hops ?? []);
+      findYeasts(recipe, yeasts ?? []);
+      findMiscs(recipe, miscs ?? []);
+
+      return RecipeUtil.calculateRecipe(recipe);
+    });
+
+    const updatedRecipes: Recipe[] = [
+      ...(recipes ?? []),
+      ...newRecipes
+    ];
+
+    await storage.set('recipes', updatedRecipes);
   }
 
-  public addRecipes(rcps: Recipe[]) {
-    let newRecipes: Recipe[] = [];
-    rcps.forEach((recipe) => {
-      this.storage.get('fermentables')?.then((fermentables: Fermentable[]) => {
-        setTimeout(() => {
-          findFermentables(recipe, fermentables);
-        }, 100);
-      })
-      this.storage.get('hops')?.then((hops: Hop[]) => {
-        setTimeout(() => {
-          findHops(recipe, hops);
-        }, 100);
-      })
-      this.storage.get('yeasts')?.then((yeasts: Yeast[]) => {
-        setTimeout(() => {
-          findYeasts(recipe, yeasts);
-        }, 100);
-      })
-      this.storage.get('miscs')?.then((miscs: Misc[]) => {
-        setTimeout(() => {
-          findMiscs(recipe, miscs);
-        }, 100);
-      })
-      newRecipes.push(RecipeUtil.calculateRecipe(recipe));
-    })
-    return this._storage?.get('recipes').then((recipes: Recipe[] | null) => {
-      setTimeout(() => {
-        if (recipes) {
-          recipes.push(...newRecipes);
-        } else {
-          recipes = newRecipes;
-        }
-      }, 100);
-      setTimeout(() => {
-        return this._storage?.set('recipes', recipes);
-      }, 100);
-    })
+  public async deleteRecipe(uid: string): Promise<void> {
+    const storage = await this.getStorage();
+    const recipes: Recipe[] = (await storage.get('recipes')) ?? [];
+    const updatedRecipes = recipes.filter(recipe => recipe.uid !== uid);
+    await storage.set('recipes', updatedRecipes);
   }
 
-  public deleteRecipe(uid: string) {
-    return this._storage?.get('recipes').then((recipes: Recipe[]) => {
-      if (recipes) {
-        recipes.forEach((element, index) => {
-          if (element.uid === uid) recipes.splice(index, 1);
+  public async deleteRecipes(): Promise<void> {
+    const storage = await this.getStorage();
+    await storage.remove('recipes');
+  }
+
+  public async getRecipe(uid?: string): Promise<Recipe | undefined> {
+    const storage = await this.getStorage();
+    const recipes: Recipe[] = (await storage.get('recipes')) ?? [];
+    const recipe = recipes.find(rcp => rcp.uid === uid);
+    console.debug(recipe);
+    return recipe;
+  }
+
+  public async saveRecipe(recipe: Recipe): Promise<void> {
+    const storage = await this.getStorage();
+    const recipes: Recipe[] = (await storage.get('recipes')) ?? [];
+    const idx = recipes.findIndex(rcp => rcp.uid === recipe.uid);
+    if (idx < 0) {
+      console.error('Error! Recipe UID not found!');
+      return;
+    }
+
+    recipes[idx] = RecipeUtil.calculateRecipe(recipe);
+
+    await Promise.all([
+      storage.set('recipes', recipes),
+      storage.set('recipeTimestamp', new Date())
+    ]);
+  }
+
+  public async setStyles(styles: BeerStyle[]): Promise<void> {
+    await this.set('styles', styles);
+  }
+
+  public async setFermentables(fermentables: Fermentable[]): Promise<void> {
+    await this.set('fermentables', fermentables);
+  }
+
+  public async setHops(hops: Hop[]): Promise<void> {
+    await this.set('hops', hops);
+  }
+
+  public async setYeasts(yeasts: Yeast[]): Promise<void> {
+    await this.set('yeasts', yeasts);
+  }
+
+  public async setMiscs(miscs: Misc[]): Promise<void> {
+    await this.set('miscs', miscs);
+  }
+
+  public async setMashProfiles(mashProfiles: MashProfile[]): Promise<void> {
+    await this.set('mashProfiles', mashProfiles);
+  }
+
+  public async setWaters(waters: Water[]): Promise<void> {
+    const storage = await this.getStorage();
+
+    const storageWaters: Water[] = (await storage.get('waters')) ?? [];
+
+    // Preserve custom waters that already exist in storage.
+    const customWaters = storageWaters.filter(water => water.isCustom);
+
+    const updatedWaters = [
+      ...waters,
+      ...customWaters.filter(
+        custom => !waters.some(water => water.uid === custom.uid)
+      )
+    ];
+
+    await storage.set('waters', updatedWaters);
+  }
+
+  public async saveWater(water: Water): Promise<void> {
+    const storage = await this.getStorage();
+    const waters: Water[] = (await storage.get('waters')) ?? [];
+    const idx = waters.findIndex(wtr => wtr.uid === water.uid);
+
+    if (idx >= 0) {
+      waters[idx] = water;
+    } else {
+      waters.push(water);
+    }
+
+    await storage.set('waters', waters);
+  }
+
+  public async deleteWater(uid: string): Promise<void> {
+    const storage = await this.getStorage();
+    const waters: Water[] = (await storage.get('waters')) ?? [];
+    const updatedWaters = waters.filter(water => water.uid !== uid);
+
+    await storage.set('waters', updatedWaters);
+  }
+
+  public async setSettings(settings: Settings): Promise<void> {
+    await this.set('settings', settings);
+  }
+
+  public async clearDb(): Promise<void> {
+    const storage = await this.getStorage();
+
+    const keys = await storage.keys();
+
+    console.log('All these keys will be deleted:');
+    console.log(keys);
+
+    await storage.clear();
+  }
+
+  private async getStorage(): Promise<Storage> {
+    if (this._storage) {
+      return this._storage;
+    }
+
+    if (!this.initPromise) {
+      this.initPromise = this.storage.create()
+        .then(storage => {
+          this._storage = storage;
+          return storage;
         })
-        return this._storage?.set('recipes', recipes);
-      } else {
-        return undefined;
-      }
-    })
-  }
+        .catch(error => {
+          this.initPromise = undefined;
+          throw error;
+        });
+    }
 
-  public deleteRecipes() {
-    return this._storage?.remove('recipes');
-  }
-
-  public getRecipe(uid?: string) {
-    return this._storage!.get('recipes').then((recipes: Recipe[]) => {
-      const idx = recipes.findIndex((rcp) => rcp.uid === uid);
-      console.debug(recipes[idx]);
-      return recipes[idx];
-    });
-  }
-
-  public saveRecipe(recipe: Recipe) {
-    this._storage?.get('recipes').then((recipes: Recipe[]) => {
-      const idx = recipes.findIndex((rcp) => rcp.uid === recipe.uid);
-      if (idx >= 0) {
-        recipes[idx] = RecipeUtil.calculateRecipe(recipe);
-        this._storage?.set('recipes', recipes);
-        this._storage?.set('recipeTimestamp', new Date());
-      } else {
-        console.error('Error! Recipe UID not found!')
-      }
-    });
-  }
-
-  public setStyles(styles: BeerStyle[]) {
-    this._storage?.remove('styles');
-    this._storage?.set('styles', styles);
-  }
-
-  public setFermentables(fermentables: Fermentable[]) {
-    this._storage?.remove('fermentables');
-    this._storage?.set('fermentables', fermentables);
-  }
-
-  public setHops(hops: Hop[]) {
-    this._storage?.remove('hops');
-    this._storage?.set('hops', hops);
-  }
-
-  public setYeasts(yeasts: Yeast[]) {
-    this._storage?.remove('yeasts');
-    this._storage?.set('yeasts', yeasts);
-  }
-
-  public setMiscs(miscs: Misc[]) {
-    this._storage?.remove('miscs');
-    this._storage?.set('miscs', miscs);
-  }
-
-  public setMashProfiles(mashProfiles: MashProfile[]) {
-    this._storage?.remove('mashProfiles');
-    this._storage?.set('mashProfiles', mashProfiles);
-  }
-
-  public setWaters(waters: Water[]) {
-    setTimeout(() => {
-      this._storage?.get('waters').then((storageWaters: Water[]) => {
-        if (storageWaters) {
-          waters.push(...storageWaters.filter(sw => sw.isCustom));
-        }
-      })
-    }, 100);
-    setTimeout(() => {
-      this._storage?.remove('waters');
-      this._storage?.set('waters', waters);
-    }, 500);
-  }
-
-  public saveWater(water: Water) {
-    this._storage?.get('waters').then((waters: Water[]) => {
-      const idx = waters.findIndex((wtr) => wtr.uid === water.uid);
-      if (idx >= 0) {
-        waters[idx] = water;
-      } else {
-        waters.push(water);
-      }
-      this._storage?.set('waters', waters);
-    });
-  }
-
-  public deleteWater(uid: string) {
-    return this._storage?.get('waters').then((waters: Water[]) => {
-      if (waters) {
-        waters.forEach((element, index) => {
-          if (element.uid === uid) waters.splice(index, 1);
-        })
-        return this._storage?.set('waters', waters);
-      } else {
-        return undefined;
-      }
-    })
-  }
-
-  public setSettings(settings: Settings) {
-    return this._storage?.set('settings', settings);
-  }
-
-  public clearDb() {
-    this._storage?.keys().then((keys) => {
-      console.log('All this keys will be deleted:');
-      console.log(keys);
-    })
-    this._storage?.clear();
+    return this.initPromise;
   }
 }

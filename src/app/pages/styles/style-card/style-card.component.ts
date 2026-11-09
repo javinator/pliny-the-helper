@@ -10,6 +10,7 @@ import {
   IonImg,
   IonRow
 } from "@ionic/angular";
+import {NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'style-card',
@@ -23,8 +24,8 @@ import {
     IonCol,
     IonCardSubtitle,
     IonCardTitle,
-    IonImg,
-    IonCardContent
+    IonCardContent,
+    NgOptimizedImage
   ]
 })
 export class StyleCardComponent {

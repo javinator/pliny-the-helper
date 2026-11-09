@@ -26,6 +26,7 @@ import {
   IonTitle, IonToast,
   IonToolbar
 } from "@ionic/angular";
+import {NgOptimizedImage} from "@angular/common";
 
 
 @Component({
@@ -34,7 +35,7 @@ import {
   styleUrls: ['settings.page.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.Eager,
-  imports: [FormsModule, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonButton, IonIcon, IonContent, IonSpinner, IonCard, IonCardContent, IonList, IonItem, IonInput, IonCheckbox, IonSelect, IonSelectOption, IonGrid, IonRow, IonCol, IonInputPasswordToggle, IonToast, IonModal, IonImg]
+  imports: [FormsModule, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonButton, IonIcon, IonContent, IonSpinner, IonCard, IonCardContent, IonList, IonItem, IonInput, IonCheckbox, IonSelect, IonSelectOption, IonGrid, IonRow, IonCol, IonInputPasswordToggle, IonToast, IonModal, NgOptimizedImage]
 })
 export class SettingsPage {
   private readonly storage = inject(StorageService);

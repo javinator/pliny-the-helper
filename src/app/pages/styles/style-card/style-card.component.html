@@ -7,7 +7,7 @@
         <ion-card-title>{{ style().name }}</ion-card-title>
       </ion-col>
       <ion-col size="small">
-        <ion-img [src]="'assets/img/srm/'+ color() +'.png'" class="srm"></ion-img>
+        <img [ngSrc]="'assets/img/srm/'+ color() +'.png'" class="srm" [alt]="color() + ' SRM'" width="40" height="40">
       </ion-col>
     </ion-row>
   </ion-card-header>

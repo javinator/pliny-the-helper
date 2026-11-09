@@ -1,5 +1,5 @@
 import {Component, input, ChangeDetectionStrategy} from "@angular/core";
-import {DecimalPipe} from "@angular/common";
+import {DecimalPipe, NgOptimizedImage} from "@angular/common";
 import {IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonImg, IonRow} from "@ionic/angular";
 
 @Component({
@@ -7,7 +7,7 @@ import {IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonImg, I
   templateUrl: 'recipe-card.component.html',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.Eager,
-  imports: [DecimalPipe, IonCard, IonCardHeader, IonRow, IonCol, IonImg, IonCardTitle, IonCardSubtitle],
+  imports: [DecimalPipe, IonCard, IonCardHeader, IonRow, IonCol, IonCardTitle, IonCardSubtitle, NgOptimizedImage],
 })
 export class RecipeCardComponent {
   name = input.required<string>()

@@ -1,6 +1,6 @@
 {
   "name": "pliny-the-helper",
-  "version": "1.11.1",
+  "version": "1.11.2",
   "author": "Bier-Freunde Seeland",
   "homepage": "https://bier-freunde.ch/",
   "scripts": {
@@ -8,7 +8,6 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "lint": "ng lint",
     "e2e": "ng e2e"
   },
   "private": true,

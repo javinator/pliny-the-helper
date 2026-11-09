@@ -183,16 +183,20 @@
     <ion-header>
       <ion-toolbar>
         <ion-title>
-          <ion-img [src]="'/assets/img/pliny_light.png'"></ion-img>
+          <div class="fill-img">
+            <img ngSrc="/assets/img/pliny_light.png" fill alt="Pliny the Helper">
+          </div>
         </ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding ion-text-center">
       Version: {{ version }}<br><br><br>
-      Pliny the Helper has been developed by Vince Hofer and Bier-Freunde Seeland<br><br><br>
-      <a href="https://www.bier-freunde.ch" target="_blank">
-        <ion-img src="/assets/img/bfs.png" alt="Bier-Freunde Seeland Logo" style="width: 50%; margin: auto;"></ion-img>
-      </a><br><br><br>
+      Pliny the Helper has been developed by Vince Hofer and Bier-Freunde Seeland
+      <br><br><br>
+      <a href="https://www.bier-freunde.ch" class="fill-img logo" target="_blank">
+        <img ngSrc="/assets/img/bfs.png" fill alt="Bier-Freunde Seeland Logo">
+      </a>
+      <br>
       <a href="mailto:info@bier-freunde.ch">info&#64;bier-freunde.ch</a>
     </ion-content>
   </ng-template>
